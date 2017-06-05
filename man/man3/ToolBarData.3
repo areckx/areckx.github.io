@@ -1,0 +1,185 @@
+.TH "ToolBarData" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ToolBarData \- toolbar data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <toolbardata\&.h>\fP
+.PP
+Inherits \fBAnimationData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBToolBarData\fP (QObject *parent, QWidget *target, int duration)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~ToolBarData\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.RI "event filter "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBanimation\fP (void) const"
+.br
+.RI "return animation associated to action at given position, if any "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBprogressAnimation\fP (void) const"
+.br
+.RI "return animation associated to action at given position, if any "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual void \fBsetFollowMouseDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual const QRect & \fBanimatedRect\fP (void) const"
+.br
+.RI "return 'hover' rect position when widget is animated "
+.ti -1c
+.RI "virtual const QRect & \fBcurrentRect\fP (void) const"
+.br
+.RI "current rect "
+.ti -1c
+.RI "const QBasicTimer & \fBtimer\fP (void) const"
+.br
+.RI "timer "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (void) const"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual void \fBsetOpacity\fP (qreal value)"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual qreal \fBprogress\fP (void) const"
+.br
+.RI "animation progress "
+.ti -1c
+.RI "virtual void \fBsetProgress\fP (qreal value)"
+.br
+.RI "animation progress "
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBupdateAnimatedRect\fP (void)"
+.br
+.RI "updated animated rect "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBtimerEvent\fP (QTimerEvent *)"
+.br
+.RI "timer event "
+.ti -1c
+.RI "virtual void \fBenterEvent\fP (const QObject *)"
+.br
+.RI "toolbar enterEvent "
+.ti -1c
+.RI "virtual void \fBleaveEvent\fP (const QObject *)"
+.br
+.RI "toolbar enterEvent "
+.ti -1c
+.RI "virtual void \fBchildAddedEvent\fP (QObject *)"
+.br
+.RI "toolbutton added "
+.ti -1c
+.RI "virtual void \fBchildEnterEvent\fP (const QObject *)"
+.br
+.RI "toolbutton enter event "
+.in -1c
+.PP
+.RI "\fBrect handling\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetCurrentRect\fP (const QRect &rect)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual void \fBclearCurrentRect\fP (void)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual const QRect & \fBpreviousRect\fP (void) const"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBsetPreviousRect\fP (const QRect &rect)"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBclearPreviousRect\fP (void)"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBclearAnimatedRect\fP (void)"
+.br
+.RI "animated rect "
+.in -1c
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBopacity\fP"
+.br
+.ti -1c
+.RI "qreal \fBprogress\fP"
+.br
+.in -1c
+.SS "current object handling"
+
+.in +1c
+.ti -1c
+.RI "typedef const QObject * \fBObjectPointer\fP"
+.br
+.RI "object pointer "
+.ti -1c
+.RI "virtual const \fBObjectPointer\fP & \fBcurrentObject\fP (void) const"
+.br
+.RI "current object "
+.ti -1c
+.RI "virtual void \fBsetCurrentObject\fP (const QObject *object)"
+.br
+.RI "current object "
+.ti -1c
+.RI "virtual void \fBclearCurrentObject\fP (void)"
+.br
+.RI "current object "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+toolbar data 
+.PP
+Definition at line 33 of file toolbardata\&.h\&.
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef const QObject* \fBToolBarData::ObjectPointer\fP\fC [protected]\fP"
+
+.PP
+object pointer there is no need to guard it because the object contents is never accessed 
+.PP
+Definition at line 125 of file toolbardata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,814 @@
+\hypertarget{class_poppler_1_1_page}{}\section{Poppler\+:\+:Page Class Reference}
+\label{class_poppler_1_1_page}\index{Poppler\+::\+Page@{Poppler\+::\+Page}}
+
+
+A page in a document.  
+
+
+
+
+{\ttfamily \#include $<$poppler-\/qt5.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} \{ \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0} = 0, 
+\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca33ccdf5b539c2917a2bd881b1c3dcd72}{Rotate90} = 1, 
+\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca85c0c177d6399d52960c235c6fd4aa09}{Rotate180} = 2, 
+\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca10c797b50fc502d31facf2766581dcf3}{Rotate270} = 3
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}{Page\+Action} \{ \hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396faf5dcfdca988348f8e8fb7885e0cc6138}{Opening}, 
+\hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396fa60dc4631fb47a5f8bdef5c790a052f62}{Closing}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}{Text\+Layout} \{ \hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a88a6ed05c8cf9566e5fc08068c0301b8}{Physical\+Layout}, 
+\hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a367163078500f3158bdeeb26166dd46d}{Raw\+Order\+Layout}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6b}{Painter\+Flag} \{ \hyperlink{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6baf8d6975a6cf5a3809a4cd29d9959d9d1}{Dont\+Save\+And\+Restore} = 0x00000001
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Search\+Direction} \{ \hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a813a28f0e91d1df1a18a431d1da24cf2}{From\+Top}, 
+\hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93aa461a2465737b0e7b903370967bde667}{Next\+Result}, 
+\hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a358a1154df990ee782c36b615ca8be68}{Previous\+Result}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Search\+Mode} \{ \hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aa89f2bd3d54df286edc7bf70231d2440e}{Case\+Sensitive}, 
+\hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aaa52732b09350aa4bbefec4aada6517b5}{Case\+Insensitive}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1}{Search\+Flag} \{ \hyperlink{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a197db93f97ab8ed28d3f72d2da41dea4}{Ignore\+Case} = 0x00000001, 
+\hyperlink{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a3ef9af484677ebc5482494a24ae3ff60}{Whole\+Words} = 0x00000002
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}{Orientation} \{ \hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a83f864f1372944cf84702f94ba25f3ca}{Landscape}, 
+\hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2ad60e920dc784f95e14d5df356bcd93eb}{Portrait}, 
+\hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a72ab2b2d91a6aeb3c7d6fd24a5351f0d}{Seascape}, 
+\hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a6fb1190709cb237c723364ee29e90082}{Upside\+Down}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poppler_1_1_page_a2341fff1cc032ab6528874175e7dd841}{$\sim$\+Page} ()
+\item 
+Q\+Image \hyperlink{class_poppler_1_1_page_a204d8018439dabf54b3b6f80be843dc3}{render\+To\+Image} (double xres=72.\+0, double yres=72.\+0, int x=-\/1, int y=-\/1, int w=-\/1, int h=-\/1, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+bool \hyperlink{class_poppler_1_1_page_a006c33318200e2aad87022b43de6ad1f}{render\+To\+Painter} (Q\+Painter $\ast$painter, double xres=72.\+0, double yres=72.\+0, int x=-\/1, int y=-\/1, int w=-\/1, int h=-\/1, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}, Painter\+Flags flags=0) const
+\item 
+Q\+Image \hyperlink{class_poppler_1_1_page_a151c6caf7c0699f776108d2800b33ece}{thumbnail} () const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}{text} (const Q\+RectF \&rect, \hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}{Text\+Layout} text\+Layout) const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_page_ad13d243914477ea1da81df435b64a87d}{text} (const Q\+RectF \&rect) const
+\item 
+Q\+\_\+\+D\+E\+C\+L\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED bool \hyperlink{class_poppler_1_1_page_afc757aa670b4e16e7fd64c5b998c5e9f}{search} (const Q\+String \&\hyperlink{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}{text}, double \&rect\+Left, double \&rect\+Top, double \&rect\+Right, double \&rect\+Bottom, \hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Search\+Direction} direction, \hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Search\+Mode} case\+Sensitive, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+bool \hyperlink{class_poppler_1_1_page_a4a631b42cef039ef38e0e0131e845e75}{search} (const Q\+String \&\hyperlink{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}{text}, double \&rect\+Left, double \&rect\+Top, double \&rect\+Right, double \&rect\+Bottom, \hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Search\+Direction} direction, Search\+Flags flags=0, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+Q\+\_\+\+D\+E\+C\+L\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED Q\+List$<$ Q\+RectF $>$ \hyperlink{class_poppler_1_1_page_a915e7bd24ca1a801c7c3f333790eb6bd}{search} (const Q\+String \&\hyperlink{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}{text}, \hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Search\+Mode} case\+Sensitive, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+Q\+List$<$ Q\+RectF $>$ \hyperlink{class_poppler_1_1_page_ad15b7f8792bf09a385daeae40e1f6d0b}{search} (const Q\+String \&\hyperlink{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}{text}, Search\+Flags flags=0, \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_text_box}{Text\+Box} $\ast$ $>$ \hyperlink{class_poppler_1_1_page_a90a0d1665c9298f25c573617ca859c43}{text\+List} (\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation} rotate=\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}) const
+\item 
+Q\+SizeF \hyperlink{class_poppler_1_1_page_a2493727bf6c299a6ce2bd9e1387417bd}{page\+SizeF} () const
+\item 
+Q\+Size \hyperlink{class_poppler_1_1_page_ab8ec6ce478c903505f6b041200ba5f4a}{page\+Size} () const
+\item 
+\hyperlink{class_poppler_1_1_page_transition}{Page\+Transition} $\ast$ \hyperlink{class_poppler_1_1_page_aff7331566a9cbf659f625f73ee05f746}{transition} () const
+\item 
+\hyperlink{class_poppler_1_1_link}{Link} $\ast$ \hyperlink{class_poppler_1_1_page_aae0237db3c5b8f7276f36b852af46f27}{action} (\hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}{Page\+Action} act) const
+\item 
+\hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}{Orientation} \hyperlink{class_poppler_1_1_page_a168a4a6c452eb365a4cd7170d6a98e29}{orientation} () const
+\item 
+void \hyperlink{class_poppler_1_1_page_a5028c2c7b89bcba5124d12f3c8de95ba}{default\+C\+TM} (double $\ast$C\+TM, double dpiX, double dpiY, int rotate, bool upside\+Down)
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_link}{Link} $\ast$ $>$ \hyperlink{class_poppler_1_1_page_ac67e76e3cb301bba5c25e127cc47e0b8}{links} () const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ \hyperlink{class_poppler_1_1_page_a74edabc4ccb349b5227cec4810aed310}{annotations} () const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ \hyperlink{class_poppler_1_1_page_a46f2df75edea8d9fb0c59573304e1b99}{annotations} (const Q\+Set$<$ \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Annotation\+::\+Sub\+Type} $>$ \&subtypes) const
+\item 
+void \hyperlink{class_poppler_1_1_page_a1235aa9d06e6f66c38f9bab4ac6a5bef}{add\+Annotation} (const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ann)
+\item 
+void \hyperlink{class_poppler_1_1_page_af9f03e0b230b3f432a7f4672d3403a0f}{remove\+Annotation} (const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ann)
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_form_field}{Form\+Field} $\ast$ $>$ \hyperlink{class_poppler_1_1_page_aa7073bd787eb01617a2b530557397a59}{form\+Fields} () const
+\item 
+double \hyperlink{class_poppler_1_1_page_a7acb7886f86577c4abd5a32c794d36f8}{duration} () const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_page_a7592a930424ad1e9a98565afb8cd61bf}{label} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_page_a883538034e58fc5c0de7d4e4cab3cef7}\label{class_poppler_1_1_page_a883538034e58fc5c0de7d4e4cab3cef7}} 
+class {\bfseries Document}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A page in a document. 
+
+The \hyperlink{class_poppler_1_1_page}{Page} class represents a single page within a P\+DF document.
+
+You cannot construct a \hyperlink{class_poppler_1_1_page}{Page} directly, but you have to use the \hyperlink{class_poppler_1_1_document}{Document} functions that return a new \hyperlink{class_poppler_1_1_page}{Page} out of an index or a label. 
+
+Definition at line 403 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}\label{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Orientation@{Orientation}}
+\index{Orientation@{Orientation}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Orientation}{Orientation}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}{Poppler\+::\+Page\+::\+Orientation}}
+
+Types of orientations that are possible \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Landscape@{Landscape}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Landscape@{Landscape}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a83f864f1372944cf84702f94ba25f3ca}\label{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a83f864f1372944cf84702f94ba25f3ca}} 
+Landscape&Landscape orientation (portrait, with 90 degrees clockwise rotation ) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Portrait@{Portrait}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Portrait@{Portrait}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2ad60e920dc784f95e14d5df356bcd93eb}\label{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2ad60e920dc784f95e14d5df356bcd93eb}} 
+Portrait&Normal portrait orientation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Seascape@{Seascape}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Seascape@{Seascape}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a72ab2b2d91a6aeb3c7d6fd24a5351f0d}\label{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a72ab2b2d91a6aeb3c7d6fd24a5351f0d}} 
+Seascape&Seascape orientation (portrait, with 270 degrees clockwise rotation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Upside\+Down@{Upside\+Down}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Upside\+Down@{Upside\+Down}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a6fb1190709cb237c723364ee29e90082}\label{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2a6fb1190709cb237c723364ee29e90082}} 
+Upside\+Down&Upside down orientation (portrait, with 180 degrees rotation) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 697 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}\label{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Page\+Action@{Page\+Action}}
+\index{Page\+Action@{Page\+Action}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Page\+Action}{PageAction}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}{Poppler\+::\+Page\+::\+Page\+Action}}
+
+The kinds of page actions \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Opening@{Opening}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Opening@{Opening}}}\mbox{\Hypertarget{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396faf5dcfdca988348f8e8fb7885e0cc6138}\label{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396faf5dcfdca988348f8e8fb7885e0cc6138}} 
+Opening&The action when a page is \char`\"{}opened\char`\"{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Closing@{Closing}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Closing@{Closing}}}\mbox{\Hypertarget{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396fa60dc4631fb47a5f8bdef5c790a052f62}\label{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396fa60dc4631fb47a5f8bdef5c790a052f62}} 
+Closing&The action when a page is \char`\"{}closed\char`\"{}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 423 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6b}\label{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6b}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Painter\+Flag@{Painter\+Flag}}
+\index{Painter\+Flag@{Painter\+Flag}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Painter\+Flag}{PainterFlag}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6b}{Poppler\+::\+Page\+::\+Painter\+Flag}}
+
+Additional flags for the render\+To\+Painter method \begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dont\+Save\+And\+Restore@{Dont\+Save\+And\+Restore}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Dont\+Save\+And\+Restore@{Dont\+Save\+And\+Restore}}}\mbox{\Hypertarget{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6baf8d6975a6cf5a3809a4cd29d9959d9d1}\label{class_poppler_1_1_page_a7b9a4e7b8a2bb20b036e862c7409be6baf8d6975a6cf5a3809a4cd29d9959d9d1}} 
+Dont\+Save\+And\+Restore&Do not save/restore the caller-\/owned painter.
+
+\hyperlink{class_poppler_1_1_page_a006c33318200e2aad87022b43de6ad1f}{render\+To\+Painter()} by default preserves, using save() + restore(), the state of the painter specified; if this is not needed, this flag can avoid this job \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 441 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}\label{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Rotation}{Rotation}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Poppler\+::\+Page\+::\+Rotation}}
+
+The type of rotation to apply for an operation \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotate0@{Rotate0}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Rotate0@{Rotate0}}}\mbox{\Hypertarget{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}\label{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}} 
+Rotate0&Do not rotate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotate90@{Rotate90}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Rotate90@{Rotate90}}}\mbox{\Hypertarget{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca33ccdf5b539c2917a2bd881b1c3dcd72}\label{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca33ccdf5b539c2917a2bd881b1c3dcd72}} 
+Rotate90&Rotate 90 degrees clockwise. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotate180@{Rotate180}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Rotate180@{Rotate180}}}\mbox{\Hypertarget{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca85c0c177d6399d52960c235c6fd4aa09}\label{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca85c0c177d6399d52960c235c6fd4aa09}} 
+Rotate180&Rotate 180 degrees. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotate270@{Rotate270}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Rotate270@{Rotate270}}}\mbox{\Hypertarget{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca10c797b50fc502d31facf2766581dcf3}\label{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca10c797b50fc502d31facf2766581dcf3}} 
+Rotate270&Rotate 270 degrees clockwise (90 degrees counterclockwise) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 414 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}\label{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Search\+Direction@{Search\+Direction}}
+\index{Search\+Direction@{Search\+Direction}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Search\+Direction}{SearchDirection}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Poppler\+::\+Page\+::\+Search\+Direction}}
+
+The starting point for a search \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{From\+Top@{From\+Top}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!From\+Top@{From\+Top}}}\mbox{\Hypertarget{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a813a28f0e91d1df1a18a431d1da24cf2}\label{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a813a28f0e91d1df1a18a431d1da24cf2}} 
+From\+Top&Start sorting at the top of the document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Next\+Result@{Next\+Result}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Next\+Result@{Next\+Result}}}\mbox{\Hypertarget{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93aa461a2465737b0e7b903370967bde667}\label{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93aa461a2465737b0e7b903370967bde667}} 
+Next\+Result&Find the next result, moving \char`\"{}down the page\char`\"{}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Previous\+Result@{Previous\+Result}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Previous\+Result@{Previous\+Result}}}\mbox{\Hypertarget{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a358a1154df990ee782c36b615ca8be68}\label{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93a358a1154df990ee782c36b615ca8be68}} 
+Previous\+Result&Find the previous result, moving \char`\"{}up the page\char`\"{}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 572 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1}\label{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Search\+Flag@{Search\+Flag}}
+\index{Search\+Flag@{Search\+Flag}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Search\+Flag}{SearchFlag}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1}{Poppler\+::\+Page\+::\+Search\+Flag}}
+
+Flags to modify the search behaviour \begin{DoxySince}{Since}
+0.\+31 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ignore\+Case@{Ignore\+Case}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Ignore\+Case@{Ignore\+Case}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a197db93f97ab8ed28d3f72d2da41dea4}\label{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a197db93f97ab8ed28d3f72d2da41dea4}} 
+Ignore\+Case&Case differences are ignored. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Whole\+Words@{Whole\+Words}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Whole\+Words@{Whole\+Words}}}\mbox{\Hypertarget{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a3ef9af484677ebc5482494a24ae3ff60}\label{class_poppler_1_1_page_a1e6b7cb8899b951b59d846464474acc1a3ef9af484677ebc5482494a24ae3ff60}} 
+Whole\+Words&Only whole words are matched. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 587 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}\label{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Search\+Mode@{Search\+Mode}}
+\index{Search\+Mode@{Search\+Mode}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Search\+Mode}{SearchMode}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Poppler\+::\+Page\+::\+Search\+Mode}}
+
+The type of search to perform \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Case\+Sensitive@{Case\+Sensitive}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Case\+Sensitive@{Case\+Sensitive}}}\mbox{\Hypertarget{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aa89f2bd3d54df286edc7bf70231d2440e}\label{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aa89f2bd3d54df286edc7bf70231d2440e}} 
+Case\+Sensitive&Case differences cause no match in searching. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Case\+Insensitive@{Case\+Insensitive}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Case\+Insensitive@{Case\+Insensitive}}}\mbox{\Hypertarget{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aaa52732b09350aa4bbefec4aada6517b5}\label{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759aaa52732b09350aa4bbefec4aada6517b5}} 
+Case\+Insensitive&Case differences are ignored in matching. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 580 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}\label{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Text\+Layout@{Text\+Layout}}
+\index{Text\+Layout@{Text\+Layout}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{Text\+Layout}{TextLayout}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}{Poppler\+::\+Page\+::\+Text\+Layout}}
+
+How the text is going to be returned \begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Physical\+Layout@{Physical\+Layout}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Physical\+Layout@{Physical\+Layout}}}\mbox{\Hypertarget{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a88a6ed05c8cf9566e5fc08068c0301b8}\label{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a88a6ed05c8cf9566e5fc08068c0301b8}} 
+Physical\+Layout&The text is layouted to resemble the real page layout. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Raw\+Order\+Layout@{Raw\+Order\+Layout}!Poppler\+::\+Page@{Poppler\+::\+Page}}\index{Poppler\+::\+Page@{Poppler\+::\+Page}!Raw\+Order\+Layout@{Raw\+Order\+Layout}}}\mbox{\Hypertarget{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a367163078500f3158bdeeb26166dd46d}\label{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450a367163078500f3158bdeeb26166dd46d}} 
+Raw\+Order\+Layout&The text is returned without any type of processing. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 432 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_page_a2341fff1cc032ab6528874175e7dd841}\label{class_poppler_1_1_page_a2341fff1cc032ab6528874175e7dd841}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!````~Page@{$\sim$\+Page}}
+\index{````~Page@{$\sim$\+Page}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{$\sim$\+Page()}{~Page()}}
+{\footnotesize\ttfamily Page\+::$\sim$\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+Definition at line 285 of file poppler-\/page.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_page_aae0237db3c5b8f7276f36b852af46f27}\label{class_poppler_1_1_page_aae0237db3c5b8f7276f36b852af46f27}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!action@{action}}
+\index{action@{action}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_link}{Link} $\ast$ Page\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{class_poppler_1_1_page_ac77a0b29e76e6ddcb6fb177ef3e3396f}{Page\+Action}}]{act }\end{DoxyParamCaption}) const}
+
+Gets the page action specified, or N\+U\+LL if there is no action.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 638 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a1235aa9d06e6f66c38f9bab4ac6a5bef}\label{class_poppler_1_1_page_a1235aa9d06e6f66c38f9bab4ac6a5bef}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!add\+Annotation@{add\+Annotation}}
+\index{add\+Annotation@{add\+Annotation}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{add\+Annotation()}{addAnnotation()}}
+{\footnotesize\ttfamily void Page\+::add\+Annotation (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$}]{ann }\end{DoxyParamCaption})}
+
+Adds an annotation to the page
+
+\begin{DoxyNote}{Note}
+Ownership of the annotation object stays with the caller, who can delete it at any time. 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 724 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a74edabc4ccb349b5227cec4810aed310}\label{class_poppler_1_1_page_a74edabc4ccb349b5227cec4810aed310}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!annotations@{annotations}}
+\index{annotations@{annotations}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{annotations()}{annotations()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ Page\+::annotations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the annotations of the page
+
+\begin{DoxyNote}{Note}
+If you call this method twice, you get different objects pointing to the same annotations (see \hyperlink{class_poppler_1_1_annotation}{Annotation}). The caller owns the returned objects and they should be deleted when no longer required. 
+\end{DoxyNote}
+
+
+Definition at line 714 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a46f2df75edea8d9fb0c59573304e1b99}\label{class_poppler_1_1_page_a46f2df75edea8d9fb0c59573304e1b99}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!annotations@{annotations}}
+\index{annotations@{annotations}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{annotations()}{annotations()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ Page\+::annotations (\begin{DoxyParamCaption}\item[{const Q\+Set$<$ \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Annotation\+::\+Sub\+Type} $>$ \&}]{subtypes }\end{DoxyParamCaption}) const}
+
+Returns the annotations of the page
+
+
+\begin{DoxyParams}{Parameters}
+{\em subtypes} & the subtypes of annotations you are interested in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you call this method twice, you get different objects pointing to the same annotations (see \hyperlink{class_poppler_1_1_annotation}{Annotation}). The caller owns the returned objects and they should be deleted when no longer required.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+28 
+\end{DoxySince}
+
+
+Definition at line 719 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a5028c2c7b89bcba5124d12f3c8de95ba}\label{class_poppler_1_1_page_a5028c2c7b89bcba5124d12f3c8de95ba}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!default\+C\+TM@{default\+C\+TM}}
+\index{default\+C\+TM@{default\+C\+TM}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{default\+C\+T\+M()}{defaultCTM()}}
+{\footnotesize\ttfamily void Page\+::default\+C\+TM (\begin{DoxyParamCaption}\item[{double $\ast$}]{C\+TM,  }\item[{double}]{dpiX,  }\item[{double}]{dpiY,  }\item[{int}]{rotate,  }\item[{bool}]{upside\+Down }\end{DoxyParamCaption})}
+
+The default C\+TM 
+
+Definition at line 700 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a7acb7886f86577c4abd5a32c794d36f8}\label{class_poppler_1_1_page_a7acb7886f86577c4abd5a32c794d36f8}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!duration@{duration}}
+\index{duration@{duration}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{duration()}{duration()}}
+{\footnotesize\ttfamily double Page\+::duration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the page duration. That is the time, in seconds, that the page should be displayed before the presentation automatically advances to the next page. Returns $<$ 0 if duration is not set.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 776 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_aa7073bd787eb01617a2b530557397a59}\label{class_poppler_1_1_page_aa7073bd787eb01617a2b530557397a59}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!form\+Fields@{form\+Fields}}
+\index{form\+Fields@{form\+Fields}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{form\+Fields()}{formFields()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_form_field}{Form\+Field} $\ast$ $>$ Page\+::form\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the form fields on the page The caller gets the ownership of the returned objects.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 734 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a7592a930424ad1e9a98565afb8cd61bf}\label{class_poppler_1_1_page_a7592a930424ad1e9a98565afb8cd61bf}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!label@{label}}
+\index{label@{label}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{label()}{label()}}
+{\footnotesize\ttfamily Q\+String Page\+::label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the label of the page, or a null string is the page has no label.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 781 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ac67e76e3cb301bba5c25e127cc47e0b8}\label{class_poppler_1_1_page_ac67e76e3cb301bba5c25e127cc47e0b8}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!links@{links}}
+\index{links@{links}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{links()}{links()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_link}{Link} $\ast$ $>$ Page\+::links (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the links of the page 
+
+Definition at line 705 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a168a4a6c452eb365a4cd7170d6a98e29}\label{class_poppler_1_1_page_a168a4a6c452eb365a4cd7170d6a98e29}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!orientation@{orientation}}
+\index{orientation@{orientation}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{orientation()}{orientation()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_page_a1075c38ddba641b4dc23ee4860302cc2}{Page\+::\+Orientation} Page\+::orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The orientation of the page 
+
+Definition at line 682 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ab8ec6ce478c903505f6b041200ba5f4a}\label{class_poppler_1_1_page_ab8ec6ce478c903505f6b041200ba5f4a}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!page\+Size@{page\+Size}}
+\index{page\+Size@{page\+Size}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{page\+Size()}{pageSize()}}
+{\footnotesize\ttfamily Q\+Size Page\+::page\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The dimensions (cropbox) of the page, in points (i.\+e. 1/72th of an inch) 
+\end{DoxyReturn}
+
+
+Definition at line 677 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a2493727bf6c299a6ce2bd9e1387417bd}\label{class_poppler_1_1_page_a2493727bf6c299a6ce2bd9e1387417bd}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!page\+SizeF@{page\+SizeF}}
+\index{page\+SizeF@{page\+SizeF}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{page\+Size\+F()}{pageSizeF()}}
+{\footnotesize\ttfamily Q\+SizeF Page\+::page\+SizeF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+The dimensions (cropbox) of the page, in points (i.\+e. 1/72th of an inch) 
+\end{DoxyReturn}
+
+
+Definition at line 667 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_af9f03e0b230b3f432a7f4672d3403a0f}\label{class_poppler_1_1_page_af9f03e0b230b3f432a7f4672d3403a0f}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!remove\+Annotation@{remove\+Annotation}}
+\index{remove\+Annotation@{remove\+Annotation}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{remove\+Annotation()}{removeAnnotation()}}
+{\footnotesize\ttfamily void Page\+::remove\+Annotation (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$}]{ann }\end{DoxyParamCaption})}
+
+Removes an annotation from the page and destroys the annotation object
+
+\begin{DoxyNote}{Note}
+There mustn\textquotesingle{}t be other \hyperlink{class_poppler_1_1_annotation}{Annotation} objects pointing this annotation 
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 729 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a204d8018439dabf54b3b6f80be843dc3}\label{class_poppler_1_1_page_a204d8018439dabf54b3b6f80be843dc3}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!render\+To\+Image@{render\+To\+Image}}
+\index{render\+To\+Image@{render\+To\+Image}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{render\+To\+Image()}{renderToImage()}}
+{\footnotesize\ttfamily Q\+Image Page\+::render\+To\+Image (\begin{DoxyParamCaption}\item[{double}]{xres = {\ttfamily 72.0},  }\item[{double}]{yres = {\ttfamily 72.0},  }\item[{int}]{x = {\ttfamily -\/1},  }\item[{int}]{y = {\ttfamily -\/1},  }\item[{int}]{w = {\ttfamily -\/1},  }\item[{int}]{h = {\ttfamily -\/1},  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Render the page to a Q\+Image using the current \hyperlink{class_poppler_1_1_document_ae9aefd54aa4b72dc46bea2c114a02cbe}{Document renderer}.
+
+If {\ttfamily x} = {\ttfamily y} = {\ttfamily w} = {\ttfamily h} = -\/1, the method will automatically compute the size of the image from the horizontal and vertical resolutions specified in {\ttfamily xres} and {\ttfamily yres}. Otherwise, the method renders only a part of the page, specified by the parameters ({\ttfamily x}, {\ttfamily y}, {\ttfamily w}, {\ttfamily h}) in pixel coordinates. The returned Q\+Image then has size ({\ttfamily w}, {\ttfamily h}), independent of the page size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & specifies the left x-\/coordinate of the box, in pixels.\\
+\hline
+{\em y} & specifies the top y-\/coordinate of the box, in pixels.\\
+\hline
+{\em w} & specifies the width of the box, in pixels.\\
+\hline
+{\em h} & specifies the height of the box, in pixels.\\
+\hline
+{\em xres} & horizontal resolution of the graphics device, in dots per inch\\
+\hline
+{\em yres} & vertical resolution of the graphics device, in dots per inch\\
+\hline
+{\em rotate} & how to rotate the page\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The parameter ({\ttfamily x}, {\ttfamily y}, {\ttfamily w}, {\ttfamily h}) are not well-\/tested. Unusual or meaningless parameters may lead to rather unexpected results.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+a Q\+Image of the page, or a null image on failure.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 291 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a006c33318200e2aad87022b43de6ad1f}\label{class_poppler_1_1_page_a006c33318200e2aad87022b43de6ad1f}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!render\+To\+Painter@{render\+To\+Painter}}
+\index{render\+To\+Painter@{render\+To\+Painter}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{render\+To\+Painter()}{renderToPainter()}}
+{\footnotesize\ttfamily bool Page\+::render\+To\+Painter (\begin{DoxyParamCaption}\item[{Q\+Painter $\ast$}]{painter,  }\item[{double}]{xres = {\ttfamily 72.0},  }\item[{double}]{yres = {\ttfamily 72.0},  }\item[{int}]{x = {\ttfamily -\/1},  }\item[{int}]{y = {\ttfamily -\/1},  }\item[{int}]{w = {\ttfamily -\/1},  }\item[{int}]{h = {\ttfamily -\/1},  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}},  }\item[{Painter\+Flags}]{flags = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Render the page to the specified Q\+Painter using the current \hyperlink{class_poppler_1_1_document_ae9aefd54aa4b72dc46bea2c114a02cbe}{Document renderer}.
+
+If {\ttfamily x} = {\ttfamily y} = {\ttfamily w} = {\ttfamily h} = -\/1, the method will automatically compute the size of the page area from the horizontal and vertical resolutions specified in {\ttfamily xres} and {\ttfamily yres}. Otherwise, the method renders only a part of the page, specified by the parameters ({\ttfamily x}, {\ttfamily y}, {\ttfamily w}, {\ttfamily h}) in pixel coordinates.
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & the painter to paint on\\
+\hline
+{\em x} & specifies the left x-\/coordinate of the box, in pixels.\\
+\hline
+{\em y} & specifies the top y-\/coordinate of the box, in pixels.\\
+\hline
+{\em w} & specifies the width of the box, in pixels.\\
+\hline
+{\em h} & specifies the height of the box, in pixels.\\
+\hline
+{\em xres} & horizontal resolution of the graphics device, in dots per inch\\
+\hline
+{\em yres} & vertical resolution of the graphics device, in dots per inch\\
+\hline
+{\em rotate} & how to rotate the page\\
+\hline
+{\em flags} & additional painter flags\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+The parameter ({\ttfamily x}, {\ttfamily y}, {\ttfamily w}, {\ttfamily h}) are not well-\/tested. Unusual or meaningless parameters may lead to rather unexpected results.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+whether the painting succeeded
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This method is only supported for Arthur
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+
+
+Definition at line 417 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_afc757aa670b4e16e7fd64c5b998c5e9f}\label{class_poppler_1_1_page_afc757aa670b4e16e7fd64c5b998c5e9f}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!search@{search}}
+\index{search@{search}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Page\+::search (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text,  }\item[{double \&}]{rect\+Left,  }\item[{double \&}]{rect\+Top,  }\item[{double \&}]{rect\+Right,  }\item[{double \&}]{rect\+Bottom,  }\item[{\hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Search\+Direction}}]{direction,  }\item[{\hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Search\+Mode}}]{case\+Sensitive,  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Returns true if the specified text was found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text the search \\
+\hline
+{\em rect\+X\+XX} & in all directions is used to return where the text was found, for Next\+Result and Previous\+Result indicates where to continue searching for \\
+\hline
+{\em direction} & in which direction do the search \\
+\hline
+{\em case\+Sensitive} & be case sensitive? \\
+\hline
+{\em rotate} & the rotation to apply for the search order \\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+14 
+\end{DoxySince}
+
+
+Definition at line 510 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a4a631b42cef039ef38e0e0131e845e75}\label{class_poppler_1_1_page_a4a631b42cef039ef38e0e0131e845e75}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!search@{search}}
+\index{search@{search}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Page\+::search (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text,  }\item[{double \&}]{rect\+Left,  }\item[{double \&}]{rect\+Top,  }\item[{double \&}]{rect\+Right,  }\item[{double \&}]{rect\+Bottom,  }\item[{\hyperlink{class_poppler_1_1_page_a693343ece22aa954a6357e97625e7c93}{Search\+Direction}}]{direction,  }\item[{Search\+Flags}]{flags = {\ttfamily 0},  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Returns true if the specified text was found.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text the search \\
+\hline
+{\em rect\+X\+XX} & in all directions is used to return where the text was found, for Next\+Result and Previous\+Result indicates where to continue searching for \\
+\hline
+{\em direction} & in which direction do the search \\
+\hline
+{\em flags} & the flags to consider during matching \\
+\hline
+{\em rotate} & the rotation to apply for the search order\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+31 
+\end{DoxySince}
+
+
+Definition at line 524 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a915e7bd24ca1a801c7c3f333790eb6bd}\label{class_poppler_1_1_page_a915e7bd24ca1a801c7c3f333790eb6bd}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!search@{search}}
+\index{search@{search}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Q\+List$<$ Q\+RectF $>$ Page\+::search (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text,  }\item[{\hyperlink{class_poppler_1_1_page_ab14d06b2fea7e363fc10877e7f0c759a}{Search\+Mode}}]{case\+Sensitive,  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Returns a list of all occurrences of the specified text on the page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to search \\
+\hline
+{\em case\+Sensitive} & whether to be case sensitive \\
+\hline
+{\em rotate} & the rotation to apply for the search order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Do not use the returned Q\+RectF as arguments of another search call because of truncation issues if qreal is defined as float.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+
+
+Definition at line 539 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ad15b7f8792bf09a385daeae40e1f6d0b}\label{class_poppler_1_1_page_ad15b7f8792bf09a385daeae40e1f6d0b}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!search@{search}}
+\index{search@{search}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{search()}{search()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Q\+List$<$ Q\+RectF $>$ Page\+::search (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{text,  }\item[{Search\+Flags}]{flags = {\ttfamily 0},  }\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Returns a list of all occurrences of the specified text on the page.
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to search \\
+\hline
+{\em flags} & the flags to consider during matching \\
+\hline
+{\em rotate} & the rotation to apply for the search order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Do not use the returned Q\+RectF as arguments of another search call because of truncation issues if qreal is defined as float.
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+0.\+31 
+\end{DoxySince}
+
+
+Definition at line 553 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}\label{class_poppler_1_1_page_afbf36f00fbfd391b131ed3cb8fb9b848}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!text@{text}}
+\index{text@{text}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{text()}{text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+String Page\+::text (\begin{DoxyParamCaption}\item[{const Q\+RectF \&}]{rect,  }\item[{\hyperlink{class_poppler_1_1_page_ac2fe47d36367d63d78f493bec5ea0450}{Text\+Layout}}]{text\+Layout }\end{DoxyParamCaption}) const}
+
+Returns the text that is inside a specified rectangle
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & the rectangle specifying the area of interest, with coordinates given in points, i.\+e., 1/72th of an inch. If rect is null, all text on the page is given\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+
+
+Definition at line 476 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_ad13d243914477ea1da81df435b64a87d}\label{class_poppler_1_1_page_ad13d243914477ea1da81df435b64a87d}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!text@{text}}
+\index{text@{text}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{text()}{text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+String Page\+::text (\begin{DoxyParamCaption}\item[{const Q\+RectF \&}]{rect }\end{DoxyParamCaption}) const}
+
+Returns the text that is inside a specified rectangle. The text is returned using the physical layout of the page
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & the rectangle specifying the area of interest, with coordinates given in points, i.\+e., 1/72th of an inch. If rect is null, all text on the page is given \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 505 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a90a0d1665c9298f25c573617ca859c43}\label{class_poppler_1_1_page_a90a0d1665c9298f25c573617ca859c43}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!text\+List@{text\+List}}
+\index{text\+List@{text\+List}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{text\+List()}{textList()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_text_box}{Text\+Box} $\ast$ $>$ Page\+::text\+List (\begin{DoxyParamCaption}\item[{\hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Rotation}}]{rotate = {\ttfamily \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0eca6bd60f29c8d73b686ceb2030964823db}{Rotate0}} }\end{DoxyParamCaption}) const}
+
+Returns a list of text of the page
+
+This method returns a Q\+List of Text\+Boxes that contain all the text of the page, with roughly one text word of text per \hyperlink{class_poppler_1_1_text_box}{Text\+Box} item.
+
+For text written in western languages (left-\/to-\/right and up-\/to-\/down), the Q\+List contains the text in the proper order.
+
+\begin{DoxyNote}{Note}
+The caller owns the text boxes and they should be deleted when no longer required.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This method is not tested with Asian scripts 
+\end{DoxyWarning}
+
+
+Definition at line 568 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_a151c6caf7c0699f776108d2800b33ece}\label{class_poppler_1_1_page_a151c6caf7c0699f776108d2800b33ece}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!thumbnail@{thumbnail}}
+\index{thumbnail@{thumbnail}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{thumbnail()}{thumbnail()}}
+{\footnotesize\ttfamily Q\+Image Page\+::thumbnail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the page thumbnail if it exists.
+
+\begin{DoxyReturn}{Returns}
+a Q\+Image of the thumbnail, or a null image if the P\+DF does not contain one for this page
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 458 of file poppler-\/page.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_page_aff7331566a9cbf659f625f73ee05f746}\label{class_poppler_1_1_page_aff7331566a9cbf659f625f73ee05f746}} 
+\index{Poppler\+::\+Page@{Poppler\+::\+Page}!transition@{transition}}
+\index{transition@{transition}!Poppler\+::\+Page@{Poppler\+::\+Page}}
+\subsubsection{\texorpdfstring{transition()}{transition()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_page_transition}{Page\+Transition} $\ast$ Page\+::transition (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Returns the transition of this page
+
+\begin{DoxyReturn}{Returns}
+a pointer to a \hyperlink{class_poppler_1_1_page_transition}{Page\+Transition} structure that defines how transition to this page shall be performed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The \hyperlink{class_poppler_1_1_page_transition}{Page\+Transition} structure is owned by this page, and will automatically be destroyed when this page class is destroyed. 
+\end{DoxyNote}
+
+
+Definition at line 626 of file poppler-\/page.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/qt5.\+h\item 
+thirdparty/poppler/qt5/poppler-\/page.\+cc\end{DoxyCompactItemize}

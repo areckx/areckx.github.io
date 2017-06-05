@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="scrollbarengine_8cpp" kind="file" language="C++">
+    <compoundname>scrollbarengine.cpp</compoundname>
+    <includes refid="scrollbarengine_8h" local="yes">scrollbarengine.h</includes>
+    <incdepgraph>
+      <node id="71180">
+        <label>animationdata.h</label>
+        <link refid="animationdata_8h_source"/>
+        <childnode refid="71181" relation="include">
+        </childnode>
+      </node>
+      <node id="71174">
+        <label>scrollbarengine.h</label>
+        <link refid="scrollbarengine_8h_source"/>
+        <childnode refid="71175" relation="include">
+        </childnode>
+        <childnode refid="71176" relation="include">
+        </childnode>
+        <childnode refid="71177" relation="include">
+        </childnode>
+      </node>
+      <node id="71177">
+        <label>scrollbardata.h</label>
+        <link refid="scrollbardata_8h_source"/>
+        <childnode refid="71178" relation="include">
+        </childnode>
+      </node>
+      <node id="71175">
+        <label>baseengine.h</label>
+        <link refid="baseengine_8h_source"/>
+      </node>
+      <node id="71176">
+        <label>datamap.h</label>
+        <link refid="datamap_8h_source"/>
+      </node>
+      <node id="71179">
+        <label>genericdata.h</label>
+        <link refid="genericdata_8h_source"/>
+        <childnode refid="71180" relation="include">
+        </childnode>
+        <childnode refid="71181" relation="include">
+        </childnode>
+      </node>
+      <node id="71173">
+        <label>mstyle/scrollbarengine.cpp</label>
+        <link refid="scrollbarengine_8cpp"/>
+        <childnode refid="71174" relation="include">
+        </childnode>
+      </node>
+      <node id="71181">
+        <label>animation.h</label>
+        <link refid="animation_8h_source"/>
+      </node>
+      <node id="71178">
+        <label>sliderdata.h</label>
+        <link refid="sliderdata_8h_source"/>
+        <childnode refid="71179" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>oxygenscrollbarengine.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stores<sp/>event<sp/>filters<sp/>and<sp/>maps<sp/>widgets<sp/>to<sp/>timelines<sp/>for<sp/>animations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2009<sp/>Hugo<sp/>Pereira<sp/>Da<sp/>Costa<sp/>&lt;hugo.pereira@free.fr&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;scrollbarengine.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_scroll_bar_engine_1a99af25cf0ca2c050ef1f7e32f0292c24" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_scroll_bar_engine_1a99af25cf0ca2c050ef1f7e32f0292c24" kindref="member">ScrollBarEngine::registerWidget</ref>(<sp/>QWidget*<sp/>widget<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>widget</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>note:<sp/>widget<sp/>is<sp/>registered<sp/>even<sp/>if<sp/>animation<sp/>is<sp/>disabled<sp/>because<sp/>OxygenScrollBarData</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>also<sp/>used<sp/>in<sp/>non-animated<sp/>mode<sp/>to<sp/>store<sp/>arrow<sp/>rect<sp/>for<sp/>hover<sp/>highlight</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!widget<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>new<sp/>data<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data_.contains(<sp/>widget<sp/>)<sp/>)<sp/>data_.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>widget,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_scroll_bar_data" kindref="compound">ScrollBarData</ref>(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>widget,<sp/><ref refid="class_base_engine_1a7edb8da9d2fd6cca19682d1d089dfa4b" kindref="member">duration</ref>()<sp/>),<sp/><ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>destruction<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>connect(<sp/>widget,<sp/>SIGNAL(<sp/>destroyed(<sp/>QObject*<sp/>)<sp/>),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<sp/><ref refid="class_scroll_bar_engine_1ac80b563a4cfe675e364621819b377e0f" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/>)<sp/>),<sp/>Qt::UniqueConnection<sp/>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_scroll_bar_engine_1a8fd83dda0e5287c031fb8e7ef1030d49" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_scroll_bar_engine_1a8fd83dda0e5287c031fb8e7ef1030d49" kindref="member">ScrollBarEngine::isAnimated</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>QStyle::SubControl<sp/>control<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ScrollBarData&gt;::Value</ref><sp/>data<sp/>=<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_animation_1ac48a8d074abd43dc3f6485353ba24e30" kindref="member">Animation::Pointer</ref><sp/>animation<sp/>=<sp/>data.data()-&gt;animation(<sp/>control<sp/>)<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>animation.data()-&gt;isRunning();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="mstyle/scrollbarengine.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,277 @@
+.TH "SplashOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SplashOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashOutputDev\fP (SplashColorMode colorModeA, int bitmapRowPadA, GBool reverseVideoA, SplashColorPtr paperColorA, GBool bitmapTopDownA=gTrue, SplashThinLineMode thinLineMode=splashThinLineDefault, GBool overprintPreviewA=globalParams\->getOverprintPreview())"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseTilingPatternFill\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseShadedFills\fP (int type)"
+.br
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateAll\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCTM\fP (\fBGfxState\fP *state, double m11, double m12, double m21, double m22, double m31, double m32)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineDash\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFlatness\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineJoin\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineCap\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMiterLimit\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineWidth\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeAdjust\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColorSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColorSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateBlendMode\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdatePatternOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclearPatternOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOverprint\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOverprint\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateOverprintMode\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateTransfer\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBtilingPatternFill\fP (\fBGfxState\fP *state, \fBGfx\fP *gfx, \fBCatalog\fP *catalog, \fBObject\fP *str, double *pmat, int paintType, int tilingType, \fBDict\fP *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)"
+.br
+.ti -1c
+.RI "virtual GBool \fBfunctionShadedFill\fP (\fBGfxState\fP *state, \fBGfxFunctionShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedFill\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedFill\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBgouraudTriangleShadedFill\fP (\fBGfxState\fP *state, \fBGfxGouraudTriangleShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclipToStrokePath\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawChar\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual GBool \fBbeginType3Char\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual void \fBendType3Char\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBendTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool inlineImg, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBunsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawSoftMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, \fBGfxImageColorMap\fP *maskColorMap, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D0\fP (\fBGfxState\fP *state, double wx, double wy)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D1\fP (\fBGfxState\fP *state, double wx, double wy, double llx, double lly, double urx, double ury)"
+.br
+.ti -1c
+.RI "virtual GBool \fBcheckTransparencyGroup\fP (\fBGfxState\fP *state, GBool knockout)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTransparencyGroup\fP (\fBGfxState\fP *state, double *bbox, \fBGfxColorSpace\fP *blendingColorSpace, GBool isolated, GBool knockout, GBool forSoftMask)"
+.br
+.ti -1c
+.RI "virtual void \fBendTransparencyGroup\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBpaintTransparencyGroup\fP (\fBGfxState\fP *state, double *bbox)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMask\fP (\fBGfxState\fP *state, double *bbox, GBool alpha, \fBFunction\fP *transferFunc, \fBGfxColor\fP *backdropColor)"
+.br
+.ti -1c
+.RI "virtual void \fBclearSoftMask\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBstartDoc\fP (\fBPDFDoc\fP *docA)"
+.br
+.ti -1c
+.RI "void \fBsetPaperColor\fP (SplashColorPtr paperColorA)"
+.br
+.ti -1c
+.RI "GBool \fBisReverseVideo\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetReverseVideo\fP (GBool reverseVideoA)"
+.br
+.ti -1c
+.RI "\fBSplashBitmap\fP * \fBgetBitmap\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetBitmapWidth\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetBitmapHeight\fP ()"
+.br
+.ti -1c
+.RI "\fBSplashBitmap\fP * \fBtakeBitmap\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBitmapUpsideDown\fP (GBool f)"
+.br
+.ti -1c
+.RI "\fBSplash\fP * \fBgetSplash\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetModRegion\fP (int *xMin, int *yMin, int *xMax, int *yMax)"
+.br
+.ti -1c
+.RI "void \fBclearModRegion\fP ()"
+.br
+.ti -1c
+.RI "\fBSplashFont\fP * \fBgetCurrentFont\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSkipText\fP (GBool skipHorizTextA, GBool skipRotatedTextA)"
+.br
+.ti -1c
+.RI "int \fBgetNestCount\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBgetVectorAntialias\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetVectorAntialias\fP (GBool vaa)"
+.br
+.ti -1c
+.RI "GBool \fBgetFontAntialias\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetFontAntialias\fP (GBool anti)"
+.br
+.ti -1c
+.RI "void \fBsetFreeTypeHinting\fP (GBool enable, GBool enableSlightHinting)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdoUpdateFont\fP (\fBGfxState\fP *state)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 195 of file SplashOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

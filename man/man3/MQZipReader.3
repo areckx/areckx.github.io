@@ -1,0 +1,135 @@
+.TH "MQZipReader" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MQZipReader
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBFileInfo\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBStatus\fP { \fBNoError\fP, \fBFileReadError\fP, \fBFileOpenError\fP, \fBFilePermissionsError\fP, \fBFileError\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMQZipReader\fP (const QString &fileName, QIODevice::OpenMode mode=QIODevice::ReadOnly)"
+.br
+.ti -1c
+.RI "\fBMQZipReader\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "\fB~MQZipReader\fP ()"
+.br
+.ti -1c
+.RI "QIODevice * \fBdevice\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisReadable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBexists\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBFileInfo\fP > \fBfileInfoList\fP () const"
+.br
+.ti -1c
+.RI "int \fBcount\fP () const"
+.br
+.ti -1c
+.RI "\fBFileInfo\fP \fBentryInfoAt\fP (int index) const"
+.br
+.ti -1c
+.RI "QByteArray \fBfileData\fP (const QString &fileName) const"
+.br
+.ti -1c
+.RI "bool \fBextractAll\fP (const QString &destinationDir) const"
+.br
+.ti -1c
+.RI "Status \fBstatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 66 of file qzipreader_p\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MQZipReader::MQZipReader (const QString & archive, QIODevice::OpenMode mode = \fCQIODevice::ReadOnly\fP)"
+Create a new zip archive that operates on the \fIfileName\fP\&. The file will be opened with the \fImode\fP\&. 
+.PP
+Definition at line 736 of file qzip\&.cpp\&.
+.SS "MQZipReader::MQZipReader (QIODevice * device)\fC [explicit]\fP"
+Create a new zip archive that operates on the archive found in \fIdevice\fP\&. You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent\&. 
+.PP
+Definition at line 764 of file qzip\&.cpp\&.
+.SS "MQZipReader::~MQZipReader ()"
+Desctructor 
+.PP
+Definition at line 773 of file qzip\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MQZipReader::close ()"
+Close the zip file\&. 
+.PP
+Definition at line 996 of file qzip\&.cpp\&.
+.SS "int MQZipReader::count () const"
+Return the number of items in the zip archive\&. 
+.PP
+Definition at line 825 of file qzip\&.cpp\&.
+.SS "QIODevice * MQZipReader::device () const"
+Returns device used for reading zip archive\&. 
+.PP
+Definition at line 782 of file qzip\&.cpp\&.
+.SS "\fBMQZipReader::FileInfo\fP MQZipReader::entryInfoAt (int index) const"
+Returns a \fBFileInfo\fP of an entry in the zipfile\&. The \fIindex\fP is the index into the directory listing of the zipfile\&. Returns an invalid \fBFileInfo\fP if \fIindex\fP is out of boundaries\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBfileInfoList()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 838 of file qzip\&.cpp\&.
+.SS "bool MQZipReader::exists () const"
+Returns true if the file exists; otherwise returns false\&. 
+.PP
+Definition at line 798 of file qzip\&.cpp\&.
+.SS "bool MQZipReader::extractAll (const QString & destinationDir) const"
+Extracts the full contents of the zip file into \fIdestinationDir\fP on the local filesystem\&. In case writing or linking a file fails, the extraction will be aborted\&. 
+.PP
+Definition at line 922 of file qzip\&.cpp\&.
+.SS "QByteArray MQZipReader::fileData (const QString & fileName) const"
+Fetch the file contents from the zip archive and return the uncompressed bytes\&. 
+.PP
+Definition at line 850 of file qzip\&.cpp\&.
+.SS "QList< \fBMQZipReader::FileInfo\fP > MQZipReader::fileInfoList () const"
+Returns the list of files the archive contains\&. 
+.PP
+Definition at line 809 of file qzip\&.cpp\&.
+.SS "bool MQZipReader::isReadable () const"
+Returns true if the user can read the file; otherwise returns false\&. 
+.PP
+Definition at line 790 of file qzip\&.cpp\&.
+.SS "MQZipReader::Status MQZipReader::status () const"
+Returns a status code indicating the first error that was met by \fBQZipReader\fP, or QZipReader::NoError if no error occurred\&. 
+.PP
+Definition at line 988 of file qzip\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

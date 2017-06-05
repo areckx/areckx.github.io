@@ -1,0 +1,703 @@
+.TH "Ms::MuseScore" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MuseScore
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QMainWindow, and \fBMs::MuseScoreCore\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBcmd\fP (QAction *a)"
+.br
+.ti -1c
+.RI "void \fBdirtyChanged\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBpluginTriggered\fP (int)"
+.br
+.ti -1c
+.RI "void \fBhandleMessage\fP (const QString &message)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentScoreView\fP (\fBScoreView\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetCurrentScoreView\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetNormalState\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPlayState\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetNoteEntryState\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckForUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBmidiNoteReceived\fP (int channel, int pitch, int velo)"
+.br
+.ti -1c
+.RI "void \fBmidiNoteReceived\fP (int pitch, bool ctrl, int velo)"
+.br
+.ti -1c
+.RI "void \fBinstrumentChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowMasterPalette\fP (const QString &=0)"
+.br
+.ti -1c
+.RI "void \fBselectionChanged\fP (SelState)"
+.br
+.ti -1c
+.RI "void \fBcreateNewWorkspace\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeWorkspace\fP (\fBWorkspace\fP *p)"
+.br
+.ti -1c
+.RI "void \fBmixerPreferencesChanged\fP (bool showMidiControls)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcheckDirty\fP (\fBMasterScore\fP *)"
+.br
+.ti -1c
+.RI "\fBPlayPanel\fP * \fBgetPlayPanel\fP () const"
+.br
+.ti -1c
+.RI "\fBMixer\fP * \fBgetMixer\fP () const"
+.br
+.ti -1c
+.RI "QMenu * \fBgenCreateMenu\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "virtual int \fBappendScore\fP (\fBMasterScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBmidiCtrlReceived\fP (int controller, int value)"
+.br
+.ti -1c
+.RI "void \fBshowElementContext\fP (\fBElement\fP *el)"
+.br
+.ti -1c
+.RI "void \fBcmdAppendMeasures\fP (int)"
+.br
+.ti -1c
+.RI "bool \fBmidiinEnabled\fP () const"
+.br
+.ti -1c
+.RI "void \fBincMag\fP ()"
+.br
+.ti -1c
+.RI "void \fBdecMag\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadSettings\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteSettings\fP ()"
+.br
+.ti -1c
+.RI "void \fBplay\fP (\fBElement\fP *e) const"
+.br
+.ti -1c
+.RI "void \fBplay\fP (\fBElement\fP *e, int pitch) const"
+.br
+.ti -1c
+.RI "bool \fBloadPlugin\fP (const QString &filename)"
+.br
+.ti -1c
+.RI "QString \fBcreateDefaultName\fP () const"
+.br
+.ti -1c
+.RI "void \fBstartAutoSave\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMag\fP (\fBScoreView\fP *) const"
+.br
+.ti -1c
+.RI "void \fBsetMag\fP (double)"
+.br
+.ti -1c
+.RI "bool \fBnoScore\fP () const"
+.br
+.ti -1c
+.RI "\fBTextTools\fP * \fBtextTools\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowDrumTools\fP (const \fBDrumset\fP *, \fBStaff\fP *)"
+.br
+.ti -1c
+.RI "void \fBupdateDrumTools\fP (const \fBDrumset\fP *ds)"
+.br
+.ti -1c
+.RI "void \fBshowPluginCreator\fP (QAction *)"
+.br
+.ti -1c
+.RI "void \fBshowPluginManager\fP ()"
+.br
+.ti -1c
+.RI "QProgressBar * \fBshowProgressBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBhideProgressBar\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddRecentScore\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "QFileDialog * \fBsaveAsDialog\fP ()"
+.br
+.ti -1c
+.RI "QFileDialog * \fBsaveCopyDialog\fP ()"
+.br
+.ti -1c
+.RI "\fBSynthControl\fP * \fBgetSynthControl\fP () const"
+.br
+.ti -1c
+.RI "void \fBeditInPianoroll\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "void \fBeditInDrumroll\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "\fBPianorollEditor\fP * \fBgetPianorollEditor\fP () const"
+.br
+.ti -1c
+.RI "\fBDrumrollEditor\fP * \fBgetDrumrollEditor\fP () const"
+.br
+.ti -1c
+.RI "\fBPianoTools\fP * \fBpianoTools\fP () const"
+.br
+.ti -1c
+.RI "void \fBwriteSessionFile\fP (bool)"
+.br
+.ti -1c
+.RI "bool \fBrestoreSession\fP (bool)"
+.br
+.ti -1c
+.RI "bool \fBsplitScreen\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetCurrentView\fP (int tabIdx, int idx)"
+.br
+.ti -1c
+.RI "void \fBloadPlugins\fP ()"
+.br
+.ti -1c
+.RI "void \fBunloadPlugins\fP ()"
+.br
+.ti -1c
+.RI "ScoreState \fBstate\fP () const"
+.br
+.ti -1c
+.RI "void \fBchangeState\fP (ScoreState)"
+.br
+.ti -1c
+.RI "void \fBupdateInputState\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBupdateShadowNote\fP ()"
+.br
+.ti -1c
+.RI "bool \fBreadLanguages\fP (const QString &path)"
+.br
+.ti -1c
+.RI "void \fBsetRevision\fP (QString &r)"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBrevision\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBversion\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBnewFile\fP ()"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBgetNewFile\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBloadFile\fP (const QString &url)"
+.br
+.ti -1c
+.RI "void \fBloadFile\fP (const QUrl &)"
+.br
+.ti -1c
+.RI "QNetworkAccessManager * \fBnetworkManager\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBScore\fP * \fBopenScore\fP (const QString &fn)"
+.br
+.ti -1c
+.RI "bool \fBhasToCheckForUpdate\fP ()"
+.br
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.ti -1c
+.RI "void \fBsetMidiRecordId\fP (int id)"
+.br
+.ti -1c
+.RI "int \fBmidiRecordId\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAdvancedPalette\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBasicPalette\fP ()"
+.br
+.ti -1c
+.RI "void \fBscorePageLayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "bool \fBprocessMidiRemote\fP (MidiRemoteType type, int data, int value)"
+.br
+.ti -1c
+.RI "\fBScoreTab\fP * \fBgetTab1\fP () const"
+.br
+.ti -1c
+.RI "\fBScoreTab\fP * \fBgetTab2\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBLanguageItem\fP > & \fBlanguages\fP ()"
+.br
+.ti -1c
+.RI "QStringList \fBgetOpenScoreNames\fP (const QString &filter, const QString &title)"
+.br
+.ti -1c
+.RI "QString \fBgetSaveScoreName\fP (const QString &title, QString &name, const QString &filter, bool folder=false)"
+.br
+.ti -1c
+.RI "QString \fBgetStyleFilename\fP (bool open, const QString &title=QString())"
+.br
+.ti -1c
+.RI "QString \fBgetFotoFilename\fP (QString &filter, QString *selectedFilter)"
+.br
+.ti -1c
+.RI "QString \fBgetChordStyleFilename\fP (bool open)"
+.br
+.ti -1c
+.RI "QString \fBgetScanFile\fP (const QString &)"
+.br
+.ti -1c
+.RI "QString \fBgetAudioFile\fP (const QString &)"
+.br
+.ti -1c
+.RI "QString \fBgetDrumsetFilename\fP (bool open)"
+.br
+.ti -1c
+.RI "QString \fBgetPluginFilename\fP (bool open)"
+.br
+.ti -1c
+.RI "QString \fBgetPaletteFilename\fP (bool open, const QString &name='')"
+.br
+.ti -1c
+.RI "QString \fBgetWallpaper\fP (const QString &caption)"
+.br
+.ti -1c
+.RI "bool \fBhRaster\fP () const"
+.br
+.ti -1c
+.RI "bool \fBvRaster\fP () const"
+.br
+.ti -1c
+.RI "\fBPaletteBox\fP * \fBgetPaletteBox\fP ()"
+.br
+.ti -1c
+.RI "void \fBdisableCommands\fP (bool val)"
+.br
+.ti -1c
+.RI "\fBTuplet\fP * \fBtupletDialog\fP ()"
+.br
+.ti -1c
+.RI "void \fBselectSimilar\fP (\fBElement\fP *, bool)"
+.br
+.ti -1c
+.RI "void \fBselectSimilarInRange\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBselectElementDialog\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBtranspose\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBopenExternalLink\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual void \fBendCmd\fP () override"
+.br
+.ti -1c
+.RI "void \fBprintFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBexportFile\fP ()"
+.br
+.ti -1c
+.RI "bool \fBexportParts\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBsaveAs\fP (\fBScore\fP *, bool saveCopy, const QString &path, const QString &ext)"
+.br
+.ti -1c
+.RI "bool \fBsavePdf\fP (const QString &saveName)"
+.br
+.ti -1c
+.RI "bool \fBsavePdf\fP (\fBScore\fP *cs, const QString &saveName)"
+.br
+.ti -1c
+.RI "bool \fBsavePdf\fP (QList< \fBScore\fP *> cs, const QString &saveName)"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBreadScore\fP (const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBsaveAs\fP (\fBScore\fP *, bool saveCopy=false)"
+.br
+.ti -1c
+.RI "bool \fBsaveSelection\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddImage\fP (\fBScore\fP *, \fBElement\fP *)"
+.br
+.ti -1c
+.RI "bool \fBsavePng\fP (\fBScore\fP *, const QString &name, bool screenshot, bool transparent, double convDpi, int trimMargin, QImage::Format format)"
+.br
+.ti -1c
+.RI "bool \fBsaveAudio\fP (\fBScore\fP *, QIODevice *device, std::function< bool(float)> updateProgress=nullptr)"
+.br
+.RI "\fBFunction\fP to synthesize audio and output it into a generic QIODevice\&. "
+.ti -1c
+.RI "bool \fBsaveAudio\fP (\fBScore\fP *, const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBcanSaveMp3\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsaveMp3\fP (\fBScore\fP *, const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBsaveSvg\fP (\fBScore\fP *, const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBsavePng\fP (\fBScore\fP *, const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBsaveMidi\fP (\fBScore\fP *score, const QString &name)"
+.br
+.ti -1c
+.RI "virtual void \fBcloseScore\fP (\fBScore\fP *score)"
+.br
+.ti -1c
+.RI "void \fBaddTempo\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddMetronome\fP ()"
+.br
+.ti -1c
+.RI "\fBSynthesizerState\fP \fBsynthesizerState\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBgetLocaleISOCode\fP () const"
+.br
+.ti -1c
+.RI "\fBNavigator\fP * \fBnavigator\fP () const"
+.br
+.ti -1c
+.RI "\fBNScrollArea\fP * \fBnavigatorScrollArea\fP () const"
+.br
+.ti -1c
+.RI "QWidget * \fBsearchDialog\fP () const"
+.br
+.ti -1c
+.RI "\fBSelectionWindow\fP * \fBgetSelectionWindow\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdateLayer\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdatePlayMode\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloop\fP () const"
+.br
+.ti -1c
+.RI "bool \fBmetronome\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcountIn\fP () const"
+.br
+.ti -1c
+.RI "bool \fBpanDuringPlayback\fP () const"
+.br
+.ti -1c
+.RI "void \fBnoteTooShortForTupletDialog\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadFiles\fP ()"
+.br
+.ti -1c
+.RI "void \fBmidiPanelOnSwitchToFile\fP (const QString &file)"
+.br
+.ti -1c
+.RI "void \fBmidiPanelOnCloseFile\fP (const QString &file)"
+.br
+.ti -1c
+.RI "void \fBallowShowMidiPanel\fP (const QString &file)"
+.br
+.ti -1c
+.RI "void \fBsetMidiReopenInProgress\fP (const QString &file)"
+.br
+.ti -1c
+.RI "\fBInspector\fP * \fBinspector\fP ()"
+.br
+.ti -1c
+.RI "\fBPluginCreator\fP * \fBpluginCreator\fP ()"
+.br
+.ti -1c
+.RI "\fBScoreView\fP * \fBcurrentScoreView\fP () const"
+.br
+.ti -1c
+.RI "QToolButton * \fBplayButton\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowMessage\fP (const QString &s, int timeout)"
+.br
+.ti -1c
+.RI "void \fBshowHelp\fP (QString)"
+.br
+.ti -1c
+.RI "void \fBshowContextHelp\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowHelp\fP (const QUrl &)"
+.br
+.ti -1c
+.RI "void \fBregisterPlugin\fP (\fBPluginDescription\fP *)"
+.br
+.ti -1c
+.RI "void \fBunregisterPlugin\fP (\fBPluginDescription\fP *)"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBshowStartcenter\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBshowPlayPanel\fP (bool)"
+.br
+.ti -1c
+.RI "QFileInfoList \fBrecentScores\fP () const"
+.br
+.ti -1c
+.RI "void \fBsaveDialogState\fP (const char *name, QFileDialog *d)"
+.br
+.ti -1c
+.RI "void \fBrestoreDialogState\fP (const char *name, QFileDialog *d)"
+.br
+.ti -1c
+.RI "QPixmap \fBextractThumbnail\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBshowLoginDialog\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowUploadScoreDialog\fP ()"
+.br
+.ti -1c
+.RI "\fBLoginManager\fP * \fBloginManager\fP ()"
+.br
+.ti -1c
+.RI "QHelpEngine * \fBhelpEngine\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdateInspector\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowSynthControl\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBshowMixer\fP (bool)"
+.br
+.ti -1c
+.RI "qreal \fBphysicalDotsPerInch\fP () const"
+.br
+.ti -1c
+.RI "std::list< const char * > * \fBnoteInputMenuEntries\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetNoteInputMenuEntries\fP (std::list< const char *> l)"
+.br
+.ti -1c
+.RI "void \fBpopulateNoteInputMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBshowError\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBunstable\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewTempoPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewTextPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewTimePalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewRepeatsPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBreaksPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBeamPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewDynamicsPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewFramePalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewFingeringPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewTremoloPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewNoteHeadsPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewArticulationsPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewOrnamentsPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewAccordionPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBracketsPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBreathPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewArpeggioPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewClefsPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewGraceNotePalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBagpipeEmbellishmentPalette\fP ()"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewKeySigPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewAccidentalsPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewBarLinePalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewLinesPalette\fP (PaletteType)"
+.br
+.ti -1c
+.RI "static \fBPalette\fP * \fBnewFretboardDiagramPalette\fP ()"
+.br
+.ti -1c
+.RI "static const std::list< const char * > & \fBallNoteInputMenuEntries\fP ()"
+.br
+.ti -1c
+.RI "static const std::list< const char * > & \fBbasicNoteInputMenuEntries\fP ()"
+.br
+.ti -1c
+.RI "static const std::list< const char * > & \fBadvancedNoteInputMenuEntries\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsaveGeometry\fP (QWidget const *const qw)"
+.br
+.ti -1c
+.RI "static void \fBrestoreGeometry\fP (QWidget *const qw)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBlastSaveCopyDirectory\fP"
+.br
+.ti -1c
+.RI "QString \fBlastSaveCopyFormat\fP"
+.br
+.ti -1c
+.RI "QString \fBlastSaveDirectory\fP"
+.br
+.ti -1c
+.RI "QString \fBlastSaveCaptureName\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 217 of file musescore\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::MuseScore::loadFiles ()"
+Create a modal file open dialog\&. If a file is selected, load it\&. Handles the GUI's file-open action\&. 
+.PP
+Definition at line 268 of file file\&.cpp\&.
+.SS "bool Ms::MuseScore::saveAs (\fBScore\fP * cs, bool saveCopy = \fCfalse\fP)"
+Save the current score using a different name or type\&. Handles the GUI's file-save-as and file-save-a-copy actions\&. The saveCopy flag, if true, does not change the name of the active score nor marks it clean\&. Return true if OK and false on error\&. 
+.PP
+Definition at line 2211 of file file\&.cpp\&.
+.SS "bool Ms::MuseScore::saveAudio (\fBScore\fP * score, QIODevice * device, std::function< bool(float)> updateProgress = \fCnullptr\fP)"
+
+.PP
+\fBFunction\fP to synthesize audio and output it into a generic QIODevice\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIThe\fP score to output 
+.br
+\fIThe\fP output device 
+.br
+\fIAn\fP optional callback function that will be notified with the progress in range [0, 1] 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True on success, false otherwise\&.
+.RE
+.PP
+If the callback function is non zero an returns false the export will be canceled\&. 
+.PP
+Definition at line 44 of file exportaudio\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

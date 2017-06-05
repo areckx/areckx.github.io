@@ -1,0 +1,333 @@
+.TH "Ms::Text" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Text
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.PP
+Inherited by \fBMs::Dynamic\fP, \fBMs::FiguredBass\fP, \fBMs::Fingering\fP, \fBMs::Harmony\fP, \fBMs::InstrumentChange\fP, \fBMs::InstrumentName\fP, \fBMs::Jump\fP, \fBMs::Lyrics\fP, \fBMs::Marker\fP, \fBMs::StaffText\fP, and \fBMs::TempoText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBText\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBText\fP (SubStyle, \fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBText\fP (const \fBText\fP &)"
+.br
+.ti -1c
+.RI "SubStyle \fBsubStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSubStyle\fP (SubStyle ss)"
+.br
+.ti -1c
+.RI "virtual void \fBinitSubStyle\fP (SubStyle) override"
+.br
+.ti -1c
+.RI "virtual \fBText\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual bool \fBmousePress\fP (\fBEditData\fP &, QMouseEvent *ev) override"
+.br
+.ti -1c
+.RI "\fBText\fP & \fBoperator=\fP (const \fBText\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBdrawEditMode\fP (QPainter *p, \fBEditData\fP &ed) override"
+.br
+.ti -1c
+.RI "void \fBsetPlainText\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetXmlText\fP (const QString &)"
+.br
+.ti -1c
+.RI "QString \fBxmlText\fP () const"
+.br
+.ti -1c
+.RI "QString \fBplainText\fP () const"
+.br
+.ti -1c
+.RI "void \fBinsertText\fP (\fBEditData\fP &, const QString &)"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout1\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBlineSpacing\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBlineHeight\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBbaseLine\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBlayoutToParentWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLayoutToParentWidth\fP (bool v)"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditCut\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditCopy\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "bool \fBdeleteSelectedText\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "void \fBselectAll\fP (\fBTextCursor\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "void \fBwriteProperties\fP (\fBXmlWriter\fP &xml, bool writeText) const"
+.br
+.ti -1c
+.RI "void \fBwriteProperties\fP (\fBXmlWriter\fP &, bool, bool) const"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "void \fBspellCheckUnderline\fP (bool)"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBpaste\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "QRectF \fBpageRectangle\fP () const"
+.br
+.ti -1c
+.RI "void \fBdragTo\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual QLineF \fBdragAnchor\fP () const override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBtextChanged\fP ()"
+.br
+.ti -1c
+.RI "QString \fBconvertFromHtml\fP (const QString &ss) const"
+.br
+.ti -1c
+.RI "void \fBundoSetText\fP (const QString &s)"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBsubtypeName\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBTextFragment\fP > \fBfragmentList\fP () const"
+.br
+.ti -1c
+.RI "bool \fBinHexState\fP () const"
+.br
+.ti -1c
+.RI "void \fBendHexState\fP ()"
+.br
+.ti -1c
+.RI "void \fBinputTransition\fP (QInputMethodEvent *)"
+.br
+.ti -1c
+.RI "QFont \fBfont\fP () const"
+.br
+.ti -1c
+.RI "QFontMetricsF \fBfontMetrics\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &v) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetPropertyFlags\fP (P_ID, PropertyFlags) override"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id) override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "void \fBeditInsertText\fP (\fBTextCursor\fP *, const QString &)"
+.br
+.ti -1c
+.RI "\fBCharFormat\fP * \fBcurFormat\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "\fBTextCursor\fP * \fBcursor\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "const \fBTextBlock\fP & \fBtextBlock\fP (int line) const"
+.br
+.ti -1c
+.RI "\fBTextBlock\fP & \fBtextBlock\fP (int line)"
+.br
+.ti -1c
+.RI "QList< \fBTextBlock\fP > & \fBtextBlockList\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBconvertToHtml\fP (const QString &, const TextStyle &)"
+.br
+.ti -1c
+.RI "static QString \fBtagEscape\fP (QString s)"
+.br
+.ti -1c
+.RI "static QString \fBunEscape\fP (QString s)"
+.br
+.ti -1c
+.RI "static QString \fBescape\fP (QString s)"
+.br
+.ti -1c
+.RI "static bool \fBvalidateText\fP (QString &s)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QColor \fBtextColor\fP () const"
+.br
+.ti -1c
+.RI "void \fBlayoutFrame\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayoutEdit\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateLayout\fP ()"
+.br
+.ti -1c
+.RI "void \fBinsertSym\fP (\fBEditData\fP &ed, SymId id)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QRectF \fBframe\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTextBlock\fP"
+.br
+.ti -1c
+.RI "class \fBTextFragment\fP"
+.br
+.ti -1c
+.RI "class \fBTextCursor\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 193 of file text\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Text::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Reimplemented in \fBMs::Lyrics\fP\&.
+.PP
+Definition at line 2062 of file text\&.cpp\&.
+.SS "\fBElement\fP * Ms::Text::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Reimplemented in \fBMs::Lyrics\fP\&.
+.PP
+Definition at line 2072 of file text\&.cpp\&.
+.SS "QList< \fBTextFragment\fP > Ms::Text::fragmentList () const"
+Return the text as a single list of \fBTextFragment\fP Used by the MusicXML formatted export to avoid parsing the xml text format 
+.PP
+Definition at line 2420 of file text\&.cpp\&.
+.SS "bool Ms::Text::mousePress (\fBEditData\fP &, QMouseEvent *)\fC [override]\fP, \fC [virtual]\fP"
+delivers mouseEvent to element in edit mode returns true if mouse event is accepted by element 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 2024 of file text\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

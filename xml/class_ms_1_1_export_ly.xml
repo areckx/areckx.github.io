@@ -1,0 +1,2998 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_export_ly" kind="class" language="C++" prot="public">
+    <compoundname>Ms::ExportLy</compoundname>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1chord_data" prot="private">Ms::ExportLy::chordData</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1chord_post" prot="private">Ms::ExportLy::chordPost</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1glisstablelem" prot="private">Ms::ExportLy::glisstablelem</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1_instruction_anchor" prot="private">Ms::ExportLy::InstructionAnchor</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1jump_or_marker_l_m" prot="private">Ms::ExportLy::jumpOrMarkerLM</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1lybrackets" prot="private">Ms::ExportLy::lybrackets</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1lyrics_data" prot="private">Ms::ExportLy::lyricsData</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1lyrics_record" prot="private">Ms::ExportLy::lyricsRecord</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1staffnameinfo" prot="private">Ms::ExportLy::staffnameinfo</innerclass>
+    <innerclass refid="struct_ms_1_1_export_ly_1_1voltareg" prot="private">Ms::ExportLy::voltareg</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34" prot="private" static="no">
+        <name>voltatype</name>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a4fa07e4349172787c8b56c6cd300ce75" prot="private">
+          <name>startending</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34ab918ed60fd59069c9d82e023613ca668" prot="private">
+          <name>endending</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a958c0a09f1fbfd29649dd2108598fc7f" prot="private">
+          <name>startrepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a4223cbb59f9c398d95fc1dda3b0725d4" prot="private">
+          <name>endrepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34abb2506682446de59e71def1dc5c2b22b" prot="private">
+          <name>bothrepeat</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a1d0c49a39d4efa2a95f8b52b197e43e0" prot="private">
+          <name>doublebar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a66c3d85eb8e2606e0ad2d72ed9bd508a" prot="private">
+          <name>brokenbar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a094b9856f77a1cd854b4faff30cb17ba" prot="private">
+          <name>endbar</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34ac5c1df15aa15bcebebfdcc65192c4dff" prot="private">
+          <name>none</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="118" column="1" bodyfile="mscore/exportly.cpp" bodystart="118" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a23aa4399bfc990a31d663bdaa955a941" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+        <definition>Score* Ms::ExportLy::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="97" column="1" bodyfile="mscore/exportly.cpp" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a84ae252b55ce5e964869bb97daec0963" prot="private" static="no" mutable="no">
+        <type>QFile</type>
+        <definition>QFile Ms::ExportLy::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="98" column="1" bodyfile="mscore/exportly.cpp" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a41d810d37b83bb9c61b6976a5bb8b21f" prot="private" static="no" mutable="no">
+        <type>QTextStream</type>
+        <definition>QTextStream Ms::ExportLy::os</definition>
+        <argsstring></argsstring>
+        <name>os</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="99" column="1" bodyfile="mscore/exportly.cpp" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad4456d815948044ac0d08c72536e7068" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::level</definition>
+        <argsstring></argsstring>
+        <name>level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="100" column="1" bodyfile="mscore/exportly.cpp" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a8b37f390d6671339bb17b1900978c94e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::curTicks</definition>
+        <argsstring></argsstring>
+        <name>curTicks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="101" column="1" bodyfile="mscore/exportly.cpp" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a61868b2fa69c8be926cc1d86328e4418" prot="private" static="no" mutable="no">
+        <type>MScore::Direction</type>
+        <definition>MScore::Direction Ms::ExportLy::stemDirection</definition>
+        <argsstring></argsstring>
+        <name>stemDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="102" column="1" bodyfile="mscore/exportly.cpp" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ab3c88497bae799ab5b1c0ce985f6b5cf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::indx</definition>
+        <argsstring></argsstring>
+        <name>indx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="103" column="1" bodyfile="mscore/exportly.cpp" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aac91ac6f6c9461a5704cd0f157f90042" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::partial</definition>
+        <argsstring></argsstring>
+        <name>partial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="104" column="1" bodyfile="mscore/exportly.cpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a71298e860ccef4d2cebf8040d43d8290" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::timedenom</definition>
+        <argsstring></argsstring>
+        <name>timedenom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="106" column="1" bodyfile="mscore/exportly.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a9c90cd4ef24d0af24211fde10d5147e8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::z1</definition>
+        <argsstring></argsstring>
+        <name>z1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="106" column="1" bodyfile="mscore/exportly.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a45be878092fae59edf5456811f5e3271" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::z2</definition>
+        <argsstring></argsstring>
+        <name>z2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="106" column="1" bodyfile="mscore/exportly.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a1dbff9aede5dcc58ba5eabcf0bdef164" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::z3</definition>
+        <argsstring></argsstring>
+        <name>z3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="106" column="1" bodyfile="mscore/exportly.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a5bdb19fedb28042b97be9a93d3075918" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::z4</definition>
+        <argsstring></argsstring>
+        <name>z4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="106" column="1" bodyfile="mscore/exportly.cpp" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a49948f4076d73f335786c099ef6ded6b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::barlen</definition>
+        <argsstring></argsstring>
+        <name>barlen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="107" column="1" bodyfile="mscore/exportly.cpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a37682a178ec9b8c5ba7294bcd81c9d42" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::wholemeasurerest</definition>
+        <argsstring></argsstring>
+        <name>wholemeasurerest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="107" column="1" bodyfile="mscore/exportly.cpp" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad3ef09e6ffb9a378ec588dded0f596ab" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::wholemeasuretext</definition>
+        <argsstring></argsstring>
+        <name>wholemeasuretext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="108" column="1" bodyfile="mscore/exportly.cpp" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad1089c8fed4cac6c2394f392a0711263" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::pickup</definition>
+        <argsstring></argsstring>
+        <name>pickup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="109" column="1" bodyfile="mscore/exportly.cpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aa606becef1d6dc919c4b5861c198e741" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::rehearsalnumbers</definition>
+        <argsstring></argsstring>
+        <name>rehearsalnumbers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="110" column="1" bodyfile="mscore/exportly.cpp" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a3163aca939147b74a6219b3d3fded0d6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::donefirst</definition>
+        <argsstring></argsstring>
+        <name>donefirst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="111" column="1" bodyfile="mscore/exportly.cpp" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a97ffa7260dda4fa8e70476d778476c6d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::graceswitch</definition>
+        <argsstring></argsstring>
+        <name>graceswitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="112" column="1" bodyfile="mscore/exportly.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a3b4782967e005393427aee05f148bdcd" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::gracebeam</definition>
+        <argsstring></argsstring>
+        <name>gracebeam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="112" column="1" bodyfile="mscore/exportly.cpp" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a89980648394d39184aed159a74120091" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::gracecount</definition>
+        <argsstring></argsstring>
+        <name>gracecount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="113" column="1" bodyfile="mscore/exportly.cpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a4962073b2ff4ce3dc62ed44d493e92cf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::prevpitch</definition>
+        <argsstring></argsstring>
+        <name>prevpitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="114" column="1" bodyfile="mscore/exportly.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1abf4033f68dd66f5991d0b7e2dbdb34b6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::staffpitch</definition>
+        <argsstring></argsstring>
+        <name>staffpitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="114" column="1" bodyfile="mscore/exportly.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a348da59362d9359ffa418e4d72b57890" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::chordpitch</definition>
+        <argsstring></argsstring>
+        <name>chordpitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="114" column="1" bodyfile="mscore/exportly.cpp" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1abd9f91b81ad66b9d4f3cc52b14ab44f1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::measurenumber</definition>
+        <argsstring></argsstring>
+        <name>measurenumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="115" column="1" bodyfile="mscore/exportly.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aa533b1aa3e0159dff5282adbb1d177e4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::lastind</definition>
+        <argsstring></argsstring>
+        <name>lastind</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="115" column="1" bodyfile="mscore/exportly.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a0f29c72a92148804a0a30d1f0ca8302c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::taktnr</definition>
+        <argsstring></argsstring>
+        <name>taktnr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="115" column="1" bodyfile="mscore/exportly.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ae4b05e56a2f58b82bf6cd042478d40ff" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::staffInd</definition>
+        <argsstring></argsstring>
+        <name>staffInd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="115" column="1" bodyfile="mscore/exportly.cpp" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a3457ee5ac0de826bce211f84adfe42cb" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::repeatactive</definition>
+        <argsstring></argsstring>
+        <name>repeatactive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="116" column="1" bodyfile="mscore/exportly.cpp" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a4521cd855863091dad5a91188ebae86e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::firstalt</definition>
+        <argsstring></argsstring>
+        <name>firstalt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="117" column="1" bodyfile="mscore/exportly.cpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a4c61d7dac2af6a4f9fb3af7870c7723c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::secondalt</definition>
+        <argsstring></argsstring>
+        <name>secondalt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="117" column="1" bodyfile="mscore/exportly.cpp" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a279e6aae8d0807ebee0aecd0017386f3" prot="private" static="no" mutable="no">
+        <type>struct voltareg</type>
+        <definition>struct voltareg Ms::ExportLy::voltarray[255]</definition>
+        <argsstring>[255]</argsstring>
+        <name>voltarray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="117" column="1" bodyfile="mscore/exportly.cpp" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aada415b9d6f2b732933a711dd5c49fa3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::tupletcount</definition>
+        <argsstring></argsstring>
+        <name>tupletcount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="121" column="1" bodyfile="mscore/exportly.cpp" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad671be2f29cdac740b1782048a531f08" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::pianostaff</definition>
+        <argsstring></argsstring>
+        <name>pianostaff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="122" column="1" bodyfile="mscore/exportly.cpp" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a171a90f683c42b44ffe7e89516110a93" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::slur</definition>
+        <argsstring></argsstring>
+        <name>slur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="123" column="1" bodyfile="mscore/exportly.cpp" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aa73c16af13d5d6221f1f61436e71e79f" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_ms_1_1_slur" kindref="compound">Slur</ref> *</type>
+        <definition>const Slur* Ms::ExportLy::slurre[MAX_SLURS]</definition>
+        <argsstring>[MAX_SLURS]</argsstring>
+        <name>slurre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="124" column="1" bodyfile="mscore/exportly.cpp" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a431ab2a44d66223eeae4fbb7649c457c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::started[MAX_SLURS]</definition>
+        <argsstring>[MAX_SLURS]</argsstring>
+        <name>started</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="125" column="1" bodyfile="mscore/exportly.cpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1af03c021c187310d19167ea0ab303049c" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::phraseslur</definition>
+        <argsstring></argsstring>
+        <name>phraseslur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="126" column="1" bodyfile="mscore/exportly.cpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ae6c370cc2648c1c371570f63b19c7d27" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::slurstack</definition>
+        <argsstring></argsstring>
+        <name>slurstack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="127" column="1" bodyfile="mscore/exportly.cpp" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a54d35d21b6aef72c0d57a56dd0e7bc8e" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* Ms::ExportLy::relativ</definition>
+        <argsstring></argsstring>
+        <name>relativ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="129" column="1" bodyfile="mscore/exportly.cpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a0e96aab9def62b8eefb7b31dc4e56ba7" prot="private" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char * Ms::ExportLy::staffrelativ</definition>
+        <argsstring></argsstring>
+        <name>staffrelativ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="129" column="1" bodyfile="mscore/exportly.cpp" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a83e61c55254a4f4006e89f60de781b77" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::voiceActive[VOICES]</definition>
+        <argsstring>[VOICES]</argsstring>
+        <name>voiceActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="130" column="1" bodyfile="mscore/exportly.cpp" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1afeb5484306f6df01d938c1bc6620d6ec" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::prevElTick</definition>
+        <argsstring></argsstring>
+        <name>prevElTick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="131" column="1" bodyfile="mscore/exportly.cpp" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a67b63fee35c5ccc12ca060fbce4b49ff" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::ottvaswitch</definition>
+        <argsstring></argsstring>
+        <name>ottvaswitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="132" column="1" bodyfile="mscore/exportly.cpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a0234aede3e06c8fea685871c8eafee86" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::jumpswitch</definition>
+        <argsstring></argsstring>
+        <name>jumpswitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="132" column="1" bodyfile="mscore/exportly.cpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a9a1902e608fc3082f5e11c69c1e6a3e2" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Ms::ExportLy::privateRehearsalMark</definition>
+        <argsstring></argsstring>
+        <name>privateRehearsalMark</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="133" column="1" bodyfile="mscore/exportly.cpp" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a4778fd7ecad932d889302eba3ca7f6a7" prot="private" static="no" mutable="no">
+        <type>struct lybrackets</type>
+        <definition>struct lybrackets Ms::ExportLy::lybracks[BRACKSTAVES]</definition>
+        <argsstring>[BRACKSTAVES]</argsstring>
+        <name>lybracks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="133" column="1" bodyfile="mscore/exportly.cpp" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a72e2f36f5b1349d17bb3811c5ec556f1" prot="private" static="no" mutable="no">
+        <type>struct staffnameinfo</type>
+        <definition>struct staffnameinfo Ms::ExportLy::staffname[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>staffname</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="143" column="1" bodyfile="mscore/exportly.cpp" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a93c74e5243a8bc5a6b1a8d2856154031" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::cleannote</definition>
+        <argsstring></argsstring>
+        <name>cleannote</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="155" column="1" bodyfile="mscore/exportly.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad9333e87d684f09e2ce8b54ebeca47e1" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::prevnote</definition>
+        <argsstring></argsstring>
+        <name>prevnote</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="155" column="1" bodyfile="mscore/exportly.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ab39dc00edd21725dd5d9a4e6e4538cf4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::nextAnchor</definition>
+        <argsstring></argsstring>
+        <name>nextAnchor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="168" column="1" bodyfile="mscore/exportly.cpp" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aff9542c94aea412533031f2f544fb7f8" prot="private" static="no" mutable="no">
+        <type>struct InstructionAnchor</type>
+        <definition>struct InstructionAnchor Ms::ExportLy::anker</definition>
+        <argsstring></argsstring>
+        <name>anker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="168" column="1" bodyfile="mscore/exportly.cpp" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a71759557c475406e86059a3fa37f5d8e" prot="private" static="no" mutable="no">
+        <type>struct InstructionAnchor</type>
+        <definition>struct InstructionAnchor Ms::ExportLy::anchors[1024]</definition>
+        <argsstring>[1024]</argsstring>
+        <name>anchors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="168" column="1" bodyfile="mscore/exportly.cpp" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ac751bd8259f6f2bcca57e2adc95b38e8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::glisscount</definition>
+        <argsstring></argsstring>
+        <name>glisscount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="179" column="1" bodyfile="mscore/exportly.cpp" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a8da404e147e5eada7f1a84575ca05f87" prot="private" static="no" mutable="no">
+        <type>struct glisstablelem</type>
+        <definition>struct glisstablelem Ms::ExportLy::glisstable[99]</definition>
+        <argsstring>[99]</argsstring>
+        <name>glisstable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="179" column="1" bodyfile="mscore/exportly.cpp" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a1b0a9ea46674794bfe920a873631eb83" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::voicebuffer</definition>
+        <argsstring></argsstring>
+        <name>voicebuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="182" column="1" bodyfile="mscore/exportly.cpp" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a1983b2df5fb0c6037a647289d002f4d8" prot="private" static="no" mutable="no">
+        <type>QTextStream</type>
+        <definition>QTextStream Ms::ExportLy::out</definition>
+        <argsstring></argsstring>
+        <name>out</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="183" column="1" bodyfile="mscore/exportly.cpp" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ae73d5e26076940b96c2b9623b4b55b3e" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::scorebuffer</definition>
+        <argsstring></argsstring>
+        <name>scorebuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="184" column="1" bodyfile="mscore/exportly.cpp" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a20c511c2cd0554a85f3ee21e9d490463" prot="private" static="no" mutable="no">
+        <type>QTextStream</type>
+        <definition>QTextStream Ms::ExportLy::scorout</definition>
+        <argsstring></argsstring>
+        <name>scorout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="185" column="1" bodyfile="mscore/exportly.cpp" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1af62b5f0eb9e4095d10f3073afb6bb1ae" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::nochord</definition>
+        <argsstring></argsstring>
+        <name>nochord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="188" column="1" bodyfile="mscore/exportly.cpp" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad555efd49394f3c7b93ef540e76abb33" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::chordcount</definition>
+        <argsstring></argsstring>
+        <name>chordcount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="189" column="1" bodyfile="mscore/exportly.cpp" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a4963eb8e0d1b521b0f1b1a8691a52861" prot="private" static="no" mutable="no">
+        <type>struct chordData</type>
+        <definition>struct chordData Ms::ExportLy::thisHarmony</definition>
+        <argsstring></argsstring>
+        <name>thisHarmony</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="190" column="1" bodyfile="mscore/exportly.cpp" bodystart="203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a60afc2122d2e229605ab5a58d2997ea0" prot="private" static="no" mutable="no">
+        <type>struct chordData</type>
+        <definition>struct chordData Ms::ExportLy::prevHarmony</definition>
+        <argsstring></argsstring>
+        <name>prevHarmony</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="190" column="1" bodyfile="mscore/exportly.cpp" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ad0cdbc478726a7a46c0a5a7d6f9ade3e" prot="private" static="no" mutable="no">
+        <type>struct chordPost</type>
+        <definition>struct chordPost Ms::ExportLy::cp</definition>
+        <argsstring></argsstring>
+        <name>cp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="206" column="1" bodyfile="mscore/exportly.cpp" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a2f930f2baa89fa4d5bdfe6892fa38e2b" prot="private" static="no" mutable="no">
+        <type>struct chordPost *</type>
+        <definition>struct chordPost* Ms::ExportLy::chordHead</definition>
+        <argsstring></argsstring>
+        <name>chordHead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="215" column="1" bodyfile="mscore/exportly.cpp" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1abfd4663045672c0ea80233d15ba00ed8" prot="private" static="no" mutable="no">
+        <type>struct chordPost *</type>
+        <definition>struct chordPost* Ms::ExportLy::chordThis</definition>
+        <argsstring></argsstring>
+        <name>chordThis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="216" column="1" bodyfile="mscore/exportly.cpp" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a19160eda8fe0771dd638284cab941573" prot="private" static="no" mutable="no">
+        <type>struct lyricsRecord *</type>
+        <definition>struct lyricsRecord* Ms::ExportLy::thisLyrics</definition>
+        <argsstring></argsstring>
+        <name>thisLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="239" column="1" bodyfile="mscore/exportly.cpp" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ac364406d00887af4ce6fce6915eba644" prot="private" static="no" mutable="no">
+        <type>struct lyricsRecord *</type>
+        <definition>struct lyricsRecord* Ms::ExportLy::headOfLyrics</definition>
+        <argsstring></argsstring>
+        <name>headOfLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="240" column="1" bodyfile="mscore/exportly.cpp" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a0e284d70c54b9056cb8e13037687a97f" prot="private" static="no" mutable="no">
+        <type>struct lyricsRecord *</type>
+        <definition>struct lyricsRecord* Ms::ExportLy::tailOfLyrics</definition>
+        <argsstring></argsstring>
+        <name>tailOfLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="241" column="1" bodyfile="mscore/exportly.cpp" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1afc14f194676e2c58a9755997435e8ff6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::ExportLy::lastJumpOrMarker</definition>
+        <argsstring></argsstring>
+        <name>lastJumpOrMarker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="269" column="1" bodyfile="mscore/exportly.cpp" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1aefb0c564b4994fd4a3b941c073e4140c" prot="private" static="no" mutable="no">
+        <type>struct jumpOrMarkerLM</type>
+        <definition>struct jumpOrMarkerLM Ms::ExportLy::jumpOrMarkerList[100]</definition>
+        <argsstring>[100]</argsstring>
+        <name>jumpOrMarkerList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="269" column="1" bodyfile="mscore/exportly.cpp" bodystart="270" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1a20bcda9a8ad0116496d4364e7cec369d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::textspannerdown</definition>
+        <argsstring></argsstring>
+        <name>textspannerdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="306" column="1" bodyfile="mscore/exportly.cpp" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_export_ly_1ac445ce76bac78623301c2d9a8de860ae" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::textspanswitch</definition>
+        <argsstring></argsstring>
+        <name>textspanswitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="308" column="1" bodyfile="mscore/exportly.cpp" bodystart="308" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aecb33c18f6ecdb4e3ce0bcdecc014b79" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::ExportLy::findSlur</definition>
+        <argsstring>(const Slur *s) const</argsstring>
+        <name>findSlur</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_slur" kindref="compound">Slur</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="128" column="1" bodyfile="mscore/exportly.cpp" bodystart="2441" bodyend="2446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1af0b32d2d972da7ada2b1ebb8a1b501ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::bracktest</definition>
+        <argsstring>()</argsstring>
+        <name>bracktest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="143" column="1" bodyfile="mscore/exportly.cpp" bodystart="484" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a8ef0ce725a58cc6749936c2fa48122e6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::chordName</definition>
+        <argsstring>(struct InstructionAnchor chordanchor)</argsstring>
+        <name>chordName</name>
+        <param>
+          <type>struct InstructionAnchor</type>
+          <declname>chordanchor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ae21ceeb69b8bb377c4dbea5667d13deb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::resetChordData</definition>
+        <argsstring>(struct chordData &amp;)</argsstring>
+        <name>resetChordData</name>
+        <param>
+          <type>struct chordData &amp;</type>
+          <defname>CD</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="205" column="1" bodyfile="mscore/exportly.cpp" bodystart="663" bodyend="672"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a2e9c007f3e2d59f816d1e8500ff2b930" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::chord2Name</definition>
+        <argsstring>(int ch)</argsstring>
+        <name>chord2Name</name>
+        <param>
+          <type>int</type>
+          <declname>ch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="206" column="1" bodyfile="mscore/exportly.cpp" bodystart="823" bodyend="827"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a30a3127b467585c9afcba3fcfebaf07a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::storeChord</definition>
+        <argsstring>(struct InstructionAnchor chAnk)</argsstring>
+        <name>storeChord</name>
+        <param>
+          <type>struct InstructionAnchor</type>
+          <declname>chAnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="244" column="1" bodyfile="mscore/exportly.cpp" bodystart="879" bodyend="942"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ac348798fae73a8b3320ff8111dfad7f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::chordInsertList</definition>
+        <argsstring>(chordPost *)</argsstring>
+        <name>chordInsertList</name>
+        <param>
+          <type>chordPost *</type>
+          <defname>newchord</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="245" column="1" bodyfile="mscore/exportly.cpp" bodystart="833" bodyend="874"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a0d10ce9b618b420a263ad2ecc1d3eb21" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::printChordList</definition>
+        <argsstring>()</argsstring>
+        <name>printChordList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="246" column="1" bodyfile="mscore/exportly.cpp" bodystart="724" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a7270f3883c659e4089808bab913b4dab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::cleanupChordList</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupChordList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="247" column="1" bodyfile="mscore/exportly.cpp" bodystart="675" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a1245a26cf0305694d67ca8205d62c302" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeFingering</definition>
+        <argsstring>(int &amp;, QString fingering[5])</argsstring>
+        <name>writeFingering</name>
+        <param>
+          <type>int &amp;</type>
+          <defname>fingr</defname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>fingering</declname>
+          <array>[5]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="248" column="1" bodyfile="mscore/exportly.cpp" bodystart="2765" bodyend="2777"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ad37f8433f8fe8416a80b15c43e07d78c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findLyrics</definition>
+        <argsstring>()</argsstring>
+        <name>findLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="249" column="1" bodyfile="mscore/exportly.cpp" bodystart="3513" bodyend="3613"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a91f25f9f25a2bee13811286a5c2c0172" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::newLyricsRecord</definition>
+        <argsstring>()</argsstring>
+        <name>newLyricsRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="250" column="1" bodyfile="mscore/exportly.cpp" bodystart="3481" bodyend="3508"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a8d88dcb001a09d1fa5bb05ad547ec1af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::cleanupLyrics</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="251" column="1" bodyfile="mscore/exportly.cpp" bodystart="3697" bodyend="3706"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a7ca3480b008fec91cd01e5ad4863bd8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeLyrics</definition>
+        <argsstring>()</argsstring>
+        <name>writeLyrics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="252" column="1" bodyfile="mscore/exportly.cpp" bodystart="3618" bodyend="3654"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a2166f6a464a1beb713563df03ef6476c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::connectLyricsToStaff</definition>
+        <argsstring>()</argsstring>
+        <name>connectLyricsToStaff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="253" column="1" bodyfile="mscore/exportly.cpp" bodystart="3662" bodyend="3692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aff10e18b3ccb4c1f356a52b40089257f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findGraceNotes</definition>
+        <argsstring>(Note *, bool &amp;, int)</argsstring>
+        <name>findGraceNotes</name>
+        <param>
+          <type><ref refid="class_ms_1_1_note" kindref="compound">Note</ref> *</type>
+          <defname>note</defname>
+        </param>
+        <param>
+          <type>bool &amp;</type>
+          <defname>chordstart</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>streng</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="254" column="1" bodyfile="mscore/exportly.cpp" bodystart="2810" bodyend="2847"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a0d7a7723d0880cec05ec3249ed136471" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::setOctave</definition>
+        <argsstring>(int &amp;, int &amp;, int(&amp;foo)[12])</argsstring>
+        <name>setOctave</name>
+        <param>
+          <type>int &amp;</type>
+          <defname>purepitch</defname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <defname>pitchidx</defname>
+        </param>
+        <param>
+          <type>int(&amp;)</type>
+          <declname>foo</declname>
+          <array>[12]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="255" column="1" bodyfile="mscore/exportly.cpp" bodystart="2852" bodyend="2873"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a9652899a918a43cc70fd48cbcc21d175" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::arpeggioTest</definition>
+        <argsstring>(Chord *chord)</argsstring>
+        <name>arpeggioTest</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <declname>chord</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="256" column="1" bodyfile="mscore/exportly.cpp" bodystart="2876" bodyend="2900"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a5dc64637425d6f8a149030b994c7883a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::glissandotest</definition>
+        <argsstring>(Chord *)</argsstring>
+        <name>glissandotest</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="257" column="1" bodyfile="mscore/exportly.cpp" bodystart="2903" bodyend="2920"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a63746eb9b33fa94bc411c61c467b4955" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::findNoteSymbol</definition>
+        <argsstring>(Note *, QString &amp;)</argsstring>
+        <name>findNoteSymbol</name>
+        <param>
+          <type><ref refid="class_ms_1_1_note" kindref="compound">Note</ref> *</type>
+          <defname>n</defname>
+        </param>
+        <param>
+          <type>QString &amp;</type>
+          <defname>symbolname</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="258" column="1" bodyfile="mscore/exportly.cpp" bodystart="2928" bodyend="2940"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a7d3000f9bd23f15f04242a4ebd95fe02" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::buildGlissandoList</definition>
+        <argsstring>(int strack, int etrack)</argsstring>
+        <name>buildGlissandoList</name>
+        <param>
+          <type>int</type>
+          <declname>strack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>etrack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="259" column="1" bodyfile="mscore/exportly.cpp" bodystart="2007" bodyend="2044"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ae9d9b2150a81a3f597e7fa826bcb2062" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeStringInstruction</definition>
+        <argsstring>(int &amp;, QString stringarr[10])</argsstring>
+        <name>writeStringInstruction</name>
+        <param>
+          <type>int &amp;</type>
+          <defname>strgix</defname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>stringarr</declname>
+          <array>[10]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="260" column="1" bodyfile="mscore/exportly.cpp" bodystart="2751" bodyend="2759"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a7b76f52d2065cfeec6ce0de6a8732e6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findFingerAndStringno</definition>
+        <argsstring>(Note *note, int &amp;, int &amp;, QString(&amp;finger)[5], QString(&amp;strng)[10])</argsstring>
+        <name>findFingerAndStringno</name>
+        <param>
+          <type><ref refid="class_ms_1_1_note" kindref="compound">Note</ref> *</type>
+          <declname>note</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <defname>fingix</defname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <defname>stringix</defname>
+        </param>
+        <param>
+          <type>QString(&amp;)</type>
+          <declname>finger</declname>
+          <array>[5]</array>
+        </param>
+        <param>
+          <type>QString(&amp;)</type>
+          <declname>strng</declname>
+          <array>[10]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="261" column="1" bodyfile="mscore/exportly.cpp" bodystart="2731" bodyend="2748"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a804ae6c80e911c78506155cf30d946bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeLilyHeader</definition>
+        <argsstring>()</argsstring>
+        <name>writeLilyHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="272" column="1" bodyfile="mscore/exportly.cpp" bodystart="4588" bodyend="4599"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a7e7d3b2322b52488611cfc67a21c38af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeLilyMacros</definition>
+        <argsstring>()</argsstring>
+        <name>writeLilyMacros</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="273" column="1" bodyfile="mscore/exportly.cpp" bodystart="4489" bodyend="4581"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a77a4176a2bed6db959cb1e5d1dc82ec3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writePageFormat</definition>
+        <argsstring>()</argsstring>
+        <name>writePageFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="274" column="1" bodyfile="mscore/exportly.cpp" bodystart="4604" bodyend="4631"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a2e37b89095a2cdfb8e784efe3a1d29d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeScoreTitles</definition>
+        <argsstring>()</argsstring>
+        <name>writeScoreTitles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="275" column="1" bodyfile="mscore/exportly.cpp" bodystart="4638" bodyend="4681"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a5fa8af94cd52398f975d45715f937c9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::initJumpOrMarkerLMs</definition>
+        <argsstring>()</argsstring>
+        <name>initJumpOrMarkerLMs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="276" column="1" bodyfile="mscore/exportly.cpp" bodystart="1610" bodyend="1615"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a0a5572cce8a0922c3d41b31a34a7607f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::resetJumpOrMarkerLM</definition>
+        <argsstring>(struct jumpOrMarkerLM &amp;mlm)</argsstring>
+        <name>resetJumpOrMarkerLM</name>
+        <param>
+          <type>struct jumpOrMarkerLM &amp;</type>
+          <declname>mlm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="277" column="1" bodyfile="mscore/exportly.cpp" bodystart="1600" bodyend="1605"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a12d083933942d407c608d9efafe845e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::removeJumpOrMarkerLM</definition>
+        <argsstring>(int)</argsstring>
+        <name>removeJumpOrMarkerLM</name>
+        <param>
+          <type>int</type>
+          <defname>markerind</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="278" column="1" bodyfile="mscore/exportly.cpp" bodystart="1620" bodyend="1628"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a4154619d4ae4b4c72857988cf7689619" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::preserveJumpOrMarker</definition>
+        <argsstring>(Element *, int, bool)</argsstring>
+        <name>preserveJumpOrMarker</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <defname>dir</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>mnum</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>start</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="279" column="1" bodyfile="mscore/exportly.cpp" bodystart="1635" bodyend="1650"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a73e0e808060374cf114b972637af840a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::printJumpOrMarker</definition>
+        <argsstring>(int mnum, bool start)</argsstring>
+        <name>printJumpOrMarker</name>
+        <param>
+          <type>int</type>
+          <declname>mnum</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>start</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="280" column="1" bodyfile="mscore/exportly.cpp" bodystart="1697" bodyend="1737"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aadbaef997953909a636f74600cdd1177" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::anchortest</definition>
+        <argsstring>()</argsstring>
+        <name>anchortest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="282" column="1" bodyfile="mscore/exportly.cpp" bodystart="1227" bodyend="1282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a84d0466ad64c0ffa8daade6d39278b3d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::voltatest</definition>
+        <argsstring>()</argsstring>
+        <name>voltatest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="283" column="1" bodyfile="mscore/exportly.cpp" bodystart="2269" bodyend="2303"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ac30489afc52bce85514de336a7398b6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::jumptest</definition>
+        <argsstring>()</argsstring>
+        <name>jumptest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="284" column="1" bodyfile="mscore/exportly.cpp" bodystart="1291" bodyend="1351"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aa2495084f4a68b4539f4131d268e94a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::storeAnchor</definition>
+        <argsstring>(struct InstructionAnchor)</argsstring>
+        <name>storeAnchor</name>
+        <param>
+          <type>struct InstructionAnchor</type>
+          <defname>a</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="285" column="1" bodyfile="mscore/exportly.cpp" bodystart="1395" bodyend="1404"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ac8088436bee5efee0e72ed1309118be0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::initAnchors</definition>
+        <argsstring>()</argsstring>
+        <name>initAnchors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="286" column="1" bodyfile="mscore/exportly.cpp" bodystart="1358" bodyend="1363"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a6e291a4b53470d52e45bc8ee16cb30ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::removeAnchor</definition>
+        <argsstring>(int)</argsstring>
+        <name>removeAnchor</name>
+        <param>
+          <type>int</type>
+          <defname>ankind</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="287" column="1" bodyfile="mscore/exportly.cpp" bodystart="1381" bodyend="1389"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a59d8b100677650ba73e3f9f49fb81f5b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::resetAnchor</definition>
+        <argsstring>(struct InstructionAnchor &amp;ank)</argsstring>
+        <name>resetAnchor</name>
+        <param>
+          <type>struct InstructionAnchor &amp;</type>
+          <declname>ank</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="288" column="1" bodyfile="mscore/exportly.cpp" bodystart="1370" bodyend="1376"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a53a043298e31b4e33f3e7862dd8a7a12" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::findMatchInMeasure</definition>
+        <argsstring>(int, Staff *, Measure *, int, int, bool)</argsstring>
+        <name>findMatchInMeasure</name>
+        <param>
+          <type>int</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_staff" kindref="compound">Staff</ref> *</type>
+          <defname>stf</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>strack</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>etrack</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>rehearsalmark</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="289" column="1" bodyfile="mscore/exportly.cpp" bodystart="1820" bodyend="1847"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a4d9c4964a9755ec5edd149b364d2e122" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::findMatchInPart</definition>
+        <argsstring>(int, Staff *, Score *, int, int, bool)</argsstring>
+        <name>findMatchInPart</name>
+        <param>
+          <type>int</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_staff" kindref="compound">Staff</ref> *</type>
+          <defname>stav</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+          <defname>sc</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>starttrack</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>endtrack</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>rehearsalmark</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="290" column="1" bodyfile="mscore/exportly.cpp" bodystart="1855" bodyend="1868"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a9faf2c72ab89c337b28f9bc3157d0b1f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::jumpAtMeasureStop</definition>
+        <argsstring>(Measure *)</argsstring>
+        <name>jumpAtMeasureStop</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="292" column="1" bodyfile="mscore/exportly.cpp" bodystart="1771" bodyend="1812"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aeb4a4125a14480356103891b82e2134a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findMarkerAtMeasureStart</definition>
+        <argsstring>(Measure *)</argsstring>
+        <name>findMarkerAtMeasureStart</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="293" column="1" bodyfile="mscore/exportly.cpp" bodystart="1746" bodyend="1765"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a8bf91c49f3835ca55d32f6fe0cff451e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeMeasuRestNum</definition>
+        <argsstring>()</argsstring>
+        <name>writeMeasuRestNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="294" column="1" bodyfile="mscore/exportly.cpp" bodystart="3268" bodyend="3281"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a77d6645aa4dc78d2e2150c40c792b5af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeTremolo</definition>
+        <argsstring>(Chord *)</argsstring>
+        <name>writeTremolo</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="295" column="1" bodyfile="mscore/exportly.cpp" bodystart="2699" bodyend="2724"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ad45c3f303f27b56ce6a482e6ac4438fa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeSymbol</definition>
+        <argsstring>(QString)</argsstring>
+        <name>writeSymbol</name>
+        <param>
+          <type>QString</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="297" column="1" bodyfile="mscore/exportly.cpp" bodystart="615" bodyend="660"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ae2f32b76c75913b6be18cb659357fa53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::tempoText</definition>
+        <argsstring>(TempoText *)</argsstring>
+        <name>tempoText</name>
+        <param>
+          <type><ref refid="class_ms_1_1_tempo_text" kindref="compound">TempoText</ref> *</type>
+          <defname>text</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="298" column="1" bodyfile="mscore/exportly.cpp" bodystart="949" bodyend="956"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a42cf22453fcee27b1c2f044a52754453" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::words</definition>
+        <argsstring>(Text *)</argsstring>
+        <name>words</name>
+        <param>
+          <type><ref refid="class_ms_1_1_text" kindref="compound">Text</ref> *</type>
+          <defname>text</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="299" column="1" bodyfile="mscore/exportly.cpp" bodystart="964" bodyend="974"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a0c49a7b80df5a48215a93e5490b54844" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::hairpin</definition>
+        <argsstring>(Hairpin *hp, int tick)</argsstring>
+        <name>hairpin</name>
+        <param>
+          <type><ref refid="class_ms_1_1_hairpin" kindref="compound">Hairpin</ref> *</type>
+          <declname>hp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="300" column="1" bodyfile="mscore/exportly.cpp" bodystart="982" bodyend="998"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a86bad5990c703156a3f12c50f9c0a8a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::ottava</definition>
+        <argsstring>(Ottava *ot, int tick)</argsstring>
+        <name>ottava</name>
+        <param>
+          <type><ref refid="class_ms_1_1_ottava" kindref="compound">Ottava</ref> *</type>
+          <declname>ot</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="301" column="1" bodyfile="mscore/exportly.cpp" bodystart="1004" bodyend="1031"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a68ff3860dcc59dbf7d2d6f409d37d6fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::pedal</definition>
+        <argsstring>(Pedal *pd, int tick)</argsstring>
+        <name>pedal</name>
+        <param>
+          <type><ref refid="class_ms_1_1_pedal" kindref="compound">Pedal</ref> *</type>
+          <declname>pd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="302" column="1" bodyfile="mscore/exportly.cpp" bodystart="1038" bodyend="1044"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a3bbf8f4d13c092882d16bb8bf9725f95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::dynamic</definition>
+        <argsstring>(Dynamic *, int)</argsstring>
+        <name>dynamic</name>
+        <param>
+          <type><ref refid="class_ms_1_1_dynamic" kindref="compound">Dynamic</ref> *</type>
+          <defname>dyn</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>nop</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="303" column="1" bodyfile="mscore/exportly.cpp" bodystart="1051" bodyend="1083"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aae1882cc245a4590e339a60d4c2b0076" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::textLine</definition>
+        <argsstring>(Element *, int, bool)</argsstring>
+        <name>textLine</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <defname>instruction</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>tick</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>pre</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="304" column="1" bodyfile="mscore/exportly.cpp" bodystart="1125" bodyend="1221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ac3195d15cf4d23b0b3e3883b69d5673e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findTextProperties</definition>
+        <argsstring>(Text *, QString &amp;, int &amp;)</argsstring>
+        <name>findTextProperties</name>
+        <param>
+          <type><ref refid="class_ms_1_1_text" kindref="compound">Text</ref> *</type>
+          <defname>tekst</defname>
+        </param>
+        <param>
+          <type>QString &amp;</type>
+          <defname>tekststyle</defname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <defname>fontsize</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="305" column="1" bodyfile="mscore/exportly.cpp" bodystart="1089" bodyend="1119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a2610bfb9c09452412bae88e199590da8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::buildInstructionListPart</definition>
+        <argsstring>(int strack, int etrack)</argsstring>
+        <name>buildInstructionListPart</name>
+        <param>
+          <type>int</type>
+          <declname>strack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>etrack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="310" column="1" bodyfile="mscore/exportly.cpp" bodystart="1876" bodyend="1942"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1af15e421abcc43ccc75cea470a958c813" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::buildInstructionList</definition>
+        <argsstring>(Measure *m, int strack, int etrack)</argsstring>
+        <name>buildInstructionList</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strack</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>etrack</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="311" column="1" bodyfile="mscore/exportly.cpp" bodystart="1952" bodyend="2004"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ab1a300240cb2f47ef2557898d4534c7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::handleElement</definition>
+        <argsstring>(Element *el)</argsstring>
+        <name>handleElement</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="312" column="1" bodyfile="mscore/exportly.cpp" bodystart="1503" bodyend="1592"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a595c2c06c8c9b58174f9bfb78335eb5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::handlePreInstruction</definition>
+        <argsstring>(Element *el)</argsstring>
+        <name>handlePreInstruction</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="313" column="1" bodyfile="mscore/exportly.cpp" bodystart="1442" bodyend="1494"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a4ccb5e62d8242ca6807ca0bbf6078b5d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::instructionJump</definition>
+        <argsstring>(Jump *)</argsstring>
+        <name>instructionJump</name>
+        <param>
+          <type><ref refid="class_ms_1_1_jump" kindref="compound">Jump</ref> *</type>
+          <defname>jp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="314" column="1" bodyfile="mscore/exportly.cpp" bodystart="496" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1acc0c54c01ee4a71fe2a53d8af2e71bc9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::instructionMarker</definition>
+        <argsstring>(Marker *)</argsstring>
+        <name>instructionMarker</name>
+        <param>
+          <type><ref refid="class_ms_1_1_marker" kindref="compound">Marker</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="315" column="1" bodyfile="mscore/exportly.cpp" bodystart="524" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a16739195fb67adbdd09223f1f20afec4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::primitiveJump</definition>
+        <argsstring>(Jump *)</argsstring>
+        <name>primitiveJump</name>
+        <param>
+          <type><ref refid="class_ms_1_1_jump" kindref="compound">Jump</ref> *</type>
+          <defname>jp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="316" column="1" bodyfile="mscore/exportly.cpp" bodystart="556" bodyend="578"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a27e336937925bda64a0b0b0f50516555" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::primitiveMarker</definition>
+        <argsstring>(Marker *)</argsstring>
+        <name>primitiveMarker</name>
+        <param>
+          <type><ref refid="class_ms_1_1_marker" kindref="compound">Marker</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="317" column="1" bodyfile="mscore/exportly.cpp" bodystart="585" bodyend="607"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ac810576b82da989bb603e3341c0d1b24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::ExportLy::checkJumpOrMarker</definition>
+        <argsstring>(int, bool, Element *&amp;)</argsstring>
+        <name>checkJumpOrMarker</name>
+        <param>
+          <type>int</type>
+          <defname>mnum</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>start</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *&amp;</type>
+          <defname>moj</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="318" column="1" bodyfile="mscore/exportly.cpp" bodystart="1657" bodyend="1691"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a2756516fb6c60df7369faff2589b8075" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeCombinedMarker</definition>
+        <argsstring>(int, Element *)</argsstring>
+        <name>writeCombinedMarker</name>
+        <param>
+          <type>int</type>
+          <defname>foundJoM</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <defname>elm</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="319" column="1" bodyfile="mscore/exportly.cpp" bodystart="1406" bodyend="1431"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a783db9d5a51dc47265868a96469f5ad9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::flatInInstrName</definition>
+        <argsstring>(QString)</argsstring>
+        <name>flatInInstrName</name>
+        <param>
+          <type>QString</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="320" column="1" bodyfile="mscore/exportly.cpp" bodystart="3713" bodyend="3746"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a76a691496d685bba5d6eec679e9c8264" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::indent</definition>
+        <argsstring>()</argsstring>
+        <name>indent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="322" column="1" bodyfile="mscore/exportly.cpp" bodystart="2052" bodyend="2056"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a9efc82e20d774cb15b87bd2cbeada131" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::indentF</definition>
+        <argsstring>()</argsstring>
+        <name>indentF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="323" column="1" bodyfile="mscore/exportly.cpp" bodystart="2063" bodyend="2067"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a0777b7c0e39e4df679af2f0adad47d82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::ExportLy::getLen</definition>
+        <argsstring>(int ticks, int *dots)</argsstring>
+        <name>getLen</name>
+        <param>
+          <type>int</type>
+          <declname>ticks</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>dots</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="324" column="1" bodyfile="mscore/exportly.cpp" bodystart="3093" bodyend="3193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a3f8c1322965638503223bd1d9eb80abb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeLen</definition>
+        <argsstring>(int)</argsstring>
+        <name>writeLen</name>
+        <param>
+          <type>int</type>
+          <defname>ticks</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="325" column="1" bodyfile="mscore/exportly.cpp" bodystart="3199" bodyend="3233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a6d0f949083e96654061d2c1449f70481" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeChordLen</definition>
+        <argsstring>(int ticks)</argsstring>
+        <name>writeChordLen</name>
+        <param>
+          <type>int</type>
+          <declname>ticks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="326" column="1" bodyfile="mscore/exportly.cpp" bodystart="694" bodyend="722"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a91d6d57eb0867e54af641f95846d399f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::tpc2name</definition>
+        <argsstring>(int tpc)</argsstring>
+        <name>tpc2name</name>
+        <param>
+          <type>int</type>
+          <declname>tpc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="327" column="1" bodyfile="mscore/exportly.cpp" bodystart="2402" bodyend="2416"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1af47911cfd436cd8024212484660ce842" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::ExportLy::tpc2purename</definition>
+        <argsstring>(int tpc)</argsstring>
+        <name>tpc2purename</name>
+        <param>
+          <type>int</type>
+          <declname>tpc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="328" column="1" bodyfile="mscore/exportly.cpp" bodystart="2423" bodyend="2428"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a684610666c083442edc5a011b14aa14d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeScore</definition>
+        <argsstring>()</argsstring>
+        <name>writeScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="330" column="1" bodyfile="mscore/exportly.cpp" bodystart="4108" bodyend="4322"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a501c9c68e56f3fb1fa6667c91a796c1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::stemDir</definition>
+        <argsstring>(Chord *)</argsstring>
+        <name>stemDir</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="331" column="1" bodyfile="mscore/exportly.cpp" bodystart="2783" bodyend="2805"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a9eedb2e3dbe450f105a8b05344ddfa27" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeVoiceMeasure</definition>
+        <argsstring>(MeasureBase *, Staff *, int, int)</argsstring>
+        <name>writeVoiceMeasure</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure_base" kindref="compound">MeasureBase</ref> *</type>
+          <defname>mb</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_staff" kindref="compound">Staff</ref> *</type>
+          <defname>staff</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>staffInd</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>voice</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="332" column="1" bodyfile="mscore/exportly.cpp" bodystart="3753" bodyend="4100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ab8608ebfa640a1cc95e3eda10a06c7bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeKeySig</definition>
+        <argsstring>(int)</argsstring>
+        <name>writeKeySig</name>
+        <param>
+          <type>int</type>
+          <defname>st</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="333" column="1" bodyfile="mscore/exportly.cpp" bodystart="2371" bodyend="2396"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a088eedfad3119ff6f10d403338a78517" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeTimeSig</definition>
+        <argsstring>(TimeSig *)</argsstring>
+        <name>writeTimeSig</name>
+        <param>
+          <type><ref refid="class_ms_1_1_time_sig" kindref="compound">TimeSig</ref> *</type>
+          <defname>sig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="334" column="1" bodyfile="mscore/exportly.cpp" bodystart="2349" bodyend="2365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a5f788ea657f3c1789e67d9442c35b290" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeClef</definition>
+        <argsstring>(int)</argsstring>
+        <name>writeClef</name>
+        <param>
+          <type>int</type>
+          <defname>clef</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="335" column="1" bodyfile="mscore/exportly.cpp" bodystart="2321" bodyend="2343"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a3a6c3e2797762c9b1955391b81498335" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeChord</definition>
+        <argsstring>(Chord *, bool)</argsstring>
+        <name>writeChord</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>c</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>nextisrest</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="336" column="1" bodyfile="mscore/exportly.cpp" bodystart="2946" bodyend="3086"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a6f6fec3372616c974369dc522a7b340d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeRest</definition>
+        <argsstring>(int, int)</argsstring>
+        <name>writeRest</name>
+        <param>
+          <type>int</type>
+          <defname>l</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>type</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="337" column="1" bodyfile="mscore/exportly.cpp" bodystart="3242" bodyend="3263"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a262906787e4ffe3e7e090c4a7eb2a7e5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findVolta</definition>
+        <argsstring>()</argsstring>
+        <name>findVolta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="338" column="1" bodyfile="mscore/exportly.cpp" bodystart="2189" bodyend="2267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a31d23d848c53ba809eff6db1b2c69dca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findStartRepNoBarline</definition>
+        <argsstring>(int &amp;i, Measure *)</argsstring>
+        <name>findStartRepNoBarline</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <defname>m</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="339" column="1" bodyfile="mscore/exportly.cpp" bodystart="2167" bodyend="2180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a6920b20b331df37be373902834b491a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeBarline</definition>
+        <argsstring>(Measure *)</argsstring>
+        <name>writeBarline</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="340" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a744c5eb1c8858c494dc0eb513482abf8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::ExportLy::voltaCheckBar</definition>
+        <argsstring>(Measure *, int)</argsstring>
+        <name>voltaCheckBar</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <defname>meas</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>i</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="341" column="1" bodyfile="mscore/exportly.cpp" bodystart="2102" bodyend="2160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a61bd7cc7582ec3aa10f52180fea9793f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeVolta</definition>
+        <argsstring>(int, int)</argsstring>
+        <name>writeVolta</name>
+        <param>
+          <type>int</type>
+          <defname>measurenumber</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>lastind</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="342" column="1" bodyfile="mscore/exportly.cpp" bodystart="3286" bodyend="3400"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a1a49068e554ebde00cb3906c9c052a8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findTuplets</definition>
+        <argsstring>(ChordRest *)</argsstring>
+        <name>findTuplets</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord_rest" kindref="compound">ChordRest</ref> *</type>
+          <defname>cr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="343" column="1" bodyfile="mscore/exportly.cpp" bodystart="2074" bodyend="2094"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a5e254337801afc37df48da56f8230d7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeArticulation</definition>
+        <argsstring>(ChordRest *)</argsstring>
+        <name>writeArticulation</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord_rest" kindref="compound">ChordRest</ref> *</type>
+          <defname>c</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="344" column="1" bodyfile="mscore/exportly.cpp" bodystart="2595" bodyend="2692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ad89bb332ced3e4024000c6a1aac0abd1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::writeScoreBlock</definition>
+        <argsstring>()</argsstring>
+        <name>writeScoreBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="345" column="1" bodyfile="mscore/exportly.cpp" bodystart="4329" bodyend="4481"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a85366f103f3d837b9c8ab95294d435a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::checkSlur</definition>
+        <argsstring>(Chord *, bool)</argsstring>
+        <name>checkSlur</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>nextisrest</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="346" column="1" bodyfile="mscore/exportly.cpp" bodystart="2577" bodyend="2587"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a3c2693a6be32e4cfeaac971cd799778f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::doSlurStart</definition>
+        <argsstring>(Chord *, bool)</argsstring>
+        <name>doSlurStart</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>nextisrest</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="347" column="1" bodyfile="mscore/exportly.cpp" bodystart="2452" bodyend="2515"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ab20a65a4791b1dc9bc83f8c594987b4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::doSlurStop</definition>
+        <argsstring>(Chord *)</argsstring>
+        <name>doSlurStop</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Chord</ref> *</type>
+          <defname>chord</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="348" column="1" bodyfile="mscore/exportly.cpp" bodystart="2522" bodyend="2572"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1aa7e76a2e2075f3f166de5735c7f3093e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::initBrackets</definition>
+        <argsstring>()</argsstring>
+        <name>initBrackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="349" column="1" bodyfile="mscore/exportly.cpp" bodystart="379" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ab870872d16cee76fe2276be115d903ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::brackRegister</definition>
+        <argsstring>(int, int, int, bool, bool)</argsstring>
+        <name>brackRegister</name>
+        <param>
+          <type>int</type>
+          <defname>brnumber</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>bratype</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>staffnr</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>start</defname>
+        </param>
+        <param>
+          <type>bool</type>
+          <defname>end</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="350" column="1" bodyfile="mscore/exportly.cpp" bodystart="400" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a54af27aa11b8e35ad8d52863cb2a2fda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::ExportLy::findBrackets</definition>
+        <argsstring>()</argsstring>
+        <name>findBrackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="351" column="1" bodyfile="mscore/exportly.cpp" bodystart="434" bodyend="480"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1a9a021c195af18ee34e190835666053c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Ms::ExportLy::ExportLy</definition>
+        <argsstring>(Score *s)</argsstring>
+        <name>ExportLy</name>
+        <param>
+          <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="354" column="1" bodyfile="mscore/exportly.cpp" bodystart="354" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_export_ly_1ae30336eafe9f7c59535f47710fc7b751" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::ExportLy::write</definition>
+        <argsstring>(const QString &amp;name)</argsstring>
+        <name>write</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/exportly.cpp" line="362" column="1" bodyfile="mscore/exportly.cpp" bodystart="4691" bodyend="4739"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mscore/exportly.cpp" line="96" column="1" bodyfile="mscore/exportly.cpp" bodystart="96" bodyend="363"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_export_ly_1a71759557c475406e86059a3fa37f5d8e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>anchors</name></member>
+      <member refid="class_ms_1_1_export_ly_1aadbaef997953909a636f74600cdd1177" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>anchortest</name></member>
+      <member refid="class_ms_1_1_export_ly_1aff9542c94aea412533031f2f544fb7f8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>anker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9652899a918a43cc70fd48cbcc21d175" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>arpeggioTest</name></member>
+      <member refid="class_ms_1_1_export_ly_1a49948f4076d73f335786c099ef6ded6b" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>barlen</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34abb2506682446de59e71def1dc5c2b22b" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>bothrepeat</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab870872d16cee76fe2276be115d903ae" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>brackRegister</name></member>
+      <member refid="class_ms_1_1_export_ly_1af0b32d2d972da7ada2b1ebb8a1b501ed" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>bracktest</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a66c3d85eb8e2606e0ad2d72ed9bd508a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>brokenbar</name></member>
+      <member refid="class_ms_1_1_export_ly_1a7d3000f9bd23f15f04242a4ebd95fe02" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>buildGlissandoList</name></member>
+      <member refid="class_ms_1_1_export_ly_1af15e421abcc43ccc75cea470a958c813" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>buildInstructionList</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2610bfb9c09452412bae88e199590da8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>buildInstructionListPart</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac810576b82da989bb603e3341c0d1b24" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>checkJumpOrMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a85366f103f3d837b9c8ab95294d435a5" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>checkSlur</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2e9c007f3e2d59f816d1e8500ff2b930" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chord2Name</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad555efd49394f3c7b93ef540e76abb33" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordcount</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2f930f2baa89fa4d5bdfe6892fa38e2b" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordHead</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac348798fae73a8b3320ff8111dfad7f2" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordInsertList</name></member>
+      <member refid="class_ms_1_1_export_ly_1a8ef0ce725a58cc6749936c2fa48122e6" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordName</name></member>
+      <member refid="class_ms_1_1_export_ly_1a348da59362d9359ffa418e4d72b57890" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordpitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1abfd4663045672c0ea80233d15ba00ed8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>chordThis</name></member>
+      <member refid="class_ms_1_1_export_ly_1a93c74e5243a8bc5a6b1a8d2856154031" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>cleannote</name></member>
+      <member refid="class_ms_1_1_export_ly_1a7270f3883c659e4089808bab913b4dab" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>cleanupChordList</name></member>
+      <member refid="class_ms_1_1_export_ly_1a8d88dcb001a09d1fa5bb05ad547ec1af" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>cleanupLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2166f6a464a1beb713563df03ef6476c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>connectLyricsToStaff</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad0cdbc478726a7a46c0a5a7d6f9ade3e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>cp</name></member>
+      <member refid="class_ms_1_1_export_ly_1a8b37f390d6671339bb17b1900978c94e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>curTicks</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3163aca939147b74a6219b3d3fded0d6" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>donefirst</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3c2693a6be32e4cfeaac971cd799778f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>doSlurStart</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab20a65a4791b1dc9bc83f8c594987b4f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>doSlurStop</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a1d0c49a39d4efa2a95f8b52b197e43e0" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>doublebar</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3bbf8f4d13c092882d16bb8bf9725f95" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>dynamic</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a094b9856f77a1cd854b4faff30cb17ba" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>endbar</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34ab918ed60fd59069c9d82e023613ca668" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>endending</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a4223cbb59f9c398d95fc1dda3b0725d4" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>endrepeat</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9a021c195af18ee34e190835666053c6" prot="public" virt="non-virtual"><scope>Ms::ExportLy</scope><name>ExportLy</name></member>
+      <member refid="class_ms_1_1_export_ly_1a84ae252b55ce5e964869bb97daec0963" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>f</name></member>
+      <member refid="class_ms_1_1_export_ly_1a54af27aa11b8e35ad8d52863cb2a2fda" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findBrackets</name></member>
+      <member refid="class_ms_1_1_export_ly_1a7b76f52d2065cfeec6ce0de6a8732e6c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findFingerAndStringno</name></member>
+      <member refid="class_ms_1_1_export_ly_1aff10e18b3ccb4c1f356a52b40089257f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findGraceNotes</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad37f8433f8fe8416a80b15c43e07d78c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1aeb4a4125a14480356103891b82e2134a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findMarkerAtMeasureStart</name></member>
+      <member refid="class_ms_1_1_export_ly_1a53a043298e31b4e33f3e7862dd8a7a12" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findMatchInMeasure</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4d9c4964a9755ec5edd149b364d2e122" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findMatchInPart</name></member>
+      <member refid="class_ms_1_1_export_ly_1a63746eb9b33fa94bc411c61c467b4955" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findNoteSymbol</name></member>
+      <member refid="class_ms_1_1_export_ly_1aecb33c18f6ecdb4e3ce0bcdecc014b79" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findSlur</name></member>
+      <member refid="class_ms_1_1_export_ly_1a31d23d848c53ba809eff6db1b2c69dca" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findStartRepNoBarline</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac3195d15cf4d23b0b3e3883b69d5673e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findTextProperties</name></member>
+      <member refid="class_ms_1_1_export_ly_1a1a49068e554ebde00cb3906c9c052a8c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findTuplets</name></member>
+      <member refid="class_ms_1_1_export_ly_1a262906787e4ffe3e7e090c4a7eb2a7e5" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>findVolta</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4521cd855863091dad5a91188ebae86e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>firstalt</name></member>
+      <member refid="class_ms_1_1_export_ly_1a783db9d5a51dc47265868a96469f5ad9" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>flatInInstrName</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0777b7c0e39e4df679af2f0adad47d82" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>getLen</name></member>
+      <member refid="class_ms_1_1_export_ly_1a5dc64637425d6f8a149030b994c7883a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>glissandotest</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac751bd8259f6f2bcca57e2adc95b38e8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>glisscount</name></member>
+      <member refid="class_ms_1_1_export_ly_1a8da404e147e5eada7f1a84575ca05f87" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>glisstable</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3b4782967e005393427aee05f148bdcd" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>gracebeam</name></member>
+      <member refid="class_ms_1_1_export_ly_1a89980648394d39184aed159a74120091" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>gracecount</name></member>
+      <member refid="class_ms_1_1_export_ly_1a97ffa7260dda4fa8e70476d778476c6d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>graceswitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0c49a7b80df5a48215a93e5490b54844" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>hairpin</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab1a300240cb2f47ef2557898d4534c7a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>handleElement</name></member>
+      <member refid="class_ms_1_1_export_ly_1a595c2c06c8c9b58174f9bfb78335eb5a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>handlePreInstruction</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac364406d00887af4ce6fce6915eba644" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>headOfLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1a76a691496d685bba5d6eec679e9c8264" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>indent</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9efc82e20d774cb15b87bd2cbeada131" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>indentF</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab3c88497bae799ab5b1c0ce985f6b5cf" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>indx</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac8088436bee5efee0e72ed1309118be0" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>initAnchors</name></member>
+      <member refid="class_ms_1_1_export_ly_1aa7e76a2e2075f3f166de5735c7f3093e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>initBrackets</name></member>
+      <member refid="class_ms_1_1_export_ly_1a5fa8af94cd52398f975d45715f937c9c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>initJumpOrMarkerLMs</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4ccb5e62d8242ca6807ca0bbf6078b5d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>instructionJump</name></member>
+      <member refid="class_ms_1_1_export_ly_1acc0c54c01ee4a71fe2a53d8af2e71bc9" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>instructionMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9faf2c72ab89c337b28f9bc3157d0b1f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>jumpAtMeasureStop</name></member>
+      <member refid="class_ms_1_1_export_ly_1aefb0c564b4994fd4a3b941c073e4140c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>jumpOrMarkerList</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0234aede3e06c8fea685871c8eafee86" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>jumpswitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac30489afc52bce85514de336a7398b6c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>jumptest</name></member>
+      <member refid="class_ms_1_1_export_ly_1aa533b1aa3e0159dff5282adbb1d177e4" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>lastind</name></member>
+      <member refid="class_ms_1_1_export_ly_1afc14f194676e2c58a9755997435e8ff6" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>lastJumpOrMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad4456d815948044ac0d08c72536e7068" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>level</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4778fd7ecad932d889302eba3ca7f6a7" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>lybracks</name></member>
+      <member refid="class_ms_1_1_export_ly_1abd9f91b81ad66b9d4f3cc52b14ab44f1" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>measurenumber</name></member>
+      <member refid="class_ms_1_1_export_ly_1a91f25f9f25a2bee13811286a5c2c0172" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>newLyricsRecord</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab39dc00edd21725dd5d9a4e6e4538cf4" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>nextAnchor</name></member>
+      <member refid="class_ms_1_1_export_ly_1af62b5f0eb9e4095d10f3073afb6bb1ae" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>nochord</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34ac5c1df15aa15bcebebfdcc65192c4dff" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>none</name></member>
+      <member refid="class_ms_1_1_export_ly_1a41d810d37b83bb9c61b6976a5bb8b21f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>os</name></member>
+      <member refid="class_ms_1_1_export_ly_1a86bad5990c703156a3f12c50f9c0a8a2" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>ottava</name></member>
+      <member refid="class_ms_1_1_export_ly_1a67b63fee35c5ccc12ca060fbce4b49ff" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>ottvaswitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1a1983b2df5fb0c6037a647289d002f4d8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>out</name></member>
+      <member refid="class_ms_1_1_export_ly_1aac91ac6f6c9461a5704cd0f157f90042" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>partial</name></member>
+      <member refid="class_ms_1_1_export_ly_1a68ff3860dcc59dbf7d2d6f409d37d6fe" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>pedal</name></member>
+      <member refid="class_ms_1_1_export_ly_1af03c021c187310d19167ea0ab303049c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>phraseslur</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad671be2f29cdac740b1782048a531f08" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>pianostaff</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad1089c8fed4cac6c2394f392a0711263" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>pickup</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4154619d4ae4b4c72857988cf7689619" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>preserveJumpOrMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1afeb5484306f6df01d938c1bc6620d6ec" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>prevElTick</name></member>
+      <member refid="class_ms_1_1_export_ly_1a60afc2122d2e229605ab5a58d2997ea0" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>prevHarmony</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad9333e87d684f09e2ce8b54ebeca47e1" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>prevnote</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4962073b2ff4ce3dc62ed44d493e92cf" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>prevpitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1a16739195fb67adbdd09223f1f20afec4" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>primitiveJump</name></member>
+      <member refid="class_ms_1_1_export_ly_1a27e336937925bda64a0b0b0f50516555" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>primitiveMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0d10ce9b618b420a263ad2ecc1d3eb21" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>printChordList</name></member>
+      <member refid="class_ms_1_1_export_ly_1a73e0e808060374cf114b972637af840a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>printJumpOrMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9a1902e608fc3082f5e11c69c1e6a3e2" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>privateRehearsalMark</name></member>
+      <member refid="class_ms_1_1_export_ly_1aa606becef1d6dc919c4b5861c198e741" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>rehearsalnumbers</name></member>
+      <member refid="class_ms_1_1_export_ly_1a54d35d21b6aef72c0d57a56dd0e7bc8e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>relativ</name></member>
+      <member refid="class_ms_1_1_export_ly_1a6e291a4b53470d52e45bc8ee16cb30ce" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>removeAnchor</name></member>
+      <member refid="class_ms_1_1_export_ly_1a12d083933942d407c608d9efafe845e1" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>removeJumpOrMarkerLM</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3457ee5ac0de826bce211f84adfe42cb" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>repeatactive</name></member>
+      <member refid="class_ms_1_1_export_ly_1a59d8b100677650ba73e3f9f49fb81f5b" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>resetAnchor</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae21ceeb69b8bb377c4dbea5667d13deb" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>resetChordData</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0a5572cce8a0922c3d41b31a34a7607f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>resetJumpOrMarkerLM</name></member>
+      <member refid="class_ms_1_1_export_ly_1a23aa4399bfc990a31d663bdaa955a941" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>score</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae73d5e26076940b96c2b9623b4b55b3e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>scorebuffer</name></member>
+      <member refid="class_ms_1_1_export_ly_1a20c511c2cd0554a85f3ee21e9d490463" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>scorout</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4c61d7dac2af6a4f9fb3af7870c7723c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>secondalt</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0d7a7723d0880cec05ec3249ed136471" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>setOctave</name></member>
+      <member refid="class_ms_1_1_export_ly_1a171a90f683c42b44ffe7e89516110a93" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>slur</name></member>
+      <member refid="class_ms_1_1_export_ly_1aa73c16af13d5d6221f1f61436e71e79f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>slurre</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae6c370cc2648c1c371570f63b19c7d27" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>slurstack</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae4b05e56a2f58b82bf6cd042478d40ff" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>staffInd</name></member>
+      <member refid="class_ms_1_1_export_ly_1a72e2f36f5b1349d17bb3811c5ec556f1" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>staffname</name></member>
+      <member refid="class_ms_1_1_export_ly_1abf4033f68dd66f5991d0b7e2dbdb34b6" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>staffpitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0e96aab9def62b8eefb7b31dc4e56ba7" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>staffrelativ</name></member>
+      <member refid="class_ms_1_1_export_ly_1a431ab2a44d66223eeae4fbb7649c457c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>started</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a4fa07e4349172787c8b56c6cd300ce75" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>startending</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34a958c0a09f1fbfd29649dd2108598fc7f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>startrepeat</name></member>
+      <member refid="class_ms_1_1_export_ly_1a501c9c68e56f3fb1fa6667c91a796c1c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>stemDir</name></member>
+      <member refid="class_ms_1_1_export_ly_1a61868b2fa69c8be926cc1d86328e4418" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>stemDirection</name></member>
+      <member refid="class_ms_1_1_export_ly_1aa2495084f4a68b4539f4131d268e94a8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>storeAnchor</name></member>
+      <member refid="class_ms_1_1_export_ly_1a30a3127b467585c9afcba3fcfebaf07a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>storeChord</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0e284d70c54b9056cb8e13037687a97f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>tailOfLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1a0f29c72a92148804a0a30d1f0ca8302c" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>taktnr</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae2f32b76c75913b6be18cb659357fa53" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>tempoText</name></member>
+      <member refid="class_ms_1_1_export_ly_1aae1882cc245a4590e339a60d4c2b0076" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>textLine</name></member>
+      <member refid="class_ms_1_1_export_ly_1a20bcda9a8ad0116496d4364e7cec369d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>textspannerdown</name></member>
+      <member refid="class_ms_1_1_export_ly_1ac445ce76bac78623301c2d9a8de860ae" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>textspanswitch</name></member>
+      <member refid="class_ms_1_1_export_ly_1a4963eb8e0d1b521b0f1b1a8691a52861" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>thisHarmony</name></member>
+      <member refid="class_ms_1_1_export_ly_1a19160eda8fe0771dd638284cab941573" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>thisLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1a71298e860ccef4d2cebf8040d43d8290" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>timedenom</name></member>
+      <member refid="class_ms_1_1_export_ly_1a91d6d57eb0867e54af641f95846d399f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>tpc2name</name></member>
+      <member refid="class_ms_1_1_export_ly_1af47911cfd436cd8024212484660ce842" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>tpc2purename</name></member>
+      <member refid="class_ms_1_1_export_ly_1aada415b9d6f2b732933a711dd5c49fa3" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>tupletcount</name></member>
+      <member refid="class_ms_1_1_export_ly_1a83e61c55254a4f4006e89f60de781b77" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voiceActive</name></member>
+      <member refid="class_ms_1_1_export_ly_1a1b0a9ea46674794bfe920a873631eb83" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voicebuffer</name></member>
+      <member refid="class_ms_1_1_export_ly_1a744c5eb1c8858c494dc0eb513482abf8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voltaCheckBar</name></member>
+      <member refid="class_ms_1_1_export_ly_1a279e6aae8d0807ebee0aecd0017386f3" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voltarray</name></member>
+      <member refid="class_ms_1_1_export_ly_1a84d0466ad64c0ffa8daade6d39278b3d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voltatest</name></member>
+      <member refid="class_ms_1_1_export_ly_1aceab6e87dd145c270793bf3ea03d5e34" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>voltatype</name></member>
+      <member refid="class_ms_1_1_export_ly_1a37682a178ec9b8c5ba7294bcd81c9d42" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>wholemeasurerest</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad3ef09e6ffb9a378ec588dded0f596ab" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>wholemeasuretext</name></member>
+      <member refid="class_ms_1_1_export_ly_1a42cf22453fcee27b1c2f044a52754453" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>words</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae30336eafe9f7c59535f47710fc7b751" prot="public" virt="non-virtual"><scope>Ms::ExportLy</scope><name>write</name></member>
+      <member refid="class_ms_1_1_export_ly_1a5e254337801afc37df48da56f8230d7a" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeArticulation</name></member>
+      <member refid="class_ms_1_1_export_ly_1a6920b20b331df37be373902834b491a9" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeBarline</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3a6c3e2797762c9b1955391b81498335" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeChord</name></member>
+      <member refid="class_ms_1_1_export_ly_1a6d0f949083e96654061d2c1449f70481" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeChordLen</name></member>
+      <member refid="class_ms_1_1_export_ly_1a5f788ea657f3c1789e67d9442c35b290" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeClef</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2756516fb6c60df7369faff2589b8075" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeCombinedMarker</name></member>
+      <member refid="class_ms_1_1_export_ly_1a1245a26cf0305694d67ca8205d62c302" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeFingering</name></member>
+      <member refid="class_ms_1_1_export_ly_1ab8608ebfa640a1cc95e3eda10a06c7bb" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeKeySig</name></member>
+      <member refid="class_ms_1_1_export_ly_1a3f8c1322965638503223bd1d9eb80abb" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeLen</name></member>
+      <member refid="class_ms_1_1_export_ly_1a804ae6c80e911c78506155cf30d946bc" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeLilyHeader</name></member>
+      <member refid="class_ms_1_1_export_ly_1a7e7d3b2322b52488611cfc67a21c38af" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeLilyMacros</name></member>
+      <member refid="class_ms_1_1_export_ly_1a7ca3480b008fec91cd01e5ad4863bd8b" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeLyrics</name></member>
+      <member refid="class_ms_1_1_export_ly_1a8bf91c49f3835ca55d32f6fe0cff451e" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeMeasuRestNum</name></member>
+      <member refid="class_ms_1_1_export_ly_1a77a4176a2bed6db959cb1e5d1dc82ec3" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writePageFormat</name></member>
+      <member refid="class_ms_1_1_export_ly_1a6f6fec3372616c974369dc522a7b340d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeRest</name></member>
+      <member refid="class_ms_1_1_export_ly_1a684610666c083442edc5a011b14aa14d" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeScore</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad89bb332ced3e4024000c6a1aac0abd1" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeScoreBlock</name></member>
+      <member refid="class_ms_1_1_export_ly_1a2e37b89095a2cdfb8e784efe3a1d29d7" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeScoreTitles</name></member>
+      <member refid="class_ms_1_1_export_ly_1ae9d9b2150a81a3f597e7fa826bcb2062" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeStringInstruction</name></member>
+      <member refid="class_ms_1_1_export_ly_1ad45c3f303f27b56ce6a482e6ac4438fa" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeSymbol</name></member>
+      <member refid="class_ms_1_1_export_ly_1a088eedfad3119ff6f10d403338a78517" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeTimeSig</name></member>
+      <member refid="class_ms_1_1_export_ly_1a77d6645aa4dc78d2e2150c40c792b5af" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeTremolo</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9eedb2e3dbe450f105a8b05344ddfa27" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeVoiceMeasure</name></member>
+      <member refid="class_ms_1_1_export_ly_1a61bd7cc7582ec3aa10f52180fea9793f" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>writeVolta</name></member>
+      <member refid="class_ms_1_1_export_ly_1a9c90cd4ef24d0af24211fde10d5147e8" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>z1</name></member>
+      <member refid="class_ms_1_1_export_ly_1a45be878092fae59edf5456811f5e3271" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>z2</name></member>
+      <member refid="class_ms_1_1_export_ly_1a1dbff9aede5dcc58ba5eabcf0bdef164" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>z3</name></member>
+      <member refid="class_ms_1_1_export_ly_1a5bdb19fedb28042b97be9a93d3075918" prot="private" virt="non-virtual"><scope>Ms::ExportLy</scope><name>z4</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

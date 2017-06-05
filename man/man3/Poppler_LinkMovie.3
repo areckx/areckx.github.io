@@ -1,0 +1,99 @@
+.TH "Poppler::LinkMovie" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkMovie
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBOperation\fP { \fBPlay\fP, \fBStop\fP, \fBPause\fP, \fBResume\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkMovie\fP (const QRectF &\fBlinkArea\fP, \fBOperation\fP \fBoperation\fP, const QString &annotationTitle, const \fBRef\fP &annotationReference)"
+.br
+.ti -1c
+.RI "\fB~LinkMovie\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.ti -1c
+.RI "\fBOperation\fP \fBoperation\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisReferencedAnnotation\fP (const \fBMovieAnnotation\fP *annotation) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMovie\fP: a movie to be played\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 558 of file poppler\-link\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::LinkMovie::Operation\fP"
+Describes the operation to be performed on the movie\&. 
+.PP
+Definition at line 564 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LinkMovie::LinkMovie (const QRectF & linkArea, \fBOperation\fP operation, const QString & annotationTitle, const \fBRef\fP & annotationReference)"
+Create a new \fBMovie\fP link\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinkArea\fP the active area of the link 
+.br
+\fIoperation\fP the operation to be performed on the movie 
+.br
+\fIannotationTitle\fP the title of the movie annotation identifying the movie to be played 
+.br
+\fIannotationReference\fP the object reference of the movie annotation identifying the movie to be played
+.RE
+.PP
+Note: This constructor is supposed to be used by \fBPoppler::Page\fP only\&. 
+.PP
+Definition at line 674 of file poppler\-link\&.cc\&.
+.SS "LinkMovie::~LinkMovie ()"
+Destructor\&. 
+.PP
+Definition at line 679 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool LinkMovie::isReferencedAnnotation (const \fBMovieAnnotation\fP * annotation) const"
+Returns whether the given \fCannotation\fP is the referenced movie annotation for this movie \fClink\fP\&. 
+.PP
+Definition at line 694 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP LinkMovie::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 683 of file poppler\-link\&.cc\&.
+.SS "\fBLinkMovie::Operation\fP LinkMovie::operation () const"
+Returns the operation to be performed on the movie\&. 
+.PP
+Definition at line 688 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

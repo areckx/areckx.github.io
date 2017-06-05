@@ -1,0 +1,1172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_arthur_output_dev" kind="class" language="C++" prot="public">
+    <compoundname>ArthurOutputDev</compoundname>
+    <basecompoundref refid="class_output_dev" prot="public" virt="non-virtual">OutputDev</basecompoundref>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3b" prot="public" static="no">
+        <name>FontHinting</name>
+        <enumvalue id="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3baea63a6c84b3dc203fbd150ebc26595d4" prot="public">
+          <name>NoHinting</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Font shapes are left unchanged. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3baa873f8fd7197f9e7ed98d3183f360ff2" prot="public">
+          <name>SlightHinting</name>
+          <briefdescription>
+<para>Font shapes are distorted vertically only. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3ba56c7943ee3ca37948b61d34c8e549178" prot="public">
+          <name>FullHinting</name>
+          <briefdescription>
+<para>Font shapes are distorted horizontally and vertically. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Describes how fonts are distorted (aka hinted) to fit the pixel grid. More hinting means sharper edges and less adherence to the true letter shapes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="60" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="60" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arthur_output_dev_1ad45230ee5e3f7507b36f0f4be4d1cd32" prot="private" static="no" mutable="no">
+        <type>QPainter *</type>
+        <definition>QPainter* ArthurOutputDev::m_painter</definition>
+        <argsstring></argsstring>
+        <name>m_painter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="159" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1a351b3c5b11984d742104fe145e1554c2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3b" kindref="member">FontHinting</ref></type>
+        <definition>FontHinting ArthurOutputDev::m_fontHinting</definition>
+        <argsstring></argsstring>
+        <name>m_fontHinting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="160" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1ad35d0787489ddcc5b5b0bea70c8195f8" prot="private" static="no" mutable="no">
+        <type>QFont</type>
+        <definition>QFont ArthurOutputDev::m_currentFont</definition>
+        <argsstring></argsstring>
+        <name>m_currentFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="161" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1acba3d170eb131cd548a767ee8174c74c" prot="private" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen ArthurOutputDev::m_currentPen</definition>
+        <argsstring></argsstring>
+        <name>m_currentPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="162" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1a67e915a539a9e48af6314052c4e2c30b" prot="private" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush ArthurOutputDev::m_currentBrush</definition>
+        <argsstring></argsstring>
+        <name>m_currentBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="163" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1aa5ce3714b94e49cea5d4cee17603184f" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool ArthurOutputDev::m_needFontUpdate</definition>
+        <argsstring></argsstring>
+        <name>m_needFontUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="164" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1ae94f2367be5b35831391560378da3b70" prot="private" static="no" mutable="no">
+        <type><ref refid="class_splash_font_engine" kindref="compound">SplashFontEngine</ref> *</type>
+        <definition>SplashFontEngine* ArthurOutputDev::m_fontEngine</definition>
+        <argsstring></argsstring>
+        <name>m_fontEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="165" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1ad3b341411e21a9ccde324d0616ea8e04" prot="private" static="no" mutable="no">
+        <type><ref refid="class_splash_font" kindref="compound">SplashFont</ref> *</type>
+        <definition>SplashFont* ArthurOutputDev::m_font</definition>
+        <argsstring></argsstring>
+        <name>m_font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="166" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arthur_output_dev_1a165ea8af2b0ccdc1347c2d34e30b367a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+        <definition>XRef* ArthurOutputDev::xref</definition>
+        <argsstring></argsstring>
+        <name>xref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="167" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arthur_output_dev_1a47fbf79b876a4e51f921c59c643b87b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ArthurOutputDev::ArthurOutputDev</definition>
+        <argsstring>(QPainter *painter)</argsstring>
+        <name>ArthurOutputDev</name>
+        <param>
+          <type>QPainter *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="67" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a3c0635d9aec9f7258eaf27b1880a781e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ArthurOutputDev::~ArthurOutputDev</definition>
+        <argsstring>()</argsstring>
+        <name>~ArthurOutputDev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="70" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="99" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a147b2711671a1da4daff6e3a98a4bc23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::setFontHinting</definition>
+        <argsstring>(FontHinting hinting)</argsstring>
+        <name>setFontHinting</name>
+        <param>
+          <type><ref refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3b" kindref="member">FontHinting</ref></type>
+          <declname>hinting</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="72" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="72" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a53c547cc0e63cd518ba5b5e19ecab5b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool ArthurOutputDev::upsideDown</definition>
+        <argsstring>()</argsstring>
+        <name>upsideDown</name>
+        <reimplements refid="class_output_dev_1a6f03f8de862d1dfcfeabd8fc9f8c779c">upsideDown</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="78" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="78" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a7c660aeb893e44e05ad7895c14ef089f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool ArthurOutputDev::useDrawChar</definition>
+        <argsstring>()</argsstring>
+        <name>useDrawChar</name>
+        <reimplements refid="class_output_dev_1a0e4c506af59324b094b0433b4612f3af">useDrawChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="81" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a70282b634a31d3be6377127d652f3384" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool ArthurOutputDev::interpretType3Chars</definition>
+        <argsstring>()</argsstring>
+        <name>interpretType3Chars</name>
+        <reimplements refid="class_output_dev_1aa9681fb6f14963ebfc9fdf3fc1c4ea8e">interpretType3Chars</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="85" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a1ef451fefd441163263b7523c20d2377" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::startPage</definition>
+        <argsstring>(int pageNum, GfxState *state, XRef *xref)</argsstring>
+        <name>startPage</name>
+        <reimplements refid="class_output_dev_1a1521b7823ba04bccef3f69f71ddf068a">startPage</reimplements>
+        <param>
+          <type>int</type>
+          <declname>pageNum</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+          <declname>xref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="90" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="127" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a22a55debb433f8eca1746799226c8c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::endPage</definition>
+        <argsstring>()</argsstring>
+        <name>endPage</name>
+        <reimplements refid="class_output_dev_1a6ee379b0784e080f28058fc226f1c590">endPage</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="93" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="141" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ab69e7d5f3c7ef02aa8fbe3bb2448c2f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::saveState</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>saveState</name>
+        <reimplements refid="class_output_dev_1a9756dda2c43a69c2f7a07fa226873e8a">saveState</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="96" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="144" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a66912b0283246112c74798e49b973f88" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::restoreState</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>restoreState</name>
+        <reimplements refid="class_output_dev_1a2739adc2b718fba838464fc759cae209">restoreState</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="97" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="149" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a7810e0cf27dcd5e0e3de16ad1a9b95ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateAll</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateAll</name>
+        <reimplements refid="class_output_dev_1a93327999b4eb997b33e7d2091c72d7da">updateAll</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="100" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a618d8642cb385ff78702d6fb0c039494" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateCTM</definition>
+        <argsstring>(GfxState *state, double m11, double m12, double m21, double m22, double m31, double m32)</argsstring>
+        <name>updateCTM</name>
+        <reimplements refid="class_output_dev_1a1f4c88972c59fe75ebe79bec6f22727a">updateCTM</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m11</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m12</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m21</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m22</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m31</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m32</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="101" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="161" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a091d74c85749043860eb5dd6bd71b669" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateLineDash</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineDash</name>
+        <reimplements refid="class_output_dev_1a21a6c8bac1bb874507cc2858a1775056">updateLineDash</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="103" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="171" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a685917dd5f23bde65076010560ea3958" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateFlatness</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFlatness</name>
+        <reimplements refid="class_output_dev_1a5a5694c57e4c3ee7d9f3a06ff433acb3">updateFlatness</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="104" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ad66ee532f822b85d4b68d15f69d7a947" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateLineJoin</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineJoin</name>
+        <reimplements refid="class_output_dev_1a4cd594a8dfcad47a04d5e317bd41263d">updateLineJoin</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="105" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="191" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a8db3317e524c7636739f6a967bfd68e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateLineCap</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineCap</name>
+        <reimplements refid="class_output_dev_1ae82804bfcaa9c38cb2d7f23862329890">updateLineCap</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="106" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="207" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a8d59dd14da5e18bd4b62954b56167211" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateMiterLimit</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateMiterLimit</name>
+        <reimplements refid="class_output_dev_1a74a07b0ef9ba5c15bf453fed9c528728">updateMiterLimit</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="107" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="223" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1affb2218e59477080debeebc2a82ff8c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateLineWidth</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineWidth</name>
+        <reimplements refid="class_output_dev_1aceb59d18f9397f4b88e088ecedfb26ee">updateLineWidth</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="108" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="229" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a38669e34bf20f72bdebe04a8232d8fb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateFillColor</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFillColor</name>
+        <reimplements refid="class_output_dev_1a15416568303178d9ed4845b3c09dff6a">updateFillColor</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="109" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="235" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ae63b74e87812e48d6c9ad224a0920071" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateStrokeColor</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateStrokeColor</name>
+        <reimplements refid="class_output_dev_1a0899a8d22039e61343357444dcc48578">updateStrokeColor</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="110" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="244" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a425bc18a31566dd0c2ca5de158b5a990" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateFillOpacity</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFillOpacity</name>
+        <reimplements refid="class_output_dev_1a3c08aea8dd5180bef704b1c484ae60ae">updateFillOpacity</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="111" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="254" bodyend="259"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a99991401269bad463f5141be44432ab7" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateStrokeOpacity</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateStrokeOpacity</name>
+        <reimplements refid="class_output_dev_1aae769c911e3adf88fe09b4e7d3ba4430">updateStrokeOpacity</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="112" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="261" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a94b7937060ee341e64af134bc14348f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::updateFont</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFont</name>
+        <reimplements refid="class_output_dev_1af59f68777aac425cdf8e1bcc964680f2">updateFont</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="115" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="269" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1af427b4bad695762d94aac09f77292fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::stroke</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>stroke</name>
+        <reimplements refid="class_output_dev_1aa24b70b1cff92053ef27c7e57f9c6e3a">stroke</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="118" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="538" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ab41aa5e79659fc19702c39bf54b417bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::fill</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>fill</name>
+        <reimplements refid="class_output_dev_1a27be5a4851d168b8e08d52dc32dfc9d9">fill</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="119" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="543" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a59145d52b68163b40561cea12599b98e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::eoFill</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>eoFill</name>
+        <reimplements refid="class_output_dev_1a33a36bcae0a743b6182f73e50abc4c41">eoFill</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="120" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="548" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1aa2175565a57dc74933d8b153fd84c762" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::clip</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>clip</name>
+        <reimplements refid="class_output_dev_1ad29af51b92ec67117ef04c31a3a7cd8b">clip</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="123" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="553" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1aca4d2c648afc703d0d3407d199cad5f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::eoClip</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>eoClip</name>
+        <reimplements refid="class_output_dev_1ab7f90de29bab85a8ccb3331889363bc1">eoClip</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="124" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="558" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a7fbd036401adb7be5ce6d8aec39b48fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::drawChar</definition>
+        <argsstring>(GfxState *state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, Unicode *u, int uLen)</argsstring>
+        <name>drawChar</name>
+        <reimplements refid="class_output_dev_1a6c9cea15f3fa7ee836e6e793c63803d5">drawChar</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>originX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>originY</declname>
+        </param>
+        <param>
+          <type>CharCode</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nBytes</declname>
+        </param>
+        <param>
+          <type>Unicode *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>uLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="128" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="563" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a40b2bf34059cfe32bad1507bef3d7ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool ArthurOutputDev::beginType3Char</definition>
+        <argsstring>(GfxState *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)</argsstring>
+        <name>beginType3Char</name>
+        <reimplements refid="class_output_dev_1a76e82f369f41ecf05f0ae825947c74cc">beginType3Char</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>CharCode</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>Unicode *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>uLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="132" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="660" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1aae10452421b89cf860904f3f86345d21" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::endType3Char</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endType3Char</name>
+        <reimplements refid="class_output_dev_1a83985f2d8420d2c587f2b5848b0e458a">endType3Char</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="135" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="667" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a250fbb6bdbcd670b7b5ed4399ce7cf28" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::endTextObject</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endTextObject</name>
+        <reimplements refid="class_output_dev_1ab8decd3c140caa8265369f1ecfc729a5">endTextObject</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="136" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="680" bodyend="682"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1aa399c4039e6f42f8918f072241a2aa13" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::drawImageMask</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)</argsstring>
+        <name>drawImageMask</name>
+        <reimplements refid="class_output_dev_1a630a960bf7cfada13e56c968c2be041d">drawImageMask</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="139" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="685" bodyend="759"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1aa0e29e0a1558510c6c5f811b13f1e783" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::drawImage</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GfxImageColorMap *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)</argsstring>
+        <name>drawImage</name>
+        <reimplements refid="class_output_dev_1a5faa216a4d6de3e7a372abb0318085e2">drawImage</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>colorMap</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>maskColors</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="142" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="762" bodyend="816"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a460467dd2aa76e820bd8c8761a3e7a22" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::type3D0</definition>
+        <argsstring>(GfxState *state, double wx, double wy)</argsstring>
+        <name>type3D0</name>
+        <reimplements refid="class_output_dev_1a04cf5c31e2b2bb4ae0b2376350234ec0">type3D0</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="147" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="671" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ad6b9f26e561860943d1dfdbaec9d733a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::type3D1</definition>
+        <argsstring>(GfxState *state, double wx, double wy, double llx, double lly, double urx, double ury)</argsstring>
+        <name>type3D1</name>
+        <reimplements refid="class_output_dev_1aaadf8faecf05a1719baf96219fcd13f4">type3D1</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>llx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>urx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ury</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="148" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="675" bodyend="678"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1a9012cde63e9d36ef93d9ea1510f22893" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArthurOutputDev::startDoc</definition>
+        <argsstring>(XRef *xrefA)</argsstring>
+        <name>startDoc</name>
+        <param>
+          <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+          <declname>xrefA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="154" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.cc" bodystart="106" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arthur_output_dev_1ab363ab0fec0cea81f5b7babf82c6a917" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool ArthurOutputDev::isReverseVideo</definition>
+        <argsstring>()</argsstring>
+        <name>isReverseVideo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="156" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="156" bodyend="156"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1267">
+        <label>OutputDev</label>
+        <link refid="class_output_dev"/>
+      </node>
+      <node id="1266">
+        <label>ArthurOutputDev</label>
+        <link refid="class_arthur_output_dev"/>
+        <childnode refid="1267" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1269">
+        <label>OutputDev</label>
+        <link refid="class_output_dev"/>
+      </node>
+      <node id="1268">
+        <label>ArthurOutputDev</label>
+        <link refid="class_arthur_output_dev"/>
+        <childnode refid="1269" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/poppler/qt5/ArthurOutputDev.h" line="54" column="1" bodyfile="thirdparty/poppler/qt5/ArthurOutputDev.h" bodystart="54" bodyend="168"/>
+    <listofallmembers>
+      <member refid="class_arthur_output_dev_1a47fbf79b876a4e51f921c59c643b87b0" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>ArthurOutputDev</name></member>
+      <member refid="class_output_dev_1a8b296e1a5cf43432101c59b67af4128a" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>axialShadedFill</name></member>
+      <member refid="class_output_dev_1af18b529a68d2b5d5948cbc0c4e8330c4" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>axialShadedSupportExtend</name></member>
+      <member refid="class_output_dev_1af1d24bd84cbcda2862c76cf8e081f86d" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginActualText</name></member>
+      <member refid="class_output_dev_1abb35b1288a0f1d823a24f3e45c6067b9" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginMarkedContent</name></member>
+      <member refid="class_output_dev_1abc90da88fb9ee1e10d3b60b4821a75d8" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginString</name></member>
+      <member refid="class_output_dev_1af0a25f677aa1a95e2a6e060b1dc81e9f" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginStringOp</name></member>
+      <member refid="class_output_dev_1a5ab9de85c9fd722c86d399169d8f521c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginTextObject</name></member>
+      <member refid="class_output_dev_1adf5dc30b2401ef362ff5c24f167169a3" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginTransparencyGroup</name></member>
+      <member refid="class_arthur_output_dev_1a40b2bf34059cfe32bad1507bef3d7ccb" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>beginType3Char</name></member>
+      <member refid="class_output_dev_1a223ee5e8d92f2d66130d1c0e33990fc9" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>checkPageSlice</name></member>
+      <member refid="class_output_dev_1a7c277c07f07e0c4c70d048b57aa0b3c7" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>checkTransparencyGroup</name></member>
+      <member refid="class_output_dev_1a909e1d99398b8387f7ddcaa53de9e9d6" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>clearPatternOpacity</name></member>
+      <member refid="class_output_dev_1a0323fd4cd9bf7baed8f9f9cd155cfac1" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>clearSoftMask</name></member>
+      <member refid="class_arthur_output_dev_1aa2175565a57dc74933d8b153fd84c762" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>clip</name></member>
+      <member refid="class_output_dev_1a1240052875f7a0bfdc1e849b3ad957d5" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>clipToStrokePath</name></member>
+      <member refid="class_output_dev_1aeefcb427f9006903796d6d467e393adc" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>cvtDevToUser</name></member>
+      <member refid="class_output_dev_1aff3985dadb18d1e458419ebd997c44c1" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>cvtUserToDev</name></member>
+      <member refid="class_arthur_output_dev_1a7fbd036401adb7be5ce6d8aec39b48fa" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawChar</name></member>
+      <member refid="class_output_dev_1a8347dc89808e1ab4b69f8309ad0edc9e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawForm</name></member>
+      <member refid="class_arthur_output_dev_1aa0e29e0a1558510c6c5f811b13f1e783" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawImage</name></member>
+      <member refid="class_arthur_output_dev_1aa399c4039e6f42f8918f072241a2aa13" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawImageMask</name></member>
+      <member refid="class_output_dev_1a9da1d31676bdac51fb98da1281e2863d" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawMaskedImage</name></member>
+      <member refid="class_output_dev_1ac2ee00e7cddb1617eeeb4a32f089be99" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawSoftMaskedImage</name></member>
+      <member refid="class_output_dev_1a53444c7b8dc07625395c3d25805dfbd2" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>drawString</name></member>
+      <member refid="class_output_dev_1a829cff0b8ff47de516574542de539d1c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>dump</name></member>
+      <member refid="class_output_dev_1a23f812adafca46e599ec0f7290534127" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endActualText</name></member>
+      <member refid="class_output_dev_1ae94023fd2c678bf75b13e58ba60f1196" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endMarkedContent</name></member>
+      <member refid="class_arthur_output_dev_1a22a55debb433f8eca1746799226c8c25" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endPage</name></member>
+      <member refid="class_output_dev_1a465aec15453cbdf837b0d5fb117aee46" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endProfile</name></member>
+      <member refid="class_output_dev_1a218a55aeb13ac2288ba7f2f3f4ce7f12" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endString</name></member>
+      <member refid="class_output_dev_1adda0f049d956b26ee965e73aa0081282" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endStringOp</name></member>
+      <member refid="class_arthur_output_dev_1a250fbb6bdbcd670b7b5ed4399ce7cf28" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endTextObject</name></member>
+      <member refid="class_output_dev_1ab40b03e24dab2d6cd11de6a3551d2593" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endTransparencyGroup</name></member>
+      <member refid="class_arthur_output_dev_1aae10452421b89cf860904f3f86345d21" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>endType3Char</name></member>
+      <member refid="class_arthur_output_dev_1aca4d2c648afc703d0d3407d199cad5f5" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>eoClip</name></member>
+      <member refid="class_arthur_output_dev_1a59145d52b68163b40561cea12599b98e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>eoFill</name></member>
+      <member refid="class_arthur_output_dev_1ab41aa5e79659fc19702c39bf54b417bd" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>fill</name></member>
+      <member refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3b" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>FontHinting</name></member>
+      <member refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3ba56c7943ee3ca37948b61d34c8e549178" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>FullHinting</name></member>
+      <member refid="class_output_dev_1ab07903de11eb3ee7406eb688d609ec07" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>functionShadedFill</name></member>
+      <member refid="class_output_dev_1a1238a44cb9258955a94151a16e671878" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>getDefCTM</name></member>
+      <member refid="class_output_dev_1a1438903f85bc90716abee8122cf489e8" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>getDefICTM</name></member>
+      <member refid="class_output_dev_1ad1bc9865d811a68c0bdcf2a73bcf004b" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>getProfileHash</name></member>
+      <member refid="class_output_dev_1aa3763793657e69a99f1a5b421184ed1c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>getVectorAntialias</name></member>
+      <member refid="class_output_dev_1a9c03f7f5128797d0ff6026fdc0be7091" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>gouraudTriangleShadedFill</name></member>
+      <member refid="class_output_dev_1a91a429fc51f4100808d0b6fb5b5a6d75" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>incCharCount</name></member>
+      <member refid="class_arthur_output_dev_1a70282b634a31d3be6377127d652f3384" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>interpretType3Chars</name></member>
+      <member refid="class_arthur_output_dev_1ab363ab0fec0cea81f5b7babf82c6a917" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>isReverseVideo</name></member>
+      <member refid="class_arthur_output_dev_1a67e915a539a9e48af6314052c4e2c30b" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_currentBrush</name></member>
+      <member refid="class_arthur_output_dev_1ad35d0787489ddcc5b5b0bea70c8195f8" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_currentFont</name></member>
+      <member refid="class_arthur_output_dev_1acba3d170eb131cd548a767ee8174c74c" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_currentPen</name></member>
+      <member refid="class_arthur_output_dev_1ad3b341411e21a9ccde324d0616ea8e04" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_font</name></member>
+      <member refid="class_arthur_output_dev_1ae94f2367be5b35831391560378da3b70" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_fontEngine</name></member>
+      <member refid="class_arthur_output_dev_1a351b3c5b11984d742104fe145e1554c2" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_fontHinting</name></member>
+      <member refid="class_arthur_output_dev_1aa5ce3714b94e49cea5d4cee17603184f" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_needFontUpdate</name></member>
+      <member refid="class_arthur_output_dev_1ad45230ee5e3f7507b36f0f4be4d1cd32" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>m_painter</name></member>
+      <member refid="class_output_dev_1acd0ecfc113ad397b105cfcd3e443aab4" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>markPoint</name></member>
+      <member refid="class_output_dev_1a473f1fde6b4cfd2cf29a2f737620f1ea" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>markPoint</name></member>
+      <member refid="class_output_dev_1aeb6b343278e1bf777afa4eee8eed2ac2" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>needCharCount</name></member>
+      <member refid="class_output_dev_1a01e321ecf774481f826da5c7cd0a6d3b" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>needClipToCropBox</name></member>
+      <member refid="class_output_dev_1ac22cca1656cfcdc4431c1638ba428cf1" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>needNonText</name></member>
+      <member refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3baea63a6c84b3dc203fbd150ebc26595d4" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>NoHinting</name></member>
+      <member refid="class_output_dev_1a4cd6b911a4dc9a4aacc4b60d88afe01c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>opiBegin</name></member>
+      <member refid="class_output_dev_1a49f554f17b8c532fa813c180afafaf82" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>opiEnd</name></member>
+      <member refid="class_output_dev_1aa30a2c3ef7459089abb446ee3dd9c949" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>OutputDev</name></member>
+      <member refid="class_output_dev_1ada3eb127f26195713c2609a6eea6990c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>paintTransparencyGroup</name></member>
+      <member refid="class_output_dev_1ae8682d4076d88334a1b837ec8fc8b5a5" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>patchMeshShadedFill</name></member>
+      <member refid="class_output_dev_1a9671ac2488c1b6109068bfafd7447f08" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>processLink</name></member>
+      <member refid="class_output_dev_1a330bd1fb84b3c5bcbb6db2579ec86060" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>psXObject</name></member>
+      <member refid="class_output_dev_1a5f7d9ce5c0580f38955e5dc10d8b435e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>radialShadedFill</name></member>
+      <member refid="class_output_dev_1ad2596d7dfbfd19b8bf375d23e826663e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>radialShadedSupportExtend</name></member>
+      <member refid="class_arthur_output_dev_1a66912b0283246112c74798e49b973f88" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>restoreState</name></member>
+      <member refid="class_output_dev_1a8f03af87f145a05913cc52e371d26702" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>restoreTextPos</name></member>
+      <member refid="class_arthur_output_dev_1ab69e7d5f3c7ef02aa8fbe3bb2448c2f7" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>saveState</name></member>
+      <member refid="class_output_dev_1a528e180c891e750dd674ed938e2c2395" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>saveTextPos</name></member>
+      <member refid="class_output_dev_1a626861f473e4c868a7846f289a7f32dd" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>setDefaultCTM</name></member>
+      <member refid="class_arthur_output_dev_1a147b2711671a1da4daff6e3a98a4bc23" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>setFontHinting</name></member>
+      <member refid="class_output_dev_1a34df49c454e5dd3d3ec841ef38e08199" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>setSoftMask</name></member>
+      <member refid="class_output_dev_1a2e26e4b8a43b55575b36139728ed6542" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>setSoftMaskFromImageMask</name></member>
+      <member refid="class_output_dev_1acfc60ae8c0873218a3c5d498bacaf11c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>setVectorAntialias</name></member>
+      <member refid="class_arthur_output_dev_1adf1c06826670a14bb7199333c90c1a3baa873f8fd7197f9e7ed98d3183f360ff2" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>SlightHinting</name></member>
+      <member refid="class_arthur_output_dev_1a9012cde63e9d36ef93d9ea1510f22893" prot="public" virt="non-virtual"><scope>ArthurOutputDev</scope><name>startDoc</name></member>
+      <member refid="class_arthur_output_dev_1a1ef451fefd441163263b7523c20d2377" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>startPage</name></member>
+      <member refid="class_output_dev_1a087c3f2802f97d852c323a003086fbb8" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>startProfile</name></member>
+      <member refid="class_arthur_output_dev_1af427b4bad695762d94aac09f77292fc1" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>stroke</name></member>
+      <member refid="class_output_dev_1af51488d09f76b2f06bdd4b332c602c8c" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>tilingPatternFill</name></member>
+      <member refid="class_arthur_output_dev_1a460467dd2aa76e820bd8c8761a3e7a22" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>type3D0</name></member>
+      <member refid="class_arthur_output_dev_1ad6b9f26e561860943d1dfdbaec9d733a" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>type3D1</name></member>
+      <member refid="class_output_dev_1ab26abaccd671a63425c64e3192567b27" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>unsetSoftMaskFromImageMask</name></member>
+      <member refid="class_arthur_output_dev_1a7810e0cf27dcd5e0e3de16ad1a9b95ee" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateAll</name></member>
+      <member refid="class_output_dev_1a653436589426a8652bacecd4cddff417" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateAlphaIsShape</name></member>
+      <member refid="class_output_dev_1abe4aa366ffedf9e4c9c9e99fb37413d2" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateBlendMode</name></member>
+      <member refid="class_output_dev_1a01168f564318064748a8a395229b700a" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateCharSpace</name></member>
+      <member refid="class_arthur_output_dev_1a618d8642cb385ff78702d6fb0c039494" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateCTM</name></member>
+      <member refid="class_arthur_output_dev_1a38669e34bf20f72bdebe04a8232d8fb3" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFillColor</name></member>
+      <member refid="class_output_dev_1af46b04e9b1d4caedc883e2bd944d5731" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFillColorSpace</name></member>
+      <member refid="class_output_dev_1a3d08d3dd986deb8de48a7984d5fc1d5b" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFillColorStop</name></member>
+      <member refid="class_arthur_output_dev_1a425bc18a31566dd0c2ca5de158b5a990" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFillOpacity</name></member>
+      <member refid="class_output_dev_1aa1256118203d372534ce8d1b2fed6582" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFillOverprint</name></member>
+      <member refid="class_arthur_output_dev_1a685917dd5f23bde65076010560ea3958" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFlatness</name></member>
+      <member refid="class_arthur_output_dev_1a94b7937060ee341e64af134bc14348f4" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateFont</name></member>
+      <member refid="class_output_dev_1aa8200b0a5cf6e5258bcd8973286d7cb3" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateHorizScaling</name></member>
+      <member refid="class_arthur_output_dev_1a8db3317e524c7636739f6a967bfd68e9" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateLineCap</name></member>
+      <member refid="class_arthur_output_dev_1a091d74c85749043860eb5dd6bd71b669" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateLineDash</name></member>
+      <member refid="class_arthur_output_dev_1ad66ee532f822b85d4b68d15f69d7a947" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateLineJoin</name></member>
+      <member refid="class_arthur_output_dev_1affb2218e59477080debeebc2a82ff8c6" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateLineWidth</name></member>
+      <member refid="class_arthur_output_dev_1a8d59dd14da5e18bd4b62954b56167211" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateMiterLimit</name></member>
+      <member refid="class_output_dev_1a6fb0ff3d1ac46fede38478376be83e8d" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateOverprintMode</name></member>
+      <member refid="class_output_dev_1a87fabe2327708ebb0a29604a4b0b1b77" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updatePatternOpacity</name></member>
+      <member refid="class_output_dev_1a6271d1ebd09c0a79eadba5c078949710" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateRender</name></member>
+      <member refid="class_output_dev_1ac6105a80a144bb1653d5822580ff2063" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateRise</name></member>
+      <member refid="class_output_dev_1a306598c4f6ef12322e1f575c09e1fe10" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateStrokeAdjust</name></member>
+      <member refid="class_arthur_output_dev_1ae63b74e87812e48d6c9ad224a0920071" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateStrokeColor</name></member>
+      <member refid="class_output_dev_1a213a611aadc3324d7a0ec0da6522c4ef" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateStrokeColorSpace</name></member>
+      <member refid="class_arthur_output_dev_1a99991401269bad463f5141be44432ab7" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateStrokeOpacity</name></member>
+      <member refid="class_output_dev_1a0d5a0433b4ef0b21a8a6a13f72bf78f2" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateStrokeOverprint</name></member>
+      <member refid="class_output_dev_1a5e1ad53b378a61a9035d2d1a232aa9ff" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateTextKnockout</name></member>
+      <member refid="class_output_dev_1a44a3b5ca4aa58bc026fc2e28417ac113" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateTextMat</name></member>
+      <member refid="class_output_dev_1ac7171bda1b19bda650dd51addb7b19ba" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateTextPos</name></member>
+      <member refid="class_output_dev_1aa24010d0b4f1304f565a24b8c3f4916d" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateTextShift</name></member>
+      <member refid="class_output_dev_1a88f138182fee6e2139c9ec16f5d2c7b0" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateTransfer</name></member>
+      <member refid="class_output_dev_1a624caf1670d8bd6ea47c81f176799400" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>updateWordSpace</name></member>
+      <member refid="class_arthur_output_dev_1a53c547cc0e63cd518ba5b5e19ecab5b2" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>upsideDown</name></member>
+      <member refid="class_arthur_output_dev_1a7c660aeb893e44e05ad7895c14ef089f" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>useDrawChar</name></member>
+      <member refid="class_output_dev_1a88a89943e0b1c93eb7e2b68daf263930" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>useDrawForm</name></member>
+      <member refid="class_output_dev_1a1af7bbf76242dd3a1c970d80a042b025" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>useFillColorStop</name></member>
+      <member refid="class_output_dev_1a28d7bdc07a55834bf0b2e5a2c87ac907" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>useShadedFills</name></member>
+      <member refid="class_output_dev_1a9272d5990ad2b286ff4ecb627a9843f6" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>useTilingPatternFill</name></member>
+      <member refid="class_arthur_output_dev_1a165ea8af2b0ccdc1347c2d34e30b367a" prot="private" virt="non-virtual"><scope>ArthurOutputDev</scope><name>xref</name></member>
+      <member refid="class_arthur_output_dev_1a3c0635d9aec9f7258eaf27b1880a781e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>~ArthurOutputDev</name></member>
+      <member refid="class_output_dev_1ab13c071bada522565f64aba6b8b30b6e" prot="public" virt="virtual"><scope>ArthurOutputDev</scope><name>~OutputDev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

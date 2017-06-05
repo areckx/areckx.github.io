@@ -1,0 +1,75 @@
+\hypertarget{undo_8cpp}{}\section{libmscore/undo.cpp File Reference}
+\label{undo_8cpp}\index{libmscore/undo.\+cpp@{libmscore/undo.\+cpp}}
+{\ttfamily \#include \char`\"{}undo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}element.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}note.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segment.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measure.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}select.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}slur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tie.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}staff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chord.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}key.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}barline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}volta.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tuplet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}harmony.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pitchspelling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}part.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}beam.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dynamic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keysig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hairpin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bend.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tremolobar.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}articulation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}noteevent.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tempotext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instrchange.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}box.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafftype.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}accidental.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}layoutbreak.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spanner.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sequencer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}breath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fingering.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rehearsalmark.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}excerpt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafftext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chordline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tremolo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sym.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glissando.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafflines.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bracket.\+h\char`\"{}}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_ms}{Ms}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_aee57ec45c319c2b3ca450db5b34ca01e}\label{namespace_ms_aee57ec45c319c2b3ca450db5b34ca01e}} 
+Measure $\ast$ {\bfseries Ms\+::tick2measure} (int tick)
+\item 
+\mbox{\Hypertarget{namespace_ms_a7b927c615ab96a4b08fdb9f1cdceeea1}\label{namespace_ms_a7b927c615ab96a4b08fdb9f1cdceeea1}} 
+void {\bfseries Ms\+::update\+Note\+Lines} (Segment $\ast$segment, int track)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of undo functions.
+
+The undo system requires calling start\+Undo() when starting a G\+UI command and calling end\+Undo() when ending the command. All changes to a score in response to a G\+UI command must be undoable/redoable by executing a sequence of low-\/level undo operations. This sequence is built by the code handling the command, by calling one or more undo\+Op()\textquotesingle{}s between start\+Undo() and end\+Undo(). 

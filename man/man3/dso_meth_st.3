@@ -1,0 +1,55 @@
+.TH "dso_meth_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dso_meth_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "int(* \fBdso_load\fP )(\fBDSO\fP *dso)"
+.br
+.ti -1c
+.RI "int(* \fBdso_unload\fP )(\fBDSO\fP *dso)"
+.br
+.ti -1c
+.RI "void *(* \fBdso_bind_var\fP )(\fBDSO\fP *dso, const char *symname)"
+.br
+.ti -1c
+.RI "DSO_FUNC_TYPE(* \fBdso_bind_func\fP )(\fBDSO\fP *dso, const char *symname)"
+.br
+.ti -1c
+.RI "long(* \fBdso_ctrl\fP )(\fBDSO\fP *dso, int cmd, long larg, void *parg)"
+.br
+.ti -1c
+.RI "DSO_NAME_CONVERTER_FUNC \fBdso_name_converter\fP"
+.br
+.ti -1c
+.RI "DSO_MERGER_FUNC \fBdso_merger\fP"
+.br
+.ti -1c
+.RI "int(* \fBinit\fP )(\fBDSO\fP *dso)"
+.br
+.ti -1c
+.RI "int(* \fBfinish\fP )(\fBDSO\fP *dso)"
+.br
+.ti -1c
+.RI "int(* \fBpathbyaddr\fP )(void *addr, char *path, int sz)"
+.br
+.ti -1c
+.RI "void *(* \fBgloballookup\fP )(const char *symname)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 134 of file dso\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

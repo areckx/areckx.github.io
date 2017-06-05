@@ -1,0 +1,112 @@
+.TH "Poppler::HighlightAnnotation" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::HighlightAnnotation \- Text highlight annotation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-annotation\&.h>\fP
+.PP
+Inherits \fBPoppler::Annotation\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBQuad\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHighlightType\fP { \fBHighlight\fP, \fBSquiggly\fP, \fBUnderline\fP, \fBStrikeOut\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBSubType\fP \fBsubType\fP () const"
+.br
+.ti -1c
+.RI "\fBHighlightType\fP \fBhighlightType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHighlightType\fP (\fBHighlightType\fP type)"
+.br
+.ti -1c
+.RI "QList< \fBQuad\fP > \fBhighlightQuads\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHighlightQuads\fP (const QList< \fBQuad\fP > &quads)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnotationUtils\fP"
+.br
+.ti -1c
+.RI "class \fBAnnotationPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Text highlight annotation\&. 
+
+The higlight annotation represents some areas of text being 'highlighted'\&. 
+.PP
+Definition at line 609 of file poppler\-annotation\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::HighlightAnnotation::HighlightType\fP"
+The type of highlight 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHighlight \fP\fP
+highlighter pen style annotation 
+.TP
+\fB\fISquiggly \fP\fP
+jagged or squiggly underline 
+.TP
+\fB\fIUnderline \fP\fP
+straight line underline 
+.TP
+\fB\fIStrikeOut \fP\fP
+straight line through-line 
+.PP
+Definition at line 622 of file poppler\-annotation\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< \fBHighlightAnnotation::Quad\fP > Poppler::HighlightAnnotation::highlightQuads () const"
+The list of areas to highlight\&. 
+.PP
+Definition at line 3303 of file poppler\-annotation\&.cc\&.
+.SS "\fBHighlightAnnotation::HighlightType\fP Poppler::HighlightAnnotation::highlightType () const"
+The type (style) of highlighting to use for this area or these areas\&. 
+.PP
+Definition at line 3270 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::HighlightAnnotation::setHighlightQuads (const QList< \fBQuad\fP > & quads)"
+Set the areas to highlight\&. 
+.PP
+Definition at line 3314 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::HighlightAnnotation::setHighlightType (\fBHighlightAnnotation::HighlightType\fP type)"
+Set the type of highlighting to use for the given area or areas\&. 
+.PP
+Definition at line 3289 of file poppler\-annotation\&.cc\&.
+.SS "\fBAnnotation::SubType\fP Poppler::HighlightAnnotation::subType () const\fC [virtual]\fP"
+The type of the annotation\&. 
+.PP
+Implements \fBPoppler::Annotation\fP\&.
+.PP
+Definition at line 3265 of file poppler\-annotation\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

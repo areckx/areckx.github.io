@@ -1,0 +1,142 @@
+.TH "libmscore/undo.cpp" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libmscore/undo.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'undo\&.h'\fP
+.br
+\fC#include 'element\&.h'\fP
+.br
+\fC#include 'note\&.h'\fP
+.br
+\fC#include 'score\&.h'\fP
+.br
+\fC#include 'segment\&.h'\fP
+.br
+\fC#include 'measure\&.h'\fP
+.br
+\fC#include 'system\&.h'\fP
+.br
+\fC#include 'select\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'slur\&.h'\fP
+.br
+\fC#include 'tie\&.h'\fP
+.br
+\fC#include 'clef\&.h'\fP
+.br
+\fC#include 'staff\&.h'\fP
+.br
+\fC#include 'chord\&.h'\fP
+.br
+\fC#include 'sig\&.h'\fP
+.br
+\fC#include 'key\&.h'\fP
+.br
+\fC#include 'barline\&.h'\fP
+.br
+\fC#include 'volta\&.h'\fP
+.br
+\fC#include 'tuplet\&.h'\fP
+.br
+\fC#include 'harmony\&.h'\fP
+.br
+\fC#include 'pitchspelling\&.h'\fP
+.br
+\fC#include 'part\&.h'\fP
+.br
+\fC#include 'beam\&.h'\fP
+.br
+\fC#include 'dynamic\&.h'\fP
+.br
+\fC#include 'page\&.h'\fP
+.br
+\fC#include 'keysig\&.h'\fP
+.br
+\fC#include 'image\&.h'\fP
+.br
+\fC#include 'hairpin\&.h'\fP
+.br
+\fC#include 'rest\&.h'\fP
+.br
+\fC#include 'bend\&.h'\fP
+.br
+\fC#include 'tremolobar\&.h'\fP
+.br
+\fC#include 'articulation\&.h'\fP
+.br
+\fC#include 'noteevent\&.h'\fP
+.br
+\fC#include 'tempotext\&.h'\fP
+.br
+\fC#include 'instrchange\&.h'\fP
+.br
+\fC#include 'box\&.h'\fP
+.br
+\fC#include 'stafftype\&.h'\fP
+.br
+\fC#include 'accidental\&.h'\fP
+.br
+\fC#include 'layoutbreak\&.h'\fP
+.br
+\fC#include 'spanner\&.h'\fP
+.br
+\fC#include 'sequencer\&.h'\fP
+.br
+\fC#include 'breath\&.h'\fP
+.br
+\fC#include 'fingering\&.h'\fP
+.br
+\fC#include 'rehearsalmark\&.h'\fP
+.br
+\fC#include 'excerpt\&.h'\fP
+.br
+\fC#include 'stafftext\&.h'\fP
+.br
+\fC#include 'chordline\&.h'\fP
+.br
+\fC#include 'tremolo\&.h'\fP
+.br
+\fC#include 'sym\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'glissando\&.h'\fP
+.br
+\fC#include 'stafflines\&.h'\fP
+.br
+\fC#include 'bracket\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBMs\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "Measure * \fBMs::tick2measure\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBMs::updateNoteLines\fP (Segment *segment, int track)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Implementation of undo functions\&.
+.PP
+The undo system requires calling startUndo() when starting a GUI command and calling endUndo() when ending the command\&. All changes to a score in response to a GUI command must be undoable/redoable by executing a sequence of low-level undo operations\&. This sequence is built by the code handling the command, by calling one or more undoOp()'s between startUndo() and endUndo()\&. 
+.PP
+Definition in file \fBundo\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

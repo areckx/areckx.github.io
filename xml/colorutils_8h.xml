@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="colorutils_8h" kind="file" language="C++">
+    <compoundname>colorutils.h</compoundname>
+    <includes local="no">math.h</includes>
+    <includedby refid="colorscheme_8cpp" local="yes">mstyle/colorscheme.cpp</includedby>
+    <includedby refid="colorutils_8cpp" local="yes">mstyle/colorutils.cpp</includedby>
+    <includedby refid="frameshadow_8cpp" local="yes">mstyle/frameshadow.cpp</includedby>
+    <includedby refid="mstyle_8cpp" local="yes">mstyle/mstyle.cpp</includedby>
+    <includedby refid="stylehelper_8cpp" local="yes">mstyle/stylehelper.cpp</includedby>
+    <incdepgraph>
+      <node id="70482">
+        <label>math.h</label>
+      </node>
+      <node id="70481">
+        <label>mstyle/colorutils.h</label>
+        <link refid="colorutils_8h"/>
+        <childnode refid="70482" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="70486">
+        <label>mstyle/frameshadow.cpp</label>
+        <link refid="frameshadow_8cpp_source"/>
+      </node>
+      <node id="70488">
+        <label>mstyle/stylehelper.cpp</label>
+        <link refid="stylehelper_8cpp_source"/>
+      </node>
+      <node id="70485">
+        <label>mstyle/colorutils.cpp</label>
+        <link refid="colorutils_8cpp_source"/>
+      </node>
+      <node id="70484">
+        <label>mstyle/colorscheme.cpp</label>
+        <link refid="colorscheme_8cpp_source"/>
+      </node>
+      <node id="70487">
+        <label>mstyle/mstyle.cpp</label>
+        <link refid="mstyle_8cpp_source"/>
+      </node>
+      <node id="70483">
+        <label>mstyle/colorutils.h</label>
+        <link refid="colorutils_8h"/>
+        <childnode refid="70484" relation="include">
+        </childnode>
+        <childnode refid="70485" relation="include">
+        </childnode>
+        <childnode refid="70486" relation="include">
+        </childnode>
+        <childnode refid="70487" relation="include">
+        </childnode>
+        <childnode refid="70488" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_h_c_y" prot="public">KHCY</innerclass>
+    <innerclass refid="class_color_utils" prot="public">ColorUtils</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="colorutils_8h_1a5a32c81da0508c0efab8d305a4c3cdb2" prot="public" static="yes" mutable="no">
+        <type>const qreal</type>
+        <definition>const qreal yc[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>yc</name>
+        <initializer>= {0.2126, 0.7152, 0.0722}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorutils.h" line="7" column="1" bodyfile="mstyle/colorutils.h" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="colorutils_8h_1a448a11d17588fda01a47f05429a91c70" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qreal</type>
+        <definition>static qreal normalize</definition>
+        <argsstring>(qreal a)</argsstring>
+        <name>normalize</name>
+        <param>
+          <type>qreal</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorutils.h" line="11" column="1" bodyfile="mstyle/colorutils.h" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__COLORUTILS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__COLORUTILS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>qreal<sp/>yc[3]<sp/>=<sp/>{0.2126,<sp/>0.7152,<sp/>0.0722};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>normalize:<sp/>like<sp/>qBound(a,<sp/>0.0,<sp/>1.0)<sp/>but<sp/>without<sp/>needing<sp/>the<sp/>args<sp/>and<sp/>with</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&quot;safer&quot;<sp/>behavior<sp/>on<sp/>NaN<sp/>(isnan(a)<sp/>-&gt;<sp/>return<sp/>0.0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/>qreal<sp/>normalize(qreal<sp/>a)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a<sp/>&lt;<sp/>1.0<sp/>?<sp/>(a<sp/>&gt;<sp/>0.0<sp/>?<sp/>a<sp/>:<sp/>0.0)<sp/>:<sp/>1.0);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_k_h_c_y" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_h_c_y" kindref="compound">KHCY</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>gamma(qreal<sp/>n)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pow(normalize(n),<sp/>2.2);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>igamma(qreal<sp/>n)<sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pow(normalize(n),<sp/>1.0<sp/>/<sp/>2.2);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>lumag(qreal<sp/>r,<sp/>qreal<sp/>g,<sp/>qreal<sp/>b)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r<sp/>*<sp/>yc[0]<sp/>+<sp/>g<sp/>*<sp/>yc[1]<sp/>+<sp/>b<sp/>*<sp/>yc[2];</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_h_c_y" kindref="compound">KHCY</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_k_h_c_y" kindref="compound">KHCY</ref>(qreal<sp/>h_,<sp/>qreal<sp/>c_,<sp/>qreal<sp/>y_,<sp/>qreal<sp/>a_<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QColor<sp/>qColor()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qreal<sp/>h,<sp/>c,<sp/>y,<sp/>a;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>luma(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="class_color_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_color_utils" kindref="compound">ColorUtils</ref><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>tintHelper(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;<sp/>base,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;<sp/><ref refid="structcolor" kindref="compound">color</ref>,<sp/>qreal<sp/>amount);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>contrastRatio(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;<sp/>c1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;<sp/>c2);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>tint(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/>qreal<sp/>amount<sp/>=<sp/>.3);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>mix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/>qreal<sp/>bias<sp/>=<sp/>.5);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>qreal<sp/>luma(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;<sp/>color)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>KHCY::luma(color);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>shade(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/>qreal<sp/>lumaAmount,<sp/>qreal<sp/>chromaAmount<sp/>=<sp/>0.0);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>darken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/>qreal<sp/>amount<sp/>=<sp/>0.5,<sp/>qreal<sp/>chromaGain<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QColor<sp/>lighten(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QColor&amp;,<sp/>qreal<sp/>amount<sp/>=<sp/>0.5,<sp/>qreal<sp/>chromaInverseGain<sp/>=<sp/>1.0);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="mstyle/colorutils.h"/>
+  </compounddef>
+</doxygen>

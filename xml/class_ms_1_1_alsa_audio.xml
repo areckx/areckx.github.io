@@ -1,0 +1,434 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_alsa_audio" kind="class" language="C++" prot="public">
+    <compoundname>Ms::AlsaAudio</compoundname>
+    <basecompoundref refid="class_ms_1_1_driver" prot="public" virt="non-virtual">Ms::Driver</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1a32ed9db5263fef3ab8f7ff70f6819093" prot="private" static="no" mutable="no">
+        <type>pthread_t</type>
+        <definition>pthread_t Ms::AlsaAudio::thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="112" column="1" bodyfile="mscore/alsa.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1a95c65a6462e42ce5dc64dcf6937ab390" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_alsa_driver" kindref="compound">AlsaDriver</ref> *</type>
+        <definition>AlsaDriver* Ms::AlsaAudio::alsa</definition>
+        <argsstring></argsstring>
+        <name>alsa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="113" column="1" bodyfile="mscore/alsa.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1acec1d7d1bb65a81be57e6ff39a4015dd" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>volatile int Ms::AlsaAudio::runAlsa</definition>
+        <argsstring></argsstring>
+        <name>runAlsa</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="114" column="1" bodyfile="mscore/alsa.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1a418ccab3ae2a3cfb95ae6b7501794bb2" prot="private" static="no" mutable="no">
+        <type>Transport</type>
+        <definition>Transport Ms::AlsaAudio::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="115" column="1" bodyfile="mscore/alsa.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1a2c9426dd479e25b94c3342af180cd816" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::AlsaAudio::seekflag</definition>
+        <argsstring></argsstring>
+        <name>seekflag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="116" column="1" bodyfile="mscore/alsa.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_audio_1a2c0117a39f34b4c3359d0d7c7760c4f5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_midi_driver" kindref="compound">MidiDriver</ref> *</type>
+        <definition>MidiDriver* Ms::AlsaAudio::midiDriver</definition>
+        <argsstring></argsstring>
+        <name>midiDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="118" column="1" bodyfile="mscore/alsa.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a6c3a6682aebe030e35477de2d2f0d355" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaAudio::registerClient</definition>
+        <argsstring>()</argsstring>
+        <name>registerClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="120" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a5c94fb64cd770a883459f372ddbb6382" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::AlsaAudio::AlsaAudio</definition>
+        <argsstring>(Seq *)</argsstring>
+        <name>AlsaAudio</name>
+        <param>
+          <type><ref refid="class_ms_1_1_seq" kindref="compound">Seq</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="123" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a7e76c43ce535bea01575642386475a85" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual Ms::AlsaAudio::~AlsaAudio</definition>
+        <argsstring>()</argsstring>
+        <name>~AlsaAudio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="124" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1abf1a18a88b234bfedcdd59c16e974bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Ms::AlsaAudio::init</definition>
+        <argsstring>(bool hot=false)</argsstring>
+        <name>init</name>
+        <reimplements refid="class_ms_1_1_driver_1a66d0135d9d073db75bae39dc860f47f6">init</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>hot</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a9b03aa605fe8ddcd9b8663e66a0b8d2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Ms::AlsaAudio::start</definition>
+        <argsstring>(bool hotPlug=false)</argsstring>
+        <name>start</name>
+        <reimplements refid="class_ms_1_1_driver_1a8c07a53282a68727fdf5c407c0e187bc">start</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>hotPlug</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a2fc349621f52d2dec9d39dab03e01a60" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Ms::AlsaAudio::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <reimplements refid="class_ms_1_1_driver_1a0ce53ff7a63d0ed799f6662bd7e97f1f">stop</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a22d588dbeb937edb006efc40fef3cb2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float *</type>
+        <definition>float* Ms::AlsaAudio::getLBuffer</definition>
+        <argsstring>(long n)</argsstring>
+        <name>getLBuffer</name>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a5e7950e132efc47f967f8da4e86b676e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float *</type>
+        <definition>float* Ms::AlsaAudio::getRBuffer</definition>
+        <argsstring>(long n)</argsstring>
+        <name>getRBuffer</name>
+        <param>
+          <type>long</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1ad0cad692c5fb8efbd1e02d553dcf8c98" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Ms::AlsaAudio::isRealtime</definition>
+        <argsstring>() const</argsstring>
+        <name>isRealtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="130" column="1" bodyfile="mscore/alsa.h" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1aea0549eedf1457f1dc1f51c4d84aa763" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::AlsaAudio::startTransport</definition>
+        <argsstring>()</argsstring>
+        <name>startTransport</name>
+        <reimplements refid="class_ms_1_1_driver_1ad753204c3ce1e711052ec464e54c0e96">startTransport</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a0078d780e88568b4ade7561965adb931" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::AlsaAudio::stopTransport</definition>
+        <argsstring>()</argsstring>
+        <name>stopTransport</name>
+        <reimplements refid="class_ms_1_1_driver_1a205bb9c90c179f57b012fb522853f1ae">stopTransport</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a2fd4e3824f472be255c595b89c6cea63" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>Transport</type>
+        <definition>virtual Transport Ms::AlsaAudio::getState</definition>
+        <argsstring>() override</argsstring>
+        <name>getState</name>
+        <reimplements refid="class_ms_1_1_driver_1ace631b870020f3fa49f6714a395dbb0a">getState</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1af40b821966550d9fa094554462d1b46d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Ms::AlsaAudio::sampleRate</definition>
+        <argsstring>() const</argsstring>
+        <name>sampleRate</name>
+        <reimplements refid="class_ms_1_1_driver_1ac0e704b412376538419e8fe71272ba57">sampleRate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a77ba11d238e4d86e2f72fb3c3ac29d4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaAudio::alsaLoop</definition>
+        <argsstring>()</argsstring>
+        <name>alsaLoop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="135" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1af86da8ddae221a66f4e1e03d5fe68b97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaAudio::write</definition>
+        <argsstring>(int n, void *l)</argsstring>
+        <name>write</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>l</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="136" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a3ad8a226a37b50838184f95afef17bcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::AlsaAudio::midiRead</definition>
+        <argsstring>()</argsstring>
+        <name>midiRead</name>
+        <reimplements refid="class_ms_1_1_driver_1a8a016edc4d69ffd9a214ea6ec344999b">midiRead</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="138" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_audio_1a8735b2382b8d43dd56dc94272fb7e2cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::AlsaAudio::updateOutPortCount</definition>
+        <argsstring>(int maxport)</argsstring>
+        <name>updateOutPortCount</name>
+        <reimplements refid="class_ms_1_1_driver_1a550a468ca8d2bb330ec16ddc75d477f4">updateOutPortCount</reimplements>
+        <param>
+          <type>int</type>
+          <declname>maxport</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="139" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="666">
+        <label>Ms::Driver</label>
+        <link refid="class_ms_1_1_driver"/>
+      </node>
+      <node id="665">
+        <label>Ms::AlsaAudio</label>
+        <link refid="class_ms_1_1_alsa_audio"/>
+        <childnode refid="666" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="671">
+        <label>Ms::Sequencer</label>
+        <link refid="class_ms_1_1_sequencer"/>
+      </node>
+      <node id="670">
+        <label>QObject</label>
+      </node>
+      <node id="669">
+        <label>Ms::Seq</label>
+        <link refid="class_ms_1_1_seq"/>
+        <childnode refid="670" relation="public-inheritance">
+        </childnode>
+        <childnode refid="671" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>Ms::Driver</label>
+        <link refid="class_ms_1_1_driver"/>
+        <childnode refid="669" relation="usage">
+          <edgelabel>seq</edgelabel>
+        </childnode>
+      </node>
+      <node id="667">
+        <label>Ms::AlsaAudio</label>
+        <link refid="class_ms_1_1_alsa_audio"/>
+        <childnode refid="668" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/alsa.h" line="111" column="1" bodyfile="mscore/alsa.h" bodystart="111" bodyend="140"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_alsa_audio_1a95c65a6462e42ce5dc64dcf6937ab390" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>alsa</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a5c94fb64cd770a883459f372ddbb6382" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>AlsaAudio</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a77ba11d238e4d86e2f72fb3c3ac29d4f" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>alsaLoop</name></member>
+      <member refid="class_ms_1_1_driver_1acfe1c99e9fe3908122a7abe471cf469a" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>bufferSize</name></member>
+      <member refid="class_ms_1_1_driver_1ae3572c7b1f9a9fb20e68bd29832eec4c" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>checkTransportSeek</name></member>
+      <member refid="class_ms_1_1_driver_1a0fac70a2949e1d9ac263991ad7e1838a" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>Driver</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a22d588dbeb937edb006efc40fef3cb2a" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>getLBuffer</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a5e7950e132efc47f967f8da4e86b676e" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>getRBuffer</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a2fd4e3824f472be255c595b89c6cea63" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>getState</name></member>
+      <member refid="class_ms_1_1_driver_1aaabcb0d206396d4a521bdef8c505a404" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>handleTimeSigTempoChanged</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1abf1a18a88b234bfedcdd59c16e974bff" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>init</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1ad0cad692c5fb8efbd1e02d553dcf8c98" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>isRealtime</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a2c0117a39f34b4c3359d0d7c7760c4f5" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>midiDriver</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a3ad8a226a37b50838184f95afef17bcf" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>midiRead</name></member>
+      <member refid="class_ms_1_1_driver_1ac5a50399fcc567f27ed1be5335e9054a" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>putEvent</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a6c3a6682aebe030e35477de2d2f0d355" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>registerClient</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1acec1d7d1bb65a81be57e6ff39a4015dd" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>runAlsa</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1af40b821966550d9fa094554462d1b46d" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>sampleRate</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a2c9426dd479e25b94c3342af180cd816" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>seekflag</name></member>
+      <member refid="class_ms_1_1_driver_1ada4c143f5ad3ca0c687040dcfed507b3" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>seekTransport</name></member>
+      <member refid="class_ms_1_1_driver_1aa6a278a84ce752029a77cc5ad025e0c5" prot="protected" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>seq</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a9b03aa605fe8ddcd9b8663e66a0b8d2f" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>start</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1aea0549eedf1457f1dc1f51c4d84aa763" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>startTransport</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a418ccab3ae2a3cfb95ae6b7501794bb2" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>state</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a2fc349621f52d2dec9d39dab03e01a60" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>stop</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a0078d780e88568b4ade7561965adb931" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>stopTransport</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a32ed9db5263fef3ab8f7ff70f6819093" prot="private" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>thread</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a8735b2382b8d43dd56dc94272fb7e2cf" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>updateOutPortCount</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1af86da8ddae221a66f4e1e03d5fe68b97" prot="public" virt="non-virtual"><scope>Ms::AlsaAudio</scope><name>write</name></member>
+      <member refid="class_ms_1_1_alsa_audio_1a7e76c43ce535bea01575642386475a85" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>~AlsaAudio</name></member>
+      <member refid="class_ms_1_1_driver_1a0597474feb1e59d2663e5071a43edb66" prot="public" virt="virtual"><scope>Ms::AlsaAudio</scope><name>~Driver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

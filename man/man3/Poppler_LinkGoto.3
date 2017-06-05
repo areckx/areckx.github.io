@@ -1,0 +1,88 @@
+.TH "Poppler::LinkGoto" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkGoto \- Viewport reaching request\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkGoto\fP (const QRectF &\fBlinkArea\fP, QString extFileName, const \fBLinkDestination\fP &\fBdestination\fP)"
+.br
+.ti -1c
+.RI "\fB~LinkGoto\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisExternal\fP () const"
+.br
+.ti -1c
+.RI "QString \fBfileName\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkDestination\fP \fBdestination\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Viewport reaching request\&. 
+
+With a \fBLinkGoto\fP link, the document requests the specified viewport to be reached (aka, displayed in a viewer)\&. Furthermore, if a file name is specified, then the destination refers to that document (and not to the document the current \fBLinkGoto\fP belongs to)\&. 
+.PP
+Definition at line 235 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::LinkGoto::LinkGoto (const QRectF & linkArea, QString extFileName, const \fBLinkDestination\fP & destination)"
+Create a new Goto link\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinkArea\fP the active area of the link 
+.br
+\fIextFileName\fP if not empty, the file name to be open 
+.br
+\fIdestination\fP the destination to be reached 
+.RE
+.PP
+
+.PP
+Definition at line 446 of file poppler\-link\&.cc\&.
+.SS "Poppler::LinkGoto::~LinkGoto ()"
+Destructor\&. 
+.PP
+Definition at line 453 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLinkDestination\fP Poppler::LinkGoto::destination () const"
+The destination to reach\&. 
+.PP
+Definition at line 469 of file poppler\-link\&.cc\&.
+.SS "QString Poppler::LinkGoto::fileName () const"
+The file name of the document the \fBdestination()\fP refers to, or an empty string in case it refers to the current document\&. 
+.PP
+Definition at line 463 of file poppler\-link\&.cc\&.
+.SS "bool Poppler::LinkGoto::isExternal () const"
+Whether the destination is in an external document (i\&.e\&. not the current document) 
+.PP
+Definition at line 457 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP Poppler::LinkGoto::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 475 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

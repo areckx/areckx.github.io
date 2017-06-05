@@ -1,0 +1,114 @@
+.TH "Ms::Breath" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Breath \- breathType() is index in symList  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <breath\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBreath\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBBreath\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetSymId\fP (SymId id)"
+.br
+.ti -1c
+.RI "SymId \fBsymId\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBpause\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPause\fP (qreal v)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const override"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBisCaesura\fP () const"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::vector< \fBBreathType\fP > \fBbreathList\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+breathType() is index in symList 
+.PP
+Definition at line 37 of file breath\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::vector< \fBBreathType\fP > Ms::Breath::breathList\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+{
+      { SymId::breathMarkComma,      false, 0\&.0 },
+      { SymId::breathMarkTick,       false, 0\&.0 },
+      { SymId::breathMarkSalzedo,    false, 0\&.0 },
+      { SymId::breathMarkUpbow,      false, 0\&.0 },
+      { SymId::caesuraCurved,        true,  0\&.0 },
+      { SymId::caesura,              true,  0\&.0 },
+      { SymId::caesuraShort,         true,  0\&.0 },
+      { SymId::caesuraThick,         true,  0\&.0 },
+      }
+.fi
+.PP
+Definition at line 71 of file breath\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

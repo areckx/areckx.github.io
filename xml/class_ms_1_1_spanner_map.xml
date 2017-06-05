@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_spanner_map" kind="class" language="C++" prot="public">
+    <compoundname>Ms::SpannerMap</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">std::multimap&lt; int, Spanner *&gt;</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_spanner_map_1a543694d711cab9e4dc73d50b2dfeac0f" prot="private" static="no" mutable="yes">
+        <type>bool</type>
+        <definition>bool Ms::SpannerMap::dirty</definition>
+        <argsstring></argsstring>
+        <name>dirty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="28" column="1" bodyfile="libmscore/spannermap.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_spanner_map_1aed72fd75361d4b98406141ed5957b475" prot="private" static="no" mutable="yes">
+        <type><ref refid="class_interval_tree" kindref="compound">IntervalTree</ref>&lt; <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt;</type>
+        <definition>IntervalTree&lt;Spanner*&gt; Ms::SpannerMap::tree</definition>
+        <argsstring></argsstring>
+        <name>tree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="29" column="1" bodyfile="libmscore/spannermap.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_spanner_map_1a4b0ed11dbf8b6a193482ab5d6a25b3f1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; ::<ref refid="struct_ms_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt; &gt;</type>
+        <definition>std::vector&lt; ::Interval&lt;Spanner*&gt; &gt; Ms::SpannerMap::results</definition>
+        <argsstring></argsstring>
+        <name>results</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="30" column="1" bodyfile="libmscore/spannermap.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1ae6855e0f6498e6ed4a0d44e8122d6800" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::SpannerMap::SpannerMap</definition>
+        <argsstring>()</argsstring>
+        <name>SpannerMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="33" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="22" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1ab8b3f3e3eac2902443407868a52f9654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; ::<ref refid="struct_ms_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt; &gt; &amp;</type>
+        <definition>const std::vector&lt; Interval&lt; Spanner * &gt; &gt; &amp; Ms::SpannerMap::findContained</definition>
+        <argsstring>(int start, int stop)</argsstring>
+        <name>findContained</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="34" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="46" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1a50d0c4abc63052ad825a4c48cc72dbd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; ::<ref refid="struct_ms_1_1_interval" kindref="compound">Interval</ref>&lt; <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt; &gt; &amp;</type>
+        <definition>const std::vector&lt; Interval&lt; Spanner * &gt; &gt; &amp; Ms::SpannerMap::findOverlapping</definition>
+        <argsstring>(int start, int stop)</argsstring>
+        <name>findOverlapping</name>
+        <param>
+          <type>int</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>stop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="35" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="59" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1ac9235e97b420aacd2f79612684403cd7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::multimap&lt; int, <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt; &amp;</type>
+        <definition>const std::multimap&lt;int, Spanner*&gt;&amp; Ms::SpannerMap::map</definition>
+        <argsstring>() const</argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="36" column="1" bodyfile="libmscore/spannermap.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1a84da5c7bb6f29b5998a05737916a4566" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::multimap&lt; int, <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt;::const_reverse_iterator</type>
+        <definition>std::multimap&lt;int,Spanner*&gt;::const_reverse_iterator Ms::SpannerMap::crbegin</definition>
+        <argsstring>() const</argsstring>
+        <name>crbegin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="37" column="1" bodyfile="libmscore/spannermap.h" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1abc59d7e340d6a17c7be44c03ad9a6712" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::multimap&lt; int, <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt;::const_reverse_iterator</type>
+        <definition>std::multimap&lt;int,Spanner*&gt;::const_reverse_iterator Ms::SpannerMap::crend</definition>
+        <argsstring>() const</argsstring>
+        <name>crend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="38" column="1" bodyfile="libmscore/spannermap.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1aaacc8f25d4acd07f477ee4996c9b32dd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::multimap&lt; int, <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt;::const_iterator</type>
+        <definition>std::multimap&lt;int,Spanner*&gt;::const_iterator Ms::SpannerMap::cbegin</definition>
+        <argsstring>() const</argsstring>
+        <name>cbegin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="39" column="1" bodyfile="libmscore/spannermap.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1aca6d9a30e6c52c250e61395a4356d345" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::multimap&lt; int, <ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> * &gt;::const_iterator</type>
+        <definition>std::multimap&lt;int,Spanner*&gt;::const_iterator Ms::SpannerMap::cend</definition>
+        <argsstring>() const</argsstring>
+        <name>cend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="40" column="1" bodyfile="libmscore/spannermap.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1a928ca3fcea1ea9f7e2a525b8e03708a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::SpannerMap::addSpanner</definition>
+        <argsstring>(Spanner *s)</argsstring>
+        <name>addSpanner</name>
+        <param>
+          <type><ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="41" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="72" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1a19821abac580506748d78b3e571aa08f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::SpannerMap::removeSpanner</definition>
+        <argsstring>(Spanner *s)</argsstring>
+        <name>removeSpanner</name>
+        <param>
+          <type><ref refid="class_ms_1_1_spanner" kindref="compound">Spanner</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="42" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="90" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1ab7d84ad171a45865bf1190e2350a98f2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::SpannerMap::update</definition>
+        <argsstring>() const</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="43" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="33" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1a4fd6e5a0b39024b986ed9836814f053b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::SpannerMap::setDirty</definition>
+        <argsstring>() const</argsstring>
+        <name>setDirty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="44" column="1" bodyfile="libmscore/spannermap.h" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_spanner_map_1aa83a9d6a14fcbc080c5a350a5556d02a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::SpannerMap::dump</definition>
+        <argsstring>() const</argsstring>
+        <name>dump</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="libmscore/spannermap.h" line="46" column="1" bodyfile="libmscore/spannermap.cpp" bodystart="108" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="15288">
+        <label>std::multimap&lt; int, Spanner *&gt;</label>
+      </node>
+      <node id="15287">
+        <label>Ms::SpannerMap</label>
+        <link refid="class_ms_1_1_spanner_map"/>
+        <childnode refid="15288" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15290">
+        <label>std::multimap&lt; int, Spanner *&gt;</label>
+      </node>
+      <node id="15289">
+        <label>Ms::SpannerMap</label>
+        <link refid="class_ms_1_1_spanner_map"/>
+        <childnode refid="15290" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="libmscore/spannermap.h" line="27" column="1" bodyfile="libmscore/spannermap.h" bodystart="27" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_spanner_map_1a928ca3fcea1ea9f7e2a525b8e03708a6" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>addSpanner</name></member>
+      <member refid="class_ms_1_1_spanner_map_1aaacc8f25d4acd07f477ee4996c9b32dd" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>cbegin</name></member>
+      <member refid="class_ms_1_1_spanner_map_1aca6d9a30e6c52c250e61395a4356d345" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>cend</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a84da5c7bb6f29b5998a05737916a4566" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>crbegin</name></member>
+      <member refid="class_ms_1_1_spanner_map_1abc59d7e340d6a17c7be44c03ad9a6712" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>crend</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a543694d711cab9e4dc73d50b2dfeac0f" prot="private" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>dirty</name></member>
+      <member refid="class_ms_1_1_spanner_map_1aa83a9d6a14fcbc080c5a350a5556d02a" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>dump</name></member>
+      <member refid="class_ms_1_1_spanner_map_1ab8b3f3e3eac2902443407868a52f9654" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>findContained</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a50d0c4abc63052ad825a4c48cc72dbd3" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>findOverlapping</name></member>
+      <member refid="class_ms_1_1_spanner_map_1ac9235e97b420aacd2f79612684403cd7" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>map</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a19821abac580506748d78b3e571aa08f" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>removeSpanner</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a4b0ed11dbf8b6a193482ab5d6a25b3f1" prot="private" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>results</name></member>
+      <member refid="class_ms_1_1_spanner_map_1a4fd6e5a0b39024b986ed9836814f053b" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>setDirty</name></member>
+      <member refid="class_ms_1_1_spanner_map_1ae6855e0f6498e6ed4a0d44e8122d6800" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>SpannerMap</name></member>
+      <member refid="class_ms_1_1_spanner_map_1aed72fd75361d4b98406141ed5957b475" prot="private" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>tree</name></member>
+      <member refid="class_ms_1_1_spanner_map_1ab7d84ad171a45865bf1190e2350a98f2" prot="public" virt="non-virtual"><scope>Ms::SpannerMap</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

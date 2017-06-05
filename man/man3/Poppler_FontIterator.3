@@ -1,0 +1,88 @@
+.TH "Poppler::FontIterator" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FontIterator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~FontIterator\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBFontInfo\fP > \fBnext\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasNext\fP () const"
+.br
+.ti -1c
+.RI "int \fBcurrentPage\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.ti -1c
+.RI "class \fBDocumentData\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Iterator for reading the fonts in a document\&.
+.PP
+\fBFontIterator\fP provides a Java-style iterator for reading the fonts in a document\&.
+.PP
+You can use it in the following way: 
+.PP
+.nf
+Poppler::FontIterator* it = doc->newFontIterator();
+while (it->hasNext()) {
+  QList<Poppler::FontInfo> fonts = it->next();
+  // do something with the fonts
+}
+// after doing the job, the iterator must be freed
+delete it;
+
+.fi
+.PP
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 276 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::FontIterator::~FontIterator ()"
+Destructor\&. 
+.PP
+Definition at line 119 of file poppler\-fontinfo\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int Poppler::FontIterator::currentPage () const"
+Returns the current page where the iterator is\&. 
+.PP
+Definition at line 145 of file poppler\-fontinfo\&.cc\&.
+.SS "bool Poppler::FontIterator::hasNext () const"
+Checks whether there is at least one more page to iterate, ie returns false when the iterator is beyond the last page\&. 
+.PP
+Definition at line 140 of file poppler\-fontinfo\&.cc\&.
+.SS "QList< \fBFontInfo\fP > Poppler::FontIterator::next ()"
+Returns the fonts of the current page and then advances the iterator to the next page\&. 
+.PP
+Definition at line 124 of file poppler\-fontinfo\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

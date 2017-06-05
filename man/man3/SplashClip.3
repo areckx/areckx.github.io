@@ -1,0 +1,129 @@
+.TH "SplashClip" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SplashClip
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashClip\fP (SplashCoord x0, SplashCoord y0, SplashCoord x1, SplashCoord y1, GBool antialiasA)"
+.br
+.ti -1c
+.RI "\fBSplashClip\fP * \fBcopy\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetToRect\fP (SplashCoord x0, SplashCoord y0, SplashCoord x1, SplashCoord y1)"
+.br
+.ti -1c
+.RI "SplashError \fBclipToRect\fP (SplashCoord x0, SplashCoord y0, SplashCoord x1, SplashCoord y1)"
+.br
+.ti -1c
+.RI "SplashError \fBclipToPath\fP (\fBSplashPath\fP *path, SplashCoord *matrix, SplashCoord flatness, GBool eo)"
+.br
+.ti -1c
+.RI "GBool \fBtest\fP (int x, int y)"
+.br
+.ti -1c
+.RI "SplashClipResult \fBtestRect\fP (int rectXMin, int rectYMin, int rectXMax, int rectYMax)"
+.br
+.ti -1c
+.RI "SplashClipResult \fBtestSpan\fP (int spanXMin, int spanXMax, int spanY)"
+.br
+.ti -1c
+.RI "void \fBclipAALine\fP (\fBSplashBitmap\fP *aaBuf, int *x0, int *x1, int y, GBool adjustVertLine=gFalse)"
+.br
+.ti -1c
+.RI "SplashCoord \fBgetXMin\fP ()"
+.br
+.ti -1c
+.RI "SplashCoord \fBgetXMax\fP ()"
+.br
+.ti -1c
+.RI "SplashCoord \fBgetYMin\fP ()"
+.br
+.ti -1c
+.RI "SplashCoord \fBgetYMax\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetXMinI\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetXMaxI\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetYMinI\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetYMaxI\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNumPaths\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashClip\fP (\fBSplashClip\fP *clip)"
+.br
+.ti -1c
+.RI "void \fBgrow\fP (int nPaths)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "GBool \fBantialias\fP"
+.br
+.ti -1c
+.RI "SplashCoord \fBxMin\fP"
+.br
+.ti -1c
+.RI "SplashCoord \fByMin\fP"
+.br
+.ti -1c
+.RI "SplashCoord \fBxMax\fP"
+.br
+.ti -1c
+.RI "SplashCoord \fByMax\fP"
+.br
+.ti -1c
+.RI "int \fBxMinI\fP"
+.br
+.ti -1c
+.RI "int \fByMinI\fP"
+.br
+.ti -1c
+.RI "int \fBxMaxI\fP"
+.br
+.ti -1c
+.RI "int \fByMaxI\fP"
+.br
+.ti -1c
+.RI "\fBSplashXPath\fP ** \fBpaths\fP"
+.br
+.ti -1c
+.RI "Guchar * \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBSplashXPathScanner\fP ** \fBscanners\fP"
+.br
+.ti -1c
+.RI "int \fBlength\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 49 of file SplashClip\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,181 @@
+.TH "MenuBarDataV2" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuBarDataV2 \- menubar data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <menubardata\&.h>\fP
+.PP
+Inherits \fBAnimationData\fP\&.
+.PP
+Inherited by \fBMenuDataV2\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenuBarDataV2\fP (QObject *parent, QWidget *target, int duration)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~MenuBarDataV2\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.RI "event filter "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBanimation\fP (void) const"
+.br
+.RI "return animation associated to action at given position, if any "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBprogressAnimation\fP (void) const"
+.br
+.RI "return animation associated to action at given position, if any "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual void \fBsetFollowMouseDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual const QRect & \fBanimatedRect\fP (void) const"
+.br
+.RI "return 'hover' rect position when widget is animated "
+.ti -1c
+.RI "virtual const QRect & \fBcurrentRect\fP (void) const"
+.br
+.RI "current rect "
+.ti -1c
+.RI "const QBasicTimer & \fBtimer\fP (void) const"
+.br
+.RI "timer "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (void) const"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual void \fBsetOpacity\fP (qreal value)"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual qreal \fBprogress\fP (void) const"
+.br
+.RI "animation progress "
+.ti -1c
+.RI "virtual void \fBsetProgress\fP (qreal value)"
+.br
+.RI "animation progress "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBclearAnimatedRect\fP (void)"
+.br
+.RI "animated rect "
+.ti -1c
+.RI "virtual void \fBupdateAnimatedRect\fP (void)"
+.br
+.RI "updated animated rect "
+.ti -1c
+.RI "virtual void \fBtimerEvent\fP (QTimerEvent *)"
+.br
+.RI "timer event "
+.ti -1c
+.RI "template<typename T > void \fBenterEvent\fP (const QObject *object)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBleaveEvent\fP (const QObject *object)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBmouseMoveEvent\fP (const QObject *object)"
+.br
+.RI "mouse move event "
+.ti -1c
+.RI "virtual void \fBenterEvent\fP (const QObject *object)"
+.br
+.RI "menubar enterEvent "
+.ti -1c
+.RI "virtual void \fBleaveEvent\fP (const QObject *object)"
+.br
+.RI "menubar enterEvent "
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (const QObject *object)"
+.br
+.RI "menubar mouseMoveEvent "
+.in -1c
+.PP
+.RI "\fBrect handling\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetCurrentRect\fP (const QRect &rect)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual void \fBclearCurrentRect\fP (void)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual const QRect & \fBpreviousRect\fP (void) const"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBsetPreviousRect\fP (const QRect &rect)"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBclearPreviousRect\fP (void)"
+.br
+.RI "previous rect "
+.in -1c
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBopacity\fP"
+.br
+.ti -1c
+.RI "qreal \fBprogress\fP"
+.br
+.in -1c
+.SS "current action handling"
+
+.in +1c
+.ti -1c
+.RI "typedef QPointer< QAction > \fBActionPointer\fP"
+.br
+.RI "guarded action pointer "
+.ti -1c
+.RI "virtual const \fBActionPointer\fP & \fBcurrentAction\fP (void) const"
+.br
+.RI "current action "
+.ti -1c
+.RI "virtual void \fBsetCurrentAction\fP (QAction *action)"
+.br
+.RI "current action "
+.ti -1c
+.RI "virtual void \fBclearCurrentAction\fP (void)"
+.br
+.RI "current action "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+menubar data 
+.PP
+Definition at line 256 of file menubardata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

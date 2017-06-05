@@ -1,0 +1,143 @@
+\hypertarget{accidental_8h}{}\section{libmscore/accidental.h File Reference}
+\label{accidental_8h}\index{libmscore/accidental.\+h@{libmscore/accidental.\+h}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}element.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ms_1_1_sym_element}{Ms\+::\+Sym\+Element}
+\item 
+class \hyperlink{class_ms_1_1_accidental}{Ms\+::\+Accidental}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_ms}{Ms}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_a55c58e0e93a543f7ad29ebe885051671}\label{namespace_ms_a55c58e0e93a543f7ad29ebe885051671}} 
+enum {\bfseries Accidental\+Role} \+: char \{ {\bfseries A\+U\+TO}, 
+{\bfseries U\+S\+ER}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_ad645340ae3d26d22eb29ecc4395824a0}\label{namespace_ms_ad645340ae3d26d22eb29ecc4395824a0}} 
+enum {\bfseries Accidental\+Bracket} \+: char \{ {\bfseries N\+O\+NE}, 
+{\bfseries P\+A\+R\+E\+N\+T\+H\+E\+S\+IS}, 
+{\bfseries B\+R\+A\+C\+K\+ET}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_a5bbe555ac1f35336598cd0f82a8075d4}\label{namespace_ms_a5bbe555ac1f35336598cd0f82a8075d4}} 
+enum {\bfseries Accidental\+Type} \+: char \{ \newline
+{\bfseries N\+O\+NE}, 
+{\bfseries F\+L\+AT}, 
+{\bfseries N\+A\+T\+U\+R\+AL}, 
+{\bfseries S\+H\+A\+RP}, 
+\newline
+{\bfseries S\+H\+A\+R\+P2}, 
+{\bfseries F\+L\+A\+T2}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+F\+L\+AT}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+S\+H\+A\+RP}, 
+\newline
+{\bfseries S\+H\+A\+R\+P\+\_\+\+S\+H\+A\+RP}, 
+{\bfseries F\+L\+A\+T\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries F\+L\+A\+T\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+\newline
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries S\+H\+A\+R\+P2\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+\newline
+{\bfseries S\+H\+A\+R\+P2\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries F\+L\+A\+T2\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries F\+L\+A\+T2\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries M\+I\+R\+R\+O\+R\+E\+D\+\_\+\+F\+L\+AT}, 
+\newline
+{\bfseries M\+I\+R\+R\+O\+R\+E\+D\+\_\+\+F\+L\+A\+T2}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+S\+L\+A\+SH}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+S\+L\+A\+S\+H4}, 
+{\bfseries F\+L\+A\+T\+\_\+\+S\+L\+A\+S\+H2}, 
+\newline
+{\bfseries F\+L\+A\+T\+\_\+\+S\+L\+A\+SH}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+S\+L\+A\+S\+H3}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+S\+L\+A\+S\+H2}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+\newline
+{\bfseries F\+L\+A\+T\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+D\+O\+WN}, 
+\newline
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries F\+L\+A\+T\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+\newline
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+O\+N\+E\+\_\+\+A\+R\+R\+O\+W\+\_\+\+UP}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries F\+L\+A\+T\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+\newline
+{\bfseries S\+H\+A\+R\+P\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries F\+L\+A\+T\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+\newline
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+T\+W\+O\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+\newline
+{\bfseries F\+L\+A\+T\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+D\+O\+WN}, 
+\newline
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries F\+L\+A\+T\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries S\+H\+A\+R\+P\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+\newline
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+T\+H\+R\+E\+E\+\_\+\+A\+R\+R\+O\+W\+S\+\_\+\+UP}, 
+{\bfseries L\+O\+W\+E\+R\+\_\+\+O\+N\+E\+\_\+\+S\+E\+P\+T\+I\+M\+A\+L\+\_\+\+C\+O\+M\+MA}, 
+{\bfseries R\+A\+I\+S\+E\+\_\+\+O\+N\+E\+\_\+\+S\+E\+P\+T\+I\+M\+A\+L\+\_\+\+C\+O\+M\+MA}, 
+{\bfseries L\+O\+W\+E\+R\+\_\+\+T\+W\+O\+\_\+\+S\+E\+P\+T\+I\+M\+A\+L\+\_\+\+C\+O\+M\+M\+AS}, 
+\newline
+{\bfseries R\+A\+I\+S\+E\+\_\+\+T\+W\+O\+\_\+\+S\+E\+P\+T\+I\+M\+A\+L\+\_\+\+C\+O\+M\+M\+AS}, 
+{\bfseries L\+O\+W\+E\+R\+\_\+\+O\+N\+E\+\_\+\+U\+N\+D\+E\+C\+I\+M\+A\+L\+\_\+\+Q\+U\+A\+R\+T\+E\+R\+T\+O\+NE}, 
+{\bfseries R\+A\+I\+S\+E\+\_\+\+O\+N\+E\+\_\+\+U\+N\+D\+E\+C\+I\+M\+A\+L\+\_\+\+Q\+U\+A\+R\+T\+E\+R\+T\+O\+NE}, 
+{\bfseries L\+O\+W\+E\+R\+\_\+\+O\+N\+E\+\_\+\+T\+R\+I\+D\+E\+C\+I\+M\+A\+L\+\_\+\+Q\+U\+A\+R\+T\+E\+R\+T\+O\+NE}, 
+\newline
+{\bfseries R\+A\+I\+S\+E\+\_\+\+O\+N\+E\+\_\+\+T\+R\+I\+D\+E\+C\+I\+M\+A\+L\+\_\+\+Q\+U\+A\+R\+T\+E\+R\+T\+O\+NE}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+F\+L\+A\+T\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+{\bfseries F\+L\+A\+T\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+{\bfseries N\+A\+T\+U\+R\+A\+L\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+\newline
+{\bfseries S\+H\+A\+R\+P\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+{\bfseries D\+O\+U\+B\+L\+E\+\_\+\+S\+H\+A\+R\+P\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+{\bfseries Q\+U\+A\+R\+T\+E\+R\+\_\+\+F\+L\+A\+T\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+{\bfseries Q\+U\+A\+R\+T\+E\+R\+\_\+\+S\+H\+A\+R\+P\+\_\+\+E\+Q\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+ED}, 
+\newline
+{\bfseries S\+O\+RI}, 
+{\bfseries K\+O\+R\+ON}, 
+{\bfseries E\+ND}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_a6e4de0d30e56df6fa411ff47872638cf}\label{namespace_ms_a6e4de0d30e56df6fa411ff47872638cf}} 
+Accidental\+Val {\bfseries Ms\+::sym2accidental\+Val} (Sym\+Id id)
+\item 
+\mbox{\Hypertarget{accidental_8h_a8b201403ea5a2a4ff559621cdac6e48d}\label{accidental_8h_a8b201403ea5a2a4ff559621cdac6e48d}} 
+{\bfseries Q\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+M\+E\+T\+A\+T\+Y\+PE} (Ms\+::\+Accidental\+Role)
+\item 
+\mbox{\Hypertarget{accidental_8h_adcf56cf12957064beecab5dabee166a1}\label{accidental_8h_adcf56cf12957064beecab5dabee166a1}} 
+{\bfseries Q\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+M\+E\+T\+A\+T\+Y\+PE} (Ms\+::\+Accidental\+Type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of class Accidental 

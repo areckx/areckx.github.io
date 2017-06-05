@@ -1,0 +1,165 @@
+.TH "AgentList" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AgentList
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <AgentList\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector< \fBAgent\fP * > \fBContainer\fP"
+.br
+.ti -1c
+.RI "typedef Container::iterator \fBiterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "Container::iterator \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "Container::iterator \fBend\fP ()"
+.br
+.ti -1c
+.RI "size_t \fBsize\fP ()"
+.br
+.ti -1c
+.RI "void \fBpush_back\fP (\fBAgent\fP *a)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBAgent\fP *a)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBAgent\fP *newAgent, bool \fBsort\fP)"
+.br
+.ti -1c
+.RI "void \fBsort\fP ()"
+.br
+.ti -1c
+.RI "void \fBremove\fP (const iterator &itr)"
+.br
+.ti -1c
+.RI "void \fBbeatTrack\fP (const EventList &el, const \fBAgentParameters\fP &params)"
+.br
+.ti -1c
+.RI "void \fBbeatTrack\fP (const EventList &el, const \fBAgentParameters\fP &params, double stop)"
+.br
+.ti -1c
+.RI "\fBAgent\fP * \fBbestAgent\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBuseAverageSalience\fP = false"
+.br
+.ti -1c
+.RI "static const double \fBDEFAULT_BI\fP = 0\&.02"
+.br
+.ti -1c
+.RI "static const double \fBDEFAULT_BT\fP = 0\&.04"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBClass\fP for maintaining the set of all Agents involved in beat tracking a piece of music\&. 
+.PP
+Definition at line 30 of file AgentList\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void AgentList::add (\fBAgent\fP * a)\fC [inline]\fP"
+Inserts newAgent into the list in ascending order of beatInterval 
+.PP
+Definition at line 54 of file AgentList\&.h\&.
+.SS "void AgentList::add (\fBAgent\fP * newAgent, bool sort)"
+Appends newAgent to list (sort==false), or inserts newAgent into the list in ascending order of beatInterval 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewAgent\fP The agent to be added to the list 
+.br
+\fIsort\fP Flag indicating whether the list is sorted or not 
+.RE
+.PP
+
+.PP
+Definition at line 28 of file AgentList\&.cpp\&.
+.SS "void AgentList::beatTrack (const EventList & el, const \fBAgentParameters\fP & params)\fC [inline]\fP"
+Perform beat tracking on a list of events (onsets)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIel\fP The list of onsets (or events or peaks) to beat track 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file AgentList\&.h\&.
+.SS "void AgentList::beatTrack (const EventList & el, const \fBAgentParameters\fP & params, double stop)"
+Perform beat tracking on a list of events (onsets)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIel\fP The list of onsets (or events or peaks) to beat track\&. 
+.br
+\fIstop\fP Do not find beats after \fCstop\fP seconds\&. 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file AgentList\&.cpp\&.
+.SS "\fBAgent\fP * AgentList::bestAgent ()"
+Finds the \fBAgent\fP with the highest score in the list, or NULL if beat tracking has failed\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The \fBAgent\fP with the highest score 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file AgentList\&.cpp\&.
+.SS "void AgentList::remove (const iterator & itr)"
+Removes the given item from the list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIptr\fP Points to the \fBAgent\fP which is removed from the list 
+.RE
+.PP
+
+.PP
+Definition at line 49 of file AgentList\&.cpp\&.
+.SS "void AgentList::sort ()"
+Sorts the \fBAgentList\fP by increasing beatInterval\&. 
+.PP
+Definition at line 35 of file AgentList\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const double AgentList::DEFAULT_BI = 0\&.02\fC [static]\fP"
+For the purpose of removing duplicate agents, the default JND of IBI 
+.PP
+Definition at line 48 of file AgentList\&.h\&.
+.SS "const double AgentList::DEFAULT_BT = 0\&.04\fC [static]\fP"
+For the purpose of removing duplicate agents, the default JND of phase 
+.PP
+Definition at line 51 of file AgentList\&.h\&.
+.SS "bool AgentList::useAverageSalience = false\fC [static]\fP"
+Flag for choice between sum and average beat salience values for \fBAgent\fP scores\&. The use of summed saliences favours faster tempi or lower metrical levels\&. 
+.PP
+Definition at line 45 of file AgentList\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

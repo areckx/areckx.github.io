@@ -1,0 +1,153 @@
+.TH "KQOAuthManager" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KQOAuthManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBKQOAuthError\fP { \fBNoError\fP, \fBNetworkError\fP, \fBRequestEndpointError\fP, \fBRequestValidationError\fP, \fBRequestUnauthorized\fP, \fBContentOperationNotPermittedError\fP, \fBContentNotFound\fP, \fBRequestError\fP, \fBManagerError\fP }"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBrequestReady\fP (QByteArray networkReply)"
+.br
+.ti -1c
+.RI "void \fBauthorizedRequestReady\fP (QByteArray networkReply, int id)"
+.br
+.ti -1c
+.RI "void \fBauthorizationPageRequested\fP (QUrl pageUrl)"
+.br
+.ti -1c
+.RI "void \fBreceivedToken\fP (QString oauth_token, QString oauth_token_secret)"
+.br
+.ti -1c
+.RI "void \fBtemporaryTokenReceived\fP (QString oauth_token, QString oauth_token_secret)"
+.br
+.ti -1c
+.RI "void \fBauthorizationReceived\fP (QString oauth_token, QString oauth_verifier)"
+.br
+.ti -1c
+.RI "void \fBaccessTokenReceived\fP (QString oauth_token, QString oauth_token_secret)"
+.br
+.ti -1c
+.RI "void \fBauthorizedRequestDone\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKQOAuthManager\fP (QObject *parent=0)"
+.br
+.ti -1c
+.RI "KQOAuthError \fBlastError\fP ()"
+.br
+.ti -1c
+.RI "void \fBexecuteRequest\fP (\fBKQOAuthRequest\fP *request)"
+.br
+.ti -1c
+.RI "void \fBexecuteAuthorizedRequest\fP (\fBKQOAuthRequest\fP *request, int id)"
+.br
+.ti -1c
+.RI "void \fBsetHandleUserAuthorization\fP (bool set)"
+.br
+.ti -1c
+.RI "void \fBsetHandleAuthorizationPageOpening\fP (bool set)"
+.br
+.ti -1c
+.RI "bool \fBhasTemporaryToken\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisVerified\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisAuthorized\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetUserAuthorization\fP (QUrl authorizationEndpoint)"
+.br
+.ti -1c
+.RI "void \fBgetUserAccessTokens\fP (QUrl accessTokenEndpoint)"
+.br
+.ti -1c
+.RI "void \fBverifyToken\fP (const QString &token, const QString &verifier)"
+.br
+.ti -1c
+.RI "void \fBsendAuthorizedRequest\fP (QUrl requestEndpoint, const KQOAuthParameters &requestParameters)"
+.br
+.ti -1c
+.RI "void \fBsetNetworkManager\fP (QNetworkAccessManager *manager)"
+.br
+.ti -1c
+.RI "QNetworkAccessManager * \fBnetworkManager\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file kqoauthmanager\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void KQOAuthManager::executeRequest (\fBKQOAuthRequest\fP * request)"
+The manager executes the given request\&. It takes the HTTP parameters from the request and uses QNetworkAccessManager to submit the HTTP request to the net\&. When the request is done it will emit signal requestReady(QByteArray networkReply)\&. NOTE: At the moment there is no timeout for the request\&. 
+.PP
+Definition at line 158 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::getUserAccessTokens (QUrl accessTokenEndpoint)"
+This is a convenience API for retrieving the access token in exchange for the temporary token and the verifier\&. This call will create a \fBKQOAuthRequest\fP and use the previously stored temporary token and verifier to exchange for the access token, which will be used to access the protected resources\&. Note that in order to use this method, \fBKQOAuthManager\fP must be in control of the user authorization process\&. Set \fBsetHandleUserAuthorization()\fP to true and retrieve user authorization with void getUserAuthorization\&. 
+.PP
+Definition at line 474 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::getUserAuthorization (QUrl authorizationEndpoint)"
+This is a convenience API for authorizing the user\&. The call will open the user's default browser, setup a local HTTP server and parse the reply from the service after the user has authorized us to access protected resources\&. If the user authorizes us to access protected resources, the verifier token is stored in \fBKQOAuthManager\fP for further use\&. In order to use this method, you must set \fBsetHandleUserAuthorization()\fP to true\&. 
+.PP
+Definition at line 437 of file kqoauthmanager\&.cpp\&.
+.SS "bool KQOAuthManager::hasTemporaryToken ()"
+Returns true if the \fBKQOAuthManager\fP has retrieved the oauth_token value\&. Otherwise return false\&. 
+.PP
+Definition at line 383 of file kqoauthmanager\&.cpp\&.
+.SS "bool KQOAuthManager::isAuthorized ()"
+Returns true if \fBKQOAuthManager\fP has the access token and hence can access the protected resources\&. Otherwise returns false\&. NOTE: In order for \fBKQOAuthManager\fP to know if we have access to protected resource \fBKQOAuthManager\fP must be in control of the user authorization process and requesting the acess token\&. Hence, this returns true if \fBsetHandleUserAuthorization()\fP is set to true and the user is authorized with \fBgetUserAuthorization()\fP and the access token must be retrieved with getUserAccessTokens\&. 
+.PP
+Definition at line 395 of file kqoauthmanager\&.cpp\&.
+.SS "bool KQOAuthManager::isVerified ()"
+Returns true if the user has authorized us to use the protected resources\&. Otherwise returns false\&. NOTE: In order for \fBKQOAuthManager\fP to know if the user has authorized us to use the protected resources, \fBKQOAuthManager\fP must be in control of the user authorization process\&. Hence, this returns true if \fBsetHandleUserAuthorization()\fP is set to true and the user is authorized with \fBgetUserAuthorization()\fP\&. 
+.PP
+Definition at line 389 of file kqoauthmanager\&.cpp\&.
+.SS "QNetworkAccessManager * KQOAuthManager::networkManager () const"
+Returns the given QNetworkAccessManager\&. Returns NULL if none is given\&. 
+.PP
+Definition at line 423 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::sendAuthorizedRequest (QUrl requestEndpoint, const KQOAuthParameters & requestParameters)"
+Sends a request to the protected resources\&. Parameters for the request are service specific and are given to the 'requestParameters' as parameters\&. Note that in order to use this method, \fBKQOAuthManager\fP must be in control of the user authorization process\&. Set \fBsetHandleUserAuthorization()\fP to true and retrieve user authorization with void getUserAuthorization\&. 
+.PP
+Definition at line 510 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::setHandleAuthorizationPageOpening (bool set)"
+Indicates whether the \fBKQOAuthManager\fP should launch the browser with the user authorization page itself\&.
+.PP
+If set to true (the default), the \fBKQOAuthManager\fP uses QDesktopServices::openUrl() for opening the browser\&. Otherwise it emits the authorizationPageRequested() signal which must then be handled by the calling code\&. 
+.PP
+Definition at line 377 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::setHandleUserAuthorization (bool set)"
+Indicates to the user that \fBKQOAuthManager\fP should handle user authorization by opening the user's default browser and parsing the reply from the service\&. By setting the parameter to true, \fBKQOAuthManager\fP will store intermediate results of the OAuth 1\&.0 process in its own opaque request\&. This information is used in the user authorization process and also when calling \fBsendAuthorizedRequest()\fP\&. NOTE: You need to set this to true if you want to use \fBgetUserAccessTokens()\fP or \fBsendAuthorizedRequest()\fP\&. 
+.PP
+Definition at line 371 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::setNetworkManager (QNetworkAccessManager * manager)"
+Sets a custom QNetworkAccessManager to handle network requests\&. This method can be useful if the application is using some proxy settings for example\&. The application is responsible for deleting this manager\&. \fBKQOAuthManager\fP will not delete any previously given manager\&. If the manager is NULL, the manager will not be set and the KQOAuthManager::Error\&. If no manager is given, \fBKQOAuthManager\fP will use the default one it will create by itself\&. 
+.PP
+Definition at line 407 of file kqoauthmanager\&.cpp\&.
+.SS "void KQOAuthManager::verifyToken (const QString & token, const QString & verifier)"
+This is a conveience API for setting the token verifier\&. If \fBsetHandleUserAuthorization()\fP is set to false you need to call this function before calling \fBgetUserAccessTokens()\fP 
+.PP
+Definition at line 503 of file kqoauthmanager\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

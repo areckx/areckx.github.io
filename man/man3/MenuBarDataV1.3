@@ -1,0 +1,189 @@
+.TH "MenuBarDataV1" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuBarDataV1 \- menubar data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <menubardata\&.h>\fP
+.PP
+Inherits \fBAnimationData\fP\&.
+.PP
+Inherited by \fBMenuDataV1\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenuBarDataV1\fP (QObject *parent, QWidget *target, int duration)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~MenuBarDataV1\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.RI "event filter "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBcurrentAnimation\fP (void) const"
+.br
+.RI "animations "
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBpreviousAnimation\fP (void) const"
+.br
+.RI "animations "
+.ti -1c
+.RI "virtual \fBAnimation::Pointer\fP \fBanimation\fP (const QPoint &point) const"
+.br
+.RI "return animation matching given point "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (const QPoint &point) const"
+.br
+.RI "return animation matching given point "
+.ti -1c
+.RI "virtual QRect \fBcurrentRect\fP (const QPoint &point) const"
+.br
+.ti -1c
+.RI "virtual const \fBAnimation::Pointer\fP & \fBanimation\fP (WidgetIndex index) const"
+.br
+.RI "animation associated to given Widget index "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (WidgetIndex index) const"
+.br
+.RI "opacity associated to given Widget index "
+.ti -1c
+.RI "virtual const QRect & \fBcurrentRect\fP (WidgetIndex index) const"
+.br
+.RI "opacity associated to given Widget index "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual qreal \fBcurrentOpacity\fP (void) const"
+.br
+.RI "current opacity "
+.ti -1c
+.RI "virtual void \fBsetCurrentOpacity\fP (qreal value)"
+.br
+.RI "current opacity "
+.ti -1c
+.RI "virtual const QRect & \fBcurrentRect\fP (void) const"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual qreal \fBpreviousOpacity\fP (void) const"
+.br
+.RI "previous opacity "
+.ti -1c
+.RI "virtual void \fBsetPreviousOpacity\fP (qreal value)"
+.br
+.RI "previous opacity "
+.ti -1c
+.RI "virtual const QRect & \fBpreviousRect\fP (void) const"
+.br
+.RI "previous rect "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > void \fBenterEvent\fP (const QObject *object)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBleaveEvent\fP (const QObject *object)"
+.br
+.ti -1c
+.RI "template<typename T > void \fBmouseMoveEvent\fP (const QObject *object)"
+.br
+.RI "mouse move event "
+.ti -1c
+.RI "template<typename T > void \fBmousePressEvent\fP (const QObject *object)"
+.br
+.RI "mouse move event "
+.ti -1c
+.RI "virtual void \fBenterEvent\fP (const QObject *object)"
+.br
+.RI "menubar enterEvent "
+.ti -1c
+.RI "virtual void \fBleaveEvent\fP (const QObject *object)"
+.br
+.RI "menubar enterEvent "
+.ti -1c
+.RI "virtual void \fBmouseMoveEvent\fP (const QObject *object)"
+.br
+.RI "menubar mouseMoveEvent "
+.ti -1c
+.RI "virtual void \fBmousePressEvent\fP (const QObject *object)"
+.br
+.RI "menubar mousePressEvent "
+.in -1c
+.PP
+.RI "\fBrect handling\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetCurrentRect\fP (const QRect &rect)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual void \fBclearCurrentRect\fP (void)"
+.br
+.RI "current rect "
+.ti -1c
+.RI "virtual void \fBsetPreviousRect\fP (const QRect &rect)"
+.br
+.RI "previous rect "
+.ti -1c
+.RI "virtual void \fBclearPreviousRect\fP (void)"
+.br
+.RI "previous rect "
+.in -1c
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBcurrentOpacity\fP"
+.br
+.RI "declare opacity property "
+.ti -1c
+.RI "qreal \fBpreviousOpacity\fP"
+.br
+.in -1c
+.SS "current action handling"
+
+.in +1c
+.ti -1c
+.RI "typedef QPointer< QAction > \fBActionPointer\fP"
+.br
+.RI "guarded action pointer "
+.ti -1c
+.RI "virtual const \fBActionPointer\fP & \fBcurrentAction\fP (void) const"
+.br
+.RI "current action "
+.ti -1c
+.RI "virtual void \fBsetCurrentAction\fP (QAction *action)"
+.br
+.RI "current action "
+.ti -1c
+.RI "virtual void \fBclearCurrentAction\fP (void)"
+.br
+.RI "current action "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+menubar data 
+.PP
+Definition at line 39 of file menubardata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,174 @@
+.TH "md__r_e_a_d_m_e" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_eMuseScore: Music notation and composition software 
+ \- MuseScore is an open source and free music notation software\&. For support, contribution, bug reports, visit \fCMuseScore\&.org\fP\&. Fork and make pull requests!
+.PP
+.SS "Features"
+.PP
+.IP "\(bu" 2
+WYSIWYG design, notes are entered on a 'virtual notepaper'
+.IP "\(bu" 2
+TrueType \fBfont(s)\fP for printing & display allows for high quality scaling to all sizes
+.IP "\(bu" 2
+easy & fast note entry
+.IP "\(bu" 2
+many editing functions
+.IP "\(bu" 2
+MusicXML import/export
+.IP "\(bu" 2
+Midi (SMF) import/export
+.IP "\(bu" 2
+MuseData import
+.IP "\(bu" 2
+Midi input for note entry
+.IP "\(bu" 2
+integrated sequencer and software synthesizer to play the score
+.IP "\(bu" 2
+print or create pdf files
+.PP
+.PP
+.SS "More info"
+.PP
+.IP "\(bu" 2
+\fCMuseScore Homepage\fP
+.IP "\(bu" 2
+\fCMuseScore Git workflow instructions\fP\&.
+.IP "\(bu" 2
+\fCHow to compile MuseScore?\fP
+.IP "\(bu" 2
+Build status: \fC\fP
+.PP
+.PP
+.SS "License"
+.PP
+MuseScore is licensed under GPL version 2\&.0\&. See LICENSE\&.GPL in the same directory\&.
+.PP
+.SS "Packages"
+.PP
+.IP "\(bu" 2
+\fBaeolus\fP Clone of \fCAeolus\fP Disabled by default in the stable releases\&. See http://dev-list.musescore.org/Aeolus-Organ-Synth-td7578364.html Kept as an example of how to integrate with a complex synthesizer\&.
+.IP "\(bu" 2
+\fBassets\fP Graphical assets, use them if you need a MuseScore icon\&. For logo, color etc\&.\&.\&. see https://musescore.org/en/about/logos-and-graphics
+.IP "\(bu" 2
+\fBawl\fP Audio Widget Library, from the MusE project
+.IP "\(bu" 2
+\fBbuild\fP Utility files for build
+.IP "\(bu" 2
+\fBbww2mxml\fP Command line tool to convert BWW files to MusicXML\&. BWW parser is used by MuseScore to import BWW files\&.
+.IP "\(bu" 2
+\fBdemos\fP A few MuseScore files to demonstrate what can be done
+.IP "\(bu" 2
+\fBfluid\fP Clone of \fCFluidSynth\fP, ported to C++ and customized
+.IP "\(bu" 2
+\fBfonts\fP Contains fontforge source (sfd) + ttf/otf fonts\&. MuseScore includes the 'Emmentaler' font from the Lilypond project\&.
+.IP "\(bu" 2
+\fBlibmscore\fP Data model of MuseScore
+.IP "\(bu" 2
+\fBmscore\fP Main code for the MuseScore UI
+.IP "\(bu" 2
+\fBmstyle\fP Clone of KDE4 style Oxygen
+.IP "\(bu" 2
+\fBmsynth\fP Abstract interface to Fluid + \fBAeolus\fP
+.IP "\(bu" 2
+\fBmtest\fP Unit testing using QTest
+.IP "\(bu" 2
+\fBomr\fP Optical music recognition
+.IP "\(bu" 2
+\fBshare\fP Files moved to /usr/share/\&.\&.\&. on install
+.IP "\(bu" 2
+\fBtest\fP Old tests\&. Should move to mtest
+.IP "\(bu" 2
+\fBvtest\fP Visual tests\&. Compare reference images with current implementation
+.IP "\(bu" 2
+\fBthirdparty\fP Contains projects which are included for convenience, usually to integrate them into the build system to make them available for all supported platforms\&.
+.IP "  \(bu" 4
+\fBthirdparty/rtf2html\fP Used for capella import
+.IP "  \(bu" 4
+\fBthirdparty/diff\fP Not used currently\&. \fCDiff, Match and Patch Library\fP
+.IP "  \(bu" 4
+\fBthirdparty/ofqf\fP OSC server interface\&. Based on \fCOSC for Qt4\fP
+.IP "  \(bu" 4
+\fBthirdparty/singleapp\fP Clone from \fCQt Single Application\fP
+.IP "  \(bu" 4
+\fBthirdparty/portmidi\fP Clone from \fCPortMidi\fP
+.IP "  \(bu" 4
+\fBthirdparty/beatroot\fP It's a core part of BeatRoot Vamp Plugin by Simon Dixon and Chris Cannam, used in MIDI import for beat detection\&. (https://code.soundsoftware.ac.uk/projects/beatroot-vamp/repository)
+.PP
+
+.PP
+.PP
+.SS "Building"
+.PP
+\fBRead the developer handbook for a \fCcomplete build walkthrough\fP and a list of dependencies\&.\fP
+.PP
+.SS "Getting sources"
+.PP
+If using git to download repo of entire code history, type: 
+.PP
+.nf
+git clone https://github.com/musescore/MuseScore.git
+cd MuseScore
+
+.fi
+.PP
+.PP
+Else can just download the latest source release tarball from https://github.com/musescore/MuseScore/releases, and then from your download directory type: 
+.PP
+.nf
+tar xzf MuseScore-x.x.x.tar.gz
+cd MuseScore-x.x.x
+
+.fi
+.PP
+.PP
+.SS "Release Build"
+.PP
+To compile MuseScore, type: 
+.PP
+.nf
+make release
+
+.fi
+.PP
+.PP
+If something goes wrong, then remove the whole build subdirectory with \fCmake clean\fP and start new with \fCmake release\fP\&.
+.PP
+.SS "Running"
+.PP
+To start MuseScore, type: 
+.PP
+.nf
+./build.release/mscore/mscore
+
+.fi
+.PP
+.PP
+The Start Center window will appear on every invocation, until you disable that setting via the 'Preferences' dialog\&.
+.PP
+.SS "Installing"
+.PP
+To install to default prefix using root user, type: 
+.PP
+.nf
+sudo make install
+
+.fi
+.PP
+.PP
+.SS "Debug Build"
+.PP
+A debug version can be built by doing \fCmake debug\fP instead of \fCmake release\fP\&.
+.PP
+To run the debug version, type: 
+.PP
+.nf
+./build.debug/mscore/mscore
+
+.fi
+.PP
+.PP
+.SS "Testing"
+.PP
+See /mtest/README\&.md 'mtest/README\&.md' or https://musescore.org/en/developers-handbook/testing for instructions on how to run the test suite\&. 

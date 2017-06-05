@@ -1,0 +1,722 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="zutil_8h" kind="file" language="C++">
+    <compoundname>zutil.h</compoundname>
+    <includes refid="zlib_8h" local="yes">zlib.h</includes>
+    <includes local="no">errno.h</includes>
+    <includedby refid="infblock_8c" local="yes">thirdparty/freetype/src/gzip/infblock.c</includedby>
+    <includedby refid="infcodes_8c" local="yes">thirdparty/freetype/src/gzip/infcodes.c</includedby>
+    <includedby refid="inflate_8c" local="yes">thirdparty/freetype/src/gzip/inflate.c</includedby>
+    <includedby refid="inftrees_8c" local="yes">thirdparty/freetype/src/gzip/inftrees.c</includedby>
+    <includedby refid="infutil_8c" local="yes">thirdparty/freetype/src/gzip/infutil.c</includedby>
+    <includedby refid="zutil_8c" local="yes">thirdparty/freetype/src/gzip/zutil.c</includedby>
+    <incdepgraph>
+      <node id="80147">
+        <label>errno.h</label>
+      </node>
+      <node id="80144">
+        <label>thirdparty/freetype/src/gzip/zutil.h</label>
+        <link refid="zutil_8h"/>
+        <childnode refid="80145" relation="include">
+        </childnode>
+        <childnode refid="80147" relation="include">
+        </childnode>
+      </node>
+      <node id="80145">
+        <label>zlib.h</label>
+        <link refid="zlib_8h_source"/>
+        <childnode refid="80146" relation="include">
+        </childnode>
+      </node>
+      <node id="80146">
+        <label>zconf.h</label>
+        <link refid="zconf_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="80149">
+        <label>thirdparty/freetype/src/gzip/infblock.c</label>
+        <link refid="infblock_8c_source"/>
+      </node>
+      <node id="80154">
+        <label>thirdparty/freetype/src/gzip/zutil.c</label>
+        <link refid="zutil_8c_source"/>
+      </node>
+      <node id="80148">
+        <label>thirdparty/freetype/src/gzip/zutil.h</label>
+        <link refid="zutil_8h"/>
+        <childnode refid="80149" relation="include">
+        </childnode>
+        <childnode refid="80150" relation="include">
+        </childnode>
+        <childnode refid="80151" relation="include">
+        </childnode>
+        <childnode refid="80152" relation="include">
+        </childnode>
+        <childnode refid="80153" relation="include">
+        </childnode>
+        <childnode refid="80154" relation="include">
+        </childnode>
+      </node>
+      <node id="80153">
+        <label>thirdparty/freetype/src/gzip/infutil.c</label>
+        <link refid="infutil_8c_source"/>
+      </node>
+      <node id="80152">
+        <label>thirdparty/freetype/src/gzip/inftrees.c</label>
+        <link refid="inftrees_8c_source"/>
+      </node>
+      <node id="80151">
+        <label>thirdparty/freetype/src/gzip/inflate.c</label>
+        <link refid="inflate_8c_source"/>
+      </node>
+      <node id="80150">
+        <label>thirdparty/freetype/src/gzip/infcodes.c</label>
+        <link refid="infcodes_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="zutil_8h_1a08023ea6765c99d60a6a3840cd07156e" prot="public" static="no">
+        <name>local</name>
+        <initializer>static</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="30" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a0fcc2fe26110263e812ce50919b6a5c1" prot="public" static="no">
+        <name>ERR_RETURN</name>
+        <param><defname>strm</defname></param>
+        <param><defname>err</defname></param>
+        <initializer>return (strm-&gt;msg = (char*)ERR_MSG(err), (err))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="41" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1aef084f32d9ca8b9273a1c826b89b979a" prot="public" static="no">
+        <name>DEF_WBITS</name>
+        <initializer>MAX_WBITS</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="48" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a19c8e60fa32d4ddf303ce988ba97af61" prot="public" static="no">
+        <name>DEF_MEM_LEVEL</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="53" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a9f650bc9c1fbd9499098e3a70d295b8a" prot="public" static="no">
+        <name>STORED_BLOCK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="59" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a0f63a9090acfe4f653f117b638b289d1" prot="public" static="no">
+        <name>STATIC_TREES</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="60" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a40a71de753262f20a0bcacc2304e7b19" prot="public" static="no">
+        <name>DYN_TREES</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="61" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a7984ceb1ff48ac91172976b91ed43f60" prot="public" static="no">
+        <name>MIN_MATCH</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="64" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1ab7a9188dce25dac8d3a970c01b89b0c6" prot="public" static="no">
+        <name>MAX_MATCH</name>
+        <initializer>258</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="65" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a1156d73d88538d122acfa852b95492bd" prot="public" static="no">
+        <name>PRESET_DICT</name>
+        <initializer>0x20 /* preset dictionary flag in zlib header */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="68" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a919da7d9b61966c3af796ab42e618bef" prot="public" static="no">
+        <name>OS_CODE</name>
+        <initializer>0x03  /* assume Unix */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="139" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a7d40e22cfc0ad4087bf371d61290a0f5" prot="public" static="no">
+        <name>F_OPEN</name>
+        <param><defname>name</defname></param>
+        <param><defname>mode</defname></param>
+        <initializer>ft_fopen((name), (mode))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="143" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a62122f710fb754b114c1ce12ff0bd191" prot="public" static="no">
+        <name>zstrerror</name>
+        <param><defname>errnum</defname></param>
+        <initializer>&quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="152" column="12" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a5c8d8d889189d1461d10df831f3cd40e" prot="public" static="no">
+        <name>Assert</name>
+        <param><defname>cond</defname></param>
+        <param><defname>msg</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="196" column="12" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a93bbe97269cf8304b452a4d472dba191" prot="public" static="no">
+        <name>Trace</name>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="197" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a67eab10382e740297e8a59d69f85464e" prot="public" static="no">
+        <name>Tracev</name>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="198" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1ae65182ff511f0b12345c20b6533f32d9" prot="public" static="no">
+        <name>Tracevv</name>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="199" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a15ce9096835263938f62694aee7a0a99" prot="public" static="no">
+        <name>Tracec</name>
+        <param><defname>c</defname></param>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="200" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a54a66ee51c61d67607b64678b055af6b" prot="public" static="no">
+        <name>Tracecv</name>
+        <param><defname>c</defname></param>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="201" column="11" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a39679d03501d691bdfc62a3324cb9548" prot="public" static="no">
+        <name>ZALLOC</name>
+        <param><defname>strm</defname></param>
+        <param><defname>items</defname></param>
+        <param><defname>size</defname></param>
+        <initializer>(*((strm)-&gt;zalloc))((strm)-&gt;opaque, (items), (size))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="210" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a71d7c4f186ae3a055367c92db5a8ab18" prot="public" static="no">
+        <name>ZFREE</name>
+        <param><defname>strm</defname></param>
+        <param><defname>addr</defname></param>
+        <initializer>(*((strm)-&gt;zfree))((strm)-&gt;opaque, (voidpf)(addr))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="212" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="zutil_8h_1a8a5cef3599266dcaa129ed959a42bcf6" prot="public" static="no">
+        <name>TRY_FREE</name>
+        <param><defname>s</defname></param>
+        <param><defname>p</defname></param>
+        <initializer>{if (p) ZFREE(s, p);}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="213" column="9" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="zutil_8h_1af3307af5922c72924a837559c801a8a4" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char uch</definition>
+        <argsstring></argsstring>
+        <name>uch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="34" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="zutil_8h_1aaa6fdf02a2fdaf3731f17a19920ddb0b" prot="public" static="no">
+        <type>uch FAR</type>
+        <definition>typedef uch FAR uchf</definition>
+        <argsstring></argsstring>
+        <name>uchf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="35" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="zutil_8h_1a3754180d606d4ed15468d15d9665aa2e" prot="public" static="no">
+        <type>unsigned short</type>
+        <definition>typedef unsigned short ush</definition>
+        <argsstring></argsstring>
+        <name>ush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="36" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="zutil_8h_1ab854e4722acf30ada8a7a71b58d1b238" prot="public" static="no">
+        <type>ush FAR</type>
+        <definition>typedef ush FAR ushf</definition>
+        <argsstring></argsstring>
+        <name>ushf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="37" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="zutil_8h_1abd6f60bf9450af2ecb94097a32c19a64" prot="public" static="no">
+        <type>unsigned long</type>
+        <definition>typedef unsigned long ulg</definition>
+        <argsstring></argsstring>
+        <name>ulg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="38" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="zutil_8h_1a178905cb4b776e8348e6f01262b78b19" prot="public" static="no">
+        <type>uLong check_func</type>
+        <definition>typedef uLong check_func OF((uLong check, const Bytef *buf, uInt len))</definition>
+        <argsstring>((uLong check, const Bytef *buf, uInt len))</argsstring>
+        <name>OF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="205" column="1" bodyfile="thirdparty/freetype/src/gzip/zutil.h" bodystart="205" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="zutil_8h_1ac40b32ad09bcfb95fa13459dd0bd44fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void zmemcpy</type>
+        <definition>void zmemcpy OF</definition>
+        <argsstring>((Bytef *dest, const Bytef *source, uInt len))</argsstring>
+        <name>OF</name>
+        <param>
+          <type>(Bytef *dest, const Bytef *source, uInt len)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="179" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="zutil_8h_1ab54c0c502433f939a51beae56b93c690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int zmemcmp</type>
+        <definition>int zmemcmp OF</definition>
+        <argsstring>((const Bytef *s1, const Bytef *s2, uInt len))</argsstring>
+        <name>OF</name>
+        <param>
+          <type>(const Bytef *s1, const Bytef *s2, uInt len)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="zutil_8h_1ac1e8b0d84844c91143ab66679c2a0441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void zmemzero</type>
+        <definition>void zmemzero OF</definition>
+        <argsstring>((Bytef *dest, uInt len))</argsstring>
+        <name>OF</name>
+        <param>
+          <type>(Bytef *dest, uInt len)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="zutil_8h_1a850d1de744300326b9765252b0d451e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>local voidpf zcalloc</type>
+        <definition>local voidpf zcalloc OF</definition>
+        <argsstring>((voidpf opaque, unsigned items, unsigned size))</argsstring>
+        <name>OF</name>
+        <param>
+          <type>(voidpf opaque, unsigned items, unsigned size)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="207" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="zutil_8h_1aa5b0163c9cb242a0aaac4a10e87ad963" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>local void zcfree</type>
+        <definition>local void zcfree OF</definition>
+        <argsstring>((voidpf opaque, voidpf ptr))</argsstring>
+        <name>OF</name>
+        <param>
+          <type>(voidpf opaque, voidpf ptr)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/gzip/zutil.h" line="208" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>zutil.h<sp/>--<sp/>internal<sp/>interface<sp/>and<sp/>configuration<sp/>of<sp/>the<sp/>compression<sp/>library</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>1995-2002<sp/>Jean-loup<sp/>Gailly.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>For<sp/>conditions<sp/>of<sp/>distribution<sp/>and<sp/>use,<sp/>see<sp/>copyright<sp/>notice<sp/>in<sp/>zlib.h</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>WARNING:<sp/>this<sp/>file<sp/>should<sp/>*not*<sp/>be<sp/>used<sp/>by<sp/>applications.<sp/>It<sp/>is</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/><sp/>part<sp/>of<sp/>the<sp/>implementation<sp/>of<sp/>the<sp/>compression<sp/>library<sp/>and<sp/>is</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/>subject<sp/>to<sp/>change.<sp/>Applications<sp/>should<sp/>only<sp/>use<sp/>zlib.h.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>@(#)<sp/>$Id$<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_Z_UTIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_Z_UTIL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;zlib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>STDC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>NO_ERRNO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>errno;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;errno.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>local</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>local<sp/>static</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>compile<sp/>with<sp/>-Dlocal<sp/>if<sp/>your<sp/>debugger<sp/>can&apos;t<sp/>find<sp/>static<sp/>symbols<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/>uch;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uch<sp/>FAR<sp/>uchf;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>ush;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>ush<sp/>FAR<sp/>ushf;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/>ulg;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ERR_RETURN(strm,err)<sp/>\</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"><sp/><sp/>return<sp/>(strm-&gt;msg<sp/>=<sp/>(char*)ERR_MSG(err),<sp/>(err))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>To<sp/>be<sp/>used<sp/>only<sp/>when<sp/>the<sp/>state<sp/>is<sp/>known<sp/>to<sp/>be<sp/>valid<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>common<sp/>constants<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEF_WBITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DEF_WBITS<sp/>MAX_WBITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>default<sp/>windowBits<sp/>for<sp/>decompression.<sp/>MAX_WBITS<sp/>is<sp/>for<sp/>compression<sp/>only<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>MAX_MEM_LEVEL<sp/>&gt;=<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DEF_MEM_LEVEL<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DEF_MEM_LEVEL<sp/><sp/>MAX_MEM_LEVEL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>default<sp/>memLevel<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STORED_BLOCK<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATIC_TREES<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DYN_TREES<sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>three<sp/>kinds<sp/>of<sp/>block<sp/>type<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MIN_MATCH<sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_MATCH<sp/><sp/>258</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>minimum<sp/>and<sp/>maximum<sp/>match<sp/>lengths<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PRESET_DICT<sp/>0x20<sp/></highlight><highlight class="comment">/*<sp/>preset<sp/>dictionary<sp/>flag<sp/>in<sp/>zlib<sp/>header<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>target<sp/>dependencies<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>MSDOS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x00</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>if<sp/>defined(__TURBOC__)<sp/>||<sp/>defined(__BORLANDC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>if(__STDC__<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(defined(__LARGE__)<sp/>||<sp/>defined(__COMPACT__))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Allow<sp/>compilation<sp/>with<sp/>ANSI<sp/>keywords<sp/>only<sp/>enabled<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_Cdecl<sp/>farfree(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*block<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*_Cdecl<sp/>farmalloc(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>nbytes<sp/>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/>include<sp/>&lt;alloc.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>else<sp/></highlight><highlight class="comment">/*<sp/>MSC<sp/>or<sp/>DJGPP<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OS2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x06</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32<sp/></highlight><highlight class="comment">/*<sp/>Window<sp/>95<sp/>&amp;<sp/>Windows<sp/>NT<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x0b</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(VAXC)<sp/>||<sp/>defined(VMS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>F_OPEN(name,<sp/>mode)<sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/>ft_fopen((name),<sp/>(mode),<sp/>&quot;mbc=60&quot;,<sp/>&quot;ctx=stm&quot;,<sp/>&quot;rfm=fix&quot;,<sp/>&quot;mrs=512&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AMIGA</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(ATARI)<sp/>||<sp/>defined(atarist)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x05</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(MACOS)<sp/>||<sp/>defined(TARGET_OS_MAC)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x07</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>if<sp/>defined(__MWERKS__)<sp/>&amp;&amp;<sp/>__dest_os<sp/>!=<sp/>__be_os<sp/>&amp;&amp;<sp/>__dest_os<sp/>!=<sp/>__win32_os</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>include<sp/>&lt;unix.h&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>for<sp/>fdopen<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>ifndef<sp/>fdopen</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/>define<sp/>fdopen(fd,mode)<sp/>NULL<sp/></highlight><highlight class="comment">/*<sp/>No<sp/>fdopen()<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__50SERIES<sp/></highlight><highlight class="comment">/*<sp/>Prime/PRIMOS<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x0F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TOPS20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x0a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_BEOS_)<sp/>||<sp/>defined(RISCOS)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>fdopen(fd,mode)<sp/>NULL<sp/></highlight><highlight class="comment">/*<sp/>No<sp/>fdopen()<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(defined(_MSC_VER)<sp/>&amp;&amp;<sp/>(_MSC_VER<sp/>&gt;<sp/>600))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>fdopen(fd,type)<sp/><sp/>_fdopen(fd,type)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Common<sp/>defaults<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OS_CODE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>OS_CODE<sp/><sp/>0x03<sp/><sp/></highlight><highlight class="comment">/*<sp/>assume<sp/>Unix<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>F_OPEN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>F_OPEN(name,<sp/>mode)<sp/>ft_fopen((name),<sp/>(mode))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_STRERROR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*strerror<sp/>OF((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>zstrerror(errnum)<sp/>strerror(errnum)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>zstrerror(errnum)<sp/>&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(pyr)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>NO_MEMCPY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(SMALL_MEDIUM)<sp/>&amp;&amp;<sp/>!defined(_MSC_VER)<sp/>&amp;&amp;<sp/>!defined(__SC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>Use<sp/>our<sp/>own<sp/>functions<sp/>for<sp/>small<sp/>and<sp/>medium<sp/>model<sp/>with<sp/>MSC<sp/>&lt;=<sp/>5.0.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/>*<sp/>You<sp/>may<sp/>have<sp/>to<sp/>use<sp/>the<sp/>same<sp/>strategy<sp/>for<sp/>Borland<sp/>C<sp/>(untested).</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/>*<sp/>The<sp/>__SC__<sp/>check<sp/>is<sp/>for<sp/>Symantec.</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>NO_MEMCPY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(STDC)<sp/>&amp;&amp;<sp/>!defined(HAVE_MEMCPY)<sp/>&amp;&amp;<sp/>!defined(NO_MEMCPY)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>HAVE_MEMCPY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>HAVE_MEMCPY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>ifdef<sp/>SMALL_MEDIUM<sp/></highlight><highlight class="comment">/*<sp/>MSDOS<sp/>small<sp/>or<sp/>medium<sp/>model<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemcpy<sp/>_fmemcpy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemcmp<sp/>_fmemcmp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemzero(dest,<sp/>len)<sp/>_fmemset(dest,<sp/>0,<sp/>len)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemcpy<sp/>ft_memcpy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemcmp<sp/>ft_memcmp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/>define<sp/>zmemzero(dest,<sp/>len)<sp/>ft_memset(dest,<sp/>0,<sp/>len)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>zmemcpy<sp/><sp/>OF((Bytef*<sp/>dest,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bytef*<sp/>source,<sp/>uInt<sp/>len));</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/>zmemcmp<sp/><sp/>OF((</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bytef*<sp/>s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bytef*<sp/>s2,<sp/>uInt<sp/>len));</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>zmemzero<sp/>OF((Bytef*<sp/>dest,<sp/>uInt<sp/>len));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Diagnostic<sp/>functions<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>z_verbose;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>z_error<sp/><sp/><sp/><sp/>OF((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*m));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Assert(cond,msg)<sp/>{if(!(cond))<sp/>z_error(msg);}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Trace(x)<sp/>{if<sp/>(z_verbose&gt;=0)<sp/>fprintf<sp/>x<sp/>;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracev(x)<sp/>{if<sp/>(z_verbose&gt;0)<sp/>fprintf<sp/>x<sp/>;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracevv(x)<sp/>{if<sp/>(z_verbose&gt;1)<sp/>fprintf<sp/>x<sp/>;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracec(c,x)<sp/>{if<sp/>(z_verbose&gt;0<sp/>&amp;&amp;<sp/>(c))<sp/>fprintf<sp/>x<sp/>;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracecv(c,x)<sp/>{if<sp/>(z_verbose&gt;1<sp/>&amp;&amp;<sp/>(c))<sp/>fprintf<sp/>x<sp/>;}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Assert(cond,msg)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Trace(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracev(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracevv(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracec(c,x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>Tracecv(c,x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uLong<sp/>(*check_func)<sp/>OF((uLong<sp/>check,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Bytef<sp/>*buf,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uInt<sp/>len));</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">local<sp/>voidpf<sp/>zcalloc<sp/>OF((voidpf<sp/>opaque,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>items,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>size));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">local<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>zcfree<sp/><sp/>OF((voidpf<sp/>opaque,<sp/>voidpf<sp/>ptr));</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ZALLOC(strm,<sp/>items,<sp/>size)<sp/>\</highlight></codeline>
+<codeline lineno="211"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*((strm)-&gt;zalloc))((strm)-&gt;opaque,<sp/>(items),<sp/>(size))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ZFREE(strm,<sp/>addr)<sp/><sp/>(*((strm)-&gt;zfree))((strm)-&gt;opaque,<sp/>(voidpf)(addr))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TRY_FREE(s,<sp/>p)<sp/>{if<sp/>(p)<sp/>ZFREE(s,<sp/>p);}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>_Z_UTIL_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/gzip/zutil.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,146 @@
+.TH "Ms::ScoreFont" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::ScoreFont
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScoreFont\fP (const \fBScoreFont\fP &)"
+.br
+.ti -1c
+.RI "\fBScoreFont\fP (const char *n, const char *f, const char *p, const char *fn)"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const"
+.br
+.ti -1c
+.RI "const QString & \fBfamily\fP () const"
+.br
+.ti -1c
+.RI "std::list< std::pair< StyleIdx, QVariant > > \fBengravingDefaults\fP ()"
+.br
+.ti -1c
+.RI "double \fBtextEnclosureThickness\fP ()"
+.br
+.ti -1c
+.RI "QString \fBfontPath\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtoString\fP (SymId) const"
+.br
+.ti -1c
+.RI "QPixmap \fBsym2pixmap\fP (SymId, qreal)"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (SymId id, QPainter *, const QSizeF &mag, const QPointF &pos, qreal scale) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (SymId id, QPainter *, qreal mag, const QPointF &pos, qreal scale) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (SymId id, QPainter *, qreal mag, const QPointF &pos) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (SymId id, QPainter *, const QSizeF &mag, const QPointF &pos) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (SymId id, QPainter *, qreal mag, const QPointF &pos, int n) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (const std::vector< SymId > &, QPainter *, qreal mag, const QPointF &pos) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (const std::vector< SymId > &, QPainter *, const QSizeF &mag, const QPointF &pos) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (const std::vector< SymId > &, QPainter *, qreal mag, const QPointF &pos, qreal scale) const"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (const std::vector< SymId > &, QPainter *, const QSizeF &mag, const QPointF &pos, qreal scale) const"
+.br
+.ti -1c
+.RI "qreal \fBheight\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "qreal \fBwidth\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "qreal \fBadvance\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "qreal \fBwidth\fP (const std::vector< SymId > &, qreal mag) const"
+.br
+.ti -1c
+.RI "const QRectF \fBbbox\fP (SymId id, const QSizeF &) const"
+.br
+.ti -1c
+.RI "const QRectF \fBbbox\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "const QRectF \fBbbox\fP (const std::vector< SymId > &s, const QSizeF &mag) const"
+.br
+.ti -1c
+.RI "const QRectF \fBbbox\fP (const std::vector< SymId > &s, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBstemDownNW\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBstemUpSE\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBcutOutNE\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBcutOutNW\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBcutOutSE\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "QPointF \fBcutOutSW\fP (SymId id, qreal mag) const"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP (SymId id) const"
+.br
+.ti -1c
+.RI "bool \fBuseFallbackFont\fP (SymId id) const"
+.br
+.ti -1c
+.RI "const \fBSym\fP & \fBsym\fP (SymId id) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBScoreFont\fP * \fBfontFactory\fP (QString)"
+.br
+.ti -1c
+.RI "static \fBScoreFont\fP * \fBfallbackFont\fP ()"
+.br
+.ti -1c
+.RI "static const char * \fBfallbackTextFont\fP ()"
+.br
+.ti -1c
+.RI "static const QVector< \fBScoreFont\fP > & \fBscoreFonts\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBinitGlyphNamesJson\fP ()"
+.br
+.ti -1c
+.RI "static const QJsonObject & \fBglyphNamesJson\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 2768 of file sym\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

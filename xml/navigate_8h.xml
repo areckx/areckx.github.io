@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="navigate_8h" kind="file" language="C++">
+    <compoundname>navigate.h</compoundname>
+    <includedby refid="chord_8cpp" local="yes">libmscore/chord.cpp</includedby>
+    <includedby refid="cmd_8cpp" local="yes">libmscore/cmd.cpp</includedby>
+    <includedby refid="edit_8cpp" local="yes">libmscore/edit.cpp</includedby>
+    <includedby refid="navigate_8cpp" local="yes">libmscore/navigate.cpp</includedby>
+    <includedby refid="noteentry_8cpp" local="yes">libmscore/noteentry.cpp</includedby>
+    <includedby refid="rendermidi_8cpp" local="yes">libmscore/rendermidi.cpp</includedby>
+    <includedby refid="slur_8cpp" local="yes">libmscore/slur.cpp</includedby>
+    <includedby refid="stafftype_8cpp" local="yes">libmscore/stafftype.cpp</includedby>
+    <includedby refid="system_8cpp" local="yes">libmscore/system.cpp</includedby>
+    <includedby refid="exportxml_8cpp" local="yes">mscore/exportxml.cpp</includedby>
+    <includedby refid="scoreview_8cpp" local="yes">mscore/scoreview.cpp</includedby>
+    <invincdepgraph>
+      <node id="30126">
+        <label>libmscore/noteentry.cpp</label>
+        <link refid="noteentry_8cpp_source"/>
+      </node>
+      <node id="30124">
+        <label>libmscore/edit.cpp</label>
+        <link refid="edit_8cpp_source"/>
+      </node>
+      <node id="30125">
+        <label>libmscore/navigate.cpp</label>
+        <link refid="navigate_8cpp_source"/>
+      </node>
+      <node id="30131">
+        <label>mscore/exportxml.cpp</label>
+        <link refid="exportxml_8cpp_source"/>
+      </node>
+      <node id="30122">
+        <label>libmscore/chord.cpp</label>
+        <link refid="chord_8cpp"/>
+      </node>
+      <node id="30127">
+        <label>libmscore/rendermidi.cpp</label>
+        <link refid="rendermidi_8cpp"/>
+      </node>
+      <node id="30129">
+        <label>libmscore/stafftype.cpp</label>
+        <link refid="stafftype_8cpp_source"/>
+      </node>
+      <node id="30132">
+        <label>mscore/scoreview.cpp</label>
+        <link refid="scoreview_8cpp_source"/>
+      </node>
+      <node id="30130">
+        <label>libmscore/system.cpp</label>
+        <link refid="system_8cpp"/>
+      </node>
+      <node id="30123">
+        <label>libmscore/cmd.cpp</label>
+        <link refid="cmd_8cpp"/>
+      </node>
+      <node id="30121">
+        <label>libmscore/navigate.h</label>
+        <link refid="navigate_8h"/>
+        <childnode refid="30122" relation="include">
+        </childnode>
+        <childnode refid="30123" relation="include">
+        </childnode>
+        <childnode refid="30124" relation="include">
+        </childnode>
+        <childnode refid="30125" relation="include">
+        </childnode>
+        <childnode refid="30126" relation="include">
+        </childnode>
+        <childnode refid="30127" relation="include">
+        </childnode>
+        <childnode refid="30128" relation="include">
+        </childnode>
+        <childnode refid="30129" relation="include">
+        </childnode>
+        <childnode refid="30130" relation="include">
+        </childnode>
+        <childnode refid="30131" relation="include">
+        </childnode>
+        <childnode refid="30132" relation="include">
+        </childnode>
+      </node>
+      <node id="30128">
+        <label>libmscore/slur.cpp</label>
+        <link refid="slur_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_ms">Ms</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>MuseScore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Music<sp/>Composition<sp/>&amp;<sp/>Notation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>2002-2011<sp/>Werner<sp/>Schweer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>version<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation<sp/>and<sp/>appearing<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>the<sp/>file<sp/>LICENCE.GPL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__NAVIGATE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__NAVIGATE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ms" kindref="compound">Ms</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">ChordRest;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pitch2y(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pitch,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enh,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>clefOffset,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>prefix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>tversatz);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>ChordRest*<sp/>nextChordRest(ChordRest*<sp/>cr,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipGrace<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>ChordRest*<sp/>prevChordRest(ChordRest*<sp/>cr,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>skipGrace<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="libmscore/navigate.h"/>
+  </compounddef>
+</doxygen>

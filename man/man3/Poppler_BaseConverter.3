@@ -1,0 +1,109 @@
+.TH "Poppler::BaseConverter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::BaseConverter \- Base converter\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.PP
+Inherited by \fBPoppler::PDFConverter\fP, and \fBPoppler::PSConverter\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBError\fP { \fBNoError\fP, \fBFileLockedError\fP, \fBOpenOutputError\fP, \fBNotSupportedInputFileError\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fB~BaseConverter\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetOutputFileName\fP (const QString &outputFileName)"
+.br
+.ti -1c
+.RI "void \fBsetOutputDevice\fP (QIODevice *device)"
+.br
+.ti -1c
+.RI "virtual bool \fBconvert\fP ()=0"
+.br
+.ti -1c
+.RI "Error \fBlastError\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base converter\&. 
+
+This is the base class for the converters\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 1430 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::BaseConverter::~BaseConverter ()\fC [virtual]\fP"
+Destructor\&. 
+.PP
+Definition at line 81 of file poppler\-base\-converter\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool Poppler::BaseConverter::convert ()\fC [pure virtual]\fP"
+Does the conversion\&.
+.PP
+\fBReturns:\fP
+.RS 4
+whether the conversion succeeded 
+.RE
+.PP
+
+.PP
+Implemented in \fBPoppler::PDFConverter\fP, and \fBPoppler::PSConverter\fP\&.
+.SS "BaseConverter::Error Poppler::BaseConverter::lastError () const"
+Returns the last error 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12\&.1 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file poppler\-base\-converter\&.cc\&.
+.SS "void Poppler::BaseConverter::setOutputDevice (QIODevice * device)"
+Sets the output device\&. You must set this or the output file name\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 92 of file poppler\-base\-converter\&.cc\&.
+.SS "void Poppler::BaseConverter::setOutputFileName (const QString & outputFileName)"
+Sets the output file name\&. You must set this or the output device\&. 
+.PP
+Definition at line 86 of file poppler\-base\-converter\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,91 @@
+.TH "Ms::Symbol" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Symbol \- \fBSymbol\fP constructed from builtin symbol\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <symbol\&.h>\fP
+.PP
+Inherits \fBMs::BSymbol\fP\&.
+.PP
+Inherited by \fBMs::Hook\fP, \fBMs::NoteHead\fP, and \fBMs::SystemDivider\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSymbol\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP (const \fBSymbol\fP &)"
+.br
+.ti -1c
+.RI "\fBSymbol\fP & \fBoperator=\fP (const \fBSymbol\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBSymbol\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSym\fP (SymId s, const \fBScoreFont\fP *sf=nullptr)"
+.br
+.ti -1c
+.RI "SymId \fBsym\fP () const"
+.br
+.ti -1c
+.RI "QString \fBsymName\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetAbove\fP (bool)"
+.br
+.ti -1c
+.RI "virtual qreal \fBbaseLine\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBSegment\fP * \fBsegment\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "SymId \fB_sym\fP"
+.br
+.ti -1c
+.RI "const \fBScoreFont\fP * \fB_scoreFont\fP = nullptr"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QString \fBsymbol\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBSymbol\fP constructed from builtin symbol\&. 
+.PP
+Definition at line 31 of file symbol\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

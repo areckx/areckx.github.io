@@ -1,0 +1,71 @@
+.TH "Poppler::OptContentModel" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::OptContentModel \- \fBModel\fP for optional content\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-optcontent\&.h>\fP
+.PP
+Inherits QAbstractItemModel\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QModelIndex \fBindex\fP (int row, int column, const QModelIndex &parent) const"
+.br
+.ti -1c
+.RI "QModelIndex \fBparent\fP (const QModelIndex &child) const"
+.br
+.ti -1c
+.RI "int \fBrowCount\fP (const QModelIndex &parent=QModelIndex()) const"
+.br
+.ti -1c
+.RI "int \fBcolumnCount\fP (const QModelIndex &parent) const"
+.br
+.ti -1c
+.RI "QVariant \fBdata\fP (const QModelIndex &index, int role) const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetData\fP (const QModelIndex &index, const QVariant &value, int role=Qt::EditRole)"
+.br
+.ti -1c
+.RI "Qt::ItemFlags \fBflags\fP (const QModelIndex &index) const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBheaderData\fP (int section, Qt::Orientation orientation, int role=Qt::DisplayRole) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.ti -1c
+.RI "class \fBOptContentModelPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBModel\fP for optional content\&. 
+
+\fBOptContentModel\fP is an item model representing the optional content items that can be found in PDF documents\&.
+.PP
+The model offers a mostly read-only display of the data, allowing to enable/disable some contents setting the Qt::CheckStateRole data role\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file poppler\-optcontent\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

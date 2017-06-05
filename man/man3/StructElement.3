@@ -1,0 +1,157 @@
+.TH "StructElement" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StructElement
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBUnknown\fP = 0, \fBMCID\fP, \fBOBJR\fP, \fBDocument\fP, \fBPart\fP, \fBArt\fP, \fBSect\fP, \fBDiv\fP, \fBSpan\fP, \fBQuote\fP, \fBNote\fP, \fBReference\fP, \fBBibEntry\fP, \fBCode\fP, \fBLink\fP, \fBAnnot\fP, \fBBlockQuote\fP, \fBCaption\fP, \fBNonStruct\fP, \fBTOC\fP, \fBTOCI\fP, \fBIndex\fP, \fBPrivate\fP, \fBP\fP, \fBH\fP, \fBH1\fP, \fBH2\fP, \fBH3\fP, \fBH4\fP, \fBH5\fP, \fBH6\fP, \fBL\fP, \fBLI\fP, \fBLbl\fP, \fBLBody\fP, \fBTable\fP, \fBTR\fP, \fBTH\fP, \fBTD\fP, \fBTHead\fP, \fBTFoot\fP, \fBTBody\fP, \fBRuby\fP, \fBRB\fP, \fBRT\fP, \fBRP\fP, \fBWarichu\fP, \fBWT\fP, \fBWP\fP, \fBFigure\fP, \fBFormula\fP, \fBForm\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBgetTypeName\fP () const"
+.br
+.ti -1c
+.RI "Type \fBgetType\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisBlock\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisInline\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisGrouping\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisContent\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBisObjectRef\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetMCID\fP () const"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetObjectRef\fP () const"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetParentRef\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBhasPageRef\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetPageRef\fP (\fBRef\fP &ref) const"
+.br
+.ti -1c
+.RI "\fBStructTreeRoot\fP * \fBgetStructTreeRoot\fP ()"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetID\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetID\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetLanguage\fP ()"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetLanguage\fP () const"
+.br
+.ti -1c
+.RI "Guint \fBgetRevision\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRevision\fP (Guint revision)"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetTitle\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetTitle\fP ()"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetExpandedAbbr\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetExpandedAbbr\fP ()"
+.br
+.ti -1c
+.RI "unsigned \fBgetNumChildren\fP () const"
+.br
+.ti -1c
+.RI "const \fBStructElement\fP * \fBgetChild\fP (int i) const"
+.br
+.ti -1c
+.RI "\fBStructElement\fP * \fBgetChild\fP (int i)"
+.br
+.ti -1c
+.RI "void \fBappendChild\fP (\fBStructElement\fP *element)"
+.br
+.ti -1c
+.RI "unsigned \fBgetNumAttributes\fP () const"
+.br
+.ti -1c
+.RI "const \fBAttribute\fP * \fBgetAttribute\fP (int i) const"
+.br
+.ti -1c
+.RI "\fBAttribute\fP * \fBgetAttribute\fP (int i)"
+.br
+.ti -1c
+.RI "void \fBappendAttribute\fP (\fBAttribute\fP *attribute)"
+.br
+.ti -1c
+.RI "const \fBAttribute\fP * \fBfindAttribute\fP (Attribute::Type attributeType, GBool inherit=gFalse, Attribute::Owner owner=Attribute::UnknownOwner) const"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetAltText\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetAltText\fP ()"
+.br
+.ti -1c
+.RI "const \fBGooString\fP * \fBgetActualText\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetActualText\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetText\fP (GBool recursive=gTrue) const"
+.br
+.ti -1c
+.RI "const TextSpanArray \fBgetTextSpans\fP () const"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBRef\fP \fBInvalidRef\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStructTreeRoot\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 126 of file StructElement\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

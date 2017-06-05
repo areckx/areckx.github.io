@@ -1,0 +1,185 @@
+.TH "Ms::Instrument" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Instrument
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInstrument\fP (const \fBInstrument\fP &)"
+.br
+.ti -1c
+.RI "void \fBoperator=\fP (const \fBInstrument\fP &)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &, \fBPart\fP *part)"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &, \fBPart\fP *, bool *customDrumset)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &xml, \fBPart\fP *part) const"
+.br
+.ti -1c
+.RI "\fBNamedEventList\fP * \fBmidiAction\fP (const QString &s, int channel) const"
+.br
+.ti -1c
+.RI "int \fBchannelIdx\fP (const QString &s) const"
+.br
+.ti -1c
+.RI "void \fBupdateVelocity\fP (int *velocity, int channel, const QString &name)"
+.br
+.ti -1c
+.RI "void \fBupdateGateTime\fP (int *gateTime, int channelIdx, const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBInstrument\fP &) const"
+.br
+.ti -1c
+.RI "void \fBsetMinPitchP\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetMaxPitchP\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetMinPitchA\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetMaxPitchA\fP (int v)"
+.br
+.ti -1c
+.RI "\fBInterval\fP \fBtranspose\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTranspose\fP (const \fBInterval\fP &v)"
+.br
+.ti -1c
+.RI "QString \fBinstrumentId\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInstrumentId\fP (const QString &instrumentId)"
+.br
+.ti -1c
+.RI "void \fBsetDrumset\fP (const \fBDrumset\fP *ds)"
+.br
+.ti -1c
+.RI "const \fBDrumset\fP * \fBdrumset\fP () const"
+.br
+.ti -1c
+.RI "\fBDrumset\fP * \fBdrumset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBuseDrumset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUseDrumset\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetAmateurPitchRange\fP (int a, int b)"
+.br
+.ti -1c
+.RI "void \fBsetProfessionalPitchRange\fP (int a, int b)"
+.br
+.ti -1c
+.RI "\fBChannel\fP * \fBchannel\fP (int idx)"
+.br
+.ti -1c
+.RI "const \fBChannel\fP * \fBchannel\fP (int idx) const"
+.br
+.ti -1c
+.RI "\fBClefTypeList\fP \fBclefType\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "void \fBsetClefType\fP (int staffIdx, const \fBClefTypeList\fP &c)"
+.br
+.ti -1c
+.RI "const QList< \fBNamedEventList\fP > & \fBmidiActions\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBMidiArticulation\fP > & \fBarticulation\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBChannel\fP * > & \fBchannel\fP () const"
+.br
+.ti -1c
+.RI "void \fBappendChannel\fP (\fBChannel\fP *c)"
+.br
+.ti -1c
+.RI "void \fBclearChannels\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMidiActions\fP (const QList< \fBNamedEventList\fP > &l)"
+.br
+.ti -1c
+.RI "void \fBsetArticulation\fP (const QList< \fBMidiArticulation\fP > &l)"
+.br
+.ti -1c
+.RI "const \fBStringData\fP * \fBstringData\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStringData\fP (const \fBStringData\fP &d)"
+.br
+.ti -1c
+.RI "void \fBsetLongName\fP (const QString &f)"
+.br
+.ti -1c
+.RI "void \fBsetShortName\fP (const QString &f)"
+.br
+.ti -1c
+.RI "void \fBaddLongName\fP (const \fBStaffName\fP &f)"
+.br
+.ti -1c
+.RI "void \fBaddShortName\fP (const \fBStaffName\fP &f)"
+.br
+.ti -1c
+.RI "int \fBminPitchP\fP () const"
+.br
+.ti -1c
+.RI "int \fBmaxPitchP\fP () const"
+.br
+.ti -1c
+.RI "int \fBminPitchA\fP () const"
+.br
+.ti -1c
+.RI "int \fBmaxPitchA\fP () const"
+.br
+.ti -1c
+.RI "QString \fBinstrumentId\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBStaffName\fP > & \fBlongNames\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBStaffName\fP > & \fBshortNames\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBStaffName\fP > & \fBlongNames\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBStaffName\fP > & \fBshortNames\fP ()"
+.br
+.ti -1c
+.RI "QString \fBtrackName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrackName\fP (const QString &s)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBInstrument\fP \fBfromTemplate\fP (const \fBInstrumentTemplate\fP *t)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 133 of file instrument\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

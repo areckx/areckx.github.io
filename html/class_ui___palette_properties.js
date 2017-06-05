@@ -1,0 +1,25 @@
+var class_ui___palette_properties =
+[
+    [ "retranslateUi", "class_ui___palette_properties.html#a645e8dc783444f7e021a2ee37e8de919", null ],
+    [ "setupUi", "class_ui___palette_properties.html#afd14eac31cae9e75946edbe30a1f6a5e", null ],
+    [ "buttonBox", "class_ui___palette_properties.html#ad56a13c51013da28acbc7567d78aa2ed", null ],
+    [ "cellHeight", "class_ui___palette_properties.html#a1b553e51b55d6ded56ac887b5cb519d6", null ],
+    [ "cellWidth", "class_ui___palette_properties.html#a78fc601012cfaa1bf499aab655aa6e9a", null ],
+    [ "elementOffset", "class_ui___palette_properties.html#ab8bd6b547edcda0b14d7a1a920682eb2", null ],
+    [ "formLayout_4", "class_ui___palette_properties.html#ab2affe73db15210f7ceb81d5c45d6696", null ],
+    [ "gridLayout", "class_ui___palette_properties.html#ac2cbce890320fb12554b715fe7098094", null ],
+    [ "horizontalLayout_3", "class_ui___palette_properties.html#ae68aa473a34342f66dd547825c268d79", null ],
+    [ "label", "class_ui___palette_properties.html#ad3d4954356767eeead1f32f797fef7b5", null ],
+    [ "label_2", "class_ui___palette_properties.html#a962677e155ef801fe4e4d66838951253", null ],
+    [ "label_3", "class_ui___palette_properties.html#a5f0f0dc9ffdcc111ec71199b3988f84b", null ],
+    [ "label_4", "class_ui___palette_properties.html#ad31b8c6b9398b6a27d154a5d49f59278", null ],
+    [ "label_5", "class_ui___palette_properties.html#a9f4e73c614e1b7d8926dbc67d9469d17", null ],
+    [ "label_6", "class_ui___palette_properties.html#adfc984092994133e4f2768489ef08f82", null ],
+    [ "mag", "class_ui___palette_properties.html#a450be9a12e799d1a8fdad6f3cb9b466c", null ],
+    [ "moreElements", "class_ui___palette_properties.html#aa180c0a5c06bc4448c5722bd80769e4a", null ],
+    [ "name", "class_ui___palette_properties.html#ac58eedbae17572ecdfcb142ded23b3c7", null ],
+    [ "showGrid", "class_ui___palette_properties.html#a6db41cbdb318688becb309ba8facc3e6", null ],
+    [ "verticalLayout", "class_ui___palette_properties.html#a2daa20a08e75917c1fde5115698f2b25", null ],
+    [ "verticalSpacer", "class_ui___palette_properties.html#a735f37f74371ff546f678f4a5ebc77f5", null ],
+    [ "verticalSpacer_2", "class_ui___palette_properties.html#a7100951ab918c465302ef099b23ad5bf", null ]
+];

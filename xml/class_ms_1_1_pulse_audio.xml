@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_pulse_audio" kind="class" language="C++" prot="public">
+    <compoundname>Ms::PulseAudio</compoundname>
+    <basecompoundref refid="class_ms_1_1_driver" prot="public" virt="non-virtual">Ms::Driver</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a201fa4f77dbc92d9acbfa06842617ec2" prot="private" static="no" mutable="no">
+        <type>Transport</type>
+        <definition>Transport Ms::PulseAudio::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="28" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a6e8246f9c3d3def360faf55ca23fde25" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::PulseAudio::runState</definition>
+        <argsstring></argsstring>
+        <name>runState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="29" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a43e4bec9deee5420ba62998090bff9e7" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::PulseAudio::_sampleRate</definition>
+        <argsstring></argsstring>
+        <name>_sampleRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="30" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a82919ca5d3700b5a216d23e5b6f6563a" prot="private" static="no" mutable="no">
+        <type>pa_sample_spec</type>
+        <definition>pa_sample_spec Ms::PulseAudio::ss</definition>
+        <argsstring></argsstring>
+        <name>ss</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="31" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1af0428f05e68a6afbd4fc99d76c7faeec" prot="private" static="no" mutable="no">
+        <type>pa_mainloop *</type>
+        <definition>pa_mainloop* Ms::PulseAudio::pa_ml</definition>
+        <argsstring></argsstring>
+        <name>pa_ml</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="32" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a1e2afb011f902661c5b2de8f7608c5e1" prot="private" static="no" mutable="no">
+        <type>pa_buffer_attr</type>
+        <definition>pa_buffer_attr Ms::PulseAudio::bufattr</definition>
+        <argsstring></argsstring>
+        <name>bufattr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="33" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a7ae7ca5ff4c24f6c4ca6885f25b5f1ad" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Ms::PulseAudio::buffer[FRAMES *2]</definition>
+        <argsstring>[FRAMES *2]</argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="34" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_pulse_audio_1a5464ccff7d0b349ec6cb6c4f50ac0288" prot="private" static="no" mutable="no">
+        <type>pthread_t</type>
+        <definition>pthread_t Ms::PulseAudio::thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="35" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a09b8f8340b86cf0c756d9d020db1775d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::PulseAudio::paCallback</definition>
+        <argsstring>(pa_stream *s, size_t len, void *data)</argsstring>
+        <name>paCallback</name>
+        <param>
+          <type>pa_stream *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="37" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="56" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a8f66d650a36b31bd5a35eba0eab2d966" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * Ms::PulseAudio::paLoop</definition>
+        <argsstring>(void *)</argsstring>
+        <name>paLoop</name>
+        <param>
+          <type>void *</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="38" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="172" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a92dbf6515bdce931bedd166d11bcf07a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::PulseAudio::PulseAudio</definition>
+        <argsstring>(Seq *)</argsstring>
+        <name>PulseAudio</name>
+        <param>
+          <type><ref refid="class_ms_1_1_seq" kindref="compound">Seq</ref> *</type>
+          <defname>s</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="41" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="72" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1abccb7df263f98d70522b825ecd0373d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Ms::PulseAudio::~PulseAudio</definition>
+        <argsstring>()</argsstring>
+        <name>~PulseAudio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="42" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a34d55615c2170fac05c3b385dba0227b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Ms::PulseAudio::init</definition>
+        <argsstring>(bool hot=false)</argsstring>
+        <name>init</name>
+        <reimplements refid="class_ms_1_1_driver_1a66d0135d9d073db75bae39dc860f47f6">init</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>hot</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="43" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="119" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a09e8bff62741e91e8599b3a75ea864c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Ms::PulseAudio::start</definition>
+        <argsstring>(bool hotPlug=false)</argsstring>
+        <name>start</name>
+        <reimplements refid="class_ms_1_1_driver_1a8c07a53282a68727fdf5c407c0e187bc">start</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>hotPlug</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="44" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="186" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a1edd326f136013f0d2ecb0c2af2f7efa" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool Ms::PulseAudio::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <reimplements refid="class_ms_1_1_driver_1a0ce53ff7a63d0ed799f6662bd7e97f1f">stop</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="45" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="200" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a6b030a036944cb33057eef01405bb56c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Transport</type>
+        <definition>virtual Transport Ms::PulseAudio::getState</definition>
+        <argsstring>() override</argsstring>
+        <name>getState</name>
+        <reimplements refid="class_ms_1_1_driver_1ace631b870020f3fa49f6714a395dbb0a">getState</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="46" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a57e78b8b2dc8c143fb2c88c6ec02b1c1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int Ms::PulseAudio::sampleRate</definition>
+        <argsstring>() const</argsstring>
+        <name>sampleRate</name>
+        <reimplements refid="class_ms_1_1_driver_1ac0e704b412376538419e8fe71272ba57">sampleRate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="47" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1aa9b9f87c615954e5d8fa30ff4c722f48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::PulseAudio::stopTransport</definition>
+        <argsstring>()</argsstring>
+        <name>stopTransport</name>
+        <reimplements refid="class_ms_1_1_driver_1a205bb9c90c179f57b012fb522853f1ae">stopTransport</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="48" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_pulse_audio_1a27ceba325a92657be1250f94dd062038" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::PulseAudio::startTransport</definition>
+        <argsstring>()</argsstring>
+        <name>startTransport</name>
+        <reimplements refid="class_ms_1_1_driver_1ad753204c3ce1e711052ec464e54c0e96">startTransport</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/pulseaudio.cpp" line="49" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="13157">
+        <label>Ms::PulseAudio</label>
+        <link refid="class_ms_1_1_pulse_audio"/>
+        <childnode refid="13158" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13158">
+        <label>Ms::Driver</label>
+        <link refid="class_ms_1_1_driver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13163">
+        <label>Ms::Sequencer</label>
+        <link refid="class_ms_1_1_sequencer"/>
+      </node>
+      <node id="13162">
+        <label>QObject</label>
+      </node>
+      <node id="13159">
+        <label>Ms::PulseAudio</label>
+        <link refid="class_ms_1_1_pulse_audio"/>
+        <childnode refid="13160" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13161">
+        <label>Ms::Seq</label>
+        <link refid="class_ms_1_1_seq"/>
+        <childnode refid="13162" relation="public-inheritance">
+        </childnode>
+        <childnode refid="13163" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13160">
+        <label>Ms::Driver</label>
+        <link refid="class_ms_1_1_driver"/>
+        <childnode refid="13161" relation="usage">
+          <edgelabel>seq</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/pulseaudio.cpp" line="27" column="1" bodyfile="mscore/pulseaudio.cpp" bodystart="27" bodyend="50"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_pulse_audio_1a43e4bec9deee5420ba62998090bff9e7" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>_sampleRate</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a1e2afb011f902661c5b2de8f7608c5e1" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>bufattr</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a7ae7ca5ff4c24f6c4ca6885f25b5f1ad" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>buffer</name></member>
+      <member refid="class_ms_1_1_driver_1acfe1c99e9fe3908122a7abe471cf469a" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>bufferSize</name></member>
+      <member refid="class_ms_1_1_driver_1ae3572c7b1f9a9fb20e68bd29832eec4c" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>checkTransportSeek</name></member>
+      <member refid="class_ms_1_1_driver_1a0fac70a2949e1d9ac263991ad7e1838a" prot="public" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>Driver</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a6b030a036944cb33057eef01405bb56c" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>getState</name></member>
+      <member refid="class_ms_1_1_driver_1aaabcb0d206396d4a521bdef8c505a404" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>handleTimeSigTempoChanged</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a34d55615c2170fac05c3b385dba0227b" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>init</name></member>
+      <member refid="class_ms_1_1_driver_1a8a016edc4d69ffd9a214ea6ec344999b" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>midiRead</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1af0428f05e68a6afbd4fc99d76c7faeec" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>pa_ml</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a09b8f8340b86cf0c756d9d020db1775d" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>paCallback</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a8f66d650a36b31bd5a35eba0eab2d966" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>paLoop</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a92dbf6515bdce931bedd166d11bcf07a" prot="public" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>PulseAudio</name></member>
+      <member refid="class_ms_1_1_driver_1ac5a50399fcc567f27ed1be5335e9054a" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>putEvent</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a6e8246f9c3d3def360faf55ca23fde25" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>runState</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a57e78b8b2dc8c143fb2c88c6ec02b1c1" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>sampleRate</name></member>
+      <member refid="class_ms_1_1_driver_1ada4c143f5ad3ca0c687040dcfed507b3" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>seekTransport</name></member>
+      <member refid="class_ms_1_1_driver_1aa6a278a84ce752029a77cc5ad025e0c5" prot="protected" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>seq</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a82919ca5d3700b5a216d23e5b6f6563a" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>ss</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a09e8bff62741e91e8599b3a75ea864c0" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>start</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a27ceba325a92657be1250f94dd062038" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>startTransport</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a201fa4f77dbc92d9acbfa06842617ec2" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>state</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a1edd326f136013f0d2ecb0c2af2f7efa" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>stop</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1aa9b9f87c615954e5d8fa30ff4c722f48" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>stopTransport</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1a5464ccff7d0b349ec6cb6c4f50ac0288" prot="private" virt="non-virtual"><scope>Ms::PulseAudio</scope><name>thread</name></member>
+      <member refid="class_ms_1_1_driver_1a550a468ca8d2bb330ec16ddc75d477f4" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>updateOutPortCount</name></member>
+      <member refid="class_ms_1_1_driver_1a0597474feb1e59d2663e5071a43edb66" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>~Driver</name></member>
+      <member refid="class_ms_1_1_pulse_audio_1abccb7df263f98d70522b825ecd0373d8" prot="public" virt="virtual"><scope>Ms::PulseAudio</scope><name>~PulseAudio</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

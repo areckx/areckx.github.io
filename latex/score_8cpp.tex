@@ -1,0 +1,93 @@
+\hypertarget{score_8cpp}{}\section{libmscore/score.cpp File Reference}
+\label{score_8cpp}\index{libmscore/score.\+cpp@{libmscore/score.\+cpp}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}key.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}clef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tempo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measure.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}undo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}select.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segment.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}text.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}note.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chord.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rest.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}slur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}staff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}part.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}style.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tuplet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lyrics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pitchspelling.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}line.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}volta.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}repeat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ottava.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}barline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}box.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}excerpt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafftext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}repeatlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keysig.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}beam.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafftype.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tempotext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}articulation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}revisions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tiemap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}layoutbreak.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}harmony.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mscore.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bracket.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}audio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instrtemplate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cursor.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sym.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rehearsalmark.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}breath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instrchange.\+h\char`\"{}}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_ms}{Ms}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_a742ba569a9d442eadb829a2376f00165}\label{namespace_ms_a742ba569a9d442eadb829a2376f00165}} 
+Note $\ast$ {\bfseries Ms\+::prev\+Note} (Note $\ast$n)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_aba2aa505eb62a6a5600a3e55f0cc11eb}\label{namespace_ms_aba2aa505eb62a6a5600a3e55f0cc11eb}} 
+Master\+Score $\ast$ \hyperlink{namespace_ms_aba2aa505eb62a6a5600a3e55f0cc11eb}{Ms\+::gscore}
+\begin{DoxyCompactList}\small\item\em system score, used for palettes etc. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ms_ac8640214e99f803fc7f7694eb9645c11}\label{namespace_ms_ac8640214e99f803fc7f7694eb9645c11}} 
+bool {\bfseries Ms\+::script\+Debug} = false
+\item 
+\mbox{\Hypertarget{namespace_ms_a4f96a5c06061337a0d971bf4d057e31a}\label{namespace_ms_a4f96a5c06061337a0d971bf4d057e31a}} 
+bool \hyperlink{namespace_ms_a4f96a5c06061337a0d971bf4d057e31a}{Ms\+::no\+Seq} = false
+\begin{DoxyCompactList}\small\item\em Dont use sequencer; cmd line option. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ms_af6f452dd89ea732bf67f097b1e8176b8}\label{namespace_ms_af6f452dd89ea732bf67f097b1e8176b8}} 
+bool \hyperlink{namespace_ms_af6f452dd89ea732bf67f097b1e8176b8}{Ms\+::no\+Midi} = false
+\begin{DoxyCompactList}\small\item\em Dont use midi; cmd line option. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ms_a77530e3b212b6ac75e8fcacea479a337}\label{namespace_ms_a77530e3b212b6ac75e8fcacea479a337}} 
+bool \hyperlink{namespace_ms_a77530e3b212b6ac75e8fcacea479a337}{Ms\+::midi\+Input\+Trace} = false
+\begin{DoxyCompactList}\small\item\em debug option\+: dump midi input \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ms_a9ce8905531c3e92b0cf6d1630fa58b0a}\label{namespace_ms_a9ce8905531c3e92b0cf6d1630fa58b0a}} 
+bool \hyperlink{namespace_ms_a9ce8905531c3e92b0cf6d1630fa58b0a}{Ms\+::midi\+Output\+Trace} = false
+\begin{DoxyCompactList}\small\item\em debug option\+: dump midi output \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespace_ms_acb4508c8d4c5c2c22abb0a02c2d2aa86}\label{namespace_ms_acb4508c8d4c5c2c22abb0a02c2d2aa86}} 
+bool {\bfseries Ms\+::show\+Rubber\+Band} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of class Score (partial). 

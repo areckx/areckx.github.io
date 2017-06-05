@@ -1,0 +1,82 @@
+\hypertarget{class_base_crypt_stream}{}\section{Base\+Crypt\+Stream Class Reference}
+\label{class_base_crypt_stream}\index{Base\+Crypt\+Stream@{Base\+Crypt\+Stream}}
+Inheritance diagram for Base\+Crypt\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_base_crypt_stream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a3289803906c8fec9e905a492673b2935}\label{class_base_crypt_stream_a3289803906c8fec9e905a492673b2935}} 
+{\bfseries Base\+Crypt\+Stream} (\hyperlink{class_stream}{Stream} $\ast$strA, Guchar $\ast$file\+Key, Crypt\+Algorithm algoA, int key\+Length, int obj\+Num, int obj\+Gen)
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a9b82c037273a5c60dcea4d86d2741278}\label{class_base_crypt_stream_a9b82c037273a5c60dcea4d86d2741278}} 
+virtual Stream\+Kind {\bfseries get\+Kind} ()
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a81853b9aa41dfafcda80d81f44cf01e6}\label{class_base_crypt_stream_a81853b9aa41dfafcda80d81f44cf01e6}} 
+virtual void {\bfseries reset} ()
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_ae3cf97cc552fb2825d64c014fb4f0fd9}\label{class_base_crypt_stream_ae3cf97cc552fb2825d64c014fb4f0fd9}} 
+virtual int {\bfseries get\+Char} ()
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a0d5fe73923728fe4ac1c9c17435103d8}\label{class_base_crypt_stream_a0d5fe73923728fe4ac1c9c17435103d8}} 
+virtual int {\bfseries look\+Char} ()=0
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a751bcd657af046d416fdcd1139181e76}\label{class_base_crypt_stream_a751bcd657af046d416fdcd1139181e76}} 
+virtual Goffset {\bfseries get\+Pos} ()
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_ab60e5f18cbf3ede338ce5edf28232205}\label{class_base_crypt_stream_ab60e5f18cbf3ede338ce5edf28232205}} 
+virtual G\+Bool {\bfseries is\+Binary} (G\+Bool last)
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a0d3bfce16d422e7ece00ca33e0c10ba4}\label{class_base_crypt_stream_a0d3bfce16d422e7ece00ca33e0c10ba4}} 
+virtual \hyperlink{class_stream}{Stream} $\ast$ {\bfseries get\+Undecoded\+Stream} ()
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_ac2d9554891ddc9cd5cd7db0a6b9ebc97}\label{class_base_crypt_stream_ac2d9554891ddc9cd5cd7db0a6b9ebc97}} 
+void {\bfseries set\+Auto\+Delete} (G\+Bool val)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a42b9a037ac6143b0852ffe1326c66b85}\label{class_base_crypt_stream_a42b9a037ac6143b0852ffe1326c66b85}} 
+Crypt\+Algorithm {\bfseries algo}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a64df3c8b7841745e809a05859a8402d9}\label{class_base_crypt_stream_a64df3c8b7841745e809a05859a8402d9}} 
+int {\bfseries obj\+Key\+Length}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a63efdf57716e1b03953de34fcce4cff3}\label{class_base_crypt_stream_a63efdf57716e1b03953de34fcce4cff3}} 
+Guchar {\bfseries obj\+Key} \mbox{[}32\mbox{]}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_abc5996f5df875a3899d807008ecdbd72}\label{class_base_crypt_stream_abc5996f5df875a3899d807008ecdbd72}} 
+Goffset {\bfseries characters\+Read}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_ae23aab0e0b7192aeb541a0bfbd4185b0}\label{class_base_crypt_stream_ae23aab0e0b7192aeb541a0bfbd4185b0}} 
+int {\bfseries next\+Char\+Buff}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_a6b9ca38b2c7626706a9d97b40b623214}\label{class_base_crypt_stream_a6b9ca38b2c7626706a9d97b40b623214}} 
+G\+Bool {\bfseries auto\+Delete}
+\item 
+\mbox{\Hypertarget{class_base_crypt_stream_aa3ecb2a5b23230ef0850c673860f8a31}\label{class_base_crypt_stream_aa3ecb2a5b23230ef0850c673860f8a31}} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\hyperlink{struct_decrypt_r_c4_state}{DecryptRC4State} {\bfseries rc4}\\
+\>\hyperlink{struct_decrypt_a_e_s_state}{DecryptAESState} {\bfseries aes}\\
+\>\hyperlink{struct_decrypt_a_e_s256_state}{DecryptAES256State} {\bfseries aes256}\\
+\} {\bfseries state}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 103 of file Decrypt.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/poppler/Decrypt.\+h\item 
+thirdparty/poppler/poppler/Decrypt.\+cc\end{DoxyCompactItemize}

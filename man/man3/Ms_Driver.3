@@ -1,0 +1,73 @@
+.TH "Ms::Driver" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Driver
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMs::AlsaAudio\fP, \fBMs::JackAudio\fP, \fBMs::Portaudio\fP, and \fBMs::PulseAudio\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDriver\fP (\fBSeq\fP *s)"
+.br
+.ti -1c
+.RI "virtual bool \fBinit\fP (bool hot=false)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBstart\fP (bool hotPlug=false)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBstop\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBstopTransport\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBstartTransport\fP ()=0"
+.br
+.ti -1c
+.RI "virtual Transport \fBgetState\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBseekTransport\fP (int)"
+.br
+.ti -1c
+.RI "virtual int \fBsampleRate\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBputEvent\fP (const \fBNPlayEvent\fP &, unsigned)"
+.br
+.ti -1c
+.RI "virtual void \fBmidiRead\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBhandleTimeSigTempoChanged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcheckTransportSeek\fP (int, int, bool)"
+.br
+.ti -1c
+.RI "virtual int \fBbufferSize\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBupdateOutPortCount\fP (int)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSeq\fP * \fBseq\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file driver\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

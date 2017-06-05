@@ -1,0 +1,666 @@
+.TH "Ms::Element" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Element \- Base class of score layout elements\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <element\&.h>\fP
+.PP
+Inherits \fBMs::ScoreElement\fP\&.
+.PP
+Inherited by \fBMs::Accidental\fP, \fBMs::Ambitus\fP, \fBMs::Arpeggio\fP, \fBMs::Articulation\fP, \fBMs::BagpipeEmbellishment\fP, \fBMs::BarLine\fP, \fBMs::Beam\fP, \fBMs::Bend\fP, \fBMs::Bracket\fP, \fBMs::Breath\fP, \fBMs::BSymbol\fP, \fBMs::ChordLine\fP, \fBMs::Clef\fP, \fBMs::Compound\fP, \fBMs::DurationElement\fP, \fBMs::FiguredBassItem\fP, \fBMs::FretDiagram\fP, \fBMs::Icon\fP, \fBMs::KeySig\fP, \fBMs::Lasso\fP, \fBMs::LayoutBreak\fP, \fBMs::Line\fP, \fBMs::MeasureBase\fP, \fBMs::Note\fP, \fBMs::NoteDot\fP, \fBMs::Ossia\fP, \fBMs::Page\fP, \fBMs::Segment\fP, \fBMs::ShadowNote\fP, \fBMs::Spacer\fP, \fBMs::Spanner\fP, \fBMs::SpannerSegment\fP, \fBMs::StaffLines\fP, \fBMs::StaffState\fP, \fBMs::StaffTypeChange\fP, \fBMs::Stem\fP, \fBMs::StemSlash\fP, \fBMs::System\fP, \fBMs::TabDurationSymbol\fP, \fBMs::Text\fP, \fBMs::TimeSig\fP, \fBMs::Tremolo\fP, and \fBMs::TremoloBar\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPlacement\fP : char { \fBABOVE\fP, \fBBELOW\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElement\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBElement\fP (const \fBElement\fP &)"
+.br
+.ti -1c
+.RI "\fBElement\fP & \fBoperator=\fP (const \fBElement\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual Q_INVOKABLE \fBMs::Element\fP * \fBclone\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBlinkedClone\fP ()"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBparent\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetParent\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBfindMeasure\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBspatium\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFlag\fP (ElementFlag f, bool v)"
+.br
+.ti -1c
+.RI "void \fBsetFlag\fP (ElementFlag f, bool v) const"
+.br
+.ti -1c
+.RI "bool \fBflag\fP (ElementFlag f) const"
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (ElementFlags f)"
+.br
+.ti -1c
+.RI "void \fBclearFlags\fP (ElementFlags f)"
+.br
+.ti -1c
+.RI "ElementFlags \fBflags\fP () const"
+.br
+.ti -1c
+.RI "bool \fBselected\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (bool f)"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetVisible\fP (bool f)"
+.br
+.ti -1c
+.RI "Placement \fBplacement\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlacement\fP (Placement val)"
+.br
+.ti -1c
+.RI "void \fBundoSetPlacement\fP (Placement val)"
+.br
+.ti -1c
+.RI "bool \fBplaceBelow\fP () const"
+.br
+.ti -1c
+.RI "bool \fBplaceAbove\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgenerated\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGenerated\fP (bool val)"
+.br
+.ti -1c
+.RI "const QPointF & \fBipos\fP () const"
+.br
+.ti -1c
+.RI "virtual const QPointF \fBpos\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBx\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBy\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (qreal x, qreal y)"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (const QPointF &p)"
+.br
+.ti -1c
+.RI "qreal & \fBrxpos\fP ()"
+.br
+.ti -1c
+.RI "qreal & \fBrypos\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBmove\fP (const QPointF &s)"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "virtual QPointF \fBcanvasPos\fP () const"
+.br
+.RI "position in canvas coordinates "
+.ti -1c
+.RI "qreal \fBpageX\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBcanvasX\fP () const"
+.br
+.ti -1c
+.RI "const QPointF & \fBuserOff\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetUserOff\fP (const QPointF &o)"
+.br
+.ti -1c
+.RI "void \fBsetUserXoffset\fP (qreal v)"
+.br
+.ti -1c
+.RI "void \fBsetUserYoffset\fP (qreal v)"
+.br
+.ti -1c
+.RI "qreal & \fBrUserXoffset\fP ()"
+.br
+.ti -1c
+.RI "qreal & \fBrUserYoffset\fP ()"
+.br
+.ti -1c
+.RI "QRectF \fBscriptBbox\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBscriptPagePos\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBscriptPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBscriptSetPos\fP (const QPointF &p)"
+.br
+.ti -1c
+.RI "QPointF \fBscriptUserOff\fP () const"
+.br
+.ti -1c
+.RI "void \fBscriptSetUserOff\fP (const QPointF &o)"
+.br
+.ti -1c
+.RI "bool \fBisNudged\fP () const"
+.br
+.ti -1c
+.RI "const QPointF & \fBreadPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetReadPos\fP (const QPointF &p)"
+.br
+.ti -1c
+.RI "virtual void \fBadjustReadPos\fP ()"
+.br
+.ti -1c
+.RI "virtual const QRectF & \fBbbox\fP () const"
+.br
+.ti -1c
+.RI "virtual QRectF & \fBbbox\fP ()"
+.br
+.ti -1c
+.RI "virtual qreal \fBheight\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetHeight\fP (qreal v)"
+.br
+.ti -1c
+.RI "virtual qreal \fBwidth\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetWidth\fP (qreal v)"
+.br
+.ti -1c
+.RI "QRectF \fBabbox\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBpageBoundingRect\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBcanvasBoundingRect\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetbbox\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "virtual void \fBaddbbox\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "bool \fBcontains\fP (const QPointF &p) const"
+.br
+.ti -1c
+.RI "bool \fBintersects\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBbaseLine\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const"
+.br
+.ti -1c
+.RI "void \fBdrawAt\fP (QPainter *p, const QPointF &pt) const"
+.br
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBstartDrag\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual QRectF \fBdrag\fP (\fBEditData\fP &)"
+.br
+.RI "Return update Rect relative to canvas\&. "
+.ti -1c
+.RI "virtual void \fBendDrag\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual QLineF \fBdragAnchor\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBstartEditDrag\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBendEditDrag\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBeditCut\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBeditCopy\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const"
+.br
+.ti -1c
+.RI "virtual bool \fBnextGrip\fP (\fBEditData\fP &) const"
+.br
+.ti -1c
+.RI "virtual bool \fBprevGrip\fP (\fBEditData\fP &) const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgripAnchor\fP (Grip) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetGrip\fP (Grip, const QPointF &)"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgetGrip\fP (Grip) const"
+.br
+.ti -1c
+.RI "int \fBtrack\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetTrack\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBz\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetZ\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBstaffIdx\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBvStaffIdx\fP () const"
+.br
+.ti -1c
+.RI "int \fBvoice\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVoice\fP (int v)"
+.br
+.ti -1c
+.RI "\fBStaff\fP * \fBstaff\fP () const"
+.br
+.ti -1c
+.RI "\fBPart\fP * \fBpart\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBchange\fP (\fBElement\fP *o, \fBElement\fP *n)"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal, qreal)"
+.br
+.ti -1c
+.RI "virtual void \fBlocalSpatiumChanged\fP (qreal, qreal)"
+.br
+.ti -1c
+.RI "virtual void \fBdump\fP () const"
+.br
+.ti -1c
+.RI "virtual Q_INVOKABLE QString \fBsubtypeName\fP () const"
+.br
+.ti -1c
+.RI "virtual Q_INVOKABLE QString \fB_name\fP () const"
+.br
+.ti -1c
+.RI "void \fBdumpQPointF\fP (const char *) const"
+.br
+.ti -1c
+.RI "virtual QColor \fBcolor\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBcurColor\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBcurColor\fP (const \fBElement\fP *proxy) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetColor\fP (const QColor &c)"
+.br
+.ti -1c
+.RI "void \fBundoSetColor\fP (const QColor &c)"
+.br
+.ti -1c
+.RI "void \fBundoSetVisible\fP (bool v)"
+.br
+.ti -1c
+.RI "QByteArray \fBmimeData\fP (const QPointF &) const"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBmousePress\fP (\fBEditData\fP &, QMouseEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "virtual qreal \fBmag\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMag\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBmagS\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisPrintable\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBisSpanner\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBisSpannerSegment\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBpoint\fP (const \fBSpatium\fP sp) const"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBrtick\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBcheck\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBsystemFlag\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSystemFlag\fP (bool v) const"
+.br
+.ti -1c
+.RI "bool \fBheader\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHeader\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBtrailer\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrailer\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBselectable\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSelectable\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBdropTarget\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDropTarget\fP (bool v) const"
+.br
+.ti -1c
+.RI "virtual bool \fBisMovable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSegmentFlag\fP () const"
+.br
+.ti -1c
+.RI "bool \fBenabled\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEnabled\fP (bool val)"
+.br
+.ti -1c
+.RI "uint \fBtag\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTag\fP (uint val)"
+.br
+.ti -1c
+.RI "bool \fBautoplace\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAutoplace\fP (bool v)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBinitSubStyle\fP (SubStyle)"
+.br
+.ti -1c
+.RI "bool \fBcustom\fP (P_ID) const"
+.br
+.ti -1c
+.RI "bool \fBreadProperty\fP (const QStringRef &, \fBXmlReader\fP &, P_ID)"
+.br
+.ti -1c
+.RI "virtual bool \fBisUserModified\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawSymbol\fP (SymId id, QPainter *p, const QPointF &o=QPointF(), qreal scale=1\&.0) const"
+.br
+.ti -1c
+.RI "void \fBdrawSymbol\fP (SymId id, QPainter *p, const QPointF &o, int n) const"
+.br
+.ti -1c
+.RI "void \fBdrawSymbols\fP (const std::vector< SymId > &, QPainter *p, const QPointF &o=QPointF(), qreal scale=1\&.0) const"
+.br
+.ti -1c
+.RI "void \fBdrawSymbols\fP (const std::vector< SymId > &, QPainter *p, const QPointF &o, const QSizeF &scale) const"
+.br
+.ti -1c
+.RI "qreal \fBsymHeight\fP (SymId id) const"
+.br
+.ti -1c
+.RI "qreal \fBsymWidth\fP (SymId id) const"
+.br
+.ti -1c
+.RI "qreal \fBsymWidth\fP (const std::vector< SymId > &) const"
+.br
+.ti -1c
+.RI "QRectF \fBsymBbox\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QRectF \fBsymBbox\fP (const std::vector< SymId > &) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymStemDownNW\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymStemUpSE\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymCutOutNE\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymCutOutNW\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymCutOutSE\fP (SymId id) const"
+.br
+.ti -1c
+.RI "QPointF \fBsymCutOutSW\fP (SymId id) const"
+.br
+.ti -1c
+.RI "qreal \fBsymAdvance\fP (SymId id) const"
+.br
+.ti -1c
+.RI "std::vector< SymId > \fBtoTimeSigString\fP (const QString &s) const"
+.br
+.ti -1c
+.RI "bool \fBsymIsValid\fP (SymId id) const"
+.br
+.ti -1c
+.RI "bool \fBconcertPitch\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBscreenReaderInfo\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleExtraInfo\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBtriggerLayout\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdrawEditMode\fP (QPainter *, \fBEditData\fP &)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static ElementType \fBreadType\fP (\fBXmlReader\fP &node, QPointF *, \fBFraction\fP *)"
+.br
+.ti -1c
+.RI "static \fBMs::Element\fP * \fBcreate\fP (Ms::ElementType type, \fBScore\fP *)"
+.br
+.ti -1c
+.RI "static \fBElement\fP * \fBname2Element\fP (const QStringRef &, \fBScore\fP *)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBitemDiscovered\fP"
+.br
+.RI "helper flag for bsp "
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_z\fP"
+.br
+.ti -1c
+.RI "QColor \fB_color\fP"
+.br
+.RI "element color attribute "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class of score layout elements\&. 
+
+The \fBElement\fP class is the virtual base class of all score layout elements\&. 
+.PP
+Definition at line 136 of file element\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual bool Ms::Element::acceptDrop (\fBEditData\fP &) const\fC [inline]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented in \fBMs::Note\fP, \fBMs::Text\fP, \fBMs::Accidental\fP, \fBMs::Measure\fP, \fBMs::Clef\fP, \fBMs::Beam\fP, \fBMs::FretDiagram\fP, \fBMs::TimeSig\fP, \fBMs::Lyrics\fP, \fBMs::BarLine\fP, \fBMs::Bracket\fP, \fBMs::Box\fP, \fBMs::LayoutBreak\fP, \fBMs::Rest\fP, \fBMs::Arpeggio\fP, \fBMs::StaffState\fP, \fBMs::Stem\fP, \fBMs::KeySig\fP, \fBMs::TrillSegment\fP, and \fBMs::BSymbol\fP\&.
+.PP
+Definition at line 337 of file element\&.h\&.
+.SS "virtual \fBElement\fP* Ms::Element::drop (\fBEditData\fP &)\fC [inline]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented in \fBMs::Note\fP, \fBMs::Text\fP, \fBMs::Accidental\fP, \fBMs::Measure\fP, \fBMs::Clef\fP, \fBMs::Beam\fP, \fBMs::FretDiagram\fP, \fBMs::Chord\fP, \fBMs::TimeSig\fP, \fBMs::Lyrics\fP, \fBMs::BarLine\fP, \fBMs::Bracket\fP, \fBMs::ChordRest\fP, \fBMs::Box\fP, \fBMs::LayoutBreak\fP, \fBMs::Rest\fP, \fBMs::Arpeggio\fP, \fBMs::StaffState\fP, \fBMs::Stem\fP, \fBMs::KeySig\fP, \fBMs::TrillSegment\fP, \fBMs::BSymbol\fP, and \fBMs::TBox\fP\&.
+.PP
+Definition at line 348 of file element\&.h\&.
+.SS "virtual bool Ms::Element::mousePress (\fBEditData\fP &, QMouseEvent *)\fC [inline]\fP, \fC [virtual]\fP"
+delivers mouseEvent to element in edit mode returns true if mouse event is accepted by element 
+.PP
+Reimplemented in \fBMs::Text\fP\&.
+.PP
+Definition at line 354 of file element\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

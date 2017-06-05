@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_agent_8h" kind="file" language="C++">
+    <compoundname>Agent.h</compoundname>
+    <includes refid="thirdparty_2beatroot_2event_8h" local="yes">Event.h</includes>
+    <includedby refid="_agent_8cpp" local="yes">thirdparty/beatroot/Agent.cpp</includedby>
+    <includedby refid="_agent_list_8cpp" local="yes">thirdparty/beatroot/AgentList.cpp</includedby>
+    <includedby refid="_beat_tracker_8cpp" local="yes">thirdparty/beatroot/BeatTracker.cpp</includedby>
+    <includedby refid="_induction_8cpp" local="yes">thirdparty/beatroot/Induction.cpp</includedby>
+    <incdepgraph>
+      <node id="76241">
+        <label>list</label>
+      </node>
+      <node id="76239">
+        <label>thirdparty/beatroot/Agent.h</label>
+        <link refid="_agent_8h"/>
+        <childnode refid="76240" relation="include">
+        </childnode>
+      </node>
+      <node id="76240">
+        <label>Event.h</label>
+        <link refid="thirdparty_2beatroot_2event_8h_source"/>
+        <childnode refid="76241" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="76245">
+        <label>thirdparty/beatroot/BeatTracker.cpp</label>
+        <link refid="_beat_tracker_8cpp_source"/>
+      </node>
+      <node id="76246">
+        <label>thirdparty/beatroot/Induction.cpp</label>
+        <link refid="_induction_8cpp_source"/>
+      </node>
+      <node id="76242">
+        <label>thirdparty/beatroot/Agent.h</label>
+        <link refid="_agent_8h"/>
+        <childnode refid="76243" relation="include">
+        </childnode>
+        <childnode refid="76244" relation="include">
+        </childnode>
+        <childnode refid="76245" relation="include">
+        </childnode>
+        <childnode refid="76246" relation="include">
+        </childnode>
+      </node>
+      <node id="76244">
+        <label>thirdparty/beatroot/AgentList.cpp</label>
+        <link refid="_agent_list_8cpp_source"/>
+      </node>
+      <node id="76243">
+        <label>thirdparty/beatroot/Agent.cpp</label>
+        <link refid="_agent_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_agent_parameters" prot="public">AgentParameters</innerclass>
+    <innerclass refid="class_agent" prot="public">Agent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>-*-<sp/>c-basic-offset:<sp/>4<sp/>indent-tabs-mode:<sp/>nil<sp/>-*-<sp/><sp/>vi:set<sp/>ts=8<sp/>sts=4<sp/>sw=4:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>Vamp<sp/>feature<sp/>extraction<sp/>plugin<sp/>for<sp/>the<sp/>BeatRoot<sp/>beat<sp/>tracker.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>Centre<sp/>for<sp/>Digital<sp/>Music,<sp/>Queen<sp/>Mary,<sp/>University<sp/>of<sp/>London.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>This<sp/>file<sp/>copyright<sp/>2011<sp/>Simon<sp/>Dixon,<sp/>Chris<sp/>Cannam<sp/>and<sp/>QMUL.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/><sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.<sp/><sp/>See<sp/>the<sp/>file</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/>COPYING<sp/>included<sp/>with<sp/>this<sp/>distribution<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_AGENT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_AGENT_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Event.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_agent_list" kindref="compound">AgentList</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_event" kindref="compound">Event</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_agent_parameters" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_agent_parameters" kindref="compound">AgentParameters</ref></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DEFAULT_POST_MARGIN_FACTOR;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DEFAULT_PRE_MARGIN_FACTOR;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DEFAULT_MAX_CHANGE;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DEFAULT_EXPIRY_TIME;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_agent_parameters" kindref="compound">AgentParameters</ref>()</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="class_agent_parameters_1a40865ba74e32db1392f35aa1ee27e0fb" kindref="member">postMarginFactor</ref>(DEFAULT_POST_MARGIN_FACTOR)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_agent_parameters_1a371f2e5668592f4985646456a42e9886" kindref="member">preMarginFactor</ref>(DEFAULT_PRE_MARGIN_FACTOR)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_agent_parameters_1ae50401dd1e8605b30208b6b56a498569" kindref="member">maxChange</ref>(DEFAULT_MAX_CHANGE)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/><ref refid="class_agent_parameters_1a167dbdb2f25f7b6f2ec4af9cfa74a44c" kindref="member">expiryTime</ref>(DEFAULT_EXPIRY_TIME)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_agent_parameters_1a40865ba74e32db1392f35aa1ee27e0fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters_1a40865ba74e32db1392f35aa1ee27e0fb" kindref="member">postMarginFactor</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_agent_parameters_1a371f2e5668592f4985646456a42e9886" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters_1a371f2e5668592f4985646456a42e9886" kindref="member">preMarginFactor</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_agent_parameters_1ae50401dd1e8605b30208b6b56a498569" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters_1ae50401dd1e8605b30208b6b56a498569" kindref="member">maxChange</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_agent_parameters_1a167dbdb2f25f7b6f2ec4af9cfa74a44c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters_1a167dbdb2f25f7b6f2ec4af9cfa74a44c" kindref="member">expiryTime</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="class_agent" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_agent" kindref="compound">Agent</ref></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73" refid="class_agent_1ac857e9fc1a2d40aa8c488c2b0892f796" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_agent_1ac857e9fc1a2d40aa8c488c2b0892f796" kindref="member">idNumber</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="class_agent_1a6f12ce0139e8709d407fd20963b84d2f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_1a6f12ce0139e8709d407fd20963b84d2f" kindref="member">phaseScore</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="class_agent_1abafab4395f0ebf00ca08cdffe8a87705" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_agent_1abafab4395f0ebf00ca08cdffe8a87705" kindref="member">beatCount</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="class_agent_1aa6ce02ae70357fef9fa397c2d129cb72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_1aa6ce02ae70357fef9fa397c2d129cb72" kindref="member">beatInterval</ref>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_agent_1ac6cfc0361e141992752f55ad4b3671d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_1ac6cfc0361e141992752f55ad4b3671d5" kindref="member">initialBeatInterval</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_agent_1acc4850f7dcc7d04f56a770629282c551" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_1acc4850f7dcc7d04f56a770629282c551" kindref="member">beatTime</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="class_agent_1a5aa8ad248a3aceecec676b89a0eb3791" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_1a5aa8ad248a3aceecec676b89a0eb3791" kindref="member">maxChange</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="class_agent_1a32dd69961705fcd29f725ebf2a2e81b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>EventList<sp/><ref refid="class_agent_1a32dd69961705fcd29f725ebf2a2e81b4" kindref="member">events</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_agent" kindref="compound">Agent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters" kindref="compound">AgentParameters</ref><sp/>&amp;params,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ibi);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_agent" kindref="compound">Agent</ref><sp/>*clone()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>accept(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_event" kindref="compound">Event</ref><sp/>&amp;e,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>err,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>beats);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>considerAsBeat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_event" kindref="compound">Event</ref><sp/>&amp;e,<sp/><ref refid="class_agent_list" kindref="compound">AgentList</ref><sp/>&amp;a);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="class_agent_1a0b45b44b745b3234c117d356de7b299c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_agent_1a0b45b44b745b3234c117d356de7b299c" kindref="member">fillBeats</ref>()</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fillBeats(-1.0);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillBeats(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>start);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idCounter;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>INNER_MARGIN;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CONF_FACTOR;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>DEFAULT_CORRECTION_FACTOR;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>preMargin;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>postMargin;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>innerMargin;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>correctionFactor;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_agent_parameters_1a167dbdb2f25f7b6f2ec4af9cfa74a44c" kindref="member">expiryTime</ref>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/beatroot/Agent.h"/>
+  </compounddef>
+</doxygen>

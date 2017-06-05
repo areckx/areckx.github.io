@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="stackedwidgetengine_8h" kind="file" language="C++">
+    <compoundname>stackedwidgetengine.h</compoundname>
+    <includes refid="baseengine_8h" local="yes">baseengine.h</includes>
+    <includes refid="datamap_8h" local="yes">datamap.h</includes>
+    <includes refid="stackedwidgetdata_8h" local="yes">stackedwidgetdata.h</includes>
+    <includedby refid="moc__stackedwidgetengine_8cpp" local="yes">build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_stackedwidgetengine.cpp</includedby>
+    <includedby refid="transitions_8h" local="yes">mstyle/transitions.h</includedby>
+    <includedby refid="stackedwidgetengine_8cpp" local="yes">mstyle/stackedwidgetengine.cpp</includedby>
+    <incdepgraph>
+      <node id="71345">
+        <label>mstyle/stackedwidgetengine.h</label>
+        <link refid="stackedwidgetengine_8h"/>
+        <childnode refid="71346" relation="include">
+        </childnode>
+        <childnode refid="71347" relation="include">
+        </childnode>
+        <childnode refid="71348" relation="include">
+        </childnode>
+      </node>
+      <node id="71350">
+        <label>transitionwidget.h</label>
+        <link refid="transitionwidget_8h_source"/>
+        <childnode refid="71351" relation="include">
+        </childnode>
+      </node>
+      <node id="71348">
+        <label>stackedwidgetdata.h</label>
+        <link refid="stackedwidgetdata_8h_source"/>
+        <childnode refid="71349" relation="include">
+        </childnode>
+      </node>
+      <node id="71346">
+        <label>baseengine.h</label>
+        <link refid="baseengine_8h_source"/>
+      </node>
+      <node id="71347">
+        <label>datamap.h</label>
+        <link refid="datamap_8h_source"/>
+      </node>
+      <node id="71349">
+        <label>transitiondata.h</label>
+        <link refid="transitiondata_8h_source"/>
+        <childnode refid="71350" relation="include">
+        </childnode>
+      </node>
+      <node id="71351">
+        <label>animation.h</label>
+        <link refid="animation_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="71352">
+        <label>mstyle/stackedwidgetengine.h</label>
+        <link refid="stackedwidgetengine_8h"/>
+        <childnode refid="71353" relation="include">
+        </childnode>
+        <childnode refid="71355" relation="include">
+        </childnode>
+        <childnode refid="71359" relation="include">
+        </childnode>
+      </node>
+      <node id="71355">
+        <label>mstyle/transitions.h</label>
+        <link refid="transitions_8h_source"/>
+        <childnode refid="71356" relation="include">
+        </childnode>
+        <childnode refid="71357" relation="include">
+        </childnode>
+        <childnode refid="71358" relation="include">
+        </childnode>
+      </node>
+      <node id="71358">
+        <label>mstyle/transitions.cpp</label>
+        <link refid="transitions_8cpp_source"/>
+      </node>
+      <node id="71354">
+        <label>build.release/mstyle/mstyle_autogen/moc_compilation.cpp</label>
+        <link refid="mstyle_2mstyle__autogen_2moc__compilation_8cpp_source"/>
+      </node>
+      <node id="71359">
+        <label>mstyle/stackedwidgetengine.cpp</label>
+        <link refid="stackedwidgetengine_8cpp_source"/>
+      </node>
+      <node id="71357">
+        <label>mstyle/mstyle.cpp</label>
+        <link refid="mstyle_8cpp_source"/>
+      </node>
+      <node id="71356">
+        <label>build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_transitions.cpp</label>
+        <link refid="moc__transitions_8cpp_source"/>
+        <childnode refid="71354" relation="include">
+        </childnode>
+      </node>
+      <node id="71353">
+        <label>build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_stackedwidgetengine.cpp</label>
+        <link refid="moc__stackedwidgetengine_8cpp_source"/>
+        <childnode refid="71354" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_stacked_widget_engine" prot="public">StackedWidgetEngine</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>oxygenstackedwidgetengine_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>oxygenstackedwidgetengine_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">//<sp/>oxygenstackedwidgetengine.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stores<sp/>event<sp/>filters<sp/>and<sp/>maps<sp/>widgets<sp/>to<sp/>animations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2009<sp/>Hugo<sp/>Pereira<sp/>Da<sp/>Costa<sp/>&lt;hugo.pereira@free.fr&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;baseengine.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;datamap.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stackedwidgetdata.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="class_stacked_widget_engine" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_stacked_widget_engine" kindref="compound">StackedWidgetEngine</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_base_engine" kindref="compound">BaseEngine</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_stacked_widget_engine_1a7fb01805f1a470372951974a86cd0cf8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_stacked_widget_engine_1a7fb01805f1a470372951974a86cd0cf8" kindref="member">StackedWidgetEngine</ref>(<sp/>QObject*<sp/>parent<sp/>):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine" kindref="compound">BaseEngine</ref>(<sp/>parent<sp/>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="class_stacked_widget_engine_1a945383d05b712dc4229a83fac0d3a299" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_stacked_widget_engine_1a945383d05b712dc4229a83fac0d3a299" kindref="member">~StackedWidgetEngine</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_stacked_widget_engine_1ad236003bed536451776a5ab5bebd48dd" kindref="member">registerWidget</ref>(<sp/>QStackedWidget*<sp/>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="class_stacked_widget_engine_1a1494dc8b97c7a5a3630bf2475407c802" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stacked_widget_engine_1a1494dc8b97c7a5a3630bf2475407c802" kindref="member">setEnabled</ref>(<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine_1a2b0291a8929bd1184696bd11bb5fbe13" kindref="member">BaseEngine::setEnabled</ref>(<sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_.<ref refid="class_base_data_map_1a743f9914b53c083d4f187e815928bed0" kindref="member">setEnabled</ref>(<sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_stacked_widget_engine_1a498a3d2ababe07f3f753957cab47cd2c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stacked_widget_engine_1a498a3d2ababe07f3f753957cab47cd2c" kindref="member">setDuration</ref>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine_1a0fab5e112a326425a7701f10ee224dea" kindref="member">BaseEngine::setDuration</ref>(<sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_.<ref refid="class_base_data_map_1a6c4e673ddbe44add402a6ecf2fb266b1" kindref="member">setDuration</ref>(<sp/>value<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="class_stacked_widget_engine_1a36c4ee8ee448a108d762a19f0289cee5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_stacked_widget_engine_1a36c4ee8ee448a108d762a19f0289cee5" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data_.<ref refid="class_base_data_map_1a2b7ac90fa94d2408f1694f3d179525c5" kindref="member">unregisterWidget</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;StackedWidgetData&gt;</ref><sp/>data_;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="mstyle/stackedwidgetengine.h"/>
+  </compounddef>
+</doxygen>

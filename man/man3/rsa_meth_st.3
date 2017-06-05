@@ -1,0 +1,61 @@
+.TH "rsa_meth_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rsa_meth_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "int(* \fBrsa_pub_enc\fP )(int flen, const unsigned char *from, unsigned char *to, \fBRSA\fP *rsa, int padding)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_pub_dec\fP )(int flen, const unsigned char *from, unsigned char *to, \fBRSA\fP *rsa, int padding)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_priv_enc\fP )(int flen, const unsigned char *from, unsigned char *to, \fBRSA\fP *rsa, int padding)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_priv_dec\fP )(int flen, const unsigned char *from, unsigned char *to, \fBRSA\fP *rsa, int padding)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_mod_exp\fP )(\fBBIGNUM\fP *r0, const \fBBIGNUM\fP *I, \fBRSA\fP *rsa, BN_CTX *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBbn_mod_exp\fP )(\fBBIGNUM\fP *r, const \fBBIGNUM\fP *a, const \fBBIGNUM\fP *p, const \fBBIGNUM\fP *m, BN_CTX *ctx, \fBBN_MONT_CTX\fP *m_ctx)"
+.br
+.ti -1c
+.RI "int(* \fBinit\fP )(\fBRSA\fP *rsa)"
+.br
+.ti -1c
+.RI "int(* \fBfinish\fP )(\fBRSA\fP *rsa)"
+.br
+.ti -1c
+.RI "int \fBflags\fP"
+.br
+.ti -1c
+.RI "char * \fBapp_data\fP"
+.br
+.ti -1c
+.RI "int(* \fBrsa_sign\fP )(int type, const unsigned char *m, unsigned int m_length, unsigned char *sigret, unsigned int *siglen, const \fBRSA\fP *rsa)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_verify\fP )(int dtype, const unsigned char *m, unsigned int m_length, const unsigned char *sigbuf, unsigned int siglen, const \fBRSA\fP *rsa)"
+.br
+.ti -1c
+.RI "int(* \fBrsa_keygen\fP )(\fBRSA\fP *rsa, int bits, \fBBIGNUM\fP *e, \fBBN_GENCB\fP *cb)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 85 of file rsa\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,49 @@
+.TH "x509_lookup_method_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+x509_lookup_method_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "int(* \fBnew_item\fP )(\fBX509_LOOKUP\fP *ctx)"
+.br
+.ti -1c
+.RI "void(* \fBfree\fP )(\fBX509_LOOKUP\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBinit\fP )(\fBX509_LOOKUP\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBshutdown\fP )(\fBX509_LOOKUP\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBctrl\fP )(\fBX509_LOOKUP\fP *ctx, int cmd, const char *argc, long argl, char **ret)"
+.br
+.ti -1c
+.RI "int(* \fBget_by_subject\fP )(\fBX509_LOOKUP\fP *ctx, int type, \fBX509_NAME\fP *name, \fBX509_OBJECT\fP *ret)"
+.br
+.ti -1c
+.RI "int(* \fBget_by_issuer_serial\fP )(\fBX509_LOOKUP\fP *ctx, int type, \fBX509_NAME\fP *name, \fBASN1_INTEGER\fP *serial, \fBX509_OBJECT\fP *ret)"
+.br
+.ti -1c
+.RI "int(* \fBget_by_fingerprint\fP )(\fBX509_LOOKUP\fP *ctx, int type, unsigned char *bytes, int len, \fBX509_OBJECT\fP *ret)"
+.br
+.ti -1c
+.RI "int(* \fBget_by_alias\fP )(\fBX509_LOOKUP\fP *ctx, int type, char *str, int len, \fBX509_OBJECT\fP *ret)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 141 of file x509_vfy\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

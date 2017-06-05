@@ -1,0 +1,216 @@
+.TH "Ms::FiguredBassItem" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::FiguredBassItem
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBModifier\fP : char { \fBNONE\fP = 0, \fBDOUBLEFLAT\fP, \fBFLAT\fP, \fBNATURAL\fP, \fBSHARP\fP, \fBDOUBLESHARP\fP, \fBCROSS\fP, \fBBACKSLASH\fP, \fBSLASH\fP, \fBNUMOF\fP }"
+.br
+.ti -1c
+.RI "enum \fBParenthesis\fP : char { \fBNONE\fP = 0, \fBROUNDOPEN\fP, \fBROUNDCLOSED\fP, \fBSQUAREDOPEN\fP, \fBSQUAREDCLOSED\fP, \fBNUMOF\fP }"
+.br
+.ti -1c
+.RI "enum \fBContLine\fP : char { \fBNONE\fP = 0, \fBSIMPLE\fP, \fBEXTENDED\fP }"
+.br
+.ti -1c
+.RI "enum \fBStyle\fP : char { \fBMODERN\fP = 0, \fBHISTORIC\fP, \fBNUMOF\fP }"
+.br
+.ti -1c
+.RI "enum \fBCombination\fP : char { \fBSIMPLE\fP = 0, \fBCROSSED\fP, \fBBACKSLASHED\fP, \fBSLASHED\fP, \fBNUMOF\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFiguredBassItem\fP (\fBScore\fP *s=0, int line=0)"
+.br
+.ti -1c
+.RI "\fBFiguredBassItem\fP (const \fBFiguredBassItem\fP &)"
+.br
+.ti -1c
+.RI "\fBFiguredBassItem\fP & \fBoperator=\fP (const \fBFiguredBassItem\fP &)=delete"
+.br
+.ti -1c
+.RI "FiguredBassItem::Modifier \fBMusicXML2Modifier\fP (const QString prefix) const"
+.br
+.ti -1c
+.RI "virtual \fBFiguredBassItem\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *painter) const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "void \fBwriteMusicXML\fP (\fBXmlWriter\fP &xml, bool isOriginalFigure, int crEndTick, int fbEndTick) const"
+.br
+.ti -1c
+.RI "bool \fBstartsWithParenthesis\fP () const"
+.br
+.ti -1c
+.RI "const \fBFiguredBass\fP * \fBfiguredBass\fP () const"
+.br
+.ti -1c
+.RI "bool \fBparse\fP (QString &text)"
+.br
+.ti -1c
+.RI "Modifier \fBprefix\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPrefix\fP (const Modifier &v)"
+.br
+.ti -1c
+.RI "void \fBundoSetPrefix\fP (Modifier pref)"
+.br
+.ti -1c
+.RI "int \fBdigit\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDigit\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBundoSetDigit\fP (int digit)"
+.br
+.ti -1c
+.RI "Modifier \fBsuffix\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSuffix\fP (const Modifier &v)"
+.br
+.ti -1c
+.RI "void \fBundoSetSuffix\fP (Modifier suff)"
+.br
+.ti -1c
+.RI "ContLine \fBcontLine\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetContLine\fP (const ContLine &v)"
+.br
+.ti -1c
+.RI "void \fBundoSetContLine\fP (ContLine val)"
+.br
+.ti -1c
+.RI "Parenthesis \fBparenth1\fP ()"
+.br
+.ti -1c
+.RI "Parenthesis \fBparenth2\fP ()"
+.br
+.ti -1c
+.RI "Parenthesis \fBparenth3\fP ()"
+.br
+.ti -1c
+.RI "Parenthesis \fBparenth4\fP ()"
+.br
+.ti -1c
+.RI "Parenthesis \fBparenth5\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetParenth1\fP (Parenthesis v)"
+.br
+.ti -1c
+.RI "void \fBsetParenth2\fP (Parenthesis v)"
+.br
+.ti -1c
+.RI "void \fBsetParenth3\fP (Parenthesis v)"
+.br
+.ti -1c
+.RI "void \fBsetParenth4\fP (Parenthesis v)"
+.br
+.ti -1c
+.RI "void \fBsetParenth5\fP (Parenthesis v)"
+.br
+.ti -1c
+.RI "void \fBundoSetParenth1\fP (Parenthesis par)"
+.br
+.ti -1c
+.RI "void \fBundoSetParenth2\fP (Parenthesis par)"
+.br
+.ti -1c
+.RI "void \fBundoSetParenth3\fP (Parenthesis par)"
+.br
+.ti -1c
+.RI "void \fBundoSetParenth4\fP (Parenthesis par)"
+.br
+.ti -1c
+.RI "void \fBundoSetParenth5\fP (Parenthesis par)"
+.br
+.ti -1c
+.RI "QString \fBnormalizedText\fP () const"
+.br
+.ti -1c
+.RI "QString \fBdisplayText\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::FiguredBassItem::ContLine \fBcontinuationLine\fP"
+.br
+.ti -1c
+.RI "int \fBdigit\fP"
+.br
+.ti -1c
+.RI "QString \fBdisplayText\fP"
+.br
+.ti -1c
+.RI "QString \fBnormalizedText\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Parenthesis \fBparenthesis1\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Parenthesis \fBparenthesis2\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Parenthesis \fBparenthesis3\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Parenthesis \fBparenthesis4\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Parenthesis \fBparenthesis5\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Modifier \fBprefix\fP"
+.br
+.ti -1c
+.RI "Ms::FiguredBassItem::Modifier \fBsuffix\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 81 of file figuredbass\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

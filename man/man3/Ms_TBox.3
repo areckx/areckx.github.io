@@ -1,0 +1,81 @@
+.TH "Ms::TBox" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::TBox \- \fBText\fP frame\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <textframe\&.h>\fP
+.PP
+Inherits \fBMs::VBox\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTBox\fP (\fBScore\fP *score)"
+.br
+.ti -1c
+.RI "\fBTBox\fP (const \fBTBox\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBTBox\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *e) override"
+.br
+.RI "Add new \fBElement\fP \fIel\fP to \fBTBox\fP\&. "
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *el) override"
+.br
+.RI "Remove \fBElement\fP \fIel\fP from \fBMeasureBase\fP\&. "
+.ti -1c
+.RI "virtual void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBtext\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBText\fP frame\&. 
+.PP
+Definition at line 27 of file textframe\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBElement\fP * Ms::TBox::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Box\fP\&.
+.PP
+Definition at line 125 of file textframe\&.cpp\&.
+.SS "void Ms::TBox::layout ()\fC [virtual]\fP"
+The text box \fBlayout()\fP adjusts the frame height to text height\&. 
+.PP
+Reimplemented from \fBMs::VBox\fP\&.
+.PP
+Definition at line 59 of file textframe\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

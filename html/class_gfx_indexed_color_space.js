@@ -1,0 +1,28 @@
+var class_gfx_indexed_color_space =
+[
+    [ "GfxIndexedColorSpace", "class_gfx_indexed_color_space.html#ab526c15a6dc12959057fd3147c1e4e7b", null ],
+    [ "~GfxIndexedColorSpace", "class_gfx_indexed_color_space.html#a66dbd4a8a1da854ec4f694c1651957b7", null ],
+    [ "copy", "class_gfx_indexed_color_space.html#a0c253c6edbb4829a7c677badcd01692e", null ],
+    [ "createMapping", "class_gfx_indexed_color_space.html#a740065fe2797916b09cb6ed13e77d559", null ],
+    [ "getBase", "class_gfx_indexed_color_space.html#a2e043e3e558290838891aabc010e91ca", null ],
+    [ "getCMYK", "class_gfx_indexed_color_space.html#afa87c76031f695d13d06989d5f1a0bef", null ],
+    [ "getCMYKLine", "class_gfx_indexed_color_space.html#acafae2124ad0cf991a7d196494e1a6d0", null ],
+    [ "getDefaultColor", "class_gfx_indexed_color_space.html#a0fcc6fe702131335460a5e33c42f3c11", null ],
+    [ "getDefaultRanges", "class_gfx_indexed_color_space.html#a77d57ba1ca5e70c6845ab24d29c6362c", null ],
+    [ "getDeviceN", "class_gfx_indexed_color_space.html#ac4b0c111dbe3eddcf235496857eecfcd", null ],
+    [ "getDeviceNLine", "class_gfx_indexed_color_space.html#ae864820544eb1f6b14d477717a4b54ba", null ],
+    [ "getGray", "class_gfx_indexed_color_space.html#aadf56a1d6818a4cc7a4e9615cc2c8a2b", null ],
+    [ "getIndexHigh", "class_gfx_indexed_color_space.html#a87dd9c1c32b1c13956fba2cacb852357", null ],
+    [ "getLookup", "class_gfx_indexed_color_space.html#aeacfdb57b2f46be08706d3bb12c2566b", null ],
+    [ "getMode", "class_gfx_indexed_color_space.html#a697375769129862cd9b3a49bb1d21842", null ],
+    [ "getNComps", "class_gfx_indexed_color_space.html#a6493bb274d1c015e86a53d136403a7f2", null ],
+    [ "getOverprintMask", "class_gfx_indexed_color_space.html#a01ba90db3ab1404757edb8927d2d6bd2", null ],
+    [ "getRGB", "class_gfx_indexed_color_space.html#a1b10ad710475142cb83d96cccaed3d59", null ],
+    [ "getRGBLine", "class_gfx_indexed_color_space.html#af43aebc73a577de47104e477b44d0070", null ],
+    [ "getRGBLine", "class_gfx_indexed_color_space.html#a9743b573567f824305a935be0e3a7239", null ],
+    [ "getRGBXLine", "class_gfx_indexed_color_space.html#af0e85b96e97a8814f4782729ac99ae0d", null ],
+    [ "mapColorToBase", "class_gfx_indexed_color_space.html#a7df483e62535d65be47f6cf0d68a40ff", null ],
+    [ "useGetCMYKLine", "class_gfx_indexed_color_space.html#a10fb509ee8a65aee8b7d2a5c1c26804f", null ],
+    [ "useGetDeviceNLine", "class_gfx_indexed_color_space.html#a335ed67acbfd0ecae921ac0e718e1bbd", null ],
+    [ "useGetRGBLine", "class_gfx_indexed_color_space.html#a81f48c04216a3b869c75c951f584b881", null ]
+];

@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="menuengine_8cpp" kind="file" language="C++">
+    <compoundname>menuengine.cpp</compoundname>
+    <includes refid="menuengine_8h" local="yes">menuengine.h</includes>
+    <incdepgraph>
+      <node id="71005">
+        <label>menuengine.h</label>
+        <link refid="menuengine_8h_source"/>
+        <childnode refid="71006" relation="include">
+        </childnode>
+        <childnode refid="71007" relation="include">
+        </childnode>
+        <childnode refid="71008" relation="include">
+        </childnode>
+      </node>
+      <node id="71010">
+        <label>animationdata.h</label>
+        <link refid="animationdata_8h_source"/>
+        <childnode refid="71011" relation="include">
+        </childnode>
+      </node>
+      <node id="71009">
+        <label>menubardata.h</label>
+        <link refid="menubardata_8h_source"/>
+        <childnode refid="71010" relation="include">
+        </childnode>
+        <childnode refid="71012" relation="include">
+        </childnode>
+      </node>
+      <node id="71008">
+        <label>menudata.h</label>
+        <link refid="menudata_8h_source"/>
+        <childnode refid="71009" relation="include">
+        </childnode>
+      </node>
+      <node id="71004">
+        <label>mstyle/menuengine.cpp</label>
+        <link refid="menuengine_8cpp"/>
+        <childnode refid="71005" relation="include">
+        </childnode>
+      </node>
+      <node id="71006">
+        <label>baseengine.h</label>
+        <link refid="baseengine_8h_source"/>
+      </node>
+      <node id="71007">
+        <label>datamap.h</label>
+        <link refid="datamap_8h_source"/>
+      </node>
+      <node id="71012">
+        <label>menubardata_imp.h</label>
+        <link refid="menubardata__imp_8h_source"/>
+      </node>
+      <node id="71011">
+        <label>animation.h</label>
+        <link refid="animation_8h_source"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>oxygenmenuengine.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stores<sp/>event<sp/>filters<sp/>and<sp/>maps<sp/>widgets<sp/>to<sp/>timelines<sp/>for<sp/>animations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2009<sp/>Hugo<sp/>Pereira<sp/>Da<sp/>Costa<sp/>&lt;hugo.pereira@free.fr&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;menuengine.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_menu_engine_v1_1ad71deb0f2319e75a62758ad7747e4a30" refkind="member"><highlight class="normal"><ref refid="class_menu_engine_v1_1a9b44d96750af247ee29ed4f20c592813" kindref="member">MenuEngineV1::MenuEngineV1</ref>(<sp/>QObject*<sp/>parent,<sp/><ref refid="class_menu_base_engine" kindref="compound">MenuBaseEngine</ref>*<sp/>other<sp/>):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_base_engine" kindref="compound">MenuBaseEngine</ref>(<sp/>parent<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>other<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(<sp/>QWidget<sp/>*<sp/>widget,<sp/><sp/>other-&gt;<ref refid="class_base_engine_1a7b2fcb1bb576a57f6149c326c5c60e19" kindref="member">registeredWidgets</ref>()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_engine_v1_1a474b539c9efff4ab347b12d3123ed955" kindref="member">registerWidget</ref>(<sp/>widget<sp/>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_menu_engine_v1_1a474b539c9efff4ab347b12d3123ed955" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_menu_engine_v1_1a474b539c9efff4ab347b12d3123ed955" kindref="member">MenuEngineV1::registerWidget</ref>(<sp/>QWidget*<sp/>widget<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!widget<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>new<sp/>data<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data_.contains(<sp/>widget<sp/>)<sp/>)<sp/>data_.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>widget,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1" kindref="compound">MenuDataV1</ref>(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>widget,<sp/><ref refid="class_base_engine_1a7edb8da9d2fd6cca19682d1d089dfa4b" kindref="member">duration</ref>()<sp/>),<sp/><ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>destruction<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>connect(<sp/>widget,<sp/>SIGNAL(<sp/>destroyed(<sp/>QObject*<sp/>)<sp/>),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<sp/><ref refid="class_menu_engine_v1_1a8a26923ed56d29cb2efb8d6bce56f725" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/>)<sp/>),<sp/>Qt::UniqueConnection<sp/>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="class_menu_engine_v1_1a81bebb14042c97d38008f30fa645ae1e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_menu_engine_v1_1a81bebb14042c97d38008f30fa645ae1e" kindref="member">MenuEngineV1::isAnimated</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>WidgetIndex<sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV1&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_animation_1ac48a8d074abd43dc3f6485353ba24e30" kindref="member">Animation::Pointer</ref><sp/>animation<sp/>=<sp/>data.data()-&gt;animation(<sp/>index<sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>animation.data()-&gt;isRunning();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="class_menu_engine_v1_1a8d949dd3e9e291f7680e021807525b16" refkind="member"><highlight class="normal"><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">BaseEngine::WidgetList</ref><sp/><ref refid="class_menu_engine_v1_1a8d949dd3e9e291f7680e021807525b16" kindref="member">MenuEngineV1::registeredWidgets</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">WidgetList</ref><sp/>out;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>typedef<sp/>is<sp/>needed<sp/>to<sp/>make<sp/>Krazy<sp/>happy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV1&gt;::Value</ref><sp/>Value;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Value<sp/>&amp;<sp/>value,<sp/>data_<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>value<sp/>)<sp/>out.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>value.data()-&gt;target().data()<sp/>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_menu_engine_v2_1ae22868aece22d1ee73eb7ad3d77e307e" refkind="member"><highlight class="normal"><ref refid="class_menu_engine_v2_1af4a8003d29b0a752b55a153881d6b242" kindref="member">MenuEngineV2::MenuEngineV2</ref>(<sp/>QObject*<sp/>parent,<sp/><ref refid="class_menu_base_engine" kindref="compound">MenuBaseEngine</ref>*<sp/>other<sp/>):</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_base_engine" kindref="compound">MenuBaseEngine</ref>(<sp/>parent<sp/>),</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>followMouseDuration_(<sp/>150<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>other<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(<sp/>QWidget<sp/>*<sp/>widget,<sp/>other-&gt;<ref refid="class_base_engine_1a7b2fcb1bb576a57f6149c326c5c60e19" kindref="member">registeredWidgets</ref>()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_engine_v2_1ad655696ec242d32c9dc6a9428a6f2e2b" kindref="member">registerWidget</ref>(<sp/>widget<sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_menu_engine_v2_1ad655696ec242d32c9dc6a9428a6f2e2b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_menu_engine_v2_1ad655696ec242d32c9dc6a9428a6f2e2b" kindref="member">MenuEngineV2::registerWidget</ref>(<sp/>QWidget*<sp/>widget<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!widget<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>new<sp/>data<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data_.contains(<sp/>widget<sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>value(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v2" kindref="compound">MenuDataV2</ref>(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>widget,<sp/><ref refid="class_base_engine_1a7edb8da9d2fd6cca19682d1d089dfa4b" kindref="member">duration</ref>()<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value.data()-&gt;setFollowMouseDuration(<sp/><ref refid="class_menu_engine_v2_1af11f65c85758e00653f35a59673886cc" kindref="member">followMouseDuration</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>widget,<sp/>value,<sp/><ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>destruction<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>connect(<sp/>widget,<sp/>SIGNAL(<sp/>destroyed(<sp/>QObject*<sp/>)<sp/>),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<sp/><ref refid="class_menu_engine_v2_1a883753b75f97cefd71f097d13014828d" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/>)<sp/>),<sp/>Qt::UniqueConnection<sp/>);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_menu_engine_v2_1af5b23e7e0034d36209ac3a0fbfb96f7f" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_menu_engine_v2_1af5b23e7e0034d36209ac3a0fbfb96f7f" kindref="member">MenuEngineV2::currentRect</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>WidgetIndex<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QRect();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;currentRect()<sp/>:<sp/>QRect();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="class_menu_engine_v2_1a43f05efa223ba79b0a5d221194469712" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_menu_engine_v2_1a43f05efa223ba79b0a5d221194469712" kindref="member">MenuEngineV2::isAnimated</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal">,<sp/>WidgetIndex<sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<sp/>index<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Previous:<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_animation_1ac48a8d074abd43dc3f6485353ba24e30" kindref="member">Animation::Pointer</ref><sp/>animation<sp/>=<sp/>data.data()-&gt;animation()<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>animation.data()-&gt;direction()<sp/>==<sp/>Animation::Backward<sp/>&amp;&amp;<sp/>animation.data()-&gt;isRunning();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>Current:<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>data.data()-&gt;animation()<sp/>&amp;&amp;<sp/>data.data()-&gt;animation().data()-&gt;isRunning()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="class_menu_engine_v2_1ab696c84bbd3fd5182e7ece21bb06dad5" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_menu_engine_v2_1ab696c84bbd3fd5182e7ece21bb06dad5" kindref="member">MenuEngineV2::animatedRect</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QRect();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;animatedRect()<sp/>:<sp/>QRect();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="class_menu_engine_v2_1a32d94ce2512ccc6ca8d05c287409646c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_menu_engine_v2_1a32d94ce2512ccc6ca8d05c287409646c" kindref="member">MenuEngineV2::isTimerActive</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;timer().isActive()<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="class_menu_engine_v2_1a173b5a134ccd81209e0e77e00e505f80" refkind="member"><highlight class="normal"><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">BaseEngine::WidgetList</ref><sp/><ref refid="class_menu_engine_v2_1a173b5a134ccd81209e0e77e00e505f80" kindref="member">MenuEngineV2::registeredWidgets</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">WidgetList</ref><sp/>out;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>typedef<sp/>is<sp/>needed<sp/>to<sp/>make<sp/>Krazy<sp/>happy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;MenuDataV2&gt;::Value</ref><sp/>Value;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Value<sp/>&amp;<sp/>value,<sp/>data_<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>value<sp/>)<sp/>out.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>value.data()-&gt;target().data()<sp/>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="mstyle/menuengine.cpp"/>
+  </compounddef>
+</doxygen>

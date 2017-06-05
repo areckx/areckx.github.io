@@ -1,0 +1,44 @@
+.TH "md_share_locale__r_e_a_d_m_e" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_share_locale__r_e_a_d_m_eNote to translators 
+ \- Read more about how MuseScore works together with Transifex for handling translations: http://musescore.org/node/22982
+.PP
+.SH "How to add a new language "
+.PP
+.PP
+You need the name of the language and the two letter code
+.PP
+.SS "On Transifex "
+.PP
+.IP "\(bu" 2
+Add the language https://www.transifex.com/organization/musescore/team/1397/ or request it https://www.transifex.com/projects/p/musescore/
+.PP
+.PP
+.SS "In MuseScore source "
+.PP
+.IP "\(bu" 2
+Add the language in share/locale/languages\&.xml
+.IP "\(bu" 2
+Add the language mscore_XX\&.qm in share/locale/CMakeLists\&.txt
+.IP "\(bu" 2
+Add the language instruments_XX\&.qm in share/locale/CMakeLists\&.txt
+.IP "\(bu" 2
+Add the language mscore_XX\&.ts to build/gen-qt-projectfile\&.bat and build/gen-instruments-projectfile
+.IP "\(bu" 2
+Add the language instruments_XX\&.ts to build/gen-instruments-projectfile\&.bat and build/gen-qt-projectfile
+.IP "\(bu" 2
+Add the share/locale/mscore_XX\&.ts file, tx pull can help (`tx pull -t language_code)
+.IP "\(bu" 2
+Add the share/locale/instruments_XX\&.ts file, see above
+.PP
+.PP
+.SS "On the update translation server "
+.PP
+.IP "\(bu" 2
+Modify languages\&.json
+.IP "\(bu" 2
+rm share/locale/details\&.json 
+.PP
+

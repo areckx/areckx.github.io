@@ -1,0 +1,100 @@
+.TH "Function" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Function
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBExponentialFunction\fP, \fBIdentityFunction\fP, \fBPostScriptFunction\fP, \fBSampledFunction\fP, and \fBStitchingFunction\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "GBool \fBinit\fP (\fBDict\fP *dict)"
+.br
+.ti -1c
+.RI "virtual \fBFunction\fP * \fBcopy\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetType\fP ()=0"
+.br
+.ti -1c
+.RI "int \fBgetInputSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetOutputSize\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetDomainMin\fP (int i)"
+.br
+.ti -1c
+.RI "double \fBgetDomainMax\fP (int i)"
+.br
+.ti -1c
+.RI "double \fBgetRangeMin\fP (int i)"
+.br
+.ti -1c
+.RI "double \fBgetRangeMax\fP (int i)"
+.br
+.ti -1c
+.RI "GBool \fBgetHasRange\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBhasDifferentResultSet\fP (\fBFunction\fP *func)"
+.br
+.ti -1c
+.RI "virtual void \fBtransform\fP (double *in, double *out)=0"
+.br
+.ti -1c
+.RI "virtual GBool \fBisOk\fP ()=0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunction\fP * \fBparse\fP (\fBObject\fP *funcObj)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFunction\fP (const \fBFunction\fP *func)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFunction\fP * \fBparse\fP (\fBObject\fP *funcObj, std::set< int > *usedParents)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBm\fP"
+.br
+.ti -1c
+.RI "int \fBn\fP"
+.br
+.ti -1c
+.RI "double \fBdomain\fP [funcMaxInputs][2]"
+.br
+.ti -1c
+.RI "double \fBrange\fP [funcMaxOutputs][2]"
+.br
+.ti -1c
+.RI "GBool \fBhasRange\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 52 of file Function\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

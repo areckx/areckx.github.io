@@ -1,0 +1,136 @@
+.TH "XRef" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XRef
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXRef\fP (\fBObject\fP *trailerDictA)"
+.br
+.ti -1c
+.RI "\fBXRef\fP (\fBBaseStream\fP *strA, Goffset pos, Goffset mainXRefEntriesOffsetA=0, GBool *wasReconstructed=NULL, GBool reconstruct=false)"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBcopy\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisXRefStream\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetErrorCode\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEncryption\fP (int permFlagsA, GBool ownerPasswordOkA, Guchar *fileKeyA, int keyLengthA, int encVersionA, int encRevisionA, CryptAlgorithm encAlgorithmA)"
+.br
+.ti -1c
+.RI "void \fBmarkUnencrypted\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetEncryptionParameters\fP (Guchar **fileKeyA, CryptAlgorithm *encAlgorithmA, int *keyLengthA)"
+.br
+.ti -1c
+.RI "GBool \fBisEncrypted\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBokToPrint\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToPrintHighRes\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToChange\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToCopy\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAddNotes\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToFillForm\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAccessibility\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAssemble\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "int \fBgetPermFlags\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetCatalog\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBfetch\fP (int num, int gen, \fBObject\fP *obj, int recursion=0)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetDocInfo\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetDocInfoNF\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "int \fBgetNumObjects\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRootNum\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRootGen\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetStreamEnd\fP (Goffset streamStart, Goffset *streamEnd)"
+.br
+.ti -1c
+.RI "int \fBgetNumEntry\fP (Goffset offset)"
+.br
+.ti -1c
+.RI "void \fBscanSpecialFlags\fP ()"
+.br
+.ti -1c
+.RI "\fBXRefEntry\fP * \fBgetEntry\fP (int i, GBool complainIfMissing=gTrue)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetTrailerDict\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetModifiedObject\fP (\fBObject\fP *o, \fBRef\fP r)"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBaddIndirectObject\fP (\fBObject\fP *o)"
+.br
+.ti -1c
+.RI "void \fBremoveIndirectObject\fP (\fBRef\fP r)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (int num, int gen, Goffset offs, GBool used)"
+.br
+.ti -1c
+.RI "void \fBwriteTableToFile\fP (\fBOutStream\fP *outStr, GBool writeAllEntries)"
+.br
+.ti -1c
+.RI "void \fBwriteStreamToBuffer\fP (\fBGooString\fP *stmBuf, \fBDict\fP *xrefDict, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "void \fBlock\fP ()"
+.br
+.ti -1c
+.RI "void \fBunlock\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 93 of file XRef\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

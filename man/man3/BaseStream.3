@@ -1,0 +1,69 @@
+.TH "BaseStream" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BaseStream
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBStream\fP\&.
+.PP
+Inherited by \fBCachedFileStream\fP, \fBEmbedStream\fP, \fBFileStream\fP, and \fBMemStream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBaseStream\fP (\fBObject\fP *dictA, Goffset lengthA)"
+.br
+.ti -1c
+.RI "virtual \fBBaseStream\fP * \fBcopy\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBStream\fP * \fBmakeSubStream\fP (Goffset start, GBool limited, Goffset length, \fBObject\fP *dict)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsetPos\fP (Goffset pos, int dir=0)=0"
+.br
+.ti -1c
+.RI "virtual GBool \fBisBinary\fP (GBool last=gTrue)"
+.br
+.ti -1c
+.RI "virtual \fBBaseStream\fP * \fBgetBaseStream\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBStream\fP * \fBgetUndecodedStream\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBDict\fP * \fBgetDict\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBGooString\fP * \fBgetFileName\fP ()"
+.br
+.ti -1c
+.RI "virtual Goffset \fBgetLength\fP ()"
+.br
+.ti -1c
+.RI "virtual Goffset \fBgetStart\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBmoveStart\fP (Goffset delta)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Goffset \fBlength\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBdict\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 305 of file Stream\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,168 @@
+.TH "QtLP_Private::QtLockedFile" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QtLP_Private::QtLockedFile \- The \fBQtLockedFile\fP class extends QFile with advisory locking functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QFile\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLockMode\fP { \fBNoLock\fP = 0, \fBReadLock\fP, \fBWriteLock\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQtLockedFile\fP ()"
+.br
+.ti -1c
+.RI "\fBQtLockedFile\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fB~QtLockedFile\fP ()"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (OpenMode mode)"
+.br
+.ti -1c
+.RI "bool \fBlock\fP (\fBLockMode\fP mode, bool block=true)"
+.br
+.ti -1c
+.RI "bool \fBunlock\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisLocked\fP () const"
+.br
+.ti -1c
+.RI "\fBLockMode\fP \fBlockMode\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBQtLockedFile\fP class extends QFile with advisory locking functions\&. 
+
+A file may be locked in read or write mode\&. Multiple instances of \fI\fBQtLockedFile\fP\fP, created in multiple processes running on the same machine, may have a file locked in read mode\&. Exactly one instance may have it locked in write mode\&. A read and a write lock cannot exist simultaneously on the same file\&.
+.PP
+The file locks are advisory\&. This means that nothing prevents another process from manipulating a locked file using QFile or file system functions offered by the OS\&. Serialization is only guaranteed if all processes that access the file use QLockedFile\&. Also, while holding a lock on a file, a process must not open the same file again (through any API), or locks can be unexpectedly lost\&.
+.PP
+The lock provided by an instance of \fI\fBQtLockedFile\fP\fP is released whenever the program terminates\&. This is true even when the program crashes and no destructors are called\&. 
+.PP
+Definition at line 67 of file qtlockedfile\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum QtLP_Private::QtLockedFile::LockMode"
+This enum describes the available lock modes\&.
+.PP
+ReadLock A read lock\&.  WriteLock A write lock\&.  NoLock Neither a read lock nor a write lock\&. 
+.PP
+Definition at line 70 of file qtlockedfile\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QtLockedFile::QtLockedFile ()"
+Constructs an unlocked \fI\fBQtLockedFile\fP\fP object\&. This constructor behaves in the same way as \fIQFile::QFile()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::QFile() 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file qtlockedfile\&.cpp\&.
+.SS "QtLockedFile::QtLockedFile (const QString & name)"
+Constructs an unlocked \fBQtLockedFile\fP object with file \fIname\fP\&. This constructor behaves in the same way as \fIQFile::QFile\fP(const QString&)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::QFile() 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file qtlockedfile\&.cpp\&.
+.SS "QtLockedFile::~QtLockedFile ()"
+Destroys the \fI\fBQtLockedFile\fP\fP object\&. If any locks were held, they are released\&. 
+.PP
+Definition at line 110 of file qtlocalpeer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QtLockedFile::isLocked (void) const"
+Returns \fItrue\fP if this object has a in read or write lock; otherwise returns \fIfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlockMode()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file qtlockedfile\&.cpp\&.
+.SS "bool QtLockedFile::lock (\fBLockMode\fP mode, bool block = \fCtrue\fP)"
+Obtains a lock of type \fImode\fP\&. The file must be opened before it can be locked\&.
+.PP
+If \fIblock\fP is true, this function will block until the lock is aquired\&. If \fIblock\fP is false, this function returns \fIfalse\fP immediately if the lock cannot be aquired\&.
+.PP
+If this object already has a lock of type \fImode\fP, this function returns \fItrue\fP immediately\&. If this object has a lock of a different type than \fImode\fP, the lock is first released and then a new lock is obtained\&.
+.PP
+This function returns \fItrue\fP if, after it executes, the file is locked by this object, and \fIfalse\fP otherwise\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBunlock()\fP, \fBisLocked()\fP, \fBlockMode()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file qtlocalpeer\&.cpp\&.
+.SS "\fBQtLockedFile::LockMode\fP QtLockedFile::lockMode () const"
+Returns the type of lock currently held by this object, or \fIQtLockedFile::NoLock\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisLocked()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file qtlockedfile\&.cpp\&.
+.SS "bool QtLockedFile::open (OpenMode mode)"
+Opens the file in OpenMode \fImode\fP\&.
+.PP
+This is identical to QFile::open(), with the one exception that the Truncate mode flag is disallowed\&. Truncation would conflict with the advisory file locking, since the file would be modified before the write lock is obtained\&. If truncation is required, use resize(0) after obtaining the write lock\&.
+.PP
+Returns true if successful; otherwise false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::open(), QFile::resize() 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file qtlockedfile\&.cpp\&.
+.SS "bool QtLockedFile::unlock ()"
+Releases a lock\&.
+.PP
+If the object has no lock, this function returns immediately\&.
+.PP
+This function returns \fItrue\fP if, after it executes, the file is not locked by this object, and \fIfalse\fP otherwise\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlock()\fP, \fBisLocked()\fP, \fBlockMode()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file qtlocalpeer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

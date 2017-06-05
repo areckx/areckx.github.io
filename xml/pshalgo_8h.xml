@@ -1,0 +1,1092 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pshalgo_8h" kind="file" language="C++">
+    <compoundname>pshalgo.h</compoundname>
+    <includes refid="pshrec_8h" local="yes">pshrec.h</includes>
+    <includes refid="pshglob_8h" local="yes">pshglob.h</includes>
+    <includedby refid="pshalgo_8c" local="yes">thirdparty/freetype/src/pshinter/pshalgo.c</includedby>
+    <includedby refid="pshrec_8c" local="yes">thirdparty/freetype/src/pshinter/pshrec.c</includedby>
+    <includedby refid="pshmod_8c" local="yes">thirdparty/freetype/src/pshinter/pshmod.c</includedby>
+    <incdepgraph>
+      <node id="80612">
+        <label>pshrec.h</label>
+        <link refid="pshrec_8h_source"/>
+        <childnode refid="80613" relation="include">
+        </childnode>
+        <childnode refid="80614" relation="include">
+        </childnode>
+      </node>
+      <node id="80614">
+        <label>pshglob.h</label>
+        <link refid="pshglob_8h_source"/>
+      </node>
+      <node id="80613">
+        <label>ft2build.h</label>
+      </node>
+      <node id="80611">
+        <label>thirdparty/freetype/src/pshinter/pshalgo.h</label>
+        <link refid="pshalgo_8h"/>
+        <childnode refid="80612" relation="include">
+        </childnode>
+        <childnode refid="80614" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="80618">
+        <label>thirdparty/freetype/src/pshinter/pshrec.c</label>
+        <link refid="pshrec_8c_source"/>
+        <childnode refid="80617" relation="include">
+        </childnode>
+      </node>
+      <node id="80617">
+        <label>thirdparty/freetype/src/pshinter/pshinter.c</label>
+        <link refid="pshinter_8c_source"/>
+      </node>
+      <node id="80619">
+        <label>thirdparty/freetype/src/pshinter/pshmod.c</label>
+        <link refid="pshmod_8c_source"/>
+        <childnode refid="80617" relation="include">
+        </childnode>
+      </node>
+      <node id="80616">
+        <label>thirdparty/freetype/src/pshinter/pshalgo.c</label>
+        <link refid="pshalgo_8c_source"/>
+        <childnode refid="80617" relation="include">
+        </childnode>
+      </node>
+      <node id="80615">
+        <label>thirdparty/freetype/src/pshinter/pshalgo.h</label>
+        <link refid="pshalgo_8h"/>
+        <childnode refid="80616" relation="include">
+        </childnode>
+        <childnode refid="80618" relation="include">
+        </childnode>
+        <childnode refid="80619" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_p_s_h___hint_rec__" prot="public">PSH_HintRec_</innerclass>
+    <innerclass refid="struct_p_s_h___zone_rec__" prot="public">PSH_ZoneRec_</innerclass>
+    <innerclass refid="struct_p_s_h___hint___table_rec__" prot="public">PSH_Hint_TableRec_</innerclass>
+    <innerclass refid="struct_p_s_h___point_rec__" prot="public">PSH_PointRec_</innerclass>
+    <innerclass refid="struct_p_s_h___contour_rec__" prot="public">PSH_ContourRec_</innerclass>
+    <innerclass refid="struct_p_s_h___glyph_rec__" prot="public">PSH_GlyphRec_</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="pshalgo_8h_1ad186c67a1edb07c568d9187364d24c9e" prot="public" static="no">
+        <name>PSH_HINT_GHOST</name>
+        <initializer>PS_HINT_FLAG_GHOST</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="35" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a1a183205de5a665f2ba08b90bf9433b5" prot="public" static="no">
+        <name>PSH_HINT_BOTTOM</name>
+        <initializer>PS_HINT_FLAG_BOTTOM</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="36" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a27a36a772b252c158810260daba398f2" prot="public" static="no">
+        <name>PSH_HINT_ACTIVE</name>
+        <initializer>4U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="37" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1af904ee33d93dbcd61e51949b9b95f60b" prot="public" static="no">
+        <name>PSH_HINT_FITTED</name>
+        <initializer>8U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="38" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a4019f2c8993405632751cb21ea2cf6a4" prot="public" static="no">
+        <name>psh_hint_is_active</name>
+        <param><defname>x</defname></param>
+        <initializer>( ( (x)-&gt;flags &amp; PSH_HINT_ACTIVE ) != 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="41" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a8f03e28d5c0d9a767db3b5c410341cb3" prot="public" static="no">
+        <name>psh_hint_is_ghost</name>
+        <param><defname>x</defname></param>
+        <initializer>( ( (x)-&gt;flags &amp; PSH_HINT_GHOST  ) != 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="42" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a9728e231bb97048279dc4112332abcb0" prot="public" static="no">
+        <name>psh_hint_is_fitted</name>
+        <param><defname>x</defname></param>
+        <initializer>( ( (x)-&gt;flags &amp; PSH_HINT_FITTED ) != 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="43" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a53baa27d6346a3b908add84e275d4dd2" prot="public" static="no">
+        <name>psh_hint_activate</name>
+        <param><defname>x</defname></param>
+        <initializer>(x)-&gt;flags |=  PSH_HINT_ACTIVE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="45" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a1644873ed57b696df3a02d8c87207061" prot="public" static="no">
+        <name>psh_hint_deactivate</name>
+        <param><defname>x</defname></param>
+        <initializer>(x)-&gt;flags &amp;= ~PSH_HINT_ACTIVE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="46" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a94c15a12f2d8a3ed0356779d9d48a615" prot="public" static="no">
+        <name>psh_hint_set_fitted</name>
+        <param><defname>x</defname></param>
+        <initializer>(x)-&gt;flags |=  PSH_HINT_FITTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="47" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1ae25f60eb7d20d7b79e9e341a2afcbda2" prot="public" static="no">
+        <name>PSH_DIR_HORIZONTAL</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="105" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a45a705e63180828cfd6766b54338298c" prot="public" static="no">
+        <name>PSH_DIR_VERTICAL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="106" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a86580bb4cdcb4b5788cfdbc8693d0964" prot="public" static="no">
+        <name>PSH_DIR_COMPARE</name>
+        <param><defname>d1</defname></param>
+        <param><defname>d2</defname></param>
+        <initializer>( (d1) == (d2) || (d1) == -(d2) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="108" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a57ffff67236f49e2016f448db1aad570" prot="public" static="no">
+        <name>PSH_DIR_IS_HORIZONTAL</name>
+        <param><defname>d</defname></param>
+        <initializer>PSH_DIR_COMPARE( d, PSH_DIR_HORIZONTAL )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="109" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a746168d6aea178e27d628e158bc9e240" prot="public" static="no">
+        <name>PSH_DIR_IS_VERTICAL</name>
+        <param><defname>d</defname></param>
+        <initializer>PSH_DIR_COMPARE( d, PSH_DIR_VERTICAL )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="110" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a4452a7e14eb3a296621ae80023d7fc18" prot="public" static="no">
+        <name>PSH_POINT_OFF</name>
+        <initializer>1U      /* point is off the curve */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="115" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1ad928d4bd357d5c882630bfdec9ebf8f3" prot="public" static="no">
+        <name>PSH_POINT_SMOOTH</name>
+        <initializer>2U      /* point is smooth        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="116" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a8f85d42a6ed4e61bd0d3a87c07a54c79" prot="public" static="no">
+        <name>PSH_POINT_INFLEX</name>
+        <initializer>4U      /* point is inflection    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="117" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a630000442c85da689f7bfab3e3fd4cb5" prot="public" static="no">
+        <name>psh_point_is_smooth</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags &amp; PSH_POINT_SMOOTH )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="120" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a6b2764537024f0eeb946dd709094f02a" prot="public" static="no">
+        <name>psh_point_is_off</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags &amp; PSH_POINT_OFF    )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="121" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a28fbb8f16977632bce4c8b90972a1b03" prot="public" static="no">
+        <name>psh_point_is_inflex</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags &amp; PSH_POINT_INFLEX )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="122" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a6d8d61aad40d634513b1ee0faea0675b" prot="public" static="no">
+        <name>psh_point_set_smooth</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags |= PSH_POINT_SMOOTH</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="124" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a782d42d06966d8816bacbb0b904b2dde" prot="public" static="no">
+        <name>psh_point_set_off</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags |= PSH_POINT_OFF</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="125" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a2153dbbae6aa3fc972723b3d9a595f6f" prot="public" static="no">
+        <name>psh_point_set_inflex</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags |= PSH_POINT_INFLEX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="126" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1afabc10dfc78c97a3ef340e95fbc71b44" prot="public" static="no">
+        <name>PSH_POINT_STRONG</name>
+        <initializer>16U /* point is strong                           */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="130" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a161c26ed0d326ee868d44ea37a900768" prot="public" static="no">
+        <name>PSH_POINT_FITTED</name>
+        <initializer>32U /* point is already fitted                   */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="131" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1afe30073eb2d2a3557b67fb81c0e9f4a1" prot="public" static="no">
+        <name>PSH_POINT_EXTREMUM</name>
+        <initializer>64U /* point is local extremum                   */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="132" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a00274cb691864d35f1399d308d6cafb6" prot="public" static="no">
+        <name>PSH_POINT_POSITIVE</name>
+        <initializer>128U /* extremum has positive contour flow        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="133" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1abb682068b8820346565ef4429cf16b7d" prot="public" static="no">
+        <name>PSH_POINT_NEGATIVE</name>
+        <initializer>256U /* extremum has negative contour flow        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="134" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a7d3b38c0533676010de8d93a7b35ce20" prot="public" static="no">
+        <name>PSH_POINT_EDGE_MIN</name>
+        <initializer>512U /* point is aligned to left/bottom stem edge */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="135" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1acb0a719935233b96e260d3b1fab316f3" prot="public" static="no">
+        <name>PSH_POINT_EDGE_MAX</name>
+        <initializer>1024U /* point is aligned to top/right stem edge   */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="136" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a0b02d3a613fb16b6bb68da871814dd89" prot="public" static="no">
+        <name>psh_point_is_strong</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_STRONG )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="139" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1ac5359f6b47a6d1daa80ddf9d88547761" prot="public" static="no">
+        <name>psh_point_is_fitted</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_FITTED )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="140" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a71799815223bfc8cacd7ecefe7e19eab" prot="public" static="no">
+        <name>psh_point_is_extremum</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_EXTREMUM )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="141" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a47132c946497fcb75a0e223ed742a622" prot="public" static="no">
+        <name>psh_point_is_positive</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_POSITIVE )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="142" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a9b7f09ceedcb0bac5de3f820e7398d87" prot="public" static="no">
+        <name>psh_point_is_negative</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_NEGATIVE )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="143" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a80691c5d3573d8e7fef86393a107a6e9" prot="public" static="no">
+        <name>psh_point_is_edge_min</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_EDGE_MIN )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="144" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a47c08d480f9aa8064721c63cbf85f254" prot="public" static="no">
+        <name>psh_point_is_edge_max</name>
+        <param><defname>p</defname></param>
+        <initializer>( (p)-&gt;flags2 &amp; PSH_POINT_EDGE_MAX )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="145" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a7bac07cb1fa5fd1115b1b7cd2fa7df3a" prot="public" static="no">
+        <name>psh_point_set_strong</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_STRONG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="147" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1ac1b671f89205d251fb5f64858e1bbe92" prot="public" static="no">
+        <name>psh_point_set_fitted</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_FITTED</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="148" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a89e0e5bcd791416c406deffb2a72379a" prot="public" static="no">
+        <name>psh_point_set_extremum</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_EXTREMUM</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="149" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a95e8a79bd1fcde4f1df7115b5c6f5c29" prot="public" static="no">
+        <name>psh_point_set_positive</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_POSITIVE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="150" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a7536ec7740828d22e88a55c1c513aab2" prot="public" static="no">
+        <name>psh_point_set_negative</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_NEGATIVE</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="151" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1ab558c01cfe6e5f1fd5050ac6641dc389" prot="public" static="no">
+        <name>psh_point_set_edge_min</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_EDGE_MIN</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="152" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pshalgo_8h_1a65d7a50ad9b6e9d8f0e0299bacaee536" prot="public" static="no">
+        <name>psh_point_set_edge_max</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;flags2 |= PSH_POINT_EDGE_MAX</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="153" column="9" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340" prot="public" static="no">
+        <name>@87</name>
+        <enumvalue id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340ab088f26343924fb63ec139c46b421512" prot="public">
+          <name>PSH_DIR_NONE</name>
+          <initializer>=  4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340a3219f3b76f9cabc386f16cb3eab95c4d" prot="public">
+          <name>PSH_DIR_UP</name>
+          <initializer>= -1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340aae086fa35014b819e1915443e877921c" prot="public">
+          <name>PSH_DIR_DOWN</name>
+          <initializer>=  1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340a10b972e272eeb840024ccb0d092e558a" prot="public">
+          <name>PSH_DIR_LEFT</name>
+          <initializer>= -2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pshalgo_8h_1a950bf8e3371138ceb9649d45e9a96340a6ecfc6f91fff3897181334ec5852bd99" prot="public">
+          <name>PSH_DIR_RIGHT</name>
+          <initializer>=  2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="97" column="1" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="96" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="pshalgo_8h_1a2e8064fa55617617c9519266a5f9f36d" prot="public" static="no">
+        <type>typedefFT_BEGIN_HEADER struct <ref refid="struct_p_s_h___hint_rec__" kindref="compound">PSH_HintRec_</ref> *</type>
+        <definition>typedef typedefFT_BEGIN_HEADER struct PSH_HintRec_* PSH_Hint</definition>
+        <argsstring></argsstring>
+        <name>PSH_Hint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="31" column="1" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1a521f98c65a12eb14cd590e186f2e95e0" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___hint_rec__" kindref="compound">PSH_HintRec_</ref></type>
+        <definition>typedef struct PSH_HintRec_  PSH_HintRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_HintRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1aca1e72f19e34d84dcf1ba5e78436268f" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_ZoneRec_</ref></type>
+        <definition>typedef struct PSH_ZoneRec_  PSH_ZoneRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_ZoneRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1a0c6f09f31fb71247d011c109d8b8808e" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_ZoneRec_</ref> *</type>
+        <definition>typedef struct PSH_ZoneRec_ * PSH_Zone</definition>
+        <argsstring></argsstring>
+        <name>PSH_Zone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="74" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1ac0cc25f5ede4cf2176892d20e8e46e5a" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_TableRec_</ref></type>
+        <definition>typedef struct PSH_Hint_TableRec_  PSH_Hint_TableRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_Hint_TableRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1a330be5ede1ecd2f88c207739c905f7d2" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_TableRec_</ref> *</type>
+        <definition>typedef struct PSH_Hint_TableRec_ * PSH_Hint_Table</definition>
+        <argsstring></argsstring>
+        <name>PSH_Hint_Table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1aac4a427e420b51b53f97169ade834952" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_PointRec_</ref> *</type>
+        <definition>typedef struct PSH_PointRec_* PSH_Point</definition>
+        <argsstring></argsstring>
+        <name>PSH_Point</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="93" column="1" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1ad83371ec53d546b7871b776772a96aeb" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_ContourRec_</ref> *</type>
+        <definition>typedef struct PSH_ContourRec_* PSH_Contour</definition>
+        <argsstring></argsstring>
+        <name>PSH_Contour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="94" column="1" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1aba166d532ba1812321feadb49e19c42d" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_PointRec_</ref></type>
+        <definition>typedef struct PSH_PointRec_  PSH_PointRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_PointRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="178" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1ae7d435b886c748eaf9c6b40a4fc52539" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_ContourRec_</ref></type>
+        <definition>typedef struct PSH_ContourRec_  PSH_ContourRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_ContourRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1a9af4ac1b4bacac261bc9724d522b7fec" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___glyph_rec__" kindref="compound">PSH_GlyphRec_</ref></type>
+        <definition>typedef struct PSH_GlyphRec_  PSH_GlyphRec</definition>
+        <argsstring></argsstring>
+        <name>PSH_GlyphRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="212" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pshalgo_8h_1a8c7d92c182e768bf61242dd8f16783a5" prot="public" static="no">
+        <type>struct <ref refid="struct_p_s_h___glyph_rec__" kindref="compound">PSH_GlyphRec_</ref> *</type>
+        <definition>typedef struct PSH_GlyphRec_ * PSH_Glyph</definition>
+        <argsstring></argsstring>
+        <name>PSH_Glyph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="212" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pshalgo_8h_1a8f53a1b18800f3735cf9ba81716ab5fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Error</type>
+        <definition>FT_Error ps_hints_apply</definition>
+        <argsstring>(PS_Hints ps_hints, FT_Outline *outline, PSH_Globals globals, FT_Render_Mode hint_mode)</argsstring>
+        <name>ps_hints_apply</name>
+        <param>
+          <type><ref refid="struct_p_s___hints_rec__" kindref="compound">PS_Hints</ref></type>
+          <declname>ps_hints</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_f_t___outline__" kindref="compound">FT_Outline</ref> *</type>
+          <declname>outline</declname>
+        </param>
+        <param>
+          <type>PSH_Globals</type>
+          <declname>globals</declname>
+        </param>
+        <param>
+          <type>FT_Render_Mode</type>
+          <declname>hint_mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pshinter/pshalgo.h" line="229" column="1" bodyfile="thirdparty/freetype/src/pshinter/pshalgo.c" bodystart="2070" bodyend="2192"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>pshalgo.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>PostScript<sp/>hinting<sp/>algorithm<sp/>(specification).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2001-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PSHALGO_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PSHALGO_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pshrec.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pshglob.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">FT_BEGIN_HEADER</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>handle<sp/>to<sp/>Hint<sp/>structure<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___hint_rec__" kindref="compound">PSH_HintRec_</ref>*<sp/><sp/>PSH_Hint;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>hint<sp/>bit-flags<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_HINT_GHOST<sp/><sp/><sp/>PS_HINT_FLAG_GHOST</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_HINT_BOTTOM<sp/><sp/>PS_HINT_FLAG_BOTTOM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_HINT_ACTIVE<sp/><sp/>4U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_HINT_FITTED<sp/><sp/>8U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_is_active(<sp/>x<sp/>)<sp/><sp/>(<sp/>(<sp/>(x)-&gt;flags<sp/>&amp;<sp/>PSH_HINT_ACTIVE<sp/>)<sp/>!=<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_is_ghost(<sp/>x<sp/>)<sp/><sp/><sp/>(<sp/>(<sp/>(x)-&gt;flags<sp/>&amp;<sp/>PSH_HINT_GHOST<sp/><sp/>)<sp/>!=<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_is_fitted(<sp/>x<sp/>)<sp/><sp/>(<sp/>(<sp/>(x)-&gt;flags<sp/>&amp;<sp/>PSH_HINT_FITTED<sp/>)<sp/>!=<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_activate(<sp/>x<sp/>)<sp/><sp/><sp/><sp/>(x)-&gt;flags<sp/>|=<sp/><sp/>PSH_HINT_ACTIVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_deactivate(<sp/>x<sp/>)<sp/><sp/>(x)-&gt;flags<sp/>&amp;=<sp/>~PSH_HINT_ACTIVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_hint_set_fitted(<sp/>x<sp/>)<sp/><sp/>(x)-&gt;flags<sp/>|=<sp/><sp/>PSH_HINT_FITTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>hint<sp/>structure<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="struct_p_s_h___hint_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___hint_rec__" kindref="compound">PSH_HintRec_</ref></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/>org_pos;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/>org_len;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/>cur_pos;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/>cur_len;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/>flags;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Hint<sp/><sp/>parent;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/>order;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___hint_rec__" kindref="compound">PSH_HintRec</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>this<sp/>is<sp/>an<sp/>interpolation<sp/>zone<sp/>used<sp/>for<sp/>strong<sp/>points;<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>weak<sp/>points<sp/>are<sp/>interpolated<sp/>according<sp/>to<sp/>their<sp/>strong<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>neighbours<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="struct_p_s_h___zone_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_ZoneRec_</ref></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Fixed<sp/><sp/>scale;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Fixed<sp/><sp/>delta;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/>min;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/>max;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_ZoneRec</ref>,<sp/>*<ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_Zone</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="struct_p_s_h___hint___table_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_TableRec_</ref></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_hints;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_hints;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Hint<sp/><sp/><sp/><sp/><sp/><sp/><sp/>hints;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Hint*<sp/><sp/><sp/><sp/><sp/><sp/>sort;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Hint*<sp/><sp/><sp/><sp/><sp/><sp/>sort_global;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_zones;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_s_h___zone_rec__" kindref="compound">PSH_ZoneRec</ref>*<sp/><sp/><sp/>zones;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Zone<sp/><sp/><sp/><sp/><sp/><sp/><sp/>zone;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_s___mask___table_rec__" kindref="compound">PS_Mask_Table</ref><sp/><sp/>hint_masks;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_s___mask___table_rec__" kindref="compound">PS_Mask_Table</ref><sp/><sp/>counter_masks;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_TableRec</ref>,<sp/>*<ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_Table</ref>;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_PointRec_</ref>*<sp/><sp/><sp/><sp/><ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_Point</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_ContourRec_</ref>*<sp/><sp/><ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_Contour</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_DIR_NONE<sp/><sp/>=<sp/><sp/>4,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_DIR_UP<sp/><sp/><sp/><sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_DIR_DOWN<sp/><sp/>=<sp/><sp/>1,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_DIR_LEFT<sp/><sp/>=<sp/>-2,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_DIR_RIGHT<sp/>=<sp/><sp/>2</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_DIR_HORIZONTAL<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_DIR_VERTICAL<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_DIR_COMPARE(<sp/>d1,<sp/>d2<sp/>)<sp/><sp/><sp/>(<sp/>(d1)<sp/>==<sp/>(d2)<sp/>||<sp/>(d1)<sp/>==<sp/>-(d2)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_DIR_IS_HORIZONTAL(<sp/>d<sp/>)<sp/><sp/>PSH_DIR_COMPARE(<sp/>d,<sp/>PSH_DIR_HORIZONTAL<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_DIR_IS_VERTICAL(<sp/>d<sp/>)<sp/><sp/><sp/><sp/>PSH_DIR_COMPARE(<sp/>d,<sp/>PSH_DIR_VERTICAL<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>following<sp/>bit-flags<sp/>are<sp/>computed<sp/>once<sp/>by<sp/>the<sp/>glyph<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>analyzer,<sp/>for<sp/>both<sp/>dimensions<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_OFF<sp/><sp/><sp/><sp/><sp/>1U<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>off<sp/>the<sp/>curve<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_SMOOTH<sp/><sp/>2U<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>smooth<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_INFLEX<sp/><sp/>4U<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>inflection<sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_smooth(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags<sp/>&amp;<sp/>PSH_POINT_SMOOTH<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_off(<sp/>p<sp/>)<sp/><sp/><sp/><sp/><sp/>(<sp/>(p)-&gt;flags<sp/>&amp;<sp/>PSH_POINT_OFF<sp/><sp/><sp/><sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_inflex(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags<sp/>&amp;<sp/>PSH_POINT_INFLEX<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_smooth(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags<sp/>|=<sp/>PSH_POINT_SMOOTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_off(<sp/>p<sp/>)<sp/><sp/><sp/><sp/><sp/>(p)-&gt;flags<sp/>|=<sp/>PSH_POINT_OFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_inflex(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags<sp/>|=<sp/>PSH_POINT_INFLEX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>following<sp/>bit-flags<sp/>are<sp/>re-computed<sp/>for<sp/>each<sp/>dimension<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_STRONG<sp/><sp/><sp/><sp/><sp/><sp/>16U<sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>strong<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_FITTED<sp/><sp/><sp/><sp/><sp/><sp/>32U<sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>already<sp/>fitted<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_EXTREMUM<sp/><sp/><sp/><sp/>64U<sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>local<sp/>extremum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_POSITIVE<sp/><sp/><sp/>128U<sp/></highlight><highlight class="comment">/*<sp/>extremum<sp/>has<sp/>positive<sp/>contour<sp/>flow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_NEGATIVE<sp/><sp/><sp/>256U<sp/></highlight><highlight class="comment">/*<sp/>extremum<sp/>has<sp/>negative<sp/>contour<sp/>flow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_EDGE_MIN<sp/><sp/><sp/>512U<sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>aligned<sp/>to<sp/>left/bottom<sp/>stem<sp/>edge<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PSH_POINT_EDGE_MAX<sp/><sp/>1024U<sp/></highlight><highlight class="comment">/*<sp/>point<sp/>is<sp/>aligned<sp/>to<sp/>top/right<sp/>stem<sp/>edge<sp/><sp/><sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_strong(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_STRONG<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_fitted(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_FITTED<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_extremum(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_EXTREMUM<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_positive(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_POSITIVE<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_negative(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_NEGATIVE<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_edge_min(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_EDGE_MIN<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_is_edge_max(<sp/>p<sp/>)<sp/><sp/>(<sp/>(p)-&gt;flags2<sp/>&amp;<sp/>PSH_POINT_EDGE_MAX<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_strong(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_STRONG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_fitted(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_FITTED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_extremum(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_EXTREMUM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_positive(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_POSITIVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_negative(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_NEGATIVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_edge_min(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_EDGE_MIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>psh_point_set_edge_max(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;flags2<sp/>|=<sp/>PSH_POINT_EDGE_MAX</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="struct_p_s_h___point_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_PointRec_</ref></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Point<sp/><sp/><sp/><sp/>prev;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Point<sp/><sp/><sp/><sp/>next;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Contour<sp/><sp/>contour;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>flags;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>flags2;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Char<sp/><sp/><sp/><sp/><sp/><sp/>dir_in;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Char<sp/><sp/><sp/><sp/><sp/><sp/>dir_out;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Hint<sp/><sp/><sp/><sp/><sp/>hint;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>org_u;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>org_v;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cur_u;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG_HINTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>org_x;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cur_x;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>org_y;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Pos<sp/><sp/><sp/><sp/><sp/><sp/><sp/>cur_y;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>flags_x;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>flags_y;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___point_rec__" kindref="compound">PSH_PointRec</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="struct_p_s_h___contour_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_ContourRec_</ref></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Point<sp/><sp/>start;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/>count;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___contour_rec__" kindref="compound">PSH_ContourRec</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="struct_p_s_h___glyph_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_s_h___glyph_rec__" kindref="compound">PSH_GlyphRec_</ref></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_points;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num_contours;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Point<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>points;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Contour<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contours;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Memory<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memory;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_f_t___outline__" kindref="compound">FT_Outline</ref>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>outline;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>PSH_Globals<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>globals;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_s_h___hint___table_rec__" kindref="compound">PSH_Hint_TableRec</ref><sp/><sp/>hint_tables[2];</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertical;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>major_dir;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minor_dir;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_horz_hints;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_vert_hints;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_horz_snapping;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_vert_snapping;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do_stem_adjust;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_s_h___glyph_rec__" kindref="compound">PSH_GlyphRec</ref>,<sp/>*<ref refid="struct_p_s_h___glyph_rec__" kindref="compound">PSH_Glyph</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG_HINTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>PSH_Hint_Table<sp/><sp/>ps_debug_hint_table;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/>(*PSH_HintFunc)(<sp/>PSH_Hint<sp/><sp/>hint,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/>vertical<sp/>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>PSH_HintFunc<sp/><sp/><sp/><sp/>ps_debug_hint_func;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>PSH_Glyph<sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps_debug_glyph;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/>ps_hints_apply(<sp/><ref refid="struct_p_s___hints_rec__" kindref="compound">PS_Hints</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ps_hints,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_f_t___outline__" kindref="compound">FT_Outline</ref>*<sp/><sp/><sp/><sp/><sp/>outline,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PSH_Globals<sp/><sp/><sp/><sp/><sp/>globals,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Render_Mode<sp/><sp/>hint_mode<sp/>);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal">FT_END_HEADER</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__PSHALGO_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/pshinter/pshalgo.h"/>
+  </compounddef>
+</doxygen>

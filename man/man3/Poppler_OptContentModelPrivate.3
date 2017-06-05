@@ -1,0 +1,71 @@
+.TH "Poppler::OptContentModelPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::OptContentModelPrivate
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOptContentModelPrivate\fP (\fBOptContentModel\fP *qq, \fBOCGs\fP *optContent)"
+.br
+.ti -1c
+.RI "void \fBparseRBGroupsArray\fP (\fBArray\fP *rBGroupArray)"
+.br
+.ti -1c
+.RI "\fBOptContentItem\fP * \fBnodeFromIndex\fP (const QModelIndex &index, bool canBeNull=false) const"
+.br
+.ti -1c
+.RI "QModelIndex \fBindexFromItem\fP (\fBOptContentItem\fP *node, int column) const"
+.br
+.ti -1c
+.RI "\fBOptContentItem\fP * \fBitemFromRef\fP (const QString &ref) const"
+.br
+.ti -1c
+.RI "void \fBsetRootNode\fP (\fBOptContentItem\fP *node)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBOptContentModel\fP * \fBq\fP"
+.br
+.ti -1c
+.RI "QMap< QString, \fBOptContentItem\fP * > \fBm_optContentItems\fP"
+.br
+.ti -1c
+.RI "QList< \fBRadioButtonGroup\fP * > \fBm_rbgroups\fP"
+.br
+.ti -1c
+.RI "\fBOptContentItem\fP * \fBm_rootNode\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 89 of file poppler\-optcontent\-private\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBOptContentItem\fP * Poppler::OptContentModelPrivate::itemFromRef (const QString & ref) const"
+Get the \fBOptContentItem\fP corresponding to a given reference value\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIref\fP the reference number (e\&.g\&. from Object\&.getRefNum()) to look up
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the matching optional content item, or null if the reference wasn't found 
+.RE
+.PP
+
+.PP
+Definition at line 415 of file poppler\-optcontent\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

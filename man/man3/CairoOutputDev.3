@@ -1,0 +1,459 @@
+.TH "CairoOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CairoOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.PP
+Inherited by \fBCairoImageOutputDev\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBColorSpaceStack\fP"
+.br
+.ti -1c
+.RI "struct \fBMaskStack\fP"
+.br
+.ti -1c
+.RI "struct \fBStrokePathClip\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseTilingPatternFill\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseShadedFills\fP (int type)"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseFillColorStop\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBneedClipToCropBox\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateAll\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDefaultCTM\fP (double *ctm)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCTM\fP (\fBGfxState\fP *state, double m11, double m12, double m21, double m22, double m31, double m32)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineDash\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFlatness\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineJoin\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineCap\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMiterLimit\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineWidth\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColorStop\fP (\fBGfxState\fP *state, double offset)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateBlendMode\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclipToStrokePath\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBtilingPatternFill\fP (\fBGfxState\fP *state, \fBGfx\fP *gfx, \fBCatalog\fP *cat, \fBObject\fP *str, double *pmat, int paintType, int tilingType, \fBDict\fP *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)"
+.br
+.ti -1c
+.RI "virtual GBool \fBfunctionShadedFill\fP (\fBGfxState\fP *state, \fBGfxFunctionShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedFill\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedSupportExtend\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedFill\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading, double sMin, double sMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedSupportExtend\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBgouraudTriangleShadedFill\fP (\fBGfxState\fP *state, \fBGfxGouraudTriangleShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBpatchMeshShadedFill\fP (\fBGfxState\fP *state, \fBGfxPatchMeshShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBbeginString\fP (\fBGfxState\fP *state, \fBGooString\fP *s)"
+.br
+.ti -1c
+.RI "void \fBendString\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBdrawChar\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "void \fBbeginActualText\fP (\fBGfxState\fP *state, \fBGooString\fP *text)"
+.br
+.ti -1c
+.RI "void \fBendActualText\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBbeginType3Char\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual void \fBendType3Char\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBendTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool inlineImg, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBunsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, double *baseMatrix)"
+.br
+.ti -1c
+.RI "void \fBdrawImageMaskPrescaled\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "void \fBdrawImageMaskRegular\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawSoftMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, \fBGfxImageColorMap\fP *maskColorMap, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTransparencyGroup\fP (\fBGfxState\fP *, double *, \fBGfxColorSpace\fP *, GBool, GBool, GBool)"
+.br
+.ti -1c
+.RI "virtual void \fBendTransparencyGroup\fP (\fBGfxState\fP *)"
+.br
+.ti -1c
+.RI "void \fBpopTransparencyGroup\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBpaintTransparencyGroup\fP (\fBGfxState\fP *, double *)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMask\fP (\fBGfxState\fP *, double *, GBool, \fBFunction\fP *, \fBGfxColor\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBclearSoftMask\fP (\fBGfxState\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D0\fP (\fBGfxState\fP *state, double wx, double wy)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D1\fP (\fBGfxState\fP *state, double wx, double wy, double llx, double lly, double urx, double ury)"
+.br
+.ti -1c
+.RI "void \fBstartDoc\fP (\fBPDFDoc\fP *docA, \fBCairoFontEngine\fP *fontEngine=NULL)"
+.br
+.ti -1c
+.RI "GBool \fBisReverseVideo\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCairo\fP (cairo_t *cr)"
+.br
+.ti -1c
+.RI "void \fBsetTextPage\fP (\fBTextPage\fP *text)"
+.br
+.ti -1c
+.RI "void \fBsetPrinting\fP (GBool printing)"
+.br
+.ti -1c
+.RI "void \fBsetAntialias\fP (cairo_antialias_t antialias)"
+.br
+.ti -1c
+.RI "void \fBsetInType3Char\fP (GBool inType3Char)"
+.br
+.ti -1c
+.RI "void \fBgetType3GlyphWidth\fP (double *wx, double *wy)"
+.br
+.ti -1c
+.RI "GBool \fBhasType3GlyphBBox\fP ()"
+.br
+.ti -1c
+.RI "double * \fBgetType3GlyphBBox\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdoPath\fP (cairo_t *cairo, \fBGfxState\fP *state, \fBGfxPath\fP *path)"
+.br
+.ti -1c
+.RI "cairo_surface_t * \fBdownscaleSurface\fP (cairo_surface_t *orig_surface)"
+.br
+.ti -1c
+.RI "void \fBgetScaledSize\fP (const cairo_matrix_t *matrix, int orig_width, int orig_height, int *scaledWidth, int *scaledHeight)"
+.br
+.ti -1c
+.RI "cairo_filter_t \fBgetFilterForSurface\fP (cairo_surface_t *image, GBool interpolate)"
+.br
+.ti -1c
+.RI "GBool \fBgetStreamData\fP (\fBStream\fP *str, char **buffer, int *length)"
+.br
+.ti -1c
+.RI "void \fBsetMimeData\fP (\fBGfxState\fP *state, \fBStream\fP *str, \fBObject\fP *ref, \fBGfxImageColorMap\fP *colorMap, cairo_surface_t *image)"
+.br
+.ti -1c
+.RI "void \fBfillToStrokePathClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBalignStrokeCoords\fP (\fBGfxSubpath\fP *subpath, int i, double *x, double *y)"
+.br
+.ti -1c
+.RI "GBool \fBsetMimeDataForJBIG2Globals\fP (\fBStream\fP *str, cairo_surface_t *image)"
+.br
+.ti -1c
+.RI "void \fBsetAntialias\fP (cairo_t *cr, cairo_antialias_t antialias)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGfxRGB\fP \fBfill_color\fP"
+.br
+.ti -1c
+.RI "\fBGfxRGB\fP \fBstroke_color\fP"
+.br
+.ti -1c
+.RI "cairo_pattern_t * \fBfill_pattern\fP"
+.br
+.ti -1c
+.RI "cairo_pattern_t * \fBstroke_pattern\fP"
+.br
+.ti -1c
+.RI "double \fBfill_opacity\fP"
+.br
+.ti -1c
+.RI "double \fBstroke_opacity\fP"
+.br
+.ti -1c
+.RI "GBool \fBstroke_adjust\fP"
+.br
+.ti -1c
+.RI "GBool \fBadjusted_stroke_width\fP"
+.br
+.ti -1c
+.RI "GBool \fBalign_stroke_coords\fP"
+.br
+.ti -1c
+.RI "\fBCairoFont\fP * \fBcurrentFont\fP"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBxref\fP"
+.br
+.ti -1c
+.RI "struct \fBCairoOutputDev::StrokePathClip\fP * \fBstrokePathClip\fP"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBdoc\fP"
+.br
+.ti -1c
+.RI "\fBCairoFontEngine\fP * \fBfontEngine\fP"
+.br
+.ti -1c
+.RI "GBool \fBfontEngine_owner\fP"
+.br
+.ti -1c
+.RI "cairo_t * \fBcairo\fP"
+.br
+.ti -1c
+.RI "cairo_matrix_t \fBorig_matrix\fP"
+.br
+.ti -1c
+.RI "GBool \fBneedFontUpdate\fP"
+.br
+.ti -1c
+.RI "GBool \fBprinting\fP"
+.br
+.ti -1c
+.RI "GBool \fBuse_show_text_glyphs\fP"
+.br
+.ti -1c
+.RI "GBool \fBtext_matrix_valid\fP"
+.br
+.ti -1c
+.RI "cairo_surface_t * \fBsurface\fP"
+.br
+.ti -1c
+.RI "cairo_glyph_t * \fBglyphs\fP"
+.br
+.ti -1c
+.RI "int \fBglyphCount\fP"
+.br
+.ti -1c
+.RI "cairo_text_cluster_t * \fBclusters\fP"
+.br
+.ti -1c
+.RI "int \fBclusterCount\fP"
+.br
+.ti -1c
+.RI "char * \fButf8\fP"
+.br
+.ti -1c
+.RI "int \fButf8Count\fP"
+.br
+.ti -1c
+.RI "int \fButf8Max\fP"
+.br
+.ti -1c
+.RI "cairo_path_t * \fBtextClipPath\fP"
+.br
+.ti -1c
+.RI "GBool \fBinUncoloredPattern\fP"
+.br
+.ti -1c
+.RI "GBool \fBinType3Char\fP"
+.br
+.ti -1c
+.RI "double \fBt3_glyph_wx\fP"
+.br
+.ti -1c
+.RI "double \fBt3_glyph_wy\fP"
+.br
+.ti -1c
+.RI "GBool \fBt3_glyph_has_bbox\fP"
+.br
+.ti -1c
+.RI "double \fBt3_glyph_bbox\fP [4]"
+.br
+.ti -1c
+.RI "cairo_antialias_t \fBantialias\fP"
+.br
+.ti -1c
+.RI "GBool \fBprescaleImages\fP"
+.br
+.ti -1c
+.RI "\fBTextPage\fP * \fBtext\fP"
+.br
+.ti -1c
+.RI "\fBActualText\fP * \fBactualText\fP"
+.br
+.ti -1c
+.RI "cairo_pattern_t * \fBgroup\fP"
+.br
+.ti -1c
+.RI "cairo_pattern_t * \fBshape\fP"
+.br
+.ti -1c
+.RI "cairo_pattern_t * \fBmask\fP"
+.br
+.ti -1c
+.RI "cairo_matrix_t \fBmask_matrix\fP"
+.br
+.ti -1c
+.RI "cairo_surface_t * \fBcairo_shape_surface\fP"
+.br
+.ti -1c
+.RI "cairo_t * \fBcairo_shape\fP"
+.br
+.ti -1c
+.RI "int \fBknockoutCount\fP"
+.br
+.ti -1c
+.RI "struct \fBCairoOutputDev::ColorSpaceStack\fP * \fBgroupColorSpaceStack\fP"
+.br
+.ti -1c
+.RI "struct \fBCairoOutputDev::MaskStack\fP * \fBmaskStack\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBFT_Library\fP \fBft_lib\fP"
+.br
+.ti -1c
+.RI "static GBool \fBft_lib_initialized\fP = gFalse"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 87 of file CairoOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

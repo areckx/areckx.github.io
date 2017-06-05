@@ -1,0 +1,263 @@
+.TH "Ms::Part" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Part
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::ScoreElement\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPart\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "void \fBinitFromInstrTemplate\fP (const \fBInstrumentTemplate\fP *)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "int \fBnstaves\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBStaff\fP * > * \fBstaves\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBStaff\fP * > * \fBstaves\fP () const"
+.br
+.ti -1c
+.RI "\fBStaff\fP * \fBstaff\fP (int idx) const"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (const QString &s)"
+.br
+.ti -1c
+.RI "QString \fBid\fP () const"
+.br
+.ti -1c
+.RI "int \fBstartTrack\fP () const"
+.br
+.ti -1c
+.RI "int \fBendTrack\fP () const"
+.br
+.ti -1c
+.RI "QString \fBlongName\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "QString \fBshortName\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "QString \fBinstrumentName\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "QString \fBinstrumentId\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "const QList< \fBStaffName\fP > & \fBlongNames\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "const QList< \fBStaffName\fP > & \fBshortNames\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "void \fBsetLongNames\fP (QList< \fBStaffName\fP > &s, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBsetShortNames\fP (QList< \fBStaffName\fP > &s, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBsetLongName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetShortName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetPlainLongName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetPlainShortName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetStaves\fP (int)"
+.br
+.ti -1c
+.RI "int \fBvolume\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVolume\fP (int volume)"
+.br
+.ti -1c
+.RI "bool \fBmute\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMute\fP (bool mute)"
+.br
+.ti -1c
+.RI "int \fBreverb\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetReverb\fP (int)"
+.br
+.ti -1c
+.RI "int \fBchorus\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetChorus\fP (int)"
+.br
+.ti -1c
+.RI "int \fBpan\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPan\fP (int pan)"
+.br
+.ti -1c
+.RI "int \fBmidiProgram\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMidiProgram\fP (int, int bank=0)"
+.br
+.ti -1c
+.RI "int \fBmidiChannel\fP () const"
+.br
+.ti -1c
+.RI "int \fBmidiPort\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMidiChannel\fP (int ch, int port=\-1, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBinsertStaff\fP (\fBStaff\fP *, int idx)"
+.br
+.ti -1c
+.RI "void \fBremoveStaff\fP (\fBStaff\fP *)"
+.br
+.ti -1c
+.RI "bool \fBshow\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShow\fP (bool val)"
+.br
+.ti -1c
+.RI "\fBInstrument\fP * \fBinstrument\fP (int tick=\-1)"
+.br
+.ti -1c
+.RI "const \fBInstrument\fP * \fBinstrument\fP (int tick=\-1) const"
+.br
+.ti -1c
+.RI "void \fBsetInstrument\fP (\fBInstrument\fP *, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBsetInstrument\fP (const \fBInstrument\fP &&, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBsetInstrument\fP (const \fBInstrument\fP &, int tick=\-1)"
+.br
+.ti -1c
+.RI "void \fBremoveInstrument\fP (int tick)"
+.br
+.ti -1c
+.RI "const \fBInstrumentList\fP * \fBinstruments\fP () const"
+.br
+.ti -1c
+.RI "void \fBinsertTime\fP (int tick, int len)"
+.br
+.ti -1c
+.RI "QString \fBpartName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPartName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "QVariant \fBgetProperty\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "bool \fBsetProperty\fP (P_ID, const QVariant &) override"
+.br
+.ti -1c
+.RI "int \fBlyricCount\fP ()"
+.br
+.ti -1c
+.RI "int \fBharmonyCount\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasPitchedStaff\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasTabStaff\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasDrumStaff\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBendTrack\fP"
+.br
+.ti -1c
+.RI "int \fBharmonyCount\fP"
+.br
+.ti -1c
+.RI "bool \fBhasDrumStaff\fP"
+.br
+.ti -1c
+.RI "bool \fBhasPitchedStaff\fP"
+.br
+.ti -1c
+.RI "bool \fBhasTabStaff\fP"
+.br
+.ti -1c
+.RI "QString \fBinstrumentId\fP"
+.br
+.ti -1c
+.RI "QString \fBlongName\fP"
+.br
+.ti -1c
+.RI "int \fBlyricCount\fP"
+.br
+.ti -1c
+.RI "int \fBmidiChannel\fP"
+.br
+.ti -1c
+.RI "int \fBmidiProgram\fP"
+.br
+.ti -1c
+.RI "bool \fBmute\fP"
+.br
+.ti -1c
+.RI "QString \fBpartName\fP"
+.br
+.ti -1c
+.RI "QString \fBshortName\fP"
+.br
+.ti -1c
+.RI "bool \fBshow\fP"
+.br
+.ti -1c
+.RI "int \fBstartTrack\fP"
+.br
+.ti -1c
+.RI "int \fBvolume\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 47 of file part\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

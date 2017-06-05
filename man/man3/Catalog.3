@@ -1,0 +1,146 @@
+.TH "Catalog" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Catalog
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMarkInfoFlags\fP { \fBmarkInfoNull\fP = 1 << 0, \fBmarkInfoMarked\fP = 1 << 1, \fBmarkInfoUserProperties\fP = 1 << 2, \fBmarkInfoSuspects\fP = 1 << 3 }"
+.br
+.ti -1c
+.RI "enum \fBFormType\fP { \fBNoForm\fP, \fBAcroForm\fP, \fBXfaForm\fP }"
+.br
+.ti -1c
+.RI "enum \fBPageMode\fP { \fBpageModeNone\fP, \fBpageModeOutlines\fP, \fBpageModeThumbs\fP, \fBpageModeFullScreen\fP, \fBpageModeOC\fP, \fBpageModeAttach\fP, \fBpageModeNull\fP }"
+.br
+.ti -1c
+.RI "enum \fBPageLayout\fP { \fBpageLayoutNone\fP, \fBpageLayoutSinglePage\fP, \fBpageLayoutOneColumn\fP, \fBpageLayoutTwoColumnLeft\fP, \fBpageLayoutTwoColumnRight\fP, \fBpageLayoutTwoPageLeft\fP, \fBpageLayoutTwoPageRight\fP, \fBpageLayoutNull\fP }"
+.br
+.ti -1c
+.RI "enum \fBDocumentAdditionalActionsType\fP { \fBactionCloseDocument\fP, \fBactionSaveDocumentStart\fP, \fBactionSaveDocumentFinish\fP, \fBactionPrintDocumentStart\fP, \fBactionPrintDocumentFinish\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCatalog\fP (\fBPDFDoc\fP *docA)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNumPages\fP ()"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBgetPage\fP (int i)"
+.br
+.ti -1c
+.RI "\fBRef\fP * \fBgetPageRef\fP (int i)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetBaseURI\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBreadMetadata\fP ()"
+.br
+.ti -1c
+.RI "\fBStructTreeRoot\fP * \fBgetStructTreeRoot\fP ()"
+.br
+.ti -1c
+.RI "Guint \fBgetMarkInfo\fP ()"
+.br
+.ti -1c
+.RI "int \fBfindPage\fP (int num, int gen)"
+.br
+.ti -1c
+.RI "\fBLinkDest\fP * \fBfindDest\fP (\fBGooString\fP *name)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetDests\fP ()"
+.br
+.ti -1c
+.RI "int \fBnumEmbeddedFiles\fP ()"
+.br
+.ti -1c
+.RI "\fBFileSpec\fP * \fBembeddedFile\fP (int i)"
+.br
+.ti -1c
+.RI "int \fBnumJS\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetJSName\fP (int i)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetJS\fP (int i)"
+.br
+.ti -1c
+.RI "GBool \fBlabelToIndex\fP (\fBGooString\fP *label, int *index)"
+.br
+.ti -1c
+.RI "GBool \fBindexToLabel\fP (int index, \fBGooString\fP *label)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetOutline\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetAcroForm\fP ()"
+.br
+.ti -1c
+.RI "\fBOCGs\fP * \fBgetOptContentConfig\fP ()"
+.br
+.ti -1c
+.RI "FormType \fBgetFormType\fP ()"
+.br
+.ti -1c
+.RI "\fBForm\fP * \fBgetForm\fP ()"
+.br
+.ti -1c
+.RI "\fBViewerPreferences\fP * \fBgetViewerPreferences\fP ()"
+.br
+.ti -1c
+.RI "PageMode \fBgetPageMode\fP ()"
+.br
+.ti -1c
+.RI "PageLayout \fBgetPageLayout\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkAction\fP * \fBgetAdditionalAction\fP (\fBDocumentAdditionalActionsType\fP type)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 103 of file Catalog\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBCatalog::DocumentAdditionalActionsType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIactionCloseDocument \fP\fP
+Performed before closing the document\&. 
+.TP
+\fB\fIactionSaveDocumentStart \fP\fP
+Performed before saving the document\&. 
+.TP
+\fB\fIactionSaveDocumentFinish \fP\fP
+Performed after saving the document\&. 
+.TP
+\fB\fIactionPrintDocumentStart \fP\fP
+Performed before printing the document\&. 
+.TP
+\fB\fIactionPrintDocumentFinish \fP\fP
+Performed after printing the document\&. 
+.PP
+Definition at line 212 of file Catalog\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

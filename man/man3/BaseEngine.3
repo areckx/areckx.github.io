@@ -1,0 +1,73 @@
+.TH "BaseEngine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+BaseEngine \- base class for all animation engines  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <baseengine\&.h>\fP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBComboBoxEngine\fP, \fBDockSeparatorEngine\fP, \fBHeaderViewEngine\fP, \fBLabelEngine\fP, \fBLineEditEngine\fP, \fBMdiWindowEngine\fP, \fBMenuBarBaseEngine\fP, \fBMenuBaseEngine\fP, \fBProgressBarEngine\fP, \fBScrollBarEngine\fP, \fBSliderEngine\fP, \fBSpinBoxEngine\fP, \fBSplitterEngine\fP, \fBStackedWidgetEngine\fP, \fBTabBarEngine\fP, \fBToolBarEngine\fP, \fBToolBoxEngine\fP, and \fBWidgetStateEngine\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef QPointer< \fBBaseEngine\fP > \fBPointer\fP"
+.br
+.ti -1c
+.RI "typedef QSet< QWidget * > \fBWidgetList\fP"
+.br
+.RI "list of widgets "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBaseEngine\fP (QObject *parent)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~BaseEngine\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual void \fBsetEnabled\fP (bool value)"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual bool \fBenabled\fP (void) const"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int value)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual int \fBduration\fP (void) const"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual bool \fBunregisterWidget\fP (QObject *object)=0"
+.br
+.RI "unregister widget "
+.ti -1c
+.RI "virtual \fBWidgetList\fP \fBregisteredWidgets\fP (void) const"
+.br
+.RI "returns registered widgets "
+.in -1c
+.SH "Detailed Description"
+.PP 
+base class for all animation engines 
+
+it is used to store configuration values used by all animations stored in the engine 
+.PP
+Definition at line 32 of file baseengine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

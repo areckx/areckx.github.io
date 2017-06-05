@@ -1,0 +1,27 @@
+var class_ui___time_dialog_base =
+[
+    [ "retranslateUi", "class_ui___time_dialog_base.html#aae192d6377e48639a744b4fe6aefe585", null ],
+    [ "setupUi", "class_ui___time_dialog_base.html#afebe24141a09b42fcbc7f75471c8f442", null ],
+    [ "addButton", "class_ui___time_dialog_base.html#a900fc9f9e168717df31a8522022b480e", null ],
+    [ "frame", "class_ui___time_dialog_base.html#a885abf2f9aa33951bc0d1fa4761c6de6", null ],
+    [ "groupBox", "class_ui___time_dialog_base.html#a41b23d096b08a5c57753482fa778104a", null ],
+    [ "groups", "class_ui___time_dialog_base.html#a07ff405fb28c5251e5cfb369027c2d74", null ],
+    [ "horizontalLayout", "class_ui___time_dialog_base.html#a1555904032eb5c62ea4b6b293fe4c89c", null ],
+    [ "horizontalLayout_2", "class_ui___time_dialog_base.html#ae00e0c33104ae7ae1614d7aef9ab5b56", null ],
+    [ "horizontalLayout_3", "class_ui___time_dialog_base.html#ab5232fb18689f7941291ab679b1f36a2", null ],
+    [ "horizontalLayout_4", "class_ui___time_dialog_base.html#a7324f5b2c93be59c3022e1ec54eb3458", null ],
+    [ "horizontalSpacer", "class_ui___time_dialog_base.html#a85277c60aa95c8b584eecfd6bd389b7d", null ],
+    [ "horizontalSpacer_2", "class_ui___time_dialog_base.html#a87a581b81cd9a8f306c82974e53b2acb", null ],
+    [ "label_3", "class_ui___time_dialog_base.html#a7a24b6c33a0a43a82fb1f2571e4167af", null ],
+    [ "label_7", "class_ui___time_dialog_base.html#a476dcea100a95ad8fd521fb4994d6fe8", null ],
+    [ "label_8", "class_ui___time_dialog_base.html#a4ef2fcabf18b64b168412006ea22b158", null ],
+    [ "label_9", "class_ui___time_dialog_base.html#a67b9f512f931225bd6f09da2fa2a8119", null ],
+    [ "nNominal", "class_ui___time_dialog_base.html#a057e6b8c601777a3cd386e9cb502633a", null ],
+    [ "nText", "class_ui___time_dialog_base.html#a0cc3350ef6db728877bf739016edca19", null ],
+    [ "splitter", "class_ui___time_dialog_base.html#a171dc55467bd9ff61dc1bb0a980b305e", null ],
+    [ "verticalLayout", "class_ui___time_dialog_base.html#a1d89bdc9ad4b2ab6ba749475a939a6d9", null ],
+    [ "verticalLayout_2", "class_ui___time_dialog_base.html#a890f554a9ca81e1458118552422b12dd", null ],
+    [ "verticalSpacer", "class_ui___time_dialog_base.html#aa29f20889b5d7513299b1deab999f995", null ],
+    [ "zNominal", "class_ui___time_dialog_base.html#a9f17c93bf6f0b144ca0eb70e669a4caa", null ],
+    [ "zText", "class_ui___time_dialog_base.html#a8f826a2dbb0026da404544706f1949c0", null ]
+];

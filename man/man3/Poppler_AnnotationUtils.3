@@ -1,0 +1,54 @@
+.TH "Poppler::AnnotationUtils" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::AnnotationUtils \- Helper class for (recursive) \fBAnnotation\fP retrieval/storage\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-annotation\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBAnnotation\fP * \fBcreateAnnotation\fP (const QDomElement &annElement)"
+.br
+.ti -1c
+.RI "static void \fBstoreAnnotation\fP (const \fBAnnotation\fP *ann, QDomElement &annElement, QDomDocument &document)"
+.br
+.ti -1c
+.RI "static QDomElement \fBfindChildElement\fP (const QDomNode &parentNode, const QString &name)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Helper class for (recursive) \fBAnnotation\fP retrieval/storage\&. 
+.PP
+Definition at line 73 of file poppler\-annotation\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAnnotation\fP * Poppler::AnnotationUtils::createAnnotation (const QDomElement & annElement)\fC [static]\fP"
+Restore an \fBAnnotation\fP (with revisions if needed) from the DOM element \fCannElement\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to the complete \fBAnnotation\fP or 0 if element is invalid\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file poppler\-annotation\&.cc\&.
+.SS "QDomElement Poppler::AnnotationUtils::findChildElement (const QDomNode & parentNode, const QString & name)\fC [static]\fP"
+Returns an element called \fCname\fP from the direct children of \fCparentNode\fP or a null element if not found\&. 
+.PP
+Definition at line 106 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::AnnotationUtils::storeAnnotation (const \fBAnnotation\fP * ann, QDomElement & annElement, QDomDocument & document)\fC [static]\fP"
+Save the \fBAnnotation\fP \fCann\fP as a child of \fCannElement\fP taking care of saving all revisions if \fCann\fP has any\&. 
+.PP
+Definition at line 96 of file poppler\-annotation\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,55 @@
+.TH "dsa_method" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+dsa_method
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.ti -1c
+.RI "\fBDSA_SIG\fP *(* \fBdsa_do_sign\fP )(const unsigned char *dgst, int dlen, \fBDSA\fP *dsa)"
+.br
+.ti -1c
+.RI "int(* \fBdsa_sign_setup\fP )(\fBDSA\fP *dsa, BN_CTX *ctx_in, \fBBIGNUM\fP **kinvp, \fBBIGNUM\fP **rp)"
+.br
+.ti -1c
+.RI "int(* \fBdsa_do_verify\fP )(const unsigned char *dgst, int dgst_len, \fBDSA_SIG\fP *sig, \fBDSA\fP *dsa)"
+.br
+.ti -1c
+.RI "int(* \fBdsa_mod_exp\fP )(\fBDSA\fP *dsa, \fBBIGNUM\fP *rr, \fBBIGNUM\fP *a1, \fBBIGNUM\fP *p1, \fBBIGNUM\fP *a2, \fBBIGNUM\fP *p2, \fBBIGNUM\fP *m, BN_CTX *ctx, \fBBN_MONT_CTX\fP *in_mont)"
+.br
+.ti -1c
+.RI "int(* \fBbn_mod_exp\fP )(\fBDSA\fP *dsa, \fBBIGNUM\fP *r, \fBBIGNUM\fP *a, const \fBBIGNUM\fP *p, const \fBBIGNUM\fP *m, BN_CTX *ctx, \fBBN_MONT_CTX\fP *m_ctx)"
+.br
+.ti -1c
+.RI "int(* \fBinit\fP )(\fBDSA\fP *dsa)"
+.br
+.ti -1c
+.RI "int(* \fBfinish\fP )(\fBDSA\fP *dsa)"
+.br
+.ti -1c
+.RI "int \fBflags\fP"
+.br
+.ti -1c
+.RI "char * \fBapp_data\fP"
+.br
+.ti -1c
+.RI "int(* \fBdsa_paramgen\fP )(\fBDSA\fP *dsa, int bits, const unsigned char *seed, int seed_len, int *counter_ret, unsigned long *h_ret, \fBBN_GENCB\fP *cb)"
+.br
+.ti -1c
+.RI "int(* \fBdsa_keygen\fP )(\fBDSA\fP *dsa)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 129 of file dsa\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

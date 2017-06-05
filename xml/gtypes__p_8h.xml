@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="gtypes__p_8h" kind="file" language="C++">
+    <compoundname>gtypes_p.h</compoundname>
+    <includes local="yes">config.h</includes>
+    <includedby refid="_cairo_output_dev_8cc" local="yes">thirdparty/poppler/poppler/CairoOutputDev.cc</includedby>
+    <includedby refid="_cairo_rescale_box_8cc" local="yes">thirdparty/poppler/poppler/CairoRescaleBox.cc</includedby>
+    <includedby refid="_decrypt_8cc" local="yes">thirdparty/poppler/poppler/Decrypt.cc</includedby>
+    <incdepgraph>
+      <node id="85167">
+        <label>thirdparty/poppler/goo/gtypes_p.h</label>
+        <link refid="gtypes__p_8h"/>
+        <childnode refid="85168" relation="include">
+        </childnode>
+      </node>
+      <node id="85168">
+        <label>config.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="85172">
+        <label>thirdparty/poppler/poppler/Decrypt.cc</label>
+        <link refid="_decrypt_8cc_source"/>
+      </node>
+      <node id="85170">
+        <label>thirdparty/poppler/poppler/CairoOutputDev.cc</label>
+        <link refid="_cairo_output_dev_8cc_source"/>
+      </node>
+      <node id="85171">
+        <label>thirdparty/poppler/poppler/CairoRescaleBox.cc</label>
+        <link refid="_cairo_rescale_box_8cc_source"/>
+      </node>
+      <node id="85169">
+        <label>thirdparty/poppler/goo/gtypes_p.h</label>
+        <link refid="gtypes__p_8h"/>
+        <childnode refid="85170" relation="include">
+        </childnode>
+        <childnode refid="85171" relation="include">
+        </childnode>
+        <childnode refid="85172" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>gtypes_p.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Some<sp/>useful<sp/>simple<sp/>types.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2011<sp/>Adrian<sp/>Johnson<sp/>&lt;ajohnson@redneon.com&gt;</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GTYPES_P_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GTYPES_P_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Define<sp/>precise<sp/>integer<sp/>types.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>HAVE_STDINT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>_MSC_VER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/><sp/><sp/>__int8<sp/><sp/>int8_t;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>__int8<sp/><sp/>uint8_t;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/><sp/><sp/>__int16<sp/>int16_t;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>__int16<sp/>uint16_t;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/><sp/><sp/>__int32<sp/>int32_t;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>__int32<sp/>uint32_t;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/><sp/><sp/>__int64<sp/>int64_t;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>__int64<sp/>uint64_t;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/goo/gtypes_p.h"/>
+  </compounddef>
+</doxygen>

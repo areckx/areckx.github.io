@@ -1,0 +1,26 @@
+var class_poppler_1_1_annotation_1_1_style =
+[
+    [ "Private", "class_poppler_1_1_annotation_1_1_style_1_1_private.html", "class_poppler_1_1_annotation_1_1_style_1_1_private" ],
+    [ "Style", "class_poppler_1_1_annotation_1_1_style.html#a8b12db159156c3a8adbc17430a620f61", null ],
+    [ "Style", "class_poppler_1_1_annotation_1_1_style.html#a2dc6eadc31c07133ebbbb6dfb9670f32", null ],
+    [ "~Style", "class_poppler_1_1_annotation_1_1_style.html#a392145ae08363af3c864a1bc2d0bd2f2", null ],
+    [ "color", "class_poppler_1_1_annotation_1_1_style.html#a07c78e81bcf32244285c7ec87455aad2", null ],
+    [ "dashArray", "class_poppler_1_1_annotation_1_1_style.html#a21bf02baf26276d6e82149f88e103781", null ],
+    [ "effectIntensity", "class_poppler_1_1_annotation_1_1_style.html#a094e9654caf019eefb7cc59e97450b63", null ],
+    [ "lineEffect", "class_poppler_1_1_annotation_1_1_style.html#aad64a05001aa9b8c282a1321f73c0c95", null ],
+    [ "lineStyle", "class_poppler_1_1_annotation_1_1_style.html#ac796baa8a38935a5c185384de0962a22", null ],
+    [ "opacity", "class_poppler_1_1_annotation_1_1_style.html#a9a9541f3a9730a333cb38be2d9c262bb", null ],
+    [ "operator=", "class_poppler_1_1_annotation_1_1_style.html#a9a6c31016f7ee69790bee86410c0b716", null ],
+    [ "setColor", "class_poppler_1_1_annotation_1_1_style.html#a894900de6696ebc17c92e03131dd7332", null ],
+    [ "setDashArray", "class_poppler_1_1_annotation_1_1_style.html#ab105066daf607068e600283d4346d0e1", null ],
+    [ "setEffectIntensity", "class_poppler_1_1_annotation_1_1_style.html#a92c0de0a9bfd758551b36cfefaaf06c0", null ],
+    [ "setLineEffect", "class_poppler_1_1_annotation_1_1_style.html#a0d3e63738af68ede27bf3e1b5c5cb668", null ],
+    [ "setLineStyle", "class_poppler_1_1_annotation_1_1_style.html#a576f2ab70d887166bf3e79392a4cd4f8", null ],
+    [ "setOpacity", "class_poppler_1_1_annotation_1_1_style.html#a6e0186e58416f5aa70f91935178ca776", null ],
+    [ "setWidth", "class_poppler_1_1_annotation_1_1_style.html#a8de78336675ff7dfead25c28da73e263", null ],
+    [ "setXCorners", "class_poppler_1_1_annotation_1_1_style.html#aedf08b67ca2d5f635c85bd4fc4e3e271", null ],
+    [ "setYCorners", "class_poppler_1_1_annotation_1_1_style.html#a39feb63654fd36b988142495b42eced2", null ],
+    [ "width", "class_poppler_1_1_annotation_1_1_style.html#ab75e41db85b9c7ec0de30845245cd37a", null ],
+    [ "xCorners", "class_poppler_1_1_annotation_1_1_style.html#aafb6ec7f0a027902d72cb4c6b8724178", null ],
+    [ "yCorners", "class_poppler_1_1_annotation_1_1_style.html#a94760c0851c9a6aa907b01e49b4b0c2a", null ]
+];

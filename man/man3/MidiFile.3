@@ -1,0 +1,104 @@
+.TH "MidiFile" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MidiFile
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBread\fP (const QString &path)"
+.br
+.ti -1c
+.RI "bool \fBread\fP (QIODevice *)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (const QString &path)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (QIODevice *)"
+.br
+.ti -1c
+.RI "const std::list< \fBMidiTrack\fP * > & \fBtracks\fP () const"
+.br
+.ti -1c
+.RI "std::list< \fBMidiTrack\fP * > & \fBtracks\fP ()"
+.br
+.ti -1c
+.RI "int \fBformat\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFormat\fP (int fmt)"
+.br
+.ti -1c
+.RI "int \fBdivision\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDivision\fP (int val)"
+.br
+.ti -1c
+.RI "const \fBTempoMap\fP & \fBtempoMap\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBread\fP (void *, qint64)"
+.br
+.ti -1c
+.RI "int \fBgetvl\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadShort\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadLong\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadEvent\fP (\fBMidiEvent\fP *)"
+.br
+.ti -1c
+.RI "bool \fBreadTrack\fP ()"
+.br
+.ti -1c
+.RI "void \fBskip\fP (qint64)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (const void *, qint64)"
+.br
+.ti -1c
+.RI "void \fBwriteShort\fP (int)"
+.br
+.ti -1c
+.RI "void \fBwriteLong\fP (int)"
+.br
+.ti -1c
+.RI "bool \fBwriteTrack\fP (const \fBMidiTrack\fP *)"
+.br
+.ti -1c
+.RI "void \fBwriteEvent\fP (const \fBMidiEvent\fP &)"
+.br
+.ti -1c
+.RI "void \fBputvl\fP (unsigned)"
+.br
+.ti -1c
+.RI "void \fBput\fP (unsigned char c)"
+.br
+.ti -1c
+.RI "void \fBwriteStatus\fP (MidiEventType, int channel)"
+.br
+.ti -1c
+.RI "void \fBresetRunningStatus\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 46 of file midifile\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

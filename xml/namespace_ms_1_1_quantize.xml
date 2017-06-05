@@ -1,0 +1,1162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_ms_1_1_quantize" kind="namespace" language="C++">
+    <compoundname>Ms::Quantize</compoundname>
+    <innerclass refid="struct_ms_1_1_quantize_1_1_quant_data" prot="public">Ms::Quantize::QuantData</innerclass>
+    <innerclass refid="struct_ms_1_1_quantize_1_1_quant_info" prot="public">Ms::Quantize::QuantInfo</innerclass>
+    <innerclass refid="struct_ms_1_1_quantize_1_1_quant_pos" prot="public">Ms::Quantize::QuantPos</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="importmidi__operations_8h_1a5efc2ab7c3e9c0c652a9ca36fea7186f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MidiOperations::QuantValue</type>
+        <definition>MidiOperations::QuantValue Ms::Quantize::defaultQuantValueFromPreferences</definition>
+        <argsstring>()</argsstring>
+        <name>defaultQuantValueFromPreferences</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_operations.h" line="17" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a9b926620c265bcf79a4e573ecd169582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantValueToFraction</definition>
+        <argsstring>(MidiOperations::QuantValue quantValue)</argsstring>
+        <name>quantValueToFraction</name>
+        <param>
+          <type>MidiOperations::QuantValue</type>
+          <declname>quantValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="25" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="25" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a89354854b7b0920a07555ba973fd8e0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>MidiOperations::QuantValue</type>
+        <definition>MidiOperations::QuantValue Ms::Quantize::fractionToQuantValue</definition>
+        <argsstring>(const ReducedFraction &amp;fraction)</argsstring>
+        <name>fractionToQuantValue</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>fraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="57" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="57" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1ad7a80216627ebd8b66b8d407f461f62e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::shortestQuantizedNoteInRange</definition>
+        <argsstring>(const std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &amp;beg, const std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &amp;end)</argsstring>
+        <name>shortestQuantizedNoteInRange</name>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &amp;</type>
+          <declname>beg</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &amp;</type>
+          <declname>end</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="89" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="89" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1ab8b86caa7fbb3c7dbc6256a121b11910" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::reduceQuantIfDottedNote</definition>
+        <argsstring>(const ReducedFraction &amp;noteLen, const ReducedFraction &amp;raster)</argsstring>
+        <name>reduceQuantIfDottedNote</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>noteLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>raster</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="110" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="110" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1acf6350414394a1e6b7591caf95ea085f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantizeValue</definition>
+        <argsstring>(const ReducedFraction &amp;value, const ReducedFraction &amp;quant)</argsstring>
+        <name>quantizeValue</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>quant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="121" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="121" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a64fc5ef4c3656448ac46379da86b729e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantForLen</definition>
+        <argsstring>(const ReducedFraction &amp;noteLen, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>quantForLen</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>noteLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="133" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="133" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a567dd1a07584ef6470baf8d0d37b005b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantForTuplet</definition>
+        <argsstring>(const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio)</argsstring>
+        <name>quantForTuplet</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="146" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="146" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a2e87c7dd7c5401c2b4594bbc5d9e1659" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findMinQuant</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findMinQuant</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="160" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="160" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a3da73ef7d622008910b9acaa4af395ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findQuantizedTupletChordOnTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio, const ReducedFraction &amp;rangeStart)</argsstring>
+        <name>findQuantizedTupletChordOnTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="173" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="173" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1adff01d7c51dc30e553b1a863bb4ff071" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findQuantizedChordOnTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findQuantizedChordOnTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="185" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="185" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1addd43218ab9b34b1a84bc0a29d4042cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &gt;</type>
+        <definition>std::pair&lt; ReducedFraction, ReducedFraction &gt; Ms::Quantize::findQuantizedTupletNoteOffTime</definition>
+        <argsstring>(const ReducedFraction &amp;onTime, const ReducedFraction &amp;offTime, const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio, const ReducedFraction &amp;rangeStart)</argsstring>
+        <name>findQuantizedTupletNoteOffTime</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>onTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>offTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="194" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="194" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a44dcb80da760cad025feba1ff1afd04a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &gt;</type>
+        <definition>std::pair&lt; ReducedFraction, ReducedFraction &gt; Ms::Quantize::findQuantizedNoteOffTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;offTime, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findQuantizedNoteOffTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>offTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="222" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="222" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a609b1d438fb2f9f7b87c8c635905d453" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findMinQuantizedOnTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findMinQuantizedOnTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="244" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="244" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a4fe2c70a90b64ca32a7043fa3c4b3271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findMaxQuantizedTupletOffTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio, const ReducedFraction &amp;rangeStart)</argsstring>
+        <name>findMaxQuantizedTupletOffTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="258" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="258" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a022b5ba83c338e16e3024481ad0d55a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findMaxQuantizedOffTime</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findMaxQuantizedOffTime</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="276" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="276" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a23a36676fde03cbbe01111e86378f09b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findOnTimeTupletQuantError</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio, const ReducedFraction &amp;rangeStart)</argsstring>
+        <name>findOnTimeTupletQuantError</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="289" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="289" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a6fbdd8b821d830919e51ce36661b9cbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findOnTimeQuantError</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findOnTimeQuantError</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="300" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="300" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a92d5db4fd475c2146b7a62ef48284bac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findOffTimeTupletQuantError</definition>
+        <argsstring>(const ReducedFraction &amp;onTime, const ReducedFraction &amp;offTime, const ReducedFraction &amp;tupletLen, const ReducedFraction &amp;tupletRatio, const ReducedFraction &amp;rangeStart)</argsstring>
+        <name>findOffTimeTupletQuantError</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>onTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>offTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletLen</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletRatio</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="308" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="308" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1ad1e2df58c082007362abb3808c5e8118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findOffTimeQuantError</definition>
+        <argsstring>(const std::pair&lt; const ReducedFraction, MidiChord &gt; &amp;chord, const ReducedFraction &amp;offTime, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findOffTimeQuantError</name>
+        <param>
+          <type>const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chord</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>offTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="320" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="320" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1ab5633869a31aa4893416f9e44f4f9a32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findQuantForRange</definition>
+        <argsstring>(const std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &amp;beg, const std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &amp;end, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>findQuantForRange</name>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &amp;</type>
+          <declname>beg</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &amp;</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="329" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="329" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1af2337adf87a35f506493e37279fdee23" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Quantize::isHumanPerformance</definition>
+        <argsstring>(const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, const TimeSigMap *sigmap)</argsstring>
+        <name>isHumanPerformance</name>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_time_sig_map" kindref="compound">TimeSigMap</ref> *</type>
+          <declname>sigmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="340" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="340" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a9d3e7947f7c9de6d4968c1ea65a30529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::multimap&lt; int, <ref refid="class_ms_1_1_m_track" kindref="compound">MTrack</ref> &gt;</type>
+        <definition>std::multimap&lt;int, MTrack&gt; Ms::Quantize::getTrackWithAllChords</definition>
+        <argsstring>(const std::multimap&lt; int, MTrack &gt; &amp;tracks)</argsstring>
+        <name>getTrackWithAllChords</name>
+        <param>
+          <type>const std::multimap&lt; int, <ref refid="class_ms_1_1_m_track" kindref="compound">MTrack</ref> &gt; &amp;</type>
+          <declname>tracks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="381" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="381" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a00e27e5f6ffbe50009304d699f135b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::setIfHumanPerformance</definition>
+        <argsstring>(const std::multimap&lt; int, MTrack &gt; &amp;tracks, TimeSigMap *sigmap)</argsstring>
+        <name>setIfHumanPerformance</name>
+        <param>
+          <type>const std::multimap&lt; int, <ref refid="class_ms_1_1_m_track" kindref="compound">MTrack</ref> &gt; &amp;</type>
+          <declname>tracks</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_time_sig_map" kindref="compound">TimeSigMap</ref> *</type>
+          <declname>sigmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="394" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="394" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a6e8d85bc19b4d4221f01371bf02c6f07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::preserveLegato</definition>
+        <argsstring>(ReducedFraction &amp;offTime, bool isOffTimeInTuplet, const std::multimap&lt; ReducedFraction, MidiChord &gt;::iterator &amp;chordIt, const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>preserveLegato</name>
+        <param>
+          <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>offTime</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isOffTimeInTuplet</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::iterator &amp;</type>
+          <declname>chordIt</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="423" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="423" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a4baece26df22546d7b1d1da048ceb1ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &gt;</type>
+        <definition>std::pair&lt;ReducedFraction, ReducedFraction&gt; Ms::Quantize::quantizeOffTimeForTuplet</definition>
+        <argsstring>(const ReducedFraction &amp;noteOffTime, const std::multimap&lt; ReducedFraction, MidiChord &gt;::iterator &amp;chordIt, const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, const ReducedFraction &amp;basicQuant, const MidiTuplet::TupletData &amp;tuplet)</argsstring>
+        <name>quantizeOffTimeForTuplet</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>noteOffTime</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::iterator &amp;</type>
+          <declname>chordIt</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_ms_1_1_midi_tuplet_1_1_tuplet_data" kindref="compound">MidiTuplet::TupletData</ref> &amp;</type>
+          <declname>tuplet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="453" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="453" bodyend="483"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a6b77bd81400ab1c8f38cd18a4e75a94c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &gt;</type>
+        <definition>std::pair&lt;ReducedFraction, ReducedFraction&gt; Ms::Quantize::quantizeOffTimeForNonTuplet</definition>
+        <argsstring>(const ReducedFraction &amp;noteOffTime, const std::multimap&lt; ReducedFraction, MidiChord &gt;::iterator &amp;chordIt, const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>quantizeOffTimeForNonTuplet</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>noteOffTime</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::iterator &amp;</type>
+          <declname>chordIt</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="486" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="486" bodyend="534"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a75004bd1b676dcf10696ce037b0859b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantizeToLarge</definition>
+        <argsstring>(const ReducedFraction &amp;time, const ReducedFraction &amp;quant)</argsstring>
+        <name>quantizeToLarge</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>quant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="750" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="750" bodyend="759"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a5d49640936518adac8a94e3b497a0481" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::quantizeToSmall</definition>
+        <argsstring>(const ReducedFraction &amp;time, const ReducedFraction &amp;quant)</argsstring>
+        <name>quantizeToSmall</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>quant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="761" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="761" bodyend="770"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a592bc1216a91b97545eb194456908df8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::findMetricalLevels</definition>
+        <argsstring>(std::vector&lt; QuantData &gt; &amp;data, const std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chords, const ReducedFraction &amp;tupletQuant, const ReducedFraction &amp;barStart, const ReducedFraction &amp;barFraction)</argsstring>
+        <name>findMetricalLevels</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barFraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="772" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="772" bodyend="813"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1af2355732d7f79f6d520653f9f4d3d685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::findChordRangeEnds</definition>
+        <argsstring>(std::vector&lt; QuantData &gt; &amp;data, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;rangeEnd, const ReducedFraction &amp;barStart, const ReducedFraction &amp;beatLen)</argsstring>
+        <name>findChordRangeEnds</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>beatLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="815" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="815" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a6040cad09cd22e855359a9ffe0fe8dc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::findChordRangeStarts</definition>
+        <argsstring>(std::vector&lt; QuantData &gt; &amp;data, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;rangeEnd, const ReducedFraction &amp;barStart, const ReducedFraction &amp;beatLen)</argsstring>
+        <name>findChordRangeStarts</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>beatLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="861" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="861" bodyend="912"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a2306166f0779091af451f11164dbb69b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::findQuants</definition>
+        <argsstring>(std::vector&lt; QuantData &gt; &amp;data, const std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chords, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;rangeEnd, const ReducedFraction &amp;basicQuant, const ReducedFraction &amp;tupletQuant, const ReducedFraction &amp;barFraction)</argsstring>
+        <name>findQuants</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>tupletQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barFraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="914" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="914" bodyend="956"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a7a10da3e39d453869ef8887b858b0d1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Quantize::findTupletQuant</definition>
+        <argsstring>(const std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chords)</argsstring>
+        <name>findTupletQuant</name>
+        <param>
+          <type>const std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="958" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="958" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a829f9bd51d215c37b77f1b2ec293504f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt;</type>
+        <definition>std::vector&lt;QuantData&gt; Ms::Quantize::findQuantData</definition>
+        <argsstring>(const std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chords, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;rangeEnd, const ReducedFraction &amp;basicQuant, const ReducedFraction &amp;barStart, const ReducedFraction &amp;barFraction)</argsstring>
+        <name>findQuantData</name>
+        <param>
+          <type>const std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barFraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="971" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="971" bodyend="992"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a0b361e2ab87e9ce84cdff28a9efb7046" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Quantize::findLastChordPosition</definition>
+        <argsstring>(const std::vector&lt; QuantData &gt; &amp;quantData)</argsstring>
+        <name>findLastChordPosition</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>quantData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1000" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1000" bodyend="1016"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1ace266d2f8bcd3884d9164461c7acbb3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::applyDynamicProgramming</definition>
+        <argsstring>(std::vector&lt; QuantData &gt; &amp;quantData)</argsstring>
+        <name>applyDynamicProgramming</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_ms_1_1_quantize_1_1_quant_data" kindref="compound">QuantData</ref> &gt; &amp;</type>
+          <declname>quantData</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1018" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1018" bodyend="1077"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1aba58813d43fd35cae3610dc8ba7171b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::quantizeOnTimesInRange</definition>
+        <argsstring>(const std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chords, std::map&lt; const std::pair&lt; const ReducedFraction, MidiChord &gt; *, QuantInfo &gt; &amp;foundOnTimes, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;rangeEnd, const ReducedFraction &amp;basicQuant, const ReducedFraction &amp;barStart, const ReducedFraction &amp;barFraction)</argsstring>
+        <name>quantizeOnTimesInRange</name>
+        <param>
+          <type>const std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>std::map&lt; const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; *, <ref refid="struct_ms_1_1_quantize_1_1_quant_info" kindref="compound">QuantInfo</ref> &gt; &amp;</type>
+          <declname>foundOnTimes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeEnd</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barFraction</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1079" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1079" bodyend="1142"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a4d09839f7ba0423aeee0a51038c38632" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::applyTupletStaccato</definition>
+        <argsstring>(std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords)</argsstring>
+        <name>applyTupletStaccato</name>
+        <param>
+          <type>std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1146" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1146" bodyend="1159"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a695dacfcadbed95fabe5449faa415d71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::quantizeOffTimes</definition>
+        <argsstring>(std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;quantizedChords, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>quantizeOffTimes</name>
+        <param>
+          <type>std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>quantizedChords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1161" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1161" bodyend="1187"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a5464121ecc0d21b3c7c54199c546fa53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::addChordsFromPrevRange</definition>
+        <argsstring>(std::deque&lt; std::multimap&lt; ReducedFraction, MidiChord &gt;::const_iterator &gt; &amp;chordsToQuant, const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, bool currentlyInTuplet, int currentBarIndex, int voice, const ReducedFraction &amp;barStart, const ReducedFraction &amp;rangeStart, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>addChordsFromPrevRange</name>
+        <param>
+          <type>std::deque&lt; std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;::const_iterator &gt; &amp;</type>
+          <declname>chordsToQuant</declname>
+        </param>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>currentlyInTuplet</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>currentBarIndex</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>voice</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>barStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>rangeStart</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1189" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1189" bodyend="1231"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a1f66240d163ff22b6509498c2fbe1ebc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::quantizeOnTimes</definition>
+        <argsstring>(const std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, std::map&lt; const std::pair&lt; const ReducedFraction, MidiChord &gt; *, QuantInfo &gt; &amp;foundOnTimes, const ReducedFraction &amp;basicQuant, const TimeSigMap *sigmap)</argsstring>
+        <name>quantizeOnTimes</name>
+        <param>
+          <type>const std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>std::map&lt; const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; *, <ref refid="struct_ms_1_1_quantize_1_1_quant_info" kindref="compound">QuantInfo</ref> &gt; &amp;</type>
+          <declname>foundOnTimes</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_time_sig_map" kindref="compound">TimeSigMap</ref> *</type>
+          <declname>sigmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1233" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1233" bodyend="1315"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a059b8b642123355966ebc32e6741aa29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::moveOffTimes</definition>
+        <argsstring>(const ReducedFraction &amp;oldOnTime, const ReducedFraction &amp;newOnTime, QList&lt; MidiNote &gt; &amp;notes)</argsstring>
+        <name>moveOffTimes</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>oldOnTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>newOnTime</declname>
+        </param>
+        <param>
+          <type>QList&lt; <ref refid="class_ms_1_1_midi_note" kindref="compound">MidiNote</ref> &gt; &amp;</type>
+          <declname>notes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1320" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1320" bodyend="1336"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a9fdaa1230479451073a09fbab776e092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt;</type>
+        <definition>std::multimap&lt;ReducedFraction, MidiChord&gt; Ms::Quantize::findQuantizedChords</definition>
+        <argsstring>(const std::map&lt; const std::pair&lt; const ReducedFraction, MidiChord &gt; *, QuantInfo &gt; &amp;foundOnTimes)</argsstring>
+        <name>findQuantizedChords</name>
+        <param>
+          <type>const std::map&lt; const std::pair&lt; const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; *, <ref refid="struct_ms_1_1_quantize_1_1_quant_info" kindref="compound">QuantInfo</ref> &gt; &amp;</type>
+          <declname>foundOnTimes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1339" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1339" bodyend="1381"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1a8da9b780a6463d09cb25f41f5555b8b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::removeUselessTupletReferences</definition>
+        <argsstring>(std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords)</argsstring>
+        <name>removeUselessTupletReferences</name>
+        <param>
+          <type>std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1383" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1383" bodyend="1399"/>
+      </memberdef>
+      <memberdef kind="function" id="importmidi__quant_8cpp_1afa60d6140b169ca15439645e915a534e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Quantize::quantizeChords</definition>
+        <argsstring>(std::multimap&lt; ReducedFraction, MidiChord &gt; &amp;chords, const TimeSigMap *sigmap, const ReducedFraction &amp;basicQuant)</argsstring>
+        <name>quantizeChords</name>
+        <param>
+          <type>std::multimap&lt; <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref>, <ref refid="class_ms_1_1_midi_chord" kindref="compound">MidiChord</ref> &gt; &amp;</type>
+          <declname>chords</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_time_sig_map" kindref="compound">TimeSigMap</ref> *</type>
+          <declname>sigmap</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref> &amp;</type>
+          <declname>basicQuant</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_quant.cpp" line="1401" column="1" bodyfile="mscore/importmidi/importmidi_quant.cpp" bodystart="1401" bodyend="1430"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mscore/importmidi/importmidi_operations.h" line="16" column="1"/>
+  </compounddef>
+</doxygen>

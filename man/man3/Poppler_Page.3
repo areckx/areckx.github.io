@@ -1,0 +1,695 @@
+.TH "Poppler::Page" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::Page \- A page in a document\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRotation\fP { \fBRotate0\fP = 0, \fBRotate90\fP = 1, \fBRotate180\fP = 2, \fBRotate270\fP = 3 }"
+.br
+.ti -1c
+.RI "enum \fBPageAction\fP { \fBOpening\fP, \fBClosing\fP }"
+.br
+.ti -1c
+.RI "enum \fBTextLayout\fP { \fBPhysicalLayout\fP, \fBRawOrderLayout\fP }"
+.br
+.ti -1c
+.RI "enum \fBPainterFlag\fP { \fBDontSaveAndRestore\fP = 0x00000001 }"
+.br
+.ti -1c
+.RI "enum \fBSearchDirection\fP { \fBFromTop\fP, \fBNextResult\fP, \fBPreviousResult\fP }"
+.br
+.ti -1c
+.RI "enum \fBSearchMode\fP { \fBCaseSensitive\fP, \fBCaseInsensitive\fP }"
+.br
+.ti -1c
+.RI "enum \fBSearchFlag\fP { \fBIgnoreCase\fP = 0x00000001, \fBWholeWords\fP = 0x00000002 }"
+.br
+.ti -1c
+.RI "enum \fBOrientation\fP { \fBLandscape\fP, \fBPortrait\fP, \fBSeascape\fP, \fBUpsideDown\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Page\fP ()"
+.br
+.ti -1c
+.RI "QImage \fBrenderToImage\fP (double xres=72\&.0, double yres=72\&.0, int x=\-1, int y=\-1, int w=\-1, int h=\-1, \fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "bool \fBrenderToPainter\fP (QPainter *painter, double xres=72\&.0, double yres=72\&.0, int x=\-1, int y=\-1, int w=\-1, int h=\-1, \fBRotation\fP rotate=\fBRotate0\fP, PainterFlags flags=0) const"
+.br
+.ti -1c
+.RI "QImage \fBthumbnail\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP (const QRectF &rect, \fBTextLayout\fP textLayout) const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP (const QRectF &rect) const"
+.br
+.ti -1c
+.RI "Q_DECL_DEPRECATED bool \fBsearch\fP (const QString &\fBtext\fP, double &rectLeft, double &rectTop, double &rectRight, double &rectBottom, \fBSearchDirection\fP direction, \fBSearchMode\fP caseSensitive, \fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "bool \fBsearch\fP (const QString &\fBtext\fP, double &rectLeft, double &rectTop, double &rectRight, double &rectBottom, \fBSearchDirection\fP direction, SearchFlags flags=0, \fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "Q_DECL_DEPRECATED QList< QRectF > \fBsearch\fP (const QString &\fBtext\fP, \fBSearchMode\fP caseSensitive, \fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "QList< QRectF > \fBsearch\fP (const QString &\fBtext\fP, SearchFlags flags=0, \fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "QList< \fBTextBox\fP * > \fBtextList\fP (\fBRotation\fP rotate=\fBRotate0\fP) const"
+.br
+.ti -1c
+.RI "QSizeF \fBpageSizeF\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBpageSize\fP () const"
+.br
+.ti -1c
+.RI "\fBPageTransition\fP * \fBtransition\fP () const"
+.br
+.ti -1c
+.RI "\fBLink\fP * \fBaction\fP (\fBPageAction\fP act) const"
+.br
+.ti -1c
+.RI "\fBOrientation\fP \fBorientation\fP () const"
+.br
+.ti -1c
+.RI "void \fBdefaultCTM\fP (double *CTM, double dpiX, double dpiY, int rotate, bool upsideDown)"
+.br
+.ti -1c
+.RI "QList< \fBLink\fP * > \fBlinks\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBAnnotation\fP * > \fBannotations\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBAnnotation\fP * > \fBannotations\fP (const QSet< \fBAnnotation::SubType\fP > &subtypes) const"
+.br
+.ti -1c
+.RI "void \fBaddAnnotation\fP (const \fBAnnotation\fP *ann)"
+.br
+.ti -1c
+.RI "void \fBremoveAnnotation\fP (const \fBAnnotation\fP *ann)"
+.br
+.ti -1c
+.RI "QList< \fBFormField\fP * > \fBformFields\fP () const"
+.br
+.ti -1c
+.RI "double \fBduration\fP () const"
+.br
+.ti -1c
+.RI "QString \fBlabel\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A page in a document\&. 
+
+The \fBPage\fP class represents a single page within a PDF document\&.
+.PP
+You cannot construct a \fBPage\fP directly, but you have to use the \fBDocument\fP functions that return a new \fBPage\fP out of an index or a label\&. 
+.PP
+Definition at line 403 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::Page::Orientation\fP"
+Types of orientations that are possible 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILandscape \fP\fP
+Landscape orientation (portrait, with 90 degrees clockwise rotation ) 
+.TP
+\fB\fIPortrait \fP\fP
+Normal portrait orientation\&. 
+.TP
+\fB\fISeascape \fP\fP
+Seascape orientation (portrait, with 270 degrees clockwise rotation) 
+.TP
+\fB\fIUpsideDown \fP\fP
+Upside down orientation (portrait, with 180 degrees rotation) 
+.PP
+Definition at line 697 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::PageAction\fP"
+The kinds of page actions 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOpening \fP\fP
+The action when a page is 'opened'\&. 
+.TP
+\fB\fIClosing \fP\fP
+The action when a page is 'closed'\&. 
+.PP
+Definition at line 423 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::PainterFlag\fP"
+Additional flags for the renderToPainter method 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDontSaveAndRestore \fP\fP
+Do not save/restore the caller-owned painter\&.
+.PP
+\fBrenderToPainter()\fP by default preserves, using save() + restore(), the state of the painter specified; if this is not needed, this flag can avoid this job 
+.PP
+Definition at line 441 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::Rotation\fP"
+The type of rotation to apply for an operation 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRotate0 \fP\fP
+Do not rotate\&. 
+.TP
+\fB\fIRotate90 \fP\fP
+Rotate 90 degrees clockwise\&. 
+.TP
+\fB\fIRotate180 \fP\fP
+Rotate 180 degrees\&. 
+.TP
+\fB\fIRotate270 \fP\fP
+Rotate 270 degrees clockwise (90 degrees counterclockwise) 
+.PP
+Definition at line 414 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::SearchDirection\fP"
+The starting point for a search 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFromTop \fP\fP
+Start sorting at the top of the document\&. 
+.TP
+\fB\fINextResult \fP\fP
+Find the next result, moving 'down the page'\&. 
+.TP
+\fB\fIPreviousResult \fP\fP
+Find the previous result, moving 'up the page'\&. 
+.PP
+Definition at line 572 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::SearchFlag\fP"
+Flags to modify the search behaviour 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.31 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIIgnoreCase \fP\fP
+Case differences are ignored\&. 
+.TP
+\fB\fIWholeWords \fP\fP
+Only whole words are matched\&. 
+.PP
+Definition at line 587 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::SearchMode\fP"
+The type of search to perform 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICaseSensitive \fP\fP
+Case differences cause no match in searching\&. 
+.TP
+\fB\fICaseInsensitive \fP\fP
+Case differences are ignored in matching\&. 
+.PP
+Definition at line 580 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Page::TextLayout\fP"
+How the text is going to be returned 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPhysicalLayout \fP\fP
+The text is layouted to resemble the real page layout\&. 
+.TP
+\fB\fIRawOrderLayout \fP\fP
+The text is returned without any type of processing\&. 
+.PP
+Definition at line 432 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Page::~Page ()"
+Destructor\&. 
+.PP
+Definition at line 285 of file poppler\-page\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLink\fP * Page::action (\fBPageAction\fP act) const"
+Gets the page action specified, or NULL if there is no action\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 638 of file poppler\-page\&.cc\&.
+.SS "void Page::addAnnotation (const \fBAnnotation\fP * ann)"
+Adds an annotation to the page
+.PP
+\fBNote:\fP
+.RS 4
+Ownership of the annotation object stays with the caller, who can delete it at any time\&. 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 724 of file poppler\-page\&.cc\&.
+.SS "QList< \fBAnnotation\fP * > Page::annotations () const"
+Returns the annotations of the page
+.PP
+\fBNote:\fP
+.RS 4
+If you call this method twice, you get different objects pointing to the same annotations (see \fBAnnotation\fP)\&. The caller owns the returned objects and they should be deleted when no longer required\&. 
+.RE
+.PP
+
+.PP
+Definition at line 714 of file poppler\-page\&.cc\&.
+.SS "QList< \fBAnnotation\fP * > Page::annotations (const QSet< \fBAnnotation::SubType\fP > & subtypes) const"
+Returns the annotations of the page
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsubtypes\fP the subtypes of annotations you are interested in
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+If you call this method twice, you get different objects pointing to the same annotations (see \fBAnnotation\fP)\&. The caller owns the returned objects and they should be deleted when no longer required\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.28 
+.RE
+.PP
+
+.PP
+Definition at line 719 of file poppler\-page\&.cc\&.
+.SS "void Page::defaultCTM (double * CTM, double dpiX, double dpiY, int rotate, bool upsideDown)"
+The default CTM 
+.PP
+Definition at line 700 of file poppler\-page\&.cc\&.
+.SS "double Page::duration (void) const"
+Returns the page duration\&. That is the time, in seconds, that the page should be displayed before the presentation automatically advances to the next page\&. Returns < 0 if duration is not set\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 776 of file poppler\-page\&.cc\&.
+.SS "QList< \fBFormField\fP * > Page::formFields () const"
+Returns the form fields on the page The caller gets the ownership of the returned objects\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 734 of file poppler\-page\&.cc\&.
+.SS "QString Page::label () const"
+Returns the label of the page, or a null string is the page has no label\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 781 of file poppler\-page\&.cc\&.
+.SS "QList< \fBLink\fP * > Page::links () const"
+Gets the links of the page 
+.PP
+Definition at line 705 of file poppler\-page\&.cc\&.
+.SS "\fBPage::Orientation\fP Page::orientation () const"
+The orientation of the page 
+.PP
+Definition at line 682 of file poppler\-page\&.cc\&.
+.SS "QSize Page::pageSize () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+The dimensions (cropbox) of the page, in points (i\&.e\&. 1/72th of an inch) 
+.RE
+.PP
+
+.PP
+Definition at line 677 of file poppler\-page\&.cc\&.
+.SS "QSizeF Page::pageSizeF () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+The dimensions (cropbox) of the page, in points (i\&.e\&. 1/72th of an inch) 
+.RE
+.PP
+
+.PP
+Definition at line 667 of file poppler\-page\&.cc\&.
+.SS "void Page::removeAnnotation (const \fBAnnotation\fP * ann)"
+Removes an annotation from the page and destroys the annotation object
+.PP
+\fBNote:\fP
+.RS 4
+There mustn't be other \fBAnnotation\fP objects pointing this annotation 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 729 of file poppler\-page\&.cc\&.
+.SS "QImage Page::renderToImage (double xres = \fC72\&.0\fP, double yres = \fC72\&.0\fP, int x = \fC\-1\fP, int y = \fC\-1\fP, int w = \fC\-1\fP, int h = \fC\-1\fP, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Render the page to a QImage using the current \fBDocument renderer\fP\&.
+.PP
+If \fCx\fP = \fCy\fP = \fCw\fP = \fCh\fP = -1, the method will automatically compute the size of the image from the horizontal and vertical resolutions specified in \fCxres\fP and \fCyres\fP\&. Otherwise, the method renders only a part of the page, specified by the parameters (\fCx\fP, \fCy\fP, \fCw\fP, \fCh\fP) in pixel coordinates\&. The returned QImage then has size (\fCw\fP, \fCh\fP), independent of the page size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP specifies the left x-coordinate of the box, in pixels\&.
+.br
+\fIy\fP specifies the top y-coordinate of the box, in pixels\&.
+.br
+\fIw\fP specifies the width of the box, in pixels\&.
+.br
+\fIh\fP specifies the height of the box, in pixels\&.
+.br
+\fIxres\fP horizontal resolution of the graphics device, in dots per inch
+.br
+\fIyres\fP vertical resolution of the graphics device, in dots per inch
+.br
+\fIrotate\fP how to rotate the page
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The parameter (\fCx\fP, \fCy\fP, \fCw\fP, \fCh\fP) are not well-tested\&. Unusual or meaningless parameters may lead to rather unexpected results\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a QImage of the page, or a null image on failure\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 291 of file poppler\-page\&.cc\&.
+.SS "bool Page::renderToPainter (QPainter * painter, double xres = \fC72\&.0\fP, double yres = \fC72\&.0\fP, int x = \fC\-1\fP, int y = \fC\-1\fP, int w = \fC\-1\fP, int h = \fC\-1\fP, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP, PainterFlags flags = \fC0\fP) const"
+Render the page to the specified QPainter using the current \fBDocument renderer\fP\&.
+.PP
+If \fCx\fP = \fCy\fP = \fCw\fP = \fCh\fP = -1, the method will automatically compute the size of the page area from the horizontal and vertical resolutions specified in \fCxres\fP and \fCyres\fP\&. Otherwise, the method renders only a part of the page, specified by the parameters (\fCx\fP, \fCy\fP, \fCw\fP, \fCh\fP) in pixel coordinates\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpainter\fP the painter to paint on
+.br
+\fIx\fP specifies the left x-coordinate of the box, in pixels\&.
+.br
+\fIy\fP specifies the top y-coordinate of the box, in pixels\&.
+.br
+\fIw\fP specifies the width of the box, in pixels\&.
+.br
+\fIh\fP specifies the height of the box, in pixels\&.
+.br
+\fIxres\fP horizontal resolution of the graphics device, in dots per inch
+.br
+\fIyres\fP vertical resolution of the graphics device, in dots per inch
+.br
+\fIrotate\fP how to rotate the page
+.br
+\fIflags\fP additional painter flags
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The parameter (\fCx\fP, \fCy\fP, \fCw\fP, \fCh\fP) are not well-tested\&. Unusual or meaningless parameters may lead to rather unexpected results\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+whether the painting succeeded
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This method is only supported for Arthur
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+Definition at line 417 of file poppler\-page\&.cc\&.
+.SS "bool Page::search (const QString & text, double & rectLeft, double & rectTop, double & rectRight, double & rectBottom, \fBSearchDirection\fP direction, \fBSearchMode\fP caseSensitive, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Returns true if the specified text was found\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP the text the search 
+.br
+\fIrectXXX\fP in all directions is used to return where the text was found, for NextResult and PreviousResult indicates where to continue searching for 
+.br
+\fIdirection\fP in which direction do the search 
+.br
+\fIcaseSensitive\fP be case sensitive? 
+.br
+\fIrotate\fP the rotation to apply for the search order 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.14 
+.RE
+.PP
+
+.PP
+Definition at line 510 of file poppler\-page\&.cc\&.
+.SS "bool Page::search (const QString & text, double & rectLeft, double & rectTop, double & rectRight, double & rectBottom, \fBSearchDirection\fP direction, SearchFlags flags = \fC0\fP, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Returns true if the specified text was found\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP the text the search 
+.br
+\fIrectXXX\fP in all directions is used to return where the text was found, for NextResult and PreviousResult indicates where to continue searching for 
+.br
+\fIdirection\fP in which direction do the search 
+.br
+\fIflags\fP the flags to consider during matching 
+.br
+\fIrotate\fP the rotation to apply for the search order
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.31 
+.RE
+.PP
+
+.PP
+Definition at line 524 of file poppler\-page\&.cc\&.
+.SS "QList< QRectF > Page::search (const QString & text, \fBSearchMode\fP caseSensitive, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Returns a list of all occurrences of the specified text on the page\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP the text to search 
+.br
+\fIcaseSensitive\fP whether to be case sensitive 
+.br
+\fIrotate\fP the rotation to apply for the search order
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+Do not use the returned QRectF as arguments of another search call because of truncation issues if qreal is defined as float\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 539 of file poppler\-page\&.cc\&.
+.SS "QList< QRectF > Page::search (const QString & text, SearchFlags flags = \fC0\fP, \fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Returns a list of all occurrences of the specified text on the page\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP the text to search 
+.br
+\fIflags\fP the flags to consider during matching 
+.br
+\fIrotate\fP the rotation to apply for the search order
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+Do not use the returned QRectF as arguments of another search call because of truncation issues if qreal is defined as float\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.31 
+.RE
+.PP
+
+.PP
+Definition at line 553 of file poppler\-page\&.cc\&.
+.SS "QString Page::text (const QRectF & rect, \fBTextLayout\fP textLayout) const"
+Returns the text that is inside a specified rectangle
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrect\fP the rectangle specifying the area of interest, with coordinates given in points, i\&.e\&., 1/72th of an inch\&. If rect is null, all text on the page is given
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+Definition at line 476 of file poppler\-page\&.cc\&.
+.SS "QString Page::text (const QRectF & rect) const"
+Returns the text that is inside a specified rectangle\&. The text is returned using the physical layout of the page
+.PP
+\fBParameters:\fP
+.RS 4
+\fIrect\fP the rectangle specifying the area of interest, with coordinates given in points, i\&.e\&., 1/72th of an inch\&. If rect is null, all text on the page is given 
+.RE
+.PP
+
+.PP
+Definition at line 505 of file poppler\-page\&.cc\&.
+.SS "QList< \fBTextBox\fP * > Page::textList (\fBRotation\fP rotate = \fC\fBRotate0\fP\fP) const"
+Returns a list of text of the page
+.PP
+This method returns a QList of TextBoxes that contain all the text of the page, with roughly one text word of text per \fBTextBox\fP item\&.
+.PP
+For text written in western languages (left-to-right and up-to-down), the QList contains the text in the proper order\&.
+.PP
+\fBNote:\fP
+.RS 4
+The caller owns the text boxes and they should be deleted when no longer required\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+This method is not tested with Asian scripts 
+.RE
+.PP
+
+.PP
+Definition at line 568 of file poppler\-page\&.cc\&.
+.SS "QImage Page::thumbnail () const"
+Get the page thumbnail if it exists\&.
+.PP
+\fBReturns:\fP
+.RS 4
+a QImage of the thumbnail, or a null image if the PDF does not contain one for this page
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 458 of file poppler\-page\&.cc\&.
+.SS "\fBPageTransition\fP * Page::transition (void) const"
+Returns the transition of this page
+.PP
+\fBReturns:\fP
+.RS 4
+a pointer to a \fBPageTransition\fP structure that defines how transition to this page shall be performed\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The \fBPageTransition\fP structure is owned by this page, and will automatically be destroyed when this page class is destroyed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 626 of file poppler\-page\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

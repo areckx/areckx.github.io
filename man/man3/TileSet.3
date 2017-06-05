@@ -1,0 +1,107 @@
+.TH "TileSet" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TileSet
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTile\fP { \fBTop\fP = 0x1, \fBLeft\fP = 0x2, \fBBottom\fP = 0x4, \fBRight\fP = 0x8, \fBCenter\fP = 0x10, \fBTopLeft\fP = Top | Left, \fBTopRight\fP = Top | Right, \fBBottomLeft\fP = Bottom | Left, \fBBottomRight\fP = Bottom | Right, \fBRing\fP = Top | Left | Bottom | Right, \fBHorizontal\fP = Left | Right | Center, \fBVertical\fP = Top | Bottom | Center, \fBFull\fP = Ring | Center }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTileSet\fP (const QPixmap &, int w1, int h1, int w2, int h2)"
+.br
+.ti -1c
+.RI "\fBTileSet\fP (const QPixmap &pix, int w1, int h1, int w3, int h3, int x2, int y2, int w2, int h2)"
+.br
+.ti -1c
+.RI "void \fBrender\fP (const QRect &, QPainter *, Tiles=Ring) const"
+.br
+.ti -1c
+.RI "QSize \fBsize\fP () const"
+.br
+.RI "return size associated to this tileset "
+.ti -1c
+.RI "bool \fBisValid\fP () const"
+.br
+.RI "is valid "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitPixmap\fP (PixmapList &, const QPixmap &, int w, int h, const QRect &)"
+.br
+.RI "initialize pixmap "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file tileset\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBTileSet::Tile\fP"
+Flags specifying what sides to draw in ::render\&. Corners are drawn when the sides forming that corner are drawn, e\&.g\&. Top|Left draws the top-center, center-left, and top-left chunks\&. The center-center chunk is only drawn when Center is requested\&. 
+.PP
+Definition at line 90 of file tileset\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "TileSet::TileSet (const QPixmap & pix, int w1, int h1, int w2, int h2)"
+Create a \fBTileSet\fP from a pixmap\&. The size of the bottom/right chunks is whatever is left over from the other chunks, whose size is specified in the required parameters\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIw1\fP width of the left chunks 
+.br
+\fIh1\fP height of the top chunks 
+.br
+\fIw2\fP width of the not-left-or-right chunks 
+.br
+\fIh2\fP height of the not-top-or-bottom chunks 
+.RE
+.PP
+
+.PP
+Definition at line 55 of file tileset\&.cpp\&.
+.SS "TileSet::TileSet (const QPixmap & pix, int w1, int h1, int w3, int h3, int x2, int y2, int w2, int h2)"
+Create a \fBTileSet\fP from a pixmap\&. The size of the top/left and bottom/right chunks is specified, with the middle chunks created from the specified portion of the pixmap\&. This allows the middle chunks to overlap the outer chunks (or to not use all pixels)\&. The top/left and bottom/right chunks are carved out of the corners of the pixmap\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIw1\fP width of the left chunks 
+.br
+\fIh1\fP height of the top chunks 
+.br
+\fIw3\fP width of the right chunks 
+.br
+\fIh3\fP height of bottom chunks 
+.br
+\fIx2\fP x-coordinate of the top of the not-left-or-right chunks 
+.br
+\fIy2\fP y-coordinate of the left of the not-top-or-bottom chunks 
+.br
+\fIw2\fP width of the not-left-or-right chunks 
+.br
+\fIh2\fP height of the not-top-or-bottom chunks 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file tileset\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TileSet::render (const QRect & r, QPainter * p, Tiles t = \fCRing\fP) const"
+Fills the specified rect with tiled chunks\&. Corners are never tiled, edges are tiled in one direction, and the center chunk is tiled in both directions\&. Partial tiles are used as needed so that the entire rect is perfectly filled\&. Filling is performed as if all chunks are being drawn\&. 
+.PP
+Definition at line 119 of file tileset\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

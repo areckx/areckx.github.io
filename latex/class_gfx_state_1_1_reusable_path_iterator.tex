@@ -1,0 +1,99 @@
+\hypertarget{class_gfx_state_1_1_reusable_path_iterator}{}\section{Gfx\+State\+:\+:Reusable\+Path\+Iterator Class Reference}
+\label{class_gfx_state_1_1_reusable_path_iterator}\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+
+
+{\ttfamily \#include $<$Gfx\+State.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gfx_state_1_1_reusable_path_iterator_a5684cb7996f4e5d90618e82a508547ab}{Reusable\+Path\+Iterator} (\hyperlink{class_gfx_path}{Gfx\+Path} $\ast$path)
+\item 
+bool \hyperlink{class_gfx_state_1_1_reusable_path_iterator_a044ed0b09dfce40f703700db98c6e1d9}{is\+End} () const
+\item 
+void \hyperlink{class_gfx_state_1_1_reusable_path_iterator_a9ec26361635eb53e8803b38b0ad86cd9}{next} ()
+\item 
+void \hyperlink{class_gfx_state_1_1_reusable_path_iterator_af4e893977b96e25d14e64d93bb8a76f1}{set\+Coord} (double x, double y)
+\item 
+void \hyperlink{class_gfx_state_1_1_reusable_path_iterator_a59f8f6d089eb2ae9b0f28e0b7a37342a}{reset} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+When Gfx\+State\+::get\+Reusable\+Path() is invoked, the currently active path is taken per reference and its coordinates can be re-\/edited.
+
+A \hyperlink{class_gfx_state_1_1_reusable_path_iterator}{Reusable\+Path\+Iterator} is intented to reduce overhead when the same path type is used a lot of times, only with different coordinates. It allows just to update the coordinates (occuring in the same order as in the original path). 
+
+Definition at line 1351 of file Gfx\+State.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gfx_state_1_1_reusable_path_iterator_a5684cb7996f4e5d90618e82a508547ab}\label{class_gfx_state_1_1_reusable_path_iterator_a5684cb7996f4e5d90618e82a508547ab}} 
+\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}!Reusable\+Path\+Iterator@{Reusable\+Path\+Iterator}}
+\index{Reusable\+Path\+Iterator@{Reusable\+Path\+Iterator}!Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+\subsubsection{\texorpdfstring{Reusable\+Path\+Iterator()}{ReusablePathIterator()}}
+{\footnotesize\ttfamily Gfx\+State\+::\+Reusable\+Path\+Iterator\+::\+Reusable\+Path\+Iterator (\begin{DoxyParamCaption}\item[{\hyperlink{class_gfx_path}{Gfx\+Path} $\ast$}]{path }\end{DoxyParamCaption})}
+
+Creates the \hyperlink{class_gfx_state_1_1_reusable_path_iterator}{Reusable\+Path\+Iterator}. This should only be done from Gfx\+State\+::get\+Reusable\+Path().
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path as it is used so far. Changing this path, deleting it or starting a new path from scratch will most likely invalidate the iterator (and may cause serious problems). Make sure the path\textquotesingle{}s memory structure is not changed during the lifetime of the \hyperlink{class_gfx_state_1_1_reusable_path_iterator}{Reusable\+Path\+Iterator}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6583 of file Gfx\+State.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gfx_state_1_1_reusable_path_iterator_a044ed0b09dfce40f703700db98c6e1d9}\label{class_gfx_state_1_1_reusable_path_iterator_a044ed0b09dfce40f703700db98c6e1d9}} 
+\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}!is\+End@{is\+End}}
+\index{is\+End@{is\+End}!Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+\subsubsection{\texorpdfstring{is\+End()}{isEnd()}}
+{\footnotesize\ttfamily bool Gfx\+State\+::\+Reusable\+Path\+Iterator\+::is\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if and only if the current iterator position is beyond the last valid point.
+
+A call to \hyperlink{class_gfx_state_1_1_reusable_path_iterator_af4e893977b96e25d14e64d93bb8a76f1}{set\+Coord()} will be undefined. 
+
+Definition at line 6596 of file Gfx\+State.\+cc.
+
+\mbox{\Hypertarget{class_gfx_state_1_1_reusable_path_iterator_a9ec26361635eb53e8803b38b0ad86cd9}\label{class_gfx_state_1_1_reusable_path_iterator_a9ec26361635eb53e8803b38b0ad86cd9}} 
+\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}!next@{next}}
+\index{next@{next}!Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+\subsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily void Gfx\+State\+::\+Reusable\+Path\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Advances the iterator. 
+
+Definition at line 6600 of file Gfx\+State.\+cc.
+
+\mbox{\Hypertarget{class_gfx_state_1_1_reusable_path_iterator_a59f8f6d089eb2ae9b0f28e0b7a37342a}\label{class_gfx_state_1_1_reusable_path_iterator_a59f8f6d089eb2ae9b0f28e0b7a37342a}} 
+\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}!reset@{reset}}
+\index{reset@{reset}!Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Gfx\+State\+::\+Reusable\+Path\+Iterator\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Resets the iterator. 
+
+Definition at line 6617 of file Gfx\+State.\+cc.
+
+\mbox{\Hypertarget{class_gfx_state_1_1_reusable_path_iterator_af4e893977b96e25d14e64d93bb8a76f1}\label{class_gfx_state_1_1_reusable_path_iterator_af4e893977b96e25d14e64d93bb8a76f1}} 
+\index{Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}!set\+Coord@{set\+Coord}}
+\index{set\+Coord@{set\+Coord}!Gfx\+State\+::\+Reusable\+Path\+Iterator@{Gfx\+State\+::\+Reusable\+Path\+Iterator}}
+\subsubsection{\texorpdfstring{set\+Coord()}{setCoord()}}
+{\footnotesize\ttfamily void Gfx\+State\+::\+Reusable\+Path\+Iterator\+::set\+Coord (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+Updates the coordinates associated to the current iterator position. 
+
+Definition at line 6612 of file Gfx\+State.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/poppler/Gfx\+State.\+h\item 
+thirdparty/poppler/poppler/Gfx\+State.\+cc\end{DoxyCompactItemize}

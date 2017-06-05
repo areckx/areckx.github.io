@@ -1,0 +1,136 @@
+.TH "sources.SourceProcessor" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sources.SourceProcessor \- SOURCE PROCESSOR CLASS\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "def \fBreset\fP (self)"
+.br
+.ti -1c
+.RI "def \fBparse_file\fP (self, filename)"
+.br
+.ti -1c
+.RI "def \fBprocess_normal_line\fP (self, line)"
+.br
+.ti -1c
+.RI "def \fBadd_block_lines\fP (self)"
+.br
+.ti -1c
+.RI "def \fBdump\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBblocks\fP"
+.br
+.ti -1c
+.RI "\fBfilename\fP"
+.br
+.ti -1c
+.RI "\fBformat\fP"
+.br
+.ti -1c
+.RI "\fBlines\fP"
+.br
+.ti -1c
+.RI "\fBlineno\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+SOURCE PROCESSOR CLASS\&. 
+
+The `SourceProcessor' is in charge of reading a C source file and decomposing it into a series of different `SourceBlock' objects\&.
+.PP
+A \fBSourceBlock\fP object consists of the following data\&.
+.PP
+.IP "\(bu" 2
+A documentation comment block using one of the layouts above\&. Its exact format will be discussed later\&.
+.IP "\(bu" 2
+Normal sources lines, including comments\&. 
+.PP
+
+.PP
+Definition at line 316 of file sources\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def sources\&.SourceProcessor\&.__init__ ( self)"
+
+.PP
+.nf
+Initialize a source processor.
+.fi
+.PP
+ 
+.PP
+Definition at line 318 of file sources\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def sources\&.SourceProcessor\&.add_block_lines ( self)"
+
+.PP
+.nf
+Add the current accumulated lines and create a new block.
+.fi
+.PP
+ 
+.PP
+Definition at line 380 of file sources\&.py\&.
+.SS "def sources\&.SourceProcessor\&.dump ( self)"
+
+.PP
+.nf
+Print all blocks in a processor.
+.fi
+.PP
+ 
+.PP
+Definition at line 393 of file sources\&.py\&.
+.SS "def sources\&.SourceProcessor\&.parse_file ( self,  filename)"
+
+.PP
+.nf
+Parse a C source file and add its blocks to the processor's
+   list.
+.fi
+.PP
+ 
+.PP
+Definition at line 330 of file sources\&.py\&.
+.SS "def sources\&.SourceProcessor\&.process_normal_line ( self,  line)"
+
+.PP
+.nf
+Process a normal line and check whether it is the start of a new
+   block.
+.fi
+.PP
+ 
+.PP
+Definition at line 369 of file sources\&.py\&.
+.SS "def sources\&.SourceProcessor\&.reset ( self)"
+
+.PP
+.nf
+Reset a block processor and clean up all its blocks.
+.fi
+.PP
+ 
+.PP
+Definition at line 325 of file sources\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

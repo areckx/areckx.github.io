@@ -1,0 +1,587 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="t42drivr_8c" kind="file" language="C++">
+    <compoundname>t42drivr.c</compoundname>
+    <includes refid="t42drivr_8h" local="yes">t42drivr.h</includes>
+    <includes refid="t42objs_8h" local="yes">t42objs.h</includes>
+    <includes refid="t42error_8h" local="yes">t42error.h</includes>
+    <includedby refid="type42_8c" local="yes">thirdparty/freetype/src/type42/type42.c</includedby>
+    <incdepgraph>
+      <node id="81360">
+        <label>t42objs.h</label>
+        <link refid="t42objs_8h_source"/>
+        <childnode refid="81359" relation="include">
+        </childnode>
+        <childnode refid="81361" relation="include">
+        </childnode>
+      </node>
+      <node id="81357">
+        <label>thirdparty/freetype/src/type42/t42drivr.c</label>
+        <link refid="t42drivr_8c"/>
+        <childnode refid="81358" relation="include">
+        </childnode>
+        <childnode refid="81360" relation="include">
+        </childnode>
+        <childnode refid="81362" relation="include">
+        </childnode>
+      </node>
+      <node id="81358">
+        <label>t42drivr.h</label>
+        <link refid="t42drivr_8h_source"/>
+        <childnode refid="81359" relation="include">
+        </childnode>
+      </node>
+      <node id="81359">
+        <label>ft2build.h</label>
+      </node>
+      <node id="81361">
+        <label>t42types.h</label>
+        <link refid="t42types_8h_source"/>
+        <childnode refid="81359" relation="include">
+        </childnode>
+      </node>
+      <node id="81362">
+        <label>t42error.h</label>
+        <link refid="t42error_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="81363">
+        <label>thirdparty/freetype/src/type42/t42drivr.c</label>
+        <link refid="t42drivr_8c"/>
+        <childnode refid="81364" relation="include">
+        </childnode>
+      </node>
+      <node id="81364">
+        <label>thirdparty/freetype/src/type42/type42.c</label>
+        <link refid="type42_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="t42drivr_8c_1a9c208ea57bc9a5fcbfc81a6106d28f3a" prot="public" static="no">
+        <name>FT_COMPONENT</name>
+        <initializer>trace_t42</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="50" column="10" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="t42drivr_8c_1a388a86cd274e66d0c0633820ca293cb3" prot="public" static="yes" mutable="no">
+        <type>const FT_Service_GlyphDictRec</type>
+        <definition>const FT_Service_GlyphDictRec t42_service_glyph_dict</definition>
+        <argsstring></argsstring>
+        <name>t42_service_glyph_dict</name>
+        <initializer>=
+  {
+    (FT_GlyphDict_GetNameFunc)  t42_get_glyph_name,
+    (FT_GlyphDict_NameIndexFunc)t42_get_name_index
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="91" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t42drivr_8c_1a329b15cda0d192c04a18448686966b07" prot="public" static="yes" mutable="no">
+        <type>const FT_Service_PsFontNameRec</type>
+        <definition>const FT_Service_PsFontNameRec t42_service_ps_font_name</definition>
+        <argsstring></argsstring>
+        <name>t42_service_ps_font_name</name>
+        <initializer>=
+  {
+    (FT_PsName_GetFunc)t42_get_ps_font_name
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="111" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t42drivr_8c_1ab85f1a9307ffd2ce43014d15b4512e87" prot="public" static="yes" mutable="no">
+        <type>const FT_Service_PsInfoRec</type>
+        <definition>const FT_Service_PsInfoRec t42_service_ps_info</definition>
+        <argsstring></argsstring>
+        <name>t42_service_ps_info</name>
+        <initializer>=
+  {
+    (PS_GetFontInfoFunc)   t42_ps_get_font_info,
+    (PS_GetFontExtraFunc)  t42_ps_get_font_extra,
+    (PS_HasGlyphNamesFunc) t42_ps_has_glyph_names,
+    (PS_GetFontPrivateFunc)t42_ps_get_font_private,
+    (PS_GetFontValueFunc)  NULL             
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="162" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t42drivr_8c_1aa185f90de90d251440274e77a3fbd136" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="struct_f_t___service_desc_rec__" kindref="compound">FT_ServiceDescRec</ref></type>
+        <definition>const FT_ServiceDescRec t42_services[]</definition>
+        <argsstring>[]</argsstring>
+        <name>t42_services</name>
+        <initializer>=
+  {
+    { FT_SERVICE_ID_GLYPH_DICT,           &amp;t42_service_glyph_dict },
+    { FT_SERVICE_ID_POSTSCRIPT_FONT_NAME, &amp;t42_service_ps_font_name },
+    { FT_SERVICE_ID_POSTSCRIPT_INFO,      &amp;t42_service_ps_info },
+    { FT_SERVICE_ID_FONT_FORMAT,          FT_FONT_FORMAT_TYPE_42 },
+    { NULL, NULL }
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="178" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t42drivr_8c_1a15ec820e50b448d2e72a530bbc83b936" prot="public" static="no" mutable="no">
+        <type>const <ref refid="struct_f_t___driver___class_rec__" kindref="compound">FT_Driver_ClassRec</ref></type>
+        <definition>const FT_Driver_ClassRec t42_driver_class</definition>
+        <argsstring></argsstring>
+        <name>t42_driver_class</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="198" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="t42drivr_8c_1a66538661335461fa4951c71ad465cff6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Error</type>
+        <definition>static FT_Error t42_get_glyph_name</definition>
+        <argsstring>(T42_Face face, FT_UInt glyph_index, FT_Pointer buffer, FT_UInt buffer_max)</argsstring>
+        <name>t42_get_glyph_name</name>
+        <param>
+          <type>T42_Face</type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>FT_UInt</type>
+          <declname>glyph_index</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>FT_UInt</type>
+          <declname>buffer_max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="60" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="60" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1a6924c84af109f2cdb5aea47452efcbc1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_UInt</type>
+        <definition>static FT_UInt t42_get_name_index</definition>
+        <argsstring>(T42_Face face, FT_String *glyph_name)</argsstring>
+        <name>t42_get_name_index</name>
+        <param>
+          <type>T42_Face</type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>FT_String *</type>
+          <declname>glyph_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="72" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="72" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1abf0cc78e2e3ded2a0a29523e9686e196" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>static const char* t42_get_ps_font_name</definition>
+        <argsstring>(T42_Face face)</argsstring>
+        <name>t42_get_ps_font_name</name>
+        <param>
+          <type>T42_Face</type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="105" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1abc00d9281c6f6bfdd8ae04b8249d6ce7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Error</type>
+        <definition>static FT_Error t42_ps_get_font_info</definition>
+        <argsstring>(FT_Face face, PS_FontInfoRec *afont_info)</argsstring>
+        <name>t42_ps_get_font_info</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>PS_FontInfoRec *</type>
+          <declname>afont_info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="124" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="124" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1a1be8036d7f8a66d5c2a0574a9f318602" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Error</type>
+        <definition>static FT_Error t42_ps_get_font_extra</definition>
+        <argsstring>(FT_Face face, PS_FontExtraRec *afont_extra)</argsstring>
+        <name>t42_ps_get_font_extra</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_p_s___font_extra_rec__" kindref="compound">PS_FontExtraRec</ref> *</type>
+          <declname>afont_extra</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="134" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="134" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1afb58900da878932b75a9013ba14529f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Int</type>
+        <definition>static FT_Int t42_ps_has_glyph_names</definition>
+        <argsstring>(FT_Face face)</argsstring>
+        <name>t42_ps_has_glyph_names</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="144" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="144" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1abc7f66c56edba668903df8f4d69a530a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_Error</type>
+        <definition>static FT_Error t42_ps_get_font_private</definition>
+        <argsstring>(FT_Face face, PS_PrivateRec *afont_private)</argsstring>
+        <name>t42_ps_get_font_private</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_p_s___private_rec__" kindref="compound">PS_PrivateRec</ref> *</type>
+          <declname>afont_private</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="153" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="153" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="t42drivr_8c_1afec8341b0006e0e80d20f3ecdbaf8e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>T42_Get_Interface</definition>
+        <argsstring>(FT_Module module, const FT_String *t42_interface)</argsstring>
+        <name>T42_Get_Interface</name>
+        <param>
+          <type><ref refid="struct_f_t___module_rec__" kindref="compound">FT_Module</ref></type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const FT_String *</type>
+          <declname>t42_interface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type42/t42drivr.c" line="189" column="1" bodyfile="thirdparty/freetype/src/type42/t42drivr.c" bodystart="189" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>t42drivr.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>High-level<sp/>Type<sp/>42<sp/>driver<sp/>interface<sp/>(body).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2002-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Roberto<sp/>Alameda.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>driver<sp/>implements<sp/>Type42<sp/>fonts<sp/>as<sp/>described<sp/>in<sp/>the<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Technical<sp/>Note<sp/>#5012<sp/>from<sp/>Adobe,<sp/>with<sp/>these<sp/>limitations:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>1)<sp/>CID<sp/>Fonts<sp/>are<sp/>not<sp/>currently<sp/>supported.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>2)<sp/>Incremental<sp/>fonts<sp/>making<sp/>use<sp/>of<sp/>the<sp/>GlyphDirectory<sp/>keyword<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>will<sp/>be<sp/>loaded,<sp/>but<sp/>the<sp/>rendering<sp/>will<sp/>be<sp/>using<sp/>the<sp/>TrueType<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>tables.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>3)<sp/>As<sp/>for<sp/>Type1<sp/>fonts,<sp/>CDevProc<sp/>is<sp/>not<sp/>supported.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>4)<sp/>The<sp/>Metrics<sp/>dictionary<sp/>is<sp/>not<sp/>supported.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>5)<sp/>AFM<sp/>metrics<sp/>are<sp/>not<sp/>supported.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>In<sp/>other<sp/>words,<sp/>this<sp/>driver<sp/>supports<sp/>Type42<sp/>fonts<sp/>derived<sp/>from<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueType<sp/>fonts<sp/>in<sp/>a<sp/>non-CID<sp/>manner,<sp/>as<sp/>done<sp/>by<sp/>usual<sp/>conversion<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>programs.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;t42drivr.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;t42objs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;t42error.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_INTERNAL_DEBUG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_SERVICE_FONT_FORMAT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_SERVICE_GLYPH_DICT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_SERVICE_POSTSCRIPT_NAME_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_SERVICE_POSTSCRIPT_INFO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>FT_COMPONENT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FT_COMPONENT<sp/><sp/>trace_t42</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>GLYPH<sp/>DICT<sp/>SERVICE</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>t42_get_glyph_name(<sp/>T42_Face<sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/>glyph_index,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/>buffer,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/>buffer_max<sp/>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_STRCPYN(<sp/>buffer,<sp/>face-&gt;type1.glyph_names[glyph_index],<sp/>buffer_max<sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FT_Err_Ok;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_UInt</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>t42_get_name_index(<sp/>T42_Face<sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_String*<sp/><sp/>glyph_name<sp/>)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/>i;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>face-&gt;type1.num_glyphs;<sp/>i++<sp/>)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FT_String*<sp/><sp/>gname<sp/>=<sp/>face-&gt;type1.glyph_names[i];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>glyph_name[0]<sp/>==<sp/>gname[0]<sp/>&amp;&amp;<sp/>!ft_strcmp(<sp/>glyph_name,<sp/>gname<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(FT_UInt)ft_atol(<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)face-&gt;type1.charstrings[i]<sp/>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FT_Service_GlyphDictRec<sp/><sp/>t42_service_glyph_dict<sp/>=</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_GlyphDict_GetNameFunc)<sp/><sp/>t42_get_glyph_name,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_GlyphDict_NameIndexFunc)t42_get_name_index</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>POSTSCRIPT<sp/>NAME<sp/>SERVICE</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>t42_get_ps_font_name(<sp/>T42_Face<sp/><sp/>face<sp/>)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)face-&gt;type1.font_name;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FT_Service_PsFontNameRec<sp/><sp/>t42_service_ps_font_name<sp/>=</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_PsName_GetFunc)t42_get_ps_font_name</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>POSTSCRIPT<sp/>INFO<sp/>SERVICE</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>t42_ps_get_font_info(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PS_FontInfoRec*<sp/><sp/>afont_info<sp/>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>*afont_info<sp/>=<sp/>((T42_Face)face)-&gt;type1.font_info;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FT_Err_Ok;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>t42_ps_get_font_extra(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_s___font_extra_rec__" kindref="compound">PS_FontExtraRec</ref>*<sp/><sp/>afont_extra<sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>*afont_extra<sp/>=<sp/>((T42_Face)face)-&gt;type1.font_extra;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FT_Err_Ok;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_Int</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>t42_ps_has_glyph_names(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/>face<sp/>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>face<sp/>);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>t42_ps_get_font_private(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_s___private_rec__" kindref="compound">PS_PrivateRec</ref>*<sp/><sp/>afont_private<sp/>)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>*afont_private<sp/>=<sp/>((T42_Face)face)-&gt;type1.private_dict;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>FT_Err_Ok;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FT_Service_PsInfoRec<sp/><sp/>t42_service_ps_info<sp/>=</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>(PS_GetFontInfoFunc)<sp/><sp/><sp/>t42_ps_get_font_info,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>(PS_GetFontExtraFunc)<sp/><sp/>t42_ps_get_font_extra,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>(PS_HasGlyphNamesFunc)<sp/>t42_ps_has_glyph_names,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>(PS_GetFontPrivateFunc)t42_ps_get_font_private,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>(PS_GetFontValueFunc)<sp/><sp/>NULL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>not<sp/>implemented<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/>SERVICE<sp/>LIST</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___service_desc_rec__" kindref="compound">FT_ServiceDescRec</ref><sp/><sp/>t42_services[]<sp/>=</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>FT_SERVICE_ID_GLYPH_DICT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;t42_service_glyph_dict<sp/>},</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>FT_SERVICE_ID_POSTSCRIPT_FONT_NAME,<sp/>&amp;t42_service_ps_font_name<sp/>},</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>FT_SERVICE_ID_POSTSCRIPT_INFO,<sp/><sp/><sp/><sp/><sp/><sp/>&amp;t42_service_ps_info<sp/>},</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>FT_SERVICE_ID_FONT_FORMAT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_FONT_FORMAT_TYPE_42<sp/>},</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>NULL,<sp/>NULL<sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_Module_Interface<sp/>)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>T42_Get_Interface(<sp/><ref refid="struct_f_t___module_rec__" kindref="compound">FT_Module</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>module,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FT_String*<sp/><sp/>t42_interface<sp/>)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>module<sp/>);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ft_service_list_lookup(<sp/>t42_services,<sp/>t42_interface<sp/>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___driver___class_rec__" kindref="compound">FT_Driver_ClassRec</ref><sp/><sp/>t42_driver_class<sp/>=</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FT_MODULE_FONT_DRIVER<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FT_MODULE_DRIVER_SCALABLE<sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>TT_USE_BYTECODE_INTERPRETER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FT_MODULE_DRIVER_HAS_HINTER,</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0,</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_t42___driver_rec__" kindref="compound">T42_DriverRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;type42&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x10000L,</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0x20000L,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>format<sp/>interface<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T42_Driver_Init,</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T42_Driver_Done,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>T42_Get_Interface,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>},</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/>T42_FaceRec<sp/>),</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/>T42_SizeRec<sp/>),</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_t42___glyph_slot_rec__" kindref="compound">T42_GlyphSlotRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Face_Init,</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Face_Done,</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Size_Init,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Size_Done,</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_GlyphSlot_Init,</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_GlyphSlot_Done,</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_GlyphSlot_Load,</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>FT_Face_GetKerningFunc<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>FT_Face_AttachFunc<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>FT_Face_GetAdvancesFunc<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Size_Request,</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>T42_Size_Select</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/type42/t42drivr.c"/>
+  </compounddef>
+</doxygen>

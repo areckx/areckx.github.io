@@ -1,0 +1,197 @@
+.TH "OVE::OveSong" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OVE::OveSong
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPlayStyle\fP : char { \fBRecord\fP, \fBSwing\fP, \fBNotation\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetIsVersion4\fP (bool version4=true)"
+.br
+.ti -1c
+.RI "bool \fBgetIsVersion4\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetQuarter\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBgetQuarter\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetShowPageMargin\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBgetShowPageMargin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowTransposeTrack\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBgetShowTransposeTrack\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowLineBreak\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBgetShowLineBreak\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowRuler\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBgetShowRuler\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowColor\fP (bool show)"
+.br
+.ti -1c
+.RI "bool \fBgetShowColor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayRepeat\fP (bool play)"
+.br
+.ti -1c
+.RI "bool \fBgetPlayRepeat\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayStyle\fP (PlayStyle style)"
+.br
+.ti -1c
+.RI "PlayStyle \fBgetPlayStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddTitle\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetTitles\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddAnnotate\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetAnnotates\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddWriter\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetWriters\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddCopyright\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetCopyrights\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddHeader\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetHeaders\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddFooter\fP (const QString &str)"
+.br
+.ti -1c
+.RI "QList< QString > \fBgetFooters\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBaddTrack\fP (\fBTrack\fP *ptr)"
+.br
+.ti -1c
+.RI "int \fBgetTrackCount\fP (void) const"
+.br
+.ti -1c
+.RI "QList< \fBTrack\fP * > \fBgetTracks\fP () const"
+.br
+.ti -1c
+.RI "\fBTrack\fP * \fBgetTrack\fP (int part, int staff) const"
+.br
+.ti -1c
+.RI "void \fBsetTrackBarCount\fP (int count)"
+.br
+.ti -1c
+.RI "int \fBgetTrackBarCount\fP () const"
+.br
+.ti -1c
+.RI "bool \fBaddPage\fP (\fBPage\fP *page)"
+.br
+.ti -1c
+.RI "int \fBgetPageCount\fP () const"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBgetPage\fP (int idx)"
+.br
+.ti -1c
+.RI "void \fBaddLine\fP (\fBLine\fP *ptr)"
+.br
+.ti -1c
+.RI "int \fBgetLineCount\fP () const"
+.br
+.ti -1c
+.RI "\fBLine\fP * \fBgetLine\fP (int idx) const"
+.br
+.ti -1c
+.RI "void \fBaddMeasure\fP (\fBMeasure\fP *ptr)"
+.br
+.ti -1c
+.RI "int \fBgetMeasureCount\fP (void) const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBgetMeasure\fP (int bar) const"
+.br
+.ti -1c
+.RI "void \fBaddMeasureData\fP (\fBMeasureData\fP *ptr)"
+.br
+.ti -1c
+.RI "int \fBgetMeasureDataCount\fP (void) const"
+.br
+.ti -1c
+.RI "\fBMeasureData\fP * \fBgetMeasureData\fP (int part, int staff, int bar) const"
+.br
+.ti -1c
+.RI "\fBMeasureData\fP * \fBgetMeasureData\fP (int track, int bar) const"
+.br
+.ti -1c
+.RI "void \fBsetPartStaffCounts\fP (const QList< int > &partStaffCounts)"
+.br
+.ti -1c
+.RI "int \fBgetPartCount\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetStaffCount\fP (int part) const"
+.br
+.ti -1c
+.RI "int \fBgetPartBarCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP (void)"
+.br
+.ti -1c
+.RI "QPair< int, int > \fBtrackToPartStaff\fP (int track) const"
+.br
+.ti -1c
+.RI "void \fBsetTextCodecName\fP (const QString &codecName)"
+.br
+.ti -1c
+.RI "QString \fBgetCodecString\fP (const QByteArray &text)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 673 of file ove\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="glibc_8h" kind="file" language="C++">
+    <compoundname>glibc.h</compoundname>
+    <includes local="yes">config.h</includes>
+    <includes local="no">time.h</includes>
+    <includedby refid="glibc_8cc" local="yes">thirdparty/poppler/goo/glibc.cc</includedby>
+    <includedby refid="_date_info_8cc" local="yes">thirdparty/poppler/poppler/DateInfo.cc</includedby>
+    <incdepgraph>
+      <node id="84133">
+        <label>thirdparty/poppler/goo/glibc.h</label>
+        <link refid="glibc_8h"/>
+        <childnode refid="84134" relation="include">
+        </childnode>
+        <childnode refid="84135" relation="include">
+        </childnode>
+      </node>
+      <node id="84135">
+        <label>time.h</label>
+      </node>
+      <node id="84134">
+        <label>config.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="84136">
+        <label>thirdparty/poppler/goo/glibc.h</label>
+        <link refid="glibc_8h"/>
+        <childnode refid="84137" relation="include">
+        </childnode>
+        <childnode refid="84138" relation="include">
+        </childnode>
+      </node>
+      <node id="84138">
+        <label>thirdparty/poppler/poppler/DateInfo.cc</label>
+        <link refid="_date_info_8cc_source"/>
+      </node>
+      <node id="84137">
+        <label>thirdparty/poppler/goo/glibc.cc</label>
+        <link refid="glibc_8cc_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="glibc_8h_1a6ef8fd14c34a80c3fee2ef2694491514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct tm *</type>
+        <definition>struct tm* gmtime_r</definition>
+        <argsstring>(const time_t *timep, struct tm *result)</argsstring>
+        <name>gmtime_r</name>
+        <param>
+          <type>const time_t *</type>
+          <declname>timep</declname>
+        </param>
+        <param>
+          <type>struct tm *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.h" line="23" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="16" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="glibc_8h_1a47c0c928ef136f13663444f1b1f01de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct tm *</type>
+        <definition>struct tm* localtime_r</definition>
+        <argsstring>(const time_t *timep, struct tm *result)</argsstring>
+        <name>localtime_r</name>
+        <param>
+          <type>const time_t *</type>
+          <declname>timep</declname>
+        </param>
+        <param>
+          <type>struct tm *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.h" line="27" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="27" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="glibc_8h_1a4fd5240e99b2a9bf19bc0fe39f6ffc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t timegm</definition>
+        <argsstring>(struct tm *tm)</argsstring>
+        <name>timegm</name>
+        <param>
+          <type>struct tm *</type>
+          <declname>tm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.h" line="31" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="48" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>glibc.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Emulate<sp/>various<sp/>non-portable<sp/>glibc<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>GPLv2<sp/>or<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2016<sp/>Adrian<sp/>Johnson<sp/>&lt;ajohnson@redneon.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GLIBC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GLIBC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_GMTIME_R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*gmtime_r(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>*timep,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*result);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_LOCALTIME_R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*localtime_r(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>*timep,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*result);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_TIMEGM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">time_t<sp/>timegm(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*tm);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>GLIBC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/goo/glibc.h"/>
+  </compounddef>
+</doxygen>

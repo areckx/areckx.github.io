@@ -1,0 +1,241 @@
+.TH "Ms::MasterScore" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MasterScore
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Score\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMasterScore\fP (const \fBMStyle\fP &)"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBclone\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBisMaster\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBUndoStack\fP * \fBundoStack\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBTimeSigMap\fP * \fBsigmap\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBTempoMap\fP * \fBtempomap\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBRepeatList\fP * \fBrepeatList\fP () const override"
+.br
+.ti -1c
+.RI "virtual QList< \fBExcerpt\fP * > & \fBexcerpts\fP () override"
+.br
+.ti -1c
+.RI "virtual const QList< \fBExcerpt\fP * > & \fBexcerpts\fP () const override"
+.br
+.ti -1c
+.RI "virtual QQueue< \fBMidiInputEvent\fP > * \fBmidiInputQueue\fP () override"
+.br
+.ti -1c
+.RI "virtual std::list< \fBMidiInputEvent\fP > * \fBactiveMidiPitches\fP () override"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBnext\fP () const"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBprev\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBMovements\fP * \fBmovements\fP () override"
+.br
+.ti -1c
+.RI "virtual const \fBMovements\fP * \fBmovements\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetMovements\fP (\fBMovements\fP *m)"
+.br
+.ti -1c
+.RI "void \fBaddMovement\fP (\fBMasterScore\fP *score)"
+.br
+.ti -1c
+.RI "virtual void \fBsetUpdateAll\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBsetLayoutAll\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBsetLayout\fP (int t) override"
+.br
+.ti -1c
+.RI "virtual \fBCmdState\fP & \fBcmdState\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBaddLayoutFlags\fP (LayoutFlags val) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetInstrumentsChanged\fP (bool val) override"
+.br
+.ti -1c
+.RI "void \fBsetExcerptsChanged\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBexcerptsChanged\fP () const"
+.br
+.ti -1c
+.RI "bool \fBinstrumentsChanged\fP () const"
+.br
+.ti -1c
+.RI "\fBRevisions\fP * \fBrevisions\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisSavable\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTempomap\fP (\fBTempoMap\fP *tm)"
+.br
+.ti -1c
+.RI "bool \fBsaveFile\fP ()"
+.br
+.ti -1c
+.RI "FileError \fBread1\fP (\fBXmlReader\fP &, bool ignoreVersionError)"
+.br
+.ti -1c
+.RI "FileError \fBloadCompressedMsc\fP (QIODevice *, bool ignoreVersionError)"
+.br
+.ti -1c
+.RI "FileError \fBloadMsc\fP (QString name, bool ignoreVersionError)"
+.br
+.ti -1c
+.RI "FileError \fBloadMsc\fP (QString name, QIODevice *, bool ignoreVersionError)"
+.br
+.ti -1c
+.RI "FileError \fBread114\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "FileError \fBread206\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "FileError \fBread300\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "QByteArray \fBreadToBuffer\fP ()"
+.br
+.ti -1c
+.RI "QByteArray \fBreadCompressedToBuffer\fP ()"
+.br
+.ti -1c
+.RI "\fBOmr\fP * \fBomr\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOmr\fP (\fBOmr\fP *o)"
+.br
+.ti -1c
+.RI "void \fBremoveOmr\fP ()"
+.br
+.ti -1c
+.RI "bool \fBshowOmr\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowOmr\fP (bool v)"
+.br
+.ti -1c
+.RI "int \fBmidiPortCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMidiPortCount\fP (int val)"
+.br
+.ti -1c
+.RI "QList< \fBMidiMapping\fP > * \fBmidiMapping\fP ()"
+.br
+.ti -1c
+.RI "\fBMidiMapping\fP * \fBmidiMapping\fP (int channel)"
+.br
+.ti -1c
+.RI "int \fBmidiPort\fP (int idx) const"
+.br
+.ti -1c
+.RI "int \fBmidiChannel\fP (int idx) const"
+.br
+.ti -1c
+.RI "void \fBrebuildMidiMapping\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckMidiMapping\fP ()"
+.br
+.ti -1c
+.RI "bool \fBexportMidiMapping\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNextFreeMidiMapping\fP (int p=\-1, int ch=\-1)"
+.br
+.ti -1c
+.RI "int \fBgetNextFreeDrumMidiMapping\fP ()"
+.br
+.ti -1c
+.RI "void \fBenqueueMidiEvent\fP (\fBMidiInputEvent\fP ev)"
+.br
+.ti -1c
+.RI "void \fBupdateChannel\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSoloMute\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddExcerpt\fP (\fBExcerpt\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveExcerpt\fP (\fBExcerpt\fP *)"
+.br
+.ti -1c
+.RI "void \fBdeleteExcerpt\fP (\fBExcerpt\fP *)"
+.br
+.ti -1c
+.RI "QFileInfo * \fBfileInfo\fP ()"
+.br
+.ti -1c
+.RI "const QFileInfo * \fBfileInfo\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual QString \fBtitle\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBpageIdx\fP (\fBPage\fP *page) const override"
+.br
+.ti -1c
+.RI "virtual const QList< \fBPage\fP * > & \fBpages\fP () const override"
+.br
+.ti -1c
+.RI "virtual QList< \fBPage\fP * > & \fBpages\fP () override"
+.br
+.ti -1c
+.RI "virtual int \fBnpages\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBMStyle\fP & \fBstyle\fP () override"
+.br
+.ti -1c
+.RI "virtual const \fBMStyle\fP & \fBstyle\fP () const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 1155 of file score\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::MasterScore::saveFile ()"
+If file has generated name, create a modal file save dialog and ask filename\&. Rename old file to backup file (\&.xxxx\&.msc?,)\&. Default is to save score in \&.mscz format, Return true if OK and false on error\&. 
+.PP
+Definition at line 370 of file scorefile\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

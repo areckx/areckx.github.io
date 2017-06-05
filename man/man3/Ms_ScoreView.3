@@ -1,0 +1,424 @@
+.TH "Ms::ScoreView" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::ScoreView
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QWidget, and \fBMs::MuseScoreView\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetViewRect\fP (const QRectF &)"
+.br
+.ti -1c
+.RI "void \fBdeselectAll\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditCopy\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditCut\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditPaste\fP ()"
+.br
+.ti -1c
+.RI "void \fBeditSwap\fP ()"
+.br
+.ti -1c
+.RI "void \fBnormalCut\fP ()"
+.br
+.ti -1c
+.RI "void \fBnormalCopy\fP ()"
+.br
+.ti -1c
+.RI "void \fBfotoModeCopy\fP ()"
+.br
+.ti -1c
+.RI "bool \fBnormalPaste\fP ()"
+.br
+.ti -1c
+.RI "void \fBnormalSwap\fP ()"
+.br
+.ti -1c
+.RI "void \fBcloneElement\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBdoFotoDragEdit\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBupdateContinuousPanel\fP ()"
+.br
+.ti -1c
+.RI "void \fBticksTab\fP (int ticks)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBviewRectChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBscaleChanged\fP (double)"
+.br
+.ti -1c
+.RI "void \fBoffsetChanged\fP (double, double)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScoreView\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "QPixmap * \fBfgPixmap\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBElement\fP *, Grip) override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEditMode\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "void \fBmoveCursor\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBcursorTick\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCursorOn\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (QPixmap *)"
+.br
+.ti -1c
+.RI "void \fBsetBackground\fP (const QColor &)"
+.br
+.ti -1c
+.RI "void \fBsetForeground\fP (QPixmap *)"
+.br
+.ti -1c
+.RI "void \fBsetForeground\fP (const QColor &)"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBaddPage\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodifyElement\fP (\fBElement\fP *obj)"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "virtual void \fBremoveScore\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMag\fP (qreal m)"
+.br
+.ti -1c
+.RI "bool \fBnavigatorVisible\fP () const"
+.br
+.ti -1c
+.RI "void \fBcmd\fP (const QAction *a)"
+.br
+.ti -1c
+.RI "void \fBstartUndoRedo\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBzoomStep\fP (qreal step, const QPoint &pos)"
+.br
+.ti -1c
+.RI "void \fBzoom\fP (qreal _mag, const QPointF &pos)"
+.br
+.ti -1c
+.RI "void \fBcontextPopup\fP (QContextMenuEvent *ev)"
+.br
+.ti -1c
+.RI "bool \fBeditKeyLyrics\fP (QKeyEvent *)"
+.br
+.ti -1c
+.RI "void \fBdragScoreView\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBdragNoteEntry\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBnoteEntryButton\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBdoDragElement\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBdoDragLasso\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBdoDragFoto\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "void \fBdoDragEdit\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "bool \fBtestElementDragTransition\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "bool \fBeditElementDragTransition\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "bool \fBfotoEditElementDragTransition\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "bool \fBeditScoreViewDragTransition\fP (QMouseEvent *e)"
+.br
+.ti -1c
+.RI "bool \fBeditSelectTransition\fP (QMouseEvent *me)"
+.br
+.ti -1c
+.RI "void \fBcmdAddSlur\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcmdAddHairpin\fP (HairpinType) override"
+.br
+.ti -1c
+.RI "void \fBcmdAddNoteLine\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcmdAddSlur\fP (\fBNote\fP *firstNote, \fBNote\fP *lastNote)"
+.br
+.ti -1c
+.RI "bool \fBnoteEntryMode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBeditMode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBfotoMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBeditInputTransition\fP (QInputMethodEvent *ie)"
+.br
+.ti -1c
+.RI "void \fBonEditPasteTransition\fP (QMouseEvent *ev)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDropRectangle\fP (const QRectF &)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDropTarget\fP (const \fBElement\fP *) override"
+.br
+.ti -1c
+.RI "void \fBsetDropAnchor\fP (const QLineF &)"
+.br
+.ti -1c
+.RI "const QTransform & \fBmatrix\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBmag\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBlmag\fP () const"
+.br
+.ti -1c
+.RI "MagIdx \fBmagIdx\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMag\fP (MagIdx idx, double mag)"
+.br
+.ti -1c
+.RI "qreal \fBxoffset\fP () const"
+.br
+.ti -1c
+.RI "qreal \fByoffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOffset\fP (qreal x, qreal y)"
+.br
+.ti -1c
+.RI "QSizeF \fBfsize\fP () const"
+.br
+.ti -1c
+.RI "void \fBpageNext\fP ()"
+.br
+.ti -1c
+.RI "void \fBpagePrev\fP ()"
+.br
+.ti -1c
+.RI "void \fBpageTop\fP ()"
+.br
+.ti -1c
+.RI "void \fBpageEnd\fP ()"
+.br
+.ti -1c
+.RI "QPointF \fBtoLogical\fP (const QPoint &p) const"
+.br
+.ti -1c
+.RI "QPointF \fBtoPhysical\fP (const QPointF &p) const"
+.br
+.ti -1c
+.RI "QRectF \fBtoLogical\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "QRect \fBtoPhysical\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "bool \fBsearchMeasure\fP (int i)"
+.br
+.ti -1c
+.RI "bool \fBsearchPage\fP (int i)"
+.br
+.ti -1c
+.RI "bool \fBsearchRehearsalMark\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBgotoMeasure\fP (\fBMeasure\fP *)"
+.br
+.ti -1c
+.RI "void \fBpostCmd\fP (const char *)"
+.br
+.ti -1c
+.RI "void \fBsetFocusRect\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeVoice\fP (int voice)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawBackground\fP (QPainter *p, const QRectF &r) const"
+.br
+.ti -1c
+.RI "bool \fBfotoScoreViewDragTest\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "bool \fBfotoScoreViewDragRectTest\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "void \fBdoDragFotoRect\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "void \fBfotoContextPopup\fP (QContextMenuEvent *)"
+.br
+.ti -1c
+.RI "bool \fBfotoRectHit\fP (const QPoint &p)"
+.br
+.ti -1c
+.RI "void \fBpaintRect\fP (bool printMode, QPainter &p, const QRectF &r, double mag)"
+.br
+.ti -1c
+.RI "bool \fBsaveFotoAs\fP (bool printMode, const QRectF &)"
+.br
+.ti -1c
+.RI "void \fBfotoDragDrop\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "void \fBchangeEditElement\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBcmdAppendMeasures\fP (int, ElementType)"
+.br
+.ti -1c
+.RI "void \fBcmdInsertMeasures\fP (int, ElementType)"
+.br
+.ti -1c
+.RI "void \fBcmdAddRemoveBreaks\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdCopyLyricsToClipboard\fP ()"
+.br
+.RI "Copy the score lyrics into clipboard\&. "
+.ti -1c
+.RI "ScoreState \fBmscoreState\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCursorVisible\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBshowOmr\fP (bool flag)"
+.br
+.ti -1c
+.RI "void \fBmidiNoteReceived\fP (int pitch, bool chord, int velocity)"
+.br
+.ti -1c
+.RI "void \fBsetEditPos\fP (const QPointF &)"
+.br
+.ti -1c
+.RI "virtual void \fBmoveCursor\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutChanged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdataChanged\fP (const QRectF &)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateAll\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBadjustCanvasPosition\fP (const \fBElement\fP *el, bool playBack)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCursor\fP (const QCursor &c)"
+.br
+.ti -1c
+.RI "virtual QCursor \fBcursor\fP () const"
+.br
+.ti -1c
+.RI "void \fBloopUpdate\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBupdateShadowNotes\fP ()"
+.br
+.ti -1c
+.RI "\fBOmrView\fP * \fBomrView\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOmrView\fP (\fBOmrView\fP *v)"
+.br
+.ti -1c
+.RI "\fBFotoLasso\fP * \fBfotoLasso\fP () const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBgetEditElement\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBelementNear\fP (QPointF)"
+.br
+.ti -1c
+.RI "void \fBeditFretDiagram\fP (\fBFretDiagram\fP *)"
+.br
+.ti -1c
+.RI "void \fBeditBendProperties\fP (\fBBend\fP *)"
+.br
+.ti -1c
+.RI "void \fBeditTremoloBarProperties\fP (\fBTremoloBar\fP *)"
+.br
+.ti -1c
+.RI "\fBEditData\fP & \fBgetEditData\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeState\fP (ViewState)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 100 of file scoreview\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::ScoreView::cmdAddRemoveBreaks ()"
+add or remove line breaks within a range selection or, if nothing is selected, the entire score 
+.PP
+Definition at line 4699 of file scoreview\&.cpp\&.
+.SS "void Ms::ScoreView::cmdAppendMeasures (int n, ElementType type)"
+Append \fIn\fP measures\&.
+.PP
+Keyboard callback, called from pulldown menu\&. 
+.PP
+Definition at line 4076 of file scoreview\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

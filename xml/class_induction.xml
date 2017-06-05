@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_induction" kind="class" language="C++" prot="public">
+    <compoundname>Induction</compoundname>
+    <includes refid="_induction_8h" local="no">Induction.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_induction_1a2ab726717d99a6edb75bcd47c4ecdec4" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double Induction::clusterWidth</definition>
+        <argsstring></argsstring>
+        <name>clusterWidth</name>
+        <initializer>= 0.025</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum difference in IOIs which are in the same cluster </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="35" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_induction_1a79992fbf54461174a5b7113397210c0a" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double Induction::minIOI</definition>
+        <argsstring></argsstring>
+        <name>minIOI</name>
+        <initializer>= 0.070</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The minimum IOI for inclusion in a cluster </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="38" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_induction_1ab279072ddf4b9340c14a90622513f52a" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double Induction::maxIOI</definition>
+        <argsstring></argsstring>
+        <name>maxIOI</name>
+        <initializer>= 2.500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum IOI for inclusion in a cluster </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="41" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_induction_1ae8c5b515b4df99e1c1003f42f9f5c13a" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double Induction::minIBI</definition>
+        <argsstring></argsstring>
+        <name>minIBI</name>
+        <initializer>= 0.3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The minimum inter-beat interval (IBI), i.e. the maximum tempo hypothesis that can be returned. 0.30 seconds == 200 BPM 0.25 seconds == 240 BPM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="48" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_induction_1a4f369d04b9ef6a70b1da601489d8b859" prot="public" static="yes" mutable="no">
+        <type>double</type>
+        <definition>double Induction::maxIBI</definition>
+        <argsstring></argsstring>
+        <name>maxIBI</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum inter-beat interval (IBI), i.e. the minimum tempo hypothesis that can be returned. 1.00 seconds == 60 BPM 0.75 seconds == 80 BPM 0.60 seconds == 100 BPM </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="56" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_induction_1ae128800b79984f390a9a00a7850e6f7d" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int Induction::topN</definition>
+        <argsstring></argsstring>
+        <name>topN</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The maximum number of tempo hypotheses to return </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="59" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_induction_1ad6cfd2e62ae5262273d83a0b858bee33" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_agent_list" kindref="compound">AgentList</ref></type>
+        <definition>AgentList Induction::beatInduction</definition>
+        <argsstring>(const AgentParameters &amp;params, const EventList &amp;events)</argsstring>
+        <name>beatInduction</name>
+        <param>
+          <type>const <ref refid="class_agent_parameters" kindref="compound">AgentParameters</ref> &amp;</type>
+          <declname>params</declname>
+        </param>
+        <param>
+          <type>const EventList &amp;</type>
+          <declname>events</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs tempo induction (see JNMR 2001 paper by Simon Dixon for details). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>events</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The onsets (or other events) from which the tempo is induced </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A list of beat tracking agents, where each is initialised with one of the top tempo hypotheses but no beats </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="66" column="1" bodyfile="thirdparty/beatroot/Induction.cpp" bodystart="32" bodyend="204"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_induction_1a086393b84bd0b1521691107d4182de94" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Induction::top</definition>
+        <argsstring>(int low)</argsstring>
+        <name>top</name>
+        <param>
+          <type>int</type>
+          <declname>low</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For variable cluster widths in newInduction(). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>low</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The lowest IOI allowed in the cluster </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The highest IOI allowed in the cluster </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/beatroot/Induction.h" line="74" column="1" bodyfile="thirdparty/beatroot/Induction.cpp" bodystart="206" bodyend="209"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Performs tempo induction by finding clusters of similar inter-onset intervals (IOIs), ranking them according to the number of intervals and relationships between them, and returning a set of tempo hypotheses for initialising the beat tracking agents. </para>    </detaileddescription>
+    <location file="thirdparty/beatroot/Induction.h" line="32" column="1" bodyfile="thirdparty/beatroot/Induction.h" bodystart="31" bodyend="75"/>
+    <listofallmembers>
+      <member refid="class_induction_1ad6cfd2e62ae5262273d83a0b858bee33" prot="public" virt="non-virtual"><scope>Induction</scope><name>beatInduction</name></member>
+      <member refid="class_induction_1a2ab726717d99a6edb75bcd47c4ecdec4" prot="public" virt="non-virtual"><scope>Induction</scope><name>clusterWidth</name></member>
+      <member refid="class_induction_1a4f369d04b9ef6a70b1da601489d8b859" prot="public" virt="non-virtual"><scope>Induction</scope><name>maxIBI</name></member>
+      <member refid="class_induction_1ab279072ddf4b9340c14a90622513f52a" prot="public" virt="non-virtual"><scope>Induction</scope><name>maxIOI</name></member>
+      <member refid="class_induction_1ae8c5b515b4df99e1c1003f42f9f5c13a" prot="public" virt="non-virtual"><scope>Induction</scope><name>minIBI</name></member>
+      <member refid="class_induction_1a79992fbf54461174a5b7113397210c0a" prot="public" virt="non-virtual"><scope>Induction</scope><name>minIOI</name></member>
+      <member refid="class_induction_1a086393b84bd0b1521691107d4182de94" prot="private" virt="non-virtual"><scope>Induction</scope><name>top</name></member>
+      <member refid="class_induction_1ae128800b79984f390a9a00a7850e6f7d" prot="public" virt="non-virtual"><scope>Induction</scope><name>topN</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

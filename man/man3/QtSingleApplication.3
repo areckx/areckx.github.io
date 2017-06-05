@@ -1,0 +1,224 @@
+.TH "QtSingleApplication" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QtSingleApplication \- The \fBQtSingleApplication\fP class provides an API to detect and communicate with running instances of an application\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qtsingleapplication\&.h>\fP
+.PP
+Inherits QApplication\&.
+.PP
+Inherited by \fBMs::MuseScoreApplication\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsendMessage\fP (const QString &message, int timeout=5000)"
+.br
+.ti -1c
+.RI "void \fBactivateWindow\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBmessageReceived\fP (const QString &message)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQtSingleApplication\fP (int &argc, char **argv, bool GUIenabled=true)"
+.br
+.ti -1c
+.RI "\fBQtSingleApplication\fP (const QString &\fBid\fP, int &argc, char **argv)"
+.br
+.ti -1c
+.RI "\fBQtSingleApplication\fP (int &argc, char **argv, Type type)"
+.br
+.ti -1c
+.RI "bool \fBisRunning\fP ()"
+.br
+.ti -1c
+.RI "QString \fBid\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetActivationWindow\fP (QWidget *aw, bool activateOnMessage=true)"
+.br
+.ti -1c
+.RI "QWidget * \fBactivationWindow\fP () const"
+.br
+.ti -1c
+.RI "void \fBinitialize\fP (bool dummy=true)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBQtSingleApplication\fP class provides an API to detect and communicate with running instances of an application\&. 
+
+This class allows you to create applications where only one instance should be running at a time\&. I\&.e\&., if the user tries to launch another instance, the already running instance will be activated instead\&. Another usecase is a client-server system, where the first started instance will assume the role of server, and the later instances will act as clients of that server\&.
+.PP
+By default, the full path of the executable file is used to determine whether two processes are instances of the same application\&. You can also provide an explicit identifier string that will be compared instead\&.
+.PP
+The application should create the \fBQtSingleApplication\fP object early in the startup phase, and call \fBisRunning()\fP to find out if another instance of this application is already running\&. If \fBisRunning()\fP returns false, it means that no other instance is running, and this instance has assumed the role as the running instance\&. In this case, the application should continue with the initialization of the application user interface before entering the event loop with exec(), as normal\&.
+.PP
+The \fBmessageReceived()\fP signal will be emitted when the running application receives messages from another instance of the same application\&. When a message is received it might be helpful to the user to raise the application so that it becomes visible\&. To facilitate this, \fBQtSingleApplication\fP provides the \fBsetActivationWindow()\fP function and the \fBactivateWindow()\fP slot\&.
+.PP
+If \fBisRunning()\fP returns true, another instance is already running\&. It may be alerted to the fact that another instance has started by using the \fBsendMessage()\fP function\&. Also data such as startup parameters (e\&.g\&. the name of the file the user wanted this new instance to open) can be passed to the running instance with this function\&. Then, the application should terminate (or enter client mode)\&.
+.PP
+If \fBisRunning()\fP returns true, but \fBsendMessage()\fP fails, that is an indication that the running instance is frozen\&.
+.PP
+Here's an example that shows how to convert an existing application to use \fBQtSingleApplication\fP\&. It is very simple and does not make use of all \fBQtSingleApplication\fP's functionality (see the examples for that)\&.
+.PP
+.PP
+.nf
+// Original
+int main(int argc, char **argv)
+{
+    QApplication app(argc, argv);
+
+    MyMainWidget mmw;
+    mmw\&.show();
+    return app\&.exec();
+}
+
+// Single instance
+int main(int argc, char **argv)
+{
+    QtSingleApplication app(argc, argv);
+
+    if (app\&.isRunning())
+        return !app\&.sendMessage(someDataString);
+
+    MyMainWidget mmw;
+    app\&.setActivationWindow(&mmw);
+    mmw\&.show();
+    return app\&.exec();
+}
+.fi
+.PP
+.PP
+Once this \fBQtSingleApplication\fP instance is destroyed (normally when the process exits or crashes), when the user next attempts to run the application this instance will not, of course, be encountered\&. The next instance to call \fBisRunning()\fP or \fBsendMessage()\fP will assume the role as the new running instance\&.
+.PP
+For console (non-GUI) applications, \fBQtSingleCoreApplication\fP may be used instead of this class, to avoid the dependency on the QtGui library\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQtSingleCoreApplication\fP 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file qtsingleapplication\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QtSingleApplication::QtSingleApplication (int & argc, char ** argv, bool GUIenabled = \fCtrue\fP)"
+Creates a \fBQtSingleApplication\fP object\&. The application identifier will be QCoreApplication::applicationFilePath()\&. \fIargc\fP, \fIargv\fP, and \fIGUIenabled\fP are passed on to the QAppliation constructor\&.
+.PP
+If you are creating a console application (i\&.e\&. setting \fIGUIenabled\fP to false), you may consider using \fBQtSingleCoreApplication\fP instead\&. 
+.PP
+Definition at line 154 of file qtsingleapplication\&.cpp\&.
+.SS "QtSingleApplication::QtSingleApplication (const QString & appId, int & argc, char ** argv)"
+Creates a \fBQtSingleApplication\fP object with the application identifier \fIappId\fP\&. \fIargc\fP and \fIargv\fP are passed on to the QAppliation constructor\&. 
+.PP
+Definition at line 167 of file qtsingleapplication\&.cpp\&.
+.SS "QtSingleApplication::QtSingleApplication (int & argc, char ** argv, Type type)"
+Creates a \fBQtSingleApplication\fP object\&. The application identifier will be QCoreApplication::applicationFilePath()\&. \fIargc\fP, \fIargv\fP, and \fItype\fP are passed on to the QAppliation constructor\&. 
+.PP
+Definition at line 180 of file qtsingleapplication\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QtSingleApplication::activateWindow ()\fC [slot]\fP"
+De-minimizes, raises, and activates this application's activation window\&. This function does nothing if no activation window has been set\&.
+.PP
+This is a convenience function to show the user that this application instance has been activated when he has tried to start another instance\&.
+.PP
+This function should typically be called in response to the \fBmessageReceived()\fP signal\&. By default, that will happen automatically, if an activation window has been set\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetActivationWindow()\fP, \fBmessageReceived()\fP, \fBinitialize()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 323 of file qtsingleapplication\&.cpp\&.
+.SS "QWidget * QtSingleApplication::activationWindow () const"
+Returns the applications activation window if one has been set by calling \fBsetActivationWindow()\fP, otherwise returns 0\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetActivationWindow()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 303 of file qtsingleapplication\&.cpp\&.
+.SS "QString QtSingleApplication::id () const"
+Returns the application identifier\&. Two processes with the same identifier will be regarded as instances of the same application\&. 
+.PP
+Definition at line 269 of file qtsingleapplication\&.cpp\&.
+.SS "void QtSingleApplication::initialize (bool dummy = \fCtrue\fP)\fC [inline]\fP"
+
+.PP
+Definition at line 87 of file qtsingleapplication\&.h\&.
+.SS "bool QtSingleApplication::isRunning (void)"
+Returns true if another instance of this application is running; otherwise false\&.
+.PP
+This function does not find instances of this application that are being run by a different user (on Windows: that are running in another session)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsendMessage()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file qtsingleapplication\&.cpp\&.
+.SS "void QtSingleApplication::messageReceived (const QString & message)\fC [signal]\fP"
+This signal is emitted when the current instance receives a \fImessage\fP from another instance of this application\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsendMessage()\fP, \fBsetActivationWindow()\fP, \fBactivateWindow()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 145 of file moc_qtsingleapplication\&.cpp\&.
+.SS "bool QtSingleApplication::sendMessage (const QString & message, int timeout = \fC5000\fP)\fC [slot]\fP"
+Tries to send the text \fImessage\fP to the currently running instance\&. The \fBQtSingleApplication\fP object in the running instance will emit the \fBmessageReceived()\fP signal when it receives the message\&.
+.PP
+This function returns true if the message has been sent to, and processed by, the current instance\&. If there is no instance currently running, or if the running instance fails to process the message within \fItimeout\fP milliseconds, this function return false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisRunning()\fP, \fBmessageReceived()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 259 of file qtsingleapplication\&.cpp\&.
+.SS "void QtSingleApplication::setActivationWindow (QWidget * aw, bool activateOnMessage = \fCtrue\fP)"
+Sets the activation window of this application to \fIaw\fP\&. The activation window is the widget that will be activated by \fBactivateWindow()\fP\&. This is typically the application's main window\&.
+.PP
+If \fIactivateOnMessage\fP is true (the default), the window will be activated automatically every time a message is received, just prior to the \fBmessageReceived()\fP signal being emitted\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBactivateWindow()\fP, \fBmessageReceived()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 287 of file qtsingleapplication\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

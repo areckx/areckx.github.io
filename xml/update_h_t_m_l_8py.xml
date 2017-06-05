@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="update_h_t_m_l_8py" kind="file" language="Python">
+    <compoundname>updateHTML.py</compoundname>
+    <innernamespace refid="namespaceupdate_h_t_m_l">updateHTML</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#<sp/>This<sp/>Python<sp/>file<sp/>uses<sp/>the<sp/>following<sp/>encoding:<sp/>utf-8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>datetime<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>datetime</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>subprocess<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>check_output</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">getFileList(sshKey):</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>a<sp/>=<sp/>[</highlight><highlight class="stringliteral">&quot;ssh&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;-i&quot;</highlight><highlight class="normal">,<sp/>sshKey,<sp/></highlight><highlight class="stringliteral">&quot;musescore-nightlies@ftp-osl.osuosl.org&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;ls<sp/>ftp/macosx/&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>check_output(a)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">generateHTML(pathname,<sp/>lines):</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>li<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>l<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>lines:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>l<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>l.startswith(</highlight><highlight class="stringliteral">&quot;MuseScore&quot;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>li<sp/>+=<sp/></highlight><highlight class="stringliteral">&apos;&lt;li&gt;&lt;a<sp/>href=&quot;http://ftp.osuosl.org/pub/musescore-nightlies/macosx/&apos;</highlight><highlight class="normal"><sp/>+<sp/>l<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;&quot;&gt;&apos;</highlight><highlight class="normal"><sp/>+<sp/>l<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;&lt;/a&gt;&lt;/li&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlTplPath<sp/>=<sp/>pathname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/web/index.html.tpl&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlPath<sp/>=<sp/>pathname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/web/index.html&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlTplFile<sp/>=<sp/>open(htmlTplPath,<sp/></highlight><highlight class="stringliteral">&apos;r&apos;)</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>htmlTemplate<sp/>=<sp/>htmlTplFile.read()</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>htmlTemplate<sp/>=<sp/>htmlTemplate.replace(&quot;##PLACEHOLDER##&quot;</highlight><highlight class="normal">,<sp/>li)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlTplFile.close()</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlFile<sp/>=<sp/>open(htmlPath,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlFile.write(htmlTemplate)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>htmlFile.close()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">generateRSS(pathname,<sp/>lines):</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>li<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>l<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>lines:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>l<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>l.startswith(</highlight><highlight class="stringliteral">&quot;MuseScore&quot;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>info<sp/>=<sp/>l.split(</highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(info)<sp/>==<sp/>4:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>date<sp/>=<sp/>info[1]</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>branch<sp/>=<sp/>info[2]</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>commit<sp/>=<sp/>info[3]</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">elif</highlight><highlight class="normal"><sp/>len(info)<sp/>==<sp/>7:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>=<sp/>info[1]</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>=<sp/>info[2]</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>day<sp/>=<sp/>info[3]</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>hour<sp/>=<sp/>info[4]</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>date<sp/>=<sp/>year<sp/>+<sp/>month<sp/>+<sp/>day<sp/>+<sp/>hour</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>branch<sp/>=<sp/>info[5]</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>commit<sp/>=<sp/>info[6]</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d<sp/>=<sp/>datetime.strptime(date,<sp/></highlight><highlight class="stringliteral">&apos;%Y%m%d%H%M&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>email.utils<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>formatdate</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>li<sp/>+=<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral">&lt;item&gt;</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral">&lt;title&gt;&apos;&apos;&apos;</highlight><highlight class="normal"><sp/>+<sp/>l<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;&lt;/title&gt;</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral">&lt;link&gt;http://ftp.osuosl.org/pub/musescore-nightlies/macosx/&apos;&apos;&apos;</highlight><highlight class="normal"><sp/>+<sp/>l<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;&lt;/link&gt;</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral">&lt;pubDate&gt;&apos;&apos;&apos;</highlight><highlight class="normal">+formatdate(time.mktime(d.timetuple()),<sp/>usegmt=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)+</highlight><highlight class="stringliteral">&apos;&apos;&apos;&lt;/pubDate&gt;</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral">&lt;description&gt;Nightly<sp/>Build<sp/>of<sp/>MuseScore,<sp/>Branch:<sp/>&apos;&apos;&apos;</highlight><highlight class="normal"><sp/>+<sp/>branch<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;,<sp/>Revision:<sp/>&apos;&apos;&apos;</highlight><highlight class="normal">+commit<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;&lt;/description&gt;</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">&lt;/item&gt;&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>rssTplPath<sp/>=<sp/>pathname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/web/nightly.xml.tpl&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>rssPath<sp/>=<sp/>pathname<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/web/nightly.xml&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>rssTplFile<sp/>=<sp/>open(rssTplPath,<sp/></highlight><highlight class="stringliteral">&apos;r&apos;)</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>rssTemplate<sp/>=<sp/>rssTplFile.read()</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>rssTemplate<sp/>=<sp/>rssTemplate.replace(&quot;##PLACEHOLDER##&quot;</highlight><highlight class="normal">,<sp/>li)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>rssTplFile.close()</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>rssFile<sp/>=<sp/>open(rssPath,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>rssFile.write(rssTemplate)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>rssFile.close()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">main():</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sshKey<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Parse<sp/>command<sp/>line<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(sys.argv)<sp/>==<sp/>2:</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sshKey<sp/>=<sp/>sys.argv[1].lower()</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Need<sp/>SSH<sp/>key&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(0)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pathname<sp/>=<sp/>os.path.abspath(os.path.dirname(sys.argv[0]))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&apos;path<sp/>=&apos;</highlight><highlight class="normal">,<sp/>pathname)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fileList<sp/>=<sp/>getFileList(sshKey)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l<sp/>=<sp/>fileList.split(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>l.reverse()<sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>most<sp/>recent<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generateHTML(pathname,<sp/>l)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>generateRSS(pathname,<sp/>l)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Unexpected<sp/>error:&quot;</highlight><highlight class="normal">,<sp/>sys.exc_info()[0],<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>sys.exc_info()[1],<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>traceback</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>traceback.print_tb(sys.exc_info()[2]),<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>main()</highlight></codeline>
+    </programlisting>
+    <location file="build/travis/job_macos/updateHTML.py"/>
+  </compounddef>
+</doxygen>

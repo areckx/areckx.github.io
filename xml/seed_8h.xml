@@ -1,0 +1,500 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="seed_8h" kind="file" language="C++">
+    <compoundname>seed.h</compoundname>
+    <includes refid="opensslconf_8h" local="no">openssl/opensslconf.h</includes>
+    <includes refid="e__os2_8h" local="no">openssl/e_os2.h</includes>
+    <includes refid="crypto_8h" local="no">openssl/crypto.h</includes>
+    <includes local="no">sys/types.h</includes>
+    <incdepgraph>
+      <node id="83441">
+        <label>openssl/opensslv.h</label>
+        <link refid="opensslv_8h_source"/>
+      </node>
+      <node id="83437">
+        <label>stdlib.h</label>
+      </node>
+      <node id="83439">
+        <label>openssl/stack.h</label>
+        <link refid="stack_8h_source"/>
+      </node>
+      <node id="83433">
+        <label>thirdparty/openssl/include/openssl/seed.h</label>
+        <link refid="seed_8h"/>
+        <childnode refid="83434" relation="include">
+        </childnode>
+        <childnode refid="83435" relation="include">
+        </childnode>
+        <childnode refid="83436" relation="include">
+        </childnode>
+        <childnode refid="83444" relation="include">
+        </childnode>
+      </node>
+      <node id="83444">
+        <label>sys/types.h</label>
+      </node>
+      <node id="83443">
+        <label>openssl/symhacks.h</label>
+        <link refid="symhacks_8h_source"/>
+        <childnode refid="83435" relation="include">
+        </childnode>
+      </node>
+      <node id="83440">
+        <label>openssl/safestack.h</label>
+        <link refid="safestack_8h_source"/>
+        <childnode refid="83439" relation="include">
+        </childnode>
+      </node>
+      <node id="83434">
+        <label>openssl/opensslconf.h</label>
+        <link refid="opensslconf_8h_source"/>
+      </node>
+      <node id="83435">
+        <label>openssl/e_os2.h</label>
+        <link refid="e__os2_8h_source"/>
+        <childnode refid="83434" relation="include">
+        </childnode>
+      </node>
+      <node id="83438">
+        <label>stdio.h</label>
+      </node>
+      <node id="83442">
+        <label>openssl/ossl_typ.h</label>
+        <link refid="ossl__typ_8h_source"/>
+        <childnode refid="83435" relation="include">
+        </childnode>
+      </node>
+      <node id="83436">
+        <label>openssl/crypto.h</label>
+        <link refid="crypto_8h_source"/>
+        <childnode refid="83437" relation="include">
+        </childnode>
+        <childnode refid="83435" relation="include">
+        </childnode>
+        <childnode refid="83438" relation="include">
+        </childnode>
+        <childnode refid="83439" relation="include">
+        </childnode>
+        <childnode refid="83440" relation="include">
+        </childnode>
+        <childnode refid="83441" relation="include">
+        </childnode>
+        <childnode refid="83442" relation="include">
+        </childnode>
+        <childnode refid="83443" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structseed__key__st" prot="public">seed_key_st</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="seed_8h_1a1e2a94d8f4291d38a154ccbb7d2ddcd1" prot="public" static="no">
+        <name>SEED_BLOCK_SIZE</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="102" column="9" bodyfile="thirdparty/openssl/include/openssl/seed.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="seed_8h_1a6230d1ad45058898794d9e03fc6663d0" prot="public" static="no">
+        <name>SEED_KEY_LENGTH</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="103" column="9" bodyfile="thirdparty/openssl/include/openssl/seed.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="seed_8h_1af5f7d3cf3021e850996232c92f19bba5" prot="public" static="no">
+        <type>struct <ref refid="structseed__key__st" kindref="compound">seed_key_st</ref></type>
+        <definition>typedef struct seed_key_st  SEED_KEY_SCHEDULE</definition>
+        <argsstring></argsstring>
+        <name>SEED_KEY_SCHEDULE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="117" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="seed_8h_1a97f742189dd55dd670163d9b3f0c84c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_set_key</definition>
+        <argsstring>(const unsigned char rawkey[SEED_KEY_LENGTH], SEED_KEY_SCHEDULE *ks)</argsstring>
+        <name>SEED_set_key</name>
+        <param>
+          <type>const unsigned char</type>
+          <declname>rawkey</declname>
+          <array>[SEED_KEY_LENGTH]</array>
+        </param>
+        <param>
+          <type><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1a9ebab893b021d9e7bb0963d7db460572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_encrypt</definition>
+        <argsstring>(const unsigned char s[SEED_BLOCK_SIZE], unsigned char d[SEED_BLOCK_SIZE], const SEED_KEY_SCHEDULE *ks)</argsstring>
+        <name>SEED_encrypt</name>
+        <param>
+          <type>const unsigned char</type>
+          <declname>s</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>d</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="124" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1a66290664cfafb479329adb947ce37ac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_decrypt</definition>
+        <argsstring>(const unsigned char s[SEED_BLOCK_SIZE], unsigned char d[SEED_BLOCK_SIZE], const SEED_KEY_SCHEDULE *ks)</argsstring>
+        <name>SEED_decrypt</name>
+        <param>
+          <type>const unsigned char</type>
+          <declname>s</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>d</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="125" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1a1ee36000e799a7210de2319e24323041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_ecb_encrypt</definition>
+        <argsstring>(const unsigned char *in, unsigned char *out, const SEED_KEY_SCHEDULE *ks, int enc)</argsstring>
+        <name>SEED_ecb_encrypt</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>enc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1acc591cc67f0e9ec6bcc8c019c8e7e46e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_cbc_encrypt</definition>
+        <argsstring>(const unsigned char *in, unsigned char *out, size_t len, const SEED_KEY_SCHEDULE *ks, unsigned char ivec[SEED_BLOCK_SIZE], int enc)</argsstring>
+        <name>SEED_cbc_encrypt</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>ivec</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>enc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1a8b6f40bcad7de18c8e641a93efdba407" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_cfb128_encrypt</definition>
+        <argsstring>(const unsigned char *in, unsigned char *out, size_t len, const SEED_KEY_SCHEDULE *ks, unsigned char ivec[SEED_BLOCK_SIZE], int *num, int enc)</argsstring>
+        <name>SEED_cfb128_encrypt</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>ivec</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>enc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="seed_8h_1abc2cdeda8ddc172b4a4c50509d283030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SEED_ofb128_encrypt</definition>
+        <argsstring>(const unsigned char *in, unsigned char *out, size_t len, const SEED_KEY_SCHEDULE *ks, unsigned char ivec[SEED_BLOCK_SIZE], int *num)</argsstring>
+        <name>SEED_ofb128_encrypt</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref> *</type>
+          <declname>ks</declname>
+        </param>
+        <param>
+          <type>unsigned char</type>
+          <declname>ivec</declname>
+          <array>[SEED_BLOCK_SIZE]</array>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/seed.h" line="132" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2007<sp/>KISA(Korea<sp/>Information<sp/>Security<sp/>Agency).<sp/>All<sp/>rights<sp/>reserved.<sp/><sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>2.<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>author<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>AUTHOR<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>AUTHOR<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>1998-2007<sp/>The<sp/>OpenSSL<sp/>Project.<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>3.<sp/>All<sp/>advertising<sp/>materials<sp/>mentioning<sp/>features<sp/>or<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>software<sp/>must<sp/>display<sp/>the<sp/>following<sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit.<sp/>(http://www.openssl.org/)&quot;</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>4.<sp/>The<sp/>names<sp/>&quot;OpenSSL<sp/>Toolkit&quot;<sp/>and<sp/>&quot;OpenSSL<sp/>Project&quot;<sp/>must<sp/>not<sp/>be<sp/>used<sp/>to</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>prior<sp/>written<sp/>permission.<sp/>For<sp/>written<sp/>permission,<sp/>please<sp/>contact</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>openssl-core@openssl.org.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>5.<sp/>Products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>may<sp/>not<sp/>be<sp/>called<sp/>&quot;OpenSSL&quot;</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>nor<sp/>may<sp/>&quot;OpenSSL&quot;<sp/>appear<sp/>in<sp/>their<sp/>names<sp/>without<sp/>prior<sp/>written</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>permission<sp/>of<sp/>the<sp/>OpenSSL<sp/>Project.</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>6.<sp/>Redistributions<sp/>of<sp/>any<sp/>form<sp/>whatsoever<sp/>must<sp/>retain<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit<sp/>(http://www.openssl.org/)&quot;</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>EXPRESSED<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>OR</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>ITS<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>This<sp/>product<sp/>includes<sp/>cryptographic<sp/>software<sp/>written<sp/>by<sp/>Eric<sp/>Young</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>(eay@cryptsoft.com).<sp/><sp/>This<sp/>product<sp/>includes<sp/>software<sp/>written<sp/>by<sp/>Tim</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>Hudson<sp/>(tjh@cryptsoft.com).</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADER_SEED_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_SEED_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/opensslconf.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/e_os2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OPENSSL_NO_SEED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>SEED<sp/>is<sp/>disabled.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>AES_LONG<sp/></highlight><highlight class="comment">/*<sp/>look<sp/>whether<sp/>we<sp/>need<sp/>&apos;long&apos;<sp/>to<sp/>get<sp/>32<sp/>bits<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>SEED_LONG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>SEED_LONG<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(NO_SYS_TYPES_H)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SEED_BLOCK_SIZE<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SEED_KEY_LENGTH<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="structseed__key__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structseed__key__st" kindref="compound">seed_key_st</ref><sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>SEED_LONG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>data[32];</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data[32];</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}<sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OPENSSL_FIPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>private_SEED_set_key(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>rawkey[SEED_KEY_LENGTH],<sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_set_key(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>rawkey[SEED_KEY_LENGTH],<sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_encrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>s[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>d[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_decrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>s[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>d[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_ecb_encrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*in,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*out,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enc);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_cbc_encrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*in,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*out,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ivec[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enc);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_cfb128_encrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*in,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*out,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ivec[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*num,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>enc);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>SEED_ofb128_encrypt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*in,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*out,</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structseed__key__st" kindref="compound">SEED_KEY_SCHEDULE</ref><sp/>*ks,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ivec[SEED_BLOCK_SIZE],<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*num);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>HEADER_SEED_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/openssl/include/openssl/seed.h"/>
+  </compounddef>
+</doxygen>

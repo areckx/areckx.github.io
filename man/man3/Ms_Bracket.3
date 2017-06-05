@@ -1,0 +1,133 @@
+.TH "Ms::Bracket" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Bracket
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBracket\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBBracket\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetBracketItem\fP (\fBBracketItem\fP *i)"
+.br
+.ti -1c
+.RI "\fBBracketItem\fP * \fBbracketItem\fP () const"
+.br
+.ti -1c
+.RI "BracketType \fBbracketType\fP () const"
+.br
+.ti -1c
+.RI "int \fBfirstStaff\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFirstStaff\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBlastStaff\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLastStaff\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBcolumn\fP () const"
+.br
+.ti -1c
+.RI "int \fBspan\fP () const"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetHeight\fP (qreal) override"
+.br
+.ti -1c
+.RI "virtual qreal \fBwidth\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (bool f) override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 29 of file bracket\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Bracket::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 349 of file bracket\&.cpp\&.
+.SS "\fBElement\fP * Ms::Bracket::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 358 of file bracket\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,319 @@
+.TH "Ms::Chord" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Chord
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <chord\&.h>\fP
+.PP
+Inherits \fBMs::ChordRest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChord\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBChord\fP (const \fBChord\fP &, bool link=false)"
+.br
+.ti -1c
+.RI "\fBChord\fP & \fBoperator=\fP (const \fBChord\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBChord\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBlinkedClone\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBundoUnlink\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBmag\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "void \fBsetStemDirection\fP (\fBDirection\fP d)"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBstemDirection\fP () const"
+.br
+.ti -1c
+.RI "\fBLedgerLine\fP * \fBledgerLines\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBdefaultStemLength\fP ()"
+.br
+.RI "Get the default stem length for this chord\&. "
+.ti -1c
+.RI "virtual void \fBlayoutStem1\fP () override"
+.br
+.RI "Layout _stem and _stemSlash\&. "
+.ti -1c
+.RI "void \fBlayoutStem\fP ()"
+.br
+.RI "Layout chord tremolo stem and hook\&. "
+.ti -1c
+.RI "void \fBlayoutArpeggio2\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBNote\fP * > & \fBnotes\fP ()"
+.br
+.ti -1c
+.RI "const std::vector< \fBNote\fP * > & \fBnotes\fP () const"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBupNote\fP () const"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBdownNote\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBupString\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBdownString\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBmaxHeadWidth\fP () const"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBfindNote\fP (int pitch) const"
+.br
+.ti -1c
+.RI "\fBStem\fP * \fBstem\fP () const"
+.br
+.ti -1c
+.RI "\fBArpeggio\fP * \fBarpeggio\fP () const"
+.br
+.ti -1c
+.RI "\fBTremolo\fP * \fBtremolo\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTremolo\fP (\fBTremolo\fP *t)"
+.br
+.ti -1c
+.RI "bool \fBendsGlissando\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEndsGlissando\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBupdateEndsGlissando\fP ()"
+.br
+.ti -1c
+.RI "\fBStemSlash\fP * \fBstemSlash\fP () const"
+.br
+.ti -1c
+.RI "bool \fBslash\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSlash\fP (bool flag, bool stemless)"
+.br
+.ti -1c
+.RI "virtual void \fBremoveMarkings\fP (bool keepTremolo=false) override"
+.br
+.ti -1c
+.RI "const QVector< \fBChord\fP * > & \fBgraceNotes\fP () const"
+.br
+.ti -1c
+.RI "QVector< \fBChord\fP * > & \fBgraceNotes\fP ()"
+.br
+.ti -1c
+.RI "QVector< \fBChord\fP * > \fBgraceNotesBefore\fP () const"
+.br
+.ti -1c
+.RI "QVector< \fBChord\fP * > \fBgraceNotesAfter\fP () const"
+.br
+.ti -1c
+.RI "int \fBgraceIndex\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGraceIndex\fP (int val)"
+.br
+.ti -1c
+.RI "virtual int \fBupLine\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBdownLine\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBstemPos\fP () const"
+.br
+.RI "page coordinates "
+.ti -1c
+.RI "virtual QPointF \fBstemPosBeam\fP () const"
+.br
+.RI "page coordinates "
+.ti -1c
+.RI "virtual qreal \fBstemPosX\fP () const"
+.br
+.ti -1c
+.RI "bool \fBunderBeam\fP () const"
+.br
+.ti -1c
+.RI "\fBHook\fP * \fBhook\fP () const"
+.br
+.ti -1c
+.RI "virtual Q_INVOKABLE void \fBadd\fP (\fBMs::Element\fP *)"
+.br
+.ti -1c
+.RI "virtual Q_INVOKABLE void \fBremove\fP (\fBMs::Element\fP *)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBselectedNote\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const override"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "void \fBlayout2\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdUpdateNotes\fP (\fBAccidentalState\fP *)"
+.br
+.ti -1c
+.RI "NoteType \fBnoteType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoteType\fP (NoteType t)"
+.br
+.ti -1c
+.RI "bool \fBisGrace\fP () const"
+.br
+.ti -1c
+.RI "void \fBtoGraceAfter\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "virtual void \fBsetTrack\fP (int val) override"
+.br
+.ti -1c
+.RI "virtual void \fBcomputeUp\fP () override"
+.br
+.ti -1c
+.RI "qreal \fBdotPosX\fP () const"
+.br
+.ti -1c
+.RI "bool \fBnoStem\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoStem\fP (bool val)"
+.br
+.ti -1c
+.RI "PlayEventType \fBplayEventType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayEventType\fP (PlayEventType v)"
+.br
+.ti -1c
+.RI "TremoloChordType \fBtremoloChordType\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBlayoutArticulation\fP (\fBArticulation\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBcrossMeasureSetup\fP (bool on)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsortNotes\fP ()"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBnextTiedChord\fP (bool backwards=false, bool sameSize=true)"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleExtraInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBMs::Beam\fP \fBbeam\fP"
+.br
+.ti -1c
+.RI "\fBMs::Hook\fP \fBhook\fP"
+.br
+.ti -1c
+.RI "\fBMs::Stem\fP \fBstem\fP"
+.br
+.ti -1c
+.RI "\fBMs::StemSlash\fP \fBstemSlash\fP"
+.br
+.ti -1c
+.RI "int \fBstemDirection\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Graphic representation of a chord\&. Single notes are handled as degenerated chords\&. 
+.PP
+Definition at line 61 of file chord\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBElement\fP * Ms::Chord::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::ChordRest\fP\&.
+.PP
+Definition at line 2495 of file chord\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

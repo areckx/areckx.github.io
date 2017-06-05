@@ -1,0 +1,1920 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dso_8h" kind="file" language="C++">
+    <compoundname>dso.h</compoundname>
+    <includes refid="crypto_8h" local="no">openssl/crypto.h</includes>
+    <incdepgraph>
+      <node id="82595">
+        <label>thirdparty/openssl/include/openssl/dso.h</label>
+        <link refid="dso_8h"/>
+        <childnode refid="82596" relation="include">
+        </childnode>
+      </node>
+      <node id="82603">
+        <label>openssl/opensslv.h</label>
+        <link refid="opensslv_8h_source"/>
+      </node>
+      <node id="82597">
+        <label>stdlib.h</label>
+      </node>
+      <node id="82601">
+        <label>openssl/stack.h</label>
+        <link refid="stack_8h_source"/>
+      </node>
+      <node id="82605">
+        <label>openssl/symhacks.h</label>
+        <link refid="symhacks_8h_source"/>
+        <childnode refid="82598" relation="include">
+        </childnode>
+      </node>
+      <node id="82602">
+        <label>openssl/safestack.h</label>
+        <link refid="safestack_8h_source"/>
+        <childnode refid="82601" relation="include">
+        </childnode>
+      </node>
+      <node id="82599">
+        <label>openssl/opensslconf.h</label>
+        <link refid="opensslconf_8h_source"/>
+      </node>
+      <node id="82598">
+        <label>openssl/e_os2.h</label>
+        <link refid="e__os2_8h_source"/>
+        <childnode refid="82599" relation="include">
+        </childnode>
+      </node>
+      <node id="82600">
+        <label>stdio.h</label>
+      </node>
+      <node id="82604">
+        <label>openssl/ossl_typ.h</label>
+        <link refid="ossl__typ_8h_source"/>
+        <childnode refid="82598" relation="include">
+        </childnode>
+      </node>
+      <node id="82596">
+        <label>openssl/crypto.h</label>
+        <link refid="crypto_8h_source"/>
+        <childnode refid="82597" relation="include">
+        </childnode>
+        <childnode refid="82598" relation="include">
+        </childnode>
+        <childnode refid="82600" relation="include">
+        </childnode>
+        <childnode refid="82601" relation="include">
+        </childnode>
+        <childnode refid="82602" relation="include">
+        </childnode>
+        <childnode refid="82603" relation="include">
+        </childnode>
+        <childnode refid="82604" relation="include">
+        </childnode>
+        <childnode refid="82605" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structdso__meth__st" prot="public">dso_meth_st</innerclass>
+    <innerclass refid="structdso__st" prot="public">dso_st</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="dso_8h_1a3576241c5169fdca95db401401c2b3ea" prot="public" static="no">
+        <name>DSO_CTRL_GET_FLAGS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="69" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1acafcb823846287ccc2fde9d1e1a4fa7e" prot="public" static="no">
+        <name>DSO_CTRL_SET_FLAGS</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="70" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a68d0b26ff124b2a215e807d121bc8e61" prot="public" static="no">
+        <name>DSO_CTRL_OR_FLAGS</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="71" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ab07d645f47f2b44d86670bd78b46af33" prot="public" static="no">
+        <name>DSO_FLAG_NO_NAME_TRANSLATION</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="84" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a04fac9b71278c009f40935a2466d20b9" prot="public" static="no">
+        <name>DSO_FLAG_NAME_TRANSLATION_EXT_ONLY</name>
+        <initializer>0x02</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="91" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a8ce35fe95f5d6c52a954e6467160f50a" prot="public" static="no">
+        <name>DSO_FLAG_UPCASE_SYMBOL</name>
+        <initializer>0x10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="96" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a754920cb9442e4a17128958d9196f367" prot="public" static="no">
+        <name>DSO_FLAG_GLOBAL_SYMBOLS</name>
+        <initializer>0x20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="103" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ae79bd5967fee690b8faa20308a67f287" prot="public" static="no">
+        <name>DSO_F_BEOS_BIND_FUNC</name>
+        <initializer>144</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="337" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac292d27f9c03cb57c112f8a757cc1f06" prot="public" static="no">
+        <name>DSO_F_BEOS_BIND_VAR</name>
+        <initializer>145</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="338" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a2551d0fbe94ab80cadad2319daf3d8a5" prot="public" static="no">
+        <name>DSO_F_BEOS_LOAD</name>
+        <initializer>146</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="339" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a2c4cd0f716bb9dad27039bd92b4546a4" prot="public" static="no">
+        <name>DSO_F_BEOS_NAME_CONVERTER</name>
+        <initializer>147</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="340" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aca8793750df08be7b9392a53214003e4" prot="public" static="no">
+        <name>DSO_F_BEOS_UNLOAD</name>
+        <initializer>148</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="341" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac7d834cba82593f949edba1a182aea1b" prot="public" static="no">
+        <name>DSO_F_DLFCN_BIND_FUNC</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="342" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ab2a0ec815bb4f2cacec834cab07e0d10" prot="public" static="no">
+        <name>DSO_F_DLFCN_BIND_VAR</name>
+        <initializer>101</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="343" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a72ee07d238cd4fdf8d75a18ba3d47286" prot="public" static="no">
+        <name>DSO_F_DLFCN_LOAD</name>
+        <initializer>102</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="344" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a5ba9f030dc0127e476708ee47290c6cd" prot="public" static="no">
+        <name>DSO_F_DLFCN_MERGER</name>
+        <initializer>130</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="345" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a479f699abc9873de554860f5c04e14bc" prot="public" static="no">
+        <name>DSO_F_DLFCN_NAME_CONVERTER</name>
+        <initializer>123</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="346" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a11fd10eb814b0cb41d15ebfa87060b56" prot="public" static="no">
+        <name>DSO_F_DLFCN_UNLOAD</name>
+        <initializer>103</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="347" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ae2f37c6f1cf8427bbf077d9d1d063b78" prot="public" static="no">
+        <name>DSO_F_DL_BIND_FUNC</name>
+        <initializer>104</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="348" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a88e7f50144c4cc3c6eb5d1594a338e3a" prot="public" static="no">
+        <name>DSO_F_DL_BIND_VAR</name>
+        <initializer>105</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="349" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aaa2bc6691f42f22860f985b4bb82a781" prot="public" static="no">
+        <name>DSO_F_DL_LOAD</name>
+        <initializer>106</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="350" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a3af321ebfa401ecbec5b209957d18080" prot="public" static="no">
+        <name>DSO_F_DL_MERGER</name>
+        <initializer>131</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="351" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ab408918ed0b82f99fd4a53ba6a4c728b" prot="public" static="no">
+        <name>DSO_F_DL_NAME_CONVERTER</name>
+        <initializer>124</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="352" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ad844aad20f8da715fcd9543675568da0" prot="public" static="no">
+        <name>DSO_F_DL_UNLOAD</name>
+        <initializer>107</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="353" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1af9db3b30d6f29e732f70e40ad9ede935" prot="public" static="no">
+        <name>DSO_F_DSO_BIND_FUNC</name>
+        <initializer>108</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="354" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ae1e26559fa6bcaeed1cd05d6e0d6b3cb" prot="public" static="no">
+        <name>DSO_F_DSO_BIND_VAR</name>
+        <initializer>109</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="355" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a262ba708e9e93ebe6545970a1d15eb4d" prot="public" static="no">
+        <name>DSO_F_DSO_CONVERT_FILENAME</name>
+        <initializer>126</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="356" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aa7b724d523521210153e8ae982494f24" prot="public" static="no">
+        <name>DSO_F_DSO_CTRL</name>
+        <initializer>110</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="357" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ae69dd51261344a7cebf4a4827e36220c" prot="public" static="no">
+        <name>DSO_F_DSO_FREE</name>
+        <initializer>111</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="358" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="358" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a0b1f41b84af136864255bea57dbef1a1" prot="public" static="no">
+        <name>DSO_F_DSO_GET_FILENAME</name>
+        <initializer>127</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="359" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="359" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1adc915a83bc0cb834505b5e11608c0447" prot="public" static="no">
+        <name>DSO_F_DSO_GET_LOADED_FILENAME</name>
+        <initializer>128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="360" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="360" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a928b0f5cc54fd036e80179282c63d07a" prot="public" static="no">
+        <name>DSO_F_DSO_GLOBAL_LOOKUP</name>
+        <initializer>139</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="361" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="361" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac779f54d97735bb4775abcb12365bc7e" prot="public" static="no">
+        <name>DSO_F_DSO_LOAD</name>
+        <initializer>112</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="362" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="362" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a343163281b0bea862a0c986476e04776" prot="public" static="no">
+        <name>DSO_F_DSO_MERGE</name>
+        <initializer>132</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="363" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="363" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a3444b4dbed846f1b966d442595e161fc" prot="public" static="no">
+        <name>DSO_F_DSO_NEW_METHOD</name>
+        <initializer>113</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="364" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a1e18aa428d143d1e2bfaf452c0e5fd29" prot="public" static="no">
+        <name>DSO_F_DSO_PATHBYADDR</name>
+        <initializer>140</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="365" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a2e8e6744fac3783cd500693db854c95a" prot="public" static="no">
+        <name>DSO_F_DSO_SET_FILENAME</name>
+        <initializer>129</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="366" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac0f7327a08e51d43c28611e6cf76a76a" prot="public" static="no">
+        <name>DSO_F_DSO_SET_NAME_CONVERTER</name>
+        <initializer>122</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="367" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="367" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a72b923d87cdc19c3d57b1b43f26feeb1" prot="public" static="no">
+        <name>DSO_F_DSO_UP_REF</name>
+        <initializer>114</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="368" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a971553c41d3b67f0c98eb43259de5fa5" prot="public" static="no">
+        <name>DSO_F_GLOBAL_LOOKUP_FUNC</name>
+        <initializer>138</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="369" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="369" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aaa67857741ddaf3bf36aecdd625b560b" prot="public" static="no">
+        <name>DSO_F_PATHBYADDR</name>
+        <initializer>137</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="370" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="370" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a410303313a10dfe9bc01ebfb83be9af0" prot="public" static="no">
+        <name>DSO_F_VMS_BIND_SYM</name>
+        <initializer>115</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="371" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="371" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a5d2a754a0514524fe10dc3aaad07b478" prot="public" static="no">
+        <name>DSO_F_VMS_LOAD</name>
+        <initializer>116</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="372" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="372" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac63d9d0f99cd39d7e8c8e14ece2339d7" prot="public" static="no">
+        <name>DSO_F_VMS_MERGER</name>
+        <initializer>133</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="373" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="373" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a303dbfe8c42a9879f1e4eea9aa7bbb78" prot="public" static="no">
+        <name>DSO_F_VMS_UNLOAD</name>
+        <initializer>117</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="374" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="374" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ab8c53a841eca858df41efd7284282d55" prot="public" static="no">
+        <name>DSO_F_WIN32_BIND_FUNC</name>
+        <initializer>118</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="375" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="375" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aca0e55885b6d808a291022aac28d87c9" prot="public" static="no">
+        <name>DSO_F_WIN32_BIND_VAR</name>
+        <initializer>119</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="376" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="376" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a87004b94e8b14a3dd0254450f958ca07" prot="public" static="no">
+        <name>DSO_F_WIN32_GLOBALLOOKUP</name>
+        <initializer>142</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="377" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="377" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a02016a1541e054d27850e45dfd7aa8a9" prot="public" static="no">
+        <name>DSO_F_WIN32_GLOBALLOOKUP_FUNC</name>
+        <initializer>143</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="378" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="378" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a8bc4c0223f8d522a992e8a34bbfaecc2" prot="public" static="no">
+        <name>DSO_F_WIN32_JOINER</name>
+        <initializer>135</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="379" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="379" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a7ff239e8a8de89d4a0cfe6ba64ae5722" prot="public" static="no">
+        <name>DSO_F_WIN32_LOAD</name>
+        <initializer>120</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="380" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="380" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1adb6fc4cf1c3a471fca870ee0bb4913d6" prot="public" static="no">
+        <name>DSO_F_WIN32_MERGER</name>
+        <initializer>134</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="381" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aad62cef94f60cf75cf414c965d3a6721" prot="public" static="no">
+        <name>DSO_F_WIN32_NAME_CONVERTER</name>
+        <initializer>125</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="382" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="382" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a7b0c6fc8e3fd89debdf682cc1492b694" prot="public" static="no">
+        <name>DSO_F_WIN32_PATHBYADDR</name>
+        <initializer>141</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="383" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="383" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a83eded527be41e7b58eb919df414e2c4" prot="public" static="no">
+        <name>DSO_F_WIN32_SPLITTER</name>
+        <initializer>136</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="384" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="384" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a24a623eff2d1228ca8a8b7aa441d0fc9" prot="public" static="no">
+        <name>DSO_F_WIN32_UNLOAD</name>
+        <initializer>121</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="385" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="385" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a4c466cc932e7ceedb6b65ddd87bfc0bf" prot="public" static="no">
+        <name>DSO_R_CTRL_FAILED</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="388" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a49dfedacf9c3180c5db0be15e76a52bb" prot="public" static="no">
+        <name>DSO_R_DSO_ALREADY_LOADED</name>
+        <initializer>110</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="389" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="389" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a9ba349a76e8b652d7924ed1f20fe927b" prot="public" static="no">
+        <name>DSO_R_EMPTY_FILE_STRUCTURE</name>
+        <initializer>113</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="390" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="390" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1abcb5d7f878eaea722aebec51756671fb" prot="public" static="no">
+        <name>DSO_R_FAILURE</name>
+        <initializer>114</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="391" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="391" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a97b079359b0a0449c9d8422964c5fb0a" prot="public" static="no">
+        <name>DSO_R_FILENAME_TOO_BIG</name>
+        <initializer>101</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="392" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="392" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a96c4550fa14abfbd28fd026f514f1337" prot="public" static="no">
+        <name>DSO_R_FINISH_FAILED</name>
+        <initializer>102</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="393" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="393" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1aad35783ce6ccae2a4154d52f294b3292" prot="public" static="no">
+        <name>DSO_R_INCORRECT_FILE_SYNTAX</name>
+        <initializer>115</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="394" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="394" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a32bf15e42d8c820a3b1ec7514d273bb3" prot="public" static="no">
+        <name>DSO_R_LOAD_FAILED</name>
+        <initializer>103</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="395" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="395" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a2b012110fb26399a6feb5eb6370cfb62" prot="public" static="no">
+        <name>DSO_R_NAME_TRANSLATION_FAILED</name>
+        <initializer>109</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="396" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="396" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ade04c46f50d69da0b787dee78efc6d0e" prot="public" static="no">
+        <name>DSO_R_NO_FILENAME</name>
+        <initializer>111</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="397" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="397" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a4d62d2f29145ff16f8575cc403fd0d7d" prot="public" static="no">
+        <name>DSO_R_NO_FILE_SPECIFICATION</name>
+        <initializer>116</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="398" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="398" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1ac615303114109659b33f60d1147c2e36" prot="public" static="no">
+        <name>DSO_R_NULL_HANDLE</name>
+        <initializer>104</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="399" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="399" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1abbedf08673c044c9310f1aeb9f6c81ee" prot="public" static="no">
+        <name>DSO_R_SET_FILENAME_FAILED</name>
+        <initializer>112</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="400" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="400" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a13cf436631c1fa167cd0bf48d0701b9d" prot="public" static="no">
+        <name>DSO_R_STACK_ERROR</name>
+        <initializer>105</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="401" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="401" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a76ce64596e7a8b431dbc9335479a24fa" prot="public" static="no">
+        <name>DSO_R_SYM_FAILURE</name>
+        <initializer>106</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="402" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="402" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a23395feb123c61dd9323d14b3bd61ec4" prot="public" static="no">
+        <name>DSO_R_UNLOAD_FAILED</name>
+        <initializer>107</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="403" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="dso_8h_1a1dff938b7f48805d0e8a07a086c94908" prot="public" static="no">
+        <name>DSO_R_UNSUPPORTED</name>
+        <initializer>108</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="404" column="9" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="404" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="dso_8h_1aa8b57c987ab18733dbf4356cc705f0c7" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* DSO_FUNC_TYPE) (void)</definition>
+        <argsstring>)(void)</argsstring>
+        <name>DSO_FUNC_TYPE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="106" column="1" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dso_8h_1a4ef2aefd03a4e43c3dd81a159fd27bca" prot="public" static="no">
+        <type>struct <ref refid="structdso__st" kindref="compound">dso_st</ref></type>
+        <definition>typedef struct dso_st DSO</definition>
+        <argsstring></argsstring>
+        <name>DSO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="106" column="1" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dso_8h_1a2053feef6f1d37b3fc3f96f6afb1eabf" prot="public" static="no">
+        <type>char *(*</type>
+        <definition>typedef char*(* DSO_NAME_CONVERTER_FUNC) (DSO *, const char *)</definition>
+        <argsstring>)(DSO *, const char *)</argsstring>
+        <name>DSO_NAME_CONVERTER_FUNC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="116" column="1" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dso_8h_1aeb778a1546fa4335ba36dabe92103211" prot="public" static="no">
+        <type>char *(*</type>
+        <definition>typedef char*(* DSO_MERGER_FUNC) (DSO *, const char *, const char *)</definition>
+        <argsstring>)(DSO *, const char *, const char *)</argsstring>
+        <name>DSO_MERGER_FUNC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="132" column="1" bodyfile="thirdparty/openssl/include/openssl/dso.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="dso_8h_1a098b78a1a897bb13e1162b48ebc1e74c" prot="public" static="no">
+        <type>struct <ref refid="structdso__meth__st" kindref="compound">dso_meth_st</ref></type>
+        <definition>typedef struct dso_meth_st  DSO_METHOD</definition>
+        <argsstring></argsstring>
+        <name>DSO_METHOD</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="178" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="dso_8h_1ab7015b46ee29289f999f083366fd1ded" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+        <definition>DSO* DSO_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1aed05f6c6267db98239bb507ec7ed3401" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+        <definition>DSO* DSO_new_method</definition>
+        <argsstring>(DSO_METHOD *method)</argsstring>
+        <name>DSO_new_method</name>
+        <param>
+          <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+          <declname>method</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="222" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ae4f93adfd0c5ee389d100117c17a6a91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_free</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_free</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="223" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ad529ddf8a670deec23800430c9b15615" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_flags</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_flags</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="224" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a9134431869dd14c8543ded055b56232f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_up_ref</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_up_ref</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="225" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ab4a0b1cfb088923d6bbb1e2f4ce1bb56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>long</type>
+        <definition>long DSO_ctrl</definition>
+        <argsstring>(DSO *dso, int cmd, long larg, void *parg)</argsstring>
+        <name>DSO_ctrl</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cmd</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>larg</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>parg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ab1d90fa555b5302b969e2e2e579ba89b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_set_name_converter</definition>
+        <argsstring>(DSO *dso, DSO_NAME_CONVERTER_FUNC cb, DSO_NAME_CONVERTER_FUNC *oldcb)</argsstring>
+        <name>DSO_set_name_converter</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>DSO_NAME_CONVERTER_FUNC</type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type>DSO_NAME_CONVERTER_FUNC *</type>
+          <declname>oldcb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="232" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a62a36a703c25ede96afb29afc7f31e2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DSO_get_filename</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_get_filename</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="236" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1af969335006066048ae2412c07988ba1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_set_filename</definition>
+        <argsstring>(DSO *dso, const char *filename)</argsstring>
+        <name>DSO_set_filename</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="237" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a8f217c5dab4d2f75ee2577fef5b1b79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* DSO_convert_filename</definition>
+        <argsstring>(DSO *dso, const char *filename)</argsstring>
+        <name>DSO_convert_filename</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="246" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1adae2264faf24909d0d8347e5ebb801b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* DSO_merge</definition>
+        <argsstring>(DSO *dso, const char *filespec1, const char *filespec2)</argsstring>
+        <name>DSO_merge</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filespec1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filespec2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="251" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ae5c07676fb930253b6b94237d11ff2d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* DSO_get_loaded_filename</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_get_loaded_filename</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1af0d119151ba41caa3b5483932fb488a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DSO_set_default_method</definition>
+        <argsstring>(DSO_METHOD *meth)</argsstring>
+        <name>DSO_set_default_method</name>
+        <param>
+          <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+          <declname>meth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="261" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ad1fab1ba3f720abc825f91ad5a93d45c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_get_default_method</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_get_default_method</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="262" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a5612bca697149a4a142248aca99782d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_get_method</definition>
+        <argsstring>(DSO *dso)</argsstring>
+        <name>DSO_get_method</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="263" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a3e0ef7d03b70d247ce7a645119814706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_set_method</definition>
+        <argsstring>(DSO *dso, DSO_METHOD *meth)</argsstring>
+        <name>DSO_set_method</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+          <declname>meth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="264" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a8291a845fa6b1b30b3391cd2b1f5f9d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+        <definition>DSO* DSO_load</definition>
+        <argsstring>(DSO *dso, const char *filename, DSO_METHOD *meth, int flags)</argsstring>
+        <name>DSO_load</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+          <declname>meth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="271" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a8d854e512063a6bf5163f965841b928e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* DSO_bind_var</definition>
+        <argsstring>(DSO *dso, const char *symname)</argsstring>
+        <name>DSO_bind_var</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>symname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="274" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a029cd3245ffb2af18cfd7d05ccbe34eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>DSO_FUNC_TYPE</type>
+        <definition>DSO_FUNC_TYPE DSO_bind_func</definition>
+        <argsstring>(DSO *dso, const char *symname)</argsstring>
+        <name>DSO_bind_func</name>
+        <param>
+          <type><ref refid="structdso__st" kindref="compound">DSO</ref> *</type>
+          <declname>dso</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>symname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="277" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a3744c217fb43b261831022b7a9e65897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_openssl</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_openssl</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="282" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ae117de13de0df95c3765da842adb807b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_null</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_null</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="286" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1ada4b19b3e1e73758542dad6cbfed31d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_dlfcn</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_dlfcn</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="291" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1aa689d144302f747ab0e53ae10f3a3dea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_dl</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_dl</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="296" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a0ebf3164251599d9509f9693b89606c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_win32</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_win32</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="299" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a2b7e4a0e09929b0a21649856563c9976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_vms</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_vms</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="302" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a665a9e31ff0c63dbf8e2cdc00e033b5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DSO_pathbyaddr</definition>
+        <argsstring>(void *addr, char *path, int sz)</argsstring>
+        <name>DSO_pathbyaddr</name>
+        <param>
+          <type>void *</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sz</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="313" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a8d321dbc52fa35ef1f7c3d40849ae76b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* DSO_global_lookup</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>DSO_global_lookup</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="323" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a08889499211e5ff512e0da09c1f68398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref> *</type>
+        <definition>DSO_METHOD* DSO_METHOD_beos</definition>
+        <argsstring>(void)</argsstring>
+        <name>DSO_METHOD_beos</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="326" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dso_8h_1a0209b72733708d19da2fc423f44057f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ERR_load_DSO_strings</definition>
+        <argsstring>(void)</argsstring>
+        <name>ERR_load_DSO_strings</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/dso.h" line="332" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>dso.h<sp/>-*-<sp/>mode:C;<sp/>c-file-style:<sp/>&quot;eay&quot;<sp/>-*-<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Written<sp/>by<sp/>Geoff<sp/>Thorpe<sp/>(geoff@geoffthorpe.net)<sp/>for<sp/>the<sp/>OpenSSL</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>project<sp/>2000.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2000<sp/>The<sp/>OpenSSL<sp/>Project.<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>3.<sp/>All<sp/>advertising<sp/>materials<sp/>mentioning<sp/>features<sp/>or<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>software<sp/>must<sp/>display<sp/>the<sp/>following<sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit.<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>4.<sp/>The<sp/>names<sp/>&quot;OpenSSL<sp/>Toolkit&quot;<sp/>and<sp/>&quot;OpenSSL<sp/>Project&quot;<sp/>must<sp/>not<sp/>be<sp/>used<sp/>to</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>prior<sp/>written<sp/>permission.<sp/>For<sp/>written<sp/>permission,<sp/>please<sp/>contact</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>licensing@OpenSSL.org.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>5.<sp/>Products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>may<sp/>not<sp/>be<sp/>called<sp/>&quot;OpenSSL&quot;</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>nor<sp/>may<sp/>&quot;OpenSSL&quot;<sp/>appear<sp/>in<sp/>their<sp/>names<sp/>without<sp/>prior<sp/>written</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>permission<sp/>of<sp/>the<sp/>OpenSSL<sp/>Project.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>6.<sp/>Redistributions<sp/>of<sp/>any<sp/>form<sp/>whatsoever<sp/>must<sp/>retain<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>EXPRESSED<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>OR</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>ITS<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>This<sp/>product<sp/>includes<sp/>cryptographic<sp/>software<sp/>written<sp/>by<sp/>Eric<sp/>Young</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>(eay@cryptsoft.com).<sp/><sp/>This<sp/>product<sp/>includes<sp/>software<sp/>written<sp/>by<sp/>Tim</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Hudson<sp/>(tjh@cryptsoft.com).</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADER_DSO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_DSO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>These<sp/>values<sp/>are<sp/>used<sp/>as<sp/>commands<sp/>to<sp/>DSO_ctrl()<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_CTRL_GET_FLAGS<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_CTRL_SET_FLAGS<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_CTRL_OR_FLAGS<sp/><sp/><sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>By<sp/>default,<sp/>DSO_load()<sp/>will<sp/>translate<sp/>the<sp/>provided<sp/>filename<sp/>into<sp/>a<sp/>form</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>typical<sp/>for<sp/>the<sp/>platform<sp/>(more<sp/>specifically<sp/>the<sp/>DSO_METHOD)<sp/>using<sp/>the</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>dso_name_converter<sp/>function<sp/>of<sp/>the<sp/>method.<sp/>Eg.<sp/>win32<sp/>will<sp/>transform<sp/>&quot;blah&quot;</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>into<sp/>&quot;blah.dll&quot;,<sp/>and<sp/>dlfcn<sp/>will<sp/>transform<sp/>it<sp/>into<sp/>&quot;libblah.so&quot;.<sp/>The</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>behaviour<sp/>can<sp/>be<sp/>overriden<sp/>by<sp/>setting<sp/>the<sp/>name_converter<sp/>callback<sp/>in<sp/>the<sp/>DSO</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>object<sp/>(using<sp/>DSO_set_name_converter()).<sp/>This<sp/>callback<sp/>could<sp/>even<sp/>utilise</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>the<sp/>DSO_METHOD&apos;s<sp/>converter<sp/>too<sp/>if<sp/>it<sp/>only<sp/>wants<sp/>to<sp/>override<sp/>behaviour<sp/>for</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>one<sp/>or<sp/>two<sp/>possible<sp/>DSO<sp/>methods.<sp/>However,<sp/>the<sp/>following<sp/>flag<sp/>can<sp/>be<sp/>set<sp/>in<sp/>a</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>DSO<sp/>to<sp/>prevent<sp/>*any*<sp/>native<sp/>name-translation<sp/>at<sp/>all<sp/>-<sp/>eg.<sp/>if<sp/>the<sp/>caller<sp/>has</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/>prompted<sp/>the<sp/>user<sp/>for<sp/>a<sp/>path<sp/>to<sp/>a<sp/>driver<sp/>library<sp/>so<sp/>the<sp/>filename<sp/>should<sp/>be</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>interpreted<sp/>as-is.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_FLAG_NO_NAME_TRANSLATION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>An<sp/>extra<sp/>flag<sp/>to<sp/>give<sp/>if<sp/>only<sp/>the<sp/>extension<sp/>should<sp/>be<sp/>added<sp/>as</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>translation.<sp/><sp/>This<sp/>is<sp/>obviously<sp/>only<sp/>of<sp/>importance<sp/>on<sp/>Unix<sp/>and</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>other<sp/>operating<sp/>systems<sp/>where<sp/>the<sp/>translation<sp/>also<sp/>may<sp/>prefix</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>the<sp/>name<sp/>with<sp/>something,<sp/>like<sp/>&apos;lib&apos;,<sp/>and<sp/>ignored<sp/>everywhere<sp/>else.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>This<sp/>flag<sp/>is<sp/>also<sp/>ignored<sp/>if<sp/>DSO_FLAG_NO_NAME_TRANSLATION<sp/>is<sp/>used</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>at<sp/>the<sp/>same<sp/>time.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_FLAG_NAME_TRANSLATION_EXT_ONLY<sp/><sp/>0x02</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>following<sp/>flag<sp/>controls<sp/>the<sp/>translation<sp/>of<sp/>symbol<sp/>names<sp/>to<sp/>upper</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>case.<sp/><sp/>This<sp/>is<sp/>currently<sp/>only<sp/>being<sp/>implemented<sp/>for<sp/>OpenVMS.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_FLAG_UPCASE_SYMBOL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>flag<sp/>loads<sp/>the<sp/>library<sp/>with<sp/>public<sp/>symbols.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*<sp/>Meaning:<sp/>The<sp/>exported<sp/>symbols<sp/>of<sp/>this<sp/>library<sp/>are<sp/>public</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/>*<sp/>to<sp/>all<sp/>libraries<sp/>loaded<sp/>after<sp/>this<sp/>library.</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>At<sp/>the<sp/>moment<sp/>only<sp/>implemented<sp/>in<sp/>unix.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_FLAG_GLOBAL_SYMBOLS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*DSO_FUNC_TYPE)(void);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdso__st" kindref="compound">dso_st</ref><sp/><ref refid="structdso__st" kindref="compound">DSO</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>function<sp/>prototype<sp/>used<sp/>for<sp/>method<sp/>functions<sp/>(or<sp/>caller-provided</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>callbacks)<sp/>that<sp/>transform<sp/>filenames.<sp/>They<sp/>are<sp/>passed<sp/>a<sp/>DSO<sp/>structure<sp/>pointer</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>(or<sp/>NULL<sp/>if<sp/>they<sp/>are<sp/>to<sp/>be<sp/>used<sp/>independantly<sp/>of<sp/>a<sp/>DSO<sp/>object)<sp/>and<sp/>a</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>filename<sp/>to<sp/>transform.<sp/>They<sp/>should<sp/>either<sp/>return<sp/>NULL<sp/>(if<sp/>there<sp/>is<sp/>an<sp/>error</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>condition)<sp/>or<sp/>a<sp/>newly<sp/>allocated<sp/>string<sp/>containing<sp/>the<sp/>transformed<sp/>form<sp/>that</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/>the<sp/>caller<sp/>will<sp/>need<sp/>to<sp/>free<sp/>with<sp/>OPENSSL_free()<sp/>when<sp/>done.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>(*DSO_NAME_CONVERTER_FUNC)(<ref refid="structdso__st" kindref="compound">DSO</ref><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>function<sp/>prototype<sp/>used<sp/>for<sp/>method<sp/>functions<sp/>(or<sp/>caller-provided</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/>callbacks)<sp/>that<sp/>merge<sp/>two<sp/>file<sp/>specifications.<sp/>They<sp/>are<sp/>passed<sp/>a</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>DSO<sp/>structure<sp/>pointer<sp/>(or<sp/>NULL<sp/>if<sp/>they<sp/>are<sp/>to<sp/>be<sp/>used<sp/>independantly<sp/>of</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>a<sp/>DSO<sp/>object)<sp/>and<sp/>two<sp/>file<sp/>specifications<sp/>to<sp/>merge.<sp/>They<sp/>should</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/>either<sp/>return<sp/>NULL<sp/>(if<sp/>there<sp/>is<sp/>an<sp/>error<sp/>condition)<sp/>or<sp/>a<sp/>newly<sp/>allocated</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>string<sp/>containing<sp/>the<sp/>result<sp/>of<sp/>merging<sp/>that<sp/>the<sp/>caller<sp/>will<sp/>need</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>to<sp/>free<sp/>with<sp/>OPENSSL_free()<sp/>when<sp/>done.</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>Here,<sp/>merging<sp/>means<sp/>that<sp/>bits<sp/>and<sp/>pieces<sp/>are<sp/>taken<sp/>from<sp/>each<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/>file<sp/>specifications<sp/>and<sp/>added<sp/>together<sp/>in<sp/>whatever<sp/>fashion<sp/>that<sp/>is</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>sensible<sp/>for<sp/>the<sp/>DSO<sp/>method<sp/>in<sp/>question.<sp/><sp/>The<sp/>only<sp/>rule<sp/>that<sp/>really</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>applies<sp/>is<sp/>that<sp/>if<sp/>the<sp/>two<sp/>specification<sp/>contain<sp/>pieces<sp/>of<sp/>the<sp/>same</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/>type,<sp/>the<sp/>copy<sp/>from<sp/>the<sp/>first<sp/>string<sp/>takes<sp/>priority.<sp/><sp/>One<sp/>could<sp/>see</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>it<sp/>as<sp/>the<sp/>first<sp/>specification<sp/>is<sp/>the<sp/>one<sp/>given<sp/>by<sp/>the<sp/>user<sp/>and<sp/>the</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>second<sp/>being<sp/>a<sp/>bunch<sp/>of<sp/>defaults<sp/>to<sp/>add<sp/>on<sp/>if<sp/>they&apos;re<sp/>missing<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*<sp/>first.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>(*DSO_MERGER_FUNC)(DSO<sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="structdso__meth__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdso__meth__st" kindref="compound">dso_meth_st</ref></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Loads<sp/>a<sp/>shared<sp/>library,<sp/>NB:<sp/>new<sp/>DSO_METHODs<sp/>must<sp/>ensure<sp/>that<sp/>a</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>successful<sp/>load<sp/>populates<sp/>the<sp/>loaded_filename<sp/>field,<sp/>and<sp/>likewise<sp/>a</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>successful<sp/>unload<sp/>OPENSSL_frees<sp/>and<sp/>NULLs<sp/>it<sp/>out.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*dso_load)(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unloads<sp/>a<sp/>shared<sp/>library<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*dso_unload)(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Binds<sp/>a<sp/>variable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*dso_bind_var)(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Binds<sp/>a<sp/>function<sp/>-<sp/>assumes<sp/>a<sp/>return<sp/>type<sp/>of<sp/>DSO_FUNC_TYPE.</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>This<sp/>should<sp/>be<sp/>cast<sp/>to<sp/>the<sp/>real<sp/>function<sp/>prototype<sp/>by<sp/>the</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>caller.<sp/>Platforms<sp/>that<sp/>don&apos;t<sp/>have<sp/>compatible<sp/>representations</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>for<sp/>different<sp/>prototypes<sp/>(this<sp/>is<sp/>possible<sp/>within<sp/>ANSI<sp/>C)</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>are<sp/>highly<sp/>unlikely<sp/>to<sp/>have<sp/>shared<sp/>libraries<sp/>at<sp/>all,<sp/>let</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>alone<sp/>a<sp/>DSO_METHOD<sp/>implemented<sp/>for<sp/>them.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_FUNC_TYPE<sp/>(*dso_bind_func)(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>I<sp/>don&apos;t<sp/>think<sp/>this<sp/>would<sp/>actually<sp/>be<sp/>used<sp/>in<sp/>any<sp/>circumstances.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unbinds<sp/>a<sp/>variable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*dso_unbind_var)(DSO<sp/>*dso,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*symptr);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Unbinds<sp/>a<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*dso_unbind_func)(DSO<sp/>*dso,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname,<sp/>DSO_FUNC_TYPE<sp/>symptr);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>generic<sp/>(yuck)<sp/>&quot;ctrl()&quot;<sp/>function.<sp/>NB:<sp/>Negative<sp/>return</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>values<sp/>(rather<sp/>than<sp/>zero)<sp/>indicate<sp/>errors.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>long<sp/>(*dso_ctrl)(DSO<sp/>*dso,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>larg,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parg);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>default<sp/>DSO_METHOD-specific<sp/>function<sp/>for<sp/>converting<sp/>filenames<sp/>to</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>canonical<sp/>native<sp/>form.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_NAME_CONVERTER_FUNC<sp/>dso_name_converter;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>The<sp/>default<sp/>DSO_METHOD-specific<sp/>function<sp/>for<sp/>converting<sp/>filenames<sp/>to</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>canonical<sp/>native<sp/>form.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_MERGER_FUNC<sp/>dso_merger;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>[De]Initialisation<sp/>handlers.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*init)(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*finish)(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Return<sp/>pathname<sp/>of<sp/>the<sp/>module<sp/>containing<sp/>location<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>(*pathbyaddr)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*addr,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sz);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Perform<sp/>global<sp/>symbol<sp/>lookup,<sp/>i.e.<sp/>among<sp/>*all*<sp/>modules<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*globallookup)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="structdso__meth__st" kindref="compound">DSO_METHOD</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">/**********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>low-level<sp/>handle<sp/>type<sp/>used<sp/>to<sp/>refer<sp/>to<sp/>a<sp/>loaded<sp/>shared<sp/>library<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183" refid="structdso__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdso__st" kindref="compound">dso_st</ref></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_METHOD<sp/>*meth;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Standard<sp/>dlopen<sp/>uses<sp/>a<sp/>(void<sp/>*).<sp/>Win32<sp/>uses<sp/>a<sp/>HANDLE.<sp/>VMS</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>doesn&apos;t<sp/>use<sp/>anything<sp/>but<sp/>will<sp/>need<sp/>to<sp/>cache<sp/>the<sp/>filename</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>for<sp/>use<sp/>in<sp/>the<sp/>dso_bind<sp/>handler.<sp/>All<sp/>in<sp/>all,<sp/>let<sp/>each</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>method<sp/>control<sp/>its<sp/>own<sp/>destiny.<sp/>&quot;Handles&quot;<sp/>and<sp/>such<sp/>go<sp/>in</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>a<sp/>STACK.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>STACK_OF(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>*meth_data;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>references;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>For<sp/>use<sp/>by<sp/>applications<sp/>etc<sp/>...<sp/>use<sp/>this<sp/>for<sp/>your<sp/>bits&apos;n&apos;pieces,</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>don&apos;t<sp/>touch<sp/>meth_data!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structcrypto__ex__data__st" kindref="compound">CRYPTO_EX_DATA</ref><sp/>ex_data;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>callback<sp/>function<sp/>pointer<sp/>is<sp/>set<sp/>to<sp/>non-NULL,<sp/>then<sp/>it<sp/>will</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>used<sp/>in<sp/>DSO_load()<sp/>in<sp/>place<sp/>of<sp/>meth-&gt;dso_name_converter.<sp/>NB:<sp/>This</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>should<sp/>normally<sp/>set<sp/>using<sp/>DSO_set_name_converter().<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_NAME_CONVERTER_FUNC<sp/>name_converter;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>If<sp/>this<sp/>callback<sp/>function<sp/>pointer<sp/>is<sp/>set<sp/>to<sp/>non-NULL,<sp/>then<sp/>it<sp/>will</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>be<sp/>used<sp/>in<sp/>DSO_load()<sp/>in<sp/>place<sp/>of<sp/>meth-&gt;dso_merger.<sp/>NB:<sp/>This</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>should<sp/>normally<sp/>set<sp/>using<sp/>DSO_set_merger().<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_MERGER_FUNC<sp/>merger;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>populated<sp/>with<sp/>(a<sp/>copy<sp/>of)<sp/>the<sp/>platform-independant</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>filename<sp/>used<sp/>for<sp/>this<sp/>DSO.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>populated<sp/>with<sp/>(a<sp/>copy<sp/>of)<sp/>the<sp/>translated<sp/>filename<sp/>by<sp/>which</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>the<sp/>DSO<sp/>was<sp/>actually<sp/>loaded.<sp/>It<sp/>is<sp/>NULL<sp/>iff<sp/>the<sp/>DSO<sp/>is<sp/>not<sp/>currently</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>loaded.<sp/>NB:<sp/>This<sp/>is<sp/>here<sp/>because<sp/>the<sp/>filename<sp/>translation<sp/>process</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>may<sp/>involve<sp/>a<sp/>callback<sp/>being<sp/>invoked<sp/>more<sp/>than<sp/>once<sp/>not<sp/>only<sp/>to</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>convert<sp/>to<sp/>a<sp/>platform-specific<sp/>form,<sp/>but<sp/>also<sp/>to<sp/>try<sp/>different</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>filenames<sp/>in<sp/>the<sp/>process<sp/>of<sp/>trying<sp/>to<sp/>perform<sp/>a<sp/>load.<sp/>As<sp/>such,<sp/>this</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>variable<sp/>can<sp/>be<sp/>used<sp/>to<sp/>indicate<sp/>(a)<sp/>whether<sp/>this<sp/>DSO<sp/>structure</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>corresponds<sp/>to<sp/>a<sp/>loaded<sp/>library<sp/>or<sp/>not,<sp/>and<sp/>(b)<sp/>the<sp/>filename<sp/>with</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>which<sp/>it<sp/>was<sp/>actually<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*loaded_filename;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal">DSO<sp/>*<sp/><sp/><sp/>DSO_new(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">DSO<sp/>*<sp/><sp/><sp/>DSO_new_method(DSO_METHOD<sp/>*method);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_free(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_flags(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_up_ref(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_ctrl(DSO<sp/>*dso,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cmd,<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>larg,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*parg);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>sets<sp/>the<sp/>DSO&apos;s<sp/>name_converter<sp/>callback.<sp/>If<sp/>it<sp/>is<sp/>non-NULL,</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/>*<sp/>then<sp/>it<sp/>will<sp/>be<sp/>used<sp/>instead<sp/>of<sp/>the<sp/>associated<sp/>DSO_METHOD&apos;s<sp/>function.<sp/>If</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/>*<sp/>oldcb<sp/>is<sp/>non-NULL<sp/>then<sp/>it<sp/>is<sp/>set<sp/>to<sp/>the<sp/>function<sp/>pointer<sp/>value<sp/>being</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/>*<sp/>replaced.<sp/>Return<sp/>value<sp/>is<sp/>non-zero<sp/>for<sp/>success.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_set_name_converter(DSO<sp/>*dso,<sp/>DSO_NAME_CONVERTER_FUNC<sp/>cb,</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DSO_NAME_CONVERTER_FUNC<sp/>*oldcb);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>These<sp/>functions<sp/>can<sp/>be<sp/>used<sp/>to<sp/>get/set<sp/>the<sp/>platform-independant<sp/>filename</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/>*<sp/>used<sp/>for<sp/>a<sp/>DSO.<sp/>NB:<sp/>set<sp/>will<sp/>fail<sp/>if<sp/>the<sp/>DSO<sp/>is<sp/>already<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*DSO_get_filename(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_set_filename(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>will<sp/>invoke<sp/>the<sp/>DSO&apos;s<sp/>name_converter<sp/>callback<sp/>to<sp/>translate<sp/>a</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/>*<sp/>filename,<sp/>or<sp/>if<sp/>the<sp/>callback<sp/>isn&apos;t<sp/>set<sp/>it<sp/>will<sp/>instead<sp/>use<sp/>the<sp/>DSO_METHOD&apos;s</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/>*<sp/>converter.<sp/>If<sp/>&quot;filename&quot;<sp/>is<sp/>NULL,<sp/>the<sp/>&quot;filename&quot;<sp/>in<sp/>the<sp/>DSO<sp/>itself<sp/>will<sp/>be</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/>*<sp/>used.<sp/>If<sp/>the<sp/>DSO_FLAG_NO_NAME_TRANSLATION<sp/>flag<sp/>is<sp/>set,<sp/>then<sp/>the<sp/>filename<sp/>is</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/>*<sp/>simply<sp/>duplicated.<sp/>NB:<sp/>This<sp/>function<sp/>is<sp/>usually<sp/>called<sp/>from<sp/>within<sp/>a</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/>*<sp/>DSO_METHOD<sp/>during<sp/>the<sp/>processing<sp/>of<sp/>a<sp/>DSO_load()<sp/>call,<sp/>and<sp/>is<sp/>exposed<sp/>so<sp/>that</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/>*<sp/>caller-created<sp/>DSO_METHODs<sp/>can<sp/>do<sp/>the<sp/>same<sp/>thing.<sp/>A<sp/>non-NULL<sp/>return<sp/>value</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/>*<sp/>will<sp/>need<sp/>to<sp/>be<sp/>OPENSSL_free()&apos;d.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*DSO_convert_filename(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>will<sp/>invoke<sp/>the<sp/>DSO&apos;s<sp/>merger<sp/>callback<sp/>to<sp/>merge<sp/>two<sp/>file</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/>*<sp/>specifications,<sp/>or<sp/>if<sp/>the<sp/>callback<sp/>isn&apos;t<sp/>set<sp/>it<sp/>will<sp/>instead<sp/>use<sp/>the</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/>*<sp/>DSO_METHOD&apos;s<sp/>merger.<sp/><sp/>A<sp/>non-NULL<sp/>return<sp/>value<sp/>will<sp/>need<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/>*<sp/>OPENSSL_free()&apos;d.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*DSO_merge(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filespec1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filespec2);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>the<sp/>DSO<sp/>is<sp/>currently<sp/>loaded,<sp/>this<sp/>returns<sp/>the<sp/>filename<sp/>that<sp/>it<sp/>was<sp/>loaded</highlight></codeline>
+<codeline lineno="253"><highlight class="comment"><sp/>*<sp/>under,<sp/>otherwise<sp/>it<sp/>returns<sp/>NULL.<sp/>So<sp/>it<sp/>is<sp/>also<sp/>useful<sp/>as<sp/>a<sp/>test<sp/>as<sp/>to</highlight></codeline>
+<codeline lineno="254"><highlight class="comment"><sp/>*<sp/>whether<sp/>the<sp/>DSO<sp/>is<sp/>currently<sp/>loaded.<sp/>NB:<sp/>This<sp/>will<sp/>not<sp/>necessarily<sp/>return</highlight></codeline>
+<codeline lineno="255"><highlight class="comment"><sp/>*<sp/>the<sp/>same<sp/>value<sp/>as<sp/>DSO_convert_filename(dso,<sp/>dso-&gt;filename),<sp/>because<sp/>the</highlight></codeline>
+<codeline lineno="256"><highlight class="comment"><sp/>*<sp/>DSO_METHOD&apos;s<sp/>load<sp/>function<sp/>may<sp/>have<sp/>tried<sp/>a<sp/>variety<sp/>of<sp/>filenames<sp/>(with</highlight></codeline>
+<codeline lineno="257"><highlight class="comment"><sp/>*<sp/>and/or<sp/>without<sp/>the<sp/>aid<sp/>of<sp/>the<sp/>converters)<sp/>before<sp/>settling<sp/>on<sp/>the<sp/>one<sp/>it</highlight></codeline>
+<codeline lineno="258"><highlight class="comment"><sp/>*<sp/>actually<sp/>loaded.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*DSO_get_loaded_filename(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>DSO_set_default_method(DSO_METHOD<sp/>*meth);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">DSO_METHOD<sp/>*DSO_get_default_method(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">DSO_METHOD<sp/>*DSO_get_method(DSO<sp/>*dso);</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">DSO_METHOD<sp/>*DSO_set_method(DSO<sp/>*dso,<sp/>DSO_METHOD<sp/>*meth);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>all-singing<sp/>all-dancing<sp/>load<sp/>function,<sp/>you<sp/>normally<sp/>pass<sp/>NULL</highlight></codeline>
+<codeline lineno="267"><highlight class="comment"><sp/>*<sp/>for<sp/>the<sp/>first<sp/>and<sp/>third<sp/>parameters.<sp/>Use<sp/>DSO_up<sp/>and<sp/>DSO_free<sp/>for</highlight></codeline>
+<codeline lineno="268"><highlight class="comment"><sp/>*<sp/>subsequent<sp/>reference<sp/>count<sp/>handling.<sp/>Any<sp/>flags<sp/>passed<sp/>in<sp/>will<sp/>be<sp/>set</highlight></codeline>
+<codeline lineno="269"><highlight class="comment"><sp/>*<sp/>in<sp/>the<sp/>constructed<sp/>DSO<sp/>after<sp/>its<sp/>init()<sp/>function<sp/>but<sp/>before<sp/>the</highlight></codeline>
+<codeline lineno="270"><highlight class="comment"><sp/>*<sp/>load<sp/>operation.<sp/>If<sp/>&apos;dso&apos;<sp/>is<sp/>non-NULL,<sp/>&apos;flags&apos;<sp/>is<sp/>ignored.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">DSO<sp/>*DSO_load(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename,<sp/>DSO_METHOD<sp/>*meth,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>binds<sp/>to<sp/>a<sp/>variable<sp/>inside<sp/>a<sp/>shared<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*DSO_bind_var(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>binds<sp/>to<sp/>a<sp/>function<sp/>inside<sp/>a<sp/>shared<sp/>library.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal">DSO_FUNC_TYPE<sp/>DSO_bind_func(DSO<sp/>*dso,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*symname);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>method<sp/>is<sp/>the<sp/>default,<sp/>but<sp/>will<sp/>beg,<sp/>borrow,<sp/>or<sp/>steal<sp/>whatever</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/>*<sp/>method<sp/>should<sp/>be<sp/>the<sp/>default<sp/>on<sp/>any<sp/>particular<sp/>platform<sp/>(including</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/>*<sp/>DSO_METH_null()<sp/>if<sp/>necessary).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_openssl(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>method<sp/>is<sp/>defined<sp/>for<sp/>all<sp/>platforms<sp/>-<sp/>if<sp/>a<sp/>platform<sp/>has<sp/>no</highlight></codeline>
+<codeline lineno="285"><highlight class="comment"><sp/>*<sp/>DSO<sp/>support<sp/>then<sp/>this<sp/>will<sp/>be<sp/>the<sp/>only<sp/>method!<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_null(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>DSO_DLFCN<sp/>is<sp/>defined,<sp/>the<sp/>standard<sp/>dlfcn.h-style<sp/>functions</highlight></codeline>
+<codeline lineno="289"><highlight class="comment"><sp/>*<sp/>(dlopen,<sp/>dlclose,<sp/>dlsym,<sp/>etc)<sp/>will<sp/>be<sp/>used<sp/>and<sp/>incorporated<sp/>into</highlight></codeline>
+<codeline lineno="290"><highlight class="comment"><sp/>*<sp/>this<sp/>method.<sp/>If<sp/>not,<sp/>this<sp/>method<sp/>will<sp/>return<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_dlfcn(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>DSO_DL<sp/>is<sp/>defined,<sp/>the<sp/>standard<sp/>dl.h-style<sp/>functions<sp/>(shl_load,<sp/></highlight></codeline>
+<codeline lineno="294"><highlight class="comment"><sp/>*<sp/>shl_unload,<sp/>shl_findsym,<sp/>etc)<sp/>will<sp/>be<sp/>used<sp/>and<sp/>incorporated<sp/>into</highlight></codeline>
+<codeline lineno="295"><highlight class="comment"><sp/>*<sp/>this<sp/>method.<sp/>If<sp/>not,<sp/>this<sp/>method<sp/>will<sp/>return<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_dl(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>WIN32<sp/>is<sp/>defined,<sp/>use<sp/>DLLs.<sp/>If<sp/>not,<sp/>return<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_win32(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>VMS<sp/>is<sp/>defined,<sp/>use<sp/>shared<sp/>images.<sp/>If<sp/>not,<sp/>return<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_vms(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>writes<sp/>null-terminated<sp/>pathname<sp/>of<sp/>DSO<sp/>module</highlight></codeline>
+<codeline lineno="305"><highlight class="comment"><sp/>*<sp/>containing<sp/>&apos;addr&apos;<sp/>into<sp/>&apos;sz&apos;<sp/>large<sp/>caller-provided<sp/>&apos;path&apos;<sp/>and</highlight></codeline>
+<codeline lineno="306"><highlight class="comment"><sp/>*<sp/>returns<sp/>the<sp/>number<sp/>of<sp/>characters<sp/>[including<sp/>trailing<sp/>zero]</highlight></codeline>
+<codeline lineno="307"><highlight class="comment"><sp/>*<sp/>written<sp/>to<sp/>it.<sp/>If<sp/>&apos;sz&apos;<sp/>is<sp/>0<sp/>or<sp/>negative,<sp/>&apos;path&apos;<sp/>is<sp/>ignored<sp/>and</highlight></codeline>
+<codeline lineno="308"><highlight class="comment"><sp/>*<sp/>required<sp/>amount<sp/>of<sp/>charachers<sp/>[including<sp/>trailing<sp/>zero]<sp/>to</highlight></codeline>
+<codeline lineno="309"><highlight class="comment"><sp/>*<sp/>accomodate<sp/>pathname<sp/>is<sp/>returned.<sp/>If<sp/>&apos;addr&apos;<sp/>is<sp/>NULL,<sp/>then</highlight></codeline>
+<codeline lineno="310"><highlight class="comment"><sp/>*<sp/>pathname<sp/>of<sp/>cryptolib<sp/>itself<sp/>is<sp/>returned.<sp/>Negative<sp/>or<sp/>zero</highlight></codeline>
+<codeline lineno="311"><highlight class="comment"><sp/>*<sp/>return<sp/>value<sp/>denotes<sp/>error.</highlight></codeline>
+<codeline lineno="312"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DSO_pathbyaddr(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*addr,</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sz);</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>should<sp/>be<sp/>used<sp/>with<sp/>caution!<sp/>It<sp/>looks<sp/>up<sp/>symbols<sp/>in</highlight></codeline>
+<codeline lineno="316"><highlight class="comment"><sp/>*<sp/>*all*<sp/>loaded<sp/>modules<sp/>and<sp/>if<sp/>module<sp/>gets<sp/>unloaded<sp/>by<sp/>somebody<sp/>else</highlight></codeline>
+<codeline lineno="317"><highlight class="comment"><sp/>*<sp/>attempt<sp/>to<sp/>dereference<sp/>the<sp/>pointer<sp/>is<sp/>doomed<sp/>to<sp/>have<sp/>fatal</highlight></codeline>
+<codeline lineno="318"><highlight class="comment"><sp/>*<sp/>consequences.<sp/>Primary<sp/>usage<sp/>for<sp/>this<sp/>function<sp/>is<sp/>to<sp/>probe<sp/>*core*</highlight></codeline>
+<codeline lineno="319"><highlight class="comment"><sp/>*<sp/>system<sp/>functionality,<sp/>e.g.<sp/>check<sp/>if<sp/>getnameinfo(3)<sp/>is<sp/>available</highlight></codeline>
+<codeline lineno="320"><highlight class="comment"><sp/>*<sp/>at<sp/>run-time<sp/>without<sp/>bothering<sp/>about<sp/>OS-specific<sp/>details<sp/>such<sp/>as</highlight></codeline>
+<codeline lineno="321"><highlight class="comment"><sp/>*<sp/>libc.so.versioning<sp/>or<sp/>where<sp/>does<sp/>it<sp/>actually<sp/>reside:<sp/>in<sp/>libc</highlight></codeline>
+<codeline lineno="322"><highlight class="comment"><sp/>*<sp/>itself<sp/>or<sp/>libsocket.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*DSO_global_lookup(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>If<sp/>BeOS<sp/>is<sp/>defined,<sp/>use<sp/>shared<sp/>images.<sp/>If<sp/>not,<sp/>return<sp/>NULL.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal">DSO_METHOD<sp/>*DSO_METHOD_beos(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>BEGIN<sp/>ERROR<sp/>CODES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>following<sp/>lines<sp/>are<sp/>auto<sp/>generated<sp/>by<sp/>the<sp/>script<sp/>mkerr.pl.<sp/>Any<sp/>changes</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"><sp/>*<sp/>made<sp/>after<sp/>this<sp/>point<sp/>may<sp/>be<sp/>overwritten<sp/>when<sp/>the<sp/>script<sp/>is<sp/>next<sp/>run.</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ERR_load_DSO_strings(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Error<sp/>codes<sp/>for<sp/>the<sp/>DSO<sp/>functions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Function<sp/>codes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_BEOS_BIND_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>144</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_BEOS_BIND_VAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>145</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_BEOS_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>146</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_BEOS_NAME_CONVERTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>147</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_BEOS_UNLOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>148</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_BIND_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_BIND_VAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>101</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>102</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_MERGER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>130</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_NAME_CONVERTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>123</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DLFCN_UNLOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_BIND_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>104</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_BIND_VAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>105</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_MERGER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>131</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_NAME_CONVERTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>124</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DL_UNLOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>107</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_BIND_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_BIND_VAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_CONVERT_FILENAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>126</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_CTRL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>110</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_FREE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_GET_FILENAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>127</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_GET_LOADED_FILENAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>128</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_GLOBAL_LOOKUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>139</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>112</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_MERGE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>132</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_NEW_METHOD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>113</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_PATHBYADDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>140</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_SET_FILENAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>129</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_SET_NAME_CONVERTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>122</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_DSO_UP_REF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>114</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_GLOBAL_LOOKUP_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>138</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_PATHBYADDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>137</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_VMS_BIND_SYM<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>115</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_VMS_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>116</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_VMS_MERGER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>133</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_VMS_UNLOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>117</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_BIND_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>118</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_BIND_VAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>119</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_GLOBALLOOKUP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>142</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_GLOBALLOOKUP_FUNC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>143</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_JOINER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>135</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_LOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>120</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_MERGER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>134</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_NAME_CONVERTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>125</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_PATHBYADDR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>141</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_SPLITTER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>136</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_F_WIN32_UNLOAD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>121</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Reason<sp/>codes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_CTRL_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_DSO_ALREADY_LOADED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>110</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_EMPTY_FILE_STRUCTURE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>113</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_FAILURE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>114</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_FILENAME_TOO_BIG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>101</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_FINISH_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>102</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_INCORRECT_FILE_SYNTAX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>115</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_LOAD_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_NAME_TRANSLATION_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_NO_FILENAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>111</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_NO_FILE_SPECIFICATION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>116</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_NULL_HANDLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>104</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_SET_FILENAME_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>112</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_STACK_ERROR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>105</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_SYM_FAILURE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>106</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_UNLOAD_FAILED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>107</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DSO_R_UNSUPPORTED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/openssl/include/openssl/dso.h"/>
+  </compounddef>
+</doxygen>

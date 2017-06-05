@@ -1,0 +1,93 @@
+.TH "Ms::MP3Exporter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MP3Exporter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAskUser\fP : char { \fBNO\fP, \fBMAYBE\fP, \fBYES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBfindLibrary\fP ()"
+.br
+.ti -1c
+.RI "bool \fBloadLibrary\fP (AskUser askuser)"
+.br
+.ti -1c
+.RI "bool \fBvalidLibraryLoaded\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMode\fP (int mode)"
+.br
+.ti -1c
+.RI "void \fBsetBitrate\fP (int rate)"
+.br
+.ti -1c
+.RI "void \fBsetQuality\fP (int q, int r)"
+.br
+.ti -1c
+.RI "void \fBsetChannel\fP (int mode)"
+.br
+.ti -1c
+.RI "bool \fBinitLibrary\fP (QString libpath)"
+.br
+.ti -1c
+.RI "void \fBfreeLibrary\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetLibraryVersion\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetLibraryName\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetLibraryPath\fP ()"
+.br
+.RI "Q_OS_MAC\&. "
+.ti -1c
+.RI "QString \fBgetLibraryTypeString\fP ()"
+.br
+.ti -1c
+.RI "int \fBinitializeStream\fP (int channels, int sampleRate)"
+.br
+.ti -1c
+.RI "int \fBgetOutBufferSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBbufferPreamp\fP (float buffer[], int nSamples)"
+.br
+.ti -1c
+.RI "int \fBencodeBuffer\fP (float inbufferL[], float inbufferR[], unsigned char outbuffer[])"
+.br
+.ti -1c
+.RI "int \fBencodeRemainder\fP (float inbufferL[], float inbufferR[], int nSamples, unsigned char outbuffer[])"
+.br
+.ti -1c
+.RI "int \fBencodeBufferMono\fP (float inbuffer[], unsigned char outbuffer[])"
+.br
+.ti -1c
+.RI "int \fBencodeRemainderMono\fP (float inbuffer[], int nSamples, unsigned char outbuffer[])"
+.br
+.ti -1c
+.RI "int \fBfinishStream\fP (unsigned char outbuffer[])"
+.br
+.ti -1c
+.RI "void \fBcancelEncoding\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 147 of file exportmp3\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

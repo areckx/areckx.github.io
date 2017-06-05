@@ -1,0 +1,248 @@
+.TH "GlobalParams" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GlobalParams
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobalParams\fP (const char *customPopplerDataDir=NULL)"
+.br
+.ti -1c
+.RI "void \fBsetupBaseFonts\fP (char *dir)"
+.br
+.ti -1c
+.RI "CharCode \fBgetMacRomanCharCode\fP (char *charName)"
+.br
+.ti -1c
+.RI "Unicode \fBmapNameToUnicodeText\fP (const char *charName)"
+.br
+.ti -1c
+.RI "Unicode \fBmapNameToUnicodeAll\fP (const char *charName)"
+.br
+.ti -1c
+.RI "\fBUnicodeMap\fP * \fBgetResidentUnicodeMap\fP (\fBGooString\fP *encodingName)"
+.br
+.ti -1c
+.RI "FILE * \fBgetUnicodeMapFile\fP (\fBGooString\fP *encodingName)"
+.br
+.ti -1c
+.RI "FILE * \fBfindCMapFile\fP (\fBGooString\fP *collection, \fBGooString\fP *cMapName)"
+.br
+.ti -1c
+.RI "FILE * \fBfindToUnicodeFile\fP (\fBGooString\fP *name)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfindFontFile\fP (\fBGooString\fP *fontName)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfindBase14FontFile\fP (\fBGooString\fP *base14Name, \fBGfxFont\fP *\fBfont\fP)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfindSystemFontFile\fP (\fBGfxFont\fP *\fBfont\fP, SysFontType *type, int *fontNum, \fBGooString\fP *substituteFontName=NULL, \fBGooString\fP *base14Name=NULL)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfindCCFontFile\fP (\fBGooString\fP *collection)"
+.br
+.ti -1c
+.RI "GBool \fBgetPSExpandSmaller\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetPSShrinkLarger\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetPSCenter\fP ()"
+.br
+.ti -1c
+.RI "PSLevel \fBgetPSLevel\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetPSResidentFont\fP (\fBGooString\fP *fontName)"
+.br
+.ti -1c
+.RI "\fBGooList\fP * \fBgetPSResidentFonts\fP ()"
+.br
+.ti -1c
+.RI "\fBPSFontParam16\fP * \fBgetPSResidentFont16\fP (\fBGooString\fP *fontName, int wMode)"
+.br
+.ti -1c
+.RI "\fBPSFontParam16\fP * \fBgetPSResidentFontCC\fP (\fBGooString\fP *collection, int wMode)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetTextEncodingName\fP ()"
+.br
+.ti -1c
+.RI "EndOfLineKind \fBgetTextEOL\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetTextPageBreaks\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetTextKeepTinyChars\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetEnableFreeType\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetStrokeAdjust\fP ()"
+.br
+.ti -1c
+.RI "ScreenType \fBgetScreenType\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetScreenSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetScreenDotRadius\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetScreenGamma\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetScreenBlackThreshold\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetScreenWhiteThreshold\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMinLineWidth\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetOverprintPreview\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetMapNumericCharNames\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetMapUnknownCharNames\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetPrintCommands\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetProfileCommands\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetErrQuiet\fP ()"
+.br
+.ti -1c
+.RI "\fBCharCodeToUnicode\fP * \fBgetCIDToUnicode\fP (\fBGooString\fP *collection)"
+.br
+.ti -1c
+.RI "\fBCharCodeToUnicode\fP * \fBgetUnicodeToUnicode\fP (\fBGooString\fP *fontName)"
+.br
+.ti -1c
+.RI "\fBUnicodeMap\fP * \fBgetUnicodeMap\fP (\fBGooString\fP *encodingName)"
+.br
+.ti -1c
+.RI "\fBCMap\fP * \fBgetCMap\fP (\fBGooString\fP *collection, \fBGooString\fP *cMapName, \fBStream\fP *stream=NULL)"
+.br
+.ti -1c
+.RI "\fBUnicodeMap\fP * \fBgetTextEncoding\fP ()"
+.br
+.ti -1c
+.RI "\fBGooList\fP * \fBgetEncodingNames\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddFontFile\fP (\fBGooString\fP *fontName, \fBGooString\fP *path)"
+.br
+.ti -1c
+.RI "void \fBsetPSFile\fP (char *file)"
+.br
+.ti -1c
+.RI "void \fBsetPSExpandSmaller\fP (GBool expand)"
+.br
+.ti -1c
+.RI "void \fBsetPSShrinkLarger\fP (GBool shrink)"
+.br
+.ti -1c
+.RI "void \fBsetPSCenter\fP (GBool center)"
+.br
+.ti -1c
+.RI "void \fBsetPSLevel\fP (PSLevel level)"
+.br
+.ti -1c
+.RI "void \fBsetTextEncoding\fP (char *encodingName)"
+.br
+.ti -1c
+.RI "GBool \fBsetTextEOL\fP (char *s)"
+.br
+.ti -1c
+.RI "void \fBsetTextPageBreaks\fP (GBool pageBreaks)"
+.br
+.ti -1c
+.RI "void \fBsetTextKeepTinyChars\fP (GBool keep)"
+.br
+.ti -1c
+.RI "GBool \fBsetEnableFreeType\fP (char *s)"
+.br
+.ti -1c
+.RI "GBool \fBsetDisableFreeTypeHinting\fP (char *s)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeAdjust\fP (GBool strokeAdjust)"
+.br
+.ti -1c
+.RI "void \fBsetScreenType\fP (ScreenType st)"
+.br
+.ti -1c
+.RI "void \fBsetScreenSize\fP (int size)"
+.br
+.ti -1c
+.RI "void \fBsetScreenDotRadius\fP (int radius)"
+.br
+.ti -1c
+.RI "void \fBsetScreenGamma\fP (double gamma)"
+.br
+.ti -1c
+.RI "void \fBsetScreenBlackThreshold\fP (double blackThreshold)"
+.br
+.ti -1c
+.RI "void \fBsetScreenWhiteThreshold\fP (double whiteThreshold)"
+.br
+.ti -1c
+.RI "void \fBsetMinLineWidth\fP (double minLineWidth)"
+.br
+.ti -1c
+.RI "void \fBsetOverprintPreview\fP (GBool overprintPreviewA)"
+.br
+.ti -1c
+.RI "void \fBsetMapNumericCharNames\fP (GBool map)"
+.br
+.ti -1c
+.RI "void \fBsetMapUnknownCharNames\fP (GBool map)"
+.br
+.ti -1c
+.RI "void \fBsetPrintCommands\fP (GBool printCommandsA)"
+.br
+.ti -1c
+.RI "void \fBsetProfileCommands\fP (GBool profileCommandsA)"
+.br
+.ti -1c
+.RI "void \fBsetErrQuiet\fP (GBool errQuietA)"
+.br
+.ti -1c
+.RI "void \fBaddSecurityHandler\fP (\fBXpdfSecurityHandler\fP *handler)"
+.br
+.ti -1c
+.RI "\fBXpdfSecurityHandler\fP * \fBgetSecurityHandler\fP (char *name)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static GBool \fBparseYesNo2\fP (const char *token, GBool *flag)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 128 of file GlobalParams\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

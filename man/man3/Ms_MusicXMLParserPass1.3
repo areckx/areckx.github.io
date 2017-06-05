@@ -1,0 +1,349 @@
+.TH "Ms::MusicXMLParserPass1" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MusicXMLParserPass1
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMusicXMLParserPass1\fP (\fBScore\fP *score)"
+.br
+.ti -1c
+.RI "void \fBinitPartState\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "Score::FileError \fBparse\fP (QIODevice *device)"
+.br
+.ti -1c
+.RI "Score::FileError \fBparse\fP ()"
+.br
+.ti -1c
+.RI "void \fBscorePartwise\fP ()"
+.br
+.ti -1c
+.RI "void \fBidentification\fP ()"
+.br
+.ti -1c
+.RI "void \fBcredit\fP (CreditWordsList &credits)"
+.br
+.ti -1c
+.RI "void \fBdefaults\fP (int &pageWidth, int &pageHeight)"
+.br
+.ti -1c
+.RI "void \fBpageLayout\fP (\fBPageFormat\fP &pf, const qreal conversion, int &pageWidth, int &pageHeight)"
+.br
+.ti -1c
+.RI "void \fBpartList\fP (MusicXmlPartGroupList &partGroupList)"
+.br
+.ti -1c
+.RI "void \fBpartGroup\fP (const int scoreParts, MusicXmlPartGroupList &partGroupList, MusicXmlPartGroupMap &partGroups)"
+.br
+.ti -1c
+.RI "void \fBscorePart\fP ()"
+.br
+.ti -1c
+.RI "void \fBscoreInstrument\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBmidiInstrument\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBpart\fP ()"
+.br
+.ti -1c
+.RI "void \fBmeasure\fP (const QString &partId, const \fBFraction\fP \fBtime\fP, \fBFraction\fP &mdur, \fBVoiceOverlapDetector\fP &vod)"
+.br
+.ti -1c
+.RI "void \fBattributes\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBclef\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBtime\fP ()"
+.br
+.ti -1c
+.RI "void \fBdivisions\fP ()"
+.br
+.ti -1c
+.RI "void \fBstaffDetails\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBstaffTuning\fP (\fBStringData\fP *t)"
+.br
+.ti -1c
+.RI "void \fBstaves\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "void \fBdirection\fP (const QString &partId, const \fBFraction\fP cTime)"
+.br
+.ti -1c
+.RI "void \fBdirectionType\fP (const \fBFraction\fP cTime, QList< \fBMxmlOctaveShiftDesc\fP > &starts, QList< \fBMxmlOctaveShiftDesc\fP > &stops)"
+.br
+.ti -1c
+.RI "void \fBhandleOctaveShift\fP (const \fBFraction\fP cTime, const QString &type, short size, \fBMxmlOctaveShiftDesc\fP &desc)"
+.br
+.ti -1c
+.RI "void \fBnote\fP (const QString &partId, const \fBFraction\fP cTime, \fBFraction\fP &dura, \fBVoiceOverlapDetector\fP &vod)"
+.br
+.ti -1c
+.RI "void \fBnotePrintSpacingNo\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBduration\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBforward\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBbackup\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBtimeModification\fP (\fBFraction\fP &timeMod)"
+.br
+.ti -1c
+.RI "void \fBpitch\fP (int &step, float &alter, int &oct)"
+.br
+.ti -1c
+.RI "void \fBrest\fP ()"
+.br
+.ti -1c
+.RI "QString \fBgetParseStatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBlogDebugTrace\fP (const QString &info)"
+.br
+.ti -1c
+.RI "void \fBlogDebugInfo\fP (const QString &info)"
+.br
+.ti -1c
+.RI "void \fBlogError\fP (const QString &error)"
+.br
+.ti -1c
+.RI "void \fBskipLogCurrElem\fP ()"
+.br
+.ti -1c
+.RI "bool \fBdetermineMeasureLength\fP (QVector< \fBFraction\fP > &ml) const"
+.br
+.ti -1c
+.RI "VoiceList \fBgetVoiceList\fP (const QString id) const"
+.br
+.ti -1c
+.RI "bool \fBdetermineStaffMoveVoice\fP (const QString &id, const int mxStaff, const QString &mxVoice, int &msMove, int &msTrack, int &msVoice) const"
+.br
+.ti -1c
+.RI "int \fBtrackForPart\fP (const QString &id) const"
+.br
+.ti -1c
+.RI "bool \fBhasPart\fP (const QString &id) const"
+.br
+.ti -1c
+.RI "\fBPart\fP * \fBgetPart\fP (const QString &id) const"
+.br
+.ti -1c
+.RI "\fBMusicXMLDrumset\fP \fBgetDrumset\fP (const QString &id) const"
+.br
+.ti -1c
+.RI "void \fBsetDrumsetDefault\fP (const QString &id, const QString &instrId, const NoteHead::Group hg, const int line, const \fBDirection\fP sd)"
+.br
+.ti -1c
+.RI "\fBMusicXmlInstrList\fP \fBgetInstrList\fP (const QString id) const"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBgetMeasureStart\fP (const int i) const"
+.br
+.ti -1c
+.RI "int \fBoctaveShift\fP (const QString &id, const int staff, const \fBFraction\fP f) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 63 of file importmxmlpass1\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::MusicXMLParserPass1::attributes (const QString & partId)"
+Parse the /score-partwise/part/measure/attributes node\&. 
+.PP
+Definition at line 2157 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::backup (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/backup node\&. 
+.PP
+Definition at line 2987 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::clef (const QString & partId)"
+Parse the /score-partwise/part/measure/attributes/clef node\&. Set the staff type based on clef type TODO: check if staff type setting could be simplified 
+.PP
+Definition at line 2188 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::credit (CreditWordsList & credits)"
+Parse the /score-partwise/credit node: read the credits for later handling by doCredits()\&. 
+.PP
+Definition at line 1228 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::defaults (int & pageWidth, int & pageHeight)"
+Parse the /score-partwise/defaults node: read the general score layout settings\&. 
+.PP
+Definition at line 1367 of file importmxmlpass1\&.cpp\&.
+.SS "bool Ms::MusicXMLParserPass1::determineMeasureLength (QVector< \fBFraction\fP > & ml) const"
+Determine the length in ticks of each measure in all parts\&. Return false on error\&. 
+.PP
+Definition at line 283 of file importmxmlpass1\&.cpp\&.
+.SS "bool Ms::MusicXMLParserPass1::determineStaffMoveVoice (const QString & id, const int mxStaff, const QString & mxVoice, int & msMove, int & msTrack, int & msVoice) const"
+For part \fIid\fP, determine \fBMuseScore\fP (ms) staffmove, track and voice from MusicXML (mx) staff and voice MusicXML staff is 0 for the first staff, 1 for the second\&. \fBNote\fP: track is the first track of the ms staff in the score, add ms voice for elements in a voice Return true if OK, false on error TODO: finalize 
+.PP
+Definition at line 378 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::direction (const QString & partId, const \fBFraction\fP cTime)"
+Parse the /score-partwise/part/measure/direction node to be able to handle octave-shifts, as these must be interpreted in musical order instead of in MusicXML file order\&. 
+.PP
+Definition at line 2533 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::directionType (const \fBFraction\fP cTime, QList< \fBMxmlOctaveShiftDesc\fP > & starts, QList< \fBMxmlOctaveShiftDesc\fP > & stops)"
+Parse the /score-partwise/part/measure/direction/direction-type node\&. 
+.PP
+Definition at line 2606 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::divisions ()"
+Parse the /score-partwise/part/measure/attributes/divisions node\&. 
+.PP
+Definition at line 2329 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::duration (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/duration node\&. 
+.PP
+Definition at line 2936 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::forward (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/forward node\&. 
+.PP
+Definition at line 2962 of file importmxmlpass1\&.cpp\&.
+.SS "\fBMusicXmlInstrList\fP Ms::MusicXMLParserPass1::getInstrList (const QString id) const"
+Get the \fBMusicXmlInstrList\fP for part \fIid\fP\&. Return an empty \fBMusicXmlInstrList\fP on error\&. 
+.PP
+Definition at line 335 of file importmxmlpass1\&.cpp\&.
+.SS "\fBFraction\fP Ms::MusicXMLParserPass1::getMeasureStart (const int i) const"
+Return the measure start time for measure \fIi\fP\&. 
+.PP
+Definition at line 474 of file importmxmlpass1\&.cpp\&.
+.SS "VoiceList Ms::MusicXMLParserPass1::getVoiceList (const QString id) const"
+Get the VoiceList for part \fIid\fP\&. Return an empty VoiceList on error\&. 
+.PP
+Definition at line 319 of file importmxmlpass1\&.cpp\&.
+.SS "bool Ms::MusicXMLParserPass1::hasPart (const QString & id) const"
+Check if part \fIid\fP is found\&. 
+.PP
+Definition at line 445 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::identification ()"
+Parse the /score-partwise/identification node: read the metadata\&. 
+.PP
+Definition at line 1032 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::initPartState (const QString & partId)"
+Initialize members as required for reading the MusicXML part element\&. TODO: factor out part reading into a separate class TODO: preferably use automatically initialized variables \fBNote\fP that Qt automatically initializes new elements in QVector (tuplets)\&. 
+.PP
+Definition at line 266 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::logDebugInfo (const QString & info)"
+Log debug \fIinfo\fP (non-fatal events relevant for debugging)\&. 
+.PP
+Definition at line 519 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::logDebugTrace (const QString & info)"
+Log debug (function) trace\&. 
+.PP
+Definition at line 506 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::logError (const QString & error)"
+Log \fIerror\fP (possibly non-fatal but to be reported to the user anyway)\&. 
+.PP
+Definition at line 533 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::measure (const QString & partId, const \fBFraction\fP time, \fBFraction\fP & mdur, \fBVoiceOverlapDetector\fP & vod)"
+Parse the /score-partwise/part/measure node: read the measures data as required to determine measure timing, octave shifts and assign voices and staves\&. 
+.PP
+Definition at line 2046 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::midiInstrument (const QString & partId)"
+Parse the /score-partwise/part-list/score-part/midi-instrument node\&. 
+.PP
+Definition at line 1890 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::note (const QString & partId, const \fBFraction\fP sTime, \fBFraction\fP & dura, \fBVoiceOverlapDetector\fP & vod)"
+Parse the /score-partwise/part/measure/note node\&. 
+.PP
+Definition at line 2713 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::notePrintSpacingNo (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note node for a note with print-spacing='no'\&. These are handled like a forward: only moving the time forward\&. 
+.PP
+Definition at line 2896 of file importmxmlpass1\&.cpp\&.
+.SS "int Ms::MusicXMLParserPass1::octaveShift (const QString & id, const int staff, const \fBFraction\fP f) const"
+Return the octave shift for part \fIid\fP in \fIstaff\fP at \fIf\fP\&. 
+.PP
+Definition at line 490 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::pageLayout (\fBPageFormat\fP & pf, const qreal conversion, int & pageWidth, int & pageHeight)"
+Parse the /score-partwise/defaults/page-layout node: read the page layout\&. 
+.PP
+Definition at line 1466 of file importmxmlpass1\&.cpp\&.
+.SS "Score::FileError Ms::MusicXMLParserPass1::parse (QIODevice * device)"
+Parse MusicXML in \fIdevice\fP and extract pass 1 data\&. 
+.PP
+Definition at line 851 of file importmxmlpass1\&.cpp\&.
+.SS "Score::FileError Ms::MusicXMLParserPass1::parse ()"
+Start the parsing process, after verifying the top-level node is score-partwise 
+.PP
+Definition at line 875 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::part ()"
+Parse the /score-partwise/part node: read the parts data to determine measure timing and octave shifts\&. Assign voices and staves\&. 
+.PP
+Definition at line 1965 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::partGroup (const int scoreParts, MusicXmlPartGroupList & partGroupList, MusicXmlPartGroupMap & partGroups)"
+Parse the /score-partwise/part-list/part-group node\&. 
+.PP
+Definition at line 1662 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::partList (MusicXmlPartGroupList & partGroupList)"
+Parse the /score-partwise/part-list: create the parts and for each part set id and name\&. Also handle the part-groups\&. 
+.PP
+Definition at line 1539 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::rest ()"
+Parse the /score-partwise/part/measure/note/rest node\&. 
+.PP
+Definition at line 3046 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::scoreInstrument (const QString & partId)"
+Parse the /score-partwise/part-list/score-part/score-instrument node\&. 
+.PP
+Definition at line 1828 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::scorePart ()"
+Parse the /score-partwise/part-list/score-part node: create the part and sets id and name\&. \fBNote\fP that a part is created even if no part-name is present which is invalid MusicXML but is (sometimes ?) generated by NWC2MusicXML\&. 
+.PP
+Definition at line 1745 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::scorePartwise ()"
+Parse the MusicXML top-level (XPath /score-partwise) node\&. < \fBPage\fP width read from defaults
+.PP
+< \fBPage\fP height read from defaults 
+.PP
+Definition at line 926 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::setDrumsetDefault (const QString & id, const QString & instrId, const NoteHead::Group hg, const int line, const \fBDirection\fP sd)"
+Set default notehead, line and stem direction for instrument \fIinstrId\fP in part \fIid\fP\&. 
+.PP
+Definition at line 351 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::skipLogCurrElem ()"
+Skip the current element, log debug as info\&. 
+.PP
+Definition at line 550 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::staffDetails (const QString & partId)"
+Parse the /score-partwise/part/measure/attributes/staff-details node\&. 
+.PP
+Definition at line 2360 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::staffTuning (\fBStringData\fP * t)"
+Parse the /score-partwise/part/measure/attributes/staff-details/staff-tuning node\&. 
+.PP
+Definition at line 2453 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::staves (const QString & partId)"
+Set number of staves for part \fIpartId\fP to the max value of the current value and the value in the <staves> element\&. 
+.PP
+Definition at line 2506 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::time ()"
+Parse the /score-partwise/part/measure/attributes/time node\&. 
+.PP
+Definition at line 2293 of file importmxmlpass1\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass1::timeModification (\fBFraction\fP & timeMod)"
+Parse the /score-partwise/part/measure/note/time-modification node\&. 
+.PP
+Definition at line 3008 of file importmxmlpass1\&.cpp\&.
+.SS "int Ms::MusicXMLParserPass1::trackForPart (const QString & id) const"
+Return the (score relative) track number for the first staff of part \fIid\fP\&. 
+.PP
+Definition at line 458 of file importmxmlpass1\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

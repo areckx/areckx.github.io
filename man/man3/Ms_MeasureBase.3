@@ -1,0 +1,261 @@
+.TH "Ms::MeasureBase" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MeasureBase \- Virtual base class for \fBMeasure\fP, \fBHBox\fP and \fBVBox\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <measurebase\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.PP
+Inherited by \fBMs::Box\fP, and \fBMs::Measure\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeasureBase\fP (\fBScore\fP *score=0)"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP (const \fBMeasureBase\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBMeasureBase\fP * \fBclone\fP () const =0"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s) override"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBnext\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBnextMM\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNext\fP (\fBMeasureBase\fP *e)"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBprev\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPrev\fP (\fBMeasureBase\fP *e)"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBnextMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBprevMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBnextMeasureMM\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBprevMeasureMM\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override=0"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &, int, bool, bool) const =0"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "\fBElementList\fP & \fBel\fP ()"
+.br
+.ti -1c
+.RI "const \fBElementList\fP & \fBel\fP () const"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSystem\fP (\fBSystem\fP *s)"
+.br
+.ti -1c
+.RI "\fBLayoutBreak\fP * \fBsectionBreakElement\fP () const"
+.br
+.ti -1c
+.RI "void \fBundoSetBreak\fP (bool v, LayoutBreak::Type type)"
+.br
+.ti -1c
+.RI "void \fBundoSetLineBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBundoSetPageBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBundoSetSectionBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBundoSetNoBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "virtual void \fBmoveTicks\fP (int diff)"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.RI "Add new \fBElement\fP \fIel\fP to \fBMeasureBase\fP\&. "
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.RI "Remove \fBElement\fP \fIel\fP from \fBMeasureBase\fP\&. "
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "int \fBendTick\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTick\fP (int t)"
+.br
+.ti -1c
+.RI "qreal \fBpause\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "void \fBclearElements\fP ()"
+.br
+.ti -1c
+.RI "\fBElementList\fP \fBtakeElements\fP ()"
+.br
+.ti -1c
+.RI "int \fBno\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNo\fP (int n)"
+.br
+.ti -1c
+.RI "int \fBnoOffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoOffset\fP (int n)"
+.br
+.ti -1c
+.RI "bool \fBrepeatEnd\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRepeatEnd\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBrepeatStart\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRepeatStart\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBrepeatJump\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRepeatJump\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBirregular\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetIrregular\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBlineBreak\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBpageBreak\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPageBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBsectionBreak\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSectionBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBnoBreak\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoBreak\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBhasCourtesyKeySig\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHasCourtesyKeySig\fP (int v)"
+.br
+.ti -1c
+.RI "virtual void \fBcomputeMinWidth\fP ()"
+.br
+.ti -1c
+.RI "int \fBindex\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcleanupLayoutBreaks\fP (bool undo)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBlineBreak\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBnextMeasure\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBnextMeasureMM\fP"
+.br
+.ti -1c
+.RI "bool \fBpageBreak\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBprevMeasure\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBprevMeasureMM\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Virtual base class for \fBMeasure\fP, \fBHBox\fP and \fBVBox\fP\&. 
+.PP
+Definition at line 61 of file measurebase\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

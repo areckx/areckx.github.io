@@ -1,0 +1,52 @@
+.TH "XpdfSecurityHandler" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XpdfSecurityHandler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBversion\fP"
+.br
+.ti -1c
+.RI "char * \fBname\fP"
+.br
+.ti -1c
+.RI "void * \fBhandlerData\fP"
+.br
+.ti -1c
+.RI "XpdfBool(* \fBnewDoc\fP )(void *handlerData, XpdfDoc doc, XpdfObject encryptDict, void **docData)"
+.br
+.ti -1c
+.RI "void(* \fBfreeDoc\fP )(void *handlerData, void *docData)"
+.br
+.ti -1c
+.RI "XpdfBool(* \fBmakeAuthData\fP )(void *handlerData, void *docData, char *ownerPassword, char *userPassword, void **authData)"
+.br
+.ti -1c
+.RI "XpdfBool(* \fBgetAuthData\fP )(void *handlerData, void *docData, void **authData)"
+.br
+.ti -1c
+.RI "void(* \fBfreeAuthData\fP )(void *handlerData, void *docData, void *authData)"
+.br
+.ti -1c
+.RI "XpdfPermission(* \fBauthorize\fP )(void *handlerData, void *docData, void *authData)"
+.br
+.ti -1c
+.RI "XpdfBool(* \fBgetKey\fP )(void *handlerData, void *docData, char **key, int *keyLen, int *cryptVersion, int *cryptRevision)"
+.br
+.ti -1c
+.RI "void(* \fBfreeKey\fP )(void *handlerData, void *docData, char *key, int keyLen)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 122 of file XpdfPluginAPI\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

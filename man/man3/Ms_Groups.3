@@ -1,0 +1,57 @@
+.TH "Ms::Groups" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Groups \- GroupNodes must be sorted by tick\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <groups\&.h>\fP
+.PP
+Inherits vector< GroupNode >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGroups\fP (const std::vector< \fBGroupNode\fP > &l)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "Beam::Mode \fBbeamMode\fP (int tick, TDuration::DurationType d) const"
+.br
+.ti -1c
+.RI "void \fBaddStop\fP (int pos, TDuration::DurationType d, Beam::Mode bm)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBGroups\fP &g) const"
+.br
+.ti -1c
+.RI "void \fBdump\fP (const char *) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const \fBGroups\fP & \fBendings\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "static Beam::Mode \fBendBeam\fP (\fBChordRest\fP *cr, \fBChordRest\fP *prev=0)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+GroupNodes must be sorted by tick\&. 
+.PP
+Definition at line 48 of file groups\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

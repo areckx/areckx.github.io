@@ -1,0 +1,85 @@
+.TH "FrameShadowFactory" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FrameShadowFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFrameShadowFactory\fP (QObject *parent)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~FrameShadowFactory\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "bool \fBregisterWidget\fP (QWidget *, \fBStyleHelper\fP &)"
+.br
+.RI "register widget "
+.ti -1c
+.RI "void \fBunregisterWidget\fP (QWidget *)"
+.br
+.RI "unregister "
+.ti -1c
+.RI "bool \fBisRegistered\fP (const QWidget *widget) const"
+.br
+.RI "true if widget is registered "
+.ti -1c
+.RI "virtual bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.RI "event filter "
+.ti -1c
+.RI "void \fBupdateState\fP (const QWidget *widget, bool focus, bool hover, qreal opacity, AnimationMode) const"
+.br
+.RI "update state "
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBwidgetDestroyed\fP (QObject *)"
+.br
+.RI "triggered by object destruction "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinstallShadows\fP (QWidget *, \fBStyleHelper\fP &, bool flat=false)"
+.br
+.RI "install shadows on given widget "
+.ti -1c
+.RI "virtual void \fBremoveShadows\fP (QWidget *)"
+.br
+.RI "remove shadows from widget "
+.ti -1c
+.RI "virtual void \fBupdateShadowsGeometry\fP (QObject *) const"
+.br
+.RI "update shadows geometry "
+.ti -1c
+.RI "virtual void \fBraiseShadows\fP (QObject *) const"
+.br
+.RI "raise shadows "
+.ti -1c
+.RI "virtual void \fBupdate\fP (QObject *) const"
+.br
+.RI "update shadows "
+.ti -1c
+.RI "virtual void \fBinstallShadow\fP (QWidget *, \fBStyleHelper\fP &, ShadowArea, bool flat=false) const"
+.br
+.RI "install shadow on given side "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 49 of file frameshadow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

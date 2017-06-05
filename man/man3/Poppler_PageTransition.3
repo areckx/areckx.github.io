@@ -1,0 +1,126 @@
+.TH "Poppler::PageTransition" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::PageTransition \- Describes how a PDF file viewer shall perform the transition from one page to another\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-page\-transition\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBReplace\fP = 0, \fBSplit\fP, \fBBlinds\fP, \fBBox\fP, \fBWipe\fP, \fBDissolve\fP, \fBGlitter\fP, \fBFly\fP, \fBPush\fP, \fBCover\fP, \fBUncover\fP, \fBFade\fP }
+.RI "transition effect that shall be used ""
+.br
+.ti -1c
+.RI "enum \fBAlignment\fP { \fBHorizontal\fP = 0, \fBVertical\fP }
+.RI "alignment of the transition effect that shall be used ""
+.br
+.ti -1c
+.RI "enum \fBDirection\fP { \fBInward\fP = 0, \fBOutward\fP }
+.RI "direction of the transition effect that shall be used ""
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPageTransition\fP (const \fBPageTransitionParams\fP &params)"
+.br
+.RI "Construct a new \fBPageTransition\fP object from a page dictionary\&. "
+.ti -1c
+.RI "\fBPageTransition\fP (const \fBPageTransition\fP &pt)"
+.br
+.RI "copy constructor "
+.ti -1c
+.RI "\fB~PageTransition\fP ()"
+.br
+.ti -1c
+.RI "\fBType\fP \fBtype\fP () const"
+.br
+.RI "Get type of the transition\&. "
+.ti -1c
+.RI "Q_DECL_DEPRECATED int \fBduration\fP () const"
+.br
+.RI "Get duration of the transition in seconds as integer\&. "
+.ti -1c
+.RI "double \fBdurationReal\fP () const"
+.br
+.RI "Get duration of the transition in seconds\&. "
+.ti -1c
+.RI "\fBAlignment\fP \fBalignment\fP () const"
+.br
+.RI "Get dimension in which the transition effect occurs\&. "
+.ti -1c
+.RI "\fBDirection\fP \fBdirection\fP () const"
+.br
+.RI "Get direction of motion of the transition effect\&. "
+.ti -1c
+.RI "int \fBangle\fP () const"
+.br
+.RI "Get direction in which the transition effect moves\&. "
+.ti -1c
+.RI "double \fBscale\fP () const"
+.br
+.RI "Get starting or ending scale\&. "
+.ti -1c
+.RI "bool \fBisRectangular\fP () const"
+.br
+.RI "Returns true if the area to be flown is rectangular and opaque\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Describes how a PDF file viewer shall perform the transition from one page to another\&. 
+
+In PDF files there is a way to specify if the viewer shall use certain effects to perform the transition from one page to another\&. This feature can be used, e\&.g\&., in a PDF-based beamer presentation\&.
+.PP
+This utility class represents the transition effect, and can be used to extract the information from a PDF object\&. 
+.PP
+Definition at line 47 of file poppler\-page\-transition\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PageTransition::PageTransition (const \fBPageTransitionParams\fP & params)"
+
+.PP
+Construct a new \fBPageTransition\fP object from a page dictionary\&. Users of the library will rarely need to construct a \fBPageTransition\fP object themselves\&. Instead, the method \fBPoppler::Page::transition()\fP can be used to find out if a certain transition effect is specified\&.
+.PP
+\fBWarning:\fP
+.RS 4
+In case or error, this method will print an error message to stderr, and construct a default object\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparams\fP an object whose dictionary will be read and parsed\&. This must be a valid object, whose dictionaries are accessed by the constructor\&. The object is only accessed by this constructor, and may be deleted after the constructor returns\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file poppler\-page\-transition\&.cc\&.
+.SS "PageTransition::~PageTransition ()"
+Destructor 
+.PP
+Definition at line 57 of file poppler\-page\-transition\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int PageTransition::duration (void) const"
+
+.PP
+Get duration of the transition in seconds as integer\&. 
+.PP
+\fBDeprecated\fP
+.RS 4
+This function is left for backward compatibility, use \fBdurationReal()\fP instead\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file poppler\-page\-transition\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,163 @@
+.TH "CairoImageOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CairoImageOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBCairoOutputDev\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseTilingPatternFill\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseShadedFills\fP (int type)"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseFillColorStop\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBneedNonText\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateAll\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBsetDefaultCTM\fP (double *ctm)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCTM\fP (\fBGfxState\fP *state, double m11, double m12, double m21, double m22, double m31, double m32)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineDash\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFlatness\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineJoin\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineCap\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMiterLimit\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineWidth\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateBlendMode\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclipToStrokePath\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBtilingPatternFill\fP (\fBGfxState\fP *state, \fBGfx\fP *gfx, \fBCatalog\fP *cat, \fBObject\fP *str, double *pmat, int paintType, int tilingType, \fBDict\fP *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedFill\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedFill\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading, double sMin, double sMax)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawSoftMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, \fBGfxImageColorMap\fP *maskColorMap, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool inlineImg, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBunsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTransparencyGroup\fP (\fBGfxState\fP *, double *, \fBGfxColorSpace\fP *, GBool, GBool, GBool)"
+.br
+.ti -1c
+.RI "virtual void \fBendTransparencyGroup\fP (\fBGfxState\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBpaintTransparencyGroup\fP (\fBGfxState\fP *, double *)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMask\fP (\fBGfxState\fP *, double *, GBool, \fBFunction\fP *, \fBGfxColor\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBclearSoftMask\fP (\fBGfxState\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetImageDrawDecideCbk\fP (GBool(*cbk)(int img_id, void *data), void *data)"
+.br
+.ti -1c
+.RI "int \fBgetNumImages\fP () const"
+.br
+.ti -1c
+.RI "\fBCairoImage\fP * \fBgetImage\fP (int i) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 378 of file CairoOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

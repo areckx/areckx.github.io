@@ -1,0 +1,121 @@
+.TH "Ms::Capella" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Capella
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBError\fP : char { \fBCAP_NO_ERROR\fP, \fBBAD_SIG\fP, \fBCAP_EOF\fP, \fBBAD_VOICE_SIG\fP, \fBBAD_STAFF_SIG\fP, \fBBAD_SYSTEM_SIG\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBread\fP (QFile *)"
+.br
+.ti -1c
+.RI "QString \fBerror\fP (Error n) const"
+.br
+.ti -1c
+.RI "unsigned char \fBreadByte\fP ()"
+.br
+.ti -1c
+.RI "char \fBreadChar\fP ()"
+.br
+.ti -1c
+.RI "QColor \fBreadColor\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadInt\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadLong\fP ()"
+.br
+.ti -1c
+.RI "short \fBreadWord\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadDWord\fP ()"
+.br
+.ti -1c
+.RI "unsigned \fBreadUnsigned\fP ()"
+.br
+.ti -1c
+.RI "char * \fBreadString\fP ()"
+.br
+.ti -1c
+.RI "QString \fBreadQString\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadExtra\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBBasicDrawObj\fP * > \fBreadDrawObjectArray\fP ()"
+.br
+.ti -1c
+.RI "bool \fBread\fP (void *p, qint64 len)"
+.br
+.ti -1c
+.RI "QFont \fBreadFont\fP ()"
+.br
+.ti -1c
+.RI "QPointF \fBreadPoint\fP ()"
+.br
+.ti -1c
+.RI "\fBCapStaffLayout\fP * \fBstaffLayout\fP (int idx)"
+.br
+.ti -1c
+.RI "const QList< \fBCapStaffLayout\fP * > & \fBstaffLayouts\fP () const"
+.br
+.ti -1c
+.RI "void \fBreadCapx\fP (\fBXmlReader\fP &e)"
+.br
+.ti -1c
+.RI "QList< \fBBasicDrawObj\fP * > \fBreadCapxDrawObjectArray\fP (\fBXmlReader\fP &e)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBCapSystem\fP * > \fBsystems\fP"
+.br
+.ti -1c
+.RI "QList< \fBCapBracket\fP > \fBbrackets\fP"
+.br
+.ti -1c
+.RI "\fBChordObj\fP * \fBbackgroundChord\fP"
+.br
+.ti -1c
+.RI "double \fBsmallLineDist\fP"
+.br
+.ti -1c
+.RI "double \fBnormalLineDist\fP"
+.br
+.ti -1c
+.RI "int \fBtopDist\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadStaveLayout\fP (\fBCapStaffLayout\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBreadLayout\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 631 of file capella\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

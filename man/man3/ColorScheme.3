@@ -1,0 +1,372 @@
+.TH "ColorScheme" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ColorScheme
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <colorscheme\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBColorSet\fP { \fBView\fP, \fBWindow\fP, \fBButton\fP, \fBSelection\fP, \fBTooltip\fP }"
+.br
+.ti -1c
+.RI "enum \fBBackgroundRole\fP { \fBNormalBackground\fP = 0, \fBAlternateBackground\fP = 1, \fBActiveBackground\fP = 2, \fBLinkBackground\fP = 3, \fBVisitedBackground\fP = 4, \fBNegativeBackground\fP = 5, \fBNeutralBackground\fP = 6, \fBPositiveBackground\fP = 7 }"
+.br
+.ti -1c
+.RI "enum \fBForegroundRole\fP { \fBNormalText\fP = 0, \fBInactiveText\fP = 1, \fBActiveText\fP = 2, \fBLinkText\fP = 3, \fBVisitedText\fP = 4, \fBNegativeText\fP = 5, \fBNeutralText\fP = 6, \fBPositiveText\fP = 7 }"
+.br
+.ti -1c
+.RI "enum \fBDecorationRole\fP { \fBFocusColor\fP, \fBHoverColor\fP }"
+.br
+.ti -1c
+.RI "enum \fBShadeRole\fP { \fBLightShade\fP, \fBMidlightShade\fP, \fBMidShade\fP, \fBDarkShade\fP, \fBShadowShade\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBColorScheme\fP (const \fBColorScheme\fP &)"
+.br
+.ti -1c
+.RI "virtual \fB~ColorScheme\fP ()"
+.br
+.ti -1c
+.RI "\fBColorScheme\fP & \fBoperator=\fP (const \fBColorScheme\fP &)"
+.br
+.ti -1c
+.RI "\fBColorScheme\fP (QPalette::ColorGroup, \fBColorSet\fP=\fBView\fP)"
+.br
+.ti -1c
+.RI "QBrush \fBbackground\fP (\fBBackgroundRole\fP=\fBNormalBackground\fP) const"
+.br
+.ti -1c
+.RI "QBrush \fBforeground\fP (\fBForegroundRole\fP=\fBNormalText\fP) const"
+.br
+.ti -1c
+.RI "QBrush \fBdecoration\fP (\fBDecorationRole\fP) const"
+.br
+.ti -1c
+.RI "QColor \fBshade\fP (\fBShadeRole\fP) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QColor \fBshade\fP (const QColor &, \fBShadeRole\fP)"
+.br
+.ti -1c
+.RI "static QColor \fBshade\fP (const QColor &, \fBShadeRole\fP, qreal contrast, qreal chromaAdjust=0\&.0)"
+.br
+.ti -1c
+.RI "static void \fBadjustBackground\fP (QPalette &, \fBBackgroundRole\fP newRole=\fBNormalBackground\fP, QPalette::ColorRole \fBcolor\fP=QPalette::Base, \fBColorSet\fP set=\fBView\fP)"
+.br
+.ti -1c
+.RI "static void \fBadjustForeground\fP (QPalette &, \fBForegroundRole\fP newRole=\fBNormalText\fP, QPalette::ColorRole \fBcolor\fP=QPalette::Text, \fBColorSet\fP set=\fBView\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A set of methods used to work with colors\&.
+.PP
+\fBColorScheme\fP currently provides access to the system color palette that the user has selected (in the future, it is expected to do more)\&. As of KDE4, this class is the correct way to look up colors from the system palette, as opposed to KGlobalSettings (such usage is deprecated)\&. It greatly expands on KGlobalSettings and QPalette by providing five distinct 'sets' with several color choices each, covering background, foreground, and decoration colors\&.
+.PP
+A \fBColorScheme\fP instance represents colors corresponding to a 'set', where a set consists of those colors used to draw a particular type of element, such as a menu, button, view, selected text, or tooltip\&. Each set has a distinct set of colors, so you should always use the correct set for drawing and never assume that a particular foreground for one set is the same as the foreground for any other set\&. Individual colors may be quickly referenced by creating an anonymous instance and invoking a lookup member\&.
+.PP
+\fBNote:\fP
+.RS 4
+Historically, it was not needed for applications to give much concern to the state of a widget (active, inactive, disabled) since only the disabled state was different, and only slightly\&. As a result, the old KGlobalSettings color getters did not care about the widget state\&. However, starting with KDE4, the color palettes for the various states may be wildly different\&. Therefore, it is important to take the state into account\&. This is why the \fBColorScheme\fP constructor requires a QPalette::ColorGroup as an argument\&.
+.RE
+.PP
+To facilitate working with potentially-varying states, two convenience API's are provided\&. These are \fBColorScheme::adjustBackground\fP and its sister \fBColorScheme::adjustForeground\fP, and the helper class \fBStatefulBrush\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBColorScheme::ColorSet\fP, \fBColorScheme::ForegroundRole\fP, \fBColorScheme::BackgroundRole\fP, \fBColorScheme::DecorationRole\fP, \fBColorScheme::ShadeRole\fP 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file colorscheme\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBColorScheme::BackgroundRole\fP"
+This enumeration describes the background color being selected from the given set\&.
+.PP
+Background colors are suitable for drawing under text, and should never be used to draw text\&. In combination with one of the overloads of \fBColorScheme::shade\fP, they may be used to generate colors for drawing frames, bevels, and similar decorations\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINormalBackground \fP\fP
+Normal background\&. 
+.TP
+\fB\fIAlternateBackground \fP\fP
+Alternate background; for example, for use in lists\&.
+.PP
+This color may be the same as BackgroundNormal, especially in sets other than View and Window\&. 
+.TP
+\fB\fIActiveBackground \fP\fP
+Third color; for example, items which are new, active, requesting attention, etc\&.
+.PP
+Alerting the user that a certain field must be filled out would be a good usage (although NegativeBackground could be used to the same effect, depending on what you are trying to achieve)\&. Unlike ActiveText, this should not be used for mouseover effects\&. 
+.TP
+\fB\fILinkBackground \fP\fP
+Fourth color; corresponds to (unvisited) links\&.
+.PP
+Exactly what this might be used for is somewhat harder to qualify; it might be used for bookmarks, as a 'you can click here' indicator, or to highlight recent content (i\&.e\&. in a most-recently-accessed list)\&. 
+.TP
+\fB\fIVisitedBackground \fP\fP
+Fifth color; corresponds to visited links\&.
+.PP
+This can also be used to indicate 'not recent' content, especially when a color is needed to denote content which is 'old' or 'archival'\&. 
+.TP
+\fB\fINegativeBackground \fP\fP
+Sixth color; for example, errors, untrusted content, etc\&. 
+.TP
+\fB\fINeutralBackground \fP\fP
+Seventh color; for example, warnings, secure/encrypted content\&. 
+.TP
+\fB\fIPositiveBackground \fP\fP
+Eigth color; for example, success messages, trusted content\&. 
+.PP
+Definition at line 121 of file colorscheme\&.h\&.
+.SS "enum \fBColorScheme::ColorSet\fP"
+This enumeration describes the color set for which a color is being selected\&.
+.PP
+Color sets define a color 'environment', suitable for drawing all parts of a given region\&. Colors from different sets should not be combined\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIView \fP\fP
+Views; for example, frames, input fields, etc\&.
+.PP
+If it contains things that can be selected, it is probably a View\&. 
+.TP
+\fB\fIWindow \fP\fP
+Non-editable window elements; for example, menus\&.
+.PP
+If it isn't a Button, View, or Tooltip, it is probably a Window\&. 
+.TP
+\fB\fIButton \fP\fP
+Buttons and button-like controls\&.
+.PP
+In addition to buttons, 'button-like' controls such as non-editable dropdowns, scrollbar sliders, slider handles, etc\&. should also use this role\&. 
+.TP
+\fB\fISelection \fP\fP
+Selected items in views\&.
+.PP
+Note that unfocused or disabled selections should use the Window role\&. This makes it more obvious to the user that the view containing the selection does not have input focus\&. 
+.TP
+\fB\fITooltip \fP\fP
+Tooltips\&.
+.PP
+The tooltip set can often be substituted for the view set when editing is not possible, but the Window set is deemed inappropriate\&. 'What's This' help is an excellent example, another might be pop-up notifications (depending on taste)\&. 
+.PP
+Definition at line 72 of file colorscheme\&.h\&.
+.SS "enum \fBColorScheme::DecorationRole\fP"
+This enumeration describes the decoration color being selected from the given set\&.
+.PP
+Decoration colors are used to draw decorations (such as frames) for special purposes\&. Like color shades, they are neither foreground nor background colors\&. Text should not be painted over a decoration color, and decoration colors should not be used to draw text\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFocusColor \fP\fP
+Color used to draw decorations for items which have input focus\&. 
+.TP
+\fB\fIHoverColor \fP\fP
+Color used to draw decorations for items which will be activated by clicking\&. 
+.PP
+Definition at line 246 of file colorscheme\&.h\&.
+.SS "enum \fBColorScheme::ForegroundRole\fP"
+This enumeration describes the foreground color being selected from the given set\&.
+.PP
+Foreground colors are suitable for drawing text or glyphs (such as the symbols on window decoration buttons, assuming a suitable background brush is used), and should never be used to draw backgrounds\&.
+.PP
+For window decorations, the following is suggested, but not set in stone: 
+.PD 0
+
+.IP "\(bu" 2
+Maximize - PositiveText 
+.IP "\(bu" 2
+Minimize - NeutralText 
+.IP "\(bu" 2
+Close - NegativeText 
+.IP "\(bu" 2
+WhatsThis - LinkText 
+.IP "\(bu" 2
+Sticky - ActiveText 
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINormalText \fP\fP
+Normal foreground\&. 
+.TP
+\fB\fIInactiveText \fP\fP
+Second color; for example, comments, items which are old, inactive or disabled\&. Generally used for things that are meant to be 'less
+important'\&. InactiveText is not the same role as NormalText in the inactive state\&. 
+.TP
+\fB\fIActiveText \fP\fP
+Third color; for example items which are new, active, requesting attention, etc\&. May be used as a hover color for clickable items\&. 
+.TP
+\fB\fILinkText \fP\fP
+Fourth color; use for (unvisited) links\&. May also be used for other clickable items or content that indicates relationships, items that indicate somewhere the user can visit, etc\&. 
+.TP
+\fB\fIVisitedText \fP\fP
+Fifth color; used for (visited) links\&. As with LinkText, may be used for items that have already been 'visited' or accessed\&. May also be used to indicate 'historical' (i\&.e\&. 'old') items or information, especially if InactiveText is being used in the same context to express something different\&. 
+.TP
+\fB\fINegativeText \fP\fP
+Sixth color; for example, errors, untrusted content, deletions, etc\&. 
+.TP
+\fB\fINeutralText \fP\fP
+Seventh color; for example, warnings, secure/encrypted content\&. 
+.TP
+\fB\fIPositiveText \fP\fP
+Eigth color; for example, additions, success messages, trusted content\&. 
+.PP
+Definition at line 190 of file colorscheme\&.h\&.
+.SS "enum \fBColorScheme::ShadeRole\fP"
+This enumeration describes the color shade being selected from the given set\&.
+.PP
+Color shades are used to draw '3d' elements, such as frames and bevels\&. They are neither foreground nor background colors\&. Text should not be painted over a shade, and shades should not be used to draw text\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILightShade \fP\fP
+The light color is lighter than dark() or shadow() and contrasts with the base color\&. 
+.TP
+\fB\fIMidlightShade \fP\fP
+The midlight color is in between base() and light()\&. 
+.TP
+\fB\fIMidShade \fP\fP
+The mid color is in between base() and dark()\&. 
+.TP
+\fB\fIDarkShade \fP\fP
+The dark color is in between mid() and shadow()\&. 
+.TP
+\fB\fIShadowShade \fP\fP
+The shadow color is darker than light() or midlight() and contrasts the base color\&. 
+.PP
+Definition at line 266 of file colorscheme\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ColorScheme::ColorScheme (const \fBColorScheme\fP & other)"
+Construct a copy of another \fBColorScheme\fP\&. 
+.PP
+Definition at line 404 of file colorscheme\&.cpp\&.
+.SS "ColorScheme::~ColorScheme ()\fC [virtual]\fP"
+Destructor 
+.PP
+Definition at line 413 of file colorscheme\&.cpp\&.
+.SS "ColorScheme::ColorScheme (QPalette::ColorGroup state, \fBColorSet\fP set = \fC\fBView\fP\fP)\fC [explicit]\fP"
+Construct a palette from given color set and state, using the colors from the given KConfig (if null, the system colors are used)\&.
+.PP
+\fBNote:\fP
+.RS 4
+\fBColorScheme\fP provides direct access to the color scheme for users that deal directly with widget states\&. Unless you are a low-level user or have a legitimate reason to only care about a fixed, limited number of states (e\&.g\&. windows that cannot be inactive), consider using a \fBStatefulBrush\fP instead\&. 
+.RE
+.PP
+
+.PP
+Definition at line 416 of file colorscheme\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ColorScheme::adjustBackground (QPalette & palette, \fBBackgroundRole\fP newRole = \fC\fBNormalBackground\fP\fP, QPalette::ColorRole color = \fCQPalette::Base\fP, \fBColorSet\fP set = \fC\fBView\fP\fP)\fC [static]\fP"
+Adjust a QPalette by replacing the specified QPalette::ColorRole with the requested background color for all states\&. Using this method is safer than replacing individual states, as it insulates you against changes in QPalette::ColorGroup\&.
+.PP
+\fBNote:\fP
+.RS 4
+Although it is possible to replace a foreground color using this method, it's bad usability to do so\&. Just say 'no'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 537 of file colorscheme\&.cpp\&.
+.SS "void ColorScheme::adjustForeground (QPalette & palette, \fBForegroundRole\fP newRole = \fC\fBNormalText\fP\fP, QPalette::ColorRole color = \fCQPalette::Text\fP, \fBColorSet\fP set = \fC\fBView\fP\fP)\fC [static]\fP"
+Adjust a QPalette by replacing the specified QPalette::ColorRole with the requested foreground color for all states\&. Using this method is safer than replacing individual states, as it insulates you against changes in QPalette::ColorGroup\&.
+.PP
+\fBNote:\fP
+.RS 4
+Although it is possible to replace a background color using this method, it's bad usability to do so\&. Just say 'no'\&. 
+.RE
+.PP
+
+.PP
+Definition at line 547 of file colorscheme\&.cpp\&.
+.SS "QBrush ColorScheme::background (\fBBackgroundRole\fP role = \fC\fBNormalBackground\fP\fP) const"
+Retrieve the requested background brush\&. 
+.PP
+Definition at line 451 of file colorscheme\&.cpp\&.
+.SS "QBrush ColorScheme::decoration (\fBDecorationRole\fP role) const"
+Retrieve the requested decoration brush\&. 
+.PP
+Definition at line 467 of file colorscheme\&.cpp\&.
+.SS "QBrush ColorScheme::foreground (\fBForegroundRole\fP role = \fC\fBNormalText\fP\fP) const"
+Retrieve the requested foreground brush\&. 
+.PP
+Definition at line 459 of file colorscheme\&.cpp\&.
+.SS "\fBColorScheme\fP & ColorScheme::operator= (const \fBColorScheme\fP & other)"
+Standard assignment operator 
+.PP
+Definition at line 408 of file colorscheme\&.cpp\&.
+.SS "QColor ColorScheme::shade (\fBShadeRole\fP role) const"
+Retrieve the requested shade color, using ColorScheme::background(ColorScheme::NormalBackground) as the base color and the contrast setting from the KConfig used to create this \fBColorScheme\fP instance (the system contrast setting, if no KConfig was specified)\&.
+.PP
+\fBNote:\fP
+.RS 4
+Shades are chosen such that all shades would contrast with the base color\&. This means that if base is very dark, the 'dark' shades will be lighter than the base color, with midlight() == shadow()\&. Conversely, if the base color is very light, the 'light' shades will be darker than the base color, with light() == mid()\&. 
+.RE
+.PP
+
+.PP
+Definition at line 475 of file colorscheme\&.cpp\&.
+.SS "QColor ColorScheme::shade (const QColor & color, \fBShadeRole\fP role)\fC [static]\fP"
+Retrieve the requested shade color, using the specified color as the base color and the system contrast setting\&.
+.PP
+\fBNote:\fP
+.RS 4
+Shades are chosen such that all shades would contrast with the base color\&. This means that if base is very dark, the 'dark' shades will be lighter than the base color, with midlight() == shadow()\&. Conversely, if the base color is very light, the 'light' shades will be darker than the base color, with light() == mid()\&. 
+.RE
+.PP
+
+.PP
+Definition at line 479 of file colorscheme\&.cpp\&.
+.SS "QColor ColorScheme::shade (const QColor & color, \fBShadeRole\fP role, qreal contrast, qreal chromaAdjust = \fC0\&.0\fP)\fC [static]\fP"
+Retrieve the requested shade color, using the specified color as the base color and the specified contrast\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontrast\fP Amount roughly specifying the contrast by which to adjust the base color, between -1\&.0 and 1\&.0 (values between 0\&.0 and 1\&.0 correspond to the value from KGlobalSettings::contrastF) 
+.br
+\fIchromaAdjust\fP (optional) Amount by which to adjust the chroma of the shade (1\&.0 means no adjustment)
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Shades are chosen such that all shades would contrast with the base color\&. This means that if base is very dark, the 'dark' shades will be lighter than the base color, with midlight() == shadow()\&. Conversely, if the base color is very light, the 'light' shades will be darker than the base color, with light() == mid()\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+KColorUtils::shade 
+.RE
+.PP
+
+.PP
+Definition at line 483 of file colorscheme\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

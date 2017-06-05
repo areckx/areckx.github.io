@@ -1,0 +1,192 @@
+.TH "Ms::Lyrics" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Lyrics
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSyllabic\fP : char { \fBSINGLE\fP, \fBBEGIN\fP, \fBEND\fP, \fBMIDDLE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLyrics\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBLyrics\fP (const \fBLyrics\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBLyrics\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBchordRest\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout1\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBsubtypeName\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetNo\fP (int n)"
+.br
+.ti -1c
+.RI "int \fBno\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSyllabic\fP (Syllabic s)"
+.br
+.ti -1c
+.RI "Syllabic \fBsyllabic\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTicks\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBendTick\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisMelisma\fP () const"
+.br
+.ti -1c
+.RI "void \fBremoveFromScore\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBpaste\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id) override"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBTEMP_MELISMA_TICKS\fP = 1"
+.br
+.ti -1c
+.RI "static constexpr qreal \fBMELISMA_DEFAULT_PAD\fP = 0\&.10"
+.br
+.ti -1c
+.RI "static constexpr qreal \fBLYRICS_DASH_DEFAULT_PAD\fP = 0\&.05"
+.br
+.ti -1c
+.RI "static constexpr qreal \fBLYRICS_DASH_DEFAULT_LINE_THICKNESS\fP = 0\&.15"
+.br
+.ti -1c
+.RI "static constexpr qreal \fBLYRICS_DASH_Y_POS_RATIO\fP = 0\&.67"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_no\fP"
+.br
+.RI "row index "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::Lyrics::Syllabic \fBsyllabic\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file lyrics\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Lyrics::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Text\fP\&.
+.PP
+Definition at line 466 of file lyrics\&.cpp\&.
+.SS "\fBElement\fP * Ms::Lyrics::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Text\fP\&.
+.PP
+Definition at line 475 of file lyrics\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,715 @@
+.TH "diff_match_patch" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+diff_match_patch
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <diff_match_patch\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBDiff\fP > \fBdiff_main\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "QList< \fBDiff\fP > \fBdiff_main\fP (const QString &text1, const QString &text2, bool checklines)"
+.br
+.ti -1c
+.RI "int \fBdiff_commonPrefix\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "int \fBdiff_commonSuffix\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "void \fBdiff_cleanupSemantic\fP (QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "void \fBdiff_cleanupSemanticLossless\fP (QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "void \fBdiff_cleanupEfficiency\fP (QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "void \fBdiff_cleanupMerge\fP (QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "int \fBdiff_xIndex\fP (const QList< \fBDiff\fP > &diffs, int loc)"
+.br
+.ti -1c
+.RI "QString \fBdiff_prettyHtml\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QString \fBdiff_text1\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QString \fBdiff_text2\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "int \fBdiff_levenshtein\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QString \fBdiff_toDelta\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QList< \fBDiff\fP > \fBdiff_fromDelta\fP (const QString &text1, const QString &delta)"
+.br
+.ti -1c
+.RI "int \fBmatch_main\fP (const QString &text, const QString &pattern, int loc)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_make\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_make\fP (const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_make\fP (const QString &text1, const QString &text2, const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_make\fP (const QString &text1, const QList< \fBDiff\fP > &diffs)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_deepCopy\fP (QList< \fBPatch\fP > &patches)"
+.br
+.ti -1c
+.RI "QPair< QString, QVector< bool > > \fBpatch_apply\fP (QList< \fBPatch\fP > &patches, const QString &text)"
+.br
+.ti -1c
+.RI "QString \fBpatch_addPadding\fP (QList< \fBPatch\fP > &patches)"
+.br
+.ti -1c
+.RI "void \fBpatch_splitMax\fP (QList< \fBPatch\fP > &patches)"
+.br
+.ti -1c
+.RI "QString \fBpatch_toText\fP (const QList< \fBPatch\fP > &patches)"
+.br
+.ti -1c
+.RI "QList< \fBPatch\fP > \fBpatch_fromText\fP (const QString &textline)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBDiff_Timeout\fP"
+.br
+.ti -1c
+.RI "short \fBDiff_EditCost\fP"
+.br
+.ti -1c
+.RI "float \fBMatch_Threshold\fP"
+.br
+.ti -1c
+.RI "int \fBMatch_Distance\fP"
+.br
+.ti -1c
+.RI "float \fBPatch_DeleteThreshold\fP"
+.br
+.ti -1c
+.RI "short \fBPatch_Margin\fP"
+.br
+.ti -1c
+.RI "short \fBMatch_MaxBits\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBDiff\fP > \fBdiff_bisect\fP (const QString &text1, const QString &text2, clock_t deadline)"
+.br
+.ti -1c
+.RI "QList< QVariant > \fBdiff_linesToChars\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "int \fBdiff_commonOverlap\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "QStringList \fBdiff_halfMatch\fP (const QString &text1, const QString &text2)"
+.br
+.ti -1c
+.RI "int \fBmatch_bitap\fP (const QString &text, const QString &pattern, int loc)"
+.br
+.ti -1c
+.RI "QMap< QChar, int > \fBmatch_alphabet\fP (const QString &pattern)"
+.br
+.ti -1c
+.RI "void \fBpatch_addContext\fP (\fBPatch\fP &patch, const QString &text)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBdiff_match_patch_test\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBClass\fP containing the diff, match and patch methods\&. Also contains the behaviour settings\&. 
+.PP
+Definition at line 129 of file diff_match_patch\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QList< \fBDiff\fP > diff_match_patch::diff_bisect (const QString & text1, const QString & text2, clock_t deadline)\fC [protected]\fP"
+Find the 'middle snake' of a diff, split the problem in two and return the recursively constructed diff\&. See Myers 1986 paper: An O(ND) Difference Algorithm and Its Variations\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old string to be diffed\&. 
+.br
+\fItext2\fP New string to be diffed\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Linked List of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 371 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::diff_cleanupEfficiency (QList< \fBDiff\fP > & diffs)"
+Reduce the number of edits by eliminating operationally trivial equalities\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 953 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::diff_cleanupMerge (QList< \fBDiff\fP > & diffs)"
+Reorder and merge like edit sections\&. Merge equalities\&. Any edit section can move as long as it doesn't cross an equality\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1061 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::diff_cleanupSemantic (QList< \fBDiff\fP > & diffs)"
+Reduce the number of edits by eliminating semantically trivial equalities\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 715 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::diff_cleanupSemanticLossless (QList< \fBDiff\fP > & diffs)"
+Look for single edits surrounded on both sides by equalities which can be shifted sideways to align the edit to a word boundary\&. e\&.g: The c<ins>at c</ins>ame\&. -> The <ins>cat </ins>came\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 834 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::diff_commonOverlap (const QString & text1, const QString & text2)\fC [protected]\fP"
+Determine if the suffix of one string is the prefix of another\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP First string\&. 
+.br
+\fItext2\fP Second string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of characters common to the end of the first string and the start of the second string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 598 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::diff_commonPrefix (const QString & text1, const QString & text2)"
+Determine the common prefix of two strings\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP First string\&. 
+.br
+\fItext2\fP Second string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of characters common to the start of each string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 571 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::diff_commonSuffix (const QString & text1, const QString & text2)"
+Determine the common suffix of two strings\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP First string\&. 
+.br
+\fItext2\fP Second string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of characters common to the end of each string\&. 
+.RE
+.PP
+
+.PP
+Definition at line 584 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBDiff\fP > diff_match_patch::diff_fromDelta (const QString & text1, const QString & delta)"
+Given the original text1, and an encoded string which describes the operations required to transform text1 into text2, compute the full diff\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Source string for the diff\&. 
+.br
+\fIdelta\fP Delta text\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBArray\fP of diff tuples or null if invalid\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIQString\fP If invalid input\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1345 of file diff_match_patch\&.cpp\&.
+.SS "QStringList diff_match_patch::diff_halfMatch (const QString & text1, const QString & text2)\fC [protected]\fP"
+Do the two texts share a substring which is at least half the length of the longer text? This speedup can produce non-minimal diffs\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP First string\&. 
+.br
+\fItext2\fP Second string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Five element String array, containing the prefix of text1, the suffix of text1, the prefix of text2, the suffix of text2 and the common middle\&. Or null if there was no match\&. 
+.RE
+.PP
+
+.PP
+Definition at line 640 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::diff_levenshtein (const QList< \fBDiff\fP > & diffs)"
+Compute the Levenshtein distance; the number of inserted, deleted or substituted characters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Number of changes\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1292 of file diff_match_patch\&.cpp\&.
+.SS "QList< QVariant > diff_match_patch::diff_linesToChars (const QString & text1, const QString & text2)\fC [protected]\fP"
+Split two texts into a list of strings\&. Reduce the texts to a string of hashes where each Unicode character represents one line\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP First string\&. 
+.br
+\fItext2\fP Second string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Three element \fBObject\fP array, containing the encoded text1, the encoded text2 and the List of unique strings\&. The zeroth element of the List of unique strings is intentionally blank\&. 
+.RE
+.PP
+
+.PP
+Definition at line 503 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBDiff\fP > diff_match_patch::diff_main (const QString & text1, const QString & text2)"
+Find the differences between two texts\&. Run a faster slightly less optimal diff\&. This method allows the 'checklines' of \fBdiff_main()\fP to be optional\&. Most of the time checklines is wanted, so default to true\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old string to be diffed\&. 
+.br
+\fItext2\fP New string to be diffed\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Linked List of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBDiff\fP > diff_match_patch::diff_main (const QString & text1, const QString & text2, bool checklines)"
+Find the differences between two texts\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old string to be diffed\&. 
+.br
+\fItext2\fP New string to be diffed\&. 
+.br
+\fIchecklines\fP Speedup flag\&. If false, then don't run a line-level diff first to identify the changed areas\&. If true, then run a faster slightly less optimal diff\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Linked List of \fBDiff\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 182 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::diff_prettyHtml (const QList< \fBDiff\fP > & diffs)"
+Convert a \fBDiff\fP list into a pretty HTML report\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+HTML representation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1241 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::diff_text1 (const QList< \fBDiff\fP > & diffs)"
+Compute and return the source text (all equalities and deletions)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Source text\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1270 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::diff_text2 (const QList< \fBDiff\fP > & diffs)"
+Compute and return the destination text (all equalities and insertions)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Destination text\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1281 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::diff_toDelta (const QList< \fBDiff\fP > & diffs)"
+Crush the diff into an encoded string which describes the operations required to transform text1 into text2\&. E\&.g\&. =3-2+ing -> Keep 3 chars, delete 2 chars, insert 'ing'\&. Operations are tab-separated\&. Inserted text is escaped using xx notation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP \fBArray\fP of diff tuples\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Delta text\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1317 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::diff_xIndex (const QList< \fBDiff\fP > & diffs, int loc)"
+loc is a location in text1, compute and return the equivalent location in text2\&. e\&.g\&. 'The cat' vs 'The big cat', 1->1, 5->8 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP LinkedList of \fBDiff\fP objects\&. 
+.br
+\fIloc\fP Location within text1\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Location within text2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1209 of file diff_match_patch\&.cpp\&.
+.SS "QMap< QChar, int > diff_match_patch::match_alphabet (const QString & pattern)\fC [protected]\fP"
+Initialise the alphabet for the Bitap algorithm\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpattern\fP The text to encode\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Hash of character locations\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1536 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::match_bitap (const QString & text, const QString & pattern, int loc)\fC [protected]\fP"
+Locate the best instance of 'pattern' in 'text' near 'loc' using the Bitap algorithm\&. Returns -1 if no match found\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP The text to search\&. 
+.br
+\fIpattern\fP The pattern to search for\&. 
+.br
+\fIloc\fP The location to search around\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Best match index or -1\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1422 of file diff_match_patch\&.cpp\&.
+.SS "int diff_match_patch::match_main (const QString & text, const QString & pattern, int loc)"
+Locate the best instance of 'pattern' in 'text' near 'loc'\&. Returns -1 if no match found\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext\fP The text to search\&. 
+.br
+\fIpattern\fP The pattern to search for\&. 
+.br
+\fIloc\fP The location to search around\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Best match index or -1\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1397 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::patch_addContext (\fBPatch\fP & patch, const QString & text)\fC [protected]\fP"
+Increase the context until it is unique, but don't let the pattern expand beyond Match_MaxBits\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatch\fP The patch to grow\&. 
+.br
+\fItext\fP Source text\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1554 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::patch_addPadding (QList< \fBPatch\fP > & patches)"
+Add some padding on text start and end so that edges can match something\&. Intended to be called only from within patch_apply\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatches\fP \fBArray\fP of patch objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The padding string added to each side\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1834 of file diff_match_patch\&.cpp\&.
+.SS "QPair< QString, QVector< bool > > diff_match_patch::patch_apply (QList< \fBPatch\fP > & patches, const QString & text)"
+Merge a set of patches onto the text\&. Return a patched text, as well as an array of true/false values indicating which patches were applied\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatches\fP \fBArray\fP of patch objects\&. 
+.br
+\fItext\fP Old text\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Two element \fBObject\fP array, containing the new text and an array of boolean values\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1732 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_deepCopy (QList< \fBPatch\fP > & patches)"
+Given an array of patches, return another array that is identical\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatches\fP \fBArray\fP of patch objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBArray\fP of patch objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1714 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_fromText (const QString & textline)"
+Parse a textual representation of patches and return a List of \fBPatch\fP objects\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItextline\fP Text representation of patches\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+List of \fBPatch\fP objects\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIQString\fP If invalid input\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2005 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_make (const QString & text1, const QString & text2)"
+Compute a list of patches to turn text1 into text2\&. A set of diffs will be computed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old text\&. 
+.br
+\fItext2\fP New text\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+LinkedList of \fBPatch\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1596 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_make (const QList< \fBDiff\fP > & diffs)"
+Compute a list of patches to turn text1 into text2\&. text1 will be derived from the provided diffs\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdiffs\fP \fBArray\fP of diff tuples for text1 to text2\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+LinkedList of \fBPatch\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1614 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_make (const QString & text1, const QString & text2, const QList< \fBDiff\fP > & diffs)"
+Compute a list of patches to turn text1 into text2\&. text2 is ignored, diffs are the delta between text1 and text2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old text\&. 
+.br
+\fItext2\fP Ignored\&. 
+.br
+\fIdiffs\fP \fBArray\fP of diff tuples for text1 to text2\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+LinkedList of \fBPatch\fP objects\&. 
+.RE
+.PP
+\fBDeprecated\fP
+.RS 4
+Prefer \fBpatch_make(const QString &text1, const QList<Diff> &diffs)\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1621 of file diff_match_patch\&.cpp\&.
+.SS "QList< \fBPatch\fP > diff_match_patch::patch_make (const QString & text1, const QList< \fBDiff\fP > & diffs)"
+Compute a list of patches to turn text1 into text2\&. text2 is not provided, diffs are the delta between text1 and text2\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItext1\fP Old text\&. 
+.br
+\fIdiffs\fP \fBArray\fP of diff tuples for text1 to text2\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+LinkedList of \fBPatch\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1631 of file diff_match_patch\&.cpp\&.
+.SS "void diff_match_patch::patch_splitMax (QList< \fBPatch\fP > & patches)"
+Look through the patches and break up any which are longer than the maximum limit of the match algorithm\&. Intended to be called only from within patch_apply\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatches\fP LinkedList of \fBPatch\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1892 of file diff_match_patch\&.cpp\&.
+.SS "QString diff_match_patch::patch_toText (const QList< \fBPatch\fP > & patches)"
+Take a list of patches and return a textual representation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpatches\fP List of \fBPatch\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Text representation of patches\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1996 of file diff_match_patch\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

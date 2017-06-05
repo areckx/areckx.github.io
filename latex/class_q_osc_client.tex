@@ -1,0 +1,85 @@
+\hypertarget{class_q_osc_client}{}\section{Q\+Osc\+Client Class Reference}
+\label{class_q_osc_client}\index{Q\+Osc\+Client@{Q\+Osc\+Client}}
+
+
+Client-\/object for outgoing O\+S\+C-\/\+Datagrams.  
+
+
+
+
+{\ttfamily \#include $<$qoscclient.\+h$>$}
+
+Inheritance diagram for Q\+Osc\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_q_osc_client}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_q_osc_client_a16771971f1d519f2850099822c4843f9}\label{class_q_osc_client_a16771971f1d519f2850099822c4843f9}} 
+void {\bfseries send\+Data} (Q\+String, Q\+Variant=Q\+Variant\+::\+Invalid)
+\item 
+\mbox{\Hypertarget{class_q_osc_client_afe20a6eda1ca57c6bacbefc37b6d1e71}\label{class_q_osc_client_afe20a6eda1ca57c6bacbefc37b6d1e71}} 
+void {\bfseries send\+Data} (Q\+String, Q\+List$<$ Q\+Variant $>$)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_osc_client_ab8137cbb3fc5c91cf8a40c7fef6edcae}{Q\+Osc\+Client} (const Q\+Host\+Address \&, quint16 port, Q\+Object $\ast$)
+\begin{DoxyCompactList}\small\item\em An O\+S\+C-\/connection to a specific host/port. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_osc_client_ae31980ec929eb343c01747b06ba45eca}\label{class_q_osc_client_ae31980ec929eb343c01747b06ba45eca}} 
+\hyperlink{class_q_osc_client_ae31980ec929eb343c01747b06ba45eca}{$\sim$\+Q\+Osc\+Client} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_q_osc_client_aeb14189d328f3d34b02c51e350ec57a8}\label{class_q_osc_client_aeb14189d328f3d34b02c51e350ec57a8}} 
+void \hyperlink{class_q_osc_client_aeb14189d328f3d34b02c51e350ec57a8}{set\+Address} (const Q\+Host\+Address \&, quint16 port)
+\begin{DoxyCompactList}\small\item\em ( Re-\/ )Set the host/port to send messages to \end{DoxyCompactList}\item 
+void \hyperlink{class_q_osc_client_aa8c58c8ca8821dba32c20d63d8ade376}{set\+Answer\+Address} (\hyperlink{class_q_osc_server}{Q\+Osc\+Server} $\ast$)
+\begin{DoxyCompactList}\small\item\em Set a hostaddress for feedback/answers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Client-\/object for outgoing O\+S\+C-\/\+Datagrams. 
+
+This class allows to send O\+S\+C-\/messages to a specified host/port. 
+
+Definition at line 35 of file qoscclient.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_q_osc_client_ab8137cbb3fc5c91cf8a40c7fef6edcae}\label{class_q_osc_client_ab8137cbb3fc5c91cf8a40c7fef6edcae}} 
+\index{Q\+Osc\+Client@{Q\+Osc\+Client}!Q\+Osc\+Client@{Q\+Osc\+Client}}
+\index{Q\+Osc\+Client@{Q\+Osc\+Client}!Q\+Osc\+Client@{Q\+Osc\+Client}}
+\subsubsection{\texorpdfstring{Q\+Osc\+Client()}{QOscClient()}}
+{\footnotesize\ttfamily Q\+Osc\+Client\+::\+Q\+Osc\+Client (\begin{DoxyParamCaption}\item[{const Q\+Host\+Address \&}]{address,  }\item[{quint16}]{port,  }\item[{Q\+Object $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+An O\+S\+C-\/connection to a specific host/port. 
+
+This creates a new O\+S\+C-\/connection to the specified host/port. Later the servers host/port can be changed via \hyperlink{class_q_osc_client_aeb14189d328f3d34b02c51e350ec57a8}{set\+Address()}; 
+
+Definition at line 21 of file qoscclient.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_q_osc_client_aa8c58c8ca8821dba32c20d63d8ade376}\label{class_q_osc_client_aa8c58c8ca8821dba32c20d63d8ade376}} 
+\index{Q\+Osc\+Client@{Q\+Osc\+Client}!set\+Answer\+Address@{set\+Answer\+Address}}
+\index{set\+Answer\+Address@{set\+Answer\+Address}!Q\+Osc\+Client@{Q\+Osc\+Client}}
+\subsubsection{\texorpdfstring{set\+Answer\+Address()}{setAnswerAddress()}}
+{\footnotesize\ttfamily void Q\+Osc\+Client\+::set\+Answer\+Address (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_osc_server}{Q\+Osc\+Server} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Set a hostaddress for feedback/answers. 
+
+If you want answers for your messages you can indicate this by setting the O\+S\+C-\/\+Server that is to get these answers. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/ofqf/qoscclient.\+h\item 
+thirdparty/ofqf/qoscclient.\+cpp\end{DoxyCompactItemize}

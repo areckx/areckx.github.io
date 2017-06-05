@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="rtf__tools_8h" kind="file" language="C++">
+    <compoundname>rtf_tools.h</compoundname>
+    <includes refid="thirdparty_2rtf2html_2config_8h" local="yes">config.h</includes>
+    <includes refid="common_8h" local="yes">common.h</includes>
+    <includes refid="rtf__keyword_8h" local="yes">rtf_keyword.h</includes>
+    <includedby refid="rtf2html_8cpp" local="yes">thirdparty/rtf2html/rtf2html.cpp</includedby>
+    <incdepgraph>
+      <node id="93279">
+        <label>iomanip</label>
+      </node>
+      <node id="93274">
+        <label>thirdparty/rtf2html/rtf_tools.h</label>
+        <link refid="rtf__tools_8h"/>
+        <childnode refid="93275" relation="include">
+        </childnode>
+        <childnode refid="93276" relation="include">
+        </childnode>
+        <childnode refid="93280" relation="include">
+        </childnode>
+      </node>
+      <node id="93283">
+        <label>stdlib.h</label>
+      </node>
+      <node id="93277">
+        <label>string</label>
+      </node>
+      <node id="93281">
+        <label>map</label>
+      </node>
+      <node id="93276">
+        <label>common.h</label>
+        <link refid="common_8h_source"/>
+        <childnode refid="93275" relation="include">
+        </childnode>
+        <childnode refid="93277" relation="include">
+        </childnode>
+        <childnode refid="93278" relation="include">
+        </childnode>
+        <childnode refid="93279" relation="include">
+        </childnode>
+      </node>
+      <node id="93275">
+        <label>config.h</label>
+        <link refid="thirdparty_2rtf2html_2config_8h_source"/>
+      </node>
+      <node id="93280">
+        <label>rtf_keyword.h</label>
+        <link refid="rtf__keyword_8h_source"/>
+        <childnode refid="93275" relation="include">
+        </childnode>
+        <childnode refid="93277" relation="include">
+        </childnode>
+        <childnode refid="93281" relation="include">
+        </childnode>
+        <childnode refid="93282" relation="include">
+        </childnode>
+        <childnode refid="93283" relation="include">
+        </childnode>
+      </node>
+      <node id="93278">
+        <label>sstream</label>
+      </node>
+      <node id="93282">
+        <label>ctype.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="93284">
+        <label>thirdparty/rtf2html/rtf_tools.h</label>
+        <link refid="rtf__tools_8h"/>
+        <childnode refid="93285" relation="include">
+        </childnode>
+      </node>
+      <node id="93285">
+        <label>thirdparty/rtf2html/rtf2html.cpp</label>
+        <link refid="rtf2html_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rtf__tools_8h_1a579f50e37b14097a572f8e95ae6de77e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class InputIter</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void skip_group</definition>
+        <argsstring>(InputIter &amp;iter)</argsstring>
+        <name>skip_group</name>
+        <param>
+          <type>InputIter &amp;</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/rtf2html/rtf_tools.h" line="9" column="1" bodyfile="thirdparty/rtf2html/rtf_tools.h" bodystart="19" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>__RTF_TOOLS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__RTF_TOOLS_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;config.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;common.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rtf_keyword.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InputIter&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>skip_group(InputIter<sp/>&amp;iter);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/****************************************</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">function<sp/>assumes<sp/>that<sp/>file<sp/>pointer<sp/>points<sp/>AFTER<sp/>the<sp/>opening<sp/>brace</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">and<sp/>that<sp/>the<sp/>group<sp/>is<sp/>really<sp/>closed.<sp/>cs<sp/>is<sp/>caller&apos;s<sp/>curchar.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">Returns<sp/>the<sp/>character<sp/>that<sp/>comes<sp/>after<sp/>the<sp/>enclosing<sp/>brace.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*****************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>InputIter&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>skip_group(InputIter<sp/>&amp;iter)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cnt=1;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(cnt)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(*iter++)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt++;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt--;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrtf__keyword" kindref="compound">rtf_keyword</ref><sp/>kw(iter);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!kw.is_control_char()<sp/>&amp;&amp;<sp/>kw.keyword()==rtf_keyword::rkw_bin<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;<sp/>kw.parameter()&gt;0)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::advance(iter,<sp/>kw.parameter());</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/rtf2html/rtf_tools.h"/>
+  </compounddef>
+</doxygen>

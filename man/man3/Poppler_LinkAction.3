@@ -1,0 +1,97 @@
+.TH "Poppler::LinkAction" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkAction \- 'Standard' action request\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBActionType\fP { \fBPageFirst\fP = 1, \fBPagePrev\fP = 2, \fBPageNext\fP = 3, \fBPageLast\fP = 4, \fBHistoryBack\fP = 5, \fBHistoryForward\fP = 6, \fBQuit\fP = 7, \fBPresentation\fP = 8, \fBEndPresentation\fP = 9, \fBFind\fP = 10, \fBGoToPage\fP = 11, \fBClose\fP = 12, \fBPrint\fP = 13 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActionType\fP \fBactionType\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkAction\fP (const QRectF &\fBlinkArea\fP, \fBActionType\fP \fBactionType\fP)"
+.br
+.ti -1c
+.RI "\fB~LinkAction\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+'Standard' action request\&. 
+
+The \fBLinkAction\fP class represents a link that request a 'standard' action to be performed by the viewer on the displayed document\&. 
+.PP
+Definition at line 352 of file poppler\-link\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::LinkAction::ActionType\fP"
+The possible types of actions 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPrint \fP\fP
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+Definition at line 358 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LinkAction::LinkAction (const QRectF & linkArea, \fBActionType\fP actionType)"
+Create a new Action link, that executes a specified action on the document\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinkArea\fP the active area of the link 
+.br
+\fIactionType\fP which action should be executed 
+.RE
+.PP
+
+.PP
+Definition at line 533 of file poppler\-link\&.cc\&.
+.SS "LinkAction::~LinkAction ()"
+Destructor\&. 
+.PP
+Definition at line 540 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLinkAction::ActionType\fP LinkAction::actionType () const"
+The action of the current \fBLinkAction\fP 
+.PP
+Definition at line 544 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP LinkAction::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 550 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

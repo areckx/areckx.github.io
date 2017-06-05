@@ -1,0 +1,135 @@
+.TH "TextWord" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TextWord
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextWord\fP (\fBGfxState\fP *state, int rotA, double fontSize)"
+.br
+.ti -1c
+.RI "void \fBaddChar\fP (\fBGfxState\fP *state, \fBTextFontInfo\fP *fontA, double x, double y, double dx, double dy, int charPosA, int charLen, CharCode c, Unicode u, const \fBMatrix\fP &textMatA)"
+.br
+.ti -1c
+.RI "GBool \fBaddCombining\fP (\fBGfxState\fP *state, \fBTextFontInfo\fP *fontA, double fontSizeA, double x, double y, double dx, double dy, int charPosA, int charLen, CharCode c, Unicode u, const \fBMatrix\fP &textMatA)"
+.br
+.ti -1c
+.RI "void \fBmerge\fP (\fBTextWord\fP *word)"
+.br
+.ti -1c
+.RI "int \fBprimaryCmp\fP (\fBTextWord\fP *word)"
+.br
+.ti -1c
+.RI "double \fBprimaryDelta\fP (\fBTextWord\fP *word)"
+.br
+.ti -1c
+.RI "void \fBvisitSelection\fP (\fBTextSelectionVisitor\fP *visitor, \fBPDFRectangle\fP *selection, SelectionStyle style)"
+.br
+.ti -1c
+.RI "\fBTextFontInfo\fP * \fBgetFontInfo\fP (int idx)"
+.br
+.ti -1c
+.RI "\fBTextWord\fP * \fBgetNext\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetLength\fP ()"
+.br
+.ti -1c
+.RI "const Unicode * \fBgetChar\fP (int idx)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetText\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetFontName\fP (int idx)"
+.br
+.ti -1c
+.RI "void \fBgetColor\fP (double *r, double *g, double *b)"
+.br
+.ti -1c
+.RI "void \fBgetBBox\fP (double *xMinA, double *yMinA, double *xMaxA, double *yMaxA)"
+.br
+.ti -1c
+.RI "void \fBgetCharBBox\fP (int charIdx, double *xMinA, double *yMinA, double *xMaxA, double *yMaxA)"
+.br
+.ti -1c
+.RI "double \fBgetFontSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRotation\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetCharPos\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetCharLen\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetSpaceAfter\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisUnderlined\fP ()"
+.br
+.ti -1c
+.RI "\fBAnnotLink\fP * \fBgetLink\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetEdge\fP (int i)"
+.br
+.ti -1c
+.RI "double \fBgetBaseline\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBhasSpaceAfter\fP ()"
+.br
+.ti -1c
+.RI "\fBTextWord\fP * \fBnextWord\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBcmpYX\fP (const void *p1, const void *p2)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTextPool\fP"
+.br
+.ti -1c
+.RI "class \fBTextLine\fP"
+.br
+.ti -1c
+.RI "class \fBTextBlock\fP"
+.br
+.ti -1c
+.RI "class \fBTextFlow\fP"
+.br
+.ti -1c
+.RI "class \fBTextWordList\fP"
+.br
+.ti -1c
+.RI "class \fBTextPage\fP"
+.br
+.ti -1c
+.RI "class \fBTextSelectionPainter\fP"
+.br
+.ti -1c
+.RI "class \fBTextSelectionDumper\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 123 of file TextOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

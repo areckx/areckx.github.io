@@ -1,0 +1,94 @@
+.TH "Ms::TextBlock" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::TextBlock
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBTextBlock\fP &x)"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBTextBlock\fP &x)"
+.br
+.ti -1c
+.RI "void \fBdraw\fP (QPainter *, const \fBText\fP *) const"
+.br
+.ti -1c
+.RI "void \fBlayout\fP (\fBText\fP *)"
+.br
+.ti -1c
+.RI "const QList< \fBTextFragment\fP > & \fBfragments\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBTextFragment\fP > & \fBfragments\fP ()"
+.br
+.ti -1c
+.RI "const QRectF & \fBboundingRect\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBboundingRect\fP (int col1, int col2, const \fBText\fP *) const"
+.br
+.ti -1c
+.RI "int \fBcolumns\fP () const"
+.br
+.ti -1c
+.RI "void \fBinsert\fP (\fBTextCursor\fP *, const QString &)"
+.br
+.ti -1c
+.RI "QString \fBremove\fP (int column)"
+.br
+.ti -1c
+.RI "QString \fBremove\fP (int start, int n)"
+.br
+.ti -1c
+.RI "int \fBcolumn\fP (qreal x, \fBText\fP *) const"
+.br
+.ti -1c
+.RI "\fBTextBlock\fP \fBsplit\fP (int column)"
+.br
+.ti -1c
+.RI "qreal \fBxpos\fP (int col, const \fBText\fP *) const"
+.br
+.ti -1c
+.RI "const \fBCharFormat\fP * \fBformatAt\fP (int) const"
+.br
+.ti -1c
+.RI "const \fBTextFragment\fP * \fBfragment\fP (int col) const"
+.br
+.ti -1c
+.RI "QList< \fBTextFragment\fP >::iterator \fBfragment\fP (int column, int *rcol, int *ridx)"
+.br
+.ti -1c
+.RI "qreal \fBy\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetY\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBlineSpacing\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP (int, int) const"
+.br
+.ti -1c
+.RI "bool \fBeol\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEol\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBchangeFormat\fP (FormatId, QVariant val, int start, int n)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 150 of file text\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

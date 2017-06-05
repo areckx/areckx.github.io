@@ -1,0 +1,148 @@
+.TH "Poppler::FontInfo" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FontInfo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBunknown\fP, \fBType1\fP, \fBType1C\fP, \fBType1COT\fP, \fBType3\fP, \fBTrueType\fP, \fBTrueTypeOT\fP, \fBCIDType0\fP, \fBCIDType0C\fP, \fBCIDType0COT\fP, \fBCIDTrueType\fP, \fBCIDTrueTypeOT\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFontInfo\fP (const \fBFontInfo\fP &fi)"
+.br
+.ti -1c
+.RI "\fB~FontInfo\fP ()"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "QString \fBfile\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEmbedded\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSubset\fP () const"
+.br
+.ti -1c
+.RI "\fBType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtypeName\fP () const"
+.br
+.ti -1c
+.RI "\fBFontInfo\fP & \fBoperator=\fP (const \fBFontInfo\fP &fi)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class for information about a font within a PDF document 
+.PP
+Definition at line 158 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::FontInfo::Type\fP"
+The type of font\&. 
+.PP
+Definition at line 164 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FontInfo::FontInfo (const \fBFontInfo\fP & fi)"
+Copy constructor\&. 
+.PP
+Definition at line 38 of file poppler\-fontinfo\&.cc\&.
+.SS "FontInfo::~FontInfo ()"
+Destructor\&. 
+.PP
+Definition at line 43 of file poppler\-fontinfo\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString FontInfo::file () const"
+The path of the font file used to represent this font on this system, or a null string is the font is embedded 
+.PP
+Definition at line 53 of file poppler\-fontinfo\&.cc\&.
+.SS "bool FontInfo::isEmbedded () const"
+Whether the font is embedded in the file, or not
+.PP
+\fBReturns:\fP
+.RS 4
+true if the font is embedded 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file poppler\-fontinfo\&.cc\&.
+.SS "bool FontInfo::isSubset () const"
+Whether the font provided is only a subset of the full font or not\&. This only has meaning if the font is embedded\&.
+.PP
+\fBReturns:\fP
+.RS 4
+true if the font is only a subset 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file poppler\-fontinfo\&.cc\&.
+.SS "QString FontInfo::name () const"
+The name of the font\&. Can be QString::null if the font has no name 
+.PP
+Definition at line 48 of file poppler\-fontinfo\&.cc\&.
+.SS "\fBFontInfo\fP & FontInfo::operator= (const \fBFontInfo\fP & fi)"
+Standard assignment operator 
+.PP
+Definition at line 104 of file poppler\-fontinfo\&.cc\&.
+.SS "\fBFontInfo::Type\fP FontInfo::type () const"
+The type of font encoding
+.PP
+\fBReturns:\fP
+.RS 4
+a enumerated value corresponding to the font encoding used
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtypeName\fP for a string equivalent 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file poppler\-fontinfo\&.cc\&.
+.SS "QString FontInfo::typeName () const"
+The name of the font encoding used
+.PP
+\fBNote:\fP
+.RS 4
+if you are looking for the name of the font (as opposed to the encoding format used), you probably want \fBname()\fP\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtype\fP for a enumeration version 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file poppler\-fontinfo\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

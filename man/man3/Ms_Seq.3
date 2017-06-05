@@ -1,0 +1,212 @@
+.TH "Ms::Seq" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Seq
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject, and \fBMs::Sequencer\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetRelTempo\fP (double)"
+.br
+.ti -1c
+.RI "void \fBseek\fP (int utick)"
+.br
+.ti -1c
+.RI "void \fBseekRT\fP (int utick)"
+.br
+.ti -1c
+.RI "void \fBstopNotes\fP (int channel=\-1, bool realTime=false)"
+.br
+.ti -1c
+.RI "void \fBstart\fP ()"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (POS, unsigned)"
+.br
+.ti -1c
+.RI "void \fBsetMetronomeGain\fP (float val)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstarted\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopped\fP ()"
+.br
+.ti -1c
+.RI "int \fBtoGui\fP (int, int arg=0)"
+.br
+.ti -1c
+.RI "void \fBheartBeat\fP (int, int, int)"
+.br
+.ti -1c
+.RI "void \fBtempoChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBtimeSigChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcanStart\fP ()"
+.br
+.ti -1c
+.RI "void \fBrewindStart\fP ()"
+.br
+.ti -1c
+.RI "void \fBloopStart\fP ()"
+.br
+.ti -1c
+.RI "void \fBseekEnd\fP ()"
+.br
+.ti -1c
+.RI "void \fBnextMeasure\fP ()"
+.br
+.ti -1c
+.RI "void \fBnextChord\fP ()"
+.br
+.ti -1c
+.RI "void \fBprevMeasure\fP ()"
+.br
+.ti -1c
+.RI "void \fBprevChord\fP ()"
+.br
+.ti -1c
+.RI "void \fBcollectEvents\fP ()"
+.br
+.ti -1c
+.RI "void \fBguiStop\fP ()"
+.br
+.ti -1c
+.RI "void \fBstopWait\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLoopIn\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLoopOut\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLoopSelection\fP ()"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (bool hotPlug=false)"
+.br
+.ti -1c
+.RI "void \fBexit\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisRunning\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisPlaying\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStopped\fP () const"
+.br
+.ti -1c
+.RI "void \fBprocessMessages\fP ()"
+.br
+.ti -1c
+.RI "void \fBprocess\fP (unsigned framesPerPeriod, float *buffer)"
+.br
+.ti -1c
+.RI "int \fBgetEndUTick\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisRealtime\fP () const"
+.br
+.ti -1c
+.RI "void \fBsendMessage\fP (\fBSeqMsg\fP &) const"
+.br
+.ti -1c
+.RI "void \fBsetController\fP (int, int, int)"
+.br
+.ti -1c
+.RI "virtual void \fBsendEvent\fP (const \fBNPlayEvent\fP &)"
+.br
+.ti -1c
+.RI "void \fBsetScoreView\fP (\fBScoreView\fP *)"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBscore\fP () const"
+.br
+.ti -1c
+.RI "\fBScoreView\fP * \fBviewer\fP () const"
+.br
+.ti -1c
+.RI "void \fBinitInstruments\fP (bool realTime=false)"
+.br
+.ti -1c
+.RI "\fBDriver\fP * \fBdriver\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDriver\fP (\fBDriver\fP *d)"
+.br
+.ti -1c
+.RI "\fBMasterSynthesizer\fP * \fBsynti\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMasterSynthesizer\fP (\fBMasterSynthesizer\fP *ms)"
+.br
+.ti -1c
+.RI "int \fBgetCurTick\fP ()"
+.br
+.ti -1c
+.RI "double \fBcurTempo\fP () const"
+.br
+.ti -1c
+.RI "void \fBputEvent\fP (const \fBNPlayEvent\fP &, unsigned framePos=0)"
+.br
+.ti -1c
+.RI "void \fBstartNoteTimer\fP (int duration)"
+.br
+.ti -1c
+.RI "virtual void \fBstartNote\fP (int channel, int, int, double nt) override"
+.br
+.ti -1c
+.RI "virtual void \fBstartNote\fP (int channel, int, int, int, double nt) override"
+.br
+.ti -1c
+.RI "virtual void \fBplayMetronomeBeat\fP (BeatType type) override"
+.br
+.ti -1c
+.RI "void \fBeventToGui\fP (\fBNPlayEvent\fP)"
+.br
+.ti -1c
+.RI "void \fBstopNoteTimer\fP ()"
+.br
+.ti -1c
+.RI "void \fBrecomputeMaxMidiOutPort\fP ()"
+.br
+.ti -1c
+.RI "float \fBmetronomeGain\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetInitialMillisecondTimestampWithLatency\fP ()"
+.br
+.ti -1c
+.RI "unsigned \fBgetCurrentMillisecondTimestampWithLatency\fP (unsigned framePos) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 104 of file seq\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

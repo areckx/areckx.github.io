@@ -1,0 +1,265 @@
+.TH "Poppler::PSConverter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::PSConverter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.PP
+Inherits \fBPoppler::BaseConverter\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPSOption\fP { \fBPrinting\fP = 0x00000001, \fBStrictMargins\fP = 0x00000002, \fBForceRasterization\fP = 0x00000004, \fBPrintToEPS\fP = 0x00000008, \fBHideAnnotations\fP = 0x00000010 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~PSConverter\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPageList\fP (const QList< int > &pageList)"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const QString &title)"
+.br
+.ti -1c
+.RI "void \fBsetHDPI\fP (double hDPI)"
+.br
+.ti -1c
+.RI "void \fBsetVDPI\fP (double vDPI)"
+.br
+.ti -1c
+.RI "void \fBsetRotate\fP (int rotate)"
+.br
+.ti -1c
+.RI "void \fBsetPaperWidth\fP (int paperWidth)"
+.br
+.ti -1c
+.RI "void \fBsetPaperHeight\fP (int paperHeight)"
+.br
+.ti -1c
+.RI "void \fBsetRightMargin\fP (int marginRight)"
+.br
+.ti -1c
+.RI "void \fBsetBottomMargin\fP (int marginBottom)"
+.br
+.ti -1c
+.RI "void \fBsetLeftMargin\fP (int marginLeft)"
+.br
+.ti -1c
+.RI "void \fBsetTopMargin\fP (int marginTop)"
+.br
+.ti -1c
+.RI "void \fBsetStrictMargins\fP (bool strictMargins)"
+.br
+.ti -1c
+.RI "void \fBsetForceRasterize\fP (bool forceRasterize)"
+.br
+.ti -1c
+.RI "void \fBsetPSOptions\fP (PSOptions options)"
+.br
+.ti -1c
+.RI "PSOptions \fBpsOptions\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPageConvertedCallback\fP (void(*callback)(int page, void *payload), void *payload)"
+.br
+.ti -1c
+.RI "bool \fBconvert\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBDocument\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Converts a PDF to PS
+.PP
+Sizes have to be in Points (1/72 inch)
+.PP
+If you are using QPrinter you can get paper size by doing: 
+.PP
+.nf
+QPrinter dummy(QPrinter::PrinterResolution);
+dummy\&.setFullPage(true);
+dummy\&.setPageSize(myPageSize);
+width = dummy\&.width();
+height = dummy\&.height();
+
+.fi
+.PP
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 1497 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::PSConverter::PSOption\fP"
+Options for the PS export\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPrinting \fP\fP
+The PS is generated for printing purposes\&. 
+.TP
+\fB\fIPrintToEPS \fP\fP
+Output EPS instead of PS\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.TP
+\fB\fIHideAnnotations \fP\fP
+Don't print annotations\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1506 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::PSConverter::~PSConverter ()"
+Destructor\&. 
+.PP
+Definition at line 77 of file poppler\-ps\-converter\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Poppler::PSConverter::convert ()\fC [virtual]\fP"
+Does the conversion\&.
+.PP
+\fBReturns:\fP
+.RS 4
+whether the conversion succeeded 
+.RE
+.PP
+
+.PP
+Implements \fBPoppler::BaseConverter\fP\&.
+.PP
+Definition at line 192 of file poppler\-ps\-converter\&.cc\&.
+.SS "PSConverter::PSOptions Poppler::PSConverter::psOptions () const"
+The currently set options for the PS export\&.
+.PP
+The default flags are: Printing\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setBottomMargin (int marginBottom)"
+Sets the output bottom margin\&. Defaults to 0 
+.PP
+Definition at line 129 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setForceRasterize (bool forceRasterize)"
+Defines if the page will be rasterized to an image before printing\&. Defaults to false 
+.PP
+Definition at line 156 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setHDPI (double hDPI)"
+Sets the horizontal DPI\&. Defaults to 72\&.0 
+.PP
+Definition at line 93 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setLeftMargin (int marginLeft)"
+Sets the output left margin\&. Defaults to 0 
+.PP
+Definition at line 135 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setPageConvertedCallback (void(*)(int page, void *payload) callback, void * payload)"
+Sets a function that will be called each time a page is converted\&.
+.PP
+The payload belongs to the caller\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setPageList (const QList< int > & pageList)"
+Sets the list of pages to print\&. Mandatory\&. 
+.PP
+Definition at line 81 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setPaperHeight (int paperHeight)"
+Sets the output paper height\&. Has to be set\&. 
+.PP
+Definition at line 117 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setPaperWidth (int paperWidth)"
+Sets the output paper width\&. Has to be set\&. 
+.PP
+Definition at line 111 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setPSOptions (PSOptions options)"
+Sets the options for the PS export\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setRightMargin (int marginRight)"
+Sets the output right margin\&. Defaults to 0 
+.PP
+Definition at line 123 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setRotate (int rotate)"
+Sets the rotate\&. Defaults to not rotated 
+.PP
+Definition at line 105 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setStrictMargins (bool strictMargins)"
+Defines if margins have to be strictly followed (even if that means changing aspect ratio), or if the margins can be adapted to keep aspect ratio\&.
+.PP
+Defaults to false\&. 
+.PP
+Definition at line 147 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setTitle (const QString & title)"
+Sets the title of the PS \fBDocument\fP\&. Optional 
+.PP
+Definition at line 87 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setTopMargin (int marginTop)"
+Sets the output top margin\&. Defaults to 0 
+.PP
+Definition at line 141 of file poppler\-ps\-converter\&.cc\&.
+.SS "void Poppler::PSConverter::setVDPI (double vDPI)"
+Sets the vertical DPI\&. Defaults to 72\&.0 
+.PP
+Definition at line 99 of file poppler\-ps\-converter\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

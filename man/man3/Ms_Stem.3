@@ -1,0 +1,129 @@
+.TH "Ms::Stem" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Stem \- Graphic representation of a note stem\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <stem\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStem\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBStem\fP & \fBoperator=\fP (const \fBStem\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBStem\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal, qreal)"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &e) override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &)"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBchord\fP () const"
+.br
+.ti -1c
+.RI "bool \fBup\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBuserLen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserLen\fP (qreal l)"
+.br
+.ti -1c
+.RI "qreal \fBlineWidth\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBhookPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLen\fP (qreal l)"
+.br
+.ti -1c
+.RI "qreal \fBlen\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBstemLen\fP () const"
+.br
+.ti -1c
+.RI "QPointF \fBp2\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Graphic representation of a note stem\&. 
+.PP
+Definition at line 27 of file stem\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Stem::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 275 of file stem\&.cpp\&.
+.SS "\fBElement\fP * Ms::Stem::drop (\fBEditData\fP &)\fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 288 of file stem\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

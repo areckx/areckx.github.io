@@ -1,0 +1,174 @@
+.TH "Ms::Selection" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Selection
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSelection\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBScore\fP * \fBscore\fP () const"
+.br
+.ti -1c
+.RI "SelState \fBstate\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisNone\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisRange\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisList\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetState\fP (SelState s)"
+.br
+.ti -1c
+.RI "const QList< \fBElement\fP * > & \fBelements\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBElement\fP * > & \fBelements\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBNote\fP * > \fBnoteList\fP (int track=\-1) const"
+.br
+.ti -1c
+.RI "const QList< \fBElement\fP * > \fBuniqueElements\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBNote\fP * > \fBuniqueNotes\fP (int track=\-1) const"
+.br
+.ti -1c
+.RI "bool \fBisSingle\fP () const"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBdeselectAll\fP ()"
+.br
+.ti -1c
+.RI "void \fBremove\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBelement\fP () const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBcr\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfirstChordRestSegment\fP () const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBfirstChordRest\fP (int track=\-1) const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBlastChordRest\fP (int track=\-1) const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBfindMeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.RI "Set select flag for all Elements in select list\&. "
+.ti -1c
+.RI "void \fBupdateState\fP ()"
+.br
+.RI "update selection and input state "
+.ti -1c
+.RI "void \fBdump\fP ()"
+.br
+.ti -1c
+.RI "QString \fBmimeType\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBmimeData\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBstartSegment\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBendSegment\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStartSegment\fP (\fBSegment\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetEndSegment\fP (\fBSegment\fP *s)"
+.br
+.ti -1c
+.RI "void \fBsetRange\fP (\fBSegment\fP *startSegment, \fBSegment\fP *endSegment, int staffStart, int staffEnd)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBactiveSegment\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetActiveSegment\fP (\fBSegment\fP *s)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBactiveCR\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStartActive\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEndActive\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickStart\fP () const"
+.br
+.ti -1c
+.RI "int \fBtickEnd\fP () const"
+.br
+.ti -1c
+.RI "int \fBstaffStart\fP () const"
+.br
+.ti -1c
+.RI "int \fBstaffEnd\fP () const"
+.br
+.ti -1c
+.RI "int \fBactiveTrack\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStaffStart\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetStaffEnd\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetActiveTrack\fP (int v)"
+.br
+.ti -1c
+.RI "bool \fBcanCopy\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdateSelectedElements\fP ()"
+.br
+.ti -1c
+.RI "bool \fBmeasureRange\fP (\fBMeasure\fP **m1, \fBMeasure\fP **m2) const"
+.br
+.ti -1c
+.RI "void \fBextendRangeSelection\fP (\fBChordRest\fP *cr)"
+.br
+.ti -1c
+.RI "void \fBextendRangeSelection\fP (\fBSegment\fP *seg, \fBSegment\fP *segAfter, int staffIdx, int tick, int etick)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 121 of file select\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

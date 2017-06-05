@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="menudata_8h" kind="file" language="C++">
+    <compoundname>menudata.h</compoundname>
+    <includes refid="menubardata_8h" local="yes">menubardata.h</includes>
+    <includedby refid="menuengine_8h" local="yes">mstyle/menuengine.h</includedby>
+    <includedby refid="moc__menudata_8cpp" local="yes">build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_menudata.cpp</includedby>
+    <incdepgraph>
+      <node id="70991">
+        <label>animationdata.h</label>
+        <link refid="animationdata_8h_source"/>
+        <childnode refid="70992" relation="include">
+        </childnode>
+      </node>
+      <node id="70990">
+        <label>menubardata.h</label>
+        <link refid="menubardata_8h_source"/>
+        <childnode refid="70991" relation="include">
+        </childnode>
+        <childnode refid="70993" relation="include">
+        </childnode>
+      </node>
+      <node id="70989">
+        <label>mstyle/menudata.h</label>
+        <link refid="menudata_8h"/>
+        <childnode refid="70990" relation="include">
+        </childnode>
+      </node>
+      <node id="70993">
+        <label>menubardata_imp.h</label>
+        <link refid="menubardata__imp_8h_source"/>
+      </node>
+      <node id="70992">
+        <label>animation.h</label>
+        <link refid="animation_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="70995">
+        <label>mstyle/menuengine.h</label>
+        <link refid="menuengine_8h_source"/>
+        <childnode refid="70996" relation="include">
+        </childnode>
+        <childnode refid="71001" relation="include">
+        </childnode>
+        <childnode refid="71002" relation="include">
+        </childnode>
+      </node>
+      <node id="71003">
+        <label>build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_menudata.cpp</label>
+        <link refid="moc__menudata_8cpp_source"/>
+        <childnode refid="70998" relation="include">
+        </childnode>
+      </node>
+      <node id="70994">
+        <label>mstyle/menudata.h</label>
+        <link refid="menudata_8h"/>
+        <childnode refid="70995" relation="include">
+        </childnode>
+        <childnode refid="71003" relation="include">
+        </childnode>
+      </node>
+      <node id="70997">
+        <label>build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_animations.cpp</label>
+        <link refid="moc__animations_8cpp_source"/>
+        <childnode refid="70998" relation="include">
+        </childnode>
+      </node>
+      <node id="70999">
+        <label>mstyle/animations.cpp</label>
+        <link refid="animations_8cpp_source"/>
+      </node>
+      <node id="71002">
+        <label>mstyle/menuengine.cpp</label>
+        <link refid="menuengine_8cpp_source"/>
+      </node>
+      <node id="70998">
+        <label>build.release/mstyle/mstyle_autogen/moc_compilation.cpp</label>
+        <link refid="mstyle_2mstyle__autogen_2moc__compilation_8cpp_source"/>
+      </node>
+      <node id="71001">
+        <label>build.release/mstyle/mstyle_autogen/EWIEGA46WW/moc_menuengine.cpp</label>
+        <link refid="moc__menuengine_8cpp_source"/>
+        <childnode refid="70998" relation="include">
+        </childnode>
+      </node>
+      <node id="70996">
+        <label>mstyle/animations.h</label>
+        <link refid="animations_8h_source"/>
+        <childnode refid="70997" relation="include">
+        </childnode>
+        <childnode refid="70999" relation="include">
+        </childnode>
+        <childnode refid="71000" relation="include">
+        </childnode>
+      </node>
+      <node id="71000">
+        <label>mstyle/mstyle.cpp</label>
+        <link refid="mstyle_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_menu_data_v1" prot="public">MenuDataV1</innerclass>
+    <innerclass refid="class_menu_data_v2" prot="public">MenuDataV2</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>oxygenmenudata_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>oxygenmenudata_h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="comment">//<sp/>oxygenmenudata.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>data<sp/>container<sp/>for<sp/>QMenu<sp/>animations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2009<sp/>Hugo<sp/>Pereira<sp/>Da<sp/>Costa<sp/>&lt;hugo@oxygen-icons.org&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;menubardata.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"></codeline>
+<codeline lineno="37" refid="class_menu_data_v1" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_menu_data_v1" kindref="compound">MenuDataV1</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_menu_bar_data_v1" kindref="compound">MenuBarDataV1</ref><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_menu_data_v1_1a486ede01f2b9bf2b183575f27cc7e12e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_data_v1_1a486ede01f2b9bf2b183575f27cc7e12e" kindref="member">MenuDataV1</ref>(<sp/>QObject*<sp/>parent,<sp/>QWidget*<sp/>target,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>duration<sp/>):</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_bar_data_v1" kindref="compound">MenuBarDataV1</ref>(<sp/>parent,<sp/>target,<sp/>duration<sp/>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="class_menu_data_v1_1afc5d2f24eeaffdcbc91348749cbbabc1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1_1afc5d2f24eeaffdcbc91348749cbbabc1" kindref="member">~MenuDataV1</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="class_menu_data_v1_1abadde4f1e636452f3a94ad978162055e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1_1abadde4f1e636452f3a94ad978162055e" kindref="member">enterEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV1::enterEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_menu_data_v1_1ac506a2351f9d4cb7df6ef46344f8c952" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1_1ac506a2351f9d4cb7df6ef46344f8c952" kindref="member">leaveEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV1::leaveEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="class_menu_data_v1_1a881849c55c03bd52908eb50cc41af7b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1_1a881849c55c03bd52908eb50cc41af7b6" kindref="member">mouseMoveEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV1::mouseMoveEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_menu_data_v1_1ad1a25e54debbfa5bdb8d5f41b9775104" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v1_1ad1a25e54debbfa5bdb8d5f41b9775104" kindref="member">mousePressEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV1::mousePressEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"></codeline>
+<codeline lineno="81" refid="class_menu_data_v2" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_menu_data_v2" kindref="compound">MenuDataV2</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_menu_bar_data_v2" kindref="compound">MenuBarDataV2</ref><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="87" refid="class_menu_data_v2_1a7245a433bb3fef649d93b189d4cf68c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_data_v2_1a7245a433bb3fef649d93b189d4cf68c3" kindref="member">MenuDataV2</ref>(<sp/>QObject*<sp/>parent,<sp/>QWidget*<sp/>target,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>duration<sp/>):</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_menu_bar_data_v2" kindref="compound">MenuBarDataV2</ref>(<sp/>parent,<sp/>target,<sp/>duration<sp/>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92" refid="class_menu_data_v2_1a1bb71278a6ca58bedc43d5f648a4717b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v2_1a1bb71278a6ca58bedc43d5f648a4717b" kindref="member">~MenuDataV2</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="class_menu_data_v2_1a5b735e1a5f2bef10ac154c223c6080e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v2_1a5b735e1a5f2bef10ac154c223c6080e5" kindref="member">enterEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV2::enterEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="class_menu_data_v2_1ae1db121ceb9630a27c50b6800224216b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v2_1ae1db121ceb9630a27c50b6800224216b" kindref="member">leaveEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV2::leaveEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="class_menu_data_v2_1a4a8771428c7308bc4d2fcde53fb0303f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_menu_data_v2_1a4a8771428c7308bc4d2fcde53fb0303f" kindref="member">mouseMoveEvent</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MenuBarDataV2::mouseMoveEvent&lt;QMenu&gt;(<sp/>object<sp/>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="mstyle/menudata.h"/>
+  </compounddef>
+</doxygen>

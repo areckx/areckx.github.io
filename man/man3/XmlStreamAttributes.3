@@ -1,0 +1,134 @@
+.TH "XmlStreamAttributes" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamAttributes \- The \fBXmlStreamAttributes\fP class represents a vector of \fBXmlStreamAttribute\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QVector< XmlStreamAttribute >\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QStringRef \fBvalue\fP (const QString &namespaceUri, const QString &name) const"
+.br
+.ti -1c
+.RI "QStringRef \fBvalue\fP (const QString &namespaceUri, QLatin1String name) const"
+.br
+.ti -1c
+.RI "QStringRef \fBvalue\fP (QLatin1String namespaceUri, QLatin1String name) const"
+.br
+.ti -1c
+.RI "QStringRef \fBvalue\fP (const QString &qualifiedName) const"
+.br
+.ti -1c
+.RI "QStringRef \fBvalue\fP (QLatin1String qualifiedName) const"
+.br
+.ti -1c
+.RI "void \fBappend\fP (const QString &namespaceUri, const QString &name, const QString &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "void \fBappend\fP (const QString &qualifiedName, const QString &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "bool \fBhasAttribute\fP (const QString &qualifiedName) const"
+.br
+.ti -1c
+.RI "bool \fBhasAttribute\fP (QLatin1String qualifiedName) const"
+.br
+.ti -1c
+.RI "bool \fBhasAttribute\fP (const QString &namespaceUri, const QString &name) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBXmlStreamAttributes\fP class represents a vector of \fBXmlStreamAttribute\fP\&. 
+
+QtCore 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.3  Attributes are returned by a \fBXmlStreamReader\fP in {\fBXmlStreamReader::attributes()\fP} {attributes()} when the reader reports a  {XmlStreamReader::StartElement}{start element}\&. The class can also be used with a \fBXmlStreamWriter\fP as an argument to  {\fBXmlStreamWriter::writeAttributes()\fP}{writeAttributes()}\&.
+.RE
+.PP
+The convenience function \fBvalue()\fP loops over the vector and returns an attribute value for a given namespaceUri and an attribute's name\&.
+.PP
+New attributes can be added with \fBappend()\fP\&. 
+.PP
+Definition at line 104 of file xmlstream\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void XmlStreamAttributes::append (const QString & namespaceUri, const QString & name, const QString & value)"
+Appends a new attribute with \fIname\fP in the namespace described with \fInamespaceUri\fP, and value \fIvalue\fP\&. The \fInamespaceUri\fP can be empty\&. 
+.PP
+Definition at line 2755 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamAttributes::append (const QString & qualifiedName, const QString & value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Appends a new attribute with qualified name \fIqualifiedName\fP and value \fIvalue\fP\&. 
+.PP
+Definition at line 2764 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamAttributes::hasAttribute (const QString & qualifiedName) const\fC [inline]\fP"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+Returns \fCtrue\fP if this \fBXmlStreamAttributes\fP has an attribute whose qualified name is \fIqualifiedName\fP; otherwise returns \fCfalse\fP\&.
+.PP
+Note that this is not namespace aware\&. For instance, if this \fBXmlStreamAttributes\fP contains an attribute whose lexical name is 'xlink:href' this doesn't tell that an attribute named \fChref\fP in the XLink namespace is present, since the \fCxlink\fP prefix can be bound to any namespace\&. Use the overload that takes a namespace URI and a local name as parameter, for namespace aware code\&. 
+.PP
+Definition at line 116 of file xmlstream\&.h\&.
+.SS "bool XmlStreamAttributes::hasAttribute (QLatin1String qualifiedName) const\fC [inline]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file xmlstream\&.h\&.
+.SS "bool XmlStreamAttributes::hasAttribute (const QString & namespaceUri, const QString & name) const\fC [inline]\fP"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+Returns \fCtrue\fP if this \fBXmlStreamAttributes\fP has an attribute whose namespace URI and name correspond to \fInamespaceUri\fP and \fIname\fP; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 126 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttributes::value (const QString & namespaceUri, const QString & name) const"
+Returns the value of the attribute \fIname\fP in the namespace described with \fInamespaceUri\fP, or an empty string reference if the attribute is not defined\&. The \fInamespaceUri\fP can be empty\&. 
+.PP
+Definition at line 2667 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamAttributes::value (const QString & namespaceUri, QLatin1String name) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Returns the value of the attribute \fIname\fP in the namespace described with \fInamespaceUri\fP, or an empty string reference if the attribute is not defined\&. The \fInamespaceUri\fP can be empty\&. 
+.PP
+Definition at line 2682 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamAttributes::value (QLatin1String namespaceUri, QLatin1String name) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Returns the value of the attribute \fIname\fP in the namespace described with \fInamespaceUri\fP, or an empty string reference if the attribute is not defined\&. The \fInamespaceUri\fP can be empty\&. 
+.PP
+Definition at line 2697 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamAttributes::value (const QString & qualifiedName) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Returns the value of the attribute with qualified name \fIqualifiedName\fP , or an empty string reference if the attribute is not defined\&. A qualified name is the raw name of an attribute in the XML data\&. It consists of the namespace prefix, followed by colon, followed by the attribute's local name\&. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use qualified names, but a resolved namespaceUri and the attribute's local name\&. 
+.PP
+Definition at line 2719 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamAttributes::value (QLatin1String qualifiedName) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Returns the value of the attribute with qualified name \fIqualifiedName\fP , or an empty string reference if the attribute is not defined\&. A qualified name is the raw name of an attribute in the XML data\&. It consists of the namespace prefix, followed by colon, followed by the attribute's local name\&. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use qualified names, but a resolved namespaceUri and the attribute's local name\&. 
+.PP
+Definition at line 2741 of file xmlstream\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

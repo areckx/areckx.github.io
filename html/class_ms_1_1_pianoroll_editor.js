@@ -1,0 +1,27 @@
+var class_ms_1_1_pianoroll_editor =
+[
+    [ "PianorollEditor", "class_ms_1_1_pianoroll_editor.html#ae01ede170c7066a63978968f5de9c515", null ],
+    [ "~PianorollEditor", "class_ms_1_1_pianoroll_editor.html#a2632b58e9672d1d48227a35b8dfe3168", null ],
+    [ "adjustCanvasPosition", "class_ms_1_1_pianoroll_editor.html#af55e8aa9689ae18846de393af4e28248", null ],
+    [ "changeEditElement", "class_ms_1_1_pianoroll_editor.html#a832bc238c29c0a66e61b806a455659d8", null ],
+    [ "changeSelection", "class_ms_1_1_pianoroll_editor.html#a17b44ad129e13eb1ee6493a6cc138fe6", null ],
+    [ "cmdAddHairpin", "class_ms_1_1_pianoroll_editor.html#ac376884bb1ced690f3a2e05e1307495e", null ],
+    [ "cmdAddSlur", "class_ms_1_1_pianoroll_editor.html#aaaabe2083a0fa4ecfd89bbe19e751f25", null ],
+    [ "cursor", "class_ms_1_1_pianoroll_editor.html#aac8301cc6ebf49e93900598b3ad16663", null ],
+    [ "dataChanged", "class_ms_1_1_pianoroll_editor.html#a6ba60113a8757d1400693e5ee8a6bc3d", null ],
+    [ "drawBackground", "class_ms_1_1_pianoroll_editor.html#aef242a3a76bccae6604752853cbcdb3b", null ],
+    [ "elementNear", "class_ms_1_1_pianoroll_editor.html#a94855af04e2b72d056a2dbe985697541", null ],
+    [ "getGrip", "class_ms_1_1_pianoroll_editor.html#ad019f8156985d024b55691016c3e621a", null ],
+    [ "gripCount", "class_ms_1_1_pianoroll_editor.html#a3932dd5d416d1e670bfb1ee48f31d8ac", null ],
+    [ "heartBeat", "class_ms_1_1_pianoroll_editor.html#a89508b22c9efb3d7a5fc4a8912ca090f", null ],
+    [ "matrix", "class_ms_1_1_pianoroll_editor.html#a364eb4eb2f26f1c518447b9fd632aa37", null ],
+    [ "removeScore", "class_ms_1_1_pianoroll_editor.html#a1e4533ad0b946b1f9ad9a8d0a117c1ea", null ],
+    [ "setCursor", "class_ms_1_1_pianoroll_editor.html#a31c3dd89991b1c871749ba727d6eb834", null ],
+    [ "setDropRectangle", "class_ms_1_1_pianoroll_editor.html#a156a4acfe7a554a011ce44781a724e4f", null ],
+    [ "setLocator", "class_ms_1_1_pianoroll_editor.html#a56cbecd96925b4e42843cbc7e48410d6", null ],
+    [ "setStaff", "class_ms_1_1_pianoroll_editor.html#a6a8d4aaec83cd4bdc01ea271127e1b7f", null ],
+    [ "startEdit", "class_ms_1_1_pianoroll_editor.html#a65f5b4e709d49552f93b2121691b0b52", null ],
+    [ "startEdit", "class_ms_1_1_pianoroll_editor.html#aae3a8ab530267debd5ada4f1239d0386", null ],
+    [ "updateAll", "class_ms_1_1_pianoroll_editor.html#a6d9ced52ee827a8f9364141145d47679", null ],
+    [ "writeSettings", "class_ms_1_1_pianoroll_editor.html#a001957894382d9842ff20a87a75617dd", null ]
+];

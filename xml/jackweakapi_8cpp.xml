@@ -1,0 +1,3141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="jackweakapi_8cpp" kind="file" language="C++">
+    <compoundname>jackweakapi.cpp</compoundname>
+    <includes local="no">jack/jack.h</includes>
+    <includes local="no">jack/thread.h</includes>
+    <includes local="no">jack/midiport.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">dlfcn.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="60212">
+        <label>stdlib.h</label>
+      </node>
+      <node id="60206">
+        <label>mscore/jackweakapi.cpp</label>
+        <link refid="jackweakapi_8cpp"/>
+        <childnode refid="60207" relation="include">
+        </childnode>
+        <childnode refid="60208" relation="include">
+        </childnode>
+        <childnode refid="60209" relation="include">
+        </childnode>
+        <childnode refid="60210" relation="include">
+        </childnode>
+        <childnode refid="60211" relation="include">
+        </childnode>
+        <childnode refid="60212" relation="include">
+        </childnode>
+        <childnode refid="60213" relation="include">
+        </childnode>
+      </node>
+      <node id="60209">
+        <label>jack/midiport.h</label>
+      </node>
+      <node id="60208">
+        <label>jack/thread.h</label>
+      </node>
+      <node id="60210">
+        <label>math.h</label>
+      </node>
+      <node id="60213">
+        <label>iostream</label>
+      </node>
+      <node id="60207">
+        <label>jack/jack.h</label>
+      </node>
+      <node id="60211">
+        <label>dlfcn.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="jackweakapi_8cpp_1a0b93a287f629f14e1adeb6662a417340" prot="public" static="no">
+        <name>DECL_FUNCTION</name>
+        <param><defname>return_type</defname></param>
+        <param><defname>fn_name</defname></param>
+        <param><defname>arguments_types</defname></param>
+        <param><defname>arguments</defname></param>
+        <initializer>typedef return_type (*fn_name##_ptr_t)arguments_types;                \
+  return_type fn_name arguments_types {                                 \
+    static fn_name##_ptr_t fn = 0;                                      \
+    if (fn == 0) { fn = (fn_name##_ptr_t)load_jack_function(#fn_name); } \
+    if (fn) return (*fn)arguments;                                      \
+    else return (return_type)-1;                                                      \
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="95" column="9" bodyfile="mscore/jackweakapi.cpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jackweakapi_8cpp_1aca7e2c9276b767037db10300aad4830c" prot="public" static="no">
+        <name>DECL_FUNCTION_NULL</name>
+        <param><defname>return_type</defname></param>
+        <param><defname>fn_name</defname></param>
+        <param><defname>arguments_types</defname></param>
+        <param><defname>arguments</defname></param>
+        <initializer>typedef return_type (*fn_name##_ptr_t)arguments_types;                \
+  return_type fn_name arguments_types {                                 \
+    static fn_name##_ptr_t fn = 0;                                      \
+    if (fn == 0) { fn = (fn_name##_ptr_t)load_jack_function(#fn_name); } \
+    if (fn) return (*fn)arguments;                                      \
+    else return (return_type)0;                                                      \
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="104" column="9" bodyfile="mscore/jackweakapi.cpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="jackweakapi_8cpp_1a5419c722abde17fce1bf305362db1e37" prot="public" static="no">
+        <name>DECL_VOID_FUNCTION</name>
+        <param><defname>fn_name</defname></param>
+        <param><defname>arguments_types</defname></param>
+        <param><defname>arguments</defname></param>
+        <initializer>typedef void (*fn_name##_ptr_t)arguments_types;                       \
+  void fn_name arguments_types {                                        \
+    static fn_name##_ptr_t fn = 0;                                      \
+    if (fn == 0) { fn = (fn_name##_ptr_t)load_jack_function(#fn_name); } \
+    if (fn) (*fn)arguments;                                             \
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="113" column="9" bodyfile="mscore/jackweakapi.cpp" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="jackweakapi_8cpp_1aa1b0573fe4fefa52a5eb4d8c266783b4" prot="public" static="no">
+        <type>pthread_t</type>
+        <definition>typedef pthread_t jack_native_thread_t</definition>
+        <argsstring></argsstring>
+        <name>jack_native_thread_t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="33" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="jackweakapi_8cpp_1a0efa90d1b2ffc4871dd8f2fea440446f" prot="public" static="no">
+        <type>void(*</type>
+        <definition>typedef void(* print_function) (const char *)</definition>
+        <argsstring>)(const char *)</argsstring>
+        <name>print_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="42" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="jackweakapi_8cpp_1aa55c6a57385fd5937708cf4e5b703f15" prot="public" static="no">
+        <type>void *(*</type>
+        <definition>typedef void*(* thread_routine) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>thread_routine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="43" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="jackweakapi_8cpp_1a44abcf5d3addd91b448de9d2a91afeef" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int libjack_is_present</definition>
+        <argsstring></argsstring>
+        <name>libjack_is_present</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="47" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="jackweakapi_8cpp_1a37c6b56e33b6907d3d75efd173fb3f69" prot="public" static="yes" mutable="no">
+        <type>void *</type>
+        <definition>void* libjack_handle</definition>
+        <argsstring></argsstring>
+        <name>libjack_handle</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="52" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="jackweakapi_8cpp_1a85d4f3993c21bb254e6e3d13975e0fb1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void __attribute__</definition>
+        <argsstring>((constructor)) tryload_libjack()</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(constructor)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="56" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="56" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a0871c668811229ec31aa3a9c3be247b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* load_jack_function</definition>
+        <argsstring>(const char *fn_name)</argsstring>
+        <name>load_jack_function</name>
+        <param>
+          <type>const char *</type>
+          <declname>fn_name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="71" column="1" bodyfile="mscore/jackweakapi.cpp" bodystart="71" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af7de0efb2ebd6f0f0385d90af6cc0daa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_get_version,(int *major_ptr, int *minor_ptr, int *micro_ptr, int *proto_ptr),(major_ptr, minor_ptr, micro_ptr, proto_ptr))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_get_version</type>
+        </param>
+        <param>
+          <type>(int *major_ptr, int *minor_ptr, int *micro_ptr, int *proto_ptr)</type>
+        </param>
+        <param>
+          <type>(major_ptr, minor_ptr, micro_ptr, proto_ptr)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ac1183bba7da00393a096b8ae70c96e38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char *, jack_get_version_string,(),())</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>jack_get_version_string</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="123" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1addb5231478d37f7221d3c5b8a8593e03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_client_t *, jack_client_open,(const char *client_name, jack_options_t options, jack_status_t *status,...),(client_name, options, status))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_client_t *</type>
+        </param>
+        <param>
+          <type>jack_client_open</type>
+        </param>
+        <param>
+          <type>(const char *client_name, jack_options_t options, jack_status_t *status,...)</type>
+        </param>
+        <param>
+          <type>(client_name, options, status)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="124" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9e5e437acbdc634e625c3ca7f291eae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_close,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_close</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a3726e91fb1881e666f88b789421ef00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_client_t *, jack_client_new,(const char *client_name),(client_name))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_client_t *</type>
+        </param>
+        <param>
+          <type>jack_client_new</type>
+        </param>
+        <param>
+          <type>(const char *client_name)</type>
+        </param>
+        <param>
+          <type>(client_name)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="127" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1afb8ca25555254f09ccd41c5a72595a00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_name_size,(),())</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_name_size</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a1d889ccd4b94bee35099f4ea345962d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(char *, jack_get_client_name,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type>jack_get_client_name</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a259eb97bd73c447609a322e00729b7a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_internal_client_new,(const char *client_name, const char *load_name, const char *load_init),(client_name, load_name, load_init))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_internal_client_new</type>
+        </param>
+        <param>
+          <type>(const char *client_name, const char *load_name, const char *load_init)</type>
+        </param>
+        <param>
+          <type>(client_name, load_name, load_init)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a885ff1f8a0cc0e04a2ff071dfe22c93a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_internal_client_close,(const char *client_name),(client_name))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_internal_client_close</type>
+        </param>
+        <param>
+          <type>(const char *client_name)</type>
+        </param>
+        <param>
+          <type>(client_name)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="133" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a19beb2fad7beb392c7c0d99b8fe76a7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_is_realtime,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_is_realtime</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="134" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9a6844dbce91b7a52d6292231801e81d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_process_callback,(jack_client_t *client, JackProcessCallback process_callback, void *arg),(client, process_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_process_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackProcessCallback process_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, process_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="137" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ac081c0c0139d19d699203ddc36ab8431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_thread_wait,(jack_client_t *client, int status),(client, status))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_thread_wait</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, int status)</type>
+        </param>
+        <param>
+          <type>(client, status)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a109279292be6fab4d1e9da425603adda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_cycle_wait,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_cycle_wait</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="143" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a43e8144c2bdb971712091250dc6d39c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_cycle_signal,(jack_client_t *client, int status),(client, status))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_cycle_signal</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, int status)</type>
+        </param>
+        <param>
+          <type>(client, status)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="144" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aad46fe1eac92f64dcb72b7fdd7153a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_thread_init_callback,(jack_client_t *client, JackThreadInitCallback thread_init_callback, void *arg),(client, thread_init_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_thread_init_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackThreadInitCallback thread_init_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, thread_init_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="148" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9fc03d67db67b36537bd740908df6f08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_freewheel_callback,(jack_client_t *client, JackFreewheelCallback freewheel_callback, void *arg),(client, freewheel_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_freewheel_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackFreewheelCallback freewheel_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, freewheel_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="151" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aa005d05226ca48a60ebf6b03d943e836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_freewheel,(jack_client_t *client, int onoff),(client, onoff))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_freewheel</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, int onoff)</type>
+        </param>
+        <param>
+          <type>(client, onoff)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9703a08259a86bb9f50654323cfb8d87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_buffer_size,(jack_client_t *client, jack_nframes_t nframes),(client, nframes))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_buffer_size</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_nframes_t nframes)</type>
+        </param>
+        <param>
+          <type>(client, nframes)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1afd27c0555df348b23109a476ab7dfcf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_buffer_size_callback,(jack_client_t *client, JackBufferSizeCallback bufsize_callback, void *arg),(client, bufsize_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_buffer_size_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackBufferSizeCallback bufsize_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, bufsize_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="156" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a213cb8eac3cdc7269883a0b02830bdbf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_sample_rate_callback,(jack_client_t *client, JackSampleRateCallback srate_callback, void *arg),(client, srate_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_sample_rate_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackSampleRateCallback srate_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, srate_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ad84c900501dd300942249654289fcf93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_client_registration_callback,(jack_client_t *client, JackClientRegistrationCallback registration_callback, void *arg),(client, registration_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_client_registration_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackClientRegistrationCallback registration_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, registration_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a694c0bbdddcb289bf4093e1445a97947" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_port_registration_callback,(jack_client_t *client, JackPortRegistrationCallback registration_callback, void *arg),(client, registration_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_port_registration_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackPortRegistrationCallback registration_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, registration_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="165" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af0a710d9dc82d0da11414efb7c5ce49c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_port_connect_callback,(jack_client_t *client, JackPortConnectCallback connect_callback, void *arg),(client, connect_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_port_connect_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackPortConnectCallback connect_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, connect_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="168" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ad93bf0a1dabea3752382b0523fd6693e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_graph_order_callback,(jack_client_t *client, JackGraphOrderCallback graph_callback, void *arg),(client, graph_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_graph_order_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackGraphOrderCallback graph_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, graph_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="174" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a5f88cdc903059246b6abec5381eda3d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_xrun_callback,(jack_client_t *client, JackXRunCallback xrun_callback, void *arg),(client, xrun_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_xrun_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackXRunCallback xrun_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, xrun_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="177" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ae93c529b568d0651ce4693d3b2a9a7fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_activate,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_activate</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="180" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a341370a37113c778f9c4045c15f4fd4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_deactivate,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_deactivate</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="181" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a448adc44e0f24cadbeda3e4a4510046c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_port_t *, jack_port_register,(jack_client_t *client, const char *port_name, const char *port_type, unsigned long flags, unsigned long buffer_size),(client, port_name, port_type, flags, buffer_size))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_port_t *</type>
+        </param>
+        <param>
+          <type>jack_port_register</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *port_name, const char *port_type, unsigned long flags, unsigned long buffer_size)</type>
+        </param>
+        <param>
+          <type>(client, port_name, port_type, flags, buffer_size)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a40c78b855e5e5f8e76958b0e00ac4aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_unregister,(jack_client_t *client, jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_unregister</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="185" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a55c3c9441cde33eefa81900283eb254e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(void *, jack_port_get_buffer,(jack_port_t *port, jack_nframes_t nframes),(port, nframes))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>void *</type>
+        </param>
+        <param>
+          <type>jack_port_get_buffer</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, jack_nframes_t nframes)</type>
+        </param>
+        <param>
+          <type>(port, nframes)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ab6e670ca974a51c4ad63b652fde7e0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char *, jack_port_name,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>jack_port_name</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="187" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a5f3582c1d1dfcfbc5aebaf3799d3880d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char *, jack_port_short_name,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>jack_port_short_name</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="188" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ae88dd23516c41bf729f4e8ded278d6c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_flags,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_flags</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1abcc02d086dbab0026901872851decbb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char *, jack_port_type,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char *</type>
+        </param>
+        <param>
+          <type>jack_port_type</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af9ab8b4ca970f6c863e5d3efd8507f6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_is_mine,(const jack_client_t *client, const jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_is_mine</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client, const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="192" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1adbe444ac39aa72afcc645736ec490110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_connected,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_connected</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="193" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a4bf9d460ae0ac9e28570c45c303f4c76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_connected_to,(const jack_port_t *port, const char *port_name),(port, port_name))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_connected_to</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port, const char *port_name)</type>
+        </param>
+        <param>
+          <type>(port, port_name)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="194" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aa44ed761c225c2f7034ef6e7e3a81b9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char **, jack_port_get_connections,(const jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char **</type>
+        </param>
+        <param>
+          <type>jack_port_get_connections</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="195" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a17ff9c839ad6b8b02a51f130ac718cd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char **, jack_port_get_all_connections,(const jack_client_t *client, const jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char **</type>
+        </param>
+        <param>
+          <type>jack_port_get_all_connections</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client, const jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="196" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a98e5899623bf0eddec680dcfef923f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_tie,(jack_port_t *src, jack_port_t *dst),(src, dst))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_tie</type>
+        </param>
+        <param>
+          <type>(jack_port_t *src, jack_port_t *dst)</type>
+        </param>
+        <param>
+          <type>(src, dst)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="197" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ae9546244478ba1fcfb40c326debc6a84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_untie,(jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_untie</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a8b49663a3ba02206352d4bb26363a2b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_port_get_latency,(jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_port_get_latency</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1afc9abe4f688627c2d63242126122c77b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_port_get_total_latency,(jack_client_t *client, jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_port_get_total_latency</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="200" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aa9e12ea2874b5f7de360cc012631afef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_port_set_latency,(jack_port_t *port, jack_nframes_t frames),(port, frames))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_port_set_latency</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, jack_nframes_t frames)</type>
+        </param>
+        <param>
+          <type>(port, frames)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="201" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aadb8f4870da4b5efd9ac6b4a3321ed19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_recompute_total_latency,(jack_client_t *client, jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_recompute_total_latency</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="202" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a782e41ed03b6db220d82fe201c55940d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_recompute_total_latencies,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_recompute_total_latencies</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="203" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1acbab12fd346b62fa2198242e80d802ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_set_name,(jack_port_t *port, const char *port_name),(port, port_name))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_set_name</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, const char *port_name)</type>
+        </param>
+        <param>
+          <type>(port, port_name)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="205" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ad689a9d6828823588affc1022ff6e056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_set_alias,(jack_port_t *port, const char *alias),(port, alias))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_set_alias</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, const char *alias)</type>
+        </param>
+        <param>
+          <type>(port, alias)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="206" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a7776f46e6c62fefaf80416553ff513a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_unset_alias,(jack_port_t *port, const char *alias),(port, alias))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_unset_alias</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, const char *alias)</type>
+        </param>
+        <param>
+          <type>(port, alias)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="207" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a26c116d8f6a33b2789954f07ac0d6c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_get_aliases,(const jack_port_t *port, char *const aliases[2]),(port, aliases))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_get_aliases</type>
+        </param>
+        <param>
+          <type>(const jack_port_t *port, char *const aliases[2])</type>
+        </param>
+        <param>
+          <type>(port, aliases)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="208" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9b5e692c052e1d2a0646db686c1a382a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_request_monitor,(jack_port_t *port, int onoff),(port, onoff))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_request_monitor</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, int onoff)</type>
+        </param>
+        <param>
+          <type>(port, onoff)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="209" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a843e13822488dd8aebaa44026cbd1bd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_request_monitor_by_name,(jack_client_t *client, const char *port_name, int onoff),(client, port_name, onoff))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_request_monitor_by_name</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *port_name, int onoff)</type>
+        </param>
+        <param>
+          <type>(client, port_name, onoff)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="210" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af5a7a765389c9eb1540854bf098131d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_ensure_monitor,(jack_port_t *port, int onoff),(port, onoff))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_ensure_monitor</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port, int onoff)</type>
+        </param>
+        <param>
+          <type>(port, onoff)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="211" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a4499282f895af6d1769c083db84d8488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_monitoring_input,(jack_port_t *port),(port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_monitoring_input</type>
+        </param>
+        <param>
+          <type>(jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="212" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a1cf339eea720f2c738c7c442cf9613d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_connect,(jack_client_t *client, const char *source_port, const char *destination_port),(client, source_port, destination_port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_connect</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *source_port, const char *destination_port)</type>
+        </param>
+        <param>
+          <type>(client, source_port, destination_port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="213" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a3319f44dcec6991ae1cabe9341890b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_disconnect,(jack_client_t *client, const char *source_port, const char *destination_port),(client, source_port, destination_port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_disconnect</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *source_port, const char *destination_port)</type>
+        </param>
+        <param>
+          <type>(client, source_port, destination_port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="214" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1acd20c5b8ed49cfc6035ea77af8a14709" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_disconnect,(jack_client_t *client, jack_port_t *port),(client, port))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_disconnect</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_port_t *port)</type>
+        </param>
+        <param>
+          <type>(client, port)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="215" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a697fdd45a1340caba1e23b564c0038a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_name_size,(),())</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_name_size</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="216" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a5fee1e369536236012c1159d25926234" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_port_type_size,(),())</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_port_type_size</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aff4bf1b806dfd701e921f7f751638a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_get_sample_rate,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_get_sample_rate</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="219" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a684fa850f4dd340eb95104397ac3e062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_get_buffer_size,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_get_buffer_size</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="220" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a5d35d66b778a13da929ccc2bac0696dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(const char **, jack_get_ports,(jack_client_t *client, const char *port_name_pattern, const char *type_name_pattern, unsigned long flags),(client, port_name_pattern, type_name_pattern, flags))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>const char **</type>
+        </param>
+        <param>
+          <type>jack_get_ports</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *port_name_pattern, const char *type_name_pattern, unsigned long flags)</type>
+        </param>
+        <param>
+          <type>(client, port_name_pattern, type_name_pattern, flags)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a58314c70b05bf6404ba015e1648acd39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_port_t *, jack_port_by_name,(jack_client_t *client, const char *port_name),(client, port_name))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_port_t *</type>
+        </param>
+        <param>
+          <type>jack_port_by_name</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *port_name)</type>
+        </param>
+        <param>
+          <type>(client, port_name)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="223" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a4be52a8cf6279cd89e6fe626666c2ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_port_t *, jack_port_by_id,(jack_client_t *client, jack_port_id_t port_id),(client, port_id))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_port_t *</type>
+        </param>
+        <param>
+          <type>jack_port_by_id</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_port_id_t port_id)</type>
+        </param>
+        <param>
+          <type>(client, port_id)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="224" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a1ef4834d5a50faffb8b681c562e58ca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_engine_takeover_timebase,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_engine_takeover_timebase</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="226" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a649a8f1e5976a930cae79c82f2c02cbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_frames_since_cycle_start,(const jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_frames_since_cycle_start</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="227" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aedd404f12f72d3c713a63447e75c0a34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_time_t, jack_get_time,(),())</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_time_t</type>
+        </param>
+        <param>
+          <type>jack_get_time</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <param>
+          <type>()</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="228" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9507c95b19e13fefed671f3add03556e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_time_to_frames,(const jack_client_t *client, jack_time_t time),(client, time))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_time_to_frames</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client, jack_time_t time)</type>
+        </param>
+        <param>
+          <type>(client, time)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="229" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aefb1be7b40ed91ebb3191512e7f533af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_time_t, jack_frames_to_time,(const jack_client_t *client, jack_nframes_t frames),(client, frames))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_time_t</type>
+        </param>
+        <param>
+          <type>jack_frames_to_time</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client, jack_nframes_t frames)</type>
+        </param>
+        <param>
+          <type>(client, frames)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="230" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af7804a08232cfc45f0d5457e2497869b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_frame_time,(const jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_frame_time</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="231" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a77a041990e27afdee11e3e47daf8f33d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_last_frame_time,(const jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_last_frame_time</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="232" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a962ab82b2b9a7b5c094bae2a4dca0c3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(float, jack_cpu_load,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>float</type>
+        </param>
+        <param>
+          <type>jack_cpu_load</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="233" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a25a346d75a0214feca435e33bd70895d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_native_thread_t, jack_client_thread_id,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_native_thread_t</type>
+        </param>
+        <param>
+          <type>jack_client_thread_id</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="234" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a174a1c0d65d57bd03a18b52816fe3dd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_set_error_function,(print_function fun),(fun))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_set_error_function</type>
+        </param>
+        <param>
+          <type>(print_function fun)</type>
+        </param>
+        <param>
+          <type>(fun)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="235" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a83f86aa0bc822d5f13174d118240eca6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_set_info_function,(print_function fun),(fun))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_set_info_function</type>
+        </param>
+        <param>
+          <type>(print_function fun)</type>
+        </param>
+        <param>
+          <type>(fun)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="236" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a442e4cc059a9d65a9217982424b0a3c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(float, jack_get_max_delayed_usecs,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>float</type>
+        </param>
+        <param>
+          <type>jack_get_max_delayed_usecs</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="238" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1aeb6cbd9e0dd890e5833a530d8831e528" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(float, jack_get_xrun_delayed_usecs,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>float</type>
+        </param>
+        <param>
+          <type>jack_get_xrun_delayed_usecs</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="239" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a8551209c2f08e5aa2dec01e3e4a61149" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_reset_max_delayed_usecs,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_reset_max_delayed_usecs</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="240" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a4d7adbf58faa0319ca47c78fc7b46fd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_release_timebase,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_release_timebase</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="242" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a7a2dab62b757cc29f6bedda0a7923a8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_sync_callback,(jack_client_t *client, JackSyncCallback sync_callback, void *arg),(client, sync_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_sync_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, JackSyncCallback sync_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, sync_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="243" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a84a3eff8e29b5539c7b2b48480bcb937" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_sync_timeout,(jack_client_t *client, jack_time_t timeout),(client, timeout))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_sync_timeout</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_time_t timeout)</type>
+        </param>
+        <param>
+          <type>(client, timeout)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="244" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a04c879357da067b1444bb5c0faa974c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_set_timebase_callback,(jack_client_t *client, int conditional, JackTimebaseCallback timebase_callback, void *arg),(client, conditional, timebase_callback, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_set_timebase_callback</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, int conditional, JackTimebaseCallback timebase_callback, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, conditional, timebase_callback, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ab8b943d6499669706940fc6d671d4ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_transport_locate,(jack_client_t *client, jack_nframes_t frame),(client, frame))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_transport_locate</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_nframes_t frame)</type>
+        </param>
+        <param>
+          <type>(client, frame)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="249" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9b742d0cd90cddfb6141a4c3f16d631c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_transport_state_t, jack_transport_query,(const jack_client_t *client, jack_position_t *pos),(client, pos))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_transport_state_t</type>
+        </param>
+        <param>
+          <type>jack_transport_query</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client, jack_position_t *pos)</type>
+        </param>
+        <param>
+          <type>(client, pos)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="250" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a29a7c19434e4fba0e6580962edf0c506" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_get_current_transport_frame,(const jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_get_current_transport_frame</type>
+        </param>
+        <param>
+          <type>(const jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="251" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1af826ec4c5a2adfa83e2ddb3f41ebb53c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_transport_reposition,(jack_client_t *client, const jack_position_t *pos),(client, pos))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_transport_reposition</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const jack_position_t *pos)</type>
+        </param>
+        <param>
+          <type>(client, pos)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="252" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a45c1c506f5d698a4b4f8a39ff15b5729" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_transport_start,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_transport_start</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ab635a6f599d2255b9b595ebb5174845a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_transport_stop,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_transport_stop</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="254" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a1466e081a116f6c1e80e7ae13d7a5887" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_real_time_priority,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_real_time_priority</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="258" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a6a8a891d26dd5204abe8a799d16094e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_max_real_time_priority,(jack_client_t *client),(client))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_max_real_time_priority</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client)</type>
+        </param>
+        <param>
+          <type>(client)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="259" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1acb255fdf3d2148c12822363edef6b4e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_acquire_real_time_scheduling,(jack_native_thread_t thread, int priority),(thread, priority))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_acquire_real_time_scheduling</type>
+        </param>
+        <param>
+          <type>(jack_native_thread_t thread, int priority)</type>
+        </param>
+        <param>
+          <type>(thread, priority)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ab9331b9b32fd05579246daebeed7ae0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_create_thread,(jack_client_t *client, jack_native_thread_t *thread, int priority, int realtime, thread_routine routine, void *arg),(client, thread, priority, realtime, routine, arg))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_create_thread</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_native_thread_t *thread, int priority, int realtime, thread_routine routine, void *arg)</type>
+        </param>
+        <param>
+          <type>(client, thread, priority, realtime, routine, arg)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="261" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ade62072ed1a72331b764b2409d6ed09d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_drop_real_time_scheduling,(jack_native_thread_t thread),(thread))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_drop_real_time_scheduling</type>
+        </param>
+        <param>
+          <type>(jack_native_thread_t thread)</type>
+        </param>
+        <param>
+          <type>(thread)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="267" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a71d428b74e8f5458c7bd7956521f9602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_stop_thread,(jack_client_t *client, jack_native_thread_t thread),(client, thread))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_stop_thread</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_native_thread_t thread)</type>
+        </param>
+        <param>
+          <type>(client, thread)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="269" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a9a4482e0ff1cf595be0d2f31e586122e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_client_kill_thread,(jack_client_t *client, jack_native_thread_t thread),(client, thread))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_client_kill_thread</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_native_thread_t thread)</type>
+        </param>
+        <param>
+          <type>(client, thread)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="270" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1acb368dfba59acbcb1969c50ce274e12f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(char *, jack_get_internal_client_name,(jack_client_t *client, jack_intclient_t intclient),(client, intclient))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>char *</type>
+        </param>
+        <param>
+          <type>jack_get_internal_client_name</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_intclient_t intclient)</type>
+        </param>
+        <param>
+          <type>(client, intclient)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="274" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a04d6ffdd9358c726edd0dc8f74abbd13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_intclient_t, jack_internal_client_handle,(jack_client_t *client, const char *client_name, jack_status_t *status),(client, client_name, status))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_intclient_t</type>
+        </param>
+        <param>
+          <type>jack_internal_client_handle</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, const char *client_name, jack_status_t *status)</type>
+        </param>
+        <param>
+          <type>(client, client_name, status)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="275" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a35e869482469d0dc815d1a514956795b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_status_t, jack_internal_client_unload,(jack_client_t *client, jack_intclient_t intclient),(client, intclient))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_status_t</type>
+        </param>
+        <param>
+          <type>jack_internal_client_unload</type>
+        </param>
+        <param>
+          <type>(jack_client_t *client, jack_intclient_t intclient)</type>
+        </param>
+        <param>
+          <type>(client, intclient)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="283" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a2f5ea028c943dc03dd73c628695f790d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_free,(void *ptr),(ptr))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_free</type>
+        </param>
+        <param>
+          <type>(void *ptr)</type>
+        </param>
+        <param>
+          <type>(ptr)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="284" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ac3389e71a825d6fc5a6802f4730728a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_midi_get_event_count,(void *port_buffer),(port_buffer))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_midi_get_event_count</type>
+        </param>
+        <param>
+          <type>(void *port_buffer)</type>
+        </param>
+        <param>
+          <type>(port_buffer)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="288" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a19cf9a2a7591e033d65f6259ea49afb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_midi_event_get,(jack_midi_event_t *event, void *port_buffer, jack_nframes_t event_index),(event, port_buffer, event_index))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_midi_event_get</type>
+        </param>
+        <param>
+          <type>(jack_midi_event_t *event, void *port_buffer, jack_nframes_t event_index)</type>
+        </param>
+        <param>
+          <type>(event, port_buffer, event_index)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="289" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1ae30c31bdc6613e72cb342dc88b4e9eae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_VOID_FUNCTION</definition>
+        <argsstring>(jack_midi_clear_buffer,(void *port_buffer),(port_buffer))</argsstring>
+        <name>DECL_VOID_FUNCTION</name>
+        <param>
+          <type>jack_midi_clear_buffer</type>
+        </param>
+        <param>
+          <type>(void *port_buffer)</type>
+        </param>
+        <param>
+          <type>(port_buffer)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="290" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a0aa11c747498c2b052d666b1ba939dd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(size_t, jack_midi_max_event_size,(void *port_buffer),(port_buffer))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>size_t</type>
+        </param>
+        <param>
+          <type>jack_midi_max_event_size</type>
+        </param>
+        <param>
+          <type>(void *port_buffer)</type>
+        </param>
+        <param>
+          <type>(port_buffer)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="291" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a8bdc4795ec27932cb502032b4d604c75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION_NULL</definition>
+        <argsstring>(jack_midi_data_t *, jack_midi_event_reserve,(void *port_buffer, jack_nframes_t time, size_t data_size),(port_buffer, time, data_size))</argsstring>
+        <name>DECL_FUNCTION_NULL</name>
+        <param>
+          <type>jack_midi_data_t *</type>
+        </param>
+        <param>
+          <type>jack_midi_event_reserve</type>
+        </param>
+        <param>
+          <type>(void *port_buffer, jack_nframes_t time, size_t data_size)</type>
+        </param>
+        <param>
+          <type>(port_buffer, time, data_size)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="292" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a39c499b36c4021e575f1921d79b9bf2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(int, jack_midi_event_write,(void *port_buffer, jack_nframes_t time, const jack_midi_data_t *data, size_t data_size),(port_buffer, time, data, data_size))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>int</type>
+        </param>
+        <param>
+          <type>jack_midi_event_write</type>
+        </param>
+        <param>
+          <type>(void *port_buffer, jack_nframes_t time, const jack_midi_data_t *data, size_t data_size)</type>
+        </param>
+        <param>
+          <type>(port_buffer, time, data, data_size)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="293" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="jackweakapi_8cpp_1a32f4204edcea7b720cbd149a76d83ea5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DECL_FUNCTION</definition>
+        <argsstring>(jack_nframes_t, jack_midi_get_lost_event_count,(void *port_buffer),(port_buffer))</argsstring>
+        <name>DECL_FUNCTION</name>
+        <param>
+          <type>jack_nframes_t</type>
+        </param>
+        <param>
+          <type>jack_midi_get_lost_event_count</type>
+        </param>
+        <param>
+          <type>(void *port_buffer)</type>
+        </param>
+        <param>
+          <type>(port_buffer)</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/jackweakapi.cpp" line="294" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>MuseScore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Linux<sp/>Music<sp/>Score<sp/>Editor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>$Id:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>jackWeakAPI<sp/>based<sp/>on<sp/>code<sp/>from<sp/>Stéphane<sp/>Letz<sp/>(Grame)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>partly<sp/>based<sp/>on<sp/>Julien<sp/>Pommier<sp/>(PianoTeq<sp/>:<sp/>http://www.pianoteq.com/)<sp/>code.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>2002-2007<sp/>Werner<sp/>Schweer<sp/>and<sp/>others</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>2009<sp/>Grame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2.1<sp/>of<sp/>the<sp/>License,<sp/>or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Lesser<sp/>General<sp/>Public<sp/>License</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Foundation,<sp/>Inc.,<sp/>59<sp/>Temple<sp/>Place<sp/>-<sp/>Suite<sp/>330,<sp/>Boston,<sp/>MA<sp/>02111-1307,<sp/>USA.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;jack/jack.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;jack/thread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;jack/midiport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;dlfcn.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//for<sp/>backward<sp/>compatibility<sp/>of<sp/>Jack<sp/>headers.<sp/>Might<sp/>not<sp/>be<sp/>necessary.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>pthread_t<sp/>jack_native_thread_t;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>dynamically<sp/>load<sp/>libjack<sp/>and<sp/>forward<sp/>all<sp/>registered<sp/>calls<sp/>to<sp/>libjack</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/>(similar<sp/>to<sp/>what<sp/>relaytool<sp/>is<sp/>trying<sp/>to<sp/>do,<sp/>but<sp/>more<sp/>portably..)</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*print_function)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*(*thread_routine)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>std::cerr;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>libjack_is_present<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>public<sp/>symbol,<sp/>similar<sp/>to<sp/>what<sp/>relaytool<sp/>does.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">HMODULE<sp/>libjack_handle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*libjack_handle<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>__attribute__((constructor))<sp/></highlight><highlight class="keyword">try</highlight><highlight class="normal">load_libjack()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(getenv(</highlight><highlight class="stringliteral">&quot;SKIP_LIBJACK&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>just<sp/>in<sp/>case<sp/>libjack<sp/>is<sp/>causing<sp/>troubles..</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#ifdef<sp/>__APPLE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libjack_handle<sp/>=<sp/>dlopen(</highlight><highlight class="stringliteral">&quot;libjack.0.dylib&quot;</highlight><highlight class="normal">,<sp/>RTLD_LAZY);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#elif<sp/>defined(WIN32)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libjack_handle<sp/>=<sp/>LoadLibrary(</highlight><highlight class="stringliteral">&quot;libjack.dll&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libjack_handle<sp/>=<sp/>dlopen(</highlight><highlight class="stringliteral">&quot;libjack.so.0&quot;</highlight><highlight class="normal">,<sp/>RTLD_LAZY);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>libjack_is_present<sp/>=<sp/>(libjack_handle<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*load_jack_function(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fn_name)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*fn<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!libjack_handle)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qDebug(</highlight><highlight class="stringliteral">&quot;libjack<sp/>not<sp/>found,<sp/>so<sp/>do<sp/>not<sp/>try<sp/>to<sp/>load<sp/><sp/>%s<sp/>ffs<sp/><sp/>!&quot;</highlight><highlight class="normal">,<sp/>fn_name);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)GetProcAddress(libjack_handle,<sp/>fn_name);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>fn<sp/>=<sp/>dlsym(libjack_handle,<sp/>fn_name);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fn)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>lpMsgBuf;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER<sp/>|<sp/>FORMAT_MESSAGE_FROM_SYSTEM<sp/>|<sp/>FORMAT_MESSAGE_IGNORE_INSERTS,NULL,GetLastError(),MAKELANGID(LANG_NEUTRAL,<sp/>SUBLANG_DEFAULT),(LPTSTR)<sp/>&amp;lpMsgBuf,0,NULL<sp/>);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qDebug(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>GetProcAddress(<sp/>%s<sp/>),<sp/>%s<sp/>&quot;</highlight><highlight class="normal">,<sp/>fn_name,<sp/>lpMsgBuf)<sp/>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qDebug<sp/>(</highlight><highlight class="stringliteral">&quot;could<sp/>not<sp/>dlsym(<sp/>%s<sp/>),<sp/>%s<sp/>&quot;</highlight><highlight class="normal">,<sp/>fn_name,<sp/>dlerror())<sp/>;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fn;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DECL_FUNCTION(return_type,<sp/>fn_name,<sp/>arguments_types,<sp/>arguments)<sp/>\</highlight></codeline>
+<codeline lineno="96"><highlight class="preprocessor"><sp/><sp/>typedef<sp/>return_type<sp/>(*fn_name##_ptr_t)arguments_types;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/>return_type<sp/>fn_name<sp/>arguments_types<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="98"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>static<sp/>fn_name##_ptr_t<sp/>fn<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn<sp/>==<sp/>0)<sp/>{<sp/>fn<sp/>=<sp/>(fn_name##_ptr_t)load_jack_function(#fn_name);<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="100"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn)<sp/>return<sp/>(*fn)arguments;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>return<sp/>(return_type)-1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="102"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DECL_FUNCTION_NULL(return_type,<sp/>fn_name,<sp/>arguments_types,<sp/>arguments)<sp/>\</highlight></codeline>
+<codeline lineno="105"><highlight class="preprocessor"><sp/><sp/>typedef<sp/>return_type<sp/>(*fn_name##_ptr_t)arguments_types;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="106"><highlight class="preprocessor"><sp/><sp/>return_type<sp/>fn_name<sp/>arguments_types<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>static<sp/>fn_name##_ptr_t<sp/>fn<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="108"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn<sp/>==<sp/>0)<sp/>{<sp/>fn<sp/>=<sp/>(fn_name##_ptr_t)load_jack_function(#fn_name);<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="109"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn)<sp/>return<sp/>(*fn)arguments;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>else<sp/>return<sp/>(return_type)0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="111"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DECL_VOID_FUNCTION(fn_name,<sp/>arguments_types,<sp/>arguments)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="114"><highlight class="preprocessor"><sp/><sp/>typedef<sp/>void<sp/>(*fn_name##_ptr_t)arguments_types;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor"><sp/><sp/>void<sp/>fn_name<sp/>arguments_types<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="116"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>static<sp/>fn_name##_ptr_t<sp/>fn<sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="117"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn<sp/>==<sp/>0)<sp/>{<sp/>fn<sp/>=<sp/>(fn_name##_ptr_t)load_jack_function(#fn_name);<sp/>}<sp/>\</highlight></codeline>
+<codeline lineno="118"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>if<sp/>(fn)<sp/>(*fn)arguments;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="119"><highlight class="preprocessor"><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">DECL_VOID_FUNCTION(jack_get_version,<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*major_ptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*minor_ptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*micro_ptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*proto_ptr),<sp/>(major_ptr,<sp/>minor_ptr,<sp/>micro_ptr,<sp/>proto_ptr));</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>jack_get_version_string,<sp/>(),<sp/>());</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">DECL_FUNCTION_NULL(jack_client_t<sp/>*,<sp/>jack_client_open,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*client_name,<sp/>jack_options_t<sp/>options,<sp/>jack_status_t<sp/>*status,<sp/>...),</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(client_name,<sp/>options,<sp/>status));</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_close,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">DECL_FUNCTION_NULL(jack_client_t<sp/>*,<sp/>jack_client_new,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*client_name),<sp/>(client_name));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_name_size,<sp/>(),<sp/>());</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>jack_get_client_name,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_internal_client_new,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*client_name,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*load_name,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*load_init),<sp/>(client_name,<sp/>load_name,<sp/>load_init));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">DECL_VOID_FUNCTION(jack_internal_client_close,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*client_name),<sp/>(client_name));</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_is_realtime,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment">//WS<sp/>DECL_VOID_FUNCTION(jack_on_shutdown,<sp/>(jack_client_t<sp/>*client,<sp/>JackShutdownCallback<sp/>shutdown_callback,<sp/>void<sp/>*arg),<sp/>(client,<sp/>shutdown_callback,<sp/>arg));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//DECL_VOID_FUNCTION(jack_on_info_shutdown,<sp/>(jack_client_t*<sp/>client,<sp/>JackInfoShutdownCallback<sp/>shutdown_callback,<sp/>void*<sp/>arg),<sp/>(client,<sp/>shutdown_callback,<sp/>arg));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_process_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackProcessCallback<sp/>process_callback,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>process_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_thread_wait,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status),<sp/>(client,<sp/>status));</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_cycle_wait,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">DECL_VOID_FUNCTION(jack_cycle_signal,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>status),<sp/>(client,<sp/>status));</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">//DECL_FUNCTION(int,<sp/>jack_set_process_thread,<sp/>(jack_client_t<sp/>*client,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackThreadCallback<sp/>fun,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>*arg),<sp/>(client,<sp/>fun,<sp/>arg));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_thread_init_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackThreadInitCallback<sp/>thread_init_callback,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>thread_init_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_freewheel_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackFreewheelCallback<sp/>freewheel_callback,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>freewheel_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_freewheel,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>onoff),<sp/>(client,<sp/>onoff));</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_buffer_size,<sp/>(jack_client_t<sp/>*client,<sp/>jack_nframes_t<sp/>nframes),<sp/>(client,<sp/>nframes));</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_buffer_size_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackBufferSizeCallback<sp/>bufsize_callback,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>bufsize_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_sample_rate_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackSampleRateCallback<sp/>srate_callback,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>srate_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_client_registration_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackClientRegistrationCallback<sp/>registration_callback,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>registration_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_port_registration_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackPortRegistrationCallback<sp/>registration_callback,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>registration_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_port_connect_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackPortConnectCallback<sp/>connect_callback,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>connect_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">//WS<sp/>DECL_FUNCTION(int,<sp/>jack_set_port_rename_callback,<sp/>(jack_client_t<sp/>*client,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackPortRenameCallback<sp/>rename_callback,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>*arg),<sp/>(client,<sp/>rename_callback,<sp/>arg));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_graph_order_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackGraphOrderCallback<sp/>graph_callback,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>graph_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_xrun_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackXRunCallback<sp/>xrun_callback,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>xrun_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_activate,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_deactivate,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">DECL_FUNCTION_NULL(jack_port_t<sp/>*,<sp/>jack_port_register,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_type,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>flags,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>buffer_size),</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(client,<sp/>port_name,<sp/>port_type,<sp/>flags,<sp/>buffer_size));</highlight></codeline>
+<codeline lineno="185"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_unregister,<sp/>(jack_client_t<sp/>*client,<sp/>jack_port_t*<sp/>port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*,<sp/>jack_port_get_buffer,<sp/>(jack_port_t<sp/>*port,<sp/>jack_nframes_t<sp/>nframes),<sp/>(port,<sp/>nframes));</highlight></codeline>
+<codeline lineno="187"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>jack_port_name,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>jack_port_short_name,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_flags,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*,<sp/>jack_port_type,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="comment">//WS<sp/>DECL_FUNCTION(jack_port_type_id_t,<sp/>jack_port_type_id,<sp/>(const<sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_is_mine,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t*<sp/>port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_connected,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_connected_to,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name),<sp/>(port,<sp/>port_name));</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**,<sp/>jack_port_get_connections,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**,<sp/>jack_port_get_all_connections,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_tie,<sp/>(jack_port_t<sp/>*src,<sp/>jack_port_t<sp/>*dst),<sp/>(src,<sp/>dst));</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_untie,<sp/>(jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="199"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_port_get_latency,<sp/>(jack_port_t<sp/>*port),<sp/>(port));</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_port_get_total_latency<sp/>,(jack_client_t<sp/>*<sp/>client,<sp/>jack_port_t<sp/>*port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">DECL_VOID_FUNCTION(jack_port_set_latency,<sp/>(jack_port_t<sp/>*<sp/>port,<sp/>jack_nframes_t<sp/>frames),<sp/>(port,<sp/>frames));</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_recompute_total_latency,<sp/>(jack_client_t*<sp/>client,<sp/>jack_port_t*<sp/>port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_recompute_total_latencies,<sp/>(jack_client_t*<sp/>client),(client));</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_set_name,<sp/>(jack_port_t<sp/>*port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name),<sp/>(port,<sp/>port_name));</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_set_alias,<sp/>(jack_port_t<sp/>*port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*alias),<sp/>(port,<sp/>alias));</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_unset_alias,<sp/>(jack_port_t<sp/>*port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*alias),<sp/>(port,<sp/>alias));</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_get_aliases,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_port_t<sp/>*port,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>aliases[2]),<sp/>(port,aliases));</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_request_monitor,<sp/>(jack_port_t<sp/>*port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>onoff),<sp/>(port,<sp/>onoff));</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_request_monitor_by_name,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>onoff),<sp/>(client,<sp/>port_name,<sp/>onoff));</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_ensure_monitor,<sp/>(jack_port_t<sp/>*port,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>onoff),<sp/>(port,<sp/>onoff));</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_monitoring_input,<sp/>(jack_port_t<sp/>*port)<sp/>,(port));</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_connect,<sp/>(jack_client_t<sp/>*<sp/>client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source_port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*destination_port),<sp/>(client,<sp/>source_port,<sp/>destination_port));</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_disconnect,<sp/>(jack_client_t<sp/>*<sp/>client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*source_port,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*destination_port),<sp/>(client,<sp/>source_port,<sp/>destination_port));</highlight></codeline>
+<codeline lineno="215"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_disconnect,<sp/>(jack_client_t<sp/>*<sp/>client,<sp/>jack_port_t<sp/>*<sp/>port),<sp/>(client,<sp/>port));</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_name_size,(),());</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_port_type_size,(),());</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_get_sample_rate,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="220"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_get_buffer_size,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">DECL_FUNCTION_NULL(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**,<sp/>jack_get_ports,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name_pattern,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>type_name_pattern,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>flags),<sp/>(client,<sp/>port_name_pattern,<sp/>type_name_pattern,<sp/>flags));</highlight></codeline>
+<codeline lineno="223"><highlight class="normal">DECL_FUNCTION_NULL(jack_port_t<sp/>*,<sp/>jack_port_by_name,<sp/>(jack_client_t<sp/>*<sp/>client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*port_name),<sp/>(client,<sp/>port_name));</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">DECL_FUNCTION_NULL(jack_port_t<sp/>*,<sp/>jack_port_by_id,<sp/>(jack_client_t<sp/>*client,<sp/>jack_port_id_t<sp/>port_id),<sp/>(client,<sp/>port_id));</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_engine_takeover_timebase,<sp/>(jack_client_t<sp/>*<sp/>client),<sp/>(client));</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_frames_since_cycle_start,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*<sp/>client),<sp/>(client));</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">DECL_FUNCTION(jack_time_t,<sp/>jack_get_time,<sp/>(),<sp/>());</highlight></codeline>
+<codeline lineno="229"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_time_to_frames,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client,<sp/>jack_time_t<sp/>time),<sp/>(client,<sp/>time));</highlight></codeline>
+<codeline lineno="230"><highlight class="normal">DECL_FUNCTION(jack_time_t,<sp/>jack_frames_to_time,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client,<sp/>jack_nframes_t<sp/>frames),<sp/>(client,<sp/>frames));</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_frame_time,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="232"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_last_frame_time,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/>jack_cpu_load,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">DECL_FUNCTION_NULL(jack_native_thread_t,<sp/>jack_client_thread_id,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="235"><highlight class="normal">DECL_VOID_FUNCTION(jack_set_error_function,<sp/>(print_function<sp/>fun),<sp/>(fun));</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">DECL_VOID_FUNCTION(jack_set_info_function,<sp/>(print_function<sp/>fun),<sp/>(fun));</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/>jack_get_max_delayed_usecs,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">,<sp/>jack_get_xrun_delayed_usecs,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="240"><highlight class="normal">DECL_VOID_FUNCTION(jack_reset_max_delayed_usecs,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_release_timebase,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="243"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_sync_callback,<sp/>(jack_client_t<sp/>*client,<sp/>JackSyncCallback<sp/>sync_callback,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>sync_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="244"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_sync_timeout,<sp/>(jack_client_t<sp/>*client,<sp/>jack_time_t<sp/>timeout),<sp/>(client,<sp/>timeout));</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_set_timebase_callback,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>conditional,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>JackTimebaseCallback<sp/>timebase_callback,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>conditional,<sp/>timebase_callback,<sp/>arg));</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_transport_locate,<sp/>(jack_client_t<sp/>*client,<sp/>jack_nframes_t<sp/>frame),<sp/>(client,<sp/>frame));</highlight></codeline>
+<codeline lineno="250"><highlight class="normal">DECL_FUNCTION(jack_transport_state_t,<sp/>jack_transport_query,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client,<sp/>jack_position_t<sp/>*pos),<sp/>(client,<sp/>pos));</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_get_current_transport_frame,<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="252"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_transport_reposition,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_position_t<sp/>*pos),<sp/>(client,<sp/>pos));</highlight></codeline>
+<codeline lineno="253"><highlight class="normal">DECL_VOID_FUNCTION(jack_transport_start,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">DECL_VOID_FUNCTION(jack_transport_stop,<sp/>(jack_client_t<sp/>*client),<sp/>(client));</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DECL_VOID_FUNCTION(jack_get_transport_info,<sp/>(jack_client_t<sp/>*client,<sp/>jack_transport_info_t<sp/>*tinfo),<sp/>(client,tinfo));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight><highlight class="comment">//<sp/>DECL_VOID_FUNCTION(jack_set_transport_info,<sp/>(jack_client_t<sp/>*client,<sp/>jack_transport_info_t<sp/>*tinfo),<sp/>(client,tinfo));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_real_time_priority,<sp/>(jack_client_t*<sp/>client),<sp/>(client));</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_max_real_time_priority,<sp/>(jack_client_t*<sp/>client),<sp/>(client));</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_acquire_real_time_scheduling,<sp/>(jack_native_thread_t<sp/>thread,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority),<sp/>(thread,<sp/>priority));</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_create_thread,<sp/>(jack_client_t*<sp/>client,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jack_native_thread_t<sp/>*thread,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>realtime,<sp/></highlight><highlight class="comment">//<sp/>boolean</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread_routine<sp/>routine,</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*arg),<sp/>(client,<sp/>thread,<sp/>priority,<sp/>realtime,<sp/>routine,<sp/>arg));</highlight></codeline>
+<codeline lineno="267"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_drop_real_time_scheduling,<sp/>(jack_native_thread_t<sp/>thread),<sp/>(thread));</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_stop_thread,<sp/>(jack_client_t*<sp/>client,<sp/>jack_native_thread_t<sp/>thread),<sp/>(client,<sp/>thread));</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_client_kill_thread,<sp/>(jack_client_t*<sp/>client,<sp/>jack_native_thread_t<sp/>thread),<sp/>(client,<sp/>thread));</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="comment">//WS<sp/>DECL_VOID_FUNCTION(jack_set_thread_creator,<sp/>(jack_thread_creator_t<sp/>jtc),<sp/>(jtc));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/>jack_get_internal_client_name,<sp/>(jack_client_t<sp/>*client,<sp/>jack_intclient_t<sp/>intclient),<sp/>(client,<sp/>intclient));</highlight></codeline>
+<codeline lineno="275"><highlight class="normal">DECL_FUNCTION(jack_intclient_t,<sp/>jack_internal_client_handle,<sp/>(jack_client_t<sp/>*client,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*client_name,<sp/>jack_status_t<sp/>*status),<sp/>(client,<sp/>client_name,<sp/>status));</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="277"><highlight class="comment">DECL_FUNCTION(jack_intclient_t,<sp/>jack_internal_client_load,<sp/>(jack_client_t<sp/>*client,</highlight></codeline>
+<codeline lineno="278"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>const<sp/>char<sp/>*client_name,</highlight></codeline>
+<codeline lineno="279"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jack_options_t<sp/>options,</highlight></codeline>
+<codeline lineno="280"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>jack_status_t<sp/>*status</highlight></codeline>
+<codeline lineno="281"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>,<sp/>...),<sp/>(client,<sp/>client_name,<sp/>options,<sp/>status,<sp/>...));</highlight></codeline>
+<codeline lineno="282"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal">DECL_FUNCTION(jack_status_t,<sp/>jack_internal_client_unload,<sp/>(jack_client_t<sp/>*client,<sp/>jack_intclient_t<sp/>intclient),<sp/>(client,<sp/>intclient));</highlight></codeline>
+<codeline lineno="284"><highlight class="normal">DECL_VOID_FUNCTION(jack_free,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr),<sp/>(ptr));</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MIDI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_midi_get_event_count,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer),<sp/>(port_buffer));</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_midi_event_get,<sp/>(jack_midi_event_t*<sp/>event,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer,<sp/>jack_nframes_t<sp/>event_index),<sp/>(event,<sp/>port_buffer,<sp/>event_index))<sp/>;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal">DECL_VOID_FUNCTION(jack_midi_clear_buffer,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer),<sp/>(port_buffer));</highlight></codeline>
+<codeline lineno="291"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">,<sp/>jack_midi_max_event_size,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer),<sp/>(port_buffer));</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">DECL_FUNCTION_NULL(jack_midi_data_t*,<sp/>jack_midi_event_reserve,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer,<sp/>jack_nframes_t<sp/>time,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_size),<sp/>(port_buffer,<sp/>time,<sp/>data_size));</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">DECL_FUNCTION(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>jack_midi_event_write,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer,<sp/>jack_nframes_t<sp/>time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>jack_midi_data_t*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>data_size),<sp/>(port_buffer,<sp/>time,<sp/>data,<sp/>data_size));</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">DECL_FUNCTION(jack_nframes_t,<sp/>jack_midi_get_lost_event_count,<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>port_buffer),<sp/>(port_buffer));</highlight></codeline>
+    </programlisting>
+    <location file="mscore/jackweakapi.cpp"/>
+  </compounddef>
+</doxygen>

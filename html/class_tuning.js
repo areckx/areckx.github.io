@@ -1,0 +1,27 @@
+var class_tuning =
+[
+    [ "Tuning", "class_tuning.html#a02fae50199cc274b770b2b612a9676bd", null ],
+    [ "getnotefreq", "class_tuning.html#a3e77daf75db04c0b8beb97238ed99658", null ],
+    [ "getoctavesize", "class_tuning.html#af95827f85145afca4814724c76fcd82f", null ],
+    [ "loadkbm", "class_tuning.html#a706dd43886a0c562ce4adce12c6e9a17", null ],
+    [ "loadscl", "class_tuning.html#acfd6231f2e4c29f5a0a884e68570f720", null ],
+    [ "aFreq", "class_tuning.html#a3ba2cf640bfcfd5425c24c3cab427f13", null ],
+    [ "aNote", "class_tuning.html#a2e00e9b6655db0b54f8d7c8dbeef1865", null ],
+    [ "comment", "class_tuning.html#a2e1bbf8bb37fa05258e3e4a0fd621cd4", null ],
+    [ "enabled", "class_tuning.html#acd94ee2f47b93e709eca41fedb42a973", null ],
+    [ "firstkey", "class_tuning.html#acf89154d6d77239ee7f59c872d0cee97", null ],
+    [ "globalfinedetune", "class_tuning.html#a0bad3bd74b54048ca4d6c83cf2dcd27d", null ],
+    [ "invertupdown", "class_tuning.html#a924d4094b91a484562c83875947da4c4", null ],
+    [ "invertupdowncenter", "class_tuning.html#ab337542072d837cc71186d20f38b1d70", null ],
+    [ "lastkey", "class_tuning.html#a886d49699b04376d235b79f5c0b3d536", null ],
+    [ "mapping", "class_tuning.html#aa34313d7f5a70c2ff25943f74992bed3", null ],
+    [ "mappingenabled", "class_tuning.html#a5beac847ba02998d5bc695b20a11a426", null ],
+    [ "mapsize", "class_tuning.html#a1c3088dc0c284e5f5fe2688a9caf4542", null ],
+    [ "middlenote", "class_tuning.html#a40d0eb97ed85a11c68b1259414c66879", null ],
+    [ "name", "class_tuning.html#aa53f667e6a108eb62d55868bf0758157", null ],
+    [ "scaleshift", "class_tuning.html#aca8a9fdc343f0958c1e9a93e75775f0f", null ],
+    [ "tuning", "class_tuning.html#aca03ff01ae3a013784c66e8f97f8109e", null ],
+    [ "type", "class_tuning.html#af6f7b70aec7a80370a1c1b4fc2089560", null ],
+    [ "x1", "class_tuning.html#af2082b98343f5b1d8c0f3e0e21091f2c", null ],
+    [ "x2", "class_tuning.html#a66868bb5d50bef1737930e79ea257829", null ]
+];

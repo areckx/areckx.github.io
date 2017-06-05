@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_midi_driver" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Ms::MidiDriver</compoundname>
+    <derivedcompoundref refid="class_ms_1_1_alsa_midi_driver" prot="public" virt="non-virtual">Ms::AlsaMidiDriver</derivedcompoundref>
+    <derivedcompoundref refid="class_ms_1_1_port_midi_driver" prot="public" virt="non-virtual">Ms::PortMidiDriver</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_midi_driver_1a2df3307198ae1e10a3363754c5b14f5b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_port" kindref="compound">Port</ref></type>
+        <definition>Port Ms::MidiDriver::midiInPort</definition>
+        <argsstring></argsstring>
+        <name>midiInPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="71" column="1" bodyfile="mscore/mididriver.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_midi_driver_1a6b763163f0b29dc502d96be2a14cad0f" prot="protected" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_ms_1_1_port" kindref="compound">Port</ref> &gt;</type>
+        <definition>QList&lt;Port&gt; Ms::MidiDriver::midiOutPorts</definition>
+        <argsstring></argsstring>
+        <name>midiOutPorts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="72" column="1" bodyfile="mscore/mididriver.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_midi_driver_1a9b3fe38be89b737da01649a0df451e90" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_seq" kindref="compound">Seq</ref> *</type>
+        <definition>Seq* Ms::MidiDriver::seq</definition>
+        <argsstring></argsstring>
+        <name>seq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="73" column="1" bodyfile="mscore/mididriver.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1a4430e34bb07cbcc8132f1eea7d6f724d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Ms::MidiDriver::MidiDriver</definition>
+        <argsstring>(Seq *s)</argsstring>
+        <name>MidiDriver</name>
+        <param>
+          <type><ref refid="class_ms_1_1_seq" kindref="compound">Seq</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="76" column="1" bodyfile="mscore/mididriver.h" bodystart="76" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1a96f4c481d4802dbf5d57472f9fe2ef43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual Ms::MidiDriver::~MidiDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~MidiDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="77" column="1" bodyfile="mscore/mididriver.h" bodystart="77" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1af1614804b78d0330a27b505ad9f423d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool Ms::MidiDriver::init</definition>
+        <argsstring>()=0</argsstring>
+        <name>init</name>
+        <reimplementedby refid="class_ms_1_1_port_midi_driver_1a81aaafdffeb5257ed96d62c46c8bfb0d">init</reimplementedby>
+        <reimplementedby refid="class_ms_1_1_alsa_midi_driver_1a0c84617006cd729fb338dbc9fa2ff231">init</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="78" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1a3b81bf9f67ecab52993e225e07888608" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Ms::MidiDriver::getInputPollFd</definition>
+        <argsstring>(struct pollfd **, int *n)=0</argsstring>
+        <name>getInputPollFd</name>
+        <reimplementedby refid="class_ms_1_1_port_midi_driver_1a52217dccbb75d1e3caef783c3517a0de">getInputPollFd</reimplementedby>
+        <reimplementedby refid="class_ms_1_1_alsa_midi_driver_1aa39fe3cfba79897ee5e88a204b555226">getInputPollFd</reimplementedby>
+        <param>
+          <type>struct pollfd **</type>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1a65e552f40916a077b278cf11a71335e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Ms::MidiDriver::getOutputPollFd</definition>
+        <argsstring>(struct pollfd **, int *n)=0</argsstring>
+        <name>getOutputPollFd</name>
+        <reimplementedby refid="class_ms_1_1_port_midi_driver_1a85a497c870dc6c5745e8d9b5338b3f4a">getOutputPollFd</reimplementedby>
+        <reimplementedby refid="class_ms_1_1_alsa_midi_driver_1ab8e4f4aab0f8e39d9b1dc40030ae2c8e">getOutputPollFd</reimplementedby>
+        <param>
+          <type>struct pollfd **</type>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="80" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1a4c2d20f48384a060b40486ed39b3cee7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Ms::MidiDriver::read</definition>
+        <argsstring>()=0</argsstring>
+        <name>read</name>
+        <reimplementedby refid="class_ms_1_1_port_midi_driver_1a012fb5eb4d200a0606dc104204c9f1bd">read</reimplementedby>
+        <reimplementedby refid="class_ms_1_1_alsa_midi_driver_1a6f0a9fa8c0557f49fb535a3219407245">read</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_midi_driver_1ac2c112933879e9e74c03456b2c3b2b1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Ms::MidiDriver::write</definition>
+        <argsstring>(const Event &amp;)=0</argsstring>
+        <name>write</name>
+        <reimplementedby refid="class_ms_1_1_port_midi_driver_1aed1df5c9b058a4963ef3bb90b0524b80">write</reimplementedby>
+        <reimplementedby refid="class_ms_1_1_alsa_midi_driver_1a36a64c983e8af8f905207860c980836e">write</reimplementedby>
+        <param>
+          <type>const <ref refid="class_ms_1_1_event" kindref="compound">Event</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/mididriver.h" line="82" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10468">
+        <label>Ms::AlsaMidiDriver</label>
+        <link refid="class_ms_1_1_alsa_midi_driver"/>
+        <childnode refid="10467" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10469">
+        <label>Ms::PortMidiDriver</label>
+        <link refid="class_ms_1_1_port_midi_driver"/>
+        <childnode refid="10467" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10467">
+        <label>Ms::MidiDriver</label>
+        <link refid="class_ms_1_1_midi_driver"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10474">
+        <label>Ms::Sequencer</label>
+        <link refid="class_ms_1_1_sequencer"/>
+      </node>
+      <node id="10473">
+        <label>QObject</label>
+      </node>
+      <node id="10472">
+        <label>Ms::Seq</label>
+        <link refid="class_ms_1_1_seq"/>
+        <childnode refid="10473" relation="public-inheritance">
+        </childnode>
+        <childnode refid="10474" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10470">
+        <label>Ms::MidiDriver</label>
+        <link refid="class_ms_1_1_midi_driver"/>
+        <childnode refid="10471" relation="usage">
+          <edgelabel>midiInPort</edgelabel>
+        </childnode>
+        <childnode refid="10472" relation="usage">
+          <edgelabel>seq</edgelabel>
+        </childnode>
+      </node>
+      <node id="10471">
+        <label>Ms::Port</label>
+        <link refid="class_ms_1_1_port"/>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/mididriver.h" line="69" column="1" bodyfile="mscore/mididriver.h" bodystart="69" bodyend="83"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_midi_driver_1a3b81bf9f67ecab52993e225e07888608" prot="public" virt="pure-virtual"><scope>Ms::MidiDriver</scope><name>getInputPollFd</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a65e552f40916a077b278cf11a71335e5" prot="public" virt="pure-virtual"><scope>Ms::MidiDriver</scope><name>getOutputPollFd</name></member>
+      <member refid="class_ms_1_1_midi_driver_1af1614804b78d0330a27b505ad9f423d9" prot="public" virt="pure-virtual"><scope>Ms::MidiDriver</scope><name>init</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a4430e34bb07cbcc8132f1eea7d6f724d" prot="public" virt="non-virtual"><scope>Ms::MidiDriver</scope><name>MidiDriver</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a2df3307198ae1e10a3363754c5b14f5b" prot="protected" virt="non-virtual"><scope>Ms::MidiDriver</scope><name>midiInPort</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a6b763163f0b29dc502d96be2a14cad0f" prot="protected" virt="non-virtual"><scope>Ms::MidiDriver</scope><name>midiOutPorts</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a4c2d20f48384a060b40486ed39b3cee7" prot="public" virt="pure-virtual"><scope>Ms::MidiDriver</scope><name>read</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a9b3fe38be89b737da01649a0df451e90" prot="protected" virt="non-virtual"><scope>Ms::MidiDriver</scope><name>seq</name></member>
+      <member refid="class_ms_1_1_midi_driver_1ac2c112933879e9e74c03456b2c3b2b1d" prot="public" virt="pure-virtual"><scope>Ms::MidiDriver</scope><name>write</name></member>
+      <member refid="class_ms_1_1_midi_driver_1a96f4c481d4802dbf5d57472f9fe2ef43" prot="public" virt="virtual"><scope>Ms::MidiDriver</scope><name>~MidiDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

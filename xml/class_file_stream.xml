@@ -1,0 +1,583 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_file_stream" kind="class" language="C++" prot="public">
+    <compoundname>FileStream</compoundname>
+    <basecompoundref refid="class_base_stream" prot="public" virt="non-virtual">BaseStream</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_file_stream_1a2a1950bbb3eeec688a2a3eea46dc1c0a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_goo_file" kindref="compound">GooFile</ref> *</type>
+        <definition>GooFile* FileStream::file</definition>
+        <argsstring></argsstring>
+        <name>file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="497" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1a46007d11b68cdd825f496d1d1e9ef116" prot="private" static="no" mutable="no">
+        <type>Goffset</type>
+        <definition>Goffset FileStream::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="498" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="498" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1a2eb4a764a0b3edf809677505ef1e03aa" prot="private" static="no" mutable="no">
+        <type>Goffset</type>
+        <definition>Goffset FileStream::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="499" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="499" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1a29a8abca96c4d71d0c94df7369c2b768" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool FileStream::limited</definition>
+        <argsstring></argsstring>
+        <name>limited</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="500" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="500" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1aff8d2819c30fb24acca0968051810a4e" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char FileStream::buf[fileStreamBufSize]</definition>
+        <argsstring>[fileStreamBufSize]</argsstring>
+        <name>buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="501" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="501" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1afd18cac1541cbdd615f8ae93678608c6" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* FileStream::bufPtr</definition>
+        <argsstring></argsstring>
+        <name>bufPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="502" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="502" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1a2efb6e2a75af74b2120ace680d1d3422" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* FileStream::bufEnd</definition>
+        <argsstring></argsstring>
+        <name>bufEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="503" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="503" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1af491c0d80836be883d3a8257560a305c" prot="private" static="no" mutable="no">
+        <type>Goffset</type>
+        <definition>Goffset FileStream::bufPos</definition>
+        <argsstring></argsstring>
+        <name>bufPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="504" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="504" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1ad30e1b011f43c4f461dd503ac71a5be8" prot="private" static="no" mutable="no">
+        <type>Goffset</type>
+        <definition>Goffset FileStream::savePos</definition>
+        <argsstring></argsstring>
+        <name>savePos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="505" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="505" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_stream_1ac922f44768df04c73c1cd78734e74f23" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool FileStream::saved</definition>
+        <argsstring></argsstring>
+        <name>saved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="506" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="506" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_file_stream_1aca57f91a9c6c3d59f48eab6da15c4211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FileStream::FileStream</definition>
+        <argsstring>(GooFile *fileA, Goffset startA, GBool limitedA, Goffset lengthA, Object *dictA)</argsstring>
+        <name>FileStream</name>
+        <param>
+          <type><ref refid="class_goo_file" kindref="compound">GooFile</ref> *</type>
+          <declname>fileA</declname>
+        </param>
+        <param>
+          <type>Goffset</type>
+          <declname>startA</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>limitedA</declname>
+        </param>
+        <param>
+          <type>Goffset</type>
+          <declname>lengthA</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>dictA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="448" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="773" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a3c410d9531313aa1fc924bbd77cd4781" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>FileStream::~FileStream</definition>
+        <argsstring>()</argsstring>
+        <name>~FileStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="450" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="786" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1ab8cbc3c12fba2ec2ba276590d027edec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_base_stream" kindref="compound">BaseStream</ref> *</type>
+        <definition>BaseStream * FileStream::copy</definition>
+        <argsstring>()</argsstring>
+        <name>copy</name>
+        <reimplements refid="class_base_stream_1a1e486654d0bc40e4e2834e8498213cd6">copy</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="451" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="790" bodyend="792"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a268a264b908d8944c092ffb9718726dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+        <definition>Stream * FileStream::makeSubStream</definition>
+        <argsstring>(Goffset startA, GBool limitedA, Goffset lengthA, Object *dictA)</argsstring>
+        <name>makeSubStream</name>
+        <reimplements refid="class_base_stream_1a38fd4aa8d528d2132380401dd3ff4c2e">makeSubStream</reimplements>
+        <param>
+          <type>Goffset</type>
+          <declname>startA</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>limitedA</declname>
+        </param>
+        <param>
+          <type>Goffset</type>
+          <declname>lengthA</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>dictA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="452" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="794" bodyend="797"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a3ee306480e8fe5d77add46d2d78c5646" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>StreamKind</type>
+        <definition>virtual StreamKind FileStream::getKind</definition>
+        <argsstring>()</argsstring>
+        <name>getKind</name>
+        <reimplements refid="class_stream_1a84aecd570b480015e251c89a2afcfce5">getKind</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="454" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="454" bodyend="454"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1ab46973e54729961ed76240e05d58315d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FileStream::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <reimplements refid="class_stream_1a8246d1b555eba25b9f95815386b5489b">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="455" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="799" bodyend="805"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1aabe6773f78869890ef150f7cdb1689b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FileStream::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <reimplements refid="class_stream_1af5c69562d890aa81c8c8e24280bfa9e0">close</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="456" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="807" bodyend="812"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1afa432e2fe6bccc209e5cf438589a6e5f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FileStream::getChar</definition>
+        <argsstring>()</argsstring>
+        <name>getChar</name>
+        <reimplements refid="class_stream_1ad8a0c56244d3d2077c56a8222ee39250">getChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="457" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="457" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a4d4eef3f83642fc433e399de14709b58" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FileStream::lookChar</definition>
+        <argsstring>()</argsstring>
+        <name>lookChar</name>
+        <reimplements refid="class_stream_1a7b5b42a77e3bb0cf12cb5c9e723dceac">lookChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="459" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="459" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1aa1dcca854cd2adf0806f65732dfd3df5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Goffset</type>
+        <definition>virtual Goffset FileStream::getPos</definition>
+        <argsstring>()</argsstring>
+        <name>getPos</name>
+        <reimplements refid="class_stream_1a4bc7ca8d98ab1734a3f7bd3cc586a4f5">getPos</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="461" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="461" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a5391ebf82d4dd843b6d3f6806146bef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FileStream::setPos</definition>
+        <argsstring>(Goffset pos, int dir=0)</argsstring>
+        <name>setPos</name>
+        <reimplements refid="class_base_stream_1acd433a2780d814a3bc1947e2bf75dd5e">setPos</reimplements>
+        <param>
+          <type>Goffset</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="462" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="839" bodyend="852"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1ac401ba3eb1bb31bc81a3a757c2480287" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Goffset</type>
+        <definition>virtual Goffset FileStream::getStart</definition>
+        <argsstring>()</argsstring>
+        <name>getStart</name>
+        <reimplements refid="class_base_stream_1a6a7c150f42971ff329656fc98e68b69e">getStart</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="463" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="463" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a67fac8d9b3aad3f3b3a393802ace759b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FileStream::moveStart</definition>
+        <argsstring>(Goffset delta)</argsstring>
+        <name>moveStart</name>
+        <reimplements refid="class_base_stream_1a72298a03e84007d4381fd14dc7726262">moveStart</reimplements>
+        <param>
+          <type>Goffset</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="464" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="854" bodyend="858"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a443f357d96fb08e6093542dbf852879d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FileStream::getUnfilteredChar</definition>
+        <argsstring>()</argsstring>
+        <name>getUnfilteredChar</name>
+        <reimplements refid="class_stream_1ae9d841faa73a7030f72cbe4f894e9d39">getUnfilteredChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="466" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="466" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a29a7d86907c4fcd083bd62416e21c666" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void FileStream::unfilteredReset</definition>
+        <argsstring>()</argsstring>
+        <name>unfilteredReset</name>
+        <reimplements refid="class_stream_1a6c2939945dd2a9b633d3105bc24aa544">unfilteredReset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="467" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="467" bodyend="467"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_file_stream_1a768c7b6cbe503ed412aec6bde79630a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool FileStream::fillBuf</definition>
+        <argsstring>()</argsstring>
+        <name>fillBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="471" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="814" bodyend="837"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1ac9669b3ee658cfde4cc079034e4c4bb0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool FileStream::hasGetChars</definition>
+        <argsstring>()</argsstring>
+        <name>hasGetChars</name>
+        <reimplements refid="class_stream_1aeb6b25e15e927808e6366e88b8337284">hasGetChars</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="473" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="473" bodyend="473"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_stream_1a8a3262f34dd10fb1e55a9dfd29aab9df" prot="private" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FileStream::getChars</definition>
+        <argsstring>(int nChars, Guchar *buffer)</argsstring>
+        <name>getChars</name>
+        <reimplements refid="class_stream_1a2fedceb487932f262f478dd8e02628df">getChars</reimplements>
+        <param>
+          <type>int</type>
+          <declname>nChars</declname>
+        </param>
+        <param>
+          <type>Guchar *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="474" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="474" bodyend="494"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4810">
+        <label>BaseStream</label>
+        <link refid="class_base_stream"/>
+        <childnode refid="4811" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4809">
+        <label>FileStream</label>
+        <link refid="class_file_stream"/>
+        <childnode refid="4810" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4811">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4813">
+        <label>BaseStream</label>
+        <link refid="class_base_stream"/>
+        <childnode refid="4814" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4815" relation="usage">
+          <edgelabel>dict</edgelabel>
+        </childnode>
+      </node>
+      <node id="4818">
+        <label>Array</label>
+        <link refid="class_array"/>
+      </node>
+      <node id="4816">
+        <label>GooString</label>
+        <link refid="class_goo_string"/>
+      </node>
+      <node id="4812">
+        <label>FileStream</label>
+        <link refid="class_file_stream"/>
+        <childnode refid="4813" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4817">
+        <label>Dict</label>
+        <link refid="class_dict"/>
+      </node>
+      <node id="4815">
+        <label>Object</label>
+        <link refid="class_object"/>
+        <childnode refid="4816" relation="usage">
+          <edgelabel>string</edgelabel>
+        </childnode>
+        <childnode refid="4817" relation="usage">
+          <edgelabel>dict</edgelabel>
+        </childnode>
+        <childnode refid="4818" relation="usage">
+          <edgelabel>array</edgelabel>
+        </childnode>
+        <childnode refid="4819" relation="usage">
+          <edgelabel>ref</edgelabel>
+        </childnode>
+        <childnode refid="4814" relation="usage">
+          <edgelabel>stream</edgelabel>
+        </childnode>
+      </node>
+      <node id="4819">
+        <label>Ref</label>
+        <link refid="struct_ref"/>
+      </node>
+      <node id="4814">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/poppler/poppler/Stream.h" line="445" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="445" bodyend="507"/>
+    <listofallmembers>
+      <member refid="class_stream_1ac931adcb668da604632428101cdef2b1" prot="public" virt="non-virtual"><scope>FileStream</scope><name>addFilters</name></member>
+      <member refid="class_base_stream_1a6cf361381d246846eac44d649a630b09" prot="public" virt="non-virtual"><scope>FileStream</scope><name>BaseStream</name></member>
+      <member refid="class_file_stream_1aff8d2819c30fb24acca0968051810a4e" prot="private" virt="non-virtual"><scope>FileStream</scope><name>buf</name></member>
+      <member refid="class_file_stream_1a2efb6e2a75af74b2120ace680d1d3422" prot="private" virt="non-virtual"><scope>FileStream</scope><name>bufEnd</name></member>
+      <member refid="class_file_stream_1af491c0d80836be883d3a8257560a305c" prot="private" virt="non-virtual"><scope>FileStream</scope><name>bufPos</name></member>
+      <member refid="class_file_stream_1afd18cac1541cbdd615f8ae93678608c6" prot="private" virt="non-virtual"><scope>FileStream</scope><name>bufPtr</name></member>
+      <member refid="class_file_stream_1aabe6773f78869890ef150f7cdb1689b4" prot="public" virt="virtual"><scope>FileStream</scope><name>close</name></member>
+      <member refid="class_file_stream_1ab8cbc3c12fba2ec2ba276590d027edec" prot="public" virt="virtual"><scope>FileStream</scope><name>copy</name></member>
+      <member refid="class_stream_1aa3656cdd123c716adbd9526523439091" prot="public" virt="non-virtual"><scope>FileStream</scope><name>decRef</name></member>
+      <member refid="class_base_stream_1a5581b68734d93b915ffc6e763f003fff" prot="protected" virt="non-virtual"><scope>FileStream</scope><name>dict</name></member>
+      <member refid="class_stream_1ace312cf6e38c9420c3af18c707ecc38b" prot="public" virt="non-virtual"><scope>FileStream</scope><name>doGetChars</name></member>
+      <member refid="class_file_stream_1a2a1950bbb3eeec688a2a3eea46dc1c0a" prot="private" virt="non-virtual"><scope>FileStream</scope><name>file</name></member>
+      <member refid="class_file_stream_1aca57f91a9c6c3d59f48eab6da15c4211" prot="public" virt="non-virtual"><scope>FileStream</scope><name>FileStream</name></member>
+      <member refid="class_file_stream_1a768c7b6cbe503ed412aec6bde79630a2" prot="private" virt="non-virtual"><scope>FileStream</scope><name>fillBuf</name></member>
+      <member refid="class_stream_1a3ca4d7a5de26df523732a8a999afbfc3" prot="public" virt="non-virtual"><scope>FileStream</scope><name>fillGooString</name></member>
+      <member refid="class_base_stream_1a10ee62b35abb0236d33e97e46f531906" prot="public" virt="virtual"><scope>FileStream</scope><name>getBaseStream</name></member>
+      <member refid="class_file_stream_1afa432e2fe6bccc209e5cf438589a6e5f" prot="public" virt="virtual"><scope>FileStream</scope><name>getChar</name></member>
+      <member refid="class_file_stream_1a8a3262f34dd10fb1e55a9dfd29aab9df" prot="private" virt="virtual"><scope>FileStream</scope><name>getChars</name></member>
+      <member refid="class_base_stream_1ad6812d4617c0b8dc274a94a42cb440f0" prot="public" virt="virtual"><scope>FileStream</scope><name>getDict</name></member>
+      <member refid="class_base_stream_1a436486387c8fda3bf0f65d71c05897cb" prot="public" virt="virtual"><scope>FileStream</scope><name>getFileName</name></member>
+      <member refid="class_stream_1a49852d813248278832bb626d5e7768bf" prot="public" virt="virtual"><scope>FileStream</scope><name>getImageParams</name></member>
+      <member refid="class_file_stream_1a3ee306480e8fe5d77add46d2d78c5646" prot="public" virt="virtual"><scope>FileStream</scope><name>getKind</name></member>
+      <member refid="class_base_stream_1a023ee51fad60dc59e54bd38014be756a" prot="public" virt="virtual"><scope>FileStream</scope><name>getLength</name></member>
+      <member refid="class_stream_1ac8cb7b669cda35db3b351630beb3bcda" prot="public" virt="virtual"><scope>FileStream</scope><name>getLine</name></member>
+      <member refid="class_stream_1abb26dd02b9795d118d408298760d9719" prot="public" virt="virtual"><scope>FileStream</scope><name>getNextStream</name></member>
+      <member refid="class_file_stream_1aa1dcca854cd2adf0806f65732dfd3df5" prot="public" virt="virtual"><scope>FileStream</scope><name>getPos</name></member>
+      <member refid="class_stream_1a260a07ca4a0a1f4853881a1a5bb27576" prot="public" virt="virtual"><scope>FileStream</scope><name>getPSFilter</name></member>
+      <member refid="class_stream_1a97b7674e633860ecbb09cc8cf15a1ffa" prot="public" virt="virtual"><scope>FileStream</scope><name>getRawChar</name></member>
+      <member refid="class_stream_1a1362b13c09539aafc21077a26f20b341" prot="public" virt="virtual"><scope>FileStream</scope><name>getRawChars</name></member>
+      <member refid="class_file_stream_1ac401ba3eb1bb31bc81a3a757c2480287" prot="public" virt="virtual"><scope>FileStream</scope><name>getStart</name></member>
+      <member refid="class_base_stream_1a7e7da81db581bacdc9d078a8a6d1aeb2" prot="public" virt="virtual"><scope>FileStream</scope><name>getUndecodedStream</name></member>
+      <member refid="class_file_stream_1a443f357d96fb08e6093542dbf852879d" prot="public" virt="virtual"><scope>FileStream</scope><name>getUnfilteredChar</name></member>
+      <member refid="class_file_stream_1ac9669b3ee658cfde4cc079034e4c4bb0" prot="private" virt="virtual"><scope>FileStream</scope><name>hasGetChars</name></member>
+      <member refid="class_stream_1a72ded73f74dbc96b4961c3e1675431ff" prot="public" virt="non-virtual"><scope>FileStream</scope><name>incRef</name></member>
+      <member refid="class_base_stream_1a8d4b5d32270889010e6dcba2e0791e8c" prot="public" virt="virtual"><scope>FileStream</scope><name>isBinary</name></member>
+      <member refid="class_stream_1aa543edd0c6926c7f5272341198a61352" prot="public" virt="virtual"><scope>FileStream</scope><name>isEncoder</name></member>
+      <member refid="class_base_stream_1a27990e96583f15766a493c2c1bf0edee" prot="protected" virt="non-virtual"><scope>FileStream</scope><name>length</name></member>
+      <member refid="class_file_stream_1a29a8abca96c4d71d0c94df7369c2b768" prot="private" virt="non-virtual"><scope>FileStream</scope><name>limited</name></member>
+      <member refid="class_file_stream_1a4d4eef3f83642fc433e399de14709b58" prot="public" virt="virtual"><scope>FileStream</scope><name>lookChar</name></member>
+      <member refid="class_file_stream_1a268a264b908d8944c092ffb9718726dc" prot="public" virt="virtual"><scope>FileStream</scope><name>makeSubStream</name></member>
+      <member refid="class_file_stream_1a67fac8d9b3aad3f3b3a393802ace759b" prot="public" virt="virtual"><scope>FileStream</scope><name>moveStart</name></member>
+      <member refid="class_file_stream_1a46007d11b68cdd825f496d1d1e9ef116" prot="private" virt="non-virtual"><scope>FileStream</scope><name>offset</name></member>
+      <member refid="class_file_stream_1ab46973e54729961ed76240e05d58315d" prot="public" virt="virtual"><scope>FileStream</scope><name>reset</name></member>
+      <member refid="class_file_stream_1ac922f44768df04c73c1cd78734e74f23" prot="private" virt="non-virtual"><scope>FileStream</scope><name>saved</name></member>
+      <member refid="class_file_stream_1ad30e1b011f43c4f461dd503ac71a5be8" prot="private" virt="non-virtual"><scope>FileStream</scope><name>savePos</name></member>
+      <member refid="class_file_stream_1a5391ebf82d4dd843b6d3f6806146bef9" prot="public" virt="virtual"><scope>FileStream</scope><name>setPos</name></member>
+      <member refid="class_file_stream_1a2eb4a764a0b3edf809677505ef1e03aa" prot="private" virt="non-virtual"><scope>FileStream</scope><name>start</name></member>
+      <member refid="class_stream_1a8c3f05bd00361ec92627fa41f330a39b" prot="public" virt="non-virtual"><scope>FileStream</scope><name>Stream</name></member>
+      <member refid="class_stream_1a0868030abb4d42d49bddf6b9170802b0" prot="public" virt="non-virtual"><scope>FileStream</scope><name>toUnsignedChars</name></member>
+      <member refid="class_file_stream_1a29a7d86907c4fcd083bd62416e21c666" prot="public" virt="virtual"><scope>FileStream</scope><name>unfilteredReset</name></member>
+      <member refid="class_base_stream_1ab6f7299ce32fe8d47000b91a584e4a18" prot="public" virt="virtual"><scope>FileStream</scope><name>~BaseStream</name></member>
+      <member refid="class_file_stream_1a3c410d9531313aa1fc924bbd77cd4781" prot="public" virt="virtual"><scope>FileStream</scope><name>~FileStream</name></member>
+      <member refid="class_stream_1a6dc4517a9e6a87abb662fcd14c2ea969" prot="public" virt="virtual"><scope>FileStream</scope><name>~Stream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

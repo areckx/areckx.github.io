@@ -1,0 +1,86 @@
+.TH "Ms::InspectorBase" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::InspectorBase
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QWidget\&.
+.PP
+Inherited by \fBMs::InspectorBracket\fP, \fBMs::InspectorBreak\fP, \fBMs::InspectorElementBase\fP, \fBMs::InspectorEmpty\fP, \fBMs::InspectorGroupElement\fP, \fBMs::InspectorHBox\fP, \fBMs::InspectorLasso\fP, \fBMs::InspectorSpacer\fP, \fBMs::InspectorStaffTypeChange\fP, \fBMs::InspectorTBox\fP, and \fBMs::InspectorVBox\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInspectorBase\fP (QWidget *parent)"
+.br
+.ti -1c
+.RI "virtual void \fBsetElement\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBpostInit\fP ()"
+.br
+.ti -1c
+.RI "QWidget * \fBaddWidget\fP ()"
+.br
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBvalueChanged\fP (int idx, bool reset)"
+.br
+.ti -1c
+.RI "virtual void \fBvalueChanged\fP (int idx)"
+.br
+.ti -1c
+.RI "void \fBresetClicked\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetStyleClicked\fP (int)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetValue\fP (const \fBInspectorItem\fP &, QVariant)"
+.br
+.ti -1c
+.RI "QVariant \fBgetValue\fP (const \fBInspectorItem\fP &) const"
+.br
+.ti -1c
+.RI "bool \fBisDefault\fP (const \fBInspectorItem\fP &)"
+.br
+.ti -1c
+.RI "void \fBmapSignals\fP (const std::vector< \fBInspectorItem\fP > &il=std::vector< \fBInspectorItem\fP >(), const std::vector< \fBInspectorPanel\fP > &pl=std::vector< \fBInspectorPanel\fP >())"
+.br
+.ti -1c
+.RI "void \fBsetupLineStyle\fP (QComboBox *)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBInspectorItem\fP > \fBiList\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBInspectorPanel\fP > \fBpList\fP"
+.br
+.ti -1c
+.RI "QVBoxLayout * \fB_layout\fP"
+.br
+.ti -1c
+.RI "\fBInspector\fP * \fBinspector\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 49 of file inspectorBase\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

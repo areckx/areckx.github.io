@@ -1,0 +1,104 @@
+\hypertarget{class_poppler_1_1_font_iterator}{}\section{Poppler\+:\+:Font\+Iterator Class Reference}
+\label{class_poppler_1_1_font_iterator}\index{Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}}
+
+
+{\ttfamily \#include $<$poppler-\/qt5.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poppler_1_1_font_iterator_a7496bc5fe5e6b15b213ac8028d8c4ca3}{$\sim$\+Font\+Iterator} ()
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_font_info}{Font\+Info} $>$ \hyperlink{class_poppler_1_1_font_iterator_ab33e290dff2467cda4c9ce87a6c5398e}{next} ()
+\item 
+bool \hyperlink{class_poppler_1_1_font_iterator_a7a3dde96c97c99d1997429e85a4d8451}{has\+Next} () const
+\item 
+int \hyperlink{class_poppler_1_1_font_iterator_a4a4284eb806e31930585e9550e31a41b}{current\+Page} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_a883538034e58fc5c0de7d4e4cab3cef7}\label{class_poppler_1_1_font_iterator_a883538034e58fc5c0de7d4e4cab3cef7}} 
+class {\bfseries Document}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_a5f30d346de2175fe7a14e3faac37e209}\label{class_poppler_1_1_font_iterator_a5f30d346de2175fe7a14e3faac37e209}} 
+class {\bfseries Document\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Iterator for reading the fonts in a document.
+
+\hyperlink{class_poppler_1_1_font_iterator}{Font\+Iterator} provides a Java-\/style iterator for reading the fonts in a document.
+
+You can use it in the following way\+: 
+\begin{DoxyCode}
+\hyperlink{class_poppler_1_1_font_iterator}{Poppler::FontIterator}* it = doc->newFontIterator();
+\textcolor{keywordflow}{while} (it->\hyperlink{class_poppler_1_1_font_iterator_a7a3dde96c97c99d1997429e85a4d8451}{hasNext}()) \{
+  QList<Poppler::FontInfo> fonts = it->\hyperlink{class_poppler_1_1_font_iterator_ab33e290dff2467cda4c9ce87a6c5398e}{next}();
+  \textcolor{comment}{// do something with the fonts}
+\}
+\textcolor{comment}{// after doing the job, the iterator must be freed}
+\textcolor{keyword}{delete} it;
+\end{DoxyCode}
+
+
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 276 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_a7496bc5fe5e6b15b213ac8028d8c4ca3}\label{class_poppler_1_1_font_iterator_a7496bc5fe5e6b15b213ac8028d8c4ca3}} 
+\index{Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}!````~Font\+Iterator@{$\sim$\+Font\+Iterator}}
+\index{````~Font\+Iterator@{$\sim$\+Font\+Iterator}!Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}}
+\subsubsection{\texorpdfstring{$\sim$\+Font\+Iterator()}{~FontIterator()}}
+{\footnotesize\ttfamily Poppler\+::\+Font\+Iterator\+::$\sim$\+Font\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+Definition at line 119 of file poppler-\/fontinfo.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_a4a4284eb806e31930585e9550e31a41b}\label{class_poppler_1_1_font_iterator_a4a4284eb806e31930585e9550e31a41b}} 
+\index{Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}!current\+Page@{current\+Page}}
+\index{current\+Page@{current\+Page}!Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}}
+\subsubsection{\texorpdfstring{current\+Page()}{currentPage()}}
+{\footnotesize\ttfamily int Poppler\+::\+Font\+Iterator\+::current\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current page where the iterator is. 
+
+Definition at line 145 of file poppler-\/fontinfo.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_a7a3dde96c97c99d1997429e85a4d8451}\label{class_poppler_1_1_font_iterator_a7a3dde96c97c99d1997429e85a4d8451}} 
+\index{Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}!has\+Next@{has\+Next}}
+\index{has\+Next@{has\+Next}!Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}}
+\subsubsection{\texorpdfstring{has\+Next()}{hasNext()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Font\+Iterator\+::has\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Checks whether there is at least one more page to iterate, ie returns false when the iterator is beyond the last page. 
+
+Definition at line 140 of file poppler-\/fontinfo.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_font_iterator_ab33e290dff2467cda4c9ce87a6c5398e}\label{class_poppler_1_1_font_iterator_ab33e290dff2467cda4c9ce87a6c5398e}} 
+\index{Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}!next@{next}}
+\index{next@{next}!Poppler\+::\+Font\+Iterator@{Poppler\+::\+Font\+Iterator}}
+\subsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_font_info}{Font\+Info} $>$ Poppler\+::\+Font\+Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the fonts of the current page and then advances the iterator to the next page. 
+
+Definition at line 124 of file poppler-\/fontinfo.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/qt5.\+h\item 
+thirdparty/poppler/qt5/poppler-\/fontinfo.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,22 @@
+.TH "QtLockedFile" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QtLockedFile \- The \fBQtLockedFile\fP class extends QFile with advisory locking functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SH "Detailed Description"
+.PP 
+The \fBQtLockedFile\fP class extends QFile with advisory locking functions\&. 
+
+A file may be locked in read or write mode\&. Multiple instances of \fI\fBQtLockedFile\fP\fP, created in multiple processes running on the same machine, may have a file locked in read mode\&. Exactly one instance may have it locked in write mode\&. A read and a write lock cannot exist simultaneously on the same file\&.
+.PP
+The file locks are advisory\&. This means that nothing prevents another process from manipulating a locked file using QFile or file system functions offered by the OS\&. Serialization is only guaranteed if all processes that access the file use QLockedFile\&. Also, while holding a lock on a file, a process must not open the same file again (through any API), or locks can be unexpectedly lost\&.
+.PP
+The lock provided by an instance of \fI\fBQtLockedFile\fP\fP is released whenever the program terminates\&. This is true even when the program crashes and no destructors are called\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

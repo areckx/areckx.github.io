@@ -1,0 +1,86 @@
+.TH "Ms::MTrack" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MTrack
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMTrack\fP (const \fBMTrack\fP &other)"
+.br
+.ti -1c
+.RI "\fBMTrack\fP & \fBoperator=\fP (\fBMTrack\fP other)"
+.br
+.ti -1c
+.RI "void \fBcreateNotes\fP (const \fBReducedFraction\fP &lastTick)"
+.br
+.ti -1c
+.RI "void \fBprocessPendingNotes\fP (QList< \fBMidiChord\fP > &midiChords, int voice, const \fBReducedFraction\fP &startChordTickFrac, const \fBReducedFraction\fP &nextChordTick)"
+.br
+.ti -1c
+.RI "void \fBprocessMeta\fP (int tick, const \fBMidiEvent\fP &mm)"
+.br
+.ti -1c
+.RI "void \fBfillGapWithRests\fP (\fBScore\fP *score, int voice, const \fBReducedFraction\fP &startChordTickFrac, const \fBReducedFraction\fP &restLength, int track)"
+.br
+.ti -1c
+.RI "QList< std::pair< \fBReducedFraction\fP, \fBTDuration\fP > > \fBtoDurationList\fP (const \fBMeasure\fP *measure, int voice, const \fBReducedFraction\fP &startTick, const \fBReducedFraction\fP &len, Meter::DurationType durationType)"
+.br
+.ti -1c
+.RI "void \fBcreateKeys\fP (Key defaultKey, const \fBMs::KeyList\fP &allKeyList)"
+.br
+.ti -1c
+.RI "void \fBupdateTupletsFromChords\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBprogram\fP"
+.br
+.ti -1c
+.RI "\fBStaff\fP * \fBstaff\fP"
+.br
+.ti -1c
+.RI "const \fBMidiTrack\fP * \fBmtrack\fP"
+.br
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.ti -1c
+.RI "bool \fBhasKey\fP"
+.br
+.ti -1c
+.RI "int \fBindexOfOperation\fP"
+.br
+.ti -1c
+.RI "int \fBdivision\fP"
+.br
+.ti -1c
+.RI "bool \fBisDivisionInTps\fP"
+.br
+.ti -1c
+.RI "bool \fBhadInitialNotes\fP"
+.br
+.ti -1c
+.RI "std::multimap< \fBReducedFraction\fP, int > \fBvolumes\fP"
+.br
+.ti -1c
+.RI "std::multimap< \fBReducedFraction\fP, \fBMidiChord\fP > \fBchords\fP"
+.br
+.ti -1c
+.RI "std::multimap< \fBReducedFraction\fP, \fBMidiTuplet::TupletData\fP > \fBtuplets\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 70 of file importmidi_inner\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

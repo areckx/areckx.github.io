@@ -1,0 +1,195 @@
+\hypertarget{class_stateful_brush}{}\section{Stateful\+Brush Class Reference}
+\label{class_stateful_brush}\index{Stateful\+Brush@{Stateful\+Brush}}
+
+
+{\ttfamily \#include $<$colorscheme.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_stateful_brush_a36ff921f6bd10f7bc4220d5975263bc4}{Stateful\+Brush} ()
+\item 
+\hyperlink{class_stateful_brush_ab2d1bb4316d486ec896f4cad2ae001f2}{Stateful\+Brush} (\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}, \hyperlink{class_color_scheme_ab0f331e829838e82757088db8ce32ab4}{Color\+Scheme\+::\+Foreground\+Role})
+\item 
+\hyperlink{class_stateful_brush_a37722e1db380bec60352a6088cb1aa5b}{Stateful\+Brush} (\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}, \hyperlink{class_color_scheme_a70715e73df1fb0f140797633f8043a8c}{Color\+Scheme\+::\+Background\+Role})
+\item 
+\hyperlink{class_stateful_brush_a40d7f76bea78e8e48685f030fdbc6c0c}{Stateful\+Brush} (\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}, \hyperlink{class_color_scheme_a4ad022af301e30791c6c248e1fc656cf}{Color\+Scheme\+::\+Decoration\+Role})
+\item 
+\hyperlink{class_stateful_brush_aba6fe316f65f6bc26a630374e8bffea3}{Stateful\+Brush} (const Q\+Brush \&)
+\item 
+\hyperlink{class_stateful_brush_a70251c65c2aef41bd81d07fa8b5dba60}{Stateful\+Brush} (const Q\+Brush \&, const Q\+Brush \&background)
+\item 
+\hyperlink{class_stateful_brush_af4916a67dc47a42174de13f2ea6736ba}{Stateful\+Brush} (const \hyperlink{class_stateful_brush}{Stateful\+Brush} \&)
+\item 
+\hyperlink{class_stateful_brush_a376e4cc7b8d5f76b520dcb2aa27d8161}{$\sim$\+Stateful\+Brush} ()
+\item 
+\hyperlink{class_stateful_brush}{Stateful\+Brush} \& \hyperlink{class_stateful_brush_a9c97dd9059e6160632611e3484a58219}{operator=} (const \hyperlink{class_stateful_brush}{Stateful\+Brush} \&)
+\item 
+Q\+Brush \hyperlink{class_stateful_brush_a7019e41f2932aafcefcce57623c4fb2c}{brush} (Q\+Palette\+::\+Color\+Group) const
+\item 
+Q\+Brush \hyperlink{class_stateful_brush_ab69204943e8c2be8e19640340ce1501d}{brush} (const Q\+Palette \&) const
+\item 
+Q\+Brush \hyperlink{class_stateful_brush_adc96d0a37f1c4a9b13e4587b82742851}{brush} (const Q\+Widget $\ast$) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A container for a \char`\"{}state-\/aware\char`\"{} brush.
+
+\hyperlink{class_stateful_brush}{Stateful\+Brush} provides an easy and safe way to store a color for use in a user interface. It is \char`\"{}safe\char`\"{} both in that it will make it easy to deal with widget states in a correct manner, and that it insulates you against changes in Q\+Palette\+::\+Color\+Group.
+
+Basically, a stateful brush is used to cache a particular \char`\"{}color\char`\"{} from the K\+DE system palette (usually, one which does not live in Q\+Palette) in the way you would have used a Q\+Color in K\+D\+E3. When you are ready to draw using the brush, you use the current state to retrieve the appropriate brush.
+
+Stateful brushes can also be used to apply state effects to arbitrary brushes, for example when working with a application specific user-\/defined color palette.
+
+\begin{DoxyNote}{Note}
+As of Qt 4.\+3, Q\+Palette\+::\+Color\+Group is missing a state for disabled widgets in an inactive window. Hopefully Trolltech will fix this bug, at which point \hyperlink{class_color_scheme}{Color\+Scheme} and \hyperlink{class_stateful_brush}{Stateful\+Brush} will be updated to recognize the new state. Using \hyperlink{class_stateful_brush}{Stateful\+Brush} will allow your application to inherit these changes \char`\"{}for free\char`\"{}, without even recompiling. 
+\end{DoxyNote}
+
+
+Definition at line 429 of file colorscheme.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_stateful_brush_a36ff921f6bd10f7bc4220d5975263bc4}\label{class_stateful_brush_a36ff921f6bd10f7bc4220d5975263bc4}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a \char`\"{}default\char`\"{} stateful brush. For such an instance, all overloads of \hyperlink{class_stateful_brush_a7019e41f2932aafcefcce57623c4fb2c}{Stateful\+Brush\+::brush} will return a default brush (i.\+e. {\ttfamily Q\+Brush()}). 
+
+Definition at line 563 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_ab2d1bb4316d486ec896f4cad2ae001f2}\label{class_stateful_brush_ab2d1bb4316d486ec896f4cad2ae001f2}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}}]{set,  }\item[{\hyperlink{class_color_scheme_ab0f331e829838e82757088db8ce32ab4}{Color\+Scheme\+::\+Foreground\+Role}}]{role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a stateful brush from given color set and foreground role, using the colors from the given K\+Config (if null, the system colors are used). 
+
+Definition at line 567 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_a37722e1db380bec60352a6088cb1aa5b}\label{class_stateful_brush_a37722e1db380bec60352a6088cb1aa5b}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}}]{set,  }\item[{\hyperlink{class_color_scheme_a70715e73df1fb0f140797633f8043a8c}{Color\+Scheme\+::\+Background\+Role}}]{role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a stateful brush from given color set and background role, using the colors from the given K\+Config (if null, the system colors are used). 
+
+Definition at line 574 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_a40d7f76bea78e8e48685f030fdbc6c0c}\label{class_stateful_brush_a40d7f76bea78e8e48685f030fdbc6c0c}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{\hyperlink{class_color_scheme_a56ea451e86dffa1822ed087902844e05}{Color\+Scheme\+::\+Color\+Set}}]{set,  }\item[{\hyperlink{class_color_scheme_a4ad022af301e30791c6c248e1fc656cf}{Color\+Scheme\+::\+Decoration\+Role}}]{role }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a stateful brush from given color set and decoration role, using the colors from the given K\+Config (if null, the system colors are used). 
+
+Definition at line 581 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_aba6fe316f65f6bc26a630374e8bffea3}\label{class_stateful_brush_aba6fe316f65f6bc26a630374e8bffea3}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{const Q\+Brush \&}]{brush }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a stateful background brush from a specified Q\+Brush (or Q\+Color, via Q\+Brush\textquotesingle{}s implicit constructor). The various states are determined from the base Q\+Brush (which fills in the Active state) according to the same rules used to build stateful color schemes from the system color scheme. The state effects from the given K\+Config are used (if null, the system state effects are used). 
+
+Definition at line 588 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_a70251c65c2aef41bd81d07fa8b5dba60}\label{class_stateful_brush_a70251c65c2aef41bd81d07fa8b5dba60}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{const Q\+Brush \&}]{brush,  }\item[{const Q\+Brush \&}]{background }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Construct a stateful foreground/decoration brush from a specified Q\+Brush (or Q\+Color, via Q\+Brush\textquotesingle{}s implicit constructor). The various states are determined from the base Q\+Brush (which fills in the Active state) according to the same rules used to build stateful color schemes from the system color scheme. The state effects from the given K\+Config are used (if null, the system state effects are used).
+
+
+\begin{DoxyParams}{Parameters}
+{\em background} & The background brush (or color) corresponding to the \hyperlink{class_color_scheme_a70715e73df1fb0f140797633f8043a8ca9762dd3095372ba69df3c550d96af844}{Color\+Scheme\+::\+Normal\+Background} role and Q\+Palette\+::\+Active state for this foreground/decoration color. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 595 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_af4916a67dc47a42174de13f2ea6736ba}\label{class_stateful_brush_af4916a67dc47a42174de13f2ea6736ba}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\index{Stateful\+Brush@{Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{Stateful\+Brush()}{StatefulBrush()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily Stateful\+Brush\+::\+Stateful\+Brush (\begin{DoxyParamCaption}\item[{const \hyperlink{class_stateful_brush}{Stateful\+Brush} \&}]{other }\end{DoxyParamCaption})}
+
+Construct a copy of another \hyperlink{class_stateful_brush}{Stateful\+Brush}. 
+
+Definition at line 602 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_a376e4cc7b8d5f76b520dcb2aa27d8161}\label{class_stateful_brush_a376e4cc7b8d5f76b520dcb2aa27d8161}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!````~Stateful\+Brush@{$\sim$\+Stateful\+Brush}}
+\index{````~Stateful\+Brush@{$\sim$\+Stateful\+Brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{$\sim$\+Stateful\+Brush()}{~StatefulBrush()}}
+{\footnotesize\ttfamily Stateful\+Brush\+::$\sim$\+Stateful\+Brush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+Definition at line 609 of file colorscheme.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_stateful_brush_a7019e41f2932aafcefcce57623c4fb2c}\label{class_stateful_brush_a7019e41f2932aafcefcce57623c4fb2c}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!brush@{brush}}
+\index{brush@{brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{brush()}{brush()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Q\+Brush Stateful\+Brush\+::brush (\begin{DoxyParamCaption}\item[{Q\+Palette\+::\+Color\+Group}]{state }\end{DoxyParamCaption}) const}
+
+Retrieve the brush for the specified widget state. This is used when you know explicitly what state is wanted. Otherwise one of overloads is often more convenient. 
+
+Definition at line 628 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_ab69204943e8c2be8e19640340ce1501d}\label{class_stateful_brush_ab69204943e8c2be8e19640340ce1501d}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!brush@{brush}}
+\index{brush@{brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{brush()}{brush()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Q\+Brush Stateful\+Brush\+::brush (\begin{DoxyParamCaption}\item[{const Q\+Palette \&}]{pal }\end{DoxyParamCaption}) const}
+
+Retrieve the brush, using a Q\+Palette reference to determine the correct state. Use when your painting code has easy access to the Q\+Palette that it is supposed to be using. The state used in this instance is the current\+Color\+Group of the palette. 
+
+Definition at line 643 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_adc96d0a37f1c4a9b13e4587b82742851}\label{class_stateful_brush_adc96d0a37f1c4a9b13e4587b82742851}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!brush@{brush}}
+\index{brush@{brush}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{brush()}{brush()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Q\+Brush Stateful\+Brush\+::brush (\begin{DoxyParamCaption}\item[{const Q\+Widget $\ast$}]{widget }\end{DoxyParamCaption}) const}
+
+Retrieve the brush, using a Q\+Widget pointer to determine the correct state. Use when you have a pointer to the widget that you are painting. The state used is the current state of the widget.
+
+\begin{DoxyNote}{Note}
+If you pass an invalid widget, you will get a default brush (i.\+e. {\ttfamily Q\+Brush()}). 
+\end{DoxyNote}
+
+
+Definition at line 651 of file colorscheme.\+cpp.
+
+\mbox{\Hypertarget{class_stateful_brush_a9c97dd9059e6160632611e3484a58219}\label{class_stateful_brush_a9c97dd9059e6160632611e3484a58219}} 
+\index{Stateful\+Brush@{Stateful\+Brush}!operator=@{operator=}}
+\index{operator=@{operator=}!Stateful\+Brush@{Stateful\+Brush}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{class_stateful_brush}{Stateful\+Brush} \& Stateful\+Brush\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_stateful_brush}{Stateful\+Brush} \&}]{other }\end{DoxyParamCaption})}
+
+Standard assignment operator 
+
+Definition at line 617 of file colorscheme.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mstyle/colorscheme.\+h\item 
+mstyle/colorscheme.\+cpp\end{DoxyCompactItemize}

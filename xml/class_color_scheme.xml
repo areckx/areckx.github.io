@@ -1,0 +1,629 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_color_scheme" kind="class" language="C++" prot="public">
+    <compoundname>ColorScheme</compoundname>
+    <includes refid="colorscheme_8h" local="no">colorscheme.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" prot="public" static="no">
+        <name>ColorSet</name>
+        <enumvalue id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a45150fc89ebfd98918cb57ecae48f7c8" prot="public">
+          <name>View</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Views; for example, frames, input fields, etc.</para><para>If it contains things that can be selected, it is probably a View. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a17906dbad876f3a9cb4fb61c7d0623e1" prot="public">
+          <name>Window</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Non-editable window elements; for example, menus.</para><para>If it isn&apos;t a Button, View, or Tooltip, it is probably a Window. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a2ec3005e68be8fbf30a1ed17c7faf611" prot="public">
+          <name>Button</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Buttons and button-like controls.</para><para>In addition to buttons, &quot;button-like&quot; controls such as non-editable dropdowns, scrollbar sliders, slider handles, etc. should also use this role. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05ad6e57137a0e7b024a5336b51230fdd00" prot="public">
+          <name>Selection</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Selected items in views.</para><para>Note that unfocused or disabled selections should use the Window role. This makes it more obvious to the user that the view containing the selection does not have input focus. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a54266f367ee9fee32be3be727b114da8" prot="public">
+          <name>Tooltip</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Tooltips.</para><para>The tooltip set can often be substituted for the view set when editing is not possible, but the Window set is deemed inappropriate. &quot;What&apos;s This&quot; help is an excellent example, another might be pop-up notifications (depending on taste). </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumeration describes the color set for which a color is being selected.</para><para>Color sets define a color &quot;environment&quot;, suitable for drawing all parts of a given region. Colors from different sets should not be combined. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="72" column="1" bodyfile="mstyle/colorscheme.h" bodystart="72" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8c" prot="public" static="no">
+        <name>BackgroundRole</name>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca9762dd3095372ba69df3c550d96af844" prot="public">
+          <name>NormalBackground</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Normal background. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca6190946d2bfcb48ed41595850bba869c" prot="public">
+          <name>AlternateBackground</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Alternate background; for example, for use in lists.</para><para>This color may be the same as BackgroundNormal, especially in sets other than View and Window. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8cac6dea12fb5d23ecf82142af1adb39ec3" prot="public">
+          <name>ActiveBackground</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Third color; for example, items which are new, active, requesting attention, etc.</para><para>Alerting the user that a certain field must be filled out would be a good usage (although NegativeBackground could be used to the same effect, depending on what you are trying to achieve). Unlike ActiveText, this should not be used for mouseover effects. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca4c54e4821465af55b8266e7ee7f39adb" prot="public">
+          <name>LinkBackground</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fourth color; corresponds to (unvisited) links.</para><para>Exactly what this might be used for is somewhat harder to qualify; it might be used for bookmarks, as a &apos;you can click here&apos; indicator, or to highlight recent content (i.e. in a most-recently-accessed list). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca70649caf4df2051cdae72fa39250bb8d" prot="public">
+          <name>VisitedBackground</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fifth color; corresponds to visited links.</para><para>This can also be used to indicate &quot;not recent&quot; content, especially when a color is needed to denote content which is &quot;old&quot; or &quot;archival&quot;. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca55a397343d2fc1ea8527ff401f109e63" prot="public">
+          <name>NegativeBackground</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sixth color; for example, errors, untrusted content, etc. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8cabec9eb67f3b13e5e8cbe2d8e9e2efee9" prot="public">
+          <name>NeutralBackground</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Seventh color; for example, warnings, secure/encrypted content. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca3925f3061468258acbca115ca6384f3f" prot="public">
+          <name>PositiveBackground</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Eigth color; for example, success messages, trusted content. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumeration describes the background color being selected from the given set.</para><para>Background colors are suitable for drawing under text, and should never be used to draw text. In combination with one of the overloads of <ref refid="class_color_scheme_1aade3447ab7cc9e291474e1e1ea46b4cd" kindref="member">ColorScheme::shade</ref>, they may be used to generate colors for drawing frames, bevels, and similar decorations. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="121" column="1" bodyfile="mstyle/colorscheme.h" bodystart="121" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4" prot="public" static="no">
+        <name>ForegroundRole</name>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a8372236563517a7e3ec2d7af791eef12" prot="public">
+          <name>NormalText</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Normal foreground. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4aaaac3124ffe7d6f848dedd34256c2ecb" prot="public">
+          <name>InactiveText</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Second color; for example, comments, items which are old, inactive or disabled. Generally used for things that are meant to be &quot;less
+important&quot;. InactiveText is not the same role as NormalText in the inactive state. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a70b7e84849bcd9dc06151cb4d8740e0c" prot="public">
+          <name>ActiveText</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Third color; for example items which are new, active, requesting attention, etc. May be used as a hover color for clickable items. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4af421a2d1bb653b55e0998c04ed6822e7" prot="public">
+          <name>LinkText</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fourth color; use for (unvisited) links. May also be used for other clickable items or content that indicates relationships, items that indicate somewhere the user can visit, etc. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4ac4a8ff4e0b425be30ba0d50ba0c6e963" prot="public">
+          <name>VisitedText</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Fifth color; used for (visited) links. As with LinkText, may be used for items that have already been &quot;visited&quot; or accessed. May also be used to indicate &quot;historical&quot; (i.e. &quot;old&quot;) items or information, especially if InactiveText is being used in the same context to express something different. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4ac25077cce3bdb690246fcc6bb9aed7e4" prot="public">
+          <name>NegativeText</name>
+          <initializer>= 5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Sixth color; for example, errors, untrusted content, deletions, etc. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4aedaba2e868f39cb2a0f972b22748ce56" prot="public">
+          <name>NeutralText</name>
+          <initializer>= 6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Seventh color; for example, warnings, secure/encrypted content. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a978cff8d1b25434d0655d70a5b465400" prot="public">
+          <name>PositiveText</name>
+          <initializer>= 7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Eigth color; for example, additions, success messages, trusted content. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumeration describes the foreground color being selected from the given set.</para><para>Foreground colors are suitable for drawing text or glyphs (such as the symbols on window decoration buttons, assuming a suitable background brush is used), and should never be used to draw backgrounds.</para><para>For window decorations, the following is suggested, but not set in stone: <itemizedlist>
+<listitem><para>Maximize - PositiveText </para></listitem>
+<listitem><para>Minimize - NeutralText </para></listitem>
+<listitem><para>Close - NegativeText </para></listitem>
+<listitem><para>WhatsThis - LinkText </para></listitem>
+<listitem><para>Sticky - ActiveText </para></listitem>
+</itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="190" column="1" bodyfile="mstyle/colorscheme.h" bodystart="190" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cf" prot="public" static="no">
+        <name>DecorationRole</name>
+        <enumvalue id="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cfae6c51f452dbc4241c20a7d00c18d0928" prot="public">
+          <name>FocusColor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Color used to draw decorations for items which have input focus. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cfadf0a5050e95756a18f4405f2d52f7d73" prot="public">
+          <name>HoverColor</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Color used to draw decorations for items which will be activated by clicking. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumeration describes the decoration color being selected from the given set.</para><para>Decoration colors are used to draw decorations (such as frames) for special purposes. Like color shades, they are neither foreground nor background colors. Text should not be painted over a decoration color, and decoration colors should not be used to draw text. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="246" column="1" bodyfile="mstyle/colorscheme.h" bodystart="246" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_color_scheme_1a666c52f132343e360756a126d558cdd6" prot="public" static="no">
+        <name>ShadeRole</name>
+        <enumvalue id="class_color_scheme_1a666c52f132343e360756a126d558cdd6ac0476f589292e82940c19d848154aa92" prot="public">
+          <name>LightShade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The light color is lighter than dark() or shadow() and contrasts with the base color. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a666c52f132343e360756a126d558cdd6a5ed94280af82bb537d970e53a3fd524a" prot="public">
+          <name>MidlightShade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The midlight color is in between base() and light(). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a666c52f132343e360756a126d558cdd6a70d93f331c262febc67d5acfe25e57f7" prot="public">
+          <name>MidShade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The mid color is in between base() and dark(). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a666c52f132343e360756a126d558cdd6a38169246d060c8def931c6f6fa390f51" prot="public">
+          <name>DarkShade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The dark color is in between mid() and shadow(). </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_color_scheme_1a666c52f132343e360756a126d558cdd6aa023f8d706b696065dc1c79b2335c46a" prot="public">
+          <name>ShadowShade</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>The shadow color is darker than light() or midlight() and contrasts the base color. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This enumeration describes the color shade being selected from the given set.</para><para>Color shades are used to draw &quot;3d&quot; elements, such as frames and bevels. They are neither foreground nor background colors. Text should not be painted over a shade, and shades should not be used to draw text. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="266" column="1" bodyfile="mstyle/colorscheme.h" bodystart="266" bodyend="289"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_color_scheme_1aa735be01b01647b7cbfd916a99ac556b" prot="private" static="no" mutable="no">
+        <type>QExplicitlySharedDataPointer&lt; <ref refid="class_color_scheme_private" kindref="compound">ColorSchemePrivate</ref> &gt;</type>
+        <definition>QExplicitlySharedDataPointer&lt;ColorSchemePrivate&gt; ColorScheme::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="403" column="1" bodyfile="mstyle/colorscheme.h" bodystart="403" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_color_scheme_1a6ed33197f35e7e735fd18b35823007f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ColorScheme::ColorScheme</definition>
+        <argsstring>(const ColorScheme &amp;)</argsstring>
+        <name>ColorScheme</name>
+        <param>
+          <type>const <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> &amp;</type>
+          <defname>other</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct a copy of another <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="292" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="404" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1ad427e52b00c856170e2ae0c8b70582d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ColorScheme::~ColorScheme</definition>
+        <argsstring>()</argsstring>
+        <name>~ColorScheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="295" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="413" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a88462a38d94968c61239a3d5359d5e7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> &amp;</type>
+        <definition>ColorScheme &amp; ColorScheme::operator=</definition>
+        <argsstring>(const ColorScheme &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> &amp;</type>
+          <defname>other</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Standard assignment operator </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="298" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="408" bodyend="411"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a754889d914c61f8fdd29388174367568" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ColorScheme::ColorScheme</definition>
+        <argsstring>(QPalette::ColorGroup, ColorSet=View)</argsstring>
+        <name>ColorScheme</name>
+        <param>
+          <type>QPalette::ColorGroup</type>
+          <defname>state</defname>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" kindref="member">ColorSet</ref></type>
+          <defname>set</defname>
+          <defval><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a45150fc89ebfd98918cb57ecae48f7c8" kindref="member">View</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct a palette from given color set and state, using the colors from the given KConfig (if null, the system colors are used).</para><para><simplesect kind="note"><para><ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> provides direct access to the color scheme for users that deal directly with widget states. Unless you are a low-level user or have a legitimate reason to only care about a fixed, limited number of states (e.g. windows that cannot be inactive), consider using a <ref refid="class_stateful_brush" kindref="compound">StatefulBrush</ref> instead. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="310" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="416" bodyend="445"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a9437750c2aa4c445381a7b814814d557" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush ColorScheme::background</definition>
+        <argsstring>(BackgroundRole=NormalBackground) const</argsstring>
+        <name>background</name>
+        <param>
+          <type><ref refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8c" kindref="member">BackgroundRole</ref></type>
+          <defname>role</defname>
+          <defval><ref refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca9762dd3095372ba69df3c550d96af844" kindref="member">NormalBackground</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested background brush. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="315" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="451" bodyend="453"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1aec323dbf2601b8d71ee0b5448e4b8a07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush ColorScheme::foreground</definition>
+        <argsstring>(ForegroundRole=NormalText) const</argsstring>
+        <name>foreground</name>
+        <param>
+          <type><ref refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4" kindref="member">ForegroundRole</ref></type>
+          <defname>role</defname>
+          <defval><ref refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a8372236563517a7e3ec2d7af791eef12" kindref="member">NormalText</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested foreground brush. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="320" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="459" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a6dbcccb967faebed786a3e6e453beb3b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush ColorScheme::decoration</definition>
+        <argsstring>(DecorationRole) const</argsstring>
+        <name>decoration</name>
+        <param>
+          <type><ref refid="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cf" kindref="member">DecorationRole</ref></type>
+          <defname>role</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested decoration brush. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="325" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="467" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1aade3447ab7cc9e291474e1e1ea46b4cd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor ColorScheme::shade</definition>
+        <argsstring>(ShadeRole) const</argsstring>
+        <name>shade</name>
+        <param>
+          <type><ref refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6" kindref="member">ShadeRole</ref></type>
+          <defname>role</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested shade color, using ColorScheme::background(ColorScheme::NormalBackground) as the base color and the contrast setting from the KConfig used to create this <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> instance (the system contrast setting, if no KConfig was specified).</para><para><simplesect kind="note"><para>Shades are chosen such that all shades would contrast with the base color. This means that if base is very dark, the &apos;dark&apos; shades will be lighter than the base color, with midlight() == shadow(). Conversely, if the base color is very light, the &apos;light&apos; shades will be darker than the base color, with light() == mid(). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="340" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="475" bodyend="477"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_color_scheme_1a653acbdf70807b7d59cc097f74321c12" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor ColorScheme::shade</definition>
+        <argsstring>(const QColor &amp;, ShadeRole)</argsstring>
+        <name>shade</name>
+        <param>
+          <type>const QColor &amp;</type>
+          <defname>color</defname>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6" kindref="member">ShadeRole</ref></type>
+          <defname>role</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested shade color, using the specified color as the base color and the system contrast setting.</para><para><simplesect kind="note"><para>Shades are chosen such that all shades would contrast with the base color. This means that if base is very dark, the &apos;dark&apos; shades will be lighter than the base color, with midlight() == shadow(). Conversely, if the base color is very light, the &apos;light&apos; shades will be darker than the base color, with light() == mid(). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="352" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="479" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a0b9ddff11e4879c7a99c1a9f63e0877e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor ColorScheme::shade</definition>
+        <argsstring>(const QColor &amp;, ShadeRole, qreal contrast, qreal chromaAdjust=0.0)</argsstring>
+        <name>shade</name>
+        <param>
+          <type>const QColor &amp;</type>
+          <defname>color</defname>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6" kindref="member">ShadeRole</ref></type>
+          <defname>role</defname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>contrast</declname>
+        </param>
+        <param>
+          <type>qreal</type>
+          <declname>chromaAdjust</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the requested shade color, using the specified color as the base color and the specified contrast.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>contrast</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Amount roughly specifying the contrast by which to adjust the base color, between -1.0 and 1.0 (values between 0.0 and 1.0 correspond to the value from KGlobalSettings::contrastF) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>chromaAdjust</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) Amount by which to adjust the chroma of the shade (1.0 means no adjustment)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Shades are chosen such that all shades would contrast with the base color. This means that if base is very dark, the &apos;dark&apos; shades will be lighter than the base color, with midlight() == shadow(). Conversely, if the base color is very light, the &apos;light&apos; shades will be darker than the base color, with light() == mid().</para></simplesect>
+<simplesect kind="see"><para>KColorUtils::shade </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="372" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="483" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a6f5d2968152d0d1f76c1e6720c185850" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ColorScheme::adjustBackground</definition>
+        <argsstring>(QPalette &amp;, BackgroundRole newRole=NormalBackground, QPalette::ColorRole color=QPalette::Base, ColorSet set=View)</argsstring>
+        <name>adjustBackground</name>
+        <param>
+          <type>QPalette &amp;</type>
+          <defname>palette</defname>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8c" kindref="member">BackgroundRole</ref></type>
+          <declname>newRole</declname>
+          <defval><ref refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca9762dd3095372ba69df3c550d96af844" kindref="member">NormalBackground</ref></defval>
+        </param>
+        <param>
+          <type>QPalette::ColorRole</type>
+          <declname>color</declname>
+          <defval>QPalette::Base</defval>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" kindref="member">ColorSet</ref></type>
+          <declname>set</declname>
+          <defval><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a45150fc89ebfd98918cb57ecae48f7c8" kindref="member">View</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adjust a QPalette by replacing the specified QPalette::ColorRole with the requested background color for all states. Using this method is safer than replacing individual states, as it insulates you against changes in QPalette::ColorGroup.</para><para><simplesect kind="note"><para>Although it is possible to replace a foreground color using this method, it&apos;s bad usability to do so. Just say &quot;no&quot;. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="383" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="537" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="class_color_scheme_1a3d2585cb284a9c5efa5c82feb9499251" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ColorScheme::adjustForeground</definition>
+        <argsstring>(QPalette &amp;, ForegroundRole newRole=NormalText, QPalette::ColorRole color=QPalette::Text, ColorSet set=View)</argsstring>
+        <name>adjustForeground</name>
+        <param>
+          <type>QPalette &amp;</type>
+          <defname>palette</defname>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4" kindref="member">ForegroundRole</ref></type>
+          <declname>newRole</declname>
+          <defval><ref refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a8372236563517a7e3ec2d7af791eef12" kindref="member">NormalText</ref></defval>
+        </param>
+        <param>
+          <type>QPalette::ColorRole</type>
+          <declname>color</declname>
+          <defval>QPalette::Text</defval>
+        </param>
+        <param>
+          <type><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" kindref="member">ColorSet</ref></type>
+          <declname>set</declname>
+          <defval><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a45150fc89ebfd98918cb57ecae48f7c8" kindref="member">View</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adjust a QPalette by replacing the specified QPalette::ColorRole with the requested foreground color for all states. Using this method is safer than replacing individual states, as it insulates you against changes in QPalette::ColorGroup.</para><para><simplesect kind="note"><para>Although it is possible to replace a background color using this method, it&apos;s bad usability to do so. Just say &quot;no&quot;. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/colorscheme.h" line="397" column="1" bodyfile="mstyle/colorscheme.cpp" bodystart="547" bodyend="551"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A set of methods used to work with colors.</para><para><ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> currently provides access to the system color palette that the user has selected (in the future, it is expected to do more). As of KDE4, this class is the correct way to look up colors from the system palette, as opposed to KGlobalSettings (such usage is deprecated). It greatly expands on KGlobalSettings and QPalette by providing five distinct &quot;sets&quot; with several color choices each, covering background, foreground, and decoration colors.</para><para>A <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> instance represents colors corresponding to a &quot;set&quot;, where a set consists of those colors used to draw a particular type of element, such as a menu, button, view, selected text, or tooltip. Each set has a distinct set of colors, so you should always use the correct set for drawing and never assume that a particular foreground for one set is the same as the foreground for any other set. Individual colors may be quickly referenced by creating an anonymous instance and invoking a lookup member.</para><para><simplesect kind="note"><para>Historically, it was not needed for applications to give much concern to the state of a widget (active, inactive, disabled) since only the disabled state was different, and only slightly. As a result, the old KGlobalSettings color getters did not care about the widget state. However, starting with KDE4, the color palettes for the various states may be wildly different. Therefore, it is important to take the state into account. This is why the <ref refid="class_color_scheme" kindref="compound">ColorScheme</ref> constructor requires a QPalette::ColorGroup as an argument.</para></simplesect>
+To facilitate working with potentially-varying states, two convenience API&apos;s are provided. These are <ref refid="class_color_scheme_1a6f5d2968152d0d1f76c1e6720c185850" kindref="member">ColorScheme::adjustBackground</ref> and its sister <ref refid="class_color_scheme_1a3d2585cb284a9c5efa5c82feb9499251" kindref="member">ColorScheme::adjustForeground</ref>, and the helper class <ref refid="class_stateful_brush" kindref="compound">StatefulBrush</ref>.</para><para><simplesect kind="see"><para><ref refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" kindref="member">ColorScheme::ColorSet</ref>, <ref refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4" kindref="member">ColorScheme::ForegroundRole</ref>, <ref refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8c" kindref="member">ColorScheme::BackgroundRole</ref>, <ref refid="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cf" kindref="member">ColorScheme::DecorationRole</ref>, <ref refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6" kindref="member">ColorScheme::ShadeRole</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="mstyle/colorscheme.h" line="62" column="1" bodyfile="mstyle/colorscheme.h" bodystart="62" bodyend="404"/>
+    <listofallmembers>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8cac6dea12fb5d23ecf82142af1adb39ec3" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ActiveBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a70b7e84849bcd9dc06151cb4d8740e0c" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ActiveText</name></member>
+      <member refid="class_color_scheme_1a6f5d2968152d0d1f76c1e6720c185850" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>adjustBackground</name></member>
+      <member refid="class_color_scheme_1a3d2585cb284a9c5efa5c82feb9499251" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>adjustForeground</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca6190946d2bfcb48ed41595850bba869c" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>AlternateBackground</name></member>
+      <member refid="class_color_scheme_1a9437750c2aa4c445381a7b814814d557" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>background</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8c" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>BackgroundRole</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a2ec3005e68be8fbf30a1ed17c7faf611" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>Button</name></member>
+      <member refid="class_color_scheme_1a6ed33197f35e7e735fd18b35823007f6" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ColorScheme</name></member>
+      <member refid="class_color_scheme_1a754889d914c61f8fdd29388174367568" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ColorScheme</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ColorSet</name></member>
+      <member refid="class_color_scheme_1aa735be01b01647b7cbfd916a99ac556b" prot="private" virt="non-virtual"><scope>ColorScheme</scope><name>d</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6a38169246d060c8def931c6f6fa390f51" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>DarkShade</name></member>
+      <member refid="class_color_scheme_1a6dbcccb967faebed786a3e6e453beb3b" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>decoration</name></member>
+      <member refid="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cf" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>DecorationRole</name></member>
+      <member refid="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cfae6c51f452dbc4241c20a7d00c18d0928" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>FocusColor</name></member>
+      <member refid="class_color_scheme_1aec323dbf2601b8d71ee0b5448e4b8a07" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>foreground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ForegroundRole</name></member>
+      <member refid="class_color_scheme_1a4ad022af301e30791c6c248e1fc656cfadf0a5050e95756a18f4405f2d52f7d73" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>HoverColor</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4aaaac3124ffe7d6f848dedd34256c2ecb" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>InactiveText</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6ac0476f589292e82940c19d848154aa92" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>LightShade</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca4c54e4821465af55b8266e7ee7f39adb" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>LinkBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4af421a2d1bb653b55e0998c04ed6822e7" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>LinkText</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6a5ed94280af82bb537d970e53a3fd524a" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>MidlightShade</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6a70d93f331c262febc67d5acfe25e57f7" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>MidShade</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca55a397343d2fc1ea8527ff401f109e63" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NegativeBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4ac25077cce3bdb690246fcc6bb9aed7e4" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NegativeText</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8cabec9eb67f3b13e5e8cbe2d8e9e2efee9" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NeutralBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4aedaba2e868f39cb2a0f972b22748ce56" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NeutralText</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca9762dd3095372ba69df3c550d96af844" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NormalBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a8372236563517a7e3ec2d7af791eef12" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>NormalText</name></member>
+      <member refid="class_color_scheme_1a88462a38d94968c61239a3d5359d5e7d" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>operator=</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca3925f3061468258acbca115ca6384f3f" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>PositiveBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4a978cff8d1b25434d0655d70a5b465400" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>PositiveText</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05ad6e57137a0e7b024a5336b51230fdd00" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>Selection</name></member>
+      <member refid="class_color_scheme_1aade3447ab7cc9e291474e1e1ea46b4cd" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>shade</name></member>
+      <member refid="class_color_scheme_1a653acbdf70807b7d59cc097f74321c12" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>shade</name></member>
+      <member refid="class_color_scheme_1a0b9ddff11e4879c7a99c1a9f63e0877e" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>shade</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ShadeRole</name></member>
+      <member refid="class_color_scheme_1a666c52f132343e360756a126d558cdd6aa023f8d706b696065dc1c79b2335c46a" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>ShadowShade</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a54266f367ee9fee32be3be727b114da8" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>Tooltip</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a45150fc89ebfd98918cb57ecae48f7c8" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>View</name></member>
+      <member refid="class_color_scheme_1a70715e73df1fb0f140797633f8043a8ca70649caf4df2051cdae72fa39250bb8d" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>VisitedBackground</name></member>
+      <member refid="class_color_scheme_1ab0f331e829838e82757088db8ce32ab4ac4a8ff4e0b425be30ba0d50ba0c6e963" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>VisitedText</name></member>
+      <member refid="class_color_scheme_1a56ea451e86dffa1822ed087902844e05a17906dbad876f3a9cb4fb61c7d0623e1" prot="public" virt="non-virtual"><scope>ColorScheme</scope><name>Window</name></member>
+      <member refid="class_color_scheme_1ad427e52b00c856170e2ae0c8b70582d0" prot="public" virt="virtual"><scope>ColorScheme</scope><name>~ColorScheme</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

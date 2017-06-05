@@ -1,0 +1,130 @@
+.TH "Poppler::MovieObject" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::MovieObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPlayMode\fP { \fBPlayOnce\fP, \fBPlayOpen\fP, \fBPlayRepeat\fP, \fBPlayPalindrome\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBurl\fP () const"
+.br
+.ti -1c
+.RI "QSize \fBsize\fP () const"
+.br
+.ti -1c
+.RI "int \fBrotation\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowControls\fP () const"
+.br
+.ti -1c
+.RI "\fBPlayMode\fP \fBplayMode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowPosterImage\fP () const"
+.br
+.ti -1c
+.RI "QImage \fBposterImage\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnotationPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class for a movie object in a PDF document\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 1761 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::MovieObject::PlayMode\fP"
+The play mode for playing the movie 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPlayOnce \fP\fP
+Play the movie once, closing the movie controls at the end\&. 
+.TP
+\fB\fIPlayOpen \fP\fP
+Like PlayOnce, but leaving the controls open\&. 
+.TP
+\fB\fIPlayRepeat \fP\fP
+Play continuously until stopped\&. 
+.TP
+\fB\fIPlayPalindrome \fP\fP
+Play forward, then backward, then again foward and so on until stopped\&. 
+.PP
+Definition at line 1767 of file poppler\-qt5\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBMovieObject::PlayMode\fP Poppler::MovieObject::playMode () const"
+How to play the movie 
+.PP
+Definition at line 95 of file poppler\-movie\&.cc\&.
+.SS "QImage Poppler::MovieObject::posterImage () const"
+Returns the poster image that should be shown if the movie is not playing\&. If the image is null but showImagePoster() returns \fCtrue\fP, the first frame of the movie should be used as poster image\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file poppler\-movie\&.cc\&.
+.SS "int Poppler::MovieObject::rotation () const"
+The rotation (either 0, 90, 180, or 270 degrees clockwise) for the movie, 
+.PP
+Definition at line 85 of file poppler\-movie\&.cc\&.
+.SS "bool Poppler::MovieObject::showControls () const"
+Whether show a bar with movie controls 
+.PP
+Definition at line 90 of file poppler\-movie\&.cc\&.
+.SS "bool Poppler::MovieObject::showPosterImage () const"
+Returns whether a poster image should be shown if the movie is not playing\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file poppler\-movie\&.cc\&.
+.SS "QSize Poppler::MovieObject::size () const"
+The size of the movie 
+.PP
+Definition at line 80 of file poppler\-movie\&.cc\&.
+.SS "QString Poppler::MovieObject::url () const"
+The URL of the movie to be played 
+.PP
+Definition at line 74 of file poppler\-movie\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

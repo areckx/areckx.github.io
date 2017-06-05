@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_swing_1_1_swing_detector" kind="class" language="C++" prot="public">
+    <compoundname>Ms::Swing::SwingDetector</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_swing_1_1_swing_detector_1a740c68e90a3274155b78d1888172b866" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_ms_1_1_chord_rest" kindref="compound">ChordRest</ref> * &gt;</type>
+        <definition>std::vector&lt;ChordRest *&gt; Ms::Swing::SwingDetector::elements</definition>
+        <argsstring></argsstring>
+        <name>elements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="25" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_swing_1_1_swing_detector_1a6086f54d6f7e1965bfe4f195facab4f0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>ReducedFraction Ms::Swing::SwingDetector::sumLen</definition>
+        <argsstring></argsstring>
+        <name>sumLen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="26" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_swing_1_1_swing_detector_1a7a4b60719e5f2c847fb8a2a76a644df8" prot="private" static="no" mutable="no">
+        <type>const <ref refid="class_ms_1_1_reduced_fraction" kindref="compound">ReducedFraction</ref></type>
+        <definition>const ReducedFraction Ms::Swing::SwingDetector::FULL_LEN</definition>
+        <argsstring></argsstring>
+        <name>FULL_LEN</name>
+        <initializer>= {1, 4}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="27" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_swing_1_1_swing_detector_1a062885324b5fe1e00cbf49b570046ad9" prot="private" static="no" mutable="no">
+        <type>MidiOperations::Swing</type>
+        <definition>MidiOperations::Swing Ms::Swing::SwingDetector::swingType</definition>
+        <argsstring></argsstring>
+        <name>swingType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="28" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_swing_1_1_swing_detector_1ae50c6632a162ee109eb5532ab6bc7623" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Swing::SwingDetector::swingApplied</definition>
+        <argsstring></argsstring>
+        <name>swingApplied</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="29" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a2adb6567d1feb4c22da5bbc7af28e9f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Swing::SwingDetector::SwingDetector</definition>
+        <argsstring>(MidiOperations::Swing st)</argsstring>
+        <name>SwingDetector</name>
+        <param>
+          <type>MidiOperations::Swing</type>
+          <declname>st</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="19" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a9fe37ed4df63c0b65076795dd58a49d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::add</definition>
+        <argsstring>(ChordRest *cr)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord_rest" kindref="compound">ChordRest</ref> *</type>
+          <declname>cr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="21" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="46" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a0208d3296acc7171c237aa36e8de0ccc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Swing::SwingDetector::wasSwingApplied</definition>
+        <argsstring>() const</argsstring>
+        <name>wasSwingApplied</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="22" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a96f03d8da3124ded84d7cc51be9ff8a3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="31" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1aa1eaf84d5d9503da52f18cf6dbd6faf2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::append</definition>
+        <argsstring>(ChordRest *cr)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord_rest" kindref="compound">ChordRest</ref> *</type>
+          <declname>cr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="32" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="84" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a9ff9b574a85e8208c7cb388ea457dda5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::checkNormalSwing</definition>
+        <argsstring>()</argsstring>
+        <name>checkNormalSwing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="33" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="92" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1af09f1002bfcc57ae7bcb8c4c1106c84d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::checkShuffle</definition>
+        <argsstring>()</argsstring>
+        <name>checkShuffle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="34" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="118" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a4862c9d7613b6385f0d0e9f2203f2a71" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Swing::SwingDetector::applySwing</definition>
+        <argsstring>()</argsstring>
+        <name>applySwing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="35" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="134" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1aa65986947a18a16e0c549faca291bae4" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Swing::SwingDetector::areAllTuplets</definition>
+        <argsstring>() const</argsstring>
+        <name>areAllTuplets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="36" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="174" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_swing_1_1_swing_detector_1a4e0c1934e87d42da6dfc564a5f7abf7b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Swing::SwingDetector::areAllNonTuplets</definition>
+        <argsstring>() const</argsstring>
+        <name>areAllNonTuplets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmidi/importmidi_swing.cpp" line="37" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="183" bodyend="190"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mscore/importmidi/importmidi_swing.cpp" line="17" column="1" bodyfile="mscore/importmidi/importmidi_swing.cpp" bodystart="16" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a9fe37ed4df63c0b65076795dd58a49d7" prot="public" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>add</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1aa1eaf84d5d9503da52f18cf6dbd6faf2" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>append</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a4862c9d7613b6385f0d0e9f2203f2a71" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>applySwing</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a4e0c1934e87d42da6dfc564a5f7abf7b" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>areAllNonTuplets</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1aa65986947a18a16e0c549faca291bae4" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>areAllTuplets</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a9ff9b574a85e8208c7cb388ea457dda5" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>checkNormalSwing</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1af09f1002bfcc57ae7bcb8c4c1106c84d" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>checkShuffle</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a740c68e90a3274155b78d1888172b866" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>elements</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a7a4b60719e5f2c847fb8a2a76a644df8" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>FULL_LEN</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a96f03d8da3124ded84d7cc51be9ff8a3" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>reset</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a6086f54d6f7e1965bfe4f195facab4f0" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>sumLen</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1ae50c6632a162ee109eb5532ab6bc7623" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>swingApplied</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a2adb6567d1feb4c22da5bbc7af28e9f8" prot="public" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>SwingDetector</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a062885324b5fe1e00cbf49b570046ad9" prot="private" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>swingType</name></member>
+      <member refid="class_ms_1_1_swing_1_1_swing_detector_1a0208d3296acc7171c237aa36e8de0ccc" prot="public" virt="non-virtual"><scope>Ms::Swing::SwingDetector</scope><name>wasSwingApplied</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md4_8h" kind="file" language="C++">
+    <compoundname>md4.h</compoundname>
+    <includes refid="e__os2_8h" local="no">openssl/e_os2.h</includes>
+    <includes local="no">stddef.h</includes>
+    <incdepgraph>
+      <node id="82952">
+        <label>stddef.h</label>
+      </node>
+      <node id="82949">
+        <label>thirdparty/openssl/include/openssl/md4.h</label>
+        <link refid="md4_8h"/>
+        <childnode refid="82950" relation="include">
+        </childnode>
+        <childnode refid="82952" relation="include">
+        </childnode>
+      </node>
+      <node id="82951">
+        <label>openssl/opensslconf.h</label>
+        <link refid="opensslconf_8h_source"/>
+      </node>
+      <node id="82950">
+        <label>openssl/e_os2.h</label>
+        <link refid="e__os2_8h_source"/>
+        <childnode refid="82951" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_m_d4state__st" prot="public">MD4state_st</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="md4_8h_1ad1088f1ba76d4b0e1ac5b25152319e89" prot="public" static="no">
+        <name>MD4_LONG</name>
+        <initializer>unsigned int</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="93" column="10" bodyfile="thirdparty/openssl/include/openssl/md4.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="md4_8h_1a7cf465fa57d5b77b7152e4f57fc847cc" prot="public" static="no">
+        <name>MD4_CBLOCK</name>
+        <initializer>64</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="96" column="9" bodyfile="thirdparty/openssl/include/openssl/md4.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="md4_8h_1a355848ebbfb1946058a9de73968a62e9" prot="public" static="no">
+        <name>MD4_LBLOCK</name>
+        <initializer>(MD4_CBLOCK/4)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="97" column="9" bodyfile="thirdparty/openssl/include/openssl/md4.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="md4_8h_1ac91d9731e3eca871a80f7d2c494d5ee5" prot="public" static="no">
+        <name>MD4_DIGEST_LENGTH</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="98" column="9" bodyfile="thirdparty/openssl/include/openssl/md4.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="md4_8h_1a304a0316e739d70b9d117dcb782bfc13" prot="public" static="no">
+        <type>struct <ref refid="struct_m_d4state__st" kindref="compound">MD4state_st</ref></type>
+        <definition>typedef struct MD4state_st  MD4_CTX</definition>
+        <argsstring></argsstring>
+        <name>MD4_CTX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="106" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="md4_8h_1a536ab6f48d851513f212eaa955e3c1ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MD4_Init</definition>
+        <argsstring>(MD4_CTX *c)</argsstring>
+        <name>MD4_Init</name>
+        <param>
+          <type><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="md4_8h_1a18f0dec15aebfd7b88284df7324b8396" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MD4_Update</definition>
+        <argsstring>(MD4_CTX *c, const void *data, size_t len)</argsstring>
+        <name>MD4_Update</name>
+        <param>
+          <type><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="112" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="md4_8h_1aa9a472b51da0ebc0c06a225523674414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MD4_Final</definition>
+        <argsstring>(unsigned char *md, MD4_CTX *c)</argsstring>
+        <name>MD4_Final</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>md</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="113" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="md4_8h_1a3128eeb5039fe9865910fcc3350c6f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char *</type>
+        <definition>unsigned char* MD4</definition>
+        <argsstring>(const unsigned char *d, size_t n, unsigned char *md)</argsstring>
+        <name>MD4</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>d</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>md</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="114" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="md4_8h_1af7527184b6fba94f711c2935bc638524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MD4_Transform</definition>
+        <argsstring>(MD4_CTX *c, const unsigned char *b)</argsstring>
+        <name>MD4_Transform</name>
+        <param>
+          <type><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref> *</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/md4.h" line="115" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>crypto/md4/md4.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Copyright<sp/>(C)<sp/>1995-1998<sp/>Eric<sp/>Young<sp/>(eay@cryptsoft.com)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>package<sp/>is<sp/>an<sp/>SSL<sp/>implementation<sp/>written</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>by<sp/>Eric<sp/>Young<sp/>(eay@cryptsoft.com).</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>The<sp/>implementation<sp/>was<sp/>written<sp/>so<sp/>as<sp/>to<sp/>conform<sp/>with<sp/>Netscapes<sp/>SSL.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>for<sp/>commercial<sp/>and<sp/>non-commercial<sp/>use<sp/>as<sp/>long<sp/>as</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>aheared<sp/>to.<sp/><sp/>The<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>apply<sp/>to<sp/>all<sp/>code<sp/>found<sp/>in<sp/>this<sp/>distribution,<sp/>be<sp/>it<sp/>the<sp/>RC4,<sp/>RSA,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>lhash,<sp/>DES,<sp/>etc.,<sp/>code;<sp/>not<sp/>just<sp/>the<sp/>SSL<sp/>code.<sp/><sp/>The<sp/>SSL<sp/>documentation</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>included<sp/>with<sp/>this<sp/>distribution<sp/>is<sp/>covered<sp/>by<sp/>the<sp/>same<sp/>copyright<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>except<sp/>that<sp/>the<sp/>holder<sp/>is<sp/>Tim<sp/>Hudson<sp/>(tjh@cryptsoft.com).</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>remains<sp/>Eric<sp/>Young&apos;s,<sp/>and<sp/>as<sp/>such<sp/>any<sp/>Copyright<sp/>notices<sp/>in</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>the<sp/>code<sp/>are<sp/>not<sp/>to<sp/>be<sp/>removed.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>If<sp/>this<sp/>package<sp/>is<sp/>used<sp/>in<sp/>a<sp/>product,<sp/>Eric<sp/>Young<sp/>should<sp/>be<sp/>given<sp/>attribution</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>as<sp/>the<sp/>author<sp/>of<sp/>the<sp/>parts<sp/>of<sp/>the<sp/>library<sp/>used.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>can<sp/>be<sp/>in<sp/>the<sp/>form<sp/>of<sp/>a<sp/>textual<sp/>message<sp/>at<sp/>program<sp/>startup<sp/>or</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>in<sp/>documentation<sp/>(online<sp/>or<sp/>textual)<sp/>provided<sp/>with<sp/>the<sp/>package.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>copyright</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>3.<sp/>All<sp/>advertising<sp/>materials<sp/>mentioning<sp/>features<sp/>or<sp/>use<sp/>of<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>must<sp/>display<sp/>the<sp/>following<sp/>acknowledgement:</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>cryptographic<sp/>software<sp/>written<sp/>by</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/>Eric<sp/>Young<sp/>(eay@cryptsoft.com)&quot;</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>The<sp/>word<sp/>&apos;cryptographic&apos;<sp/>can<sp/>be<sp/>left<sp/>out<sp/>if<sp/>the<sp/>rouines<sp/>from<sp/>the<sp/>library</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>being<sp/>used<sp/>are<sp/>not<sp/>cryptographic<sp/>related<sp/>:-).</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>4.<sp/>If<sp/>you<sp/>include<sp/>any<sp/>Windows<sp/>specific<sp/>code<sp/>(or<sp/>a<sp/>derivative<sp/>thereof)<sp/>from<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>apps<sp/>directory<sp/>(application<sp/>code)<sp/>you<sp/>must<sp/>include<sp/>an<sp/>acknowledgement:</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>written<sp/>by<sp/>Tim<sp/>Hudson<sp/>(tjh@cryptsoft.com)&quot;</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>ERIC<sp/>YOUNG<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHOR<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>The<sp/>licence<sp/>and<sp/>distribution<sp/>terms<sp/>for<sp/>any<sp/>publically<sp/>available<sp/>version<sp/>or</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>derivative<sp/>of<sp/>this<sp/>code<sp/>cannot<sp/>be<sp/>changed.<sp/><sp/>i.e.<sp/>this<sp/>code<sp/>cannot<sp/>simply<sp/>be</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>copied<sp/>and<sp/>put<sp/>under<sp/>another<sp/>distribution<sp/>licence</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>[including<sp/>the<sp/>GNU<sp/>Public<sp/>Licence.]</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADER_MD4_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_MD4_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/e_os2.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OPENSSL_NO_MD4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>MD4<sp/>is<sp/>disabled.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/>!<sp/>MD4_LONG<sp/>has<sp/>to<sp/>be<sp/>at<sp/>least<sp/>32<sp/>bits<sp/>wide.<sp/>If<sp/>it&apos;s<sp/>wider,<sp/>then<sp/>!</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>!<sp/>MD4_LONG_LOG2<sp/>has<sp/>to<sp/>be<sp/>defined<sp/>along.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__LP32__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_LONG<sp/>unsigned<sp/>long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(OPENSSL_SYS_CRAY)<sp/>||<sp/>defined(__ILP64__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_LONG<sp/>unsigned<sp/>long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_LONG_LOG2<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>_CRAY<sp/>note.<sp/>I<sp/>could<sp/>declare<sp/>short,<sp/>but<sp/>I<sp/>have<sp/>no<sp/>idea<sp/>what<sp/>impact</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>does<sp/>it<sp/>have<sp/>on<sp/>performance<sp/>on<sp/>none-T3E<sp/>machines.<sp/>I<sp/>could<sp/>declare</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>int,<sp/>but<sp/>at<sp/>least<sp/>on<sp/>C90<sp/>sizeof(int)<sp/>can<sp/>be<sp/>chosen<sp/>at<sp/>compile<sp/>time.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>So<sp/>I&apos;ve<sp/>chosen<sp/>long...</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;appro@fy.chalmers.se&gt;</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_LONG<sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_CBLOCK<sp/><sp/>64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_LBLOCK<sp/><sp/>(MD4_CBLOCK/4)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MD4_DIGEST_LENGTH<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="struct_m_d4state__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_m_d4state__st" kindref="compound">MD4state_st</ref></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>MD4_LONG<sp/>A,B,C,D;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>MD4_LONG<sp/>Nl,Nh;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>MD4_LONG<sp/>data[MD4_LBLOCK];</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>OPENSSL_FIPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>private_MD4_Init(<ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref><sp/>*c);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MD4_Init(<ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref><sp/>*c);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MD4_Update(<ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref><sp/>*c,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>MD4_Final(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*md,<sp/><ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref><sp/>*c);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*MD4(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*d,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>n,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*md);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MD4_Transform(<ref refid="struct_m_d4state__st" kindref="compound">MD4_CTX</ref><sp/>*c,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*b);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/openssl/include/openssl/md4.h"/>
+  </compounddef>
+</doxygen>

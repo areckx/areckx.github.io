@@ -1,0 +1,50 @@
+.TH "SignatureHandler" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SignatureHandler
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSignatureHandler\fP (unsigned char *p7, int p7_length)"
+.br
+.ti -1c
+.RI "time_t \fBgetSigningTime\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetSignerName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSignature\fP (unsigned char *, int)"
+.br
+.ti -1c
+.RI "void \fBupdateHash\fP (unsigned char *data_block, int data_len)"
+.br
+.ti -1c
+.RI "NSSCMSVerificationStatus \fBvalidateSignature\fP ()"
+.br
+.ti -1c
+.RI "SECErrorCodes \fBvalidateCertificate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static SignatureValidationStatus \fBNSS_SigTranslate\fP (NSSCMSVerificationStatus nss_code)"
+.br
+.ti -1c
+.RI "static CertificateValidationStatus \fBNSS_CertTranslate\fP (SECErrorCodes nss_code)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 32 of file SignatureHandler\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

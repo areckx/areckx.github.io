@@ -1,0 +1,110 @@
+.TH "GfxColorSpace" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GfxColorSpace
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBGfxCalGrayColorSpace\fP, \fBGfxCalRGBColorSpace\fP, \fBGfxDeviceCMYKColorSpace\fP, \fBGfxDeviceGrayColorSpace\fP, \fBGfxDeviceNColorSpace\fP, \fBGfxDeviceRGBColorSpace\fP, \fBGfxICCBasedColorSpace\fP, \fBGfxIndexedColorSpace\fP, \fBGfxLabColorSpace\fP, \fBGfxPatternColorSpace\fP, and \fBGfxSeparationColorSpace\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBGfxColorSpace\fP * \fBcopy\fP ()=0"
+.br
+.ti -1c
+.RI "virtual GfxColorSpaceMode \fBgetMode\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetGray\fP (\fBGfxColor\fP *\fBcolor\fP, GfxGray *gray)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetRGB\fP (\fBGfxColor\fP *\fBcolor\fP, \fBGfxRGB\fP *rgb)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetCMYK\fP (\fBGfxColor\fP *\fBcolor\fP, \fBGfxCMYK\fP *cmyk)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetDeviceN\fP (\fBGfxColor\fP *\fBcolor\fP, \fBGfxColor\fP *deviceN)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetGrayLine\fP (Guchar *, Guchar *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBgetRGBLine\fP (Guchar *, unsigned int *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBgetRGBLine\fP (Guchar *, Guchar *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBgetRGBXLine\fP (Guchar *, Guchar *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBgetCMYKLine\fP (Guchar *, Guchar *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBgetDeviceNLine\fP (Guchar *, Guchar *, int)"
+.br
+.ti -1c
+.RI "virtual void \fBcreateMapping\fP (\fBGooList\fP *separationList, int maxSepComps)"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseGetRGBLine\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseGetGrayLine\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseGetCMYKLine\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseGetDeviceNLine\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBgetNComps\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetDefaultColor\fP (\fBGfxColor\fP *\fBcolor\fP)=0"
+.br
+.ti -1c
+.RI "virtual void \fBgetDefaultRanges\fP (double *decodeLow, double *decodeRange, int maxImgPixel)"
+.br
+.ti -1c
+.RI "virtual GBool \fBisNonMarking\fP ()"
+.br
+.ti -1c
+.RI "Guint \fBgetOverprintMask\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBGfxColorSpace\fP * \fBparse\fP (\fBGfxResources\fP *res, \fBObject\fP *csObj, \fBOutputDev\fP *out, \fBGfxState\fP *state, int recursion=0)"
+.br
+.ti -1c
+.RI "static int \fBgetNumColorSpaceModes\fP ()"
+.br
+.ti -1c
+.RI "static const char * \fBgetColorSpaceModeName\fP (int idx)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Guint \fBoverprintMask\fP"
+.br
+.ti -1c
+.RI "int * \fBmapping\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 208 of file GfxState\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

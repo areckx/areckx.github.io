@@ -1,0 +1,117 @@
+.TH "TextOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TextOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextOutputDev\fP (char *fileName, GBool physLayoutA, double fixedPitchA, GBool rawOrderA, GBool append)"
+.br
+.ti -1c
+.RI "\fBTextOutputDev\fP (TextOutputFunc func, void *stream, GBool physLayoutA, double fixedPitchA, GBool rawOrderA)"
+.br
+.ti -1c
+.RI "virtual GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBneedNonText\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBneedCharCount\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginString\fP (\fBGfxState\fP *state, \fBGooString\fP *s)"
+.br
+.ti -1c
+.RI "virtual void \fBendString\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawChar\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, double originX, double originY, CharCode c, int nBytes, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual void \fBincCharCount\fP (int nChars)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginActualText\fP (\fBGfxState\fP *state, \fBGooString\fP *text)"
+.br
+.ti -1c
+.RI "virtual void \fBendActualText\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBprocessLink\fP (\fBAnnotLink\fP *link)"
+.br
+.ti -1c
+.RI "GBool \fBfindText\fP (Unicode *s, int len, GBool startAtTop, GBool stopAtBottom, GBool startAtLast, GBool stopAtLast, GBool caseSensitive, GBool backward, GBool wholeWord, double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetText\fP (double xMin, double yMin, double xMax, double yMax)"
+.br
+.ti -1c
+.RI "GBool \fBfindCharRange\fP (int pos, int length, double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "void \fBdrawSelection\fP (\fBOutputDev\fP *out, double scale, int rotation, \fBPDFRectangle\fP *selection, SelectionStyle style, \fBGfxColor\fP *glyph_color, \fBGfxColor\fP *box_color)"
+.br
+.ti -1c
+.RI "\fBGooList\fP * \fBgetSelectionRegion\fP (\fBPDFRectangle\fP *selection, SelectionStyle style, double scale)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetSelectionText\fP (\fBPDFRectangle\fP *selection, SelectionStyle style)"
+.br
+.ti -1c
+.RI "void \fBsetMergeCombining\fP (GBool merge)"
+.br
+.ti -1c
+.RI "\fBTextWordList\fP * \fBmakeWordList\fP ()"
+.br
+.ti -1c
+.RI "\fBTextPage\fP * \fBtakeText\fP ()"
+.br
+.ti -1c
+.RI "void \fBenableHTMLExtras\fP (GBool doHTMLA)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 727 of file TextOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

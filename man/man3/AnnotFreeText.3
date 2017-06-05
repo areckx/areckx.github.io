@@ -1,0 +1,130 @@
+.TH "AnnotFreeText" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnnotFreeText
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBAnnotMarkup\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnnotFreeTextQuadding\fP { \fBquaddingLeftJustified\fP, \fBquaddingCentered\fP, \fBquaddingRightJustified\fP }"
+.br
+.ti -1c
+.RI "enum \fBAnnotFreeTextIntent\fP { \fBintentFreeText\fP, \fBintentFreeTextCallout\fP, \fBintentFreeTextTypeWriter\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnotFreeText\fP (\fBPDFDoc\fP *docA, \fBPDFRectangle\fP *rect, \fBGooString\fP *da)"
+.br
+.ti -1c
+.RI "\fBAnnotFreeText\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBGfx\fP *gfx, GBool printing)"
+.br
+.ti -1c
+.RI "virtual \fBObject\fP * \fBgetAppearanceResDict\fP (\fBObject\fP *dest)"
+.br
+.ti -1c
+.RI "virtual void \fBsetContents\fP (\fBGooString\fP *new_content)"
+.br
+.ti -1c
+.RI "void \fBsetAppearanceString\fP (\fBGooString\fP *new_string)"
+.br
+.ti -1c
+.RI "void \fBsetQuadding\fP (AnnotFreeTextQuadding new_quadding)"
+.br
+.ti -1c
+.RI "void \fBsetStyleString\fP (\fBGooString\fP *new_string)"
+.br
+.ti -1c
+.RI "void \fBsetCalloutLine\fP (\fBAnnotCalloutLine\fP *line)"
+.br
+.ti -1c
+.RI "void \fBsetIntent\fP (AnnotFreeTextIntent new_intent)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetAppearanceString\fP () const"
+.br
+.ti -1c
+.RI "AnnotFreeTextQuadding \fBgetQuadding\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetStyleString\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotCalloutLine\fP * \fBgetCalloutLine\fP () const"
+.br
+.ti -1c
+.RI "AnnotFreeTextIntent \fBgetIntent\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotBorderEffect\fP * \fBgetBorderEffect\fP () const"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetRectangle\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBgetEndStyle\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitialize\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict)"
+.br
+.ti -1c
+.RI "void \fBgenerateFreeTextAppearance\fP ()"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBparseAppearanceString\fP (\fBGooString\fP *da, double &fontsize, \fBAnnotColor\fP *&fontcolor)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGooString\fP * \fBappearanceString\fP"
+.br
+.ti -1c
+.RI "AnnotFreeTextQuadding \fBquadding\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBstyleString\fP"
+.br
+.ti -1c
+.RI "\fBAnnotCalloutLine\fP * \fBcalloutLine\fP"
+.br
+.ti -1c
+.RI "AnnotFreeTextIntent \fBintent\fP"
+.br
+.ti -1c
+.RI "\fBAnnotBorderEffect\fP * \fBborderEffect\fP"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBrectangle\fP"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBendStyle\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 906 of file Annot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,69 @@
+.TH "IntervalTree< T, K >" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IntervalTree< T, K >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBInterval\fP< T, K > \fBinterval\fP"
+.br
+.ti -1c
+.RI "typedef vector< \fBinterval\fP > \fBintervalVector\fP"
+.br
+.ti -1c
+.RI "typedef \fBIntervalTree\fP< T, K > \fBintervalTree\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIntervalTree\fP (const \fBintervalTree\fP &other)"
+.br
+.ti -1c
+.RI "\fBIntervalTree\fP< T, K > & \fBoperator=\fP (const \fBintervalTree\fP &other)"
+.br
+.ti -1c
+.RI "\fBIntervalTree\fP (intervalVector &ivals, unsigned int depth=16, unsigned int minbucket=64, int leftextent=0, int rightextent=0, unsigned int maxbucket=512)"
+.br
+.ti -1c
+.RI "void \fBfindOverlapping\fP (K start, K stop, intervalVector &overlapping)"
+.br
+.ti -1c
+.RI "void \fBfindContained\fP (K start, K stop, intervalVector &contained)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "intervalVector \fBintervals\fP"
+.br
+.ti -1c
+.RI "\fBintervalTree\fP * \fBleft\fP"
+.br
+.ti -1c
+.RI "\fBintervalTree\fP * \fBright\fP"
+.br
+.ti -1c
+.RI "int \fBcenter\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T, typename K = int>
+.br
+class IntervalTree< T, K >"
+
+.PP
+Definition at line 49 of file IntervalTree\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

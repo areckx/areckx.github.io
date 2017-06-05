@@ -1,0 +1,95 @@
+To build all tests\+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Linux }&\textbf{ O\+SX }&\textbf{ Windows  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Linux }&\textbf{ O\+SX }&\textbf{ Windows  }\\\cline{1-3}
+\endhead
+make debug~\newline
+sudo make installdebug~\newline
+cd build.\+debug/mtest~\newline
+make &make -\/f Makefile.\+osx debug~\newline
+make -\/f Makefile.\+osx installdebug~\newline
+cd build.\+debug/mtest~\newline
+make -\/f Makefile.\+osx &mingw32-\/make -\/f Makefile.\+mingw debug~\newline
+mingw32-\/make -\/f Makefile.\+mingw installdebug~\newline
+cd build.\+debug~\newline
+mingw32-\/make -\/f Makefile.\+mingw \\\cline{1-3}
+\end{longtabu}
+To run all tests\+: \begin{DoxyVerb}ctest
+\end{DoxyVerb}
+
+
+To run only one test (for debugging purposes)\+: \begin{DoxyVerb}cd libmscore/join/
+./tst_join
+\end{DoxyVerb}
+
+
+To see how the CI environment is doing it check {\ttfamily .travis.\+yml} and {\ttfamily build/run\+\_\+tests.\+sh}
+
+{\bfseries Note\+: You need to have {\ttfamily diff} in your path. For Windows, get a copy of \href{http://gnuwin32.sourceforge.net/packages/diffutils.htm}{\tt diffutils for Windows}.}
+
+\section*{Test case conventions }
+
+Tests are grouped in directories by feature (like libmscore or mxl). In these directories, each subdirectory represents a test suite for a particular sub feature.
+
+The name of a test suite directory should be descriptive. The C\+PP file for the tests should use the same name as the directory, for example {\ttfamily tst\+\_\+foo.\+cpp} in directory {\ttfamily foo}. It\textquotesingle{}s good practice to include a R\+E\+A\+D\+ME file in a test suite directory.
+
+Test suite C\+PP files contain one slot per test case. Each file should be called foo-\/\+XX with XX being an incrementing count. If a test case uses a file and a ref file, they should be called {\ttfamily foo-\/\+XX} and {\ttfamily foo-\/\+X\+X-\/ref}, with the extension .mscx. A test case should not reuse a file from another test case.
+
+To create reference or original files, Muse\+Score can be run with the {\ttfamily -\/t} command line argument and it will save all the files in the session in test mode. Such files do not contain platform or version information and do contain extra data for tracing (for example, they contains pixel level position for beams).
+
+\section*{How to write a test case }
+
+\subsection*{Import test }
+
+
+\begin{DoxyItemize}
+\item Open a short file containing an individual case in one of the formats supported by Muse\+Score
+\item Save in Muse\+Score format
+\item Compare with reference file
+\end{DoxyItemize}
+
+At first the test will fail because there is no reference file. Open the file created by the test case in Muse\+Score and try to edit it to be sure it\textquotesingle{}s valid. If the file is valid, save it (without version number) as a reference file.
+
+\subsection*{\hyperlink{class_object}{Object} read write }
+
+Create a test case for all elements and all properties in each element. See {\ttfamily libmscore/note}
+
+
+\begin{DoxyItemize}
+\item Create an object
+\item Set a property
+\item Write and read the object
+\item Check if the property has the right value
+\end{DoxyItemize}
+
+\subsection*{Action tests }
+
+See {\ttfamily libmscore/join} or {\ttfamily libmscore/split} for example
+
+
+\begin{DoxyItemize}
+\item Read a score file
+\item Apply an action
+\item Write the file
+\item Compare with a reference
+\item (Undo the action)
+\item (Compare with original file)
+\end{DoxyItemize}
+
+\subsection*{Compatibility tests }
+
+Most of them are in {\ttfamily mtest/libmscore/compat}
+
+
+\begin{DoxyItemize}
+\item Read a score file from an older version of Muse\+Score
+\item Write the file
+\item Compare with a reference file 
+\end{DoxyItemize}

@@ -1,0 +1,154 @@
+.TH "KQOAuthRequest" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KQOAuthRequest
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBKQOAuthRequest_XAuth\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRequestType\fP { \fBTemporaryCredentials\fP = 0, \fBAccessToken\fP, \fBAuthorizedRequest\fP }"
+.br
+.ti -1c
+.RI "enum \fBRequestSignatureMethod\fP { \fBPLAINTEXT\fP = 0, \fBHMAC_SHA1\fP }"
+.br
+.ti -1c
+.RI "enum \fBRequestHttpMethod\fP { \fBGET\fP = 0, \fBPOST\fP, \fBHEAD\fP, \fBDELETE\fP }"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBrequestTimedout\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKQOAuthRequest\fP (QObject *parent=0)"
+.br
+.ti -1c
+.RI "virtual bool \fBisValid\fP () const"
+.br
+.ti -1c
+.RI "void \fBinitRequest\fP (KQOAuthRequest::RequestType type, const QUrl &requestEndpoint)"
+.br
+.ti -1c
+.RI "void \fBsetConsumerKey\fP (const QString &consumerKey)"
+.br
+.ti -1c
+.RI "void \fBsetConsumerSecretKey\fP (const QString &consumerSecretKey)"
+.br
+.ti -1c
+.RI "void \fBsetCallbackUrl\fP (const QUrl &callbackUrl)"
+.br
+.ti -1c
+.RI "void \fBsetTokenSecret\fP (const QString &tokenSecret)"
+.br
+.ti -1c
+.RI "void \fBsetToken\fP (const QString &token)"
+.br
+.ti -1c
+.RI "void \fBsetVerifier\fP (const QString &verifier)"
+.br
+.ti -1c
+.RI "void \fBsetSignatureMethod\fP (KQOAuthRequest::RequestSignatureMethod=KQOAuthRequest::HMAC_SHA1)"
+.br
+.ti -1c
+.RI "void \fBsetHttpMethod\fP (KQOAuthRequest::RequestHttpMethod=KQOAuthRequest::POST)"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestHttpMethod \fBhttpMethod\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTimeout\fP (int timeoutMilliseconds)"
+.br
+.ti -1c
+.RI "void \fBsetAdditionalParameters\fP (const KQOAuthParameters &additionalParams)"
+.br
+.ti -1c
+.RI "KQOAuthParameters \fBadditionalParameters\fP () const"
+.br
+.ti -1c
+.RI "QList< QByteArray > \fBrequestParameters\fP ()"
+.br
+.ti -1c
+.RI "QByteArray \fBrequestBody\fP () const"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestType \fBrequestType\fP () const"
+.br
+.ti -1c
+.RI "QUrl \fBrequestEndpoint\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetContentType\fP (const QString &contentType)"
+.br
+.ti -1c
+.RI "QString \fBcontentType\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetRawData\fP (const QByteArray &rawData)"
+.br
+.ti -1c
+.RI "QByteArray \fBrawData\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetHttpMultiPart\fP (QHttpMultiPart *httpMultiPart)"
+.br
+.ti -1c
+.RI "QHttpMultiPart * \fBhttpMultiPart\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearRequest\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEnableDebugOutput\fP (bool enabled)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBvalidateXAuthRequest\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBKQOAuthManager\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file kqoauthrequest\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void KQOAuthRequest::initRequest (KQOAuthRequest::RequestType type, const QUrl & requestEndpoint)"
+These methods are OAuth request type specific and not overridden in child classes\&. NOTE: Refactorting still a TODO 
+.PP
+Definition at line 287 of file kqoauthrequest\&.cpp\&.
+.SS "bool KQOAuthRequest::isValid () const\fC [virtual]\fP"
+These methods can be overridden in child classes which are different types of OAuth requests\&. 
+.PP
+Reimplemented in \fBKQOAuthRequest_XAuth\fP\&.
+.PP
+Definition at line 526 of file kqoauthrequest\&.cpp\&.
+.SS "bool KQOAuthRequest::validateXAuthRequest () const\fC [protected]\fP"
+Protected implementations for inherited classes 
+.PP
+Definition at line 564 of file kqoauthrequest\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

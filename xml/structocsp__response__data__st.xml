@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structocsp__response__data__st" kind="struct" language="C++" prot="public">
+    <compoundname>ocsp_response_data_st</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structocsp__response__data__st_1ab8d2433650a7535a807f54c97aa03e94" prot="public" static="no" mutable="no">
+        <type><ref refid="structasn1__string__st" kindref="compound">ASN1_INTEGER</ref> *</type>
+        <definition>ASN1_INTEGER* ocsp_response_data_st::version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="274" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structocsp__response__data__st_1ad3f3152513fd758f44cec6d8b1d78375" prot="public" static="no" mutable="no">
+        <type><ref refid="structocsp__responder__id__st" kindref="compound">OCSP_RESPID</ref> *</type>
+        <definition>OCSP_RESPID* ocsp_response_data_st::responderId</definition>
+        <argsstring></argsstring>
+        <name>responderId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="275" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="275" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structocsp__response__data__st_1a70d47981b37a14ee1dabb1b8dd170e0d" prot="public" static="no" mutable="no">
+        <type><ref refid="structasn1__string__st" kindref="compound">ASN1_GENERALIZEDTIME</ref> *</type>
+        <definition>ASN1_GENERALIZEDTIME* ocsp_response_data_st::producedAt</definition>
+        <argsstring></argsstring>
+        <name>producedAt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="276" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structocsp__response__data__st_1a56d73019256af5660a2e0f539f9a9daf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ocsp_response_data_st::STACK_OF</definition>
+        <argsstring>(OCSP_SINGLERESP) *responses</argsstring>
+        <name>STACK_OF</name>
+        <param>
+          <type><ref refid="structocsp__single__response__st" kindref="compound">OCSP_SINGLERESP</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="277" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structocsp__response__data__st_1a84a88c2a6975ca68c843b886f0a96ded" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ocsp_response_data_st::STACK_OF</definition>
+        <argsstring>(X509_EXTENSION) *responseExtensions</argsstring>
+        <name>STACK_OF</name>
+        <param>
+          <type><ref refid="struct_x509__extension__st" kindref="compound">X509_EXTENSION</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="278" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="11316">
+        <label>X509_name_st</label>
+        <link refid="struct_x509__name__st"/>
+        <childnode refid="11317" relation="usage">
+          <edgelabel>bytes</edgelabel>
+        </childnode>
+      </node>
+      <node id="11313">
+        <label>ocsp_response_data_st</label>
+        <link refid="structocsp__response__data__st"/>
+        <childnode refid="11314" relation="usage">
+          <edgelabel>producedAt</edgelabel>
+          <edgelabel>version</edgelabel>
+        </childnode>
+        <childnode refid="11315" relation="usage">
+          <edgelabel>responderId</edgelabel>
+        </childnode>
+      </node>
+      <node id="11317">
+        <label>buf_mem_st</label>
+        <link refid="structbuf__mem__st"/>
+      </node>
+      <node id="11315">
+        <label>ocsp_responder_id_st</label>
+        <link refid="structocsp__responder__id__st"/>
+        <childnode refid="11314" relation="usage">
+          <edgelabel>byKey</edgelabel>
+        </childnode>
+        <childnode refid="11316" relation="usage">
+          <edgelabel>byName</edgelabel>
+        </childnode>
+      </node>
+      <node id="11314">
+        <label>asn1_string_st</label>
+        <link refid="structasn1__string__st"/>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/openssl/include/openssl/ocsp.h" line="273" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="272" bodyend="279"/>
+    <listofallmembers>
+      <member refid="structocsp__response__data__st_1a70d47981b37a14ee1dabb1b8dd170e0d" prot="public" virt="non-virtual"><scope>ocsp_response_data_st</scope><name>producedAt</name></member>
+      <member refid="structocsp__response__data__st_1ad3f3152513fd758f44cec6d8b1d78375" prot="public" virt="non-virtual"><scope>ocsp_response_data_st</scope><name>responderId</name></member>
+      <member refid="structocsp__response__data__st_1a56d73019256af5660a2e0f539f9a9daf" prot="public" virt="non-virtual"><scope>ocsp_response_data_st</scope><name>STACK_OF</name></member>
+      <member refid="structocsp__response__data__st_1a84a88c2a6975ca68c843b886f0a96ded" prot="public" virt="non-virtual"><scope>ocsp_response_data_st</scope><name>STACK_OF</name></member>
+      <member refid="structocsp__response__data__st_1ab8d2433650a7535a807f54c97aa03e94" prot="public" virt="non-virtual"><scope>ocsp_response_data_st</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

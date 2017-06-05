@@ -1,0 +1,180 @@
+\hypertarget{class_poppler_1_1_sound_object}{}\section{Poppler\+:\+:Sound\+Object Class Reference}
+\label{class_poppler_1_1_sound_object}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+
+
+{\ttfamily \#include $<$poppler-\/qt5.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}{Sound\+Type} \{ \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5ba7336d237089fc02d79d722881b837530}{External}, 
+\hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5bab50528f996b2b62c454d83c472ef27c8}{Embedded}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}{Sound\+Encoding} \{ \hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640acd5b3f64cc4684a7652abc9b7b5619e9}{Raw}, 
+\hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640ac79e626daeb40c09097ec9ff6da82218}{Signed}, 
+\hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a53ccf694f74dbcddfaf3238e502a0511}{mu\+Law}, 
+\hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a072c6c63ffc967b19d527efb54e5ea64}{A\+Law}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}{Sound\+Type} \hyperlink{class_poppler_1_1_sound_object_ad9a6846519683cb82dec300f4f7877b2}{sound\+Type} () const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_sound_object_a9c637ebe5e555586f4e42e32777646ec}{url} () const
+\item 
+Q\+Byte\+Array \hyperlink{class_poppler_1_1_sound_object_ae314846926ed860809e3651607a52bec}{data} () const
+\item 
+double \hyperlink{class_poppler_1_1_sound_object_a0cc54219ef559185946eb8668f162424}{sampling\+Rate} () const
+\item 
+int \hyperlink{class_poppler_1_1_sound_object_a58739de86624f0c4f0f3a72da77862e4}{channels} () const
+\item 
+int \hyperlink{class_poppler_1_1_sound_object_ad52ff1d6ee6418cb89adb68c730decfa}{bits\+Per\+Sample} () const
+\item 
+\hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}{Sound\+Encoding} \hyperlink{class_poppler_1_1_sound_object_af20191df564f702e158fdef2c6dea7a1}{sound\+Encoding} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container class for a sound file in a P\+DF document.
+
+A sound can be either External (in that case should be loaded the file whose url is represented by \hyperlink{class_poppler_1_1_sound_object_a9c637ebe5e555586f4e42e32777646ec}{url()} ), or Embedded, and the player has to play the data contained in \hyperlink{class_poppler_1_1_sound_object_ae314846926ed860809e3651607a52bec}{data()}.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 1688 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}\label{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!Sound\+Encoding@{Sound\+Encoding}}
+\index{Sound\+Encoding@{Sound\+Encoding}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{Sound\+Encoding}{SoundEncoding}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}{Poppler\+::\+Sound\+Object\+::\+Sound\+Encoding}}
+
+The encoding format used for the sound \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Raw@{Raw}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!Raw@{Raw}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640acd5b3f64cc4684a7652abc9b7b5619e9}\label{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640acd5b3f64cc4684a7652abc9b7b5619e9}} 
+Raw&Raw encoding, with unspecified or unsigned values in the range \mbox{[} 0, 2$^\wedge$B -\/ 1 \mbox{]}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Signed@{Signed}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!Signed@{Signed}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640ac79e626daeb40c09097ec9ff6da82218}\label{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640ac79e626daeb40c09097ec9ff6da82218}} 
+Signed&Twos-\/complement values. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mu\+Law@{mu\+Law}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!mu\+Law@{mu\+Law}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a53ccf694f74dbcddfaf3238e502a0511}\label{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a53ccf694f74dbcddfaf3238e502a0511}} 
+mu\+Law&mu-\/law-\/encoded samples \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Law@{A\+Law}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!A\+Law@{A\+Law}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a072c6c63ffc967b19d527efb54e5ea64}\label{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640a072c6c63ffc967b19d527efb54e5ea64}} 
+A\+Law&A-\/law-\/encoded samples. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1701 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}\label{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!Sound\+Type@{Sound\+Type}}
+\index{Sound\+Type@{Sound\+Type}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{Sound\+Type}{SoundType}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}{Poppler\+::\+Sound\+Object\+::\+Sound\+Type}}
+
+The type of sound \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{External@{External}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!External@{External}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5ba7336d237089fc02d79d722881b837530}\label{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5ba7336d237089fc02d79d722881b837530}} 
+External&The real sound file is external. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Embedded@{Embedded}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!Embedded@{Embedded}}}\mbox{\Hypertarget{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5bab50528f996b2b62c454d83c472ef27c8}\label{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5bab50528f996b2b62c454d83c472ef27c8}} 
+Embedded&The sound is contained in the data. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1693 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_ad52ff1d6ee6418cb89adb68c730decfa}\label{class_poppler_1_1_sound_object_ad52ff1d6ee6418cb89adb68c730decfa}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!bits\+Per\+Sample@{bits\+Per\+Sample}}
+\index{bits\+Per\+Sample@{bits\+Per\+Sample}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{bits\+Per\+Sample()}{bitsPerSample()}}
+{\footnotesize\ttfamily int Poppler\+::\+Sound\+Object\+::bits\+Per\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of bits per sample value per channel 
+
+Definition at line 111 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_a58739de86624f0c4f0f3a72da77862e4}\label{class_poppler_1_1_sound_object_a58739de86624f0c4f0f3a72da77862e4}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!channels@{channels}}
+\index{channels@{channels}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{channels()}{channels()}}
+{\footnotesize\ttfamily int Poppler\+::\+Sound\+Object\+::channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of sound channels to use to play the sound 
+
+Definition at line 106 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_ae314846926ed860809e3651607a52bec}\label{class_poppler_1_1_sound_object_ae314846926ed860809e3651607a52bec}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!data@{data}}
+\index{data@{data}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Poppler\+::\+Sound\+Object\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The data of the sound, in case of \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5bab50528f996b2b62c454d83c472ef27c8}{Sound\+Object\+::\+Embedded} 
+
+Definition at line 82 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_a0cc54219ef559185946eb8668f162424}\label{class_poppler_1_1_sound_object_a0cc54219ef559185946eb8668f162424}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!sampling\+Rate@{sampling\+Rate}}
+\index{sampling\+Rate@{sampling\+Rate}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{sampling\+Rate()}{samplingRate()}}
+{\footnotesize\ttfamily double Poppler\+::\+Sound\+Object\+::sampling\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The sampling rate of the sound 
+
+Definition at line 101 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_af20191df564f702e158fdef2c6dea7a1}\label{class_poppler_1_1_sound_object_af20191df564f702e158fdef2c6dea7a1}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!sound\+Encoding@{sound\+Encoding}}
+\index{sound\+Encoding@{sound\+Encoding}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{sound\+Encoding()}{soundEncoding()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_sound_object_ac59f867ef18ebd7f3a85dec136f04640}{Sound\+Object\+::\+Sound\+Encoding} Poppler\+::\+Sound\+Object\+::sound\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The encoding used for the sound 
+
+Definition at line 116 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_ad9a6846519683cb82dec300f4f7877b2}\label{class_poppler_1_1_sound_object_ad9a6846519683cb82dec300f4f7877b2}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!sound\+Type@{sound\+Type}}
+\index{sound\+Type@{sound\+Type}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{sound\+Type()}{soundType()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5b}{Sound\+Object\+::\+Sound\+Type} Poppler\+::\+Sound\+Object\+::sound\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Is the sound embedded (\hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5bab50528f996b2b62c454d83c472ef27c8}{Sound\+Object\+::\+Embedded}) or external (\hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5ba7336d237089fc02d79d722881b837530}{Sound\+Object\+::\+External})? 
+
+Definition at line 68 of file poppler-\/sound.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_sound_object_a9c637ebe5e555586f4e42e32777646ec}\label{class_poppler_1_1_sound_object_a9c637ebe5e555586f4e42e32777646ec}} 
+\index{Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}!url@{url}}
+\index{url@{url}!Poppler\+::\+Sound\+Object@{Poppler\+::\+Sound\+Object}}
+\subsubsection{\texorpdfstring{url()}{url()}}
+{\footnotesize\ttfamily Q\+String Poppler\+::\+Sound\+Object\+::url (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The U\+RL of the sound file to be played, in case of \hyperlink{class_poppler_1_1_sound_object_ac9f524c6c40abcbb1c9e09c29e020c5ba7336d237089fc02d79d722881b837530}{Sound\+Object\+::\+External} 
+
+Definition at line 73 of file poppler-\/sound.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/qt5.\+h\item 
+thirdparty/poppler/qt5/poppler-\/sound.\+cc\end{DoxyCompactItemize}

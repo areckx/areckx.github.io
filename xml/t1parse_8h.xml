@@ -1,0 +1,473 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="t1parse_8h" kind="file" language="C++">
+    <compoundname>t1parse.h</compoundname>
+    <includes local="no">ft2build.h</includes>
+    <includedby refid="t1load_8h" local="yes">thirdparty/freetype/src/type1/t1load.h</includedby>
+    <includedby refid="t1parse_8c" local="yes">thirdparty/freetype/src/type1/t1parse.c</includedby>
+    <incdepgraph>
+      <node id="81327">
+        <label>thirdparty/freetype/src/type1/t1parse.h</label>
+        <link refid="t1parse_8h"/>
+        <childnode refid="81328" relation="include">
+        </childnode>
+      </node>
+      <node id="81328">
+        <label>ft2build.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="81334">
+        <label>thirdparty/freetype/src/type1/t1objs.c</label>
+        <link refid="t1objs_8c_source"/>
+        <childnode refid="81332" relation="include">
+        </childnode>
+      </node>
+      <node id="81333">
+        <label>thirdparty/freetype/src/type1/t1load.c</label>
+        <link refid="t1load_8c_source"/>
+        <childnode refid="81332" relation="include">
+        </childnode>
+      </node>
+      <node id="81330">
+        <label>thirdparty/freetype/src/type1/t1load.h</label>
+        <link refid="t1load_8h_source"/>
+        <childnode refid="81331" relation="include">
+        </childnode>
+        <childnode refid="81333" relation="include">
+        </childnode>
+        <childnode refid="81334" relation="include">
+        </childnode>
+      </node>
+      <node id="81335">
+        <label>thirdparty/freetype/src/type1/t1parse.c</label>
+        <link refid="t1parse_8c_source"/>
+        <childnode refid="81332" relation="include">
+        </childnode>
+      </node>
+      <node id="81329">
+        <label>thirdparty/freetype/src/type1/t1parse.h</label>
+        <link refid="t1parse_8h"/>
+        <childnode refid="81330" relation="include">
+        </childnode>
+        <childnode refid="81335" relation="include">
+        </childnode>
+      </node>
+      <node id="81331">
+        <label>thirdparty/freetype/src/type1/t1driver.c</label>
+        <link refid="t1driver_8c_source"/>
+        <childnode refid="81332" relation="include">
+        </childnode>
+      </node>
+      <node id="81332">
+        <label>thirdparty/freetype/src/type1/type1.c</label>
+        <link refid="type1_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_t1___parser_rec__" prot="public">T1_ParserRec_</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="t1parse_8h_1a4587cc322042ed26db057bc082e190fd" prot="public" static="no">
+        <name>T1_Add_Table</name>
+        <param><defname>p</defname></param>
+        <param><defname>i</defname></param>
+        <param><defname>o</defname></param>
+        <param><defname>l</defname></param>
+        <initializer>(p)-&gt;funcs.add( (p), i, o, l )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="79" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a46bfcd2eb2336c0d9020606bdb310fbb" prot="public" static="no">
+        <name>T1_Release_Table</name>
+        <param><defname>p</defname></param>
+        <initializer>do                           \
+          {                            \
+            if ( (p)-&gt;funcs.release )  \
+              (p)-&gt;funcs.release( p ); \
+          } while ( 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="80" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a4a8e90ed89199336b0358f2186afb837" prot="public" static="no">
+        <name>T1_Skip_Spaces</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;root.funcs.skip_spaces( &amp;(p)-&gt;root )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="88" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a4c56fcb487dc6cab1c2b72dec7efab7e" prot="public" static="no">
+        <name>T1_Skip_PS_Token</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;root.funcs.skip_PS_token( &amp;(p)-&gt;root )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="89" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a7b274cb3d757bd0c8932331385fd3f15" prot="public" static="no">
+        <name>T1_ToInt</name>
+        <param><defname>p</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_int( &amp;(p)-&gt;root )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="91" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a0f804df0419d1a32855721d7383a1571" prot="public" static="no">
+        <name>T1_ToFixed</name>
+        <param><defname>p</defname></param>
+        <param><defname>t</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_fixed( &amp;(p)-&gt;root, t )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="92" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a0092666fe7c0022dfe337dbe42e38246" prot="public" static="no">
+        <name>T1_ToCoordArray</name>
+        <param><defname>p</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_coord_array( &amp;(p)-&gt;root, m, c )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="94" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a38518bc9a98a9e4beb448a73c955c4da" prot="public" static="no">
+        <name>T1_ToFixedArray</name>
+        <param><defname>p</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>f</defname></param>
+        <param><defname>t</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_fixed_array( &amp;(p)-&gt;root, m, f, t )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="96" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1a053a68ccae503c6802c5d3b0bb39888f" prot="public" static="no">
+        <name>T1_ToToken</name>
+        <param><defname>p</defname></param>
+        <param><defname>t</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_token( &amp;(p)-&gt;root, t )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="98" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1aa7087295875eb31bd7d9b57363549fb7" prot="public" static="no">
+        <name>T1_ToTokenArray</name>
+        <param><defname>p</defname></param>
+        <param><defname>t</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>c</defname></param>
+        <initializer>(p)-&gt;root.funcs.to_token_array( &amp;(p)-&gt;root, t, m, c )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="100" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1ad2bafe5a5ab0c58c6c8db76ea9606064" prot="public" static="no">
+        <name>T1_Load_Field</name>
+        <param><defname>p</defname></param>
+        <param><defname>f</defname></param>
+        <param><defname>o</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>pf</defname></param>
+        <initializer>(p)-&gt;root.funcs.load_field( &amp;(p)-&gt;root, f, o, m, pf )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="103" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="t1parse_8h_1afd63d95256e2e53f93a8c13c79bd9c83" prot="public" static="no">
+        <name>T1_Load_Field_Table</name>
+        <param><defname>p</defname></param>
+        <param><defname>f</defname></param>
+        <param><defname>o</defname></param>
+        <param><defname>m</defname></param>
+        <param><defname>pf</defname></param>
+        <initializer>(p)-&gt;root.funcs.load_field_table( &amp;(p)-&gt;root, f, o, m, pf )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="106" column="9" bodyfile="thirdparty/freetype/src/type1/t1parse.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="t1parse_8h_1add8224b179d82c3535de355d99ac0532" prot="public" static="no">
+        <type>FT_BEGIN_HEADER struct <ref refid="struct_t1___parser_rec__" kindref="compound">T1_ParserRec_</ref></type>
+        <definition>typedef FT_BEGIN_HEADER struct T1_ParserRec_  T1_ParserRec</definition>
+        <argsstring></argsstring>
+        <name>T1_ParserRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="76" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="t1parse_8h_1a452297769f4652d1d65fd4f9a983eaf2" prot="public" static="no">
+        <type>FT_BEGIN_HEADER struct <ref refid="struct_t1___parser_rec__" kindref="compound">T1_ParserRec_</ref> *</type>
+        <definition>typedef FT_BEGIN_HEADER struct T1_ParserRec_ * T1_Parser</definition>
+        <argsstring></argsstring>
+        <name>T1_Parser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="76" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="t1parse_8h_1a2a4928055043ebf7d39c609a05ddf371" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>T1_New_Parser</definition>
+        <argsstring>(T1_Parser parser, FT_Stream stream, FT_Memory memory, PSAux_Service psaux)</argsstring>
+        <name>T1_New_Parser</name>
+        <param>
+          <type>T1_Parser</type>
+          <declname>parser</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>FT_Memory</type>
+          <declname>memory</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_p_s_aux___service_rec__" kindref="compound">PSAux_Service</ref></type>
+          <declname>psaux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="111" column="1" bodyfile="thirdparty/freetype/src/type1/t1parse.c" bodystart="136" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="t1parse_8h_1abc9d83fd1fd9fc5862c14e1a6f01fbd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>T1_Get_Private_Dict</definition>
+        <argsstring>(T1_Parser parser, PSAux_Service psaux)</argsstring>
+        <name>T1_Get_Private_Dict</name>
+        <param>
+          <type>T1_Parser</type>
+          <declname>parser</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_p_s_aux___service_rec__" kindref="compound">PSAux_Service</ref></type>
+          <declname>psaux</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="117" column="1" bodyfile="thirdparty/freetype/src/type1/t1parse.c" bodystart="261" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="t1parse_8h_1a0e8d682e4e2e85b3f609db59836d5e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>T1_Finalize_Parser</definition>
+        <argsstring>(T1_Parser parser)</argsstring>
+        <name>T1_Finalize_Parser</name>
+        <param>
+          <type>T1_Parser</type>
+          <declname>parser</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/type1/t1parse.h" line="121" column="1" bodyfile="thirdparty/freetype/src/type1/t1parse.c" bodystart="244" bodyend="257"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>t1parse.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>Type<sp/>1<sp/>parser<sp/>(specification).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>1996-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__T1PARSE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__T1PARSE_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ft2build.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_INTERNAL_TYPE1_TYPES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_INTERNAL_STREAM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">FT_BEGIN_HEADER</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Struct&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>T1_ParserRec<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Description&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>A<sp/>PS_ParserRec<sp/>is<sp/>an<sp/>object<sp/>used<sp/>to<sp/>parse<sp/>a<sp/>Type<sp/>1<sp/>fonts<sp/>very<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>quickly.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Fields&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>root<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>The<sp/>root<sp/>parser.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>stream<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>The<sp/>current<sp/>input<sp/>stream.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>base_dict<sp/><sp/><sp/><sp/>::<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>top-level<sp/>dictionary.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>base_len<sp/><sp/><sp/><sp/><sp/>::<sp/>The<sp/>length<sp/>in<sp/>bytes<sp/>of<sp/>the<sp/>top<sp/>dictionary.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>private_dict<sp/>::<sp/>A<sp/>pointer<sp/>to<sp/>the<sp/>private<sp/>dictionary.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>private_len<sp/><sp/>::<sp/>The<sp/>length<sp/>in<sp/>bytes<sp/>of<sp/>the<sp/>private<sp/>dictionary.<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>in_pfb<sp/><sp/><sp/><sp/><sp/><sp/><sp/>::<sp/>A<sp/>boolean.<sp/><sp/>Indicates<sp/>that<sp/>we<sp/>are<sp/>handling<sp/>a<sp/>PFB<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>in_memory<sp/><sp/><sp/><sp/>::<sp/>A<sp/>boolean.<sp/><sp/>Indicates<sp/>a<sp/>memory-based<sp/>stream.<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>single_block<sp/>::<sp/>A<sp/>boolean.<sp/><sp/>Indicates<sp/>that<sp/>the<sp/>private<sp/>dictionary<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>stored<sp/>in<sp/>lieu<sp/>of<sp/>the<sp/>base<sp/>dictionary.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="struct_t1___parser_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_t1___parser_rec__" kindref="compound">T1_ParserRec_</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_p_s___parser_rec__" kindref="compound">PS_ParserRec</ref><sp/><sp/>root;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/><sp/><sp/>stream;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Byte*<sp/><sp/><sp/><sp/><sp/><sp/>base_dict;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_ULong<sp/><sp/><sp/><sp/><sp/><sp/>base_len;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Byte*<sp/><sp/><sp/><sp/><sp/><sp/>private_dict;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_ULong<sp/><sp/><sp/><sp/><sp/><sp/>private_len;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/>in_pfb;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/>in_memory;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/>single_block;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>}<sp/>T1_ParserRec,<sp/>*T1_Parser;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Add_Table(<sp/>p,<sp/>i,<sp/>o,<sp/>l<sp/>)<sp/><sp/>(p)-&gt;funcs.add(<sp/>(p),<sp/>i,<sp/>o,<sp/>l<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Release_Table(<sp/>p<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>(p)-&gt;funcs.release<sp/>)<sp/><sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;funcs.release(<sp/>p<sp/>);<sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Skip_Spaces(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.skip_spaces(<sp/>&amp;(p)-&gt;root<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Skip_PS_Token(<sp/>p<sp/>)<sp/><sp/>(p)-&gt;root.funcs.skip_PS_token(<sp/>&amp;(p)-&gt;root<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToInt(<sp/>p<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.to_int(<sp/>&amp;(p)-&gt;root<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToFixed(<sp/>p,<sp/>t<sp/>)<sp/><sp/>(p)-&gt;root.funcs.to_fixed(<sp/>&amp;(p)-&gt;root,<sp/>t<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToCoordArray(<sp/>p,<sp/>m,<sp/>c<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="95"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.to_coord_array(<sp/>&amp;(p)-&gt;root,<sp/>m,<sp/>c<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToFixedArray(<sp/>p,<sp/>m,<sp/>f,<sp/>t<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="97"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.to_fixed_array(<sp/>&amp;(p)-&gt;root,<sp/>m,<sp/>f,<sp/>t<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToToken(<sp/>p,<sp/>t<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="99"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.to_token(<sp/>&amp;(p)-&gt;root,<sp/>t<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_ToTokenArray(<sp/>p,<sp/>t,<sp/>m,<sp/>c<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="101"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.to_token_array(<sp/>&amp;(p)-&gt;root,<sp/>t,<sp/>m,<sp/>c<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Load_Field(<sp/>p,<sp/>f,<sp/>o,<sp/>m,<sp/>pf<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.load_field(<sp/>&amp;(p)-&gt;root,<sp/>f,<sp/>o,<sp/>m,<sp/>pf<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>T1_Load_Field_Table(<sp/>p,<sp/>f,<sp/>o,<sp/>m,<sp/>pf<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="107"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(p)-&gt;root.funcs.load_field_table(<sp/>&amp;(p)-&gt;root,<sp/>f,<sp/>o,<sp/>m,<sp/>pf<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>T1_New_Parser(<sp/>T1_Parser<sp/><sp/><sp/><sp/><sp/><sp/>parser,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/><sp/><sp/><sp/>stream,</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Memory<sp/><sp/><sp/><sp/><sp/><sp/>memory,</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_s_aux___service_rec__" kindref="compound">PSAux_Service</ref><sp/><sp/>psaux<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>T1_Get_Private_Dict(<sp/>T1_Parser<sp/><sp/><sp/><sp/><sp/><sp/>parser,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_p_s_aux___service_rec__" kindref="compound">PSAux_Service</ref><sp/><sp/>psaux<sp/>);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>T1_Finalize_Parser(<sp/>T1_Parser<sp/><sp/>parser<sp/>);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal">FT_END_HEADER</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__T1PARSE_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/type1/t1parse.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,3308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_cairo_output_dev" kind="class" language="C++" prot="public">
+    <compoundname>CairoOutputDev</compoundname>
+    <basecompoundref refid="class_output_dev" prot="public" virt="non-virtual">OutputDev</basecompoundref>
+    <derivedcompoundref refid="class_cairo_image_output_dev" prot="public" virt="non-virtual">CairoImageOutputDev</derivedcompoundref>
+    <innerclass refid="struct_cairo_output_dev_1_1_color_space_stack" prot="protected">CairoOutputDev::ColorSpaceStack</innerclass>
+    <innerclass refid="struct_cairo_output_dev_1_1_mask_stack" prot="protected">CairoOutputDev::MaskStack</innerclass>
+    <innerclass refid="struct_cairo_output_dev_1_1_stroke_path_clip" prot="protected">CairoOutputDev::StrokePathClip</innerclass>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_cairo_output_dev_1addfb0184684bb889af848c9c5365c6dd" prot="protected" static="no" mutable="no">
+        <type><ref refid="struct_gfx_r_g_b" kindref="compound">GfxRGB</ref></type>
+        <definition>GfxRGB CairoOutputDev::fill_color</definition>
+        <argsstring></argsstring>
+        <name>fill_color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="294" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1aa9ca35e2decae17d70ab0250947d1c02" prot="protected" static="no" mutable="no">
+        <type><ref refid="struct_gfx_r_g_b" kindref="compound">GfxRGB</ref></type>
+        <definition>GfxRGB CairoOutputDev::stroke_color</definition>
+        <argsstring></argsstring>
+        <name>stroke_color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="294" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="294" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a45130f866cf1b033294459975d9881df" prot="protected" static="no" mutable="no">
+        <type>cairo_pattern_t *</type>
+        <definition>cairo_pattern_t* CairoOutputDev::fill_pattern</definition>
+        <argsstring></argsstring>
+        <name>fill_pattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="295" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a3623ed7c928f31ff42c83cde98a5513a" prot="protected" static="no" mutable="no">
+        <type>cairo_pattern_t *</type>
+        <definition>cairo_pattern_t * CairoOutputDev::stroke_pattern</definition>
+        <argsstring></argsstring>
+        <name>stroke_pattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="295" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1adf76e859a7e221e62af635675a04c56c" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CairoOutputDev::fill_opacity</definition>
+        <argsstring></argsstring>
+        <name>fill_opacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="296" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="296" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a28efd2872b08c38f8857e83fc20f3954" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CairoOutputDev::stroke_opacity</definition>
+        <argsstring></argsstring>
+        <name>stroke_opacity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="297" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1aeb0d9abccfbfd01b5cba560ee093ddc4" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::stroke_adjust</definition>
+        <argsstring></argsstring>
+        <name>stroke_adjust</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="298" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a0d1b9af88519d8f55b93464d8fe720c4" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::adjusted_stroke_width</definition>
+        <argsstring></argsstring>
+        <name>adjusted_stroke_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="299" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a6365b0b3f006cb44b6b5601b8023c99a" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::align_stroke_coords</definition>
+        <argsstring></argsstring>
+        <name>align_stroke_coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="300" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1af743bb7bb7880374e6b1ffad0f2dfd02" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_cairo_font" kindref="compound">CairoFont</ref> *</type>
+        <definition>CairoFont* CairoOutputDev::currentFont</definition>
+        <argsstring></argsstring>
+        <name>currentFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="301" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a20b3ef367474baac0832e84fb490c4da" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+        <definition>XRef* CairoOutputDev::xref</definition>
+        <argsstring></argsstring>
+        <name>xref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="302" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a42baa5b8dec299eb5a85f1168d6cb486" prot="protected" static="no" mutable="no">
+        <type>struct <ref refid="struct_cairo_output_dev_1_1_stroke_path_clip" kindref="compound">CairoOutputDev::StrokePathClip</ref> *</type>
+        <definition>struct CairoOutputDev::StrokePathClip * CairoOutputDev::strokePathClip</definition>
+        <argsstring></argsstring>
+        <name>strokePathClip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="315" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a72901d5a9510ac22defa6d09190552be" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_p_d_f_doc" kindref="compound">PDFDoc</ref> *</type>
+        <definition>PDFDoc* CairoOutputDev::doc</definition>
+        <argsstring></argsstring>
+        <name>doc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="317" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a98c3bf4454b169ccba69addda510a0c8" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_cairo_font_engine" kindref="compound">CairoFontEngine</ref> *</type>
+        <definition>CairoFontEngine* CairoOutputDev::fontEngine</definition>
+        <argsstring></argsstring>
+        <name>fontEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="322" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a73bd6550477c761470c1dc4e87b87cb5" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::fontEngine_owner</definition>
+        <argsstring></argsstring>
+        <name>fontEngine_owner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="323" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a4df47c9d086540d41c00848756a6ff10" prot="protected" static="no" mutable="no">
+        <type>cairo_t *</type>
+        <definition>cairo_t* CairoOutputDev::cairo</definition>
+        <argsstring></argsstring>
+        <name>cairo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="325" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a5297eb6c00c5017d05b1640dd3e5d924" prot="protected" static="no" mutable="no">
+        <type>cairo_matrix_t</type>
+        <definition>cairo_matrix_t CairoOutputDev::orig_matrix</definition>
+        <argsstring></argsstring>
+        <name>orig_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="326" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="326" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1ad6fb5a1b8b866cff117beab720821c94" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::needFontUpdate</definition>
+        <argsstring></argsstring>
+        <name>needFontUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="327" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a57ec2906eac6f461d66bc518c18e77e7" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::printing</definition>
+        <argsstring></argsstring>
+        <name>printing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="328" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a17f044236fc8f159e6e9d39b2b620612" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::use_show_text_glyphs</definition>
+        <argsstring></argsstring>
+        <name>use_show_text_glyphs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="329" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a0ac5cd2e751fbd24354c75a7e7593bf0" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::text_matrix_valid</definition>
+        <argsstring></argsstring>
+        <name>text_matrix_valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="330" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a92ef523a081c44d87928a330eebe3fc4" prot="protected" static="no" mutable="no">
+        <type>cairo_surface_t *</type>
+        <definition>cairo_surface_t* CairoOutputDev::surface</definition>
+        <argsstring></argsstring>
+        <name>surface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="331" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="331" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a85bcc2f2da277a4343824d7e27605cbe" prot="protected" static="no" mutable="no">
+        <type>cairo_glyph_t *</type>
+        <definition>cairo_glyph_t* CairoOutputDev::glyphs</definition>
+        <argsstring></argsstring>
+        <name>glyphs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="332" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="332" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a169c38e50875faea24fd0743f10155d9" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CairoOutputDev::glyphCount</definition>
+        <argsstring></argsstring>
+        <name>glyphCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="333" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="333" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a2f7113a656d2b7eb65d466ad7eb69ba4" prot="protected" static="no" mutable="no">
+        <type>cairo_text_cluster_t *</type>
+        <definition>cairo_text_cluster_t* CairoOutputDev::clusters</definition>
+        <argsstring></argsstring>
+        <name>clusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="334" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a6c282a6b43c8176ad464efc853552d91" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CairoOutputDev::clusterCount</definition>
+        <argsstring></argsstring>
+        <name>clusterCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="335" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="335" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a81224400f9ff648d87d8967dc59ad93b" prot="protected" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* CairoOutputDev::utf8</definition>
+        <argsstring></argsstring>
+        <name>utf8</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="336" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="336" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a02ecc2d33c9192906d32255cc7a39fb1" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CairoOutputDev::utf8Count</definition>
+        <argsstring></argsstring>
+        <name>utf8Count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="337" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="337" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a98636789cbe64ebedf84423ca96c83b3" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CairoOutputDev::utf8Max</definition>
+        <argsstring></argsstring>
+        <name>utf8Max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="338" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a88a618eb9f516d067f5e59ee0f169212" prot="protected" static="no" mutable="no">
+        <type>cairo_path_t *</type>
+        <definition>cairo_path_t* CairoOutputDev::textClipPath</definition>
+        <argsstring></argsstring>
+        <name>textClipPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="339" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="339" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a776ddf3d1b164b10728df402cd21ffe4" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::inUncoloredPattern</definition>
+        <argsstring></argsstring>
+        <name>inUncoloredPattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="340" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="340" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1ae214c3f31ef0b1a99b70740efe5d6b5e" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::inType3Char</definition>
+        <argsstring></argsstring>
+        <name>inType3Char</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="341" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a98061e28c8c4e7d1120d12598044d78a" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CairoOutputDev::t3_glyph_wx</definition>
+        <argsstring></argsstring>
+        <name>t3_glyph_wx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="342" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a8c3e5a61b3efc68eea5c352af0dd4ae4" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CairoOutputDev::t3_glyph_wy</definition>
+        <argsstring></argsstring>
+        <name>t3_glyph_wy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="342" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a07d37e897c945a0e7efc26dc2cc60704" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::t3_glyph_has_bbox</definition>
+        <argsstring></argsstring>
+        <name>t3_glyph_has_bbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="343" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a1a562a57159dc67dcc3da0c5dc619d2c" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CairoOutputDev::t3_glyph_bbox[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>t3_glyph_bbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="344" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a7aa59ec26d1c1d5adbf573cbf94b0015" prot="protected" static="no" mutable="no">
+        <type>cairo_antialias_t</type>
+        <definition>cairo_antialias_t CairoOutputDev::antialias</definition>
+        <argsstring></argsstring>
+        <name>antialias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="345" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1afca0c0ee9ad8bfc3ac8b92a839b4c877" prot="protected" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::prescaleImages</definition>
+        <argsstring></argsstring>
+        <name>prescaleImages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="346" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a9027f49a5a75551de08a36c1872884a1" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_text_page" kindref="compound">TextPage</ref> *</type>
+        <definition>TextPage* CairoOutputDev::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="348" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1af8cc4e822fd0f149392cdf056d9a97e9" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_actual_text" kindref="compound">ActualText</ref> *</type>
+        <definition>ActualText* CairoOutputDev::actualText</definition>
+        <argsstring></argsstring>
+        <name>actualText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="349" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1adf2bf35778ae20ca9feb757105c692f1" prot="protected" static="no" mutable="no">
+        <type>cairo_pattern_t *</type>
+        <definition>cairo_pattern_t* CairoOutputDev::group</definition>
+        <argsstring></argsstring>
+        <name>group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="351" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a19d345a0033645d6f83d4ea9b856d308" prot="protected" static="no" mutable="no">
+        <type>cairo_pattern_t *</type>
+        <definition>cairo_pattern_t* CairoOutputDev::shape</definition>
+        <argsstring></argsstring>
+        <name>shape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="352" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="352" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1aedba0dddead636ecd1b861242969c2a9" prot="protected" static="no" mutable="no">
+        <type>cairo_pattern_t *</type>
+        <definition>cairo_pattern_t* CairoOutputDev::mask</definition>
+        <argsstring></argsstring>
+        <name>mask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="353" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="353" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a6565d35477771718941df2912b055340" prot="protected" static="no" mutable="no">
+        <type>cairo_matrix_t</type>
+        <definition>cairo_matrix_t CairoOutputDev::mask_matrix</definition>
+        <argsstring></argsstring>
+        <name>mask_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="354" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1ad8893e21b410b5612aec6b8a1d2c4fdb" prot="protected" static="no" mutable="no">
+        <type>cairo_surface_t *</type>
+        <definition>cairo_surface_t* CairoOutputDev::cairo_shape_surface</definition>
+        <argsstring></argsstring>
+        <name>cairo_shape_surface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="355" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="355" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a61558aa0a405a27bae168ecc92c71dd9" prot="protected" static="no" mutable="no">
+        <type>cairo_t *</type>
+        <definition>cairo_t* CairoOutputDev::cairo_shape</definition>
+        <argsstring></argsstring>
+        <name>cairo_shape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="356" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1ab7ccde7ceb6d2a00845d039b530f9bdc" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CairoOutputDev::knockoutCount</definition>
+        <argsstring></argsstring>
+        <name>knockoutCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="357" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1aa94dda8dea5dcd3e711eb505fe283879" prot="protected" static="no" mutable="no">
+        <type>struct <ref refid="struct_cairo_output_dev_1_1_color_space_stack" kindref="compound">CairoOutputDev::ColorSpaceStack</ref> *</type>
+        <definition>struct CairoOutputDev::ColorSpaceStack *  CairoOutputDev::groupColorSpaceStack</definition>
+        <argsstring></argsstring>
+        <name>groupColorSpaceStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="363" column="1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1ac7c0ca2c3b9da4a81ed1178456ea5352" prot="protected" static="no" mutable="no">
+        <type>struct <ref refid="struct_cairo_output_dev_1_1_mask_stack" kindref="compound">CairoOutputDev::MaskStack</ref> *</type>
+        <definition>struct CairoOutputDev::MaskStack * CairoOutputDev::maskStack</definition>
+        <argsstring></argsstring>
+        <name>maskStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="369" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="class_cairo_output_dev_1a61ab076cd7bdd6e2e0ab8b22f17962d3" prot="protected" static="yes" mutable="no">
+        <type><ref refid="struct_f_t___library_rec__" kindref="compound">FT_Library</ref></type>
+        <definition>FT_Library CairoOutputDev::ft_lib</definition>
+        <argsstring></argsstring>
+        <name>ft_lib</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="319" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="319" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_output_dev_1a7f575db7b5b04c3d4b81eeb2b959a7ec" prot="protected" static="yes" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::ft_lib_initialized</definition>
+        <argsstring></argsstring>
+        <name>ft_lib_initialized</name>
+        <initializer>= gFalse</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="320" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="320" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_cairo_output_dev_1a5d6c0fdfe145a64d5a079fd361aa1273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CairoOutputDev::CairoOutputDev</definition>
+        <argsstring>()</argsstring>
+        <name>CairoOutputDev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="91" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="125" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a1ab560ca2737ac13cf54b0d61bb8d600" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>CairoOutputDev::~CairoOutputDev</definition>
+        <argsstring>()</argsstring>
+        <name>~CairoOutputDev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="94" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="173" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ae12a3d1eb63c47a753ba5a7523760e3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::upsideDown</definition>
+        <argsstring>()</argsstring>
+        <name>upsideDown</name>
+        <reimplements refid="class_output_dev_1a6f03f8de862d1dfcfeabd8fc9f8c779c">upsideDown</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a7130bf2522313d5939ac923137addf29">upsideDown</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="100" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ad8913041e385e982d1ae367266f1335a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::useDrawChar</definition>
+        <argsstring>()</argsstring>
+        <name>useDrawChar</name>
+        <reimplements refid="class_output_dev_1a0e4c506af59324b094b0433b4612f3af">useDrawChar</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a8d3835c79b26cd2610704f2a622577a7">useDrawChar</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="103" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a60a701cf53165b6fd462312753acaf00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::useTilingPatternFill</definition>
+        <argsstring>()</argsstring>
+        <name>useTilingPatternFill</name>
+        <reimplements refid="class_output_dev_1a9272d5990ad2b286ff4ecb627a9843f6">useTilingPatternFill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a70ca5e21ea9d6c926370a5295fc7f63b">useTilingPatternFill</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="108" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="108" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ae1cc3a29bbadf4394fefbc10373d4659" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::useShadedFills</definition>
+        <argsstring>(int type)</argsstring>
+        <name>useShadedFills</name>
+        <reimplements refid="class_output_dev_1a28d7bdc07a55834bf0b2e5a2c87ac907">useShadedFills</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a31579c9ec616d3b82eaa1e9c4f635d55">useShadedFills</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="114" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="114" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ae67de5c6482fb39dde2f114680c8c1d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::useFillColorStop</definition>
+        <argsstring>()</argsstring>
+        <name>useFillColorStop</name>
+        <reimplements refid="class_output_dev_1a1af7bbf76242dd3a1c970d80a042b025">useFillColorStop</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a1b5af3ab62542f12dc431bad90ac25b6">useFillColorStop</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="120" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ad1727b59029af5bf2c5ced03e3271b6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::interpretType3Chars</definition>
+        <argsstring>()</argsstring>
+        <name>interpretType3Chars</name>
+        <reimplements refid="class_output_dev_1aa9681fb6f14963ebfc9fdf3fc1c4ea8e">interpretType3Chars</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a78a608ec4fa0b677d9157095af5da5b9">interpretType3Chars</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="124" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aabcbd1022c7a4646c2ed670ce0f73427" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool CairoOutputDev::needClipToCropBox</definition>
+        <argsstring>()</argsstring>
+        <name>needClipToCropBox</name>
+        <reimplements refid="class_output_dev_1a01e321ecf774481f826da5c7cd0a6d3b">needClipToCropBox</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="128" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="128" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aed57b94fb94b4e0157e202c9106bb0b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::startPage</definition>
+        <argsstring>(int pageNum, GfxState *state, XRef *xref)</argsstring>
+        <name>startPage</name>
+        <reimplements refid="class_output_dev_1a1521b7823ba04bccef3f69f71ddf068a">startPage</reimplements>
+        <param>
+          <type>int</type>
+          <declname>pageNum</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+          <declname>xref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="133" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="267" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a92721c5c0d8433ed59c4344acb5d0d75" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endPage</definition>
+        <argsstring>()</argsstring>
+        <name>endPage</name>
+        <reimplements refid="class_output_dev_1a6ee379b0784e080f28058fc226f1c590">endPage</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="136" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="284" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1acbb552448299c1b80a09add46a38d119" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::saveState</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>saveState</name>
+        <reimplements refid="class_output_dev_1a9756dda2c43a69c2f7a07fa226873e8a">saveState</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a1325ac46e1b419f15fcbf8a94a9ab14d">saveState</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="139" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="291" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a3c30963cbacf1574042a21b2f92fefff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::restoreState</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>restoreState</name>
+        <reimplements refid="class_output_dev_1a2739adc2b718fba838464fc759cae209">restoreState</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1aa4b932269e43e633927e611871ac9763">restoreState</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="140" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="307" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ab94809ec14239f2e7291fd7f6d662dfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateAll</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateAll</name>
+        <reimplements refid="class_output_dev_1a93327999b4eb997b33e7d2091c72d7da">updateAll</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a09db7dc754ea7fa29f1653900d2f3a25">updateAll</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="143" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="342" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a7a7a6b5c8389a96aa4998df5461be39c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setDefaultCTM</definition>
+        <argsstring>(double *ctm)</argsstring>
+        <name>setDefaultCTM</name>
+        <reimplements refid="class_output_dev_1a626861f473e4c868a7846f289a7f32dd">setDefaultCTM</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a896db42cd40d6b86393cbd8e425bf344">setDefaultCTM</reimplementedby>
+        <param>
+          <type>double *</type>
+          <declname>ctm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="144" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="359" bodyend="373"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a9f920e3354798a0468a26ca641b762f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateCTM</definition>
+        <argsstring>(GfxState *state, double m11, double m12, double m21, double m22, double m31, double m32)</argsstring>
+        <name>updateCTM</name>
+        <reimplements refid="class_output_dev_1a1f4c88972c59fe75ebe79bec6f22727a">updateCTM</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a165afb34d2fc4a43416009e2ffe19a4b">updateCTM</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m11</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m12</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m21</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m22</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m31</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>m32</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="145" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="375" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a61ad33c984a0f7f5a39a6fc82bdd895d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateLineDash</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineDash</name>
+        <reimplements refid="class_output_dev_1a21a6c8bac1bb874507cc2858a1775056">updateLineDash</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a44a7aa7b5e061f8a36d66762f017e003">updateLineDash</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="147" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="410" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a49d02febbf1ff0aa5218a1cbb244bea5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateFlatness</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFlatness</name>
+        <reimplements refid="class_output_dev_1a5a5694c57e4c3ee7d9f3a06ff433acb3">updateFlatness</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a9cec1a8feb681826cd448a62a71ed74b">updateFlatness</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="148" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="421" bodyend="423"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1acdd2e156b767acd6a4be519f91608cec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateLineJoin</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineJoin</name>
+        <reimplements refid="class_output_dev_1a4cd594a8dfcad47a04d5e317bd41263d">updateLineJoin</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1ade5962436f6721a572ce72036d231558">updateLineJoin</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="149" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="425" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1accdc8d47a628d8029d8013fa6d163f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateLineCap</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineCap</name>
+        <reimplements refid="class_output_dev_1ae82804bfcaa9c38cb2d7f23862329890">updateLineCap</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1ad5212750ead7fbf98f7e9c8cf3d0bcae">updateLineCap</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="150" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="441" bodyend="455"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ae06a4bb0a5cddc0164d4007cda2c78ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateMiterLimit</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateMiterLimit</name>
+        <reimplements refid="class_output_dev_1a74a07b0ef9ba5c15bf453fed9c528728">updateMiterLimit</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a7aece9213f7c778d2fd3cefa84edd862">updateMiterLimit</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="151" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="457" bodyend="461"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a3fdfd4ddb8aacd10f883a4f0044af46f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateLineWidth</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateLineWidth</name>
+        <reimplements refid="class_output_dev_1aceb59d18f9397f4b88e088ecedfb26ee">updateLineWidth</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a57f8c64c66560eb84ffa8a83aae863f3">updateLineWidth</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="152" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="463" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a7172653bc666b4439eb3e69fa1af8e6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateFillColor</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFillColor</name>
+        <reimplements refid="class_output_dev_1a15416568303178d9ed4845b3c09dff6a">updateFillColor</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a6a70f8a5bc51b825e69d85f9c7abbf71">updateFillColor</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="153" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="499" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a4584d1c79adfe3bd9d9453c8ca12f45a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateStrokeColor</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateStrokeColor</name>
+        <reimplements refid="class_output_dev_1a0899a8d22039e61343357444dcc48578">updateStrokeColor</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a5cfb73dcd584dc5e8733597736cfd4ec">updateStrokeColor</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="154" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="522" bodyend="543"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a802221312bae1d91d7b66a63447fd757" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateFillOpacity</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFillOpacity</name>
+        <reimplements refid="class_output_dev_1a3c08aea8dd5180bef704b1c484ae60ae">updateFillOpacity</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a6eea865df412211408d929fa4345c8dd">updateFillOpacity</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="155" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="545" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aba391dfc23d2ef28e873ad20228786d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateStrokeOpacity</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateStrokeOpacity</name>
+        <reimplements refid="class_output_dev_1aae769c911e3adf88fe09b4e7d3ba4430">updateStrokeOpacity</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1ad479f21c26b79b3f9eb7ae1d7da677c8">updateStrokeOpacity</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="156" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="563" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a2553dc57cfdcef86b9ab8b18934acbec" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateFillColorStop</definition>
+        <argsstring>(GfxState *state, double offset)</argsstring>
+        <name>updateFillColorStop</name>
+        <reimplements refid="class_output_dev_1a3d08d3dd986deb8de48a7984d5fc1d5b">updateFillColorStop</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="157" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="581" bodyend="594"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a4a20c396178526a60f5ac0971a311602" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateBlendMode</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateBlendMode</name>
+        <reimplements refid="class_output_dev_1abe4aa366ffedf9e4c9c9e99fb37413d2">updateBlendMode</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1aeb35d9567e7577dd34ac49ef3a27eaa6">updateBlendMode</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="158" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="596" bodyend="649"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a34950406a949494ba14ece6b376b2e62" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::updateFont</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>updateFont</name>
+        <reimplements refid="class_output_dev_1af59f68777aac425cdf8e1bcc964680f2">updateFont</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a2cab6e3e88f924f278884dc453fa8ab4">updateFont</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="161" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="651" bodyend="704"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a705190074dbbfbd1668e5b70ffa35e1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::stroke</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>stroke</name>
+        <reimplements refid="class_output_dev_1aa24b70b1cff92053ef27c7e57f9c6e3a">stroke</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a8eef6e1111597f45c1be601890216f59">stroke</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="164" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="801" bodyend="827"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac72d97e45c2a7bebe659e5aa32b25e34" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::fill</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>fill</name>
+        <reimplements refid="class_output_dev_1a27be5a4851d168b8e08d52dc32dfc9d9">fill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a854ede18ff4b90ab5138141a6febd7c0">fill</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="165" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="829" bodyend="863"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1af0be5a8478239af833a8c2f84ec40ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::eoFill</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>eoFill</name>
+        <reimplements refid="class_output_dev_1a33a36bcae0a743b6182f73e50abc4c41">eoFill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a6988c4c9830c12ef3082ef4bbe2c8db1">eoFill</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="166" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="865" bodyend="886"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1af8f3e365b2a760689a52bb63f514cd12" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::clipToStrokePath</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>clipToStrokePath</name>
+        <reimplements refid="class_output_dev_1a1240052875f7a0bfdc1e849b3ad957d5">clipToStrokePath</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a0d0583b8455aa713f930029e2d641a7a">clipToStrokePath</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="167" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1332" bodyend="1349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1adfda1f87b2254f572669b0ba0d4c779e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::tilingPatternFill</definition>
+        <argsstring>(GfxState *state, Gfx *gfx, Catalog *cat, Object *str, double *pmat, int paintType, int tilingType, Dict *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)</argsstring>
+        <name>tilingPatternFill</name>
+        <reimplements refid="class_output_dev_1af51488d09f76b2f06bdd4b332c602c8c">tilingPatternFill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a6c8b6c62dad5fabaf7d70c79619b1c35">tilingPatternFill</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx" kindref="compound">Gfx</ref> *</type>
+          <declname>gfx</declname>
+        </param>
+        <param>
+          <type><ref refid="class_catalog" kindref="compound">Catalog</ref> *</type>
+          <declname>cat</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>pmat</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>paintType</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tilingType</declname>
+        </param>
+        <param>
+          <type><ref refid="class_dict" kindref="compound">Dict</ref> *</type>
+          <declname>resDict</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>mat</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>bbox</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>xStep</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>yStep</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="168" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="888" bodyend="982"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a3de3a6e92ba700bc913511b9e7238fe8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::functionShadedFill</definition>
+        <argsstring>(GfxState *state, GfxFunctionShading *shading)</argsstring>
+        <name>functionShadedFill</name>
+        <reimplements refid="class_output_dev_1ab07903de11eb3ee7406eb688d609ec07">functionShadedFill</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_function_shading" kindref="compound">GfxFunctionShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="174" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="985" bodyend="1082"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a36cbab934324a46ed5a80b1a61a20da1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::axialShadedFill</definition>
+        <argsstring>(GfxState *state, GfxAxialShading *shading, double tMin, double tMax)</argsstring>
+        <name>axialShadedFill</name>
+        <reimplements refid="class_output_dev_1a8b296e1a5cf43432101c59b67af4128a">axialShadedFill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1aaf7d1268a0ab3698803e266b56f29909">axialShadedFill</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_axial_shading" kindref="compound">GfxAxialShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tMin</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="176" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1085" bodyend="1106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a3614ebf2e905a372ef2c7ef545103f8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::axialShadedSupportExtend</definition>
+        <argsstring>(GfxState *state, GfxAxialShading *shading)</argsstring>
+        <name>axialShadedSupportExtend</name>
+        <reimplements refid="class_output_dev_1af18b529a68d2b5d5948cbc0c4e8330c4">axialShadedSupportExtend</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_axial_shading" kindref="compound">GfxAxialShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="177" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1108" bodyend="1111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a85bd293392c2c65746ba4997f558e78b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::radialShadedFill</definition>
+        <argsstring>(GfxState *state, GfxRadialShading *shading, double sMin, double sMax)</argsstring>
+        <name>radialShadedFill</name>
+        <reimplements refid="class_output_dev_1a5f7d9ce5c0580f38955e5dc10d8b435e">radialShadedFill</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a654f0c986590e9541732b438c343bb5c">radialShadedFill</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_radial_shading" kindref="compound">GfxRadialShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sMin</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sMax</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="178" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1113" bodyend="1150"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aea203e142964d17118c87083b21cbb84" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::radialShadedSupportExtend</definition>
+        <argsstring>(GfxState *state, GfxRadialShading *shading)</argsstring>
+        <name>radialShadedSupportExtend</name>
+        <reimplements refid="class_output_dev_1ad2596d7dfbfd19b8bf375d23e826663e">radialShadedSupportExtend</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_radial_shading" kindref="compound">GfxRadialShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="179" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1152" bodyend="1155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ab65245e3dbd390c511d3cf08ff528f82" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::gouraudTriangleShadedFill</definition>
+        <argsstring>(GfxState *state, GfxGouraudTriangleShading *shading)</argsstring>
+        <name>gouraudTriangleShadedFill</name>
+        <reimplements refid="class_output_dev_1a9c03f7f5128797d0ff6026fdc0be7091">gouraudTriangleShadedFill</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_gouraud_triangle_shading" kindref="compound">GfxGouraudTriangleShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="181" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1158" bodyend="1214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a196ddb0472117b8a30bcfdadbf9b7c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::patchMeshShadedFill</definition>
+        <argsstring>(GfxState *state, GfxPatchMeshShading *shading)</argsstring>
+        <name>patchMeshShadedFill</name>
+        <reimplements refid="class_output_dev_1ae8682d4076d88334a1b837ec8fc8b5a5">patchMeshShadedFill</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_patch_mesh_shading" kindref="compound">GfxPatchMeshShading</ref> *</type>
+          <declname>shading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="182" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1216" bodyend="1304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a18498eb5602e5ea4df6feeac1cbd3bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::clip</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>clip</name>
+        <reimplements refid="class_output_dev_1ad29af51b92ec67117ef04c31a3a7cd8b">clip</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1ab77e23502599dd68e7f6a68b9794dd6e">clip</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="186" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1307" bodyend="1317"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac27e55214ae20fa4382127aa266fea24" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::eoClip</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>eoClip</name>
+        <reimplements refid="class_output_dev_1ab7f90de29bab85a8ccb3331889363bc1">eoClip</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a37e459cf608a253e773e201884727660">eoClip</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="187" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1319" bodyend="1330"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a8f0e55fa4647c15044cfe1107529201b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::beginString</definition>
+        <argsstring>(GfxState *state, GooString *s)</argsstring>
+        <name>beginString</name>
+        <reimplements refid="class_output_dev_1abc90da88fb9ee1e10d3b60b4821a75d8">beginString</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="190" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1366" bodyend="1385"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a80b2da77deaba96445ce5b5e91ec134a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endString</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endString</name>
+        <reimplements refid="class_output_dev_1a218a55aeb13ac2288ba7f2f3f4ce7f12">endString</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="191" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1424" bodyend="1502"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac80b026267cb960974ad8313cf0c39e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawChar</definition>
+        <argsstring>(GfxState *state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, Unicode *u, int uLen)</argsstring>
+        <name>drawChar</name>
+        <reimplements refid="class_output_dev_1a6c9cea15f3fa7ee836e6e793c63803d5">drawChar</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>originX</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>originY</declname>
+        </param>
+        <param>
+          <type>CharCode</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nBytes</declname>
+        </param>
+        <param>
+          <type>Unicode *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>uLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="192" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1387" bodyend="1422"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a9225963a487986859a08e1c64e6a7ee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::beginActualText</definition>
+        <argsstring>(GfxState *state, GooString *text)</argsstring>
+        <name>beginActualText</name>
+        <reimplements refid="class_output_dev_1af1d24bd84cbcda2862c76cf8e081f86d">beginActualText</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="196" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1575" bodyend="1579"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a514fee07e07b59214bdede06c892207d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endActualText</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endActualText</name>
+        <reimplements refid="class_output_dev_1a23f812adafca46e599ec0f7290534127">endActualText</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="197" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1581" bodyend="1585"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a6270a30f574db6e3ed81bfcb8222e9d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::beginType3Char</definition>
+        <argsstring>(GfxState *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)</argsstring>
+        <name>beginType3Char</name>
+        <reimplements refid="class_output_dev_1a76e82f369f41ecf05f0ae825947c74cc">beginType3Char</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dy</declname>
+        </param>
+        <param>
+          <type>CharCode</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>Unicode *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>uLen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="199" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1505" bodyend="1533"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a8e9762c7f5577a5f41457b7c8f056b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endType3Char</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endType3Char</name>
+        <reimplements refid="class_output_dev_1a83985f2d8420d2c587f2b5848b0e458a">endType3Char</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="202" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1535" bodyend="1540"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a78130c8541dbae7a8867d2913877a2eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::beginTextObject</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>beginTextObject</name>
+        <reimplements refid="class_output_dev_1a5ab9de85c9fd722c86d399169d8f521c">beginTextObject</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="203" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1558" bodyend="1559"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a5c01138592f810f24648777d0a79223d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endTextObject</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>endTextObject</name>
+        <reimplements refid="class_output_dev_1ab8decd3c140caa8265369f1ecfc729a5">endTextObject</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="204" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1561" bodyend="1573"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a840e6b7405351d4406897e68c03b7bc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawImageMask</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)</argsstring>
+        <name>drawImageMask</name>
+        <reimplements refid="class_output_dev_1a630a960bf7cfada13e56c968c2be041d">drawImageMask</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1af70eef6a48448862f2dc15beb7855d52">drawImageMask</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="207" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1980" bodyend="2032"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1af9a1a1ad4f9f569113a4dc4136d6dcb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setSoftMaskFromImageMask</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GBool invert, GBool inlineImg, double *baseMatrix)</argsstring>
+        <name>setSoftMaskFromImageMask</name>
+        <reimplements refid="class_output_dev_1a2e26e4b8a43b55575b36139728ed6542">setSoftMaskFromImageMask</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a78157484bbbd691208f6825fa8a98b4a">setSoftMaskFromImageMask</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>baseMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="210" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2034" bodyend="2096"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a4328e14b65f40863b28dee6613985e3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::unsetSoftMaskFromImageMask</definition>
+        <argsstring>(GfxState *state, double *baseMatrix)</argsstring>
+        <name>unsetSoftMaskFromImageMask</name>
+        <reimplements refid="class_output_dev_1ab26abaccd671a63425c64e3192567b27">unsetSoftMaskFromImageMask</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1ad64addb235202cbca2897865ca9b80d7">unsetSoftMaskFromImageMask</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>baseMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="214" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2098" bodyend="2105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aff8eb94dad2232a90015ccdb21df5bb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawImageMaskPrescaled</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)</argsstring>
+        <name>drawImageMaskPrescaled</name>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="215" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2214" bodyend="2506"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aabcbbe2c23865e0aea1e501dd943937b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawImageMaskRegular</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)</argsstring>
+        <name>drawImageMaskRegular</name>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>invert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="218" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2107" bodyend="2211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a9b05422ff47a37f32a0ca8569eedc0e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawImage</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GfxImageColorMap *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)</argsstring>
+        <name>drawImage</name>
+        <reimplements refid="class_output_dev_1a5faa216a4d6de3e7a372abb0318085e2">drawImage</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a4bc8120030c80a6aef5614b04683e5d9">drawImage</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>colorMap</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>maskColors</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>inlineImg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="222" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="3171" bodyend="3260"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a187f6ddca8d693af97f0c4ce13464ca2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawSoftMaskedImage</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GfxImageColorMap *colorMap, GBool interpolate, Stream *maskStr, int maskWidth, int maskHeight, GfxImageColorMap *maskColorMap, GBool maskInterpolate)</argsstring>
+        <name>drawSoftMaskedImage</name>
+        <reimplements refid="class_output_dev_1ac2ee00e7cddb1617eeeb4a32f089be99">drawSoftMaskedImage</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a8c8dcfff2e85cb34bfcf2aca835a095f">drawSoftMaskedImage</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>colorMap</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>maskStr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maskWidth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maskHeight</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>maskColorMap</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>maskInterpolate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="225" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2665" bodyend="2825"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ab5b5447e876d7e68eeb25c4136c82b8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::drawMaskedImage</definition>
+        <argsstring>(GfxState *state, Object *ref, Stream *str, int width, int height, GfxImageColorMap *colorMap, GBool interpolate, Stream *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)</argsstring>
+        <name>drawMaskedImage</name>
+        <reimplements refid="class_output_dev_1a9da1d31676bdac51fb98da1281e2863d">drawMaskedImage</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a84decc0794b11aad02ab190d48605427">drawMaskedImage</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>colorMap</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>maskStr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maskWidth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maskHeight</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>maskInvert</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>maskInterpolate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="234" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2508" bodyend="2661"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a7c814856a88ae203d71dd8d8f1c55604" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::beginTransparencyGroup</definition>
+        <argsstring>(GfxState *, double *, GfxColorSpace *, GBool, GBool, GBool)</argsstring>
+        <name>beginTransparencyGroup</name>
+        <reimplements refid="class_output_dev_1adf5dc30b2401ef362ff5c24f167169a3">beginTransparencyGroup</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a20c6d536fadb4b422e2b7241927af600">beginTransparencyGroup</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+        </param>
+        <param>
+          <type>double *</type>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_color_space" kindref="compound">GfxColorSpace</ref> *</type>
+          <defname>blendingColorSpace</defname>
+        </param>
+        <param>
+          <type>GBool</type>
+        </param>
+        <param>
+          <type>GBool</type>
+          <defname>knockout</defname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <defname>forSoftMask</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="243" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1615" bodyend="1662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1afccf37ab9b01741c6a472fdf3ff54515" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::endTransparencyGroup</definition>
+        <argsstring>(GfxState *)</argsstring>
+        <name>endTransparencyGroup</name>
+        <reimplements refid="class_output_dev_1ab40b03e24dab2d6cd11de6a3551d2593">endTransparencyGroup</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a9765d45249cd0f1fd8a8cdedb5ef0bdb">endTransparencyGroup</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="247" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1664" bodyend="1676"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ab206165b96cf2e0cce425ad1772d87cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::popTransparencyGroup</definition>
+        <argsstring>()</argsstring>
+        <name>popTransparencyGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="248" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1864" bodyend="1878"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a1981c7f1251b33cda753ee1d1e3c53ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::paintTransparencyGroup</definition>
+        <argsstring>(GfxState *, double *)</argsstring>
+        <name>paintTransparencyGroup</name>
+        <reimplements refid="class_output_dev_1ada3eb127f26195713c2609a6eea6990c">paintTransparencyGroup</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a9fc559e270d983b8604a0e2efa1451bc">paintTransparencyGroup</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+        </param>
+        <param>
+          <type>double *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="249" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1678" bodyend="1730"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ab05e1b028b2ed6f2412168770d29fa90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setSoftMask</definition>
+        <argsstring>(GfxState *, double *, GBool, Function *, GfxColor *)</argsstring>
+        <name>setSoftMask</name>
+        <reimplements refid="class_output_dev_1a34df49c454e5dd3d3ec841ef38e08199">setSoftMask</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a0fdd2611271f3cfc1d22d3efdfd7d663">setSoftMask</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <defname>state</defname>
+        </param>
+        <param>
+          <type>double *</type>
+          <defname>bbox</defname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <defname>alpha</defname>
+        </param>
+        <param>
+          <type><ref refid="class_function" kindref="compound">Function</ref> *</type>
+          <defname>transferFunc</defname>
+        </param>
+        <param>
+          <type><ref refid="struct_gfx_color" kindref="compound">GfxColor</ref> *</type>
+          <defname>backdropColor</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="250" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1744" bodyend="1862"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac4eaf6145e2844126796ba9df8470155" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::clearSoftMask</definition>
+        <argsstring>(GfxState *)</argsstring>
+        <name>clearSoftMask</name>
+        <reimplements refid="class_output_dev_1a0323fd4cd9bf7baed8f9f9cd155cfac1">clearSoftMask</reimplements>
+        <reimplementedby refid="class_cairo_image_output_dev_1a11854d3d873dd5b415f1a5a2636978fd">clearSoftMask</reimplementedby>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="252" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1881" bodyend="1885"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a66c39dbbc9270b515d2a8bf0b2058ec9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::type3D0</definition>
+        <argsstring>(GfxState *state, double wx, double wy)</argsstring>
+        <name>type3D0</name>
+        <reimplements refid="class_output_dev_1a04cf5c31e2b2bb4ae0b2376350234ec0">type3D0</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="255" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1542" bodyend="1545"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a22076631192875aa7253b24f56f4f015" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::type3D1</definition>
+        <argsstring>(GfxState *state, double wx, double wy, double llx, double lly, double urx, double ury)</argsstring>
+        <name>type3D1</name>
+        <reimplements refid="class_output_dev_1aaadf8faecf05a1719baf96219fcd13f4">type3D1</reimplements>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>wy</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>llx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lly</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>urx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ury</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="256" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1547" bodyend="1556"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aaa4ba6dfbe4bd63b1d72356764ab95d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::startDoc</definition>
+        <argsstring>(PDFDoc *docA, CairoFontEngine *fontEngine=NULL)</argsstring>
+        <name>startDoc</name>
+        <param>
+          <type><ref refid="class_p_d_f_doc" kindref="compound">PDFDoc</ref> *</type>
+          <declname>docA</declname>
+        </param>
+        <param>
+          <type><ref refid="class_cairo_font_engine" kindref="compound">CairoFontEngine</ref> *</type>
+          <declname>fontEngine</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="262" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="252" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a5e281249a35c7f1d590c65253299a3f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::isReverseVideo</definition>
+        <argsstring>()</argsstring>
+        <name>isReverseVideo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="264" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="264" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aa8ed06ed0c0c69543e4b2474ec2cf40f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setCairo</definition>
+        <argsstring>(cairo_t *cr)</argsstring>
+        <name>setCairo</name>
+        <param>
+          <type>cairo_t *</type>
+          <declname>cr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="266" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="194" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a4dc8074e43d18df988f65bf84c566a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setTextPage</definition>
+        <argsstring>(TextPage *text)</argsstring>
+        <name>setTextPage</name>
+        <param>
+          <type><ref refid="class_text_page" kindref="compound">TextPage</ref> *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="267" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="216" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a2ddca43cc6a6c4f711bd54d19345e580" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setPrinting</definition>
+        <argsstring>(GBool printing)</argsstring>
+        <name>setPrinting</name>
+        <param>
+          <type>GBool</type>
+          <declname>printing</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="268" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="268" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac875bd923aa8767e7652dd92bd795568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setAntialias</definition>
+        <argsstring>(cairo_antialias_t antialias)</argsstring>
+        <name>setAntialias</name>
+        <param>
+          <type>cairo_antialias_t</type>
+          <declname>antialias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="269" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="232" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a20dcf2ce46b62770eaf2d83cd85571d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setInType3Char</definition>
+        <argsstring>(GBool inType3Char)</argsstring>
+        <name>setInType3Char</name>
+        <param>
+          <type>GBool</type>
+          <declname>inType3Char</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="271" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="271" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a09faacca682679e04ae704651f25354c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::getType3GlyphWidth</definition>
+        <argsstring>(double *wx, double *wy)</argsstring>
+        <name>getType3GlyphWidth</name>
+        <param>
+          <type>double *</type>
+          <declname>wx</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>wy</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="272" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="272" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a70172e424437841f5507252397b99dda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::hasType3GlyphBBox</definition>
+        <argsstring>()</argsstring>
+        <name>hasType3GlyphBBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="273" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="273" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a0ebeed1b60f4059608f1ed9d89f89766" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double *</type>
+        <definition>double* CairoOutputDev::getType3GlyphBBox</definition>
+        <argsstring>()</argsstring>
+        <name>getType3GlyphBBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="274" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="274" bodyend="274"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_cairo_output_dev_1aea03b660fb0a6a69bea27723d5af7a00" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::doPath</definition>
+        <argsstring>(cairo_t *cairo, GfxState *state, GfxPath *path)</argsstring>
+        <name>doPath</name>
+        <param>
+          <type>cairo_t *</type>
+          <declname>cairo</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_path" kindref="compound">GfxPath</ref> *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="277" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="752" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a90eeeccc19d5189f3dd5152f70d44d68" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cairo_surface_t *</type>
+        <definition>cairo_surface_t* CairoOutputDev::downscaleSurface</definition>
+        <argsstring>(cairo_surface_t *orig_surface)</argsstring>
+        <name>downscaleSurface</name>
+        <param>
+          <type>cairo_surface_t *</type>
+          <declname>orig_surface</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="278" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aa0236d1c15e2d04792f296373d653c49" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::getScaledSize</definition>
+        <argsstring>(const cairo_matrix_t *matrix, int orig_width, int orig_height, int *scaledWidth, int *scaledHeight)</argsstring>
+        <name>getScaledSize</name>
+        <param>
+          <type>const cairo_matrix_t *</type>
+          <declname>matrix</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>orig_width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>orig_height</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>scaledWidth</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>scaledHeight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="279" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1910" bodyend="1950"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aa057144b1daa02b6df4112a045bb2b63" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cairo_filter_t</type>
+        <definition>cairo_filter_t CairoOutputDev::getFilterForSurface</definition>
+        <argsstring>(cairo_surface_t *image, GBool interpolate)</argsstring>
+        <name>getFilterForSurface</name>
+        <param>
+          <type>cairo_surface_t *</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>interpolate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="282" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1953" bodyend="1978"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a59d9324b7a26d9b3494342fb02be154d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::getStreamData</definition>
+        <argsstring>(Stream *str, char **buffer, int *length)</argsstring>
+        <name>getStreamData</name>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="284" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2827" bodyend="2850"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a38cdb1ba41bb610c72bc64d251cb4a18" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setMimeData</definition>
+        <argsstring>(GfxState *state, Stream *str, Object *ref, GfxImageColorMap *colorMap, cairo_surface_t *image)</argsstring>
+        <name>setMimeData</name>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>ref</declname>
+        </param>
+        <param>
+          <type><ref refid="class_gfx_image_color_map" kindref="compound">GfxImageColorMap</ref> *</type>
+          <declname>colorMap</declname>
+        </param>
+        <param>
+          <type>cairo_surface_t *</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="285" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2923" bodyend="3009"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1aaafb4eeefad11b36474090d188f0b058" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::fillToStrokePathClip</definition>
+        <argsstring>(GfxState *state)</argsstring>
+        <name>fillToStrokePathClip</name>
+        <param>
+          <type><ref refid="class_gfx_state" kindref="compound">GfxState</ref> *</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="287" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="1351" bodyend="1364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a201ed281294f72c2195d7de9bba4ed72" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::alignStrokeCoords</definition>
+        <argsstring>(GfxSubpath *subpath, int i, double *x, double *y)</argsstring>
+        <name>alignStrokeCoords</name>
+        <param>
+          <type><ref refid="class_gfx_subpath" kindref="compound">GfxSubpath</ref> *</type>
+          <declname>subpath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="288" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="712" bodyend="748"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1ac98037fd57c3ce3d9f5d56f76d30f88a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool CairoOutputDev::setMimeDataForJBIG2Globals</definition>
+        <argsstring>(Stream *str, cairo_surface_t *image)</argsstring>
+        <name>setMimeDataForJBIG2Globals</name>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>cairo_surface_t *</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="290" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="2891" bodyend="2920"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_output_dev_1a72e8ed1b09719b40b0810b2e76c825dc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CairoOutputDev::setAntialias</definition>
+        <argsstring>(cairo_t *cr, cairo_antialias_t antialias)</argsstring>
+        <name>setAntialias</name>
+        <param>
+          <type>cairo_t *</type>
+          <declname>cr</declname>
+        </param>
+        <param>
+          <type>cairo_antialias_t</type>
+          <declname>antialias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="292" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.cc" bodystart="241" bodyend="250"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2090">
+        <label>OutputDev</label>
+        <link refid="class_output_dev"/>
+      </node>
+      <node id="2091">
+        <label>CairoImageOutputDev</label>
+        <link refid="class_cairo_image_output_dev"/>
+        <childnode refid="2089" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2089">
+        <label>CairoOutputDev</label>
+        <link refid="class_cairo_output_dev"/>
+        <childnode refid="2090" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2112">
+        <label>GfxRGB</label>
+        <link refid="struct_gfx_r_g_b"/>
+      </node>
+      <node id="2099">
+        <label>FT_MemoryRec_</label>
+        <link refid="struct_f_t___memory_rec__"/>
+      </node>
+      <node id="2115">
+        <label>CairoFontEngine</label>
+        <link refid="class_cairo_font_engine"/>
+      </node>
+      <node id="2103">
+        <label>FT_Raster_Params_</label>
+        <link refid="struct_f_t___raster___params__"/>
+        <childnode refid="2104" relation="usage">
+          <edgelabel>gray_spans</edgelabel>
+          <edgelabel>black_spans</edgelabel>
+        </childnode>
+        <childnode refid="2105" relation="usage">
+          <edgelabel>target</edgelabel>
+        </childnode>
+        <childnode refid="2106" relation="usage">
+          <edgelabel>clip_box</edgelabel>
+        </childnode>
+      </node>
+      <node id="2093">
+        <label>OutputDev</label>
+        <link refid="class_output_dev"/>
+      </node>
+      <node id="2097">
+        <label>FT_ModuleRec_</label>
+        <link refid="struct_f_t___module_rec__"/>
+        <childnode refid="2096" relation="usage">
+          <edgelabel>library</edgelabel>
+        </childnode>
+        <childnode refid="2098" relation="usage">
+          <edgelabel>clazz</edgelabel>
+        </childnode>
+        <childnode refid="2099" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="2110">
+        <label>FT_ListRec_</label>
+        <link refid="struct_f_t___list_rec__"/>
+        <childnode refid="2111" relation="usage">
+          <edgelabel>head</edgelabel>
+          <edgelabel>tail</edgelabel>
+        </childnode>
+      </node>
+      <node id="2095">
+        <label>ActualText</label>
+        <link refid="class_actual_text"/>
+      </node>
+      <node id="2106">
+        <label>FT_BBox_</label>
+        <link refid="struct_f_t___b_box__"/>
+      </node>
+      <node id="2122">
+        <label>GfxPath</label>
+        <link refid="class_gfx_path"/>
+      </node>
+      <node id="2119">
+        <label>CairoOutputDev::ColorSpaceStack</label>
+        <link refid="struct_cairo_output_dev_1_1_color_space_stack"/>
+        <childnode refid="2120" relation="usage">
+          <edgelabel>cs</edgelabel>
+        </childnode>
+        <childnode refid="2119" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="2117">
+        <label>CairoOutputDev::MaskStack</label>
+        <link refid="struct_cairo_output_dev_1_1_mask_stack"/>
+        <childnode refid="2117" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="2111">
+        <label>FT_ListNodeRec_</label>
+        <link refid="struct_f_t___list_node_rec__"/>
+        <childnode refid="2111" relation="usage">
+          <edgelabel>prev</edgelabel>
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="2120">
+        <label>GfxColorSpace</label>
+        <link refid="class_gfx_color_space"/>
+      </node>
+      <node id="2101">
+        <label>FT_Renderer_Class_</label>
+        <link refid="struct_f_t___renderer___class__"/>
+        <childnode refid="2102" relation="usage">
+          <edgelabel>raster_class</edgelabel>
+        </childnode>
+        <childnode refid="2100" relation="usage">
+          <edgelabel>get_glyph_cbox</edgelabel>
+          <edgelabel>render_glyph</edgelabel>
+          <edgelabel>set_mode</edgelabel>
+          <edgelabel>transform_glyph</edgelabel>
+        </childnode>
+        <childnode refid="2098" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+      </node>
+      <node id="2098">
+        <label>FT_Module_Class_</label>
+        <link refid="struct_f_t___module___class__"/>
+        <childnode refid="2097" relation="usage">
+          <edgelabel>get_interface</edgelabel>
+          <edgelabel>module_done</edgelabel>
+          <edgelabel>module_init</edgelabel>
+        </childnode>
+      </node>
+      <node id="2100">
+        <label>FT_RendererRec_</label>
+        <link refid="struct_f_t___renderer_rec__"/>
+        <childnode refid="2097" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+        <childnode refid="2101" relation="usage">
+          <edgelabel>clazz</edgelabel>
+        </childnode>
+        <childnode refid="2100" relation="usage">
+          <edgelabel>render</edgelabel>
+        </childnode>
+        <childnode refid="2107" relation="usage">
+          <edgelabel>glyph_class</edgelabel>
+        </childnode>
+      </node>
+      <node id="2105">
+        <label>FT_Bitmap_</label>
+        <link refid="struct_f_t___bitmap__"/>
+      </node>
+      <node id="2114">
+        <label>Ref</label>
+        <link refid="struct_ref"/>
+      </node>
+      <node id="2096">
+        <label>FT_LibraryRec_</label>
+        <link refid="struct_f_t___library_rec__"/>
+        <childnode refid="2097" relation="usage">
+          <edgelabel>auto_hinter</edgelabel>
+          <edgelabel>modules</edgelabel>
+        </childnode>
+        <childnode refid="2100" relation="usage">
+          <edgelabel>cur_renderer</edgelabel>
+        </childnode>
+        <childnode refid="2110" relation="usage">
+          <edgelabel>renderers</edgelabel>
+        </childnode>
+        <childnode refid="2099" relation="usage">
+          <edgelabel>memory</edgelabel>
+        </childnode>
+      </node>
+      <node id="2104">
+        <label>FT_Span_</label>
+        <link refid="struct_f_t___span__"/>
+      </node>
+      <node id="2121">
+        <label>CairoOutputDev::StrokePathClip</label>
+        <link refid="struct_cairo_output_dev_1_1_stroke_path_clip"/>
+        <childnode refid="2122" relation="usage">
+          <edgelabel>path</edgelabel>
+        </childnode>
+      </node>
+      <node id="2102">
+        <label>FT_Raster_Funcs_</label>
+        <link refid="struct_f_t___raster___funcs__"/>
+        <childnode refid="2103" relation="usage">
+          <edgelabel>raster_render</edgelabel>
+        </childnode>
+      </node>
+      <node id="2094">
+        <label>TextPage</label>
+        <link refid="class_text_page"/>
+      </node>
+      <node id="2118">
+        <label>XRef</label>
+        <link refid="class_x_ref"/>
+      </node>
+      <node id="2116">
+        <label>PDFDoc</label>
+        <link refid="class_p_d_f_doc"/>
+      </node>
+      <node id="2109">
+        <label>FT_Vector_</label>
+        <link refid="struct_f_t___vector__"/>
+      </node>
+      <node id="2113">
+        <label>CairoFont</label>
+        <link refid="class_cairo_font"/>
+        <childnode refid="2114" relation="usage">
+          <edgelabel>ref</edgelabel>
+        </childnode>
+      </node>
+      <node id="2092">
+        <label>CairoOutputDev</label>
+        <link refid="class_cairo_output_dev"/>
+        <childnode refid="2093" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2094" relation="usage">
+          <edgelabel>text</edgelabel>
+        </childnode>
+        <childnode refid="2095" relation="usage">
+          <edgelabel>actualText</edgelabel>
+        </childnode>
+        <childnode refid="2096" relation="usage">
+          <edgelabel>ft_lib</edgelabel>
+        </childnode>
+        <childnode refid="2112" relation="usage">
+          <edgelabel>fill_color</edgelabel>
+          <edgelabel>stroke_color</edgelabel>
+        </childnode>
+        <childnode refid="2113" relation="usage">
+          <edgelabel>currentFont</edgelabel>
+        </childnode>
+        <childnode refid="2115" relation="usage">
+          <edgelabel>fontEngine</edgelabel>
+        </childnode>
+        <childnode refid="2116" relation="usage">
+          <edgelabel>doc</edgelabel>
+        </childnode>
+        <childnode refid="2117" relation="usage">
+          <edgelabel>maskStack</edgelabel>
+        </childnode>
+        <childnode refid="2118" relation="usage">
+          <edgelabel>xref</edgelabel>
+        </childnode>
+        <childnode refid="2119" relation="usage">
+          <edgelabel>groupColorSpaceStack</edgelabel>
+        </childnode>
+        <childnode refid="2121" relation="usage">
+          <edgelabel>strokePathClip</edgelabel>
+        </childnode>
+      </node>
+      <node id="2108">
+        <label>FT_GlyphRec_</label>
+        <link refid="struct_f_t___glyph_rec__"/>
+        <childnode refid="2109" relation="usage">
+          <edgelabel>advance</edgelabel>
+        </childnode>
+        <childnode refid="2096" relation="usage">
+          <edgelabel>library</edgelabel>
+        </childnode>
+      </node>
+      <node id="2107">
+        <label>FT_Glyph_Class_</label>
+        <link refid="struct_f_t___glyph___class__"/>
+        <childnode refid="2108" relation="usage">
+          <edgelabel>glyph_bbox</edgelabel>
+          <edgelabel>glyph_copy</edgelabel>
+          <edgelabel>glyph_done</edgelabel>
+          <edgelabel>glyph_transform</edgelabel>
+          <edgelabel>glyph_prepare</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/poppler/poppler/CairoOutputDev.h" line="87" column="1" bodyfile="thirdparty/poppler/poppler/CairoOutputDev.h" bodystart="87" bodyend="371"/>
+    <listofallmembers>
+      <member refid="class_cairo_output_dev_1af8cc4e822fd0f149392cdf056d9a97e9" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>actualText</name></member>
+      <member refid="class_cairo_output_dev_1a0d1b9af88519d8f55b93464d8fe720c4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>adjusted_stroke_width</name></member>
+      <member refid="class_cairo_output_dev_1a6365b0b3f006cb44b6b5601b8023c99a" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>align_stroke_coords</name></member>
+      <member refid="class_cairo_output_dev_1a201ed281294f72c2195d7de9bba4ed72" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>alignStrokeCoords</name></member>
+      <member refid="class_cairo_output_dev_1a7aa59ec26d1c1d5adbf573cbf94b0015" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>antialias</name></member>
+      <member refid="class_cairo_output_dev_1a36cbab934324a46ed5a80b1a61a20da1" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>axialShadedFill</name></member>
+      <member refid="class_cairo_output_dev_1a3614ebf2e905a372ef2c7ef545103f8d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>axialShadedSupportExtend</name></member>
+      <member refid="class_cairo_output_dev_1a9225963a487986859a08e1c64e6a7ee5" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginActualText</name></member>
+      <member refid="class_output_dev_1abb35b1288a0f1d823a24f3e45c6067b9" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginMarkedContent</name></member>
+      <member refid="class_cairo_output_dev_1a8f0e55fa4647c15044cfe1107529201b" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginString</name></member>
+      <member refid="class_output_dev_1af0a25f677aa1a95e2a6e060b1dc81e9f" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginStringOp</name></member>
+      <member refid="class_cairo_output_dev_1a78130c8541dbae7a8867d2913877a2eb" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginTextObject</name></member>
+      <member refid="class_cairo_output_dev_1a7c814856a88ae203d71dd8d8f1c55604" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginTransparencyGroup</name></member>
+      <member refid="class_cairo_output_dev_1a6270a30f574db6e3ed81bfcb8222e9d5" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>beginType3Char</name></member>
+      <member refid="class_cairo_output_dev_1a4df47c9d086540d41c00848756a6ff10" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>cairo</name></member>
+      <member refid="class_cairo_output_dev_1a61558aa0a405a27bae168ecc92c71dd9" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>cairo_shape</name></member>
+      <member refid="class_cairo_output_dev_1ad8893e21b410b5612aec6b8a1d2c4fdb" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>cairo_shape_surface</name></member>
+      <member refid="class_cairo_output_dev_1a5d6c0fdfe145a64d5a079fd361aa1273" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>CairoOutputDev</name></member>
+      <member refid="class_output_dev_1a223ee5e8d92f2d66130d1c0e33990fc9" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>checkPageSlice</name></member>
+      <member refid="class_output_dev_1a7c277c07f07e0c4c70d048b57aa0b3c7" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>checkTransparencyGroup</name></member>
+      <member refid="class_output_dev_1a909e1d99398b8387f7ddcaa53de9e9d6" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>clearPatternOpacity</name></member>
+      <member refid="class_cairo_output_dev_1ac4eaf6145e2844126796ba9df8470155" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>clearSoftMask</name></member>
+      <member refid="class_cairo_output_dev_1a18498eb5602e5ea4df6feeac1cbd3bb1" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>clip</name></member>
+      <member refid="class_cairo_output_dev_1af8f3e365b2a760689a52bb63f514cd12" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>clipToStrokePath</name></member>
+      <member refid="class_cairo_output_dev_1a6c282a6b43c8176ad464efc853552d91" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>clusterCount</name></member>
+      <member refid="class_cairo_output_dev_1a2f7113a656d2b7eb65d466ad7eb69ba4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>clusters</name></member>
+      <member refid="class_cairo_output_dev_1af743bb7bb7880374e6b1ffad0f2dfd02" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>currentFont</name></member>
+      <member refid="class_output_dev_1aeefcb427f9006903796d6d467e393adc" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>cvtDevToUser</name></member>
+      <member refid="class_output_dev_1aff3985dadb18d1e458419ebd997c44c1" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>cvtUserToDev</name></member>
+      <member refid="class_cairo_output_dev_1a72901d5a9510ac22defa6d09190552be" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>doc</name></member>
+      <member refid="class_cairo_output_dev_1aea03b660fb0a6a69bea27723d5af7a00" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>doPath</name></member>
+      <member refid="class_cairo_output_dev_1a90eeeccc19d5189f3dd5152f70d44d68" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>downscaleSurface</name></member>
+      <member refid="class_cairo_output_dev_1ac80b026267cb960974ad8313cf0c39e8" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawChar</name></member>
+      <member refid="class_output_dev_1a8347dc89808e1ab4b69f8309ad0edc9e" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawForm</name></member>
+      <member refid="class_cairo_output_dev_1a9b05422ff47a37f32a0ca8569eedc0e0" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawImage</name></member>
+      <member refid="class_cairo_output_dev_1a840e6b7405351d4406897e68c03b7bc3" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawImageMask</name></member>
+      <member refid="class_cairo_output_dev_1aff8eb94dad2232a90015ccdb21df5bb8" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>drawImageMaskPrescaled</name></member>
+      <member refid="class_cairo_output_dev_1aabcbbe2c23865e0aea1e501dd943937b" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>drawImageMaskRegular</name></member>
+      <member refid="class_cairo_output_dev_1ab5b5447e876d7e68eeb25c4136c82b8c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawMaskedImage</name></member>
+      <member refid="class_cairo_output_dev_1a187f6ddca8d693af97f0c4ce13464ca2" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawSoftMaskedImage</name></member>
+      <member refid="class_output_dev_1a53444c7b8dc07625395c3d25805dfbd2" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>drawString</name></member>
+      <member refid="class_output_dev_1a829cff0b8ff47de516574542de539d1c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>dump</name></member>
+      <member refid="class_cairo_output_dev_1a514fee07e07b59214bdede06c892207d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endActualText</name></member>
+      <member refid="class_output_dev_1ae94023fd2c678bf75b13e58ba60f1196" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endMarkedContent</name></member>
+      <member refid="class_cairo_output_dev_1a92721c5c0d8433ed59c4344acb5d0d75" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endPage</name></member>
+      <member refid="class_output_dev_1a465aec15453cbdf837b0d5fb117aee46" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endProfile</name></member>
+      <member refid="class_cairo_output_dev_1a80b2da77deaba96445ce5b5e91ec134a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endString</name></member>
+      <member refid="class_output_dev_1adda0f049d956b26ee965e73aa0081282" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endStringOp</name></member>
+      <member refid="class_cairo_output_dev_1a5c01138592f810f24648777d0a79223d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endTextObject</name></member>
+      <member refid="class_cairo_output_dev_1afccf37ab9b01741c6a472fdf3ff54515" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endTransparencyGroup</name></member>
+      <member refid="class_cairo_output_dev_1a8e9762c7f5577a5f41457b7c8f056b32" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>endType3Char</name></member>
+      <member refid="class_cairo_output_dev_1ac27e55214ae20fa4382127aa266fea24" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>eoClip</name></member>
+      <member refid="class_cairo_output_dev_1af0be5a8478239af833a8c2f84ec40ebb" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>eoFill</name></member>
+      <member refid="class_cairo_output_dev_1ac72d97e45c2a7bebe659e5aa32b25e34" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>fill</name></member>
+      <member refid="class_cairo_output_dev_1addfb0184684bb889af848c9c5365c6dd" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fill_color</name></member>
+      <member refid="class_cairo_output_dev_1adf76e859a7e221e62af635675a04c56c" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fill_opacity</name></member>
+      <member refid="class_cairo_output_dev_1a45130f866cf1b033294459975d9881df" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fill_pattern</name></member>
+      <member refid="class_cairo_output_dev_1aaafb4eeefad11b36474090d188f0b058" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fillToStrokePathClip</name></member>
+      <member refid="class_cairo_output_dev_1a98c3bf4454b169ccba69addda510a0c8" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fontEngine</name></member>
+      <member refid="class_cairo_output_dev_1a73bd6550477c761470c1dc4e87b87cb5" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>fontEngine_owner</name></member>
+      <member refid="class_cairo_output_dev_1a61ab076cd7bdd6e2e0ab8b22f17962d3" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>ft_lib</name></member>
+      <member refid="class_cairo_output_dev_1a7f575db7b5b04c3d4b81eeb2b959a7ec" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>ft_lib_initialized</name></member>
+      <member refid="class_cairo_output_dev_1a3de3a6e92ba700bc913511b9e7238fe8" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>functionShadedFill</name></member>
+      <member refid="class_output_dev_1a1238a44cb9258955a94151a16e671878" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>getDefCTM</name></member>
+      <member refid="class_output_dev_1a1438903f85bc90716abee8122cf489e8" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>getDefICTM</name></member>
+      <member refid="class_cairo_output_dev_1aa057144b1daa02b6df4112a045bb2b63" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>getFilterForSurface</name></member>
+      <member refid="class_output_dev_1ad1bc9865d811a68c0bdcf2a73bcf004b" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>getProfileHash</name></member>
+      <member refid="class_cairo_output_dev_1aa0236d1c15e2d04792f296373d653c49" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>getScaledSize</name></member>
+      <member refid="class_cairo_output_dev_1a59d9324b7a26d9b3494342fb02be154d" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>getStreamData</name></member>
+      <member refid="class_cairo_output_dev_1a0ebeed1b60f4059608f1ed9d89f89766" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>getType3GlyphBBox</name></member>
+      <member refid="class_cairo_output_dev_1a09faacca682679e04ae704651f25354c" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>getType3GlyphWidth</name></member>
+      <member refid="class_output_dev_1aa3763793657e69a99f1a5b421184ed1c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>getVectorAntialias</name></member>
+      <member refid="class_cairo_output_dev_1a169c38e50875faea24fd0743f10155d9" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>glyphCount</name></member>
+      <member refid="class_cairo_output_dev_1a85bcc2f2da277a4343824d7e27605cbe" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>glyphs</name></member>
+      <member refid="class_cairo_output_dev_1ab65245e3dbd390c511d3cf08ff528f82" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>gouraudTriangleShadedFill</name></member>
+      <member refid="class_cairo_output_dev_1adf2bf35778ae20ca9feb757105c692f1" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>group</name></member>
+      <member refid="class_cairo_output_dev_1aa94dda8dea5dcd3e711eb505fe283879" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>groupColorSpaceStack</name></member>
+      <member refid="class_cairo_output_dev_1a70172e424437841f5507252397b99dda" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>hasType3GlyphBBox</name></member>
+      <member refid="class_output_dev_1a91a429fc51f4100808d0b6fb5b5a6d75" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>incCharCount</name></member>
+      <member refid="class_cairo_output_dev_1ad1727b59029af5bf2c5ced03e3271b6d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>interpretType3Chars</name></member>
+      <member refid="class_cairo_output_dev_1ae214c3f31ef0b1a99b70740efe5d6b5e" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>inType3Char</name></member>
+      <member refid="class_cairo_output_dev_1a776ddf3d1b164b10728df402cd21ffe4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>inUncoloredPattern</name></member>
+      <member refid="class_cairo_output_dev_1a5e281249a35c7f1d590c65253299a3f5" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>isReverseVideo</name></member>
+      <member refid="class_cairo_output_dev_1ab7ccde7ceb6d2a00845d039b530f9bdc" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>knockoutCount</name></member>
+      <member refid="class_output_dev_1acd0ecfc113ad397b105cfcd3e443aab4" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>markPoint</name></member>
+      <member refid="class_output_dev_1a473f1fde6b4cfd2cf29a2f737620f1ea" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>markPoint</name></member>
+      <member refid="class_cairo_output_dev_1aedba0dddead636ecd1b861242969c2a9" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>mask</name></member>
+      <member refid="class_cairo_output_dev_1a6565d35477771718941df2912b055340" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>mask_matrix</name></member>
+      <member refid="class_cairo_output_dev_1ac7c0ca2c3b9da4a81ed1178456ea5352" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>maskStack</name></member>
+      <member refid="class_output_dev_1aeb6b343278e1bf777afa4eee8eed2ac2" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>needCharCount</name></member>
+      <member refid="class_cairo_output_dev_1aabcbd1022c7a4646c2ed670ce0f73427" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>needClipToCropBox</name></member>
+      <member refid="class_cairo_output_dev_1ad6fb5a1b8b866cff117beab720821c94" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>needFontUpdate</name></member>
+      <member refid="class_output_dev_1ac22cca1656cfcdc4431c1638ba428cf1" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>needNonText</name></member>
+      <member refid="class_output_dev_1a4cd6b911a4dc9a4aacc4b60d88afe01c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>opiBegin</name></member>
+      <member refid="class_output_dev_1a49f554f17b8c532fa813c180afafaf82" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>opiEnd</name></member>
+      <member refid="class_cairo_output_dev_1a5297eb6c00c5017d05b1640dd3e5d924" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>orig_matrix</name></member>
+      <member refid="class_output_dev_1aa30a2c3ef7459089abb446ee3dd9c949" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>OutputDev</name></member>
+      <member refid="class_cairo_output_dev_1a1981c7f1251b33cda753ee1d1e3c53ad" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>paintTransparencyGroup</name></member>
+      <member refid="class_cairo_output_dev_1a196ddb0472117b8a30bcfdadbf9b7c3b" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>patchMeshShadedFill</name></member>
+      <member refid="class_cairo_output_dev_1ab206165b96cf2e0cce425ad1772d87cf" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>popTransparencyGroup</name></member>
+      <member refid="class_cairo_output_dev_1afca0c0ee9ad8bfc3ac8b92a839b4c877" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>prescaleImages</name></member>
+      <member refid="class_cairo_output_dev_1a57ec2906eac6f461d66bc518c18e77e7" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>printing</name></member>
+      <member refid="class_output_dev_1a9671ac2488c1b6109068bfafd7447f08" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>processLink</name></member>
+      <member refid="class_output_dev_1a330bd1fb84b3c5bcbb6db2579ec86060" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>psXObject</name></member>
+      <member refid="class_cairo_output_dev_1a85bd293392c2c65746ba4997f558e78b" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>radialShadedFill</name></member>
+      <member refid="class_cairo_output_dev_1aea203e142964d17118c87083b21cbb84" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>radialShadedSupportExtend</name></member>
+      <member refid="class_cairo_output_dev_1a3c30963cbacf1574042a21b2f92fefff" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>restoreState</name></member>
+      <member refid="class_output_dev_1a8f03af87f145a05913cc52e371d26702" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>restoreTextPos</name></member>
+      <member refid="class_cairo_output_dev_1acbb552448299c1b80a09add46a38d119" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>saveState</name></member>
+      <member refid="class_output_dev_1a528e180c891e750dd674ed938e2c2395" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>saveTextPos</name></member>
+      <member refid="class_cairo_output_dev_1ac875bd923aa8767e7652dd92bd795568" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>setAntialias</name></member>
+      <member refid="class_cairo_output_dev_1a72e8ed1b09719b40b0810b2e76c825dc" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>setAntialias</name></member>
+      <member refid="class_cairo_output_dev_1aa8ed06ed0c0c69543e4b2474ec2cf40f" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>setCairo</name></member>
+      <member refid="class_cairo_output_dev_1a7a7a6b5c8389a96aa4998df5461be39c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>setDefaultCTM</name></member>
+      <member refid="class_cairo_output_dev_1a20dcf2ce46b62770eaf2d83cd85571d4" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>setInType3Char</name></member>
+      <member refid="class_cairo_output_dev_1a38cdb1ba41bb610c72bc64d251cb4a18" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>setMimeData</name></member>
+      <member refid="class_cairo_output_dev_1ac98037fd57c3ce3d9f5d56f76d30f88a" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>setMimeDataForJBIG2Globals</name></member>
+      <member refid="class_cairo_output_dev_1a2ddca43cc6a6c4f711bd54d19345e580" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>setPrinting</name></member>
+      <member refid="class_cairo_output_dev_1ab05e1b028b2ed6f2412168770d29fa90" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>setSoftMask</name></member>
+      <member refid="class_cairo_output_dev_1af9a1a1ad4f9f569113a4dc4136d6dcb9" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>setSoftMaskFromImageMask</name></member>
+      <member refid="class_cairo_output_dev_1a4dc8074e43d18df988f65bf84c566a0c" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>setTextPage</name></member>
+      <member refid="class_output_dev_1acfc60ae8c0873218a3c5d498bacaf11c" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>setVectorAntialias</name></member>
+      <member refid="class_cairo_output_dev_1a19d345a0033645d6f83d4ea9b856d308" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>shape</name></member>
+      <member refid="class_cairo_output_dev_1aaa4ba6dfbe4bd63b1d72356764ab95d1" prot="public" virt="non-virtual"><scope>CairoOutputDev</scope><name>startDoc</name></member>
+      <member refid="class_cairo_output_dev_1aed57b94fb94b4e0157e202c9106bb0b3" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>startPage</name></member>
+      <member refid="class_output_dev_1a087c3f2802f97d852c323a003086fbb8" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>startProfile</name></member>
+      <member refid="class_cairo_output_dev_1a705190074dbbfbd1668e5b70ffa35e1a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>stroke</name></member>
+      <member refid="class_cairo_output_dev_1aeb0d9abccfbfd01b5cba560ee093ddc4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>stroke_adjust</name></member>
+      <member refid="class_cairo_output_dev_1aa9ca35e2decae17d70ab0250947d1c02" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>stroke_color</name></member>
+      <member refid="class_cairo_output_dev_1a28efd2872b08c38f8857e83fc20f3954" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>stroke_opacity</name></member>
+      <member refid="class_cairo_output_dev_1a3623ed7c928f31ff42c83cde98a5513a" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>stroke_pattern</name></member>
+      <member refid="class_cairo_output_dev_1a42baa5b8dec299eb5a85f1168d6cb486" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>strokePathClip</name></member>
+      <member refid="class_cairo_output_dev_1a92ef523a081c44d87928a330eebe3fc4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>surface</name></member>
+      <member refid="class_cairo_output_dev_1a1a562a57159dc67dcc3da0c5dc619d2c" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>t3_glyph_bbox</name></member>
+      <member refid="class_cairo_output_dev_1a07d37e897c945a0e7efc26dc2cc60704" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>t3_glyph_has_bbox</name></member>
+      <member refid="class_cairo_output_dev_1a98061e28c8c4e7d1120d12598044d78a" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>t3_glyph_wx</name></member>
+      <member refid="class_cairo_output_dev_1a8c3e5a61b3efc68eea5c352af0dd4ae4" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>t3_glyph_wy</name></member>
+      <member refid="class_cairo_output_dev_1a9027f49a5a75551de08a36c1872884a1" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>text</name></member>
+      <member refid="class_cairo_output_dev_1a0ac5cd2e751fbd24354c75a7e7593bf0" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>text_matrix_valid</name></member>
+      <member refid="class_cairo_output_dev_1a88a618eb9f516d067f5e59ee0f169212" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>textClipPath</name></member>
+      <member refid="class_cairo_output_dev_1adfda1f87b2254f572669b0ba0d4c779e" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>tilingPatternFill</name></member>
+      <member refid="class_cairo_output_dev_1a66c39dbbc9270b515d2a8bf0b2058ec9" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>type3D0</name></member>
+      <member refid="class_cairo_output_dev_1a22076631192875aa7253b24f56f4f015" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>type3D1</name></member>
+      <member refid="class_cairo_output_dev_1a4328e14b65f40863b28dee6613985e3a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>unsetSoftMaskFromImageMask</name></member>
+      <member refid="class_cairo_output_dev_1ab94809ec14239f2e7291fd7f6d662dfb" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateAll</name></member>
+      <member refid="class_output_dev_1a653436589426a8652bacecd4cddff417" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateAlphaIsShape</name></member>
+      <member refid="class_cairo_output_dev_1a4a20c396178526a60f5ac0971a311602" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateBlendMode</name></member>
+      <member refid="class_output_dev_1a01168f564318064748a8a395229b700a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateCharSpace</name></member>
+      <member refid="class_cairo_output_dev_1a9f920e3354798a0468a26ca641b762f6" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateCTM</name></member>
+      <member refid="class_cairo_output_dev_1a7172653bc666b4439eb3e69fa1af8e6b" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFillColor</name></member>
+      <member refid="class_output_dev_1af46b04e9b1d4caedc883e2bd944d5731" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFillColorSpace</name></member>
+      <member refid="class_cairo_output_dev_1a2553dc57cfdcef86b9ab8b18934acbec" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFillColorStop</name></member>
+      <member refid="class_cairo_output_dev_1a802221312bae1d91d7b66a63447fd757" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFillOpacity</name></member>
+      <member refid="class_output_dev_1aa1256118203d372534ce8d1b2fed6582" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFillOverprint</name></member>
+      <member refid="class_cairo_output_dev_1a49d02febbf1ff0aa5218a1cbb244bea5" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFlatness</name></member>
+      <member refid="class_cairo_output_dev_1a34950406a949494ba14ece6b376b2e62" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateFont</name></member>
+      <member refid="class_output_dev_1aa8200b0a5cf6e5258bcd8973286d7cb3" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateHorizScaling</name></member>
+      <member refid="class_cairo_output_dev_1accdc8d47a628d8029d8013fa6d163f59" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateLineCap</name></member>
+      <member refid="class_cairo_output_dev_1a61ad33c984a0f7f5a39a6fc82bdd895d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateLineDash</name></member>
+      <member refid="class_cairo_output_dev_1acdd2e156b767acd6a4be519f91608cec" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateLineJoin</name></member>
+      <member refid="class_cairo_output_dev_1a3fdfd4ddb8aacd10f883a4f0044af46f" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateLineWidth</name></member>
+      <member refid="class_cairo_output_dev_1ae06a4bb0a5cddc0164d4007cda2c78ff" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateMiterLimit</name></member>
+      <member refid="class_output_dev_1a6fb0ff3d1ac46fede38478376be83e8d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateOverprintMode</name></member>
+      <member refid="class_output_dev_1a87fabe2327708ebb0a29604a4b0b1b77" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updatePatternOpacity</name></member>
+      <member refid="class_output_dev_1a6271d1ebd09c0a79eadba5c078949710" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateRender</name></member>
+      <member refid="class_output_dev_1ac6105a80a144bb1653d5822580ff2063" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateRise</name></member>
+      <member refid="class_output_dev_1a306598c4f6ef12322e1f575c09e1fe10" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateStrokeAdjust</name></member>
+      <member refid="class_cairo_output_dev_1a4584d1c79adfe3bd9d9453c8ca12f45a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateStrokeColor</name></member>
+      <member refid="class_output_dev_1a213a611aadc3324d7a0ec0da6522c4ef" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateStrokeColorSpace</name></member>
+      <member refid="class_cairo_output_dev_1aba391dfc23d2ef28e873ad20228786d0" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateStrokeOpacity</name></member>
+      <member refid="class_output_dev_1a0d5a0433b4ef0b21a8a6a13f72bf78f2" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateStrokeOverprint</name></member>
+      <member refid="class_output_dev_1a5e1ad53b378a61a9035d2d1a232aa9ff" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateTextKnockout</name></member>
+      <member refid="class_output_dev_1a44a3b5ca4aa58bc026fc2e28417ac113" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateTextMat</name></member>
+      <member refid="class_output_dev_1ac7171bda1b19bda650dd51addb7b19ba" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateTextPos</name></member>
+      <member refid="class_output_dev_1aa24010d0b4f1304f565a24b8c3f4916d" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateTextShift</name></member>
+      <member refid="class_output_dev_1a88f138182fee6e2139c9ec16f5d2c7b0" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateTransfer</name></member>
+      <member refid="class_output_dev_1a624caf1670d8bd6ea47c81f176799400" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>updateWordSpace</name></member>
+      <member refid="class_cairo_output_dev_1ae12a3d1eb63c47a753ba5a7523760e3a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>upsideDown</name></member>
+      <member refid="class_cairo_output_dev_1a17f044236fc8f159e6e9d39b2b620612" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>use_show_text_glyphs</name></member>
+      <member refid="class_cairo_output_dev_1ad8913041e385e982d1ae367266f1335a" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>useDrawChar</name></member>
+      <member refid="class_output_dev_1a88a89943e0b1c93eb7e2b68daf263930" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>useDrawForm</name></member>
+      <member refid="class_cairo_output_dev_1ae67de5c6482fb39dde2f114680c8c1d7" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>useFillColorStop</name></member>
+      <member refid="class_cairo_output_dev_1ae1cc3a29bbadf4394fefbc10373d4659" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>useShadedFills</name></member>
+      <member refid="class_cairo_output_dev_1a60a701cf53165b6fd462312753acaf00" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>useTilingPatternFill</name></member>
+      <member refid="class_cairo_output_dev_1a81224400f9ff648d87d8967dc59ad93b" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>utf8</name></member>
+      <member refid="class_cairo_output_dev_1a02ecc2d33c9192906d32255cc7a39fb1" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>utf8Count</name></member>
+      <member refid="class_cairo_output_dev_1a98636789cbe64ebedf84423ca96c83b3" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>utf8Max</name></member>
+      <member refid="class_cairo_output_dev_1a20b3ef367474baac0832e84fb490c4da" prot="protected" virt="non-virtual"><scope>CairoOutputDev</scope><name>xref</name></member>
+      <member refid="class_cairo_output_dev_1a1ab560ca2737ac13cf54b0d61bb8d600" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>~CairoOutputDev</name></member>
+      <member refid="class_output_dev_1ab13c071bada522565f64aba6b8b30b6e" prot="public" virt="virtual"><scope>CairoOutputDev</scope><name>~OutputDev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

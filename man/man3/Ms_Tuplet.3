@@ -1,0 +1,204 @@
+.TH "Ms::Tuplet" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Tuplet
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <tuplet\&.h>\fP
+.PP
+Inherits \fBMs::DurationElement\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBNumberType\fP : char { \fBSHOW_NUMBER\fP, \fBSHOW_RELATION\fP, \fBNO_TEXT\fP }"
+.br
+.ti -1c
+.RI "enum \fBBracketType\fP : char { \fBAUTO_BRACKET\fP, \fBSHOW_BRACKET\fP, \fBSHOW_NO_BRACKET\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTuplet\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBTuplet\fP (const \fBTuplet\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBTuplet\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetTrack\fP (int val) override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBmeasure\fP () const override"
+.br
+.ti -1c
+.RI "NumberType \fBnumberType\fP () const"
+.br
+.ti -1c
+.RI "BracketType \fBbracketType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNumberType\fP (NumberType val)"
+.br
+.ti -1c
+.RI "void \fBsetBracketType\fP (BracketType val)"
+.br
+.ti -1c
+.RI "bool \fBhasBracket\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHasBracket\fP (bool b)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBratio\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRatio\fP (const \fBFraction\fP &r)"
+.br
+.ti -1c
+.RI "const std::vector< \fBDurationElement\fP * > & \fBelements\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBnumber\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "int \fBid\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int i) const"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBbaseLen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBaseLen\fP (const \fBTDuration\fP &d)"
+.br
+.ti -1c
+.RI "virtual void \fBdump\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetDirection\fP (\fBDirection\fP d)"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBdirection\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisUp\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetTick\fP (int val)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBelementsDuration\fP ()"
+.br
+.ti -1c
+.RI "void \fBsortElements\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetVisible\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &v) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id) override"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "void \fBsanitizeTuplet\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Example of 1/8 triplet: _baseLen = 1/8 _actualNotes = 3 _normalNotes = 2 (3 notes played in the time of 2/8)
+.PP
+The tuplet has a len of _baseLen * _normalNotes\&. A tuplet note has len of _baseLen * _normalNotes / _actualNotes\&. 
+.PP
+Definition at line 35 of file tuplet\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFraction\fP Ms::Tuplet::elementsDuration ()"
+Get the sum of the element fraction in the tuplet, even if the tuplet is not complete yet 
+.PP
+Definition at line 887 of file tuplet\&.cpp\&.
+.SS "void Ms::Tuplet::sanitizeTuplet ()"
+Check validity of tuplets and coherence between duration and baselength\&. Needed for importing old files due to a bug in the released version for corner-case tuplets\&. See issue #136406 and Pull request #2881 
+.PP
+Definition at line 1087 of file tuplet\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

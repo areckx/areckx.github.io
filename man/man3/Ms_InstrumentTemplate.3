@@ -1,0 +1,144 @@
+.TH "Ms::InstrumentTemplate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::InstrumentTemplate
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInstrumentTemplate\fP (const \fBInstrumentTemplate\fP &)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (const \fBInstrumentTemplate\fP &)"
+.br
+.ti -1c
+.RI "void \fBlinkGenre\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBaddGenre\fP (QList< \fBInstrumentGenre\fP *>)"
+.br
+.ti -1c
+.RI "bool \fBgenreMember\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetPitchRange\fP (const QString &s, char *a, char *b) const"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "void \fBwrite1\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "int \fBnstaves\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStaves\fP (int val)"
+.br
+.ti -1c
+.RI "\fBClefTypeList\fP \fBclefType\fP (int staffIdx) const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBid\fP"
+.br
+.ti -1c
+.RI "QString \fBtrackName\fP"
+.br
+.ti -1c
+.RI "\fBStaffNameList\fP \fBlongNames\fP"
+.br
+.RI "shown on first system "
+.ti -1c
+.RI "\fBStaffNameList\fP \fBshortNames\fP"
+.br
+.RI "shown on followup systems "
+.ti -1c
+.RI "QString \fBmusicXMLid\fP"
+.br
+.RI "used in MusicXML 3\&.0 "
+.ti -1c
+.RI "QString \fBdescription\fP"
+.br
+.RI "a longer description of the instrument "
+.ti -1c
+.RI "char \fBminPitchA\fP"
+.br
+.ti -1c
+.RI "char \fBmaxPitchA\fP"
+.br
+.ti -1c
+.RI "char \fBminPitchP\fP"
+.br
+.ti -1c
+.RI "char \fBmaxPitchP\fP"
+.br
+.ti -1c
+.RI "\fBInterval\fP \fBtranspose\fP"
+.br
+.ti -1c
+.RI "StaffGroup \fBstaffGroup\fP"
+.br
+.ti -1c
+.RI "const \fBStaffType\fP * \fBstaffTypePreset\fP"
+.br
+.ti -1c
+.RI "bool \fBuseDrumset\fP"
+.br
+.ti -1c
+.RI "\fBDrumset\fP * \fBdrumset\fP"
+.br
+.ti -1c
+.RI "\fBStringData\fP \fBstringData\fP"
+.br
+.ti -1c
+.RI "QList< \fBNamedEventList\fP > \fBmidiActions\fP"
+.br
+.ti -1c
+.RI "QList< \fBMidiArticulation\fP > \fBarticulation\fP"
+.br
+.ti -1c
+.RI "QList< \fBChannel\fP > \fBchannel\fP"
+.br
+.ti -1c
+.RI "QList< \fBInstrumentGenre\fP * > \fBgenres\fP"
+.br
+.ti -1c
+.RI "\fBClefTypeList\fP \fBclefTypes\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "int \fBstaffLines\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "BracketType \fBbracket\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "int \fBbracketSpan\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "int \fBbarlineSpan\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "bool \fBsmallStaff\fP [MAX_STAVES]"
+.br
+.ti -1c
+.RI "bool \fBextended\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 48 of file instrtemplate\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

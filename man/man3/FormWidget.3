@@ -1,0 +1,135 @@
+.TH "FormWidget" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FormWidget
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBFormWidgetButton\fP, \fBFormWidgetChoice\fP, \fBFormWidgetSignature\fP, and \fBFormWidgetText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "GBool \fBinRect\fP (double x, double y) const"
+.br
+.ti -1c
+.RI "void \fBgetRect\fP (double *x1, double *y1, double *x2, double *y2) const"
+.br
+.ti -1c
+.RI "unsigned \fBgetID\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetID\fP (unsigned int i)"
+.br
+.ti -1c
+.RI "\fBFormField\fP * \fBgetField\fP ()"
+.br
+.ti -1c
+.RI "FormFieldType \fBgetType\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetObj\fP ()"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetRef\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetChildNum\fP (unsigned i)"
+.br
+.ti -1c
+.RI "unsigned \fBgetChildNum\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetFontSize\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetPartialName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetAlternateUiName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetMappingName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetFullyQualifiedName\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisModified\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisReadOnly\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkAction\fP * \fBgetActivationAction\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkAction\fP * \fBgetAdditionalAction\fP (\fBAnnot::FormAdditionalActionsType\fP type)"
+.br
+.ti -1c
+.RI "void \fBcreateWidgetAnnotation\fP ()"
+.br
+.ti -1c
+.RI "\fBAnnotWidget\fP * \fBgetWidgetAnnotation\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBupdateWidgetAppearance\fP ()=0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBencodeID\fP (unsigned pageNum, unsigned fieldNum)"
+.br
+.ti -1c
+.RI "static void \fBdecodeID\fP (unsigned id, unsigned *pageNum, unsigned *fieldNum)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFormWidget\fP (\fBPDFDoc\fP *docA, \fBObject\fP *aobj, unsigned num, \fBRef\fP aref, \fBFormField\fP *fieldA)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnotWidget\fP * \fBwidget\fP"
+.br
+.ti -1c
+.RI "\fBFormField\fP * \fBfield\fP"
+.br
+.ti -1c
+.RI "FormFieldType \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBobj\fP"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBref\fP"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBdoc\fP"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBxref\fP"
+.br
+.ti -1c
+.RI "unsigned \fBchildNum\fP"
+.br
+.ti -1c
+.RI "unsigned \fBID\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 76 of file Form\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,227 @@
+.TH "Ms::Harmony" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Harmony
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHarmony\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBHarmony\fP (const \fBHarmony\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBHarmony\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsystemFlag\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int d)"
+.br
+.ti -1c
+.RI "int \fBid\fP () const"
+.br
+.ti -1c
+.RI "bool \fBleftParen\fP () const"
+.br
+.ti -1c
+.RI "bool \fBrightParen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLeftParen\fP (bool leftParen)"
+.br
+.ti -1c
+.RI "void \fBsetRightParen\fP (bool rightParen)"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBdescr\fP () const"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBdescr\fP (const QString &, const \fBParsedChord\fP *pc=0) const"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBgetDescription\fP ()"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBgetDescription\fP (const QString &, const \fBParsedChord\fP *pc=0)"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBgenerateDescription\fP ()"
+.br
+.ti -1c
+.RI "void \fBdetermineRootBaseSpelling\fP (NoteSpellingType &rootSpelling, NoteCaseType &rootCase, NoteSpellingType &baseSpelling, NoteCaseType &baseCase)"
+.br
+.ti -1c
+.RI "virtual void \fBtextChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "const QRectF & \fBbboxtight\fP () const"
+.br
+.ti -1c
+.RI "QRectF & \fBbboxtight\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetbboxtight\fP (const QRectF &r) const"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "QString \fBhUserName\fP () const"
+.br
+.ti -1c
+.RI "QString \fBhTextName\fP () const"
+.br
+.ti -1c
+.RI "int \fBbaseTpc\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBaseTpc\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBrootTpc\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRootTpc\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetTextName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "QString \fBrootName\fP ()"
+.br
+.ti -1c
+.RI "QString \fBbaseName\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddDegree\fP (const \fBHDegree\fP &d)"
+.br
+.ti -1c
+.RI "int \fBnumberOfDegrees\fP () const"
+.br
+.ti -1c
+.RI "\fBHDegree\fP \fBdegree\fP (int i) const"
+.br
+.ti -1c
+.RI "void \fBclearDegrees\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBHDegree\fP > & \fBdegreeList\fP () const"
+.br
+.ti -1c
+.RI "const \fBParsedChord\fP * \fBparsedForm\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "QString \fBharmonyName\fP () const"
+.br
+.ti -1c
+.RI "void \fBrender\fP (const TextStyle *ts=0)"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBparseHarmony\fP (const QString &s, int *root, int *base, bool syntaxOnly=false)"
+.br
+.ti -1c
+.RI "const QString & \fBextensionName\fP () const"
+.br
+.ti -1c
+.RI "QString \fBxmlKind\fP () const"
+.br
+.ti -1c
+.RI "QString \fBxmlText\fP () const"
+.br
+.ti -1c
+.RI "QString \fBxmlSymbols\fP () const"
+.br
+.ti -1c
+.RI "QString \fBxmlParens\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBxmlDegrees\fP () const"
+.br
+.ti -1c
+.RI "void \fBresolveDegreeList\fP ()"
+.br
+.ti -1c
+.RI "virtual qreal \fBbaseLine\fP () const override"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBfromXml\fP (const QString &, const QString &, const QString &, const QString &, const QList< \fBHDegree\fP > &)"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBfromXml\fP (const QString &s, const QList< \fBHDegree\fP > &)"
+.br
+.ti -1c
+.RI "const \fBChordDescription\fP * \fBfromXml\fP (const QString &s)"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal oldValue, qreal newValue) override"
+.br
+.ti -1c
+.RI "virtual void \fBlocalSpatiumChanged\fP (qreal oldValue, qreal newValue) override"
+.br
+.ti -1c
+.RI "void \fBsetHarmony\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBcalculateBoundingRect\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBscreenReaderInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBbaseTpc\fP"
+.br
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBrootTpc\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 66 of file harmony\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

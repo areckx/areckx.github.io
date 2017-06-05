@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="gen_8cpp" kind="file" language="C++">
+    <compoundname>gen.cpp</compoundname>
+    <includes refid="gen_8h" local="yes">gen.h</includes>
+    <includes refid="fluid_8h" local="yes">fluid.h</includes>
+    <incdepgraph>
+      <node id="15789">
+        <label>list</label>
+      </node>
+      <node id="15784">
+        <label>fluid/gen.cpp</label>
+        <link refid="gen_8cpp"/>
+        <childnode refid="15785" relation="include">
+        </childnode>
+        <childnode refid="15786" relation="include">
+        </childnode>
+      </node>
+      <node id="15788">
+        <label>libmscore/synthesizerstate.h</label>
+        <link refid="synthesizerstate_8h_source"/>
+        <childnode refid="15789" relation="include">
+        </childnode>
+      </node>
+      <node id="15787">
+        <label>synthesizer/synthesizer.h</label>
+        <link refid="synthesizer_8h_source"/>
+        <childnode refid="15788" relation="include">
+        </childnode>
+      </node>
+      <node id="15786">
+        <label>fluid.h</label>
+        <link refid="fluid_8h_source"/>
+        <childnode refid="15787" relation="include">
+        </childnode>
+        <childnode refid="15790" relation="include">
+        </childnode>
+      </node>
+      <node id="15790">
+        <label>synthesizer/midipatch.h</label>
+        <link refid="midipatch_8h_source"/>
+      </node>
+      <node id="15785">
+        <label>gen.h</label>
+        <link refid="gen_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_fluid_s">FluidS</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>FluidSynth<sp/>-<sp/>A<sp/>Software<sp/>Synthesizer</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2003<sp/><sp/>Peter<sp/>Hanappe<sp/>and<sp/>others.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>modify<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>Library<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2<sp/>of</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>License,<sp/>or<sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>This<sp/>library<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,<sp/>but</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the<sp/>GNU</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Library<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>Library<sp/>General<sp/>Public</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>License<sp/>along<sp/>with<sp/>this<sp/>library;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>59<sp/>Temple<sp/>Place,<sp/>Suite<sp/>330,<sp/>Boston,<sp/>MA</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>02111-1307,<sp/>USA</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fluid.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_fluid_s" kindref="compound">FluidS</ref><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>See<sp/>SFSpec21<sp/>$8.1.3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">GenInfo<sp/>fluid_gen_info[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>number/name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>init<sp/><sp/>scale<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>min<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>def<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_STARTADDROFS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_ENDADDROFS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_STARTLOOPADDROFS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_ENDLOOPADDROFS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_STARTADDRCOARSEOFS,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODLFOTOPITCH,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/>12000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VIBLFOTOPITCH,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/>12000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVTOPITCH,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/>12000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_FILTERFC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/><sp/><sp/>1500.0f,<sp/><sp/>13500.0f,<sp/><sp/><sp/>13500.0f<sp/>},</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_FILTERQ,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>960.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODLFOTOFILTERFC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/>12000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVTOFILTERFC,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/>12000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_ENDADDRCOARSEOFS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODLFOTOVOL,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/>-960.0f,<sp/><sp/><sp/><sp/>960.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_UNUSED1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_CHORUSSEND,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_REVERBSEND,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_PAN,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/>-500.0f,<sp/><sp/><sp/><sp/>500.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_UNUSED2,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_UNUSED3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_UNUSED4,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODLFODELAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODLFOFREQ,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>4,<sp/><sp/>-16000.0f,<sp/><sp/><sp/>4500.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VIBLFODELAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VIBLFOFREQ,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>4,<sp/><sp/>-16000.0f,<sp/><sp/><sp/>4500.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVDELAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVATTACK,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVHOLD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVDECAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVSUSTAIN,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1000.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_MODENVRELEASE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYTOMODENVHOLD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/>-1200.0f,<sp/><sp/><sp/>1200.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYTOMODENVDECAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/>-1200.0f,<sp/><sp/><sp/>1200.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVDELAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVATTACK,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVHOLD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>5000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVDECAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVSUSTAIN,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1440.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VOLENVRELEASE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>2,<sp/><sp/>-12000.0f,<sp/><sp/><sp/>8000.0f,<sp/><sp/>-12000.0f<sp/>},</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYTOVOLENVHOLD,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/>-1200.0f,<sp/><sp/><sp/>1200.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYTOVOLENVDECAY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/>-1200.0f,<sp/><sp/><sp/>1200.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_INSTRUMENT,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_RESERVED1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYRANGE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VELRANGE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_STARTLOOPADDRCOARSEOFS,<sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_KEYNUM,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/>-1.0f<sp/>},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_VELOCITY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/>-1.0f<sp/>},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_ATTENUATION,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1440.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_RESERVED2,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_ENDLOOPADDRCOARSEOFS,<sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-1e10f,<sp/><sp/><sp/><sp/><sp/>1e10f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_COARSETUNE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/>-120.0f,<sp/><sp/><sp/><sp/>120.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_FINETUNE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>-99.0f,<sp/><sp/><sp/><sp/><sp/>99.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_SAMPLEID,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_SAMPLEMODE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_RESERVED3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_SCALETUNE,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/>1200.0f,<sp/><sp/><sp/><sp/><sp/>100.0f<sp/>},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_EXCLUSIVECLASS,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_OVERRIDEROOTKEY,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/>-1.0f<sp/>},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/>GEN_PITCH,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1,<sp/><sp/><sp/><sp/><sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f,<sp/><sp/><sp/><sp/>127.0f,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0f<sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fluid_gen_set_default_values(Generator*<sp/>gen)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>GEN_LAST;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].flags<sp/>=<sp/>GEN_UNUSED;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].mod<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].nrpn<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].val<sp/>=<sp/>fluid_gen_info[i].def;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>fluid_gen_init</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>Set<sp/>an<sp/>array<sp/>of<sp/>generators<sp/>to<sp/>their<sp/>initial<sp/>value</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fluid_gen_init(Generator*<sp/>gen,<sp/><ref refid="class_channel" kindref="compound">Channel</ref>*<sp/>channel)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fluid_gen_set_default_values(gen);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>GEN_LAST;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].nrpn<sp/>=<sp/>channel-&gt;getGen(i);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>is<sp/>an<sp/>extension<sp/>to<sp/>the<sp/>SoundFont<sp/>standard.<sp/>More</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>documentation<sp/>is<sp/>available<sp/>at<sp/>the<sp/>fluid_synth_set_gen2()</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<sp/>function.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(channel-&gt;getGenAbs(i))</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gen[i].flags<sp/>=<sp/>GEN_ABS_NRPN;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fluid_gen_scale(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gen,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(fluid_gen_info[gen].min</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>value<sp/>*<sp/>(fluid_gen_info[gen].max<sp/>-<sp/>fluid_gen_info[gen].min));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fluid_gen_scale_nrpn(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>gen,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>qBound(-8192.0,<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<sp/>data<sp/>-<sp/>8192.0,<sp/>8192.0);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value<sp/>*<sp/>(float)<sp/>fluid_gen_info[gen].nrpn_scale;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="fluid/gen.cpp"/>
+  </compounddef>
+</doxygen>

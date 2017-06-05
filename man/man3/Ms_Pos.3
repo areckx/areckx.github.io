@@ -1,0 +1,161 @@
+.TH "Ms::Pos" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Pos
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMs::PosLen\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPos\fP (\fBTempoMap\fP *, \fBTimeSigMap\fP *)"
+.br
+.ti -1c
+.RI "\fBPos\fP (\fBTempoMap\fP *, \fBTimeSigMap\fP *, int measure, int beat, int tick)"
+.br
+.ti -1c
+.RI "\fBPos\fP (\fBTempoMap\fP *, \fBTimeSigMap\fP *, int minute, int sec, int frame, int subframe)"
+.br
+.ti -1c
+.RI "\fBPos\fP (\fBTempoMap\fP *, \fBTimeSigMap\fP *, unsigned, TType type=TType::TICKS)"
+.br
+.ti -1c
+.RI "\fBPos\fP (\fBTempoMap\fP *, \fBTimeSigMap\fP *, const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetContext\fP (\fBTempoMap\fP *t, \fBTimeSigMap\fP *s)"
+.br
+.ti -1c
+.RI "void \fBdump\fP (int n=0) const"
+.br
+.ti -1c
+.RI "unsigned \fBtime\fP (TType t) const"
+.br
+.ti -1c
+.RI "void \fBmbt\fP (int *measure, int *beat, int *tick) const"
+.br
+.ti -1c
+.RI "void \fBmsf\fP (int *minute, int *sec, int *frame, int *subframe) const"
+.br
+.ti -1c
+.RI "\fBSigEvent\fP \fBtimesig\fP () const"
+.br
+.ti -1c
+.RI "void \fBsnap\fP (int)"
+.br
+.ti -1c
+.RI "void \fBupSnap\fP (int)"
+.br
+.ti -1c
+.RI "void \fBdownSnap\fP (int)"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBsnaped\fP (int) const"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBupSnaped\fP (int) const"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBdownSnaped\fP (int) const"
+.br
+.ti -1c
+.RI "void \fBinvalidSn\fP ()"
+.br
+.ti -1c
+.RI "TType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (TType t)"
+.br
+.ti -1c
+.RI "\fBPos\fP & \fBoperator+=\fP (const \fBPos\fP &a)"
+.br
+.ti -1c
+.RI "\fBPos\fP & \fBoperator+=\fP (int a)"
+.br
+.ti -1c
+.RI "\fBPos\fP & \fBoperator\-=\fP (const \fBPos\fP &a)"
+.br
+.ti -1c
+.RI "\fBPos\fP & \fBoperator\-=\fP (int a)"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBPos\fP &s) const"
+.br
+.ti -1c
+.RI "unsigned \fBtick\fP () const"
+.br
+.ti -1c
+.RI "unsigned \fBframe\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTick\fP (unsigned)"
+.br
+.ti -1c
+.RI "void \fBsetFrame\fP (unsigned)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &, const char *) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "bool \fBvalid\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetInvalid\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTempoMap\fP * \fBtempo\fP"
+.br
+.ti -1c
+.RI "\fBTimeSigMap\fP * \fBsig\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "\fBPos\fP \fBoperator+\fP (const \fBPos\fP &a, const \fBPos\fP &b)"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBoperator\-\fP (const \fBPos\fP &a, const \fBPos\fP &b)"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBoperator+\fP (const \fBPos\fP &a, int b)"
+.br
+.ti -1c
+.RI "\fBPos\fP \fBoperator\-\fP (const \fBPos\fP &a, int b)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file pos\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

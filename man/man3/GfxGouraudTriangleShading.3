@@ -1,0 +1,79 @@
+.TH "GfxGouraudTriangleShading" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GfxGouraudTriangleShading
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBGfxShading\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGfxGouraudTriangleShading\fP (int typeA, \fBGfxGouraudVertex\fP *verticesA, int nVerticesA, int(*trianglesA)[3], int nTrianglesA, \fBFunction\fP **funcsA, int nFuncsA)"
+.br
+.ti -1c
+.RI "\fBGfxGouraudTriangleShading\fP (\fBGfxGouraudTriangleShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual \fBGfxShading\fP * \fBcopy\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNTriangles\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisParameterized\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetParameterDomainMin\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetParameterDomainMax\fP () const"
+.br
+.ti -1c
+.RI "void \fBgetTriangle\fP (int i, double *x0, double *y0, \fBGfxColor\fP *color0, double *x1, double *y1, \fBGfxColor\fP *color1, double *x2, double *y2, \fBGfxColor\fP *color2)"
+.br
+.ti -1c
+.RI "void \fBgetTriangle\fP (int i, double *x0, double *y0, double *color0, double *x1, double *y1, double *color1, double *x2, double *y2, double *color2)"
+.br
+.ti -1c
+.RI "void \fBgetParameterizedColor\fP (double t, \fBGfxColor\fP *\fBcolor\fP)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBGfxGouraudTriangleShading\fP * \fBparse\fP (\fBGfxResources\fP *res, int typeA, \fBDict\fP *dict, \fBStream\fP *str, \fBOutputDev\fP *out, \fBGfxState\fP *state)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 1025 of file GfxState\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "double GfxGouraudTriangleShading::getParameterDomainMax () const\fC [inline]\fP"
+isParameterized() == true 
+.PP
+Definition at line 1051 of file GfxState\&.h\&.
+.SS "double GfxGouraudTriangleShading::getParameterDomainMin () const\fC [inline]\fP"
+isParameterized() == true 
+.PP
+Definition at line 1046 of file GfxState\&.h\&.
+.SS "void GfxGouraudTriangleShading::getTriangle (int i, double * x0, double * y0, \fBGfxColor\fP * color0, double * x1, double * y1, \fBGfxColor\fP * color1, double * x2, double * y2, \fBGfxColor\fP * color2)"
+isParameterized() == false 
+.PP
+Definition at line 5122 of file GfxState\&.cc\&.
+.SS "void GfxGouraudTriangleShading::getTriangle (int i, double * x0, double * y0, double * color0, double * x1, double * y1, double * color1, double * x2, double * y2, double * color2)"
+Variant for functions\&.
+.PP
+isParameterized() == true 
+.PP
+Definition at line 5188 of file GfxState\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

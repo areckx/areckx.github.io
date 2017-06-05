@@ -1,0 +1,87 @@
+.TH "Poppler::LinkExecute" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkExecute \- Generic execution request\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBfileName\fP () const"
+.br
+.ti -1c
+.RI "QString \fBparameters\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkExecute\fP (const QRectF &\fBlinkArea\fP, const QString &file, const QString &params)"
+.br
+.ti -1c
+.RI "\fB~LinkExecute\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Generic execution request\&. 
+
+The \fBLinkExecute\fP link represent a 'file name' execution request\&. The result depends on the \fBfile name\fP:
+.IP "\(bu" 2
+if it is a document, then it is requested to be open
+.IP "\(bu" 2
+otherwise, it represents an executable to be run with the specified parameters 
+.PP
+
+.PP
+Definition at line 281 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::LinkExecute::LinkExecute (const QRectF & linkArea, const QString & file, const QString & params)"
+Create a new Execute link\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinkArea\fP the active area of the link 
+.br
+\fIfile\fP the file name to be open, or the program to be execute 
+.br
+\fIparams\fP the parameters for the program to execute 
+.RE
+.PP
+
+.PP
+Definition at line 481 of file poppler\-link\&.cc\&.
+.SS "Poppler::LinkExecute::~LinkExecute ()"
+Destructor\&. 
+.PP
+Definition at line 489 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Poppler::LinkExecute::fileName () const"
+The file name to be executed 
+.PP
+Definition at line 493 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP Poppler::LinkExecute::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 504 of file poppler\-link\&.cc\&.
+.SS "QString Poppler::LinkExecute::parameters () const"
+The parameters for the command\&. 
+.PP
+Definition at line 498 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

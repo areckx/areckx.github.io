@@ -1,0 +1,267 @@
+\hypertarget{class_m_q_zip_writer}{}\section{M\+Q\+Zip\+Writer Class Reference}
+\label{class_m_q_zip_writer}\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_q_zip_writer_aca8ef7bd015c0c8d04bba8cd75351ee1}\label{class_m_q_zip_writer_aca8ef7bd015c0c8d04bba8cd75351ee1}} 
+enum {\bfseries Status} \{ \newline
+{\bfseries No\+Error}, 
+{\bfseries File\+Write\+Error}, 
+{\bfseries File\+Open\+Error}, 
+{\bfseries File\+Permissions\+Error}, 
+\newline
+{\bfseries File\+Error}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_q_zip_writer_a62cb4f05e727c8bbfd1e59c127377675}\label{class_m_q_zip_writer_a62cb4f05e727c8bbfd1e59c127377675}} 
+enum {\bfseries Compression\+Policy} \{ {\bfseries Always\+Compress}, 
+{\bfseries Never\+Compress}, 
+{\bfseries Auto\+Compress}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q_zip_writer_af533fca464fe2bac29083a27b2356f51}{M\+Q\+Zip\+Writer} (const Q\+String \&file\+Name, Q\+I\+O\+Device\+::\+Open\+Mode mode=(Q\+I\+O\+Device\+::\+Write\+Only$\vert$Q\+I\+O\+Device\+::\+Truncate))
+\item 
+\hyperlink{class_m_q_zip_writer_a47881309d8438d2face8d740e17f0b4b}{M\+Q\+Zip\+Writer} (Q\+I\+O\+Device $\ast$\hyperlink{class_m_q_zip_writer_ad2c9fc653181defe0f54bebd8e0ac21d}{device})
+\item 
+Q\+I\+O\+Device $\ast$ \hyperlink{class_m_q_zip_writer_ad2c9fc653181defe0f54bebd8e0ac21d}{device} () const
+\item 
+bool \hyperlink{class_m_q_zip_writer_a96cf59b1f12b11fcee87f1e4e6c647a9}{is\+Writable} () const
+\item 
+bool \hyperlink{class_m_q_zip_writer_ac3ed7d79e04aca62ecdb0f7222422ec2}{exists} () const
+\item 
+Status \hyperlink{class_m_q_zip_writer_a89cf6db4ed393de1791468e6aad7a99e}{status} () const
+\item 
+void \hyperlink{class_m_q_zip_writer_ab4f5f12ae8df67674ec0f3d30d97313f}{set\+Compression\+Policy} (Compression\+Policy policy)
+\item 
+Compression\+Policy \hyperlink{class_m_q_zip_writer_aa43250ac355d31da13d5eaa018d50c15}{compression\+Policy} () const
+\item 
+void \hyperlink{class_m_q_zip_writer_af965ba3d12531a91ca0c83e25423a313}{set\+Creation\+Permissions} (Q\+File\+::\+Permissions permissions)
+\item 
+Q\+File\+::\+Permissions \hyperlink{class_m_q_zip_writer_a7ee2e99567e134f338093929469ab818}{creation\+Permissions} () const
+\item 
+void \hyperlink{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}{add\+File} (const Q\+String \&file\+Name, const Q\+Byte\+Array \&data)
+\item 
+void \hyperlink{class_m_q_zip_writer_a4233d3f0452f5c416c8f314e74308344}{add\+File} (const Q\+String \&file\+Name, Q\+I\+O\+Device $\ast$\hyperlink{class_m_q_zip_writer_ad2c9fc653181defe0f54bebd8e0ac21d}{device})
+\item 
+void \hyperlink{class_m_q_zip_writer_a08703913c70762b5a649bad3be9e1c6c}{add\+Directory} (const Q\+String \&dir\+Name)
+\item 
+void \hyperlink{class_m_q_zip_writer_a23bd7609856cb06487ab1c4bc0e2e2be}{add\+Sym\+Link} (const Q\+String \&file\+Name, const Q\+String \&destination)
+\item 
+void \hyperlink{class_m_q_zip_writer_a4553036171792fd6f254b28cc68818f6}{close} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 65 of file qzipwriter\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_q_zip_writer_af533fca464fe2bac29083a27b2356f51}\label{class_m_q_zip_writer_af533fca464fe2bac29083a27b2356f51}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{M\+Q\+Zip\+Writer()}{MQZipWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Writer\+::\+M\+Q\+Zip\+Writer (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{Q\+I\+O\+Device\+::\+Open\+Mode}]{mode = {\ttfamily (QIODevice\+:\+:WriteOnly~$\vert$~QIODevice\+:\+:Truncate)} }\end{DoxyParamCaption})}
+
+Create a new zip archive that operates on the {\itshape archive} filename. The file will be opened with the {\itshape mode}. \begin{DoxySeeAlso}{See also}
+is\+Valid() 
+\end{DoxySeeAlso}
+
+
+Definition at line 1021 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a47881309d8438d2face8d740e17f0b4b}\label{class_m_q_zip_writer_a47881309d8438d2face8d740e17f0b4b}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{M\+Q\+Zip\+Writer()}{MQZipWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Writer\+::\+M\+Q\+Zip\+Writer (\begin{DoxyParamCaption}\item[{Q\+I\+O\+Device $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Create a new zip archive that operates on the archive found in {\itshape device}. You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent. 
+
+Definition at line 1049 of file qzip.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_q_zip_writer_a08703913c70762b5a649bad3be9e1c6c}\label{class_m_q_zip_writer_a08703913c70762b5a649bad3be9e1c6c}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!add\+Directory@{add\+Directory}}
+\index{add\+Directory@{add\+Directory}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{add\+Directory()}{addDirectory()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::add\+Directory (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{dir\+Name }\end{DoxyParamCaption})}
+
+Create a new directory in the archive with the specified {\itshape dir\+Name} and the {\itshape permissions}; 
+
+Definition at line 1209 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}\label{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!add\+File@{add\+File}}
+\index{add\+File@{add\+File}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{add\+File()}{addFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::add\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})}
+
+Add a file to the archive with {\itshape data} as the file contents. The file will be stored in the archive using the {\itshape file\+Name} which includes the full path in the archive.
+
+The new file will get the file permissions based on the current creation\+Permissions and it will be compressed using the zip compression based on the current compression policy.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_writer_af965ba3d12531a91ca0c83e25423a313}{set\+Creation\+Permissions()} 
+
+\hyperlink{class_m_q_zip_writer_ab4f5f12ae8df67674ec0f3d30d97313f}{set\+Compression\+Policy()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1176 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a4233d3f0452f5c416c8f314e74308344}\label{class_m_q_zip_writer_a4233d3f0452f5c416c8f314e74308344}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!add\+File@{add\+File}}
+\index{add\+File@{add\+File}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{add\+File()}{addFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::add\+File (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{Q\+I\+O\+Device $\ast$}]{device }\end{DoxyParamCaption})}
+
+Add a file to the archive with {\itshape device} as the source of the contents. The contents returned from Q\+I\+O\+Device\+::read\+All() will be used as the filedata. The file will be stored in the archive using the {\itshape file\+Name} which includes the full path in the archive. 
+
+Definition at line 1188 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a23bd7609856cb06487ab1c4bc0e2e2be}\label{class_m_q_zip_writer_a23bd7609856cb06487ab1c4bc0e2e2be}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!add\+Sym\+Link@{add\+Sym\+Link}}
+\index{add\+Sym\+Link@{add\+Sym\+Link}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{add\+Sym\+Link()}{addSymLink()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::add\+Sym\+Link (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name,  }\item[{const Q\+String \&}]{destination }\end{DoxyParamCaption})}
+
+Create a new symbolic link in the archive with the specified {\itshape dir\+Name} and the {\itshape permissions}; A symbolic link contains the destination (relative) path and name. 
+
+Definition at line 1223 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a4553036171792fd6f254b28cc68818f6}\label{class_m_q_zip_writer_a4553036171792fd6f254b28cc68818f6}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!close@{close}}
+\index{close@{close}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Closes the zip file. 
+
+Definition at line 1231 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_aa43250ac355d31da13d5eaa018d50c15}\label{class_m_q_zip_writer_aa43250ac355d31da13d5eaa018d50c15}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!compression\+Policy@{compression\+Policy}}
+\index{compression\+Policy@{compression\+Policy}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{compression\+Policy()}{compressionPolicy()}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Writer\+::\+Compression\+Policy M\+Q\+Zip\+Writer\+::compression\+Policy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the currently set compression policy. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_writer_ab4f5f12ae8df67674ec0f3d30d97313f}{set\+Compression\+Policy()} 
+
+\hyperlink{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}{add\+File()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1135 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a7ee2e99567e134f338093929469ab818}\label{class_m_q_zip_writer_a7ee2e99567e134f338093929469ab818}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!creation\+Permissions@{creation\+Permissions}}
+\index{creation\+Permissions@{creation\+Permissions}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{creation\+Permissions()}{creationPermissions()}}
+{\footnotesize\ttfamily Q\+File\+::\+Permissions M\+Q\+Zip\+Writer\+::creation\+Permissions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the currently set creation permissions.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_writer_af965ba3d12531a91ca0c83e25423a313}{set\+Creation\+Permissions()} 
+
+\hyperlink{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}{add\+File()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1159 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_ad2c9fc653181defe0f54bebd8e0ac21d}\label{class_m_q_zip_writer_ad2c9fc653181defe0f54bebd8e0ac21d}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!device@{device}}
+\index{device@{device}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily Q\+I\+O\+Device $\ast$ M\+Q\+Zip\+Writer\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns device used for writing zip archive. 
+
+Definition at line 1064 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_ac3ed7d79e04aca62ecdb0f7222422ec2}\label{class_m_q_zip_writer_ac3ed7d79e04aca62ecdb0f7222422ec2}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!exists@{exists}}
+\index{exists@{exists}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool M\+Q\+Zip\+Writer\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if the file exists; otherwise returns false. 
+
+Definition at line 1080 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a96cf59b1f12b11fcee87f1e4e6c647a9}\label{class_m_q_zip_writer_a96cf59b1f12b11fcee87f1e4e6c647a9}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!is\+Writable@{is\+Writable}}
+\index{is\+Writable@{is\+Writable}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{is\+Writable()}{isWritable()}}
+{\footnotesize\ttfamily bool M\+Q\+Zip\+Writer\+::is\+Writable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if the user can write to the archive; otherwise returns false. 
+
+Definition at line 1072 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_ab4f5f12ae8df67674ec0f3d30d97313f}\label{class_m_q_zip_writer_ab4f5f12ae8df67674ec0f3d30d97313f}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!set\+Compression\+Policy@{set\+Compression\+Policy}}
+\index{set\+Compression\+Policy@{set\+Compression\+Policy}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{set\+Compression\+Policy()}{setCompressionPolicy()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::set\+Compression\+Policy (\begin{DoxyParamCaption}\item[{Compression\+Policy}]{policy }\end{DoxyParamCaption})}
+
+Sets the policy for compressing newly added files to the new {\itshape policy}.
+
+\begin{DoxyNote}{Note}
+the default policy is Always\+Compress
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_writer_aa43250ac355d31da13d5eaa018d50c15}{compression\+Policy()} 
+
+\hyperlink{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}{add\+File()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1125 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_af965ba3d12531a91ca0c83e25423a313}\label{class_m_q_zip_writer_af965ba3d12531a91ca0c83e25423a313}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!set\+Creation\+Permissions@{set\+Creation\+Permissions}}
+\index{set\+Creation\+Permissions@{set\+Creation\+Permissions}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{set\+Creation\+Permissions()}{setCreationPermissions()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Writer\+::set\+Creation\+Permissions (\begin{DoxyParamCaption}\item[{Q\+File\+::\+Permissions}]{permissions }\end{DoxyParamCaption})}
+
+Sets the permissions that will be used for newly added files.
+
+\begin{DoxyNote}{Note}
+the default permissions are Q\+File\+::\+Read\+Owner $\vert$ Q\+File\+::\+Write\+Owner.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_writer_a7ee2e99567e134f338093929469ab818}{creation\+Permissions()} 
+
+\hyperlink{class_m_q_zip_writer_af6d89acc4efc589f0c90c985106e2b00}{add\+File()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1148 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_writer_a89cf6db4ed393de1791468e6aad7a99e}\label{class_m_q_zip_writer_a89cf6db4ed393de1791468e6aad7a99e}} 
+\index{M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}!status@{status}}
+\index{status@{status}!M\+Q\+Zip\+Writer@{M\+Q\+Zip\+Writer}}
+\subsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Writer\+::\+Status M\+Q\+Zip\+Writer\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a status code indicating the first error that was met by \hyperlink{class_q_zip_writer}{Q\+Zip\+Writer}, or Q\+Zip\+Writer\+::\+No\+Error if no error occurred. 
+
+Definition at line 1104 of file qzip.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/qzip/qzipwriter\+\_\+p.\+h\item 
+thirdparty/qzip/qzip.\+cpp\end{DoxyCompactItemize}

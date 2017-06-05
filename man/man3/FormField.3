@@ -1,0 +1,146 @@
+.TH "FormField" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FormField
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBFormFieldButton\fP, \fBFormFieldChoice\fP, \fBFormFieldSignature\fP, and \fBFormFieldText\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFormField\fP (\fBPDFDoc\fP *docA, \fBObject\fP *aobj, const \fBRef\fP &aref, \fBFormField\fP *parent, std::set< int > *usedParents, FormFieldType t=formUndef)"
+.br
+.ti -1c
+.RI "FormFieldType \fBgetType\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetObj\fP ()"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetRef\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetReadOnly\fP (bool b)"
+.br
+.ti -1c
+.RI "bool \fBisReadOnly\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetDefaultAppearance\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBhasTextQuadding\fP () const"
+.br
+.ti -1c
+.RI "VariableTextQuadding \fBgetTextQuadding\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetPartialName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetAlternateUiName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetMappingName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetFullyQualifiedName\fP ()"
+.br
+.ti -1c
+.RI "\fBFormWidget\fP * \fBfindWidgetByRef\fP (\fBRef\fP aref)"
+.br
+.ti -1c
+.RI "int \fBgetNumWidgets\fP ()"
+.br
+.ti -1c
+.RI "\fBFormWidget\fP * \fBgetWidget\fP (int i)"
+.br
+.ti -1c
+.RI "virtual void \fBfillChildrenSiblingsID\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateWidgetAnnotations\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_createWidget\fP (\fBObject\fP *obj, \fBRef\fP aref)"
+.br
+.ti -1c
+.RI "void \fBcreateChildren\fP (std::set< int > *usedParents)"
+.br
+.ti -1c
+.RI "void \fBupdateChildrenAppearance\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "FormFieldType \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBref\fP"
+.br
+.ti -1c
+.RI "bool \fBterminal\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBobj\fP"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBdoc\fP"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBxref\fP"
+.br
+.ti -1c
+.RI "\fBFormField\fP ** \fBchildren\fP"
+.br
+.ti -1c
+.RI "\fBFormField\fP * \fBparent\fP"
+.br
+.ti -1c
+.RI "int \fBnumChildren\fP"
+.br
+.ti -1c
+.RI "\fBFormWidget\fP ** \fBwidgets\fP"
+.br
+.ti -1c
+.RI "bool \fBreadOnly\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBpartialName\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBalternateUiName\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBmappingName\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfullyQualifiedName\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBdefaultAppearance\fP"
+.br
+.ti -1c
+.RI "GBool \fBhasQuadding\fP"
+.br
+.ti -1c
+.RI "VariableTextQuadding \fBquadding\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 266 of file Form\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

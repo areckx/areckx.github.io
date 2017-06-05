@@ -1,0 +1,26 @@
+var class_m__ifc__init =
+[
+    [ "M_ifc_init", "class_m__ifc__init.html#a5af59a583f1e440a69f0893a790e46b7", null ],
+    [ "_appid", "class_m__ifc__init.html#ab17f4306c9f16699f10fdc603ab5d505", null ],
+    [ "_asect", "class_m__ifc__init.html#a33395a2fbf784e831d1ebd6d32ae73f1", null ],
+    [ "_client", "class_m__ifc__init.html#a361c8808ea5aaa7a12b39438bc0eba50", null ],
+    [ "_divisd", "class_m__ifc__init.html#afb855376b7dca69884e6f08d6c26f8fe", null ],
+    [ "_flags", "class_m__ifc__init.html#abb49b936ed3734b3b0159e36b94089bf", null ],
+    [ "_groupd", "class_m__ifc__init.html#a9c720f313a30af2545af6010ded50a99", null ],
+    [ "_ifelmd", "class_m__ifc__init.html#a9f6460f0cb3ad8b20788336b6daf7aaf", null ],
+    [ "_instr", "class_m__ifc__init.html#aa73314527c8f29e7037278043c42ed76", null ],
+    [ "_ipport", "class_m__ifc__init.html#a3efea7b3fb537cfc2e27d9e3b739e242", null ],
+    [ "_keybdd", "class_m__ifc__init.html#a575dee19ab99b9c364d05f489060b648", null ],
+    [ "_label", "class_m__ifc__init.html#ad1e5dbbb32a3142dcb8c46ca545bdcba", null ],
+    [ "_mnemo", "class_m__ifc__init.html#a98781c05f503aed3cec2d4b16f91b2fe", null ],
+    [ "_nasect", "class_m__ifc__init.html#aaeeb42d8f99dbfd1b2addd9ce2b85757", null ],
+    [ "_ndivis", "class_m__ifc__init.html#a2a1fef330777ce08e0cc62befe5179c8", null ],
+    [ "_ngroup", "class_m__ifc__init.html#afb72d72710b958d9198959699d526501", null ],
+    [ "_nifelm", "class_m__ifc__init.html#acd5b980e1cab651b59d525e63183ca9b", null ],
+    [ "_nkeybd", "class_m__ifc__init.html#aaaec466e66936b331c184a8c258fd4a0", null ],
+    [ "_ntempe", "class_m__ifc__init.html#a6e79cc5dcd6a37c0ffb4a57ffb480a77", null ],
+    [ "_stops", "class_m__ifc__init.html#a3438ff1f5bf9891186d9664e6e6b7658", null ],
+    [ "_temped", "class_m__ifc__init.html#a3f410ecdac142ee9f4e4b02b89f251b1", null ],
+    [ "_type", "class_m__ifc__init.html#a044758b509a16b5a093db5d3c1d2ad14", null ],
+    [ "_waves", "class_m__ifc__init.html#a0ad62fa400bed5ca2675b6849ac9a35f", null ]
+];

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="poppler-embeddedfile-private_8h" kind="file" language="C++">
+    <compoundname>poppler-embeddedfile-private.h</compoundname>
+    <includedby refid="poppler-private_8h" local="yes">thirdparty/poppler/qt5/poppler-private.h</includedby>
+    <includedby refid="poppler-embeddedfile_8cc" local="yes">thirdparty/poppler/qt5/poppler-embeddedfile.cc</includedby>
+    <invincdepgraph>
+      <node id="91026">
+        <label>thirdparty/poppler/qt5/poppler-embeddedfile-private.h</label>
+        <link refid="poppler-embeddedfile-private_8h"/>
+        <childnode refid="91027" relation="include">
+        </childnode>
+        <childnode refid="91030" relation="include">
+        </childnode>
+      </node>
+      <node id="91028">
+        <label>thirdparty/poppler/qt5/poppler-annotation.cc</label>
+        <link refid="poppler-annotation_8cc_source"/>
+      </node>
+      <node id="91029">
+        <label>thirdparty/poppler/qt5/poppler-document.cc</label>
+        <link refid="poppler-document_8cc_source"/>
+      </node>
+      <node id="91035">
+        <label>thirdparty/poppler/qt5/poppler-optcontent.cc</label>
+        <link refid="poppler-optcontent_8cc_source"/>
+      </node>
+      <node id="91034">
+        <label>thirdparty/poppler/qt5/poppler-media.cc</label>
+        <link refid="poppler-media_8cc_source"/>
+      </node>
+      <node id="91027">
+        <label>thirdparty/poppler/qt5/poppler-private.h</label>
+        <link refid="poppler-private_8h_source"/>
+        <childnode refid="91028" relation="include">
+        </childnode>
+        <childnode refid="91029" relation="include">
+        </childnode>
+        <childnode refid="91030" relation="include">
+        </childnode>
+        <childnode refid="91031" relation="include">
+        </childnode>
+        <childnode refid="91032" relation="include">
+        </childnode>
+        <childnode refid="91033" relation="include">
+        </childnode>
+        <childnode refid="91034" relation="include">
+        </childnode>
+        <childnode refid="91035" relation="include">
+        </childnode>
+        <childnode refid="91036" relation="include">
+        </childnode>
+        <childnode refid="91037" relation="include">
+        </childnode>
+        <childnode refid="91038" relation="include">
+        </childnode>
+        <childnode refid="91039" relation="include">
+        </childnode>
+        <childnode refid="91040" relation="include">
+        </childnode>
+      </node>
+      <node id="91036">
+        <label>thirdparty/poppler/qt5/poppler-page.cc</label>
+        <link refid="poppler-page_8cc_source"/>
+      </node>
+      <node id="91039">
+        <label>thirdparty/poppler/qt5/poppler-ps-converter.cc</label>
+        <link refid="poppler-ps-converter_8cc_source"/>
+      </node>
+      <node id="91037">
+        <label>thirdparty/poppler/qt5/poppler-pdf-converter.cc</label>
+        <link refid="poppler-pdf-converter_8cc_source"/>
+      </node>
+      <node id="91033">
+        <label>thirdparty/poppler/qt5/poppler-link.cc</label>
+        <link refid="poppler-link_8cc_source"/>
+      </node>
+      <node id="91038">
+        <label>thirdparty/poppler/qt5/poppler-private.cc</label>
+        <link refid="poppler-private_8cc_source"/>
+      </node>
+      <node id="91031">
+        <label>thirdparty/poppler/qt5/poppler-fontinfo.cc</label>
+        <link refid="poppler-fontinfo_8cc_source"/>
+      </node>
+      <node id="91040">
+        <label>thirdparty/poppler/qt5/poppler-textbox.cc</label>
+        <link refid="poppler-textbox_8cc_source"/>
+      </node>
+      <node id="91032">
+        <label>thirdparty/poppler/qt5/poppler-form.cc</label>
+        <link refid="poppler-form_8cc_source"/>
+      </node>
+      <node id="91030">
+        <label>thirdparty/poppler/qt5/poppler-embeddedfile.cc</label>
+        <link refid="poppler-embeddedfile_8cc_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_poppler_1_1_embedded_file_data" prot="public">Poppler::EmbeddedFileData</innerclass>
+    <innernamespace refid="namespace_poppler">Poppler</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>poppler-embeddedfile-private.h:<sp/>Qt<sp/>interface<sp/>to<sp/>poppler</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005,<sp/>2008,<sp/>2009,<sp/>2012,<sp/>Albert<sp/>Astals<sp/>Cid<sp/>&lt;aacid@kde.org&gt;</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2005,<sp/>Brad<sp/>Hards<sp/>&lt;bradh@frogmouth.net&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2008,<sp/>2011,<sp/>Pino<sp/>Toscano<sp/>&lt;pino@kde.org&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>the<sp/>Free<sp/>Software<sp/>Foundation;<sp/>either<sp/>version<sp/>2,<sp/>or<sp/>(at<sp/>your<sp/>option)</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>along<sp/>with<sp/>this<sp/>program;<sp/>if<sp/>not,<sp/>write<sp/>to<sp/>the<sp/>Free<sp/>Software</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Foundation,<sp/>Inc.,<sp/>51<sp/>Franklin<sp/>Street<sp/>-<sp/>Fifth<sp/>Floor,<sp/>Boston,<sp/>MA<sp/>02110-1301,<sp/>USA.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>POPPLER_EMBEDDEDFILE_PRIVATE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>POPPLER_EMBEDDEDFILE_PRIVATE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_file_spec" kindref="compound">FileSpec</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_poppler" kindref="compound">Poppler</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_poppler_1_1_embedded_file_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_poppler_1_1_embedded_file_data" kindref="compound">EmbeddedFileData</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_poppler_1_1_embedded_file_data" kindref="compound">EmbeddedFileData</ref>(<ref refid="class_file_spec" kindref="compound">FileSpec</ref><sp/>*fs);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_poppler_1_1_embedded_file_data" kindref="compound">EmbeddedFileData</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_emb_file" kindref="compound">EmbFile</ref><sp/>*embFile()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_file_spec" kindref="compound">FileSpec</ref><sp/>*filespec;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/qt5/poppler-embeddedfile-private.h"/>
+  </compounddef>
+</doxygen>

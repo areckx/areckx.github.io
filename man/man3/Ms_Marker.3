@@ -1,0 +1,108 @@
+.TH "Ms::Marker" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Marker
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : char { \fBSEGNO\fP, \fBVARSEGNO\fP, \fBCODA\fP, \fBVARCODA\fP, \fBCODETTA\fP, \fBFINE\fP, \fBTOCODA\fP, \fBUSER\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMarker\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetMarkerType\fP (Type t)"
+.br
+.ti -1c
+.RI "Type \fBmarkerType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBmarkerTypeUserName\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBMarker\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "QString \fBlabel\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLabel\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBundoSetLabel\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBundoSetMarkerType\fP (Type t)"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBsystemFlag\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBadjustReadPos\fP () override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QString \fBlabel\fP"
+.br
+.ti -1c
+.RI "Ms::Marker::Type \fBmarkerType\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 27 of file marker\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

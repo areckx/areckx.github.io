@@ -1,0 +1,936 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="srp_8h" kind="file" language="C++">
+    <compoundname>srp.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="safestack_8h" local="no">openssl/safestack.h</includes>
+    <includes refid="bn_8h" local="no">openssl/bn.h</includes>
+    <includes refid="crypto_8h" local="no">openssl/crypto.h</includes>
+    <incdepgraph>
+      <node id="83476">
+        <label>openssl/opensslv.h</label>
+        <link refid="opensslv_8h_source"/>
+      </node>
+      <node id="83475">
+        <label>stdlib.h</label>
+      </node>
+      <node id="83469">
+        <label>openssl/stack.h</label>
+        <link refid="stack_8h_source"/>
+      </node>
+      <node id="83470">
+        <label>openssl/bn.h</label>
+        <link refid="bn_8h_source"/>
+        <childnode refid="83471" relation="include">
+        </childnode>
+        <childnode refid="83466" relation="include">
+        </childnode>
+        <childnode refid="83473" relation="include">
+        </childnode>
+        <childnode refid="83474" relation="include">
+        </childnode>
+      </node>
+      <node id="83467">
+        <label>string.h</label>
+      </node>
+      <node id="83477">
+        <label>openssl/symhacks.h</label>
+        <link refid="symhacks_8h_source"/>
+        <childnode refid="83471" relation="include">
+        </childnode>
+      </node>
+      <node id="83468">
+        <label>openssl/safestack.h</label>
+        <link refid="safestack_8h_source"/>
+        <childnode refid="83469" relation="include">
+        </childnode>
+      </node>
+      <node id="83465">
+        <label>thirdparty/openssl/include/openssl/srp.h</label>
+        <link refid="srp_8h"/>
+        <childnode refid="83466" relation="include">
+        </childnode>
+        <childnode refid="83467" relation="include">
+        </childnode>
+        <childnode refid="83468" relation="include">
+        </childnode>
+        <childnode refid="83470" relation="include">
+        </childnode>
+        <childnode refid="83474" relation="include">
+        </childnode>
+      </node>
+      <node id="83472">
+        <label>openssl/opensslconf.h</label>
+        <link refid="opensslconf_8h_source"/>
+      </node>
+      <node id="83471">
+        <label>openssl/e_os2.h</label>
+        <link refid="e__os2_8h_source"/>
+        <childnode refid="83472" relation="include">
+        </childnode>
+      </node>
+      <node id="83466">
+        <label>stdio.h</label>
+      </node>
+      <node id="83473">
+        <label>openssl/ossl_typ.h</label>
+        <link refid="ossl__typ_8h_source"/>
+        <childnode refid="83471" relation="include">
+        </childnode>
+      </node>
+      <node id="83474">
+        <label>openssl/crypto.h</label>
+        <link refid="crypto_8h_source"/>
+        <childnode refid="83475" relation="include">
+        </childnode>
+        <childnode refid="83471" relation="include">
+        </childnode>
+        <childnode refid="83466" relation="include">
+        </childnode>
+        <childnode refid="83469" relation="include">
+        </childnode>
+        <childnode refid="83468" relation="include">
+        </childnode>
+        <childnode refid="83476" relation="include">
+        </childnode>
+        <childnode refid="83473" relation="include">
+        </childnode>
+        <childnode refid="83477" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="struct_s_r_p__g_n__cache__st" prot="public">SRP_gN_cache_st</innerclass>
+    <innerclass refid="struct_s_r_p__user__pwd__st" prot="public">SRP_user_pwd_st</innerclass>
+    <innerclass refid="struct_s_r_p___v_b_a_s_e__st" prot="public">SRP_VBASE_st</innerclass>
+    <innerclass refid="struct_s_r_p__g_n__st" prot="public">SRP_gN_st</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="srp_8h_1a6be2311ed5b35ba26f9d6631f57c9df6" prot="public" static="no">
+        <name>SRP_NO_ERROR</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="126" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1ac638b96edd331d22998e1c7e23ef412d" prot="public" static="no">
+        <name>SRP_ERR_VBASE_INCOMPLETE_FILE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="127" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1afd66c2a70f4a7462914cca8789e9ee53" prot="public" static="no">
+        <name>SRP_ERR_VBASE_BN_LIB</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="128" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1ae42e777544b5332d61e8043ea222109d" prot="public" static="no">
+        <name>SRP_ERR_OPEN_FILE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="129" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1ab72c315974949551e29fa224503dd7a6" prot="public" static="no">
+        <name>SRP_ERR_MEMORY</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="130" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a3707f8643cbbecd15fe494cb55ff237e" prot="public" static="no">
+        <name>DB_srptype</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="132" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a89994381b79b08c9c5dccfdd0d0d780d" prot="public" static="no">
+        <name>DB_srpverifier</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="133" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a622ceaef9f350429c1cabd0cb48589db" prot="public" static="no">
+        <name>DB_srpsalt</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="134" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a9d34912a71e3fabce20fc5869d2ee163" prot="public" static="no">
+        <name>DB_srpid</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="135" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a4ac6404854e05eb81658de11dfd5a56e" prot="public" static="no">
+        <name>DB_srpgN</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="136" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1adea7961992e03b2abb1344c2b7c741cb" prot="public" static="no">
+        <name>DB_srpinfo</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="137" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1acc01d3ad7269a5bb155a9cd2eb89655e" prot="public" static="no">
+        <name>DB_NUMBER</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="139" column="10" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a44d7ae5c7e5ef317ae226fab1dc69712" prot="public" static="no">
+        <name>DB_SRP_INDEX</name>
+        <initializer>&apos;I&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="141" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a821f89d6440bd201a29e01c4db2e1548" prot="public" static="no">
+        <name>DB_SRP_VALID</name>
+        <initializer>&apos;V&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="142" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1acab4925ac542f48a14e2faf9f58c6dd2" prot="public" static="no">
+        <name>DB_SRP_REVOKED</name>
+        <initializer>&apos;R&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="143" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1afbe7692d40acd7aed59fe65b2854424f" prot="public" static="no">
+        <name>DB_SRP_MODIF</name>
+        <initializer>&apos;v&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="144" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="srp_8h_1a6ff1fa60f3a0e9d19df7ac0eddf8cfd4" prot="public" static="no">
+        <name>SRP_MINIMAL_N</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="165" column="9" bodyfile="thirdparty/openssl/include/openssl/srp.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="srp_8h_1a80d3045219f016b8ec07f4a66eb4b9a9" prot="public" static="no">
+        <type>struct <ref refid="struct_s_r_p__g_n__cache__st" kindref="compound">SRP_gN_cache_st</ref></type>
+        <definition>typedef struct SRP_gN_cache_st  SRP_gN_cache</definition>
+        <argsstring></argsstring>
+        <name>SRP_gN_cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="79" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="srp_8h_1a06cf6af0b10520e22f47907f57af5832" prot="public" static="no">
+        <type>struct <ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd_st</ref></type>
+        <definition>typedef struct SRP_user_pwd_st  SRP_user_pwd</definition>
+        <argsstring></argsstring>
+        <name>SRP_user_pwd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="srp_8h_1afde841f24ff8351891c31f5390a6fe4e" prot="public" static="no">
+        <type>struct <ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE_st</ref></type>
+        <definition>typedef struct SRP_VBASE_st  SRP_VBASE</definition>
+        <argsstring></argsstring>
+        <name>SRP_VBASE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="srp_8h_1a6966df6d8d2b1ecf31e425b10b329c7d" prot="public" static="no">
+        <type>struct <ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN_st</ref></type>
+        <definition>typedef struct SRP_gN_st  SRP_gN</definition>
+        <argsstring></argsstring>
+        <name>SRP_gN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="113" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="srp_8h_1ac9d4de5cd9cdefb490265f72f10d22ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref> *</type>
+        <definition>SRP_VBASE* SRP_VBASE_new</definition>
+        <argsstring>(char *seed_key)</argsstring>
+        <name>SRP_VBASE_new</name>
+        <param>
+          <type>char *</type>
+          <declname>seed_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="117" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a4df6e977f079690d4fc00bd91ab45b4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SRP_VBASE_free</definition>
+        <argsstring>(SRP_VBASE *vb)</argsstring>
+        <name>SRP_VBASE_free</name>
+        <param>
+          <type><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref> *</type>
+          <declname>vb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="118" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a225b895f39edcc05f248f3d6b8ed5ed2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SRP_VBASE_init</definition>
+        <argsstring>(SRP_VBASE *vb, char *verifier_file)</argsstring>
+        <name>SRP_VBASE_init</name>
+        <param>
+          <type><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref> *</type>
+          <declname>vb</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>verifier_file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="119" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a661ecdd3df3b1f257e03b83cd066eafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd</ref> *</type>
+        <definition>SRP_user_pwd* SRP_VBASE_get_by_user</definition>
+        <argsstring>(SRP_VBASE *vb, char *username)</argsstring>
+        <name>SRP_VBASE_get_by_user</name>
+        <param>
+          <type><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref> *</type>
+          <declname>vb</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>username</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="120" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a63be39479fe30576281ca9157737ce99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* SRP_create_verifier</definition>
+        <argsstring>(const char *user, const char *pass, char **salt, char **verifier, const char *N, const char *g)</argsstring>
+        <name>SRP_create_verifier</name>
+        <param>
+          <type>const char *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pass</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>verifier</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a56eb2906fc5710e40a1d9a2a329888b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SRP_create_verifier_BN</definition>
+        <argsstring>(const char *user, const char *pass, BIGNUM **salt, BIGNUM **verifier, BIGNUM *N, BIGNUM *g)</argsstring>
+        <name>SRP_create_verifier_BN</name>
+        <param>
+          <type>const char *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pass</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> **</type>
+          <declname>salt</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> **</type>
+          <declname>verifier</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="123" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1ae2df1ebb823c339d60eb88fc4d351304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* SRP_check_known_gN_param</definition>
+        <argsstring>(BIGNUM *g, BIGNUM *N)</argsstring>
+        <name>SRP_check_known_gN_param</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="148" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1aee304d9f814810909e7cefebaaece032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN</ref> *</type>
+        <definition>SRP_gN* SRP_get_default_gN</definition>
+        <argsstring>(const char *id)</argsstring>
+        <name>SRP_get_default_gN</name>
+        <param>
+          <type>const char *</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a1e66dacc92e722dd9f49dac59b8f9a00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_server_key</definition>
+        <argsstring>(BIGNUM *A, BIGNUM *v, BIGNUM *u, BIGNUM *b, BIGNUM *N)</argsstring>
+        <name>SRP_Calc_server_key</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="152" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a34d8aa187b84cbff122b602dbbea8f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_B</definition>
+        <argsstring>(BIGNUM *b, BIGNUM *N, BIGNUM *g, BIGNUM *v)</argsstring>
+        <name>SRP_Calc_B</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="153" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1ac0b02662ec209ff41fd9f111aba33f2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SRP_Verify_A_mod_N</definition>
+        <argsstring>(BIGNUM *A, BIGNUM *N)</argsstring>
+        <name>SRP_Verify_A_mod_N</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="154" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a5ac4526f4175b0341234b6fa0c8e112b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_u</definition>
+        <argsstring>(BIGNUM *A, BIGNUM *B, BIGNUM *N)</argsstring>
+        <name>SRP_Calc_u</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>A</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="155" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1aacc340e82bbc8c97f4a13535321db19e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_x</definition>
+        <argsstring>(BIGNUM *s, const char *user, const char *pass)</argsstring>
+        <name>SRP_Calc_x</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>pass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a783b94dba8ebdd0fbe3fb249d22537b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_A</definition>
+        <argsstring>(BIGNUM *a, BIGNUM *N, BIGNUM *g)</argsstring>
+        <name>SRP_Calc_A</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1aad531db3f553e0bbce48d9950a7ae847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+        <definition>BIGNUM* SRP_Calc_client_key</definition>
+        <argsstring>(BIGNUM *N, BIGNUM *B, BIGNUM *g, BIGNUM *x, BIGNUM *a, BIGNUM *u)</argsstring>
+        <name>SRP_Calc_client_key</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="162" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="srp_8h_1a3235f19c44bf7ff4b4a028253a922aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SRP_Verify_B_mod_N</definition>
+        <argsstring>(BIGNUM *B, BIGNUM *N)</argsstring>
+        <name>SRP_Verify_B_mod_N</name>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>B</declname>
+        </param>
+        <param>
+          <type><ref refid="structbignum__st" kindref="compound">BIGNUM</ref> *</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/srp.h" line="163" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>crypto/srp/srp.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Written<sp/>by<sp/>Christophe<sp/>Renou<sp/>(christophe.renou@edelweb.fr)<sp/>with<sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>the<sp/>precious<sp/>help<sp/>of<sp/>Peter<sp/>Sylvester<sp/>(peter.sylvester@edelweb.fr)<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>for<sp/>the<sp/>EdelKey<sp/>project<sp/>and<sp/>contributed<sp/>to<sp/>the<sp/>OpenSSL<sp/>project<sp/>2004.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2004<sp/>The<sp/>OpenSSL<sp/>Project.<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>3.<sp/>All<sp/>advertising<sp/>materials<sp/>mentioning<sp/>features<sp/>or<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>software<sp/>must<sp/>display<sp/>the<sp/>following<sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit.<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>4.<sp/>The<sp/>names<sp/>&quot;OpenSSL<sp/>Toolkit&quot;<sp/>and<sp/>&quot;OpenSSL<sp/>Project&quot;<sp/>must<sp/>not<sp/>be<sp/>used<sp/>to</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>prior<sp/>written<sp/>permission.<sp/>For<sp/>written<sp/>permission,<sp/>please<sp/>contact</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>licensing@OpenSSL.org.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>5.<sp/>Products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>may<sp/>not<sp/>be<sp/>called<sp/>&quot;OpenSSL&quot;</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>nor<sp/>may<sp/>&quot;OpenSSL&quot;<sp/>appear<sp/>in<sp/>their<sp/>names<sp/>without<sp/>prior<sp/>written</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>permission<sp/>of<sp/>the<sp/>OpenSSL<sp/>Project.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>6.<sp/>Redistributions<sp/>of<sp/>any<sp/>form<sp/>whatsoever<sp/>must<sp/>retain<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>EXPRESSED<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>OR</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>ITS<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>This<sp/>product<sp/>includes<sp/>cryptographic<sp/>software<sp/>written<sp/>by<sp/>Eric<sp/>Young</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>(eay@cryptsoft.com).<sp/><sp/>This<sp/>product<sp/>includes<sp/>software<sp/>written<sp/>by<sp/>Tim</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>Hudson<sp/>(tjh@cryptsoft.com).</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__SRP_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__SRP_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>OPENSSL_NO_SRP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/safestack.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/bn.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;openssl/crypto.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="struct_s_r_p__g_n__cache__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_r_p__g_n__cache__st" kindref="compound">SRP_gN_cache_st</ref></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*b64_bn;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*bn;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_r_p__g_n__cache__st" kindref="compound">SRP_gN_cache</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">DECLARE_STACK_OF(<ref refid="struct_s_r_p__g_n__cache__st" kindref="compound">SRP_gN_cache</ref>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="struct_s_r_p__user__pwd__st" refkind="compound"><highlight class="normal">typedef<sp/>struct<sp/><ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd_st</ref></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*id;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*s;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*v;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*info;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">DECLARE_STACK_OF(<ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd</ref>)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="struct_s_r_p___v_b_a_s_e__st" refkind="compound"><highlight class="normal">typedef<sp/>struct<sp/><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE_st</ref></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>STACK_OF(<ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd</ref>)<sp/>*users_pwd;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>STACK_OF(<ref refid="struct_s_r_p__g_n__cache__st" kindref="compound">SRP_gN_cache</ref>)<sp/>*gN_cache;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>to<sp/>simulate<sp/>a<sp/>user<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*seed_key;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*default_g;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*default_N;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*Structure<sp/>interne<sp/>pour<sp/>retenir<sp/>les<sp/>couples<sp/>N<sp/>et<sp/>g*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="struct_s_r_p__g_n__st" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN_st</ref></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*id;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal">DECLARE_STACK_OF(<ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN</ref>)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref><sp/>*SRP_VBASE_new(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*seed_key);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SRP_VBASE_free(<ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref><sp/>*vb);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SRP_VBASE_init(<ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref><sp/>*vb,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>verifier_file);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><ref refid="struct_s_r_p__user__pwd__st" kindref="compound">SRP_user_pwd</ref><sp/>*SRP_VBASE_get_by_user(<ref refid="struct_s_r_p___v_b_a_s_e__st" kindref="compound">SRP_VBASE</ref><sp/>*vb,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*username);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*SRP_create_verifier(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*user,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pass,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**salt,</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**verifier,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*N,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*g);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SRP_create_verifier_BN(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*user,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pass,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>**salt,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>**verifier,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_NO_ERROR<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_ERR_VBASE_INCOMPLETE_FILE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_ERR_VBASE_BN_LIB<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_ERR_OPEN_FILE<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_ERR_MEMORY<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srptype<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srpverifier<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srpsalt<sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srpid<sp/><sp/><sp/><sp/>3<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srpgN<sp/><sp/><sp/><sp/>4<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_srpinfo<sp/><sp/>5<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#undef<sp/><sp/>DB_NUMBER<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_NUMBER<sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_SRP_INDEX<sp/><sp/><sp/><sp/>&apos;I&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_SRP_VALID<sp/><sp/><sp/><sp/>&apos;V&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_SRP_REVOKED<sp/><sp/>&apos;R&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DB_SRP_MODIF<sp/><sp/><sp/><sp/>&apos;v&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>see<sp/>srp.c<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>SRP_check_known_gN_param(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref>*<sp/>g,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref>*<sp/>N);<sp/></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><ref refid="struct_s_r_p__g_n__st" kindref="compound">SRP_gN</ref><sp/>*SRP_get_default_gN(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>server<sp/>side<sp/>....<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_server_key(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*A,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*v,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*u,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*b,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_B(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*b,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*v);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SRP_Verify_A_mod_N(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*A,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_u(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*A,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*B,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N)<sp/>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>client<sp/>side<sp/>....<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_x(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*s,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*user,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pass);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_A(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*a,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*SRP_Calc_client_key(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*B,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*g,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*x,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*a,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*u);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SRP_Verify_B_mod_N(<ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*B,<sp/><ref refid="structbignum__st" kindref="compound">BIGNUM</ref><sp/>*N);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRP_MINIMAL_N<sp/>1024</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/openssl/include/openssl/srp.h"/>
+  </compounddef>
+</doxygen>

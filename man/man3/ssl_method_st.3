@@ -1,0 +1,106 @@
+.TH "ssl_method_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ssl_method_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBversion\fP"
+.br
+.ti -1c
+.RI "int(* \fBssl_new\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "void(* \fBssl_clear\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "void(* \fBssl_free\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBssl_accept\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBssl_connect\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBssl_read\fP )(\fBSSL\fP *s, void *buf, int len)"
+.br
+.ti -1c
+.RI "int(* \fBssl_peek\fP )(\fBSSL\fP *s, void *buf, int len)"
+.br
+.ti -1c
+.RI "int(* \fBssl_write\fP )(\fBSSL\fP *s, const void *buf, int len)"
+.br
+.ti -1c
+.RI "int(* \fBssl_shutdown\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBssl_renegotiate\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBssl_renegotiate_check\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "long(* \fBssl_get_message\fP )(\fBSSL\fP *s, int st1, int stn, int mt, long max, int *ok)"
+.br
+.ti -1c
+.RI "int(* \fBssl_read_bytes\fP )(\fBSSL\fP *s, int type, unsigned char *buf, int len, int peek)"
+.br
+.ti -1c
+.RI "int(* \fBssl_write_bytes\fP )(\fBSSL\fP *s, int type, const void *buf_, int len)"
+.br
+.ti -1c
+.RI "int(* \fBssl_dispatch_alert\fP )(\fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "long(* \fBssl_ctrl\fP )(\fBSSL\fP *s, int cmd, long larg, void *parg)"
+.br
+.ti -1c
+.RI "long(* \fBssl_ctx_ctrl\fP )(\fBSSL_CTX\fP *ctx, int cmd, long larg, void *parg)"
+.br
+.ti -1c
+.RI "const \fBSSL_CIPHER\fP *(* \fBget_cipher_by_char\fP )(const unsigned char *ptr)"
+.br
+.ti -1c
+.RI "int(* \fBput_cipher_by_char\fP )(const \fBSSL_CIPHER\fP *cipher, unsigned char *ptr)"
+.br
+.ti -1c
+.RI "int(* \fBssl_pending\fP )(const \fBSSL\fP *s)"
+.br
+.ti -1c
+.RI "int(* \fBnum_ciphers\fP )(void)"
+.br
+.ti -1c
+.RI "const \fBSSL_CIPHER\fP *(* \fBget_cipher\fP )(unsigned ncipher)"
+.br
+.ti -1c
+.RI "const struct \fBssl_method_st\fP *(* \fBget_ssl_method\fP )(int version)"
+.br
+.ti -1c
+.RI "long(* \fBget_timeout\fP )(void)"
+.br
+.ti -1c
+.RI "struct ssl3_enc_method * \fBssl3_enc\fP"
+.br
+.ti -1c
+.RI "int(* \fBssl_version\fP )(void)"
+.br
+.ti -1c
+.RI "long(* \fBssl_callback_ctrl\fP )(\fBSSL\fP *s, int cb_id, void(*fp)(void))"
+.br
+.ti -1c
+.RI "long(* \fBssl_ctx_callback_ctrl\fP )(\fBSSL_CTX\fP *s, int cb_id, void(*fp)(void))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 410 of file ssl\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

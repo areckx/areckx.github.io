@@ -1,0 +1,202 @@
+.TH "Ms::System" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::System
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <system\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystem\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBSystem\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBchange\fP (\fBElement\fP *o, \fBElement\fP *n) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "void \fBappendMeasure\fP (\fBMeasureBase\fP *)"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBpage\fP () const"
+.br
+.ti -1c
+.RI "void \fBlayoutSystem\fP (qreal)"
+.br
+.RI "Layout the \fBSystem\fP\&. "
+.ti -1c
+.RI "void \fBlayout2\fP ()"
+.br
+.RI "Called after \fBMeasure\fP layout\&. "
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.RI "Clear measure list\&. "
+.ti -1c
+.RI "QRectF \fBbboxStaff\fP (int staff) const"
+.br
+.ti -1c
+.RI "QList< \fBSysStaff\fP * > * \fBstaves\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBSysStaff\fP * > * \fBstaves\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBstaffYpage\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "qreal \fBstaffCanvasYpage\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "\fBSysStaff\fP * \fBstaff\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "bool \fBpageBreak\fP () const"
+.br
+.ti -1c
+.RI "\fBSysStaff\fP * \fBinsertStaff\fP (int)"
+.br
+.ti -1c
+.RI "void \fBremoveStaff\fP (int)"
+.br
+.ti -1c
+.RI "int \fBy2staff\fP (qreal y) const"
+.br
+.ti -1c
+.RI "void \fBsetInstrumentNames\fP (bool longName)"
+.br
+.ti -1c
+.RI "int \fBsnap\fP (int tick, const QPointF p) const"
+.br
+.ti -1c
+.RI "int \fBsnapNote\fP (int tick, const QPointF p, int staff) const"
+.br
+.ti -1c
+.RI "std::vector< \fBMeasureBase\fP * > & \fBmeasures\fP ()"
+.br
+.ti -1c
+.RI "const std::vector< \fBMeasureBase\fP * > & \fBmeasures\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBmeasure\fP (int idx)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBfirstMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBlastMeasure\fP () const"
+.br
+.ti -1c
+.RI "int \fBendTick\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBprevMeasure\fP (const \fBMeasureBase\fP *) const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBnextMeasure\fP (const \fBMeasureBase\fP *) const"
+.br
+.ti -1c
+.RI "qreal \fBleftMargin\fP () const"
+.br
+.ti -1c
+.RI "\fBVBox\fP * \fBvbox\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBBracket\fP * > & \fBbrackets\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBSpannerSegment\fP * > & \fBspannerSegments\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBSpannerSegment\fP * > & \fBspannerSegments\fP () const"
+.br
+.ti -1c
+.RI "\fBSystemDivider\fP * \fBsystemDividerLeft\fP () const"
+.br
+.ti -1c
+.RI "\fBSystemDivider\fP * \fBsystemDividerRight\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "qreal \fBminDistance\fP (\fBSystem\fP *) const"
+.br
+.ti -1c
+.RI "qreal \fBtopDistance\fP (int staffIdx, const \fBShape\fP &) const"
+.br
+.ti -1c
+.RI "qreal \fBbottomDistance\fP (int staffIdx, const \fBShape\fP &) const"
+.br
+.ti -1c
+.RI "qreal \fBminTop\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBminBottom\fP () const"
+.br
+.ti -1c
+.RI "void \fBmoveBracket\fP (int staffIdx, int srcCol, int dstCol)"
+.br
+.ti -1c
+.RI "bool \fBhasFixedDownDistance\fP () const"
+.br
+.ti -1c
+.RI "int \fBfirstVisibleStaff\fP () const"
+.br
+.ti -1c
+.RI "int \fBnextVisibleStaff\fP (int) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+One row of measures for all instruments; a complete piece of the timeline\&. 
+.PP
+Definition at line 74 of file system\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::System::clear ()"
+
+.PP
+Clear measure list\&. clear Clear layout of \fBSystem\fP 
+.PP
+Definition at line 85 of file system\&.cpp\&.
+.SS "int Ms::System::y2staff (qreal y) const"
+Return staff number for canvas relative y position \fIy\fP or -1 if not found\&.
+.PP
+To allow drag and drop above and below the staff, the actual y range considered 'inside' the staff is increased by 'margin'\&. 
+.PP
+Definition at line 626 of file system\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

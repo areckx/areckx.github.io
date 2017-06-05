@@ -1,0 +1,1437 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_poppler_1_1_document" kind="class" language="C++" prot="public">
+    <compoundname>Poppler::Document</compoundname>
+    <includes refid="poppler-qt5_8h" local="no">poppler-qt5.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822b" prot="public" static="no">
+        <name>PageMode</name>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba4b709ee334e2c3ea2bd8df2680de501e" prot="public">
+          <name>UseNone</name>
+          <briefdescription>
+<para>No mode - neither document outline nor thumbnail images are visible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba0a1bf7b447a3f36898f6c5b286f53b21" prot="public">
+          <name>UseOutlines</name>
+          <briefdescription>
+<para><ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> outline visible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba5984e71380eaffa41b4a90bb9c4a965b" prot="public">
+          <name>UseThumbs</name>
+          <briefdescription>
+<para>Thumbnail images visible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba942ce16a97060ae7ebe6513d9a860cd7" prot="public">
+          <name>FullScreen</name>
+          <briefdescription>
+<para>Fullscreen mode (no menubar, windows controls etc) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822bae61492f6fb35469e734e8f41a292c4e9" prot="public">
+          <name>UseOC</name>
+          <briefdescription>
+<para>Optional content group panel visible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba382b116328e14edd5929cfcc28c69f04" prot="public">
+          <name>UseAttach</name>
+          <briefdescription>
+<para>Attachments panel visible. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The page mode </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="850" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="850" bodyend="857"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbd" prot="public" static="no">
+        <name>PageLayout</name>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda711c5286c04de74232bc6a2ca4a4a05d" prot="public">
+          <name>NoLayout</name>
+          <briefdescription>
+<para>Layout not specified. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda6b412a622f9456f7b8d08d0d120229a1" prot="public">
+          <name>SinglePage</name>
+          <briefdescription>
+<para>Display a single page. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbdab1c3ce0dc45101db622b30a7e36f7e1b" prot="public">
+          <name>OneColumn</name>
+          <briefdescription>
+<para>Display a single column of pages. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda35e0e5c15423834c6515cf2df64cdd12" prot="public">
+          <name>TwoColumnLeft</name>
+          <briefdescription>
+<para>Display the pages in two columns, with odd-numbered pages on the left. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbdaa0759d4fea75041b18268728d7fff3ce" prot="public">
+          <name>TwoColumnRight</name>
+          <briefdescription>
+<para>Display the pages in two columns, with odd-numbered pages on the right. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda244de645e7bbd445e6744ddb3ac1af25" prot="public">
+          <name>TwoPageLeft</name>
+          <briefdescription>
+<para>Display the pages two at a time, with odd-numbered pages on the left. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda163344c5dc4e772a11150199ea8843e8" prot="public">
+          <name>TwoPageRight</name>
+          <briefdescription>
+<para>Display the pages two at a time, with odd-numbered pages on the right. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The page layout </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="862" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="862" bodyend="870"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" prot="public" static="no">
+        <name>RenderBackend</name>
+        <enumvalue id="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb" prot="public">
+          <name>SplashBackend</name>
+          <briefdescription>
+<para><ref refid="class_splash" kindref="compound">Splash</ref> backend. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247a0f307432c54a0b7abab57224be1ca393" prot="public">
+          <name>ArthurBackend</name>
+          <briefdescription>
+<para>Arthur (Qt) backend. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The render backends available</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="877" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="877" bodyend="880"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9" prot="public" static="no">
+        <name>RenderHint</name>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9ada9db4e49f6de26900a79f47098babb8" prot="public">
+          <name>Antialiasing</name>
+          <initializer>= 0x00000001</initializer>
+          <briefdescription>
+<para>Antialiasing for graphics. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9ab1183a50eacc9fad47051cfa1670379c" prot="public">
+          <name>TextAntialiasing</name>
+          <initializer>= 0x00000002</initializer>
+          <briefdescription>
+<para>Antialiasing for text. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a3bca408d4c25964bf2dc5f4e39dddcb2" prot="public">
+          <name>TextHinting</name>
+          <initializer>= 0x00000004</initializer>
+          <briefdescription>
+<para>Hinting for text. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.12.1 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a72582e881c58f1dbedf698933dca2481" prot="public">
+          <name>TextSlightHinting</name>
+          <initializer>= 0x00000008</initializer>
+          <briefdescription>
+<para>Lighter hinting for text when combined with TextHinting. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.18 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9aa1c1ac9cb8050a56e009983d3840167e" prot="public">
+          <name>OverprintPreview</name>
+          <initializer>= 0x00000010</initializer>
+          <briefdescription>
+<para>Overprint preview. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.22 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9adb5b52f62cace40cad54686996392d14" prot="public">
+          <name>ThinLineSolid</name>
+          <initializer>= 0x00000020</initializer>
+          <briefdescription>
+<para>Enhance thin lines solid. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.24 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a422db551ee9b68a511acb2cbec60d554" prot="public">
+          <name>ThinLineShape</name>
+          <initializer>= 0x00000040</initializer>
+          <briefdescription>
+<para>Enhance thin lines shape. Wins over ThinLineSolid. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.24 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a17ba082f080a64b0a11002fbae7b25ce" prot="public">
+          <name>IgnorePaperColor</name>
+          <initializer>= 0x00000080</initializer>
+          <briefdescription>
+<para>Do not compose with the paper color. </para>          </briefdescription>
+          <detaileddescription>
+<para><simplesect kind="since"><para>0.35 </para></simplesect>
+</para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The render hints available</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="887" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="887" bodyend="896"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3" prot="public" static="no">
+        <name>FormType</name>
+        <enumvalue id="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3aeb3b8136fe25d4752bbfa11e8606d8ca" prot="public">
+          <name>NoForm</name>
+          <briefdescription>
+<para><ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> doesn&apos;t contain forms. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3a799535334a5e3b4be6e5cc37dc15dae8" prot="public">
+          <name>AcroForm</name>
+          <briefdescription>
+<para>AcroForm. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3aa2a0e50c1e623fd10ec0163a998c7db0" prot="public">
+          <name>XfaForm</name>
+          <briefdescription>
+<para>Adobe XML Forms Architecture (XFA), currently unsupported. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_form" kindref="compound">Form</ref> types</para><para><simplesect kind="since"><para>0.22 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="904" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="904" bodyend="908"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_poppler_1_1_document_1a66d145c56e1747e0aecb5309042ab183" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Page</definition>
+        <argsstring></argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="843" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="843" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_poppler_1_1_document_1a5f30d346de2175fe7a14e3faac37e209" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class DocumentData</definition>
+        <argsstring></argsstring>
+        <name>DocumentData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="844" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="844" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_poppler_1_1_document_1a2d810ffccfdb2d95c7458dc0832c09c8" prot="private" static="no" mutable="no">
+        <type><ref refid="class_poppler_1_1_document_data" kindref="compound">DocumentData</ref> *</type>
+        <definition>DocumentData* Poppler::Document::m_doc</definition>
+        <argsstring></argsstring>
+        <name>m_doc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1415" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="1415" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_poppler_1_1_document_1a8b4dd39c8b59c19ab935d772e067f0c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::setColorDisplayProfile</definition>
+        <argsstring>(void *outputProfileA)</argsstring>
+        <name>setColorDisplayProfile</name>
+        <param>
+          <type>void *</type>
+          <declname>outputProfileA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a color display profile for the current document.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>outputProfileA</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is a <computeroutput>cmsHPROFILE</computeroutput> of the LCMS library.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="917" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="467" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aa72744f77b5b185fee257e32847f62c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::setColorDisplayProfileName</definition>
+        <argsstring>(const QString &amp;name)</argsstring>
+        <name>setColorDisplayProfileName</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set a color display profile for the current document.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the name of the display profile to set.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="925" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="476" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a9f234d4f9b916787d88bfda9b29af08e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * Poppler::Document::colorRgbProfile</definition>
+        <argsstring>() const</argsstring>
+        <name>colorRgbProfile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the current RGB profile.</para><para><simplesect kind="return"><para>a <computeroutput>cmsHPROFILE</computeroutput> of the LCMS library.</para></simplesect>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="933" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="487" bodyend="494"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a48f8c5ecc4e261d6059ca055912adf6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void * Poppler::Document::colorDisplayProfile</definition>
+        <argsstring>() const</argsstring>
+        <name>colorDisplayProfile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the current display profile.</para><para><simplesect kind="return"><para>a <computeroutput>cmsHPROFILE</computeroutput> of the LCMS library.</para></simplesect>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="941" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="496" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ae4535b0dc763d6be42d775fa5d40c93a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_page" kindref="compound">Page</ref> *</type>
+        <definition>Page * Poppler::Document::page</definition>
+        <argsstring>(int index) const</argsstring>
+        <name>page</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a specified <ref refid="class_poppler_1_1_page" kindref="compound">Page</ref></para><para>Note that this follows the PDF standard of being zero based - if you want the first page, then you need an index of zero.</para><para>The caller gets the ownership of the returned object.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the page number index </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="999" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="111" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a362452915b71f8d534114781c27e6dc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_page" kindref="compound">Page</ref> *</type>
+        <definition>Page * Poppler::Document::page</definition>
+        <argsstring>(const QString &amp;label) const</argsstring>
+        <name>page</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>The intent is that you can pass in a label like <computeroutput>&quot;ix&quot;</computeroutput> and get the page with that label (which might be in the table of contents), or pass in <computeroutput>&quot;1&quot;</computeroutput> and get the page that the user expects (which might not be the first page, if there is a title page and a table of contents).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>label</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the page label </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1013" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="420" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a260f9b7105860a757aa1b018cd4f6ccb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Poppler::Document::numPages</definition>
+        <argsstring>() const</argsstring>
+        <name>numPages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The number of pages in the document </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1018" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="214" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a9dd899cd7515f97320994c2a24cee316" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822b" kindref="member">PageMode</ref></type>
+        <definition>Document::PageMode Poppler::Document::pageMode</definition>
+        <argsstring>() const</argsstring>
+        <name>pageMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The type of mode that should be used by the application when the document is opened. Note that while this is called page mode, it is really viewer application mode. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1025" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="157" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a7074424a989911de79f781ab77b23652" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbd" kindref="member">PageLayout</ref></type>
+        <definition>Document::PageLayout Poppler::Document::pageLayout</definition>
+        <argsstring>() const</argsstring>
+        <name>pageLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The layout that pages should be shown in when the document is first opened. This basically describes how pages are shown relative to each other. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1032" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="177" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a854e191808926d0bcf277a97243f5737" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Qt::LayoutDirection</type>
+        <definition>Qt::LayoutDirection Poppler::Document::textDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>textDirection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The predominant reading order for text as supplied by the document&apos;s viewer preferences.</para><para><simplesect kind="since"><para>0.26 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1040" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="199" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a5eb83ee712c9e146ccbcb21c3a9ce662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::unlock</definition>
+        <argsstring>(const QByteArray &amp;ownerPassword, const QByteArray &amp;userPassword)</argsstring>
+        <name>unlock</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ownerPassword</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>userPassword</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provide the passwords required to unlock the document</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ownerPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded owner password to use in loading the file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded user (&quot;open&quot;) password to use in loading the file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1050" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="127" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a21399ffda439d05aa493dceba9bf8c50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::isLocked</definition>
+        <argsstring>() const</argsstring>
+        <name>isLocked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine if the document is locked </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1055" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a7e97595aa9634c4bc65d4bdd3ae6314f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QDateTime</type>
+        <definition>QDateTime Poppler::Document::date</definition>
+        <argsstring>(const QString &amp;data) const</argsstring>
+        <name>date</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The date associated with the document</para><para>You would use this method with something like: <programlisting><codeline><highlight class="normal">QDateTime<sp/>created<sp/>=<sp/>m_doc-&gt;date(&quot;CreationDate&quot;);</highlight></codeline>
+<codeline><highlight class="normal">QDateTime<sp/>modified<sp/>=<sp/>m_doc-&gt;date(&quot;ModDate&quot;);</highlight></codeline>
+</programlisting></para><para>The available dates are:<itemizedlist>
+<listitem><para>CreationDate: the date of creation of the document</para></listitem><listitem><para>ModDate: the date of the last change in the document</para></listitem></itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the type of date that is required </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1072" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="327" bodyend="355"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a9ef8eb4458c344ca1533d9af02bc98d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Poppler::Document::info</definition>
+        <argsstring>(const QString &amp;data) const</argsstring>
+        <name>info</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get specified information associated with the document</para><para>You would use this method with something like: <programlisting><codeline><highlight class="normal">QString<sp/>title<sp/>=<sp/>m_doc-&gt;info(&quot;Title&quot;);</highlight></codeline>
+<codeline><highlight class="normal">QString<sp/>subject<sp/>=<sp/>m_doc-&gt;info(&quot;Subject&quot;);</highlight></codeline>
+</programlisting></para><para>In addition to <computeroutput>Title</computeroutput> and <computeroutput>Subject</computeroutput>, other information that may be available include <computeroutput>Author</computeroutput>, <computeroutput>Keywords</computeroutput>, <computeroutput>Creator</computeroutput> and <computeroutput>Producer</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the information that is required</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_poppler_1_1_document_1a476e9e81b22ead0bf46e086bda3abe98" kindref="member">infoKeys()</ref> to get a list of the available keys </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1090" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="268" bodyend="298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a476e9e81b22ead0bf46e086bda3abe98" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList Poppler::Document::infoKeys</definition>
+        <argsstring>() const</argsstring>
+        <name>infoKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtain a list of the available string information keys. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1095" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="300" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aa14566ce82018b575cee3179fbb3f912" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::isEncrypted</definition>
+        <argsstring>() const</argsstring>
+        <name>isEncrypted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the document is encrypted </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1100" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="357" bodyend="360"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a0699e1c95414e826dbe2400305d6ba29" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::isLinearized</definition>
+        <argsstring>() const</argsstring>
+        <name>isLinearized</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the document is linearised</para><para>In some cases, this is called &quot;fast web view&quot;, since it is mostly an optimisation for viewing over the Web. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1108" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="362" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1adf941fadec1ccca91f2e209f935c497d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToPrint</definition>
+        <argsstring>() const</argsstring>
+        <name>okToPrint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow it to be printed </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1114" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="367" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a8fcbb451e7fcd2a72d0dce90a7815de4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToPrintHighRes</definition>
+        <argsstring>() const</argsstring>
+        <name>okToPrintHighRes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow it to be printed at high resolution </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1120" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="372" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a0d779137e2bd544a1b1cb6251770f544" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToChange</definition>
+        <argsstring>() const</argsstring>
+        <name>okToChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow it to be changed.</para><para><simplesect kind="note"><para>depending on the type of change, it may be more appropriate to check other properties as well. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1129" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="377" bodyend="380"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a22090fb7613d582f4e3327f55bc6e5b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToCopy</definition>
+        <argsstring>() const</argsstring>
+        <name>okToCopy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow the contents to be copied / extracted </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1135" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="382" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a33fa45a3666edcdc9b5deb34861a6670" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToAddNotes</definition>
+        <argsstring>() const</argsstring>
+        <name>okToAddNotes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow annotations to be added or modified, and interactive form fields (including signature fields) to be completed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1142" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="387" bodyend="390"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1afff0dbfbc5bc11c18784d814db1c4178" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToFillForm</definition>
+        <argsstring>() const</argsstring>
+        <name>okToFillForm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow interactive form fields (including signature fields) to be completed.</para><para><simplesect kind="note"><para>this can be true even if <ref refid="class_poppler_1_1_document_1a33fa45a3666edcdc9b5deb34861a6670" kindref="member">okToAddNotes()</ref> is false - this means that only form completion is permitted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1151" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="392" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a19f94305b3a268141f8bf350334cfb33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToCreateFormFields</definition>
+        <argsstring>() const</argsstring>
+        <name>okToCreateFormFields</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow interactive form fields (including signature fields) to be set, created and modified </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1158" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="397" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a9c792ce1274bace5cf18cf77934f993e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToExtractForAccessibility</definition>
+        <argsstring>() const</argsstring>
+        <name>okToExtractForAccessibility</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow content extraction (text and perhaps other content) for accessibility usage (eg for a screen reader) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1165" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="402" bodyend="405"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aabaf987b173987c4ed587ecc70a21edd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::okToAssemble</definition>
+        <argsstring>() const</argsstring>
+        <name>okToAssemble</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test if the permissions on the document allow it to be &quot;assembled&quot; - insertion, rotation and deletion of pages; or creation of bookmarks and thumbnail images.</para><para><simplesect kind="note"><para>this can be true even if <ref refid="class_poppler_1_1_document_1a0d779137e2bd544a1b1cb6251770f544" kindref="member">okToChange()</ref> is false </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1174" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="407" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a1edbfdfd0b5adf4be650c2636a309181" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::getPdfVersion</definition>
+        <argsstring>(int *major, int *minor) const</argsstring>
+        <name>getPdfVersion</name>
+        <param>
+          <type>int *</type>
+          <declname>major</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>minor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The version of the PDF specification that the document conforms to</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>major</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an optional pointer to a variable where store the &quot;major&quot; number of the version </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>minor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an optional pointer to a variable where store the &quot;minor&quot; number of the version</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1187" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="412" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ad08deee0fbcf175c979c6057f78bded6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_poppler_1_1_font_info" kindref="compound">FontInfo</ref> &gt;</type>
+        <definition>QList&lt; FontInfo &gt; Poppler::Document::fonts</definition>
+        <argsstring>() const</argsstring>
+        <name>fonts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The fonts within the PDF document.</para><para>This is a shorthand for getting all the fonts at once.</para><para><simplesect kind="note"><para>this can take a very long time to run with a large document. You may wish to use a <ref refid="class_poppler_1_1_font_iterator" kindref="compound">FontIterator</ref> if you have more than say 20 pages</para></simplesect>
+<simplesect kind="see"><para><ref refid="class_poppler_1_1_document_1ab7554a98e1cd7b472fe4f1e33565581b" kindref="member">newFontIterator()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1200" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="219" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ab7554a98e1cd7b472fe4f1e33565581b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_font_iterator" kindref="compound">FontIterator</ref> *</type>
+        <definition>FontIterator * Poppler::Document::newFontIterator</definition>
+        <argsstring>(int startPage=0) const</argsstring>
+        <name>newFontIterator</name>
+        <param>
+          <type>int</type>
+          <declname>startPage</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_poppler_1_1_font_iterator" kindref="compound">FontIterator</ref> object for font scanning.</para><para>The new iterator can be used for reading the font information of the document, reading page by page.</para><para>The caller is responsible for the returned object, ie it should freed it when no more useful.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>startPage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the initial page from which start reading fonts</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_poppler_1_1_document_1ad08deee0fbcf175c979c6057f78bded6" kindref="member">fonts()</ref></para></simplesect>
+<simplesect kind="since"><para>0.12 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1217" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="235" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a5b4ce85bc240c703e45dfa94d6838ce5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray Poppler::Document::fontData</definition>
+        <argsstring>(const FontInfo &amp;font) const</argsstring>
+        <name>fontData</name>
+        <param>
+          <type>const <ref refid="class_poppler_1_1_font_info" kindref="compound">FontInfo</ref> &amp;</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The font data if the font is an embedded one.</para><para><simplesect kind="since"><para>0.10 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1224" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="240" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aab2376871d1323457d826747e53a2f00" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_poppler_1_1_embedded_file" kindref="compound">EmbeddedFile</ref> * &gt;</type>
+        <definition>QList&lt; EmbeddedFile * &gt; Poppler::Document::embeddedFiles</definition>
+        <argsstring>() const</argsstring>
+        <name>embeddedFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The documents embedded within the PDF document.</para><para><simplesect kind="note"><para>there are two types of embedded document - this call only accesses documents that are embedded at the document level. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1232" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="230" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ab64db4502e26726709d7385cf06823ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::hasEmbeddedFiles</definition>
+        <argsstring>() const</argsstring>
+        <name>hasEmbeddedFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether there are any documents embedded in this PDF document. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1237" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="431" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a3b622bb1d5a5c7f24a9baf8efc5d7b1f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QDomDocument *</type>
+        <definition>QDomDocument * Poppler::Document::toc</definition>
+        <argsstring>() const</argsstring>
+        <name>toc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the table of contents (TOC) of the <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref>.</para><para>The caller is responsable for the returned object.</para><para>In the tree the tag name is the &apos;screen&apos; name of the entry. A tag can have attributes. Here follows the list of tag attributes with meaning:<itemizedlist>
+<listitem><para>Destination: A string description of the referred destination</para></listitem><listitem><para>DestinationName: A &apos;named reference&apos; to the viewport</para></listitem><listitem><para>ExternalFileName: A link to a external filename</para></listitem><listitem><para>Open: A bool value that tells whether the subbranch of the item is open or not</para></listitem></itemizedlist>
+</para><para>Resolving the final destination for each item can be done in the following way:<itemizedlist>
+<listitem><para>first, checking for &apos;Destination&apos;: if not empty, then a <ref refid="class_poppler_1_1_link_destination" kindref="compound">LinkDestination</ref> can be constructed straight with it</para></listitem><listitem><para>as second step, if the &apos;DestinationName&apos; is not empty, then the destination can be resolved using <ref refid="class_poppler_1_1_document_1adce7c161b57d9d8a89888697da1d8c90" kindref="member">linkDestination()</ref></para></listitem></itemizedlist>
+</para><para>Note also that if &apos;ExternalFileName&apos; is not emtpy, then the destination refers to that document (and not to the current one).</para><para><simplesect kind="return"><para>the TOC, or NULL if the <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> does not have one </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1262" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="436" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1adce7c161b57d9d8a89888697da1d8c90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_link_destination" kindref="compound">LinkDestination</ref> *</type>
+        <definition>LinkDestination * Poppler::Document::linkDestination</definition>
+        <argsstring>(const QString &amp;name)</argsstring>
+        <name>linkDestination</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Tries to resolve the named destination <computeroutput>name</computeroutput>.</para><para><simplesect kind="note"><para>this operation starts a search through the whole document</para></simplesect>
+<simplesect kind="return"><para>a new <ref refid="class_poppler_1_1_link_destination" kindref="compound">LinkDestination</ref> object if the named destination was actually found, or NULL otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1272" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="453" bodyend="460"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a4901da93d4deac9a263a219c33642176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::setPaperColor</definition>
+        <argsstring>(const QColor &amp;color)</argsstring>
+        <name>setPaperColor</name>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the paper color</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new paper color </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1279" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="462" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1adb81a852324b3a581826c184f154d4ef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor Poppler::Document::paperColor</definition>
+        <argsstring>() const</argsstring>
+        <name>paperColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The paper color</para><para>The default color is white. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1285" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="505" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a81a758f83530fa1cfaddf748c6be89c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::setRenderBackend</definition>
+        <argsstring>(RenderBackend backend)</argsstring>
+        <name>setRenderBackend</name>
+        <param>
+          <type><ref refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" kindref="member">RenderBackend</ref></type>
+          <declname>backend</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the backend used to render the pages.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>backend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the new rendering backend</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1294" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="510" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ae9aefd54aa4b72dc46bea2c114a02cbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" kindref="member">RenderBackend</ref></type>
+        <definition>Document::RenderBackend Poppler::Document::renderBackend</definition>
+        <argsstring>() const</argsstring>
+        <name>renderBackend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The currently set render backend</para><para>The default backend is <ref refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb" kindref="member">SplashBackend</ref></para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1302" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="519" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a3f7655bb9e6893515bbc64b90b487ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Poppler::Document::setRenderHint</definition>
+        <argsstring>(RenderHint hint, bool on=true)</argsstring>
+        <name>setRenderHint</name>
+        <param>
+          <type><ref refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9" kindref="member">RenderHint</ref></type>
+          <declname>hint</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>on</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the render <computeroutput>hint</computeroutput> .</para><para><simplesect kind="note"><para>some hints may not be supported by some rendering backends.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>on</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether the flag should be added or removed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1320" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="534" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a0dfc519e40d570461d26ce5b49e87466" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>RenderHints</type>
+        <definition>Document::RenderHints Poppler::Document::renderHints</definition>
+        <argsstring>() const</argsstring>
+        <name>renderHints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The currently set render hints.</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1326" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="549" bodyend="552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ab8c34ac2172d450753660bc7c31c82d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_p_s_converter" kindref="compound">PSConverter</ref> *</type>
+        <definition>PSConverter * Poppler::Document::psConverter</definition>
+        <argsstring>() const</argsstring>
+        <name>psConverter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a new PS converter for this document.</para><para>The caller gets the ownership of the returned converter.</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1335" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="554" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a1ba7a683fae5246efacedb7d82e4b997" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_p_d_f_converter" kindref="compound">PDFConverter</ref> *</type>
+        <definition>PDFConverter * Poppler::Document::pdfConverter</definition>
+        <argsstring>() const</argsstring>
+        <name>pdfConverter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a new PDF converter for this document.</para><para>The caller gets the ownership of the returned converter.</para><para><simplesect kind="since"><para>0.8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1344" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="559" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a86276327f2b7d265a11977c33ec07b26" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Poppler::Document::metadata</definition>
+        <argsstring>() const</argsstring>
+        <name>metadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the metadata stream contents</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1351" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="564" bodyend="575"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a2db8898b2818eecc73896195ef421a70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::hasOptionalContent</definition>
+        <argsstring>() const</argsstring>
+        <name>hasOptionalContent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Test whether this document has &quot;optional content&quot;.</para><para>Optional content is used to optionally turn on (display) and turn off (not display) some elements of the document. The most common use of this is for layers in design applications, but it can be used for a range of things, such as not including some content in printing, and displaying content in the appropriate language.</para><para><simplesect kind="since"><para>0.8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1365" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="577" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aac1edcc34ce0b1bb00aaa3f372157a41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_opt_content_model" kindref="compound">OptContentModel</ref> *</type>
+        <definition>OptContentModel * Poppler::Document::optionalContentModel</definition>
+        <argsstring>()</argsstring>
+        <name>optionalContentModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Itemviews model for optional content.</para><para>The model is owned by the document.</para><para><simplesect kind="since"><para>0.8 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1374" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="582" bodyend="588"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1aed91a0b3de99b9e8f951afea0ad8fd60" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList Poppler::Document::scripts</definition>
+        <argsstring>() const</argsstring>
+        <name>scripts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Document-level JavaScript scripts.</para><para>Returns the list of document level JavaScript scripts to be always executed before any other script.</para><para><simplesect kind="since"><para>0.10 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1384" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="590" bodyend="603"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a2544975242e00dfb494ecb907e1ac829" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Poppler::Document::getPdfId</definition>
+        <argsstring>(QByteArray *permanentId, QByteArray *updateId) const</argsstring>
+        <name>getPdfId</name>
+        <param>
+          <type>QByteArray *</type>
+          <declname>permanentId</declname>
+        </param>
+        <param>
+          <type>QByteArray *</type>
+          <declname>updateId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The PDF identifiers.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>permanentId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an optional pointer to a variable where store the permanent ID of the document </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>updateId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an optional pointer to a variable where store the update ID of the document</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>whether the document has the IDs</para></simplesect>
+<simplesect kind="since"><para>0.16 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1398" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="605" bodyend="619"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a551458a3d6236a1cea3ab24d26953c06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3" kindref="member">FormType</ref></type>
+        <definition>Document::FormType Poppler::Document::formType</definition>
+        <argsstring>() const</argsstring>
+        <name>formType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the type of forms contained in the document</para><para><simplesect kind="since"><para>0.22 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1405" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="621" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1ab0b992bb0e530f12ff665fba46418af2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Poppler::Document::~Document</definition>
+        <argsstring>()</argsstring>
+        <name>~Document</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1410" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="106" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_poppler_1_1_document_1a89330667f1fbc13cdc481cc61f417c82" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> *</type>
+        <definition>Document * Poppler::Document::load</definition>
+        <argsstring>(const QString &amp;filePath, const QByteArray &amp;ownerPassword=QByteArray(), const QByteArray &amp;userPassword=QByteArray())</argsstring>
+        <name>load</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ownerPassword</declname>
+          <defval>QByteArray()</defval>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>userPassword</declname>
+          <defval>QByteArray()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load the document from a file on disk</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filePath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name (and path, if required) of the file to load </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ownerPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded owner password to use in loading the file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded user (&quot;open&quot;) password to use in loading the file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the loaded document, or NULL on error</para></simplesect>
+<simplesect kind="note"><para>The caller owns the pointer to <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref>, and this should be deleted when no longer required.</para></simplesect>
+<simplesect kind="warning"><para>The returning document may be locked if a password is required to open the file, and one is not provided (as the userPassword). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="960" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="60" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a47379f6241b011a58c1d8f10cea10dfc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> *</type>
+        <definition>Document * Poppler::Document::loadFromData</definition>
+        <argsstring>(const QByteArray &amp;fileContents, const QByteArray &amp;ownerPassword=QByteArray(), const QByteArray &amp;userPassword=QByteArray())</argsstring>
+        <name>loadFromData</name>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>fileContents</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>ownerPassword</declname>
+          <defval>QByteArray()</defval>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>userPassword</declname>
+          <defval>QByteArray()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load the document from memory</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileContents</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file contents. They are copied so there is no need to keep the byte array around for the full life time of the document. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ownerPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded owner password to use in loading the file </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>userPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the Latin1-encoded user (&quot;open&quot;) password to use in loading the file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the loaded document, or NULL on error</para></simplesect>
+<simplesect kind="note"><para>The caller owns the pointer to <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref>, and this should be deleted when no longer required.</para></simplesect>
+<simplesect kind="warning"><para>The returning document may be locked if a password is required to open the file, and one is not provided (as the userPassword).</para></simplesect>
+<simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="985" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="69" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_poppler_1_1_document_1a3a664ff0948be89cd7ef2585f9e56659" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QSet&lt; <ref refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" kindref="member">RenderBackend</ref> &gt;</type>
+        <definition>QSet&lt; Document::RenderBackend &gt; Poppler::Document::availableRenderBackends</definition>
+        <argsstring>()</argsstring>
+        <name>availableRenderBackends</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The available rendering backends.</para><para><simplesect kind="since"><para>0.6 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1309" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="524" bodyend="532"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_poppler_1_1_document_1ab5a2c159fcfa697e427dfc3dd6faa7cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Poppler::Document::Document</definition>
+        <argsstring>(DocumentData *dataA)</argsstring>
+        <name>Document</name>
+        <param>
+          <type><ref refid="class_poppler_1_1_document_data" kindref="compound">DocumentData</ref> *</type>
+          <declname>dataA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="1417" column="1" bodyfile="thirdparty/poppler/qt5/poppler-document.cc" bodystart="101" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>PDF document. </para>    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> class represents a PDF document: its pages, and all the global properties, metadata, etc.</para><sect1 id="class_poppler_1_1_document_1ownership">
+<title>Ownership of the returned objects</title>
+<para>All the functions that returns class pointers create new object, and the responsability of those is given to the callee.</para><para>The only exception is <ref refid="class_poppler_1_1_page_1aff7331566a9cbf659f625f73ee05f746" kindref="member">Page::transition()</ref>.</para></sect1>
+<sect1 id="class_poppler_1_1_document_1document-loading">
+<title>Loading</title>
+<para>To get a <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref>, you have to load it via the <ref refid="class_poppler_1_1_document_1a89330667f1fbc13cdc481cc61f417c82" kindref="member">load()</ref> &amp; <ref refid="class_poppler_1_1_document_1a47379f6241b011a58c1d8f10cea10dfc" kindref="member">loadFromData()</ref> functions.</para><para>In all the functions that have passwords as arguments, they <bold>must</bold> be Latin1 encoded. If you have a password that is a UTF-8 string, you need to use QString::toLatin1() (or similar) to convert the password first. If you have a UTF-8 character array, consider converting it to a QString first (QString::fromUtf8(), or similar) before converting to Latin1 encoding.</para></sect1>
+<sect1 id="class_poppler_1_1_document_1document-rendering">
+<title>Rendering</title>
+<para>To render pages of a document, you have different <ref refid="class_poppler_1_1_document" kindref="compound">Document</ref> functions to set various options.</para><sect2 id="class_poppler_1_1_document_1document-rendering-backend">
+<title>Backends</title>
+<para>Poppler offers a different backends for rendering the pages. Currently there are two backends (see <ref refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" kindref="member">RenderBackend</ref>), but only the <ref refid="class_splash" kindref="compound">Splash</ref> engine works well and has been tested.</para><para>The available rendering backends can be discovered via <ref refid="class_poppler_1_1_document_1a3a664ff0948be89cd7ef2585f9e56659" kindref="member">availableRenderBackends()</ref>. The current rendering backend can be changed using <ref refid="class_poppler_1_1_document_1a81a758f83530fa1cfaddf748c6be89c9" kindref="member">setRenderBackend()</ref>. Please note that setting a backend not listed in the available ones will always result in null QImage&apos;s.</para></sect2>
+</sect1>
+<sect1 id="class_poppler_1_1_document_1document-cms">
+<title>Color management support</title>
+<para>Poppler, if compiled with this support, provides functions to handle color profiles.</para><para>To know whether the Poppler version you are using has support for color management, you can query <ref refid="namespace_poppler_1a21ef0e2c0c9cfed4548570f8d9c47879" kindref="member">Poppler::isCmsAvailable()</ref>. In case it is not avilable, all the color management-related functions will either do nothing or return null. </para></sect1>
+    </detaileddescription>
+    <location file="thirdparty/poppler/qt5/poppler-qt5.h" line="842" column="1" bodyfile="thirdparty/poppler/qt5/poppler-qt5.h" bodystart="842" bodyend="1418"/>
+    <listofallmembers>
+      <member refid="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3a799535334a5e3b4be6e5cc37dc15dae8" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>AcroForm</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9ada9db4e49f6de26900a79f47098babb8" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>Antialiasing</name></member>
+      <member refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247a0f307432c54a0b7abab57224be1ca393" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>ArthurBackend</name></member>
+      <member refid="class_poppler_1_1_document_1a3a664ff0948be89cd7ef2585f9e56659" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>availableRenderBackends</name></member>
+      <member refid="class_poppler_1_1_document_1a48f8c5ecc4e261d6059ca055912adf6a" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>colorDisplayProfile</name></member>
+      <member refid="class_poppler_1_1_document_1a9f234d4f9b916787d88bfda9b29af08e" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>colorRgbProfile</name></member>
+      <member refid="class_poppler_1_1_document_1a7e97595aa9634c4bc65d4bdd3ae6314f" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>date</name></member>
+      <member refid="class_poppler_1_1_document_1ab5a2c159fcfa697e427dfc3dd6faa7cc" prot="private" virt="non-virtual"><scope>Poppler::Document</scope><name>Document</name></member>
+      <member refid="class_poppler_1_1_document_1a5f30d346de2175fe7a14e3faac37e209" prot="private" virt="non-virtual"><scope>Poppler::Document</scope><name>DocumentData</name></member>
+      <member refid="class_poppler_1_1_document_1aab2376871d1323457d826747e53a2f00" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>embeddedFiles</name></member>
+      <member refid="class_poppler_1_1_document_1a5b4ce85bc240c703e45dfa94d6838ce5" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>fontData</name></member>
+      <member refid="class_poppler_1_1_document_1ad08deee0fbcf175c979c6057f78bded6" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>fonts</name></member>
+      <member refid="class_poppler_1_1_document_1a551458a3d6236a1cea3ab24d26953c06" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>formType</name></member>
+      <member refid="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>FormType</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba942ce16a97060ae7ebe6513d9a860cd7" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>FullScreen</name></member>
+      <member refid="class_poppler_1_1_document_1a2544975242e00dfb494ecb907e1ac829" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>getPdfId</name></member>
+      <member refid="class_poppler_1_1_document_1a1edbfdfd0b5adf4be650c2636a309181" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>getPdfVersion</name></member>
+      <member refid="class_poppler_1_1_document_1ab64db4502e26726709d7385cf06823ee" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>hasEmbeddedFiles</name></member>
+      <member refid="class_poppler_1_1_document_1a2db8898b2818eecc73896195ef421a70" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>hasOptionalContent</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a17ba082f080a64b0a11002fbae7b25ce" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>IgnorePaperColor</name></member>
+      <member refid="class_poppler_1_1_document_1a9ef8eb4458c344ca1533d9af02bc98d5" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>info</name></member>
+      <member refid="class_poppler_1_1_document_1a476e9e81b22ead0bf46e086bda3abe98" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>infoKeys</name></member>
+      <member refid="class_poppler_1_1_document_1aa14566ce82018b575cee3179fbb3f912" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>isEncrypted</name></member>
+      <member refid="class_poppler_1_1_document_1a0699e1c95414e826dbe2400305d6ba29" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>isLinearized</name></member>
+      <member refid="class_poppler_1_1_document_1a21399ffda439d05aa493dceba9bf8c50" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>isLocked</name></member>
+      <member refid="class_poppler_1_1_document_1adce7c161b57d9d8a89888697da1d8c90" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>linkDestination</name></member>
+      <member refid="class_poppler_1_1_document_1a89330667f1fbc13cdc481cc61f417c82" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>load</name></member>
+      <member refid="class_poppler_1_1_document_1a47379f6241b011a58c1d8f10cea10dfc" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>loadFromData</name></member>
+      <member refid="class_poppler_1_1_document_1a2d810ffccfdb2d95c7458dc0832c09c8" prot="private" virt="non-virtual"><scope>Poppler::Document</scope><name>m_doc</name></member>
+      <member refid="class_poppler_1_1_document_1a86276327f2b7d265a11977c33ec07b26" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>metadata</name></member>
+      <member refid="class_poppler_1_1_document_1ab7554a98e1cd7b472fe4f1e33565581b" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>newFontIterator</name></member>
+      <member refid="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3aeb3b8136fe25d4752bbfa11e8606d8ca" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>NoForm</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda711c5286c04de74232bc6a2ca4a4a05d" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>NoLayout</name></member>
+      <member refid="class_poppler_1_1_document_1a260f9b7105860a757aa1b018cd4f6ccb" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>numPages</name></member>
+      <member refid="class_poppler_1_1_document_1a33fa45a3666edcdc9b5deb34861a6670" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToAddNotes</name></member>
+      <member refid="class_poppler_1_1_document_1aabaf987b173987c4ed587ecc70a21edd" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToAssemble</name></member>
+      <member refid="class_poppler_1_1_document_1a0d779137e2bd544a1b1cb6251770f544" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToChange</name></member>
+      <member refid="class_poppler_1_1_document_1a22090fb7613d582f4e3327f55bc6e5b4" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToCopy</name></member>
+      <member refid="class_poppler_1_1_document_1a19f94305b3a268141f8bf350334cfb33" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToCreateFormFields</name></member>
+      <member refid="class_poppler_1_1_document_1a9c792ce1274bace5cf18cf77934f993e" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToExtractForAccessibility</name></member>
+      <member refid="class_poppler_1_1_document_1afff0dbfbc5bc11c18784d814db1c4178" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToFillForm</name></member>
+      <member refid="class_poppler_1_1_document_1adf941fadec1ccca91f2e209f935c497d" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToPrint</name></member>
+      <member refid="class_poppler_1_1_document_1a8fcbb451e7fcd2a72d0dce90a7815de4" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>okToPrintHighRes</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbdab1c3ce0dc45101db622b30a7e36f7e1b" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>OneColumn</name></member>
+      <member refid="class_poppler_1_1_document_1aac1edcc34ce0b1bb00aaa3f372157a41" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>optionalContentModel</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9aa1c1ac9cb8050a56e009983d3840167e" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>OverprintPreview</name></member>
+      <member refid="class_poppler_1_1_document_1ae4535b0dc763d6be42d775fa5d40c93a" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>page</name></member>
+      <member refid="class_poppler_1_1_document_1a362452915b71f8d534114781c27e6dc0" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>page</name></member>
+      <member refid="class_poppler_1_1_document_1a66d145c56e1747e0aecb5309042ab183" prot="private" virt="non-virtual"><scope>Poppler::Document</scope><name>Page</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbd" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>PageLayout</name></member>
+      <member refid="class_poppler_1_1_document_1a7074424a989911de79f781ab77b23652" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>pageLayout</name></member>
+      <member refid="class_poppler_1_1_document_1a9dd899cd7515f97320994c2a24cee316" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>pageMode</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822b" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>PageMode</name></member>
+      <member refid="class_poppler_1_1_document_1adb81a852324b3a581826c184f154d4ef" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>paperColor</name></member>
+      <member refid="class_poppler_1_1_document_1a1ba7a683fae5246efacedb7d82e4b997" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>pdfConverter</name></member>
+      <member refid="class_poppler_1_1_document_1ab8c34ac2172d450753660bc7c31c82d7" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>psConverter</name></member>
+      <member refid="class_poppler_1_1_document_1ae9aefd54aa4b72dc46bea2c114a02cbe" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>renderBackend</name></member>
+      <member refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>RenderBackend</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>RenderHint</name></member>
+      <member refid="class_poppler_1_1_document_1a0dfc519e40d570461d26ce5b49e87466" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>renderHints</name></member>
+      <member refid="class_poppler_1_1_document_1aed91a0b3de99b9e8f951afea0ad8fd60" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>scripts</name></member>
+      <member refid="class_poppler_1_1_document_1a8b4dd39c8b59c19ab935d772e067f0c4" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>setColorDisplayProfile</name></member>
+      <member refid="class_poppler_1_1_document_1aa72744f77b5b185fee257e32847f62c4" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>setColorDisplayProfileName</name></member>
+      <member refid="class_poppler_1_1_document_1a4901da93d4deac9a263a219c33642176" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>setPaperColor</name></member>
+      <member refid="class_poppler_1_1_document_1a81a758f83530fa1cfaddf748c6be89c9" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>setRenderBackend</name></member>
+      <member refid="class_poppler_1_1_document_1a3f7655bb9e6893515bbc64b90b487ffc" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>setRenderHint</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda6b412a622f9456f7b8d08d0d120229a1" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>SinglePage</name></member>
+      <member refid="class_poppler_1_1_document_1a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>SplashBackend</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9ab1183a50eacc9fad47051cfa1670379c" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TextAntialiasing</name></member>
+      <member refid="class_poppler_1_1_document_1a854e191808926d0bcf277a97243f5737" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>textDirection</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a3bca408d4c25964bf2dc5f4e39dddcb2" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TextHinting</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a72582e881c58f1dbedf698933dca2481" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TextSlightHinting</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9a422db551ee9b68a511acb2cbec60d554" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>ThinLineShape</name></member>
+      <member refid="class_poppler_1_1_document_1a8420ce678235ee6214fbd91f5ae2f4e9adb5b52f62cace40cad54686996392d14" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>ThinLineSolid</name></member>
+      <member refid="class_poppler_1_1_document_1a3b622bb1d5a5c7f24a9baf8efc5d7b1f" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>toc</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda35e0e5c15423834c6515cf2df64cdd12" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TwoColumnLeft</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbdaa0759d4fea75041b18268728d7fff3ce" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TwoColumnRight</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda244de645e7bbd445e6744ddb3ac1af25" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TwoPageLeft</name></member>
+      <member refid="class_poppler_1_1_document_1a27b1574f15e09ae08b7acf7cc98f3fbda163344c5dc4e772a11150199ea8843e8" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>TwoPageRight</name></member>
+      <member refid="class_poppler_1_1_document_1a5eb83ee712c9e146ccbcb21c3a9ce662" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>unlock</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba382b116328e14edd5929cfcc28c69f04" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>UseAttach</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba4b709ee334e2c3ea2bd8df2680de501e" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>UseNone</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822bae61492f6fb35469e734e8f41a292c4e9" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>UseOC</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba0a1bf7b447a3f36898f6c5b286f53b21" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>UseOutlines</name></member>
+      <member refid="class_poppler_1_1_document_1a7157091ddc85f62b02cfc35a08c4822ba5984e71380eaffa41b4a90bb9c4a965b" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>UseThumbs</name></member>
+      <member refid="class_poppler_1_1_document_1ac761c69f98b581e2e027e309b6b9d8b3aa2a0e50c1e623fd10ec0163a998c7db0" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>XfaForm</name></member>
+      <member refid="class_poppler_1_1_document_1ab0b992bb0e530f12ff665fba46418af2" prot="public" virt="non-virtual"><scope>Poppler::Document</scope><name>~Document</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

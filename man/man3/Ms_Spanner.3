@@ -1,0 +1,257 @@
+.TH "Ms::Spanner" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Spanner \- Virtual base class for slurs, ties, lines etc\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <spanner\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.PP
+Inherited by \fBMs::SLine\fP, and \fBMs::SlurTie\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnchor\fP : char { \fBSEGMENT\fP, \fBMEASURE\fP, \fBCHORD\fP, \fBNOTE\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSpanner\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBSpanner\fP (const \fBSpanner\fP &)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s) override"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const override"
+.br
+.ti -1c
+.RI "int \fBtick2\fP () const"
+.br
+.ti -1c
+.RI "int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTick\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetTick2\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetTicks\fP (int v)"
+.br
+.ti -1c
+.RI "int \fBtrack2\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrack2\fP (int v)"
+.br
+.ti -1c
+.RI "bool \fBbroken\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBroken\fP (bool v)"
+.br
+.ti -1c
+.RI "Anchor \fBanchor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAnchor\fP (Anchor a)"
+.br
+.ti -1c
+.RI "const QList< \fBSpannerSegment\fP * > & \fBspannerSegments\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBSpannerSegment\fP * > & \fBspannerSegments\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSpannerSegment\fP * \fBlayoutSystem\fP (\fBSystem\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBtriggerLayout\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "bool \fBremoveSpannerBack\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBremoveUnmanaged\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBundoInsertTimeUnmanaged\fP (int tick, int len)"
+.br
+.ti -1c
+.RI "virtual void \fBsetYoff\fP (qreal)"
+.br
+.ti -1c
+.RI "QVariant \fBgetProperty\fP (P_ID propertyId) const"
+.br
+.ti -1c
+.RI "bool \fBsetProperty\fP (P_ID propertyId, const QVariant &v)"
+.br
+.ti -1c
+.RI "QVariant \fBpropertyDefault\fP (P_ID propertyId) const"
+.br
+.ti -1c
+.RI "void \fBcomputeStartElement\fP ()"
+.br
+.ti -1c
+.RI "void \fBcomputeEndElement\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetNoteSpan\fP (\fBNote\fP *startNote, \fBNote\fP *endNote)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBstartElement\fP () const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBendElement\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBstartMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBendMeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStartElement\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBsetEndElement\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBstartCR\fP ()"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBendCR\fP ()"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBstartChord\fP ()"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBendChord\fP ()"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBstartSegment\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBendSegment\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetVisible\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetColor\fP (const QColor &col) override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual bool \fBisSpanner\fP () const override"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBNote\fP * \fBendElementFromSpanner\fP (\fBSpanner\fP *sp, \fBElement\fP *newStart)"
+.br
+.ti -1c
+.RI "static \fBNote\fP * \fBstartElementFromSpanner\fP (\fBSpanner\fP *sp, \fBElement\fP *newEnd)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QList< \fBSpannerSegment\fP * > \fBsegments\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static int \fBeditTick\fP"
+.br
+.ti -1c
+.RI "static int \fBeditTick2\fP"
+.br
+.ti -1c
+.RI "static int \fBeditTrack2\fP"
+.br
+.ti -1c
+.RI "static \fBNote\fP * \fBeditEndNote\fP"
+.br
+.ti -1c
+.RI "static \fBNote\fP * \fBeditStartNote\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::Spanner::Anchor \fBanchor\fP"
+.br
+.ti -1c
+.RI "\fBMs::Element\fP \fBendElement\fP"
+.br
+.ti -1c
+.RI "\fBMs::Element\fP \fBstartElement\fP"
+.br
+.ti -1c
+.RI "int \fBtick\fP"
+.br
+.ti -1c
+.RI "int \fBtick2\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSpannerSegment\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Virtual base class for slurs, ties, lines etc\&. 
+.PP
+Definition at line 108 of file spanner\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

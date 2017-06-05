@@ -1,0 +1,123 @@
+.TH "PreScanOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PreScanOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPreScanOutputDev\fP (\fBPDFDoc\fP *docA)"
+.br
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseTilingPatternFill\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseShadedFills\fP (int type)"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBtilingPatternFill\fP (\fBGfxState\fP *state, \fBGfx\fP *gfx, \fBCatalog\fP *cat, \fBObject\fP *str, double *pmat, int paintType, int tilingType, \fBDict\fP *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)"
+.br
+.ti -1c
+.RI "virtual GBool \fBfunctionShadedFill\fP (\fBGfxState\fP *state, \fBGfxFunctionShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedFill\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedFill\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading, double tMin, double tMax)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginStringOp\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBendStringOp\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBbeginType3Char\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual void \fBendType3Char\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawSoftMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, \fBGfxImageColorMap\fP *maskColorMap, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTransparencyGroup\fP (\fBGfxState\fP *state, double *bbox, \fBGfxColorSpace\fP *blendingColorSpace, GBool isolated, GBool knockout, GBool forSoftMask)"
+.br
+.ti -1c
+.RI "virtual void \fBpaintTransparencyGroup\fP (\fBGfxState\fP *state, double *bbox)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMask\fP (\fBGfxState\fP *state, double *bbox, GBool alpha, \fBFunction\fP *transferFunc, \fBGfxColor\fP *backdropColor)"
+.br
+.ti -1c
+.RI "GBool \fBisMonochrome\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisGray\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBusesTransparency\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisAllGDI\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBusesPatternImageMask\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearStats\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 44 of file PreScanOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

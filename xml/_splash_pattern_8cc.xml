@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_splash_pattern_8cc" kind="file" language="C++">
+    <compoundname>SplashPattern.cc</compoundname>
+    <includes local="no">config.h</includes>
+    <includes refid="_splash_math_8h" local="yes">SplashMath.h</includes>
+    <includes refid="_splash_screen_8h" local="yes">SplashScreen.h</includes>
+    <includes refid="_splash_pattern_8h" local="yes">SplashPattern.h</includes>
+    <incdepgraph>
+      <node id="92677">
+        <label>SplashScreen.h</label>
+        <link refid="_splash_screen_8h_source"/>
+        <childnode refid="92675" relation="include">
+        </childnode>
+        <childnode refid="92678" relation="include">
+        </childnode>
+      </node>
+      <node id="92678">
+        <label>stdlib.h</label>
+      </node>
+      <node id="92669">
+        <label>thirdparty/poppler/splash/SplashPattern.cc</label>
+        <link refid="_splash_pattern_8cc"/>
+        <childnode refid="92670" relation="include">
+        </childnode>
+        <childnode refid="92671" relation="include">
+        </childnode>
+        <childnode refid="92677" relation="include">
+        </childnode>
+        <childnode refid="92679" relation="include">
+        </childnode>
+      </node>
+      <node id="92672">
+        <label>poppler-config.h</label>
+        <link refid="poppler-config_8h_source"/>
+        <childnode refid="92673" relation="include">
+        </childnode>
+      </node>
+      <node id="92671">
+        <label>SplashMath.h</label>
+        <link refid="_splash_math_8h_source"/>
+        <childnode refid="92672" relation="include">
+        </childnode>
+        <childnode refid="92674" relation="include">
+        </childnode>
+        <childnode refid="92675" relation="include">
+        </childnode>
+      </node>
+      <node id="92674">
+        <label>math.h</label>
+      </node>
+      <node id="92679">
+        <label>SplashPattern.h</label>
+        <link refid="_splash_pattern_8h_source"/>
+        <childnode refid="92675" relation="include">
+        </childnode>
+      </node>
+      <node id="92675">
+        <label>SplashTypes.h</label>
+        <link refid="_splash_types_8h_source"/>
+        <childnode refid="92676" relation="include">
+        </childnode>
+      </node>
+      <node id="92676">
+        <label>goo/gtypes.h</label>
+        <link refid="gtypes_8h_source"/>
+        <childnode refid="92672" relation="include">
+        </childnode>
+      </node>
+      <node id="92670">
+        <label>config.h</label>
+      </node>
+      <node id="92673">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SplashPattern.cc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Modified<sp/>under<sp/>the<sp/>Poppler<sp/>project<sp/>-<sp/>http://poppler.freedesktop.org</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>changes<sp/>made<sp/>under<sp/>the<sp/>Poppler<sp/>project<sp/>to<sp/>this<sp/>file<sp/>are<sp/>licensed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>under<sp/>GPL<sp/>version<sp/>2<sp/>or<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2010,<sp/>2011<sp/>Thomas<sp/>Freitag<sp/>&lt;Thomas.Freitag@alfa.de&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>To<sp/>see<sp/>a<sp/>description<sp/>of<sp/>the<sp/>changes<sp/>please<sp/>see<sp/>the<sp/>Changelog<sp/>file<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>came<sp/>with<sp/>your<sp/>tarball<sp/>or<sp/>type<sp/>make<sp/>ChangeLog<sp/>if<sp/>you<sp/>are<sp/>building<sp/>from<sp/>git</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;config.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_GCC_PRAGMAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>implementation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SplashMath.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SplashScreen.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SplashPattern.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SplashPattern</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">SplashPattern::SplashPattern()<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">SplashPattern::~SplashPattern()<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SplashSolidColor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">SplashSolidColor::SplashSolidColor(SplashColorPtr<sp/>colorA)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>splashColorCopy(<ref refid="structcolor" kindref="compound">color</ref>,<sp/>colorA);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">SplashSolidColor::~SplashSolidColor()<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">GBool<sp/>SplashSolidColor::getColor(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/>SplashColorPtr<sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>splashColorCopy(c,<sp/><ref refid="structcolor" kindref="compound">color</ref>);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gTrue;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/splash/SplashPattern.cc"/>
+  </compounddef>
+</doxygen>

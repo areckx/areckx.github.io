@@ -1,0 +1,542 @@
+.TH "Poppler::Annotation" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::Annotation \- \fBAnnotation\fP class holding properties shared by all annotations\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-annotation\&.h>\fP
+.PP
+Inherited by \fBPoppler::CaretAnnotation\fP, \fBPoppler::FileAttachmentAnnotation\fP, \fBPoppler::GeomAnnotation\fP, \fBPoppler::HighlightAnnotation\fP, \fBPoppler::InkAnnotation\fP, \fBPoppler::LineAnnotation\fP, \fBPoppler::LinkAnnotation\fP, \fBPoppler::MovieAnnotation\fP, \fBPoppler::RichMediaAnnotation\fP, \fBPoppler::ScreenAnnotation\fP, \fBPoppler::SoundAnnotation\fP, \fBPoppler::StampAnnotation\fP, \fBPoppler::TextAnnotation\fP, and \fBPoppler::WidgetAnnotation\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPopup\fP"
+.br
+.RI "Container class for \fBAnnotation\fP pop-up window information\&. "
+.ti -1c
+.RI "class \fBStyle\fP"
+.br
+.RI "Container class for \fBAnnotation\fP style information\&. "
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSubType\fP { \fBAText\fP = 1, \fBALine\fP = 2, \fBAGeom\fP = 3, \fBAHighlight\fP = 4, \fBAStamp\fP = 5, \fBAInk\fP = 6, \fBALink\fP = 7, \fBACaret\fP = 8, \fBAFileAttachment\fP = 9, \fBASound\fP = 10, \fBAMovie\fP = 11, \fBAScreen\fP = 12, \fBAWidget\fP = 13, \fBARichMedia\fP = 14, \fBA_BASE\fP = 0 }"
+.br
+.ti -1c
+.RI "enum \fBFlag\fP { \fBHidden\fP = 1, \fBFixedSize\fP = 2, \fBFixedRotation\fP = 4, \fBDenyPrint\fP = 8, \fBDenyWrite\fP = 16, \fBDenyDelete\fP = 32, \fBToggleHidingOnMouse\fP = 64, \fBExternal\fP = 128 }"
+.br
+.ti -1c
+.RI "enum \fBLineStyle\fP { \fBSolid\fP = 1, \fBDashed\fP = 2, \fBBeveled\fP = 4, \fBInset\fP = 8, \fBUnderline\fP = 16 }"
+.br
+.ti -1c
+.RI "enum \fBLineEffect\fP { \fBNoEffect\fP = 1, \fBCloudy\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBRevScope\fP { \fBRoot\fP = 0, \fBReply\fP = 1, \fBGroup\fP = 2, \fBDelete\fP = 4 }"
+.br
+.ti -1c
+.RI "enum \fBRevType\fP { \fBNone\fP = 1, \fBMarked\fP = 2, \fBUnmarked\fP = 4, \fBAccepted\fP = 8, \fBRejected\fP = 16, \fBCancelled\fP = 32, \fBCompleted\fP = 64 }"
+.br
+.ti -1c
+.RI "enum \fBAdditionalActionType\fP { \fBCursorEnteringAction\fP, \fBCursorLeavingAction\fP, \fBMousePressedAction\fP, \fBMouseReleasedAction\fP, \fBFocusInAction\fP, \fBFocusOutAction\fP, \fBPageOpeningAction\fP, \fBPageClosingAction\fP, \fBPageVisibleAction\fP, \fBPageInvisibleAction\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QString \fBauthor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAuthor\fP (const QString &\fBauthor\fP)"
+.br
+.ti -1c
+.RI "QString \fBcontents\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetContents\fP (const QString &contents)"
+.br
+.ti -1c
+.RI "QString \fBuniqueName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUniqueName\fP (const QString &\fBuniqueName\fP)"
+.br
+.ti -1c
+.RI "QDateTime \fBmodificationDate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetModificationDate\fP (const QDateTime &date)"
+.br
+.ti -1c
+.RI "QDateTime \fBcreationDate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCreationDate\fP (const QDateTime &date)"
+.br
+.ti -1c
+.RI "int \fBflags\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (int \fBflags\fP)"
+.br
+.ti -1c
+.RI "QRectF \fBboundary\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBoundary\fP (const QRectF &\fBboundary\fP)"
+.br
+.ti -1c
+.RI "\fBStyle\fP \fBstyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (const \fBStyle\fP &\fBstyle\fP)"
+.br
+.ti -1c
+.RI "\fBPopup\fP \fBpopup\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPopup\fP (const \fBPopup\fP &\fBpopup\fP)"
+.br
+.ti -1c
+.RI "RevScope \fBrevisionScope\fP () const"
+.br
+.ti -1c
+.RI "RevType \fBrevisionType\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBAnnotation\fP * > \fBrevisions\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBSubType\fP \fBsubType\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fB~Annotation\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnotationUtils\fP"
+.br
+.ti -1c
+.RI "class \fBLinkMovie\fP"
+.br
+.ti -1c
+.RI "class \fBLinkRendition\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAnnotation\fP class holding properties shared by all annotations\&. 
+
+An \fBAnnotation\fP is an object (text note, highlight, sound, popup window, \&.\&.) contained by a \fBPage\fP in the document\&.
+.PP
+\fBWarning:\fP
+.RS 4
+Different \fBAnnotation\fP objects might point to the same annotation\&.
+.RE
+.PP
+.SH "How to add annotations"
+.PP
+Create an \fBAnnotation\fP object of the desired subclass (for example \fBTextAnnotation\fP) and set its properties: 
+.PP
+.nf
+Poppler::TextAnnotation* myann = new Poppler::TextAnnotation(Poppler::TextAnnotation::InPlace);
+myann->setBoundary(QRectF(0\&.1, 0\&.1, 0\&.2, 0\&.2)); // normalized coordinates: (0,0) is top-left, (1,1) is bottom-right
+myann->setContents("Hello, world!");
+
+.fi
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+Always set a boundary rectangle, or nothing will be shown!
+.RE
+.PP
+Obtain a pointer to the \fBPage\fP where you want to add the annotation (refer to \fBreq\fP for instructions) and add the annotation: 
+.PP
+.nf
+Poppler::Page* mypage = \&.\&.\&.;
+mypage->addAnnotation(myann);
+
+.fi
+.PP
+.PP
+You can keep on editing the annotation after it has been added to the page: 
+.PP
+.nf
+myann->setContents("World, hello!"); // Let's change text\&.\&.\&.
+myann->setAuthor("Your name here");  // \&.\&.\&.and set an author too
+
+.fi
+.PP
+.PP
+When you're done with editing the annotation, you must destroy the \fBAnnotation\fP object: 
+.PP
+.nf
+delete myann;
+
+.fi
+.PP
+.PP
+Use the \fBPDFConverter\fP class to save the modified document\&.
+.SH "FixedRotation flag specifics"
+.PP
+According to the PDF specification, annotations whose \fBAnnotation::FixedRotation\fP flag is set must always be shown in their original orientation, no matter what the current rendering rotation or the page's \fBPage::orientation()\fP values are\&. In comparison with regular annotations, such annotations should therefore be transformed by an extra rotation at rendering time to 'undo' such context-related rotations, which is equal to \fC-(rendering_rotation + page_orientation)\fP\&. The rotation pivot is the top-left corner of the boundary rectangle\&.
+.PP
+In practice, Poppler's \fBPage::renderToImage\fP only 'unrotates' the page orientation, and does \fBnot\fP unrotate the rendering rotation\&. This ensures consistent renderings at different \fBPage::Rotation\fP values: annotations are always positioned as if they were being positioned at the default page orientation\&.
+.PP
+Just like regular annotations, Poppler Qt4 exposes normalized coordinates relative to the page's default orientation\&. However, behind the scenes, the coordinate system is different and Poppler transparently transforms each shape\&. If you never call either \fBAnnotation::setFlags\fP or \fBAnnotation::setBoundary\fP, you don't need to worry about this; but if you do call them, then you need to adhere to the following rules:
+.IP "\(bu" 2
+Whenever you toggle the \fBAnnotation::FixedRotation\fP flag, you \fBmust\fP set again the boundary rectangle first, and then you \fBmust\fP set again any other geometry-related property\&.
+.IP "\(bu" 2
+Whenever you modify the boundary rectangle of an annotation whose \fBAnnotation::FixedRotation\fP flag is set, you \fBmust\fP set again any other geometry-related property\&.
+.PP
+.PP
+These two rules are necessary to make Poppler's transparent coordinate conversion work properly\&. 
+.PP
+Definition at line 173 of file poppler\-annotation\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::Annotation::AdditionalActionType\fP"
+Describes the flags from an annotations 'AA' dictionary\&.
+.PP
+This flag is used by the additionalAction() method for \fBScreenAnnotation\fP and \fBWidgetAnnotation\fP\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICursorEnteringAction \fP\fP
+Performed when the cursor enters the annotation's active area\&. 
+.TP
+\fB\fICursorLeavingAction \fP\fP
+Performed when the cursor exists the annotation's active area\&. 
+.TP
+\fB\fIMousePressedAction \fP\fP
+Performed when the mouse button is pressed inside the annotation's active area\&. 
+.TP
+\fB\fIMouseReleasedAction \fP\fP
+Performed when the mouse button is released inside the annotation's active area\&. 
+.TP
+\fB\fIFocusInAction \fP\fP
+Performed when the annotation receives the input focus\&. 
+.TP
+\fB\fIFocusOutAction \fP\fP
+Performed when the annotation loses the input focus\&. 
+.TP
+\fB\fIPageOpeningAction \fP\fP
+Performed when the page containing the annotation is opened\&. 
+.TP
+\fB\fIPageClosingAction \fP\fP
+Performed when the page containing the annotation is closed\&. 
+.TP
+\fB\fIPageVisibleAction \fP\fP
+Performed when the page containing the annotation becomes visible\&. 
+.TP
+\fB\fIPageInvisibleAction \fP\fP
+Performed when the page containing the annotation becomes invisible\&. 
+.PP
+Definition at line 411 of file poppler\-annotation\&.h\&.
+.SS "enum \fBPoppler::Annotation::Flag\fP"
+\fBAnnotation\fP flags
+.PP
+They can be OR'd together (e\&.g\&. \fBAnnotation::FixedRotation\fP | \fBAnnotation::DenyPrint\fP)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBflags()\fP, \fBsetFlags(int)\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHidden \fP\fP
+Do not display or print the annotation\&. 
+.TP
+\fB\fIFixedRotation \fP\fP
+Do not rotate the annotation according to page orientation and rendering rotation\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+Extra care is needed with this flag: see \fBFixedRotation flag specifics\fP 
+.RE
+.PP
+
+.TP
+\fB\fIDenyPrint \fP\fP
+Do not print the annotation\&. 
+.PP
+Definition at line 214 of file poppler\-annotation\&.h\&.
+.SS "enum \fBPoppler::Annotation::SubType\fP"
+\fBAnnotation\fP subclasses
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsubType()\fP 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAText \fP\fP
+\fBTextAnnotation\fP\&. 
+.TP
+\fB\fIALine \fP\fP
+\fBLineAnnotation\fP\&. 
+.TP
+\fB\fIAGeom \fP\fP
+\fBGeomAnnotation\fP\&. 
+.TP
+\fB\fIAHighlight \fP\fP
+\fBHighlightAnnotation\fP\&. 
+.TP
+\fB\fIAStamp \fP\fP
+\fBStampAnnotation\fP\&. 
+.TP
+\fB\fIAInk \fP\fP
+\fBInkAnnotation\fP\&. 
+.TP
+\fB\fIALink \fP\fP
+\fBLinkAnnotation\fP\&. 
+.TP
+\fB\fIACaret \fP\fP
+\fBCaretAnnotation\fP\&. 
+.TP
+\fB\fIAFileAttachment \fP\fP
+\fBFileAttachmentAnnotation\fP\&. 
+.TP
+\fB\fIASound \fP\fP
+\fBSoundAnnotation\fP\&. 
+.TP
+\fB\fIAMovie \fP\fP
+\fBMovieAnnotation\fP\&. 
+.TP
+\fB\fIAScreen \fP\fP
+\fBScreenAnnotation\fP\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.TP
+\fB\fIAWidget \fP\fP
+\fBWidgetAnnotation\fP\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.TP
+\fB\fIARichMedia \fP\fP
+\fBRichMediaAnnotation\fP\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.36 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file poppler\-annotation\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::Annotation::~Annotation ()\fC [virtual]\fP"
+Destructor\&. 
+.PP
+Definition at line 1066 of file poppler\-annotation\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Poppler::Annotation::author () const"
+Returns the author of the annotation\&. 
+.PP
+Definition at line 1337 of file poppler\-annotation\&.cc\&.
+.SS "QRectF Poppler::Annotation::boundary () const"
+Returns this annotation's boundary rectangle in normalized coordinates
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetBoundary(const QRectF&)\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1555 of file poppler\-annotation\&.cc\&.
+.SS "int Poppler::Annotation::flags () const"
+Returns this annotation's flags
+.PP
+\fBSee also:\fP
+.RS 4
+\fBFlag\fP, \fBsetFlags(int)\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1532 of file poppler\-annotation\&.cc\&.
+.SS "\fBAnnotation::Popup\fP Poppler::Annotation::popup () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1660 of file poppler\-annotation\&.cc\&.
+.SS "QList< \fBAnnotation\fP * > Poppler::Annotation::revisions () const"
+Returns the revisions of this annotation
+.PP
+\fBNote:\fP
+.RS 4
+The caller owns the returned annotations and they should be deleted when no longer required\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1797 of file poppler\-annotation\&.cc\&.
+.SS "Annotation::RevScope Poppler::Annotation::revisionScope () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1741 of file poppler\-annotation\&.cc\&.
+.SS "Annotation::RevType Poppler::Annotation::revisionType () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1764 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setAuthor (const QString & author)"
+Sets a new author for the annotation\&. 
+.PP
+Definition at line 1348 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setBoundary (const QRectF & boundary)"
+Sets this annotation's boundary rectangle
+.PP
+The boundary rectangle is the smallest rectangle that contains the annotation\&.
+.PP
+\fBWarning:\fP
+.RS 4
+This property is mandatory: you must always set this\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBboundary()\fP, \fBFixedRotation flag specifics\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1566 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setFlags (int flags)"
+Sets this annotation's flags
+.PP
+\fBSee also:\fP
+.RS 4
+\fBFlag\fP, \fBflags()\fP, \fBFixedRotation flag specifics\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1542 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setPopup (const \fBPopup\fP & popup)"
+
+.PP
+\fBWarning:\fP
+.RS 4
+Currently does nothing 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1712 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setStyle (const \fBStyle\fP & style)"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1637 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::Annotation::setUniqueName (const QString & uniqueName)"
+Sets a new unique name for the annotation\&.
+.PP
+\fBNote:\fP
+.RS 4
+no check of the new uniqueName is done 
+.RE
+.PP
+
+.PP
+Definition at line 1402 of file poppler\-annotation\&.cc\&.
+.SS "\fBAnnotation::Style\fP Poppler::Annotation::style () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 1580 of file poppler\-annotation\&.cc\&.
+.SS "virtual \fBSubType\fP Poppler::Annotation::subType () const\fC [pure virtual]\fP"
+The type of the annotation\&. 
+.PP
+Implemented in \fBPoppler::RichMediaAnnotation\fP, \fBPoppler::WidgetAnnotation\fP, \fBPoppler::ScreenAnnotation\fP, \fBPoppler::MovieAnnotation\fP, \fBPoppler::SoundAnnotation\fP, \fBPoppler::FileAttachmentAnnotation\fP, \fBPoppler::CaretAnnotation\fP, \fBPoppler::LinkAnnotation\fP, \fBPoppler::InkAnnotation\fP, \fBPoppler::StampAnnotation\fP, \fBPoppler::HighlightAnnotation\fP, \fBPoppler::GeomAnnotation\fP, \fBPoppler::LineAnnotation\fP, and \fBPoppler::TextAnnotation\fP\&.
+.SS "QString Poppler::Annotation::uniqueName () const"
+Returns the unique name (ID) of the annotation\&. 
+.PP
+Definition at line 1392 of file poppler\-annotation\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

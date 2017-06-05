@@ -1,0 +1,52 @@
+.TH "Ms::UndoCommand" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::UndoCommand
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMs::AddBracket\fP, \fBMs::AddElement\fP, \fBMs::AddExcerpt\fP, \fBMs::ChangeBend\fP, \fBMs::ChangeBracketType\fP, \fBMs::ChangeChordStaffMove\fP, \fBMs::ChangeClefType\fP, \fBMs::ChangeDrumset\fP, \fBMs::ChangeElement\fP, \fBMs::ChangeEventList\fP, \fBMs::ChangeExcerptTitle\fP, \fBMs::ChangeFretting\fP, \fBMs::ChangeGap\fP, \fBMs::ChangeImage\fP, \fBMs::ChangeInstrument\fP, \fBMs::ChangeInstrumentLong\fP, \fBMs::ChangeInstrumentShort\fP, \fBMs::ChangeKeySig\fP, \fBMs::ChangeMeasureLen\fP, \fBMs::ChangeMetaTags\fP, \fBMs::ChangeMetaText\fP, \fBMs::ChangeMMRest\fP, \fBMs::ChangeMStaffProperties\fP, \fBMs::ChangeNoteEvent\fP, \fBMs::ChangeNoteEvents\fP, \fBMs::ChangeParent\fP, \fBMs::ChangePart\fP, \fBMs::ChangePatch\fP, \fBMs::ChangePitch\fP, \fBMs::ChangeProperty\fP, \fBMs::ChangeSpannerElements\fP, \fBMs::ChangeStaff\fP, \fBMs::ChangeStaffType\fP, \fBMs::ChangeStaffUserDist\fP, \fBMs::ChangeStartEndSpanner\fP, \fBMs::ChangeStyle\fP, \fBMs::ChangeStyleVal\fP, \fBMs::ChangeSynthesizerState\fP, \fBMs::ChangeText\fP, \fBMs::ChangeTremoloBar\fP, \fBMs::ChangeVelocity\fP, \fBMs::CloneVoice\fP, \fBMs::EditText\fP, \fBMs::ExchangeVoice\fP, \fBMs::InsertMStaff\fP, \fBMs::InsertPart\fP, \fBMs::InsertRemoveMeasures\fP, \fBMs::InsertStaff\fP, \fBMs::InsertStaves\fP, \fBMs::InsertTime\fP, \fBMs::LinkStaff\fP, \fBMs::LinkUnlink\fP, \fBMs::MoveElement\fP, \fBMs::MoveStaff\fP, \fBMs::RemoveBracket\fP, \fBMs::RemoveElement\fP, \fBMs::RemoveExcerpt\fP, \fBMs::RemoveMStaff\fP, \fBMs::RemovePart\fP, \fBMs::RemoveStaff\fP, \fBMs::RemoveStaves\fP, \fBMs::SaveState\fP, \fBMs::SortStaves\fP, \fBMs::SplitText\fP, \fBMs::SwapCR\fP, \fBMs::SwapExcerpt\fP, \fBMs::TransposeHarmony\fP, and \fBMs::UnlinkStaff\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBundo\fP (\fBEditData\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBredo\fP (\fBEditData\fP *)"
+.br
+.ti -1c
+.RI "void \fBappendChild\fP (\fBUndoCommand\fP *cmd)"
+.br
+.ti -1c
+.RI "\fBUndoCommand\fP * \fBremoveChild\fP ()"
+.br
+.ti -1c
+.RI "int \fBchildCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBunwind\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcleanup\fP (bool undo)"
+.br
+.ti -1c
+.RI "virtual const char * \fBname\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBflip\fP (\fBEditData\fP *)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 95 of file undo\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

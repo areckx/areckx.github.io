@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="toolbarengine_8cpp" kind="file" language="C++">
+    <compoundname>toolbarengine.cpp</compoundname>
+    <includes refid="toolbarengine_8h" local="yes">toolbarengine.h</includes>
+    <incdepgraph>
+      <node id="71465">
+        <label>animationdata.h</label>
+        <link refid="animationdata_8h_source"/>
+        <childnode refid="71466" relation="include">
+        </childnode>
+      </node>
+      <node id="71462">
+        <label>baseengine.h</label>
+        <link refid="baseengine_8h_source"/>
+      </node>
+      <node id="71463">
+        <label>datamap.h</label>
+        <link refid="datamap_8h_source"/>
+      </node>
+      <node id="71461">
+        <label>toolbarengine.h</label>
+        <link refid="toolbarengine_8h_source"/>
+        <childnode refid="71462" relation="include">
+        </childnode>
+        <childnode refid="71463" relation="include">
+        </childnode>
+        <childnode refid="71464" relation="include">
+        </childnode>
+      </node>
+      <node id="71460">
+        <label>mstyle/toolbarengine.cpp</label>
+        <link refid="toolbarengine_8cpp"/>
+        <childnode refid="71461" relation="include">
+        </childnode>
+      </node>
+      <node id="71464">
+        <label>toolbardata.h</label>
+        <link refid="toolbardata_8h_source"/>
+        <childnode refid="71465" relation="include">
+        </childnode>
+      </node>
+      <node id="71466">
+        <label>animation.h</label>
+        <link refid="animation_8h_source"/>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>oxygentoolbarengine.cpp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stores<sp/>event<sp/>filters<sp/>and<sp/>maps<sp/>widgets<sp/>to<sp/>timelines<sp/>for<sp/>animations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2009<sp/>Hugo<sp/>Pereira<sp/>Da<sp/>Costa<sp/>&lt;hugo.pereira@free.fr&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>of<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>deal<sp/>in<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>rights<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>sell<sp/>copies<sp/>of<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>all<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//<sp/>AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;toolbarengine.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_tool_bar_engine_1acae0abc03760f9aeef4cfb0e4f294f46" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tool_bar_engine_1acae0abc03760f9aeef4cfb0e4f294f46" kindref="member">ToolBarEngine::registerWidget</ref>(<sp/>QWidget*<sp/>widget<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!widget<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>create<sp/>new<sp/>data<sp/>class</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data_.contains(<sp/>widget<sp/>)<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>value(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_tool_bar_data" kindref="compound">ToolBarData</ref>(<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>widget,<sp/><ref refid="class_base_engine_1a7edb8da9d2fd6cca19682d1d089dfa4b" kindref="member">duration</ref>()<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value.data()-&gt;setFollowMouseDuration(<sp/><ref refid="class_tool_bar_engine_1a4a3614fc5ce38e90ff90267070558657" kindref="member">followMouseDuration</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>widget,<sp/>value,<sp/><ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>connect<sp/>destruction<sp/>signal</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>disconnect(<sp/>widget,<sp/>SIGNAL(<sp/>destroyed(<sp/>QObject*<sp/>)<sp/>),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<sp/><ref refid="class_tool_bar_engine_1adbc290dc205271df1ac2530cae814794" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/>)<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>connect(<sp/>widget,<sp/>SIGNAL(<sp/>destroyed(<sp/>QObject*<sp/>)<sp/>),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<sp/><ref refid="class_tool_bar_engine_1adbc290dc205271df1ac2530cae814794" kindref="member">unregisterWidget</ref>(<sp/>QObject*<sp/>)<sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_tool_bar_engine_1addd73bfc9641e45aa2c9045f63922774" refkind="member"><highlight class="normal"><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">BaseEngine::WidgetList</ref><sp/><ref refid="class_tool_bar_engine_1addd73bfc9641e45aa2c9045f63922774" kindref="member">ToolBarEngine::registeredWidgets</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_base_engine_1a2b0faec98a7eb68c91b502459c46a9c7" kindref="member">WidgetList</ref><sp/>out;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>typedef<sp/>is<sp/>needed<sp/>to<sp/>make<sp/>Krazy<sp/>happy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>Value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Value<sp/>&amp;<sp/>value,<sp/>data_<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>value<sp/>)<sp/>out.<ref refid="class_base_data_map_1a53569bfaf40c452795a9ff066a861fae" kindref="member">insert</ref>(<sp/>value.data()-&gt;target().data()<sp/>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_tool_bar_engine_1a48b06798103608878668bf752a3c5231" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_tool_bar_engine_1a48b06798103608878668bf752a3c5231" kindref="member">ToolBarEngine::isAnimated</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_animation_1ac48a8d074abd43dc3f6485353ba24e30" kindref="member">Animation::Pointer</ref><sp/>animation<sp/>=<sp/>data.data()-&gt;animation()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>animation.data()-&gt;isRunning();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="class_tool_bar_engine_1aa8f8e03f49741d6e35bfb83b81fdf83a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_tool_bar_engine_1aa8f8e03f49741d6e35bfb83b81fdf83a" kindref="member">ToolBarEngine::isFollowMouseAnimated</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!data<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/><ref refid="class_animation_1ac48a8d074abd43dc3f6485353ba24e30" kindref="member">Animation::Pointer</ref><sp/>animation<sp/>=<sp/>data.data()-&gt;progressAnimation()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>animation.data()-&gt;isRunning();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_tool_bar_engine_1af598666be233e20558bbd794d9d56d08" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_tool_bar_engine_1af598666be233e20558bbd794d9d56d08" kindref="member">ToolBarEngine::currentRect</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QRect();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;currentRect()<sp/>:<sp/>QRect();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="class_tool_bar_engine_1a6fc9fbc2ddb6bc70ed6a2298c463e776" refkind="member"><highlight class="normal">QRect<sp/><ref refid="class_tool_bar_engine_1a6fc9fbc2ddb6bc70ed6a2298c463e776" kindref="member">ToolBarEngine::animatedRect</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QRect();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;animatedRect()<sp/>:<sp/>QRect();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">//____________________________________________________________</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="class_tool_bar_engine_1af5a2dccf626356ea8eb9d330dbc07467" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_tool_bar_engine_1af5a2dccf626356ea8eb9d330dbc07467" kindref="member">ToolBarEngine::isTimerActive</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QObject*<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>!<ref refid="class_base_engine_1a5efdb171ab0faa9de68c8e6cce6526c4" kindref="member">enabled</ref>()<sp/>)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_data_map" kindref="compound">DataMap&lt;ToolBarData&gt;::Value</ref><sp/>data(<sp/>data_.<ref refid="class_base_data_map_1aab832c209b3ea4ce030130b0d7330184" kindref="member">find</ref>(<sp/></highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>data<sp/>?<sp/>data.data()-&gt;timer().isActive()<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+    </programlisting>
+    <location file="mstyle/toolbarengine.cpp"/>
+  </compounddef>
+</doxygen>

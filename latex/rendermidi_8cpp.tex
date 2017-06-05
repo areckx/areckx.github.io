@@ -1,0 +1,115 @@
+\hypertarget{rendermidi_8cpp}{}\section{libmscore/rendermidi.cpp File Reference}
+\label{rendermidi_8cpp}\index{libmscore/rendermidi.\+cpp@{libmscore/rendermidi.\+cpp}}
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include \char`\"{}score.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}volta.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}note.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glissando.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}instrument.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}part.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chord.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}trill.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}style.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}slur.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tie.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stafftext.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}repeat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}articulation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}arpeggio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}durationtype.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}measure.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tempo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}repeatlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}velo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dynamic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}navigate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pedal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}staff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hairpin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bend.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tremolo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}noteevent.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesizer/event.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}segment.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}undo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sym.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_ms_1_1_ornament_excursion}{Ms\+::\+Ornament\+Excursion}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_ms}{Ms}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_aa0113fb5382d48b0ab5b28d86aea4a7d}\label{namespace_ms_aa0113fb5382d48b0ab5b28d86aea4a7d}} 
+bool {\bfseries Ms\+::grace\+Notes\+Merged} (Chord $\ast$chord)
+\item 
+\mbox{\Hypertarget{namespace_ms_a0fecff8fa0df50bdbf526dc4a1fac678}\label{namespace_ms_a0fecff8fa0df50bdbf526dc4a1fac678}} 
+void {\bfseries Ms\+::render\+Tremolo} (Chord $\ast$chord, Q\+List$<$ Note\+Event\+List $>$ \&ell)
+\item 
+\mbox{\Hypertarget{namespace_ms_a20b83fa08a16ab48662fcbab7009d87b}\label{namespace_ms_a20b83fa08a16ab48662fcbab7009d87b}} 
+void {\bfseries Ms\+::render\+Arpeggio} (Chord $\ast$chord, Q\+List$<$ Note\+Event\+List $>$ \&ell)
+\item 
+\mbox{\Hypertarget{namespace_ms_aa92b76b9d772e8eb86cfeacceb35e9e0}\label{namespace_ms_aa92b76b9d772e8eb86cfeacceb35e9e0}} 
+int {\bfseries Ms\+::convert\+Line} (int line\+L2, Clef\+Type clefL, Clef\+Type clefR)
+\item 
+\mbox{\Hypertarget{namespace_ms_afbe881c63fa05a1d7453039b41a7b3c6}\label{namespace_ms_afbe881c63fa05a1d7453039b41a7b3c6}} 
+int {\bfseries Ms\+::convert\+Line} (int line\+L2, Note $\ast$noteL, Note $\ast$noteR)
+\item 
+\mbox{\Hypertarget{namespace_ms_ad5c1eeb4bf8db26d11b4c8f0c1be8b9c}\label{namespace_ms_ad5c1eeb4bf8db26d11b4c8f0c1be8b9c}} 
+int {\bfseries Ms\+::articulation\+Excursion} (Note $\ast$noteL, Note $\ast$noteR, int deltastep)
+\item 
+\mbox{\Hypertarget{namespace_ms_afa67a630748ae86ba70bc8d7cbecc75c}\label{namespace_ms_afa67a630748ae86ba70bc8d7cbecc75c}} 
+int {\bfseries Ms\+::total\+Tied\+Note\+Ticks} (Note $\ast$note)
+\item 
+\mbox{\Hypertarget{namespace_ms_a3559151bb979f9956f21eec27d40c3ad}\label{namespace_ms_a3559151bb979f9956f21eec27d40c3ad}} 
+bool {\bfseries Ms\+::render\+Note\+Articulation} (Note\+Event\+List $\ast$events, Note $\ast$note, bool chromatic, int requested\+Ticks\+Per\+Note, const vector$<$ int $>$ \&prefix, const vector$<$ int $>$ \&body, bool repeatp, bool sustainp, const vector$<$ int $>$ \&suffix, int fastest\+Freq=16, int slowest\+Freq=8)
+\item 
+\mbox{\Hypertarget{namespace_ms_ad0c9038099cf2b82abfabd920435001b}\label{namespace_ms_ad0c9038099cf2b82abfabd920435001b}} 
+bool {\bfseries Ms\+::render\+Note\+Articulation} (Note\+Event\+List $\ast$events, Note $\ast$note, bool chromatic, Sym\+Id articulation\+Type, M\+Score\+::\+Ornament\+Style ornament\+Style)
+\item 
+\mbox{\Hypertarget{namespace_ms_ac81a5b60731d4cf41618f405fd7e191e}\label{namespace_ms_ac81a5b60731d4cf41618f405fd7e191e}} 
+bool {\bfseries Ms\+::render\+Note\+Articulation} (Note\+Event\+List $\ast$events, Note $\ast$note, bool chromatic, Trill\+::\+Type trill\+Type, M\+Score\+::\+Ornament\+Style ornament\+Style)
+\item 
+\mbox{\Hypertarget{namespace_ms_ab849d53c2ed501ca3de9382f866f26bf}\label{namespace_ms_ab849d53c2ed501ca3de9382f866f26bf}} 
+bool {\bfseries Ms\+::note\+Has\+Glissando} (Note $\ast$note)
+\item 
+\mbox{\Hypertarget{namespace_ms_af753b99882381a2e24edb14dba58a2b6}\label{namespace_ms_af753b99882381a2e24edb14dba58a2b6}} 
+void {\bfseries Ms\+::render\+Glissando} (Note\+Event\+List $\ast$events, Note $\ast$notestart)
+\item 
+\mbox{\Hypertarget{namespace_ms_acabc4f5980acc74540fd0a7010555dcc}\label{namespace_ms_acabc4f5980acc74540fd0a7010555dcc}} 
+Trill $\ast$ {\bfseries Ms\+::find\+First\+Trill} (Chord $\ast$chord)
+\item 
+\mbox{\Hypertarget{namespace_ms_a094b89f0584ef6777eda583966fda9c3}\label{namespace_ms_a094b89f0584ef6777eda583966fda9c3}} 
+void {\bfseries Ms\+::render\+Chord\+Articulation} (Chord $\ast$chord, Q\+List$<$ Note\+Event\+List $>$ \&ell, int \&gate\+Time)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_aa06cc5dbf93f45890ffb983f8d5d71ab}\label{namespace_ms_aa06cc5dbf93f45890ffb983f8d5d71ab}} 
+set$<$ M\+Score\+::\+Ornament\+Style $>$ {\bfseries Ms\+::baroque} = \{M\+Score\+::\+Ornament\+Style\+::\+B\+A\+R\+O\+Q\+UE\}
+\item 
+\mbox{\Hypertarget{namespace_ms_abaffdcfe646b3923d1b4750ed59339da}\label{namespace_ms_abaffdcfe646b3923d1b4750ed59339da}} 
+set$<$ M\+Score\+::\+Ornament\+Style $>$ {\bfseries Ms\+::defstyle} = \{M\+Score\+::\+Ornament\+Style\+::\+D\+E\+F\+A\+U\+LT\}
+\item 
+\mbox{\Hypertarget{namespace_ms_a8e3db5fafc8c6d736aa639bd585a00af}\label{namespace_ms_a8e3db5fafc8c6d736aa639bd585a00af}} 
+set$<$ M\+Score\+::\+Ornament\+Style $>$ {\bfseries Ms\+::any}
+\item 
+\mbox{\Hypertarget{namespace_ms_aa7bafbe9e13e3c67a034e1d27bf908db}\label{namespace_ms_aa7bafbe9e13e3c67a034e1d27bf908db}} 
+int {\bfseries Ms\+::\+\_\+16th} = M\+Score\+::division / 4
+\item 
+\mbox{\Hypertarget{namespace_ms_a32b7aa9646def928820a2e382c34ebb5}\label{namespace_ms_a32b7aa9646def928820a2e382c34ebb5}} 
+int {\bfseries Ms\+::\+\_\+32nd} = \+\_\+16th / 2
+\item 
+vector$<$ Ornament\+Excursion $>$ {\bfseries Ms\+::excursions}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+render score into event list 

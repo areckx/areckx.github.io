@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_tile_set" kind="class" language="C++" prot="public">
+    <compoundname>TileSet</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6" prot="public" static="no">
+        <name>Tile</name>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a348402ca3ec519744e31cc0f23d4583d" prot="public">
+          <name>Top</name>
+          <initializer>= 0x1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a0dc1d8cfa2253a479ee28c13a2219fe9" prot="public">
+          <name>Left</name>
+          <initializer>= 0x2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6af4c71628504cf754a9646023586aae08" prot="public">
+          <name>Bottom</name>
+          <initializer>= 0x4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6ae0f3320d92d6174475eaca7fd6d8f059" prot="public">
+          <name>Right</name>
+          <initializer>= 0x8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6ac3c71c8daf81dd1644d457ac4fcd5884" prot="public">
+          <name>Center</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a91ede24d99927d26d7bedadb7690e97e" prot="public">
+          <name>TopLeft</name>
+          <initializer>= Top | Left</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6af619e71ef67f9e096635ba6ebc0cf46b" prot="public">
+          <name>TopRight</name>
+          <initializer>= Top | Right</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a9d31214b9b77e19fa2e38767ffa09fc9" prot="public">
+          <name>BottomLeft</name>
+          <initializer>= Bottom | Left</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a71a0cafb08095309f99af6b4c489305e" prot="public">
+          <name>BottomRight</name>
+          <initializer>= Bottom | Right</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6adb451b32e6f83e4ec2edf783a7ec5221" prot="public">
+          <name>Ring</name>
+          <initializer>= Top | Left | Bottom | Right</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a3f3d2898292c24e1fe9036b715f57bd8" prot="public">
+          <name>Horizontal</name>
+          <initializer>= Left | Right | Center</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a494347847b56c30edc2226a82d38ad06" prot="public">
+          <name>Vertical</name>
+          <initializer>= Top | Bottom | Center</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6aa6e8b8c085c7e80ceea9e1cfe2bc7686" prot="public">
+          <name>Full</name>
+          <initializer>= Ring | Center</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flags specifying what sides to draw in ::render. Corners are drawn when the sides forming that corner are drawn, e.g. Top|Left draws the top-center, center-left, and top-left chunks. The center-center chunk is only drawn when Center is requested. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="90" column="1" bodyfile="mstyle/tileset.h" bodystart="90" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tile_set_1a05bbd1659f53fbbfef60c5d965fb9e21" prot="private" static="no" mutable="no">
+        <type>PixmapList</type>
+        <definition>PixmapList TileSet::_pixmaps</definition>
+        <argsstring></argsstring>
+        <name>_pixmaps</name>
+        <briefdescription>
+<para>pixmap arry </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="38" column="1" bodyfile="mstyle/tileset.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tile_set_1a7c746ea9f0d4f19ce7a8178727339143" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TileSet::_w1</definition>
+        <argsstring></argsstring>
+        <name>_w1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="41" column="1" bodyfile="mstyle/tileset.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tile_set_1af82bc9dd962a2c2619a2e6e491401626" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TileSet::_h1</definition>
+        <argsstring></argsstring>
+        <name>_h1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="42" column="1" bodyfile="mstyle/tileset.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tile_set_1a525123207e97018294667cfc729d47c9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TileSet::_w3</definition>
+        <argsstring></argsstring>
+        <name>_w3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="43" column="1" bodyfile="mstyle/tileset.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tile_set_1ab3987847f42e61769220474e5313d24d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TileSet::_h3</definition>
+        <argsstring></argsstring>
+        <name>_h3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="44" column="1" bodyfile="mstyle/tileset.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_tile_set_1ac91236cb540398776d8bfa79b2ca00b1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TileSet::initPixmap</definition>
+        <argsstring>(PixmapList &amp;, const QPixmap &amp;, int w, int h, const QRect &amp;)</argsstring>
+        <name>initPixmap</name>
+        <param>
+          <type>PixmapList &amp;</type>
+          <defname>pixmaps</defname>
+        </param>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <defname>pix</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const QRect &amp;</type>
+          <defname>rect</defname>
+        </param>
+        <briefdescription>
+<para>initialize pixmap </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="48" column="1" bodyfile="mstyle/tileset.cpp" bodystart="27" bodyend="44"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tile_set_1a9f3492dc1a9648c6a3077003508dad7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TileSet::TileSet</definition>
+        <argsstring>(const QPixmap &amp;, int w1, int h1, int w2, int h2)</argsstring>
+        <name>TileSet</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <defname>pix</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a <ref refid="class_tile_set" kindref="compound">TileSet</ref> from a pixmap. The size of the bottom/right chunks is whatever is left over from the other chunks, whose size is specified in the required parameters.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of the left chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the top chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of the not-left-or-right chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the not-top-or-bottom chunks </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="61" column="1" bodyfile="mstyle/tileset.cpp" bodystart="55" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1a45c45a34afcdede69b6a10aa4d3a703f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TileSet::TileSet</definition>
+        <argsstring>(const QPixmap &amp;pix, int w1, int h1, int w3, int h3, int x2, int y2, int w2, int h2)</argsstring>
+        <name>TileSet</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>pix</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w3</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h3</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>w2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a <ref refid="class_tile_set" kindref="compound">TileSet</ref> from a pixmap. The size of the top/left and bottom/right chunks is specified, with the middle chunks created from the specified portion of the pixmap. This allows the middle chunks to overlap the outer chunks (or to not use all pixels). The top/left and bottom/right chunks are carved out of the corners of the pixmap.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of the left chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the top chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of the right chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of bottom chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>x-coordinate of the top of the not-left-or-right chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>y-coordinate of the left of the not-top-or-bottom chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>w2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>width of the not-left-or-right chunks </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>height of the not-top-or-bottom chunks </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="79" column="1" bodyfile="mstyle/tileset.cpp" bodystart="82" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1a10830bfd0dd294b432520391251600ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TileSet::TileSet</definition>
+        <argsstring>()</argsstring>
+        <name>TileSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="81" column="1" bodyfile="mstyle/tileset.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1a860ef52a8d4d62e0c78da669a88958c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual TileSet::~TileSet</definition>
+        <argsstring>()</argsstring>
+        <name>~TileSet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="82" column="1" bodyfile="mstyle/tileset.h" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1aa2b8c89c3836d601c95e367795386a77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TileSet::render</definition>
+        <argsstring>(const QRect &amp;, QPainter *, Tiles=Ring) const</argsstring>
+        <name>render</name>
+        <param>
+          <type>const QRect &amp;</type>
+          <defname>r</defname>
+        </param>
+        <param>
+          <type>QPainter *</type>
+          <defname>p</defname>
+        </param>
+        <param>
+          <type>Tiles</type>
+          <defname>t</defname>
+          <defval>Ring</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fills the specified rect with tiled chunks. Corners are never tiled, edges are tiled in one direction, and the center chunk is tiled in both directions. Partial tiles are used as needed so that the entire rect is perfectly filled. Filling is performed as if all chunks are being drawn. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="113" column="1" bodyfile="mstyle/tileset.cpp" bodystart="119" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1a96c63a5ab8c70d1520d402419af0a7c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QSize</type>
+        <definition>QSize TileSet::size</definition>
+        <argsstring>() const</argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>return size associated to this tileset </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="116" column="1" bodyfile="mstyle/tileset.h" bodystart="116" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tile_set_1aaaeeb5e032d06c059d17ea627b5438ea" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TileSet::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <briefdescription>
+<para>is valid </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mstyle/tileset.h" line="121" column="1" bodyfile="mstyle/tileset.h" bodystart="121" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mstyle/tileset.h" line="36" column="1" bodyfile="mstyle/tileset.h" bodystart="36" bodyend="125"/>
+    <listofallmembers>
+      <member refid="class_tile_set_1af82bc9dd962a2c2619a2e6e491401626" prot="private" virt="non-virtual"><scope>TileSet</scope><name>_h1</name></member>
+      <member refid="class_tile_set_1ab3987847f42e61769220474e5313d24d" prot="private" virt="non-virtual"><scope>TileSet</scope><name>_h3</name></member>
+      <member refid="class_tile_set_1a05bbd1659f53fbbfef60c5d965fb9e21" prot="private" virt="non-virtual"><scope>TileSet</scope><name>_pixmaps</name></member>
+      <member refid="class_tile_set_1a7c746ea9f0d4f19ce7a8178727339143" prot="private" virt="non-virtual"><scope>TileSet</scope><name>_w1</name></member>
+      <member refid="class_tile_set_1a525123207e97018294667cfc729d47c9" prot="private" virt="non-virtual"><scope>TileSet</scope><name>_w3</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6af4c71628504cf754a9646023586aae08" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Bottom</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a9d31214b9b77e19fa2e38767ffa09fc9" prot="public" virt="non-virtual"><scope>TileSet</scope><name>BottomLeft</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a71a0cafb08095309f99af6b4c489305e" prot="public" virt="non-virtual"><scope>TileSet</scope><name>BottomRight</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6ac3c71c8daf81dd1644d457ac4fcd5884" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Center</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6aa6e8b8c085c7e80ceea9e1cfe2bc7686" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Full</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a3f3d2898292c24e1fe9036b715f57bd8" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Horizontal</name></member>
+      <member refid="class_tile_set_1ac91236cb540398776d8bfa79b2ca00b1" prot="protected" virt="non-virtual"><scope>TileSet</scope><name>initPixmap</name></member>
+      <member refid="class_tile_set_1aaaeeb5e032d06c059d17ea627b5438ea" prot="public" virt="non-virtual"><scope>TileSet</scope><name>isValid</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a0dc1d8cfa2253a479ee28c13a2219fe9" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Left</name></member>
+      <member refid="class_tile_set_1aa2b8c89c3836d601c95e367795386a77" prot="public" virt="non-virtual"><scope>TileSet</scope><name>render</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6ae0f3320d92d6174475eaca7fd6d8f059" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Right</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6adb451b32e6f83e4ec2edf783a7ec5221" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Ring</name></member>
+      <member refid="class_tile_set_1a96c63a5ab8c70d1520d402419af0a7c4" prot="public" virt="non-virtual"><scope>TileSet</scope><name>size</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Tile</name></member>
+      <member refid="class_tile_set_1a9f3492dc1a9648c6a3077003508dad7c" prot="public" virt="non-virtual"><scope>TileSet</scope><name>TileSet</name></member>
+      <member refid="class_tile_set_1a45c45a34afcdede69b6a10aa4d3a703f" prot="public" virt="non-virtual"><scope>TileSet</scope><name>TileSet</name></member>
+      <member refid="class_tile_set_1a10830bfd0dd294b432520391251600ce" prot="public" virt="non-virtual"><scope>TileSet</scope><name>TileSet</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a348402ca3ec519744e31cc0f23d4583d" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Top</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a91ede24d99927d26d7bedadb7690e97e" prot="public" virt="non-virtual"><scope>TileSet</scope><name>TopLeft</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6af619e71ef67f9e096635ba6ebc0cf46b" prot="public" virt="non-virtual"><scope>TileSet</scope><name>TopRight</name></member>
+      <member refid="class_tile_set_1a6055c65e4828f7fcb768403b3ad91ab6a494347847b56c30edc2226a82d38ad06" prot="public" virt="non-virtual"><scope>TileSet</scope><name>Vertical</name></member>
+      <member refid="class_tile_set_1a860ef52a8d4d62e0c78da669a88958c0" prot="public" virt="virtual"><scope>TileSet</scope><name>~TileSet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

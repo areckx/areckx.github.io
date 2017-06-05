@@ -1,0 +1,558 @@
+.TH "XmlStreamWriter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamWriter \- The \fBXmlStreamWriter\fP class provides an XML writer with a simple streaming API\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlStreamWriter\fP ()"
+.br
+.ti -1c
+.RI "\fBXmlStreamWriter\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "\fBXmlStreamWriter\fP (QByteArray *array)"
+.br
+.ti -1c
+.RI "\fBXmlStreamWriter\fP (QString *string)"
+.br
+.ti -1c
+.RI "\fB~XmlStreamWriter\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDevice\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "QIODevice * \fBdevice\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCodec\fP (QTextCodec *\fBcodec\fP)"
+.br
+.ti -1c
+.RI "void \fBsetCodec\fP (const char *codecName)"
+.br
+.ti -1c
+.RI "QTextCodec * \fBcodec\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAutoFormatting\fP (bool)"
+.br
+.ti -1c
+.RI "bool \fBautoFormatting\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAutoFormattingIndent\fP (int spacesOrTabs)"
+.br
+.ti -1c
+.RI "int \fBautoFormattingIndent\fP () const"
+.br
+.RI "the number of spaces or tabs used for indentation when auto-formatting is enabled\&. Positive numbers indicate spaces, negative numbers tabs\&. "
+.ti -1c
+.RI "void \fBwriteAttribute\fP (const QString &qualifiedName, const QString &value)"
+.br
+.ti -1c
+.RI "void \fBwriteAttribute\fP (const QString &namespaceUri, const QString &name, const QString &value)"
+.br
+.ti -1c
+.RI "void \fBwriteAttribute\fP (const \fBXmlStreamAttribute\fP &attribute)"
+.br
+.ti -1c
+.RI "void \fBwriteAttributes\fP (const \fBXmlStreamAttributes\fP &attributes)"
+.br
+.ti -1c
+.RI "void \fBwriteCDATA\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBwriteCharacters\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBwriteComment\fP (const QString &text)"
+.br
+.ti -1c
+.RI "void \fBwriteDTD\fP (const QString &dtd)"
+.br
+.ti -1c
+.RI "void \fBwriteEmptyElement\fP (const QString &qualifiedName)"
+.br
+.ti -1c
+.RI "void \fBwriteEmptyElement\fP (const QString &namespaceUri, const QString &name)"
+.br
+.ti -1c
+.RI "void \fBwriteTextElement\fP (const QString &qualifiedName, const QString &text)"
+.br
+.ti -1c
+.RI "void \fBwriteTextElement\fP (const QString &namespaceUri, const QString &name, const QString &text)"
+.br
+.ti -1c
+.RI "void \fBwriteEndDocument\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteEndElement\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteEntityReference\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBwriteNamespace\fP (const QString &namespaceUri, const QString &prefix=QString())"
+.br
+.ti -1c
+.RI "void \fBwriteDefaultNamespace\fP (const QString &namespaceUri)"
+.br
+.ti -1c
+.RI "void \fBwriteProcessingInstruction\fP (const QString &target, const QString &data=QString())"
+.br
+.ti -1c
+.RI "void \fBwriteStartDocument\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteStartDocument\fP (const QString &version)"
+.br
+.ti -1c
+.RI "void \fBwriteStartDocument\fP (const QString &version, bool standalone)"
+.br
+.ti -1c
+.RI "void \fBwriteStartElement\fP (const QString &qualifiedName)"
+.br
+.ti -1c
+.RI "void \fBwriteStartElement\fP (const QString &namespaceUri, const QString &name)"
+.br
+.ti -1c
+.RI "void \fBwriteCurrentToken\fP (const \fBXmlStreamReader\fP &reader)"
+.br
+.ti -1c
+.RI "bool \fBhasError\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBXmlStreamWriter\fP class provides an XML writer with a simple streaming API\&. 
+
+QtCore 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.3 
+.RE
+.PP
+\fBXmlStreamWriter\fP is the counterpart to \fBXmlStreamReader\fP for writing XML\&. Like its related class, it operates on a QIODevice specified with \fBsetDevice()\fP\&. The API is simple and straightforward: for every XML token or event you want to write, the writer provides a specialized function\&.
+.PP
+You start a document with \fBwriteStartDocument()\fP and end it with \fBwriteEndDocument()\fP\&. This will implicitly close all remaining open tags\&.
+.PP
+Element tags are opened with \fBwriteStartElement()\fP followed by \fBwriteAttribute()\fP or \fBwriteAttributes()\fP, element content, and then \fBwriteEndElement()\fP\&. A shorter form \fBwriteEmptyElement()\fP can be used to write empty elements, followed by \fBwriteAttributes()\fP\&.
+.PP
+Element content consists of either characters, entity references or nested elements\&. It is written with \fBwriteCharacters()\fP, which also takes care of escaping all forbidden characters and character sequences, \fBwriteEntityReference()\fP, or subsequent calls to \fBwriteStartElement()\fP\&. A convenience method \fBwriteTextElement()\fP can be used for writing terminal elements that contain nothing but text\&.
+.PP
+The following abridged code snippet shows the basic use of the class to write formatted XML with indentation:
+.PP
+.PP
+.nf
+.fi
+.PP
+ 
+.PP
+.nf
+
+.fi
+.PP
+ 
+.PP
+.nf
+
+.fi
+.PP
+ \fBXmlStreamWriter\fP takes care of prefixing namespaces, all you have to do is specify the \fCnamespaceUri\fP when writing elements or attributes\&. If you must conform to certain prefixes, you can force the writer to use them by declaring the namespaces manually with either \fBwriteNamespace()\fP or \fBwriteDefaultNamespace()\fP\&. Alternatively, you can bypass the stream writer's namespace support and use overloaded methods that take a qualified name instead\&. The namespace \fIhttp://www.w3.org/XML/1998/namespace\fP is implicit and mapped to the prefix \fIxml\fP\&.
+.PP
+The stream writer can automatically format the generated XML data by adding line-breaks and indentation to empty sections between elements, making the XML data more readable for humans and easier to work with for most source code management systems\&. The feature can be turned on with the  autoFormatting property, and customized with the  autoFormattingIndent property\&.
+.PP
+Other functions are \fBwriteCDATA()\fP, \fBwriteComment()\fP, \fBwriteProcessingInstruction()\fP, and \fBwriteDTD()\fP\&. Chaining of XML streams is supported with \fBwriteCurrentToken()\fP\&.
+.PP
+By default, \fBXmlStreamWriter\fP encodes XML in UTF-8\&. Different encodings can be enforced using \fBsetCodec()\fP\&.
+.PP
+If an error occurs while writing to the underlying device, \fBhasError()\fP starts returning true and subsequent writes are ignored\&.
+.PP
+The {\fBXmlStream\fP Bookmarks Example} illustrates how to use a stream writer to write an XML bookmark file (XBEL) that was previously read in by a \fBXmlStreamReader\fP\&. 
+.PP
+Definition at line 350 of file xmlstream\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "XmlStreamWriter::XmlStreamWriter ()"
+Constructs a stream writer\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3195 of file xmlstream\&.cpp\&.
+.SS "XmlStreamWriter::XmlStreamWriter (QIODevice * device)\fC [explicit]\fP"
+Constructs a stream writer that writes into \fIdevice\fP; 
+.PP
+Definition at line 3203 of file xmlstream\&.cpp\&.
+.SS "XmlStreamWriter::XmlStreamWriter (QByteArray * array)\fC [explicit]\fP"
+Constructs a stream writer that writes into \fIarray\fP\&. This is the same as creating an xml writer that operates on a QBuffer device which in turn operates on \fIarray\fP\&. 
+.PP
+Definition at line 3214 of file xmlstream\&.cpp\&.
+.SS "XmlStreamWriter::XmlStreamWriter (QString * string)\fC [explicit]\fP"
+Constructs a stream writer that writes into \fIstring\fP\&. 
+.PP
+Definition at line 3226 of file xmlstream\&.cpp\&.
+.SS "XmlStreamWriter::~XmlStreamWriter ()"
+Destructor\&. 
+.PP
+Definition at line 3236 of file xmlstream\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool XmlStreamWriter::autoFormatting () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4 the auto-formatting flag of the stream writer
+.RE
+.PP
+This property controls whether or not the stream writer automatically formats the generated XML data\&. If enabled, the writer automatically adds line-breaks and indentation to empty sections between elements (ignorable whitespace)\&. The main purpose of auto-formatting is to split the data into several lines, and to increase readability for a human reader\&. The indentation depth can be controlled through the  autoFormattingIndent property\&.
+.PP
+By default, auto-formatting is disabled\&.
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Returns \fCtrue\fP if auto formattting is enabled, otherwise \fCfalse\fP\&. 
+.PP
+Definition at line 3356 of file xmlstream\&.cpp\&.
+.SS "int XmlStreamWriter::autoFormattingIndent () const"
+
+.PP
+the number of spaces or tabs used for indentation when auto-formatting is enabled\&. Positive numbers indicate spaces, negative numbers tabs\&. 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+The default indentation is 4\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBautoFormatting\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3382 of file xmlstream\&.cpp\&.
+.SS "QTextCodec * XmlStreamWriter::codec () const"
+Returns the codec that is currently assigned to the stream\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCodec()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3314 of file xmlstream\&.cpp\&.
+.SS "QIODevice * XmlStreamWriter::device () const"
+Returns the current device associated with the \fBXmlStreamWriter\fP, or 0 if no device has been assigned\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3266 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamWriter::hasError () const"
+Returns \fCtrue\fP if the stream failed to write to the underlying device\&.
+.PP
+The error status is never reset\&. Writes happening after the error occurred are ignored, even if the error condition is cleared\&. 
+.PP
+Definition at line 3394 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::setAutoFormatting (bool enable)"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Enables auto formatting if \fIenable\fP is \fCtrue\fP, otherwise disables it\&.
+.PP
+The default value is \fCfalse\fP\&. 
+.PP
+Definition at line 3345 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::setCodec (QTextCodec * codec)"
+Sets the codec for this stream to \fIcodec\fP\&. The codec is used for encoding any data that is written\&. By default, \fBXmlStreamWriter\fP uses UTF-8\&.
+.PP
+The encoding information is stored in the initial xml tag which gets written when you call \fBwriteStartDocument()\fP\&. Call this function before calling \fBwriteStartDocument()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcodec()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3285 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::setCodec (const char * codecName)"
+Sets the codec for this stream to the QTextCodec for the encoding specified by \fIcodecName\fP\&. Common values for \fCcodecName\fP include 'ISO 8859-1', 'UTF-8', and 'UTF-16'\&. If the encoding isn't recognized, nothing happens\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QTextCodec::codecForName() 
+.RE
+.PP
+
+.PP
+Definition at line 3304 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::setDevice (QIODevice * device)"
+Sets the current device to \fIdevice\fP\&. If you want the stream to write into a QByteArray, you can create a QBuffer device\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBdevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3247 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeAttribute (const QString & qualifiedName, const QString & value)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Writes an attribute with \fIqualifiedName\fP and \fIvalue\fP\&.
+.PP
+This function can only be called after \fBwriteStartElement()\fP before any content is written, or after \fBwriteEmptyElement()\fP\&. 
+.PP
+Definition at line 3408 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeAttribute (const QString & namespaceUri, const QString & name, const QString & value)"
+Writes an attribute with \fIname\fP and \fIvalue\fP, prefixed for the specified \fInamespaceUri\fP\&. If the namespace has not been declared yet, \fBXmlStreamWriter\fP will generate a namespace declaration for it\&.
+.PP
+This function can only be called after \fBwriteStartElement()\fP before any content is written, or after \fBwriteEmptyElement()\fP\&. 
+.PP
+Definition at line 3428 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeAttribute (const \fBXmlStreamAttribute\fP & attribute)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Writes the \fIattribute\fP\&.
+.PP
+This function can only be called after \fBwriteStartElement()\fP before any content is written, or after \fBwriteEmptyElement()\fP\&. 
+.PP
+Definition at line 3453 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeAttributes (const \fBXmlStreamAttributes\fP & attributes)"
+Writes the attribute vector \fIattributes\fP\&. If a namespace referenced in an attribute not been declared yet, \fBXmlStreamWriter\fP will generate a namespace declaration for it\&.
+.PP
+This function can only be called after \fBwriteStartElement()\fP before any content is written, or after \fBwriteEmptyElement()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteAttribute()\fP, \fBwriteNamespace()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3474 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeCDATA (const QString & text)"
+Writes \fItext\fP as CDATA section\&. If \fItext\fP contains the forbidden character sequence ']]>', it is split into different CDATA sections\&.
+.PP
+This function mainly exists for completeness\&. Normally you should not need use it, because \fBwriteCharacters()\fP automatically escapes all non-content characters\&. 
+.PP
+Definition at line 3492 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeCharacters (const QString & text)"
+Writes \fItext\fP\&. The characters '<', '&', and '\\'' are escaped as entity
+references '<', '&, and '&quot;'\&. To avoid the forbidden sequence ']]>', '>' is also escaped as '&gt;'\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteEntityReference()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3510 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeComment (const QString & text)"
+Writes \fItext\fP as XML comment, where \fItext\fP must not contain the forbidden sequence '--' or end with '-'\&. Note that XML does not provide any way to escape '-' in a comment\&. 
+.PP
+Definition at line 3522 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeCurrentToken (const \fBXmlStreamReader\fP & reader)"
+Writes the current state of the \fIreader\fP\&. All possible valid states are supported\&.
+.PP
+The purpose of this function is to support chained processing of XML data\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBXmlStreamReader::tokenType()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3877 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeDefaultNamespace (const QString & namespaceUri)"
+Writes a default namespace declaration for \fInamespaceUri\fP\&.
+.PP
+If \fBwriteStartElement()\fP or \fBwriteEmptyElement()\fP was called, the declaration applies to the current element; otherwise it applies to the next child element\&.
+.PP
+Note that the namespaces \fIhttp://www.w3.org/XML/1998/namespace\fP (bound to \fIxmlns\fP) and \fIhttp://www.w3.org/2000/xmlns/\fP (bound to \fIxml\fP) by definition cannot be declared as default\&. 
+.PP
+Definition at line 3721 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeDTD (const QString & dtd)"
+Writes a DTD section\&. The \fIdtd\fP represents the entire doctypedecl production from the XML 1\&.0 specification\&. 
+.PP
+Definition at line 3538 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeEmptyElement (const QString & qualifiedName)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Writes an empty element with qualified name \fIqualifiedName\fP\&. Subsequent calls to \fBwriteAttribute()\fP will add attributes to this element\&. 
+.PP
+Definition at line 3555 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeEmptyElement (const QString & namespaceUri, const QString & name)"
+Writes an empty element with \fIname\fP, prefixed for the specified \fInamespaceUri\fP\&. If the namespace has not been declared, \fBXmlStreamWriter\fP will generate a namespace declaration for it\&. Subsequent calls to \fBwriteAttribute()\fP will add attributes to this element\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteNamespace()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3571 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeEndDocument ()"
+Closes all remaining open start elements and writes a newline\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteStartDocument()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3618 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeEndElement ()"
+Closes the previous start element\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteStartElement()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3631 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeEntityReference (const QString & name)"
+Writes the entity reference \fIname\fP to the stream, as '&\\a{name};'\&. 
+.PP
+Definition at line 3667 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeNamespace (const QString & namespaceUri, const QString & prefix = \fCQString()\fP)"
+Writes a namespace declaration for \fInamespaceUri\fP with \fIprefix\fP\&. If \fIprefix\fP is empty, \fBXmlStreamWriter\fP assigns a unique prefix consisting of the letter 'n' followed by a number\&.
+.PP
+If \fBwriteStartElement()\fP or \fBwriteEmptyElement()\fP was called, the declaration applies to the current element; otherwise it applies to the next child element\&.
+.PP
+Note that the prefix \fIxml\fP is both predefined and reserved for \fIhttp://www.w3.org/XML/1998/namespace,\fP which in turn cannot be bound to any other prefix\&. The prefix \fIxmlns\fP and its URI \fIhttp://www.w3.org/2000/xmlns/\fP are used for the namespace mechanism itself and thus completely forbidden in declarations\&. 
+.PP
+Definition at line 3692 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeProcessingInstruction (const QString & target, const QString & data = \fCQString()\fP)"
+Writes an XML processing instruction with \fItarget\fP and \fIdata\fP, where \fIdata\fP must not contain the sequence '?>'\&. 
+.PP
+Definition at line 3738 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeStartDocument ()"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Writes a document start with XML version number '1\&.0'\&. This also writes the encoding information\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteEndDocument()\fP, \fBsetCodec()\fP 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5 
+.RE
+.PP
+
+.PP
+Definition at line 3763 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeStartDocument (const QString & version)"
+Writes a document start with the XML version number \fIversion\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteEndDocument()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3774 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeStartDocument (const QString & version, bool standalone)"
+Writes a document start with the XML version number \fIversion\fP and a standalone attribute \fIstandalone\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteEndDocument()\fP 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5 
+.RE
+.PP
+
+.PP
+Definition at line 3797 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeStartElement (const QString & qualifiedName)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+Writes a start element with \fIqualifiedName\fP\&. Subsequent calls to \fBwriteAttribute()\fP will add attributes to this element\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteEndElement()\fP, \fBwriteEmptyElement()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3825 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeStartElement (const QString & namespaceUri, const QString & name)"
+Writes a start element with \fIname\fP, prefixed for the specified \fInamespaceUri\fP\&. If the namespace has not been declared yet, \fBXmlStreamWriter\fP will generate a namespace declaration for it\&. Subsequent calls to \fBwriteAttribute()\fP will add attributes to this element\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBwriteNamespace()\fP, \fBwriteEndElement()\fP, \fBwriteEmptyElement()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3841 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeTextElement (const QString & qualifiedName, const QString & text)"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&. Writes a text element with \fIqualifiedName\fP and \fItext\fP\&.
+.PP
+This is a convenience function equivalent to: 
+.PP
+.nf
+
+.fi
+.PP
+
+.PP
+Definition at line 3588 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamWriter::writeTextElement (const QString & namespaceUri, const QString & name, const QString & text)"
+Writes a text element with \fIname\fP, prefixed for the specified \fInamespaceUri\fP, and \fItext\fP\&. If the namespace has not been declared, \fBXmlStreamWriter\fP will generate a namespace declaration for it\&.
+.PP
+This is a convenience function equivalent to: 
+.PP
+.nf
+
+.fi
+.PP
+
+.PP
+Definition at line 3605 of file xmlstream\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

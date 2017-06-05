@@ -1,0 +1,77 @@
+.TH "x509_store_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+x509_store_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509_OBJECT\fP) *objs"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509_LOOKUP\fP) *get_cert_methods"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509\fP) *(*lookup_certs)(\fBX509_STORE_CTX\fP *ctx"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509_CRL\fP) *(*lookup_crls)(\fBX509_STORE_CTX\fP *ctx"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBcache\fP"
+.br
+.ti -1c
+.RI "\fBX509_VERIFY_PARAM\fP * \fBparam\fP"
+.br
+.ti -1c
+.RI "int(* \fBverify\fP )(\fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBverify_cb\fP )(int ok, \fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBget_issuer\fP )(\fBX509\fP **issuer, \fBX509_STORE_CTX\fP *ctx, \fBX509\fP *x)"
+.br
+.ti -1c
+.RI "int(* \fBcheck_issued\fP )(\fBX509_STORE_CTX\fP *ctx, \fBX509\fP *x, \fBX509\fP *issuer)"
+.br
+.ti -1c
+.RI "int(* \fBcheck_revocation\fP )(\fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "int(* \fBget_crl\fP )(\fBX509_STORE_CTX\fP *ctx, \fBX509_CRL\fP **crl, \fBX509\fP *x)"
+.br
+.ti -1c
+.RI "int(* \fBcheck_crl\fP )(\fBX509_STORE_CTX\fP *ctx, \fBX509_CRL\fP *crl)"
+.br
+.ti -1c
+.RI "int(* \fBcert_crl\fP )(\fBX509_STORE_CTX\fP *ctx, \fBX509_CRL\fP *crl, \fBX509\fP *x)"
+.br
+.ti -1c
+.RI "\fBX509_NAME\fP * \fBnm\fP"
+.br
+.ti -1c
+.RI "int(* \fBcleanup\fP )(\fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "\fBCRYPTO_EX_DATA\fP \fBex_data\fP"
+.br
+.ti -1c
+.RI "int \fBreferences\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 183 of file x509_vfy\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

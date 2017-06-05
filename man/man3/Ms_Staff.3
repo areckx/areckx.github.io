@@ -1,0 +1,398 @@
+.TH "Ms::Staff" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Staff \- Global staff data not directly related to drawing\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <staff\&.h>\fP
+.PP
+Inherits \fBMs::ScoreElement\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBHideMode\fP { \fBAUTO\fP, \fBALWAYS\fP, \fBNEVER\fP, \fBINSTRUMENT\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStaff\fP (\fBScore\fP *score=0)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (const \fBInstrumentTemplate\fP *, const \fBStaffType\fP *staffType, int)"
+.br
+.ti -1c
+.RI "void \fBinitFromStaffType\fP (const \fBStaffType\fP *staffType)"
+.br
+.ti -1c
+.RI "void \fBinit\fP (const \fBStaff\fP *)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBisTop\fP () const"
+.br
+.ti -1c
+.RI "QString \fBpartName\fP () const"
+.br
+.ti -1c
+.RI "int \fBrstaff\fP () const"
+.br
+.ti -1c
+.RI "int \fBidx\fP () const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "\fBPart\fP * \fBpart\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPart\fP (\fBPart\fP *p)"
+.br
+.ti -1c
+.RI "BracketType \fBbracketType\fP (int idx) const"
+.br
+.ti -1c
+.RI "int \fBbracketSpan\fP (int idx) const"
+.br
+.ti -1c
+.RI "void \fBsetBracketType\fP (int idx, BracketType val)"
+.br
+.ti -1c
+.RI "void \fBsetBracketSpan\fP (int idx, int val)"
+.br
+.ti -1c
+.RI "void \fBswapBracket\fP (int oldIdx, int newIdx)"
+.br
+.ti -1c
+.RI "void \fBaddBracket\fP (\fBBracketItem\fP *)"
+.br
+.ti -1c
+.RI "const QList< \fBBracketItem\fP * > & \fBbrackets\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBBracketItem\fP * > & \fBbrackets\fP ()"
+.br
+.ti -1c
+.RI "void \fBcleanupBrackets\fP ()"
+.br
+.ti -1c
+.RI "int \fBbracketLevels\fP () const"
+.br
+.ti -1c
+.RI "\fBClefList\fP & \fBclefList\fP ()"
+.br
+.ti -1c
+.RI "\fBClefTypeList\fP \fBclefType\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBClefTypeList\fP \fBdefaultClefType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDefaultClefType\fP (const \fBClefTypeList\fP &l)"
+.br
+.ti -1c
+.RI "ClefType \fBclef\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fBnextClefTick\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetClef\fP (\fBClef\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveClef\fP (\fBClef\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddTimeSig\fP (\fBTimeSig\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveTimeSig\fP (\fBTimeSig\fP *)"
+.br
+.ti -1c
+.RI "void \fBclearTimeSig\fP ()"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBtimeStretch\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBTimeSig\fP * \fBtimeSig\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBisLocalTimeSignature\fP (int tick)"
+.br
+.ti -1c
+.RI "const \fBGroups\fP & \fBgroup\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBKeyList\fP * \fBkeyList\fP ()"
+.br
+.ti -1c
+.RI "Key \fBkey\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBKeySigEvent\fP \fBkeySigEvent\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fBnextKeyTick\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fBcurrentKeyTick\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBKeySigEvent\fP \fBprevKey\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetKey\fP (int tick, \fBKeySigEvent\fP)"
+.br
+.ti -1c
+.RI "void \fBremoveKey\fP (int tick)"
+.br
+.ti -1c
+.RI "bool \fBshow\fP () const"
+.br
+.ti -1c
+.RI "bool \fBslashStyle\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBinvisible\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetInvisible\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBcutaway\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCutaway\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBshowIfEmpty\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowIfEmpty\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBhideSystemBarLine\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHideSystemBarLine\fP (bool val)"
+.br
+.ti -1c
+.RI "HideMode \fBhideWhenEmpty\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHideWhenEmpty\fP (HideMode v)"
+.br
+.ti -1c
+.RI "int \fBbarLineSpan\fP () const"
+.br
+.ti -1c
+.RI "int \fBbarLineFrom\fP () const"
+.br
+.ti -1c
+.RI "int \fBbarLineTo\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBarLineSpan\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetBarLineFrom\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetBarLineTo\fP (int val)"
+.br
+.ti -1c
+.RI "qreal \fBheight\fP () const"
+.br
+.ti -1c
+.RI "int \fBchannel\fP (int tick, int voice) const"
+.br
+.ti -1c
+.RI "QMap< int, int > * \fBchannelList\fP (int voice)"
+.br
+.ti -1c
+.RI "\fBSwingParameters\fP \fBswing\fP (int tick) const"
+.br
+.ti -1c
+.RI "QMap< int, \fBSwingParameters\fP > * \fBswingList\fP ()"
+.br
+.ti -1c
+.RI "const \fBStaffType\fP * \fBstaffType\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBStaffType\fP * \fBstaffType\fP (int tick)"
+.br
+.ti -1c
+.RI "\fBStaffType\fP * \fBsetStaffType\fP (int tick, const \fBStaffType\fP *)"
+.br
+.ti -1c
+.RI "void \fBstaffTypeListChanged\fP (int tick)"
+.br
+.ti -1c
+.RI "bool \fBisPitchedStaff\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBisTabStaff\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBisDrumStaff\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fBlines\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetLines\fP (int tick, int lines)"
+.br
+.ti -1c
+.RI "qreal \fBlineDistance\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetSlashStyle\fP (int tick, bool val)"
+.br
+.ti -1c
+.RI "int \fBmiddleLine\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fBbottomLine\fP (int tick) const"
+.br
+.ti -1c
+.RI "qreal \fBuserMag\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetUserMag\fP (int tick, qreal m)"
+.br
+.ti -1c
+.RI "qreal \fBmag\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBsmall\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBsetSmall\fP (int tick, bool val)"
+.br
+.ti -1c
+.RI "qreal \fBspatium\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBVeloList\fP & \fBvelocities\fP ()"
+.br
+.ti -1c
+.RI "\fBPitchList\fP & \fBpitchOffsets\fP ()"
+.br
+.ti -1c
+.RI "int \fBpitchOffset\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBupdateOttava\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkedStaves\fP * \fBlinkedStaves\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLinkedStaves\fP (\fBLinkedStaves\fP *l)"
+.br
+.ti -1c
+.RI "QList< \fBStaff\fP * > \fBstaffList\fP () const"
+.br
+.ti -1c
+.RI "void \fBlinkTo\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "bool \fBisLinked\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "void \fBunlink\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "bool \fBprimaryStaff\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBuserDist\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserDist\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBspatiumChanged\fP (qreal, qreal)"
+.br
+.ti -1c
+.RI "bool \fBgenKeySig\fP ()"
+.br
+.ti -1c
+.RI "bool \fBshowLedgerLines\fP (int tick)"
+.br
+.ti -1c
+.RI "QColor \fBcolor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (const QColor &val)"
+.br
+.ti -1c
+.RI "void \fBundoSetColor\fP (const QColor &val)"
+.br
+.ti -1c
+.RI "void \fBinsertTime\fP (int tick, int len)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "BracketType \fBinnerBracket\fP () const"
+.br
+.ti -1c
+.RI "bool \fBplaybackVoice\fP (int voice) const"
+.br
+.ti -1c
+.RI "void \fBsetPlaybackVoice\fP (int voice, bool val)"
+.br
+.ti -1c
+.RI "void \fBdumpClefs\fP (const char *title) const"
+.br
+.ti -1c
+.RI "void \fBdumpKeys\fP (const char *title) const"
+.br
+.ti -1c
+.RI "void \fBdumpTimeSigs\fP (const char *) const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Global staff data not directly related to drawing\&. 
+.PP
+Definition at line 78 of file staff\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Staff::isLinked (\fBStaff\fP * staff)"
+return true if staff is different and linked to this staff 
+.PP
+Definition at line 924 of file staff\&.cpp\&.
+.SS "bool Ms::Staff::primaryStaff () const"
+if there are linked staves, the primary staff is the one who is played back and it's not a tab staff because we don't have enough information to play e\&.g ornaments\&. NOTE: it's not necessarily the top staff! 
+.PP
+Definition at line 944 of file staff\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,160 @@
+.TH "KQOAuthRequestPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KQOAuthRequestPrivate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <kqoauthrequest_p\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKQOAuthRequestPrivate\fP ()"
+.br
+.ti -1c
+.RI "QString \fBoauthTimestamp\fP () const"
+.br
+.ti -1c
+.RI "QString \fBoauthNonce\fP () const"
+.br
+.ti -1c
+.RI "QString \fBoauthSignature\fP ()"
+.br
+.ti -1c
+.RI "void \fBprepareRequest\fP ()"
+.br
+.ti -1c
+.RI "void \fBsignRequest\fP ()"
+.br
+.ti -1c
+.RI "bool \fBvalidateRequest\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBrequestBaseString\fP ()"
+.br
+.ti -1c
+.RI "QByteArray \fBencodedParamaterList\fP (const QList< QPair< QString, QString > > &requestParameters)"
+.br
+.ti -1c
+.RI "void \fBinsertAdditionalParams\fP ()"
+.br
+.ti -1c
+.RI "void \fBinsertPostBody\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QUrl \fBoauthRequestEndpoint\fP"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestHttpMethod \fBoauthHttpMethod\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthHttpMethodString\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthConsumerKey\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthConsumerSecretKey\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthToken\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthTokenSecret\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthSignatureMethod\fP"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestSignatureMethod \fBrequestSignatureMethod\fP"
+.br
+.ti -1c
+.RI "QUrl \fBoauthCallbackUrl\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthVersion\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthVerifier\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthTimestamp_\fP"
+.br
+.ti -1c
+.RI "QString \fBoauthNonce_\fP"
+.br
+.ti -1c
+.RI "QList< QPair< QString, QString > > \fBadditionalParameters\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBpostBodyContent\fP"
+.br
+.ti -1c
+.RI "QList< QPair< QString, QString > > \fBrequestParameters\fP"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestType \fBrequestType\fP"
+.br
+.ti -1c
+.RI "QString \fBcontentType\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBpostRawData\fP"
+.br
+.ti -1c
+.RI "QHttpMultiPart * \fBhttpMultiPart\fP"
+.br
+.ti -1c
+.RI "int \fBtimeout\fP"
+.br
+.ti -1c
+.RI "QTimer \fBtimer\fP"
+.br
+.ti -1c
+.RI "bool \fBdebugOutput\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+KQOAuth - An OAuth authentication library for Qt\&.
+.PP
+Author: Johan Paul (johan.paul@gmail.com) http://www.johanpaul.com
+.PP
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2\&.1 of the License, or (at your option) any later version\&.
+.PP
+KQOAuth is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU Lesser General Public License for more details\&.
+.PP
+You should have received a copy of the GNU Lesser General Public License along with KQOAuth\&. If not, see http://www.gnu.org/licenses/\&. 
+.PP
+Definition at line 33 of file kqoauthrequest_p\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KQOAuthRequestPrivate::KQOAuthRequestPrivate ()"
+KQOAuth - An OAuth authentication library for Qt\&.
+.PP
+Author: Johan Paul (johan.paul@gmail.com) http://www.johanpaul.com
+.PP
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2\&.1 of the License, or (at your option) any later version\&.
+.PP
+KQOAuth is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU Lesser General Public License for more details\&.
+.PP
+You should have received a copy of the GNU Lesser General Public License along with KQOAuth\&. If not, see http://www.gnu.org/licenses/\&. 
+.PP
+Definition at line 37 of file kqoauthrequest\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString KQOAuthRequestPrivate::oauthSignature ()"
+http://oauth.net/core/1.0/#anchor16 The HMAC-SHA1 signature method uses the HMAC-SHA1 signature algorithm as defined in [RFC2104] where the Signature Base String is the text and the key is the concatenated values (each first encoded per Parameter Encoding) of the Consumer Secret and Token Secret, separated by an ‘&’ character (ASCII code 38) even if empty\&.
+.PP
+Definition at line 96 of file kqoauthrequest\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

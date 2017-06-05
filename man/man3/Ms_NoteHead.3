@@ -1,0 +1,69 @@
+.TH "Ms::NoteHead" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::NoteHead
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Symbol\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBGroup\fP : signed char { \fBHEAD_NORMAL\fP = 0, \fBHEAD_CROSS\fP, \fBHEAD_PLUS\fP, \fBHEAD_XCIRCLE\fP, \fBHEAD_WITHX\fP, \fBHEAD_TRIANGLE_UP\fP, \fBHEAD_TRIANGLE_DOWN\fP, \fBHEAD_SLASHED1\fP, \fBHEAD_SLASHED2\fP, \fBHEAD_DIAMOND\fP, \fBHEAD_DIAMOND_OLD\fP, \fBHEAD_CIRCLED\fP, \fBHEAD_CIRCLED_LARGE\fP, \fBHEAD_LARGE_ARROW\fP, \fBHEAD_BREVIS_ALT\fP, \fBHEAD_SLASH\fP, \fBHEAD_SOL\fP, \fBHEAD_LA\fP, \fBHEAD_FA\fP, \fBHEAD_MI\fP, \fBHEAD_DO\fP, \fBHEAD_RE\fP, \fBHEAD_TI\fP, \fBHEAD_DO_WALKER\fP, \fBHEAD_RE_WALKER\fP, \fBHEAD_TI_WALKER\fP, \fBHEAD_DO_FUNK\fP, \fBHEAD_RE_FUNK\fP, \fBHEAD_TI_FUNK\fP, \fBHEAD_DO_NAME\fP, \fBHEAD_RE_NAME\fP, \fBHEAD_MI_NAME\fP, \fBHEAD_FA_NAME\fP, \fBHEAD_SOL_NAME\fP, \fBHEAD_LA_NAME\fP, \fBHEAD_TI_NAME\fP, \fBHEAD_SI_NAME\fP, \fBHEAD_A_SHARP\fP, \fBHEAD_A\fP, \fBHEAD_A_FLAT\fP, \fBHEAD_B_SHARP\fP, \fBHEAD_B\fP, \fBHEAD_B_FLAT\fP, \fBHEAD_C_SHARP\fP, \fBHEAD_C\fP, \fBHEAD_C_FLAT\fP, \fBHEAD_D_SHARP\fP, \fBHEAD_D\fP, \fBHEAD_D_FLAT\fP, \fBHEAD_E_SHARP\fP, \fBHEAD_E\fP, \fBHEAD_E_FLAT\fP, \fBHEAD_F_SHARP\fP, \fBHEAD_F\fP, \fBHEAD_F_FLAT\fP, \fBHEAD_G_SHARP\fP, \fBHEAD_G\fP, \fBHEAD_G_FLAT\fP, \fBHEAD_H\fP, \fBHEAD_H_SHARP\fP, \fBHEAD_GROUPS\fP, \fBHEAD_INVALID\fP = -1 }"
+.br
+.ti -1c
+.RI "enum \fBType\fP : signed char { \fBHEAD_AUTO\fP = -1, \fBHEAD_WHOLE\fP = 0, \fBHEAD_HALF\fP = 1, \fBHEAD_QUARTER\fP = 2, \fBHEAD_BREVIS\fP = 3, \fBHEAD_TYPES\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNoteHead\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBNoteHead\fP & \fBoperator=\fP (const \fBNoteHead\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBNoteHead\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "\fBGroup\fP \fBheadGroup\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBgroup2userName\fP (\fBGroup\fP group)"
+.br
+.ti -1c
+.RI "static QString \fBtype2userName\fP (Type type)"
+.br
+.ti -1c
+.RI "static QString \fBgroup2name\fP (\fBGroup\fP group)"
+.br
+.ti -1c
+.RI "static QString \fBtype2name\fP (Type type)"
+.br
+.ti -1c
+.RI "static \fBGroup\fP \fBname2group\fP (QString s)"
+.br
+.ti -1c
+.RI "static Type \fBname2type\fP (QString s)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 53 of file note\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

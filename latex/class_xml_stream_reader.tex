@@ -1,0 +1,1123 @@
+\hypertarget{class_xml_stream_reader}{}\section{Xml\+Stream\+Reader Class Reference}
+\label{class_xml_stream_reader}\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+
+
+The \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} class provides a fast parser for reading well-\/formed X\+ML via a simple streaming A\+PI.  
+
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Token\+Type} \{ \newline
+{\bfseries No\+Token} = 0, 
+{\bfseries Invalid}, 
+{\bfseries Start\+Document}, 
+{\bfseries End\+Document}, 
+\newline
+{\bfseries Start\+Element}, 
+{\bfseries End\+Element}, 
+{\bfseries Characters}, 
+{\bfseries Comment}, 
+\newline
+{\bfseries D\+TD}, 
+{\bfseries Entity\+Reference}, 
+{\bfseries Processing\+Instruction}
+ \}
+\item 
+enum \hyperlink{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}{Read\+Element\+Text\+Behaviour} \{ {\bfseries Error\+On\+Unexpected\+Element}, 
+{\bfseries Include\+Child\+Elements}, 
+{\bfseries Skip\+Child\+Elements}
+ \}
+\item 
+enum \hyperlink{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}{Error} \{ \newline
+{\bfseries No\+Error}, 
+{\bfseries Unexpected\+Element\+Error}, 
+{\bfseries Custom\+Error}, 
+{\bfseries Not\+Well\+Formed\+Error}, 
+\newline
+{\bfseries Premature\+End\+Of\+Document\+Error}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_xml_stream_reader_ac25232b146a8737e6735544116fb703d}{Xml\+Stream\+Reader} ()
+\item 
+\hyperlink{class_xml_stream_reader_a21d81e0a48fc957b40b7b735ab4c2b10}{Xml\+Stream\+Reader} (Q\+I\+O\+Device $\ast$\hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device})
+\item 
+\hyperlink{class_xml_stream_reader_a5e3dd56e92748dcb914a1d4444ec58dc}{Xml\+Stream\+Reader} (const Q\+Byte\+Array \&data)
+\item 
+\hyperlink{class_xml_stream_reader_adf9a5f6b6a076f53e62d5c414139f5dd}{Xml\+Stream\+Reader} (const Q\+String \&data)
+\item 
+\hyperlink{class_xml_stream_reader_ab8374c8328df1023e4274b780caefea3}{Xml\+Stream\+Reader} (const char $\ast$data)
+\item 
+\hyperlink{class_xml_stream_reader_ae1ee1ea88f07303fa7a25d9c800d646a}{$\sim$\+Xml\+Stream\+Reader} ()
+\item 
+void \hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device} (Q\+I\+O\+Device $\ast$\hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device})
+\item 
+Q\+I\+O\+Device $\ast$ \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device} () const
+\item 
+void \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data} (const Q\+Byte\+Array \&data)
+\item 
+void \hyperlink{class_xml_stream_reader_ac998bbe2fc600172e2d780a58708f358}{add\+Data} (const Q\+String \&data)
+\item 
+void \hyperlink{class_xml_stream_reader_a4dc8d02a038a0b16e6a47f5d2a36d8a3}{add\+Data} (const char $\ast$data)
+\item 
+void \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear} ()
+\item 
+bool \hyperlink{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}{at\+End} () const
+\item 
+\hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Token\+Type} \hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next} ()
+\item 
+bool \hyperlink{class_xml_stream_reader_acc156ff248a564ada18939f9382e0b05}{read\+Next\+Start\+Element} ()
+\item 
+void \hyperlink{class_xml_stream_reader_a3a0bd3dc7aca930af2a53591309f9e8e}{skip\+Current\+Element} ()
+\item 
+\hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Token\+Type} \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type} () const
+\item 
+Q\+String \hyperlink{class_xml_stream_reader_a7e60a09f7692db1fccc420573b56c68b}{token\+String} () const
+\item 
+\mbox{\Hypertarget{class_xml_stream_reader_a0db32e3e8cfaa678a615973cc00967f2}\label{class_xml_stream_reader_a0db32e3e8cfaa678a615973cc00967f2}} 
+void {\bfseries set\+Namespace\+Processing} (bool)
+\item 
+bool \hyperlink{class_xml_stream_reader_ab834393cf21f28f8ae088b19033cacfa}{namespace\+Processing} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_aa5a6f844839b4c7d893e3023f97feb4d}{is\+Start\+Document} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a855b760b7aeec5b7fb177a88d9e7caee}{is\+End\+Document} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a78cb57350cabab5e7ca7c1a8963a774d}{is\+Start\+Element} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a4262447470b01b9544d1e83bf9521b35}{is\+End\+Element} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}{is\+Characters} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a15550b223a59978b612b0fc32bd543e1}{is\+Whitespace} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_ad1c5f23d9c60ab41c032940191d71ae4}{is\+C\+D\+A\+TA} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_ac3c807c55b3a957da46fe7c695cd7907}{is\+Comment} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_afd7dc97a37491da500428da151ca4913}{is\+D\+TD} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_ac7d9fbea5bf99934c5d862c8ced0d44f}{is\+Entity\+Reference} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a66b16a5ab385fbfa167295f41022c37d}{is\+Processing\+Instruction} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_aa5678c8de5e5efd67e85b60dbda6374f}{is\+Standalone\+Document} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a6667b8f4c648c8f192802c8091f617fb}{document\+Version} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a8326fe20290e37d1c1549737cc02d25b}{document\+Encoding} () const
+\item 
+qint64 \hyperlink{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}{line\+Number} () const
+\item 
+qint64 \hyperlink{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}{column\+Number} () const
+\item 
+qint64 \hyperlink{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}{character\+Offset} () const
+\item 
+\hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} \hyperlink{class_xml_stream_reader_aaa89a6baad93837857847a3ec5d7710a}{attributes} () const
+\item 
+Q\+String \hyperlink{class_xml_stream_reader_a45f936b88df1b72f39c43d1c41fb9940}{read\+Element\+Text} (\hyperlink{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}{Read\+Element\+Text\+Behaviour} behaviour=Error\+On\+Unexpected\+Element)
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}{qualified\+Name} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_aed2c2d3189639c9f73dc50432c628204}{prefix} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a66bd483fca16586142dd890cacb9b967}{processing\+Instruction\+Target} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a2c9146676cc92895abaadc89f6fbc738}{processing\+Instruction\+Data} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text} () const
+\item 
+Xml\+Stream\+Namespace\+Declarations \hyperlink{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}{namespace\+Declarations} () const
+\item 
+void \hyperlink{class_xml_stream_reader_a6c6b71cc9f62ad5c1b85c207ba1be850}{add\+Extra\+Namespace\+Declaration} (const \hyperlink{class_xml_stream_namespace_declaration}{Xml\+Stream\+Namespace\+Declaration} \&extra\+Namespace\+Declaraction)
+\item 
+void \hyperlink{class_xml_stream_reader_a8661643768d54c1c49645a59abed5d29}{add\+Extra\+Namespace\+Declarations} (const Xml\+Stream\+Namespace\+Declarations \&extra\+Namespace\+Declaractions)
+\item 
+Xml\+Stream\+Notation\+Declarations \hyperlink{class_xml_stream_reader_af1980e6e4fa0ec4468bb384000bf33db}{notation\+Declarations} () const
+\item 
+Xml\+Stream\+Entity\+Declarations \hyperlink{class_xml_stream_reader_a1746b1c8df6ec7a4172c5dbee907bfb3}{entity\+Declarations} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a17977920c069d3e4a71182aa07cb4eaa}{dtd\+Name} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a5b8d61714dde7a6f75aa16555b85db18}{dtd\+Public\+Id} () const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_reader_a8021ea53fd25af7404bfe81a2e4e7bdd}{dtd\+System\+Id} () const
+\item 
+void \hyperlink{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}{raise\+Error} (const Q\+String \&message=Q\+String())
+\item 
+Q\+String \hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String} () const
+\item 
+\hyperlink{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}{Error} \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error} () const
+\item 
+bool \hyperlink{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}{has\+Error} () const
+\item 
+void \hyperlink{class_xml_stream_reader_af77e0f8b78b6cedfaec4a34634670893}{set\+Entity\+Resolver} (\hyperlink{class_xml_stream_entity_resolver}{Xml\+Stream\+Entity\+Resolver} $\ast$resolver)
+\item 
+\hyperlink{class_xml_stream_entity_resolver}{Xml\+Stream\+Entity\+Resolver} $\ast$ \hyperlink{class_xml_stream_reader_aac2531acc527bccec511df4c29ed2ff8}{entity\+Resolver} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} class provides a fast parser for reading well-\/formed X\+ML via a simple streaming A\+PI. 
+
+Qt\+Core  \begin{DoxySince}{Since}
+4.\+3
+\end{DoxySince}
+\hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} is a faster and more convenient replacement for Qt\textquotesingle{}s own S\+AX parser (see Q\+Xml\+Simple\+Reader). In some cases it might also be a faster and more convenient alternative for use in applications that would otherwise use a D\+OM tree (see Q\+Dom\+Document). \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} reads data either from a Q\+I\+O\+Device (see \hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()}), or from a raw Q\+Byte\+Array (see \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()}).
+
+Qt provides \hyperlink{class_xml_stream_writer}{Xml\+Stream\+Writer} for writing X\+ML.
+
+The basic concept of a stream reader is to report an X\+ML document as a stream of tokens, similar to S\+AX. The main difference between \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} and S\+AX is {\itshape how} these X\+ML tokens are reported. With S\+AX, the application must provide handlers (callback functions) that receive so-\/called X\+ML {\itshape events} from the parser at the parser\textquotesingle{}s convenience. With \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader}, the application code itself drives the loop and pulls {\itshape tokens} from the reader, one after another, as it needs them. This is done by calling \hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()}, where the reader reads from the input stream until it completes the next token, at which point it returns the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()}. A set of convenient functions including \hyperlink{class_xml_stream_reader_a78cb57350cabab5e7ca7c1a8963a774d}{is\+Start\+Element()} and \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()} can then be used to examine the token to obtain information about what has been read. The big advantage of this {\itshape pulling} approach is the possibility to build recursive descent parsers with it, meaning you can split your X\+ML parsing code easily into different methods or classes. This makes it easy to keep track of the application\textquotesingle{}s own state when parsing X\+ML.
+
+A typical loop with \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} looks like this\+:
+
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+
+\hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} is a well-\/formed X\+ML 1.\+0 parser that does {\itshape not} include external parsed entities. As long as no error occurs, the application code can thus be assured that the data provided by the stream reader satisfies the W3C\textquotesingle{}s criteria for well-\/formed X\+ML. For example, you can be certain that all tags are indeed nested and closed properly, that references to internal entities have been replaced with the correct replacement text, and that attributes have been normalized or added according to the internal subset of the D\+TD.
+
+If an error occurs while parsing, \hyperlink{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}{at\+End()} and \hyperlink{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}{has\+Error()} return true, and \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} returns the error that occurred. The functions \hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String()}, \hyperlink{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}{line\+Number()}, \hyperlink{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}{column\+Number()}, and \hyperlink{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}{character\+Offset()} are for constructing an appropriate error or warning message. To simplify application code, \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} contains a \hyperlink{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}{raise\+Error()} mechanism that lets you raise custom errors that trigger the same error handling described.
+
+The \{\hyperlink{class_xml_stream}{Xml\+Stream} Bookmarks Example\} illustrates how to use the recursive descent technique to read an X\+ML bookmark file (X\+B\+EL) with a stream reader.
+
+Definition at line 227 of file xmlstream.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}\label{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Error@{Error}}
+\index{Error@{Error}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily enum \hyperlink{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}{Xml\+Stream\+Reader\+::\+Error}}
+
+This enum specifies different error cases
+
+No\+Error No error has occurred.
+
+Custom\+Error A custom error has been raised with \hyperlink{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}{raise\+Error()}
+
+Not\+Well\+Formed\+Error The parser internally raised an error due to the read X\+ML not being well-\/formed.
+
+Premature\+End\+Of\+Document\+Error The input stream ended before a well-\/formed X\+ML document was parsed. Recovery from this error is possible if more X\+ML arrives in the stream, either by calling \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()} or by waiting for it to arrive on the \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}.
+
+Unexpected\+Element\+Error The parser encountered an element that was different to those it expected. 
+
+Definition at line 320 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}\label{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Read\+Element\+Text\+Behaviour@{Read\+Element\+Text\+Behaviour}}
+\index{Read\+Element\+Text\+Behaviour@{Read\+Element\+Text\+Behaviour}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Read\+Element\+Text\+Behaviour}{ReadElementTextBehaviour}}
+{\footnotesize\ttfamily enum \hyperlink{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}{Xml\+Stream\+Reader\+::\+Read\+Element\+Text\+Behaviour}}
+
+This enum specifies the different behaviours of \hyperlink{class_xml_stream_reader_a45f936b88df1b72f39c43d1c41fb9940}{read\+Element\+Text()}.
+
+Error\+On\+Unexpected\+Element Raise an Unexpected\+Element\+Error and return what was read so far when a child element is encountered.
+
+Include\+Child\+Elements Recursively include the text from child elements.
+
+Skip\+Child\+Elements Skip child elements.
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+
+
+Definition at line 293 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}\label{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Token\+Type@{Token\+Type}}
+\index{Token\+Type@{Token\+Type}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Token\+Type}{TokenType}}
+{\footnotesize\ttfamily enum \hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Xml\+Stream\+Reader\+::\+Token\+Type}}
+
+This enum specifies the type of token the reader just read.
+
+No\+Token The reader has not yet read anything.
+
+Invalid An error has occurred, reported in \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} and \hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String()}.
+
+Start\+Document The reader reports the X\+ML version number in \hyperlink{class_xml_stream_reader_a6667b8f4c648c8f192802c8091f617fb}{document\+Version()}, and the encoding as specified in the X\+ML document in \hyperlink{class_xml_stream_reader_a8326fe20290e37d1c1549737cc02d25b}{document\+Encoding()}. If the document is declared standalone, \hyperlink{class_xml_stream_reader_aa5678c8de5e5efd67e85b60dbda6374f}{is\+Standalone\+Document()} returns {\ttfamily true}; otherwise it returns {\ttfamily false}.
+
+End\+Document The reader reports the end of the document.
+
+Start\+Element The reader reports the start of an element with \hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri()} and \hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}. Empty elements are also reported as Start\+Element, followed directly by End\+Element. The convenience function \hyperlink{class_xml_stream_reader_a45f936b88df1b72f39c43d1c41fb9940}{read\+Element\+Text()} can be called to concatenate all content until the corresponding End\+Element. Attributes are reported in \hyperlink{class_xml_stream_reader_aaa89a6baad93837857847a3ec5d7710a}{attributes()}, namespace declarations in \hyperlink{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}{namespace\+Declarations()}.
+
+End\+Element The reader reports the end of an element with \hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri()} and \hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}.
+
+Characters The reader reports characters in \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()}. If the characters are all white-\/space, \hyperlink{class_xml_stream_reader_a15550b223a59978b612b0fc32bd543e1}{is\+Whitespace()} returns {\ttfamily true}. If the characters stem from a C\+D\+A\+TA section, \hyperlink{class_xml_stream_reader_ad1c5f23d9c60ab41c032940191d71ae4}{is\+C\+D\+A\+T\+A()} returns {\ttfamily true}.
+
+Comment The reader reports a comment in \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()}.
+
+D\+TD The reader reports a D\+TD in \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()}, notation declarations in \hyperlink{class_xml_stream_reader_af1980e6e4fa0ec4468bb384000bf33db}{notation\+Declarations()}, and entity declarations in \hyperlink{class_xml_stream_reader_a1746b1c8df6ec7a4172c5dbee907bfb3}{entity\+Declarations()}. Details of the D\+TD declaration are reported in in \hyperlink{class_xml_stream_reader_a17977920c069d3e4a71182aa07cb4eaa}{dtd\+Name()}, \hyperlink{class_xml_stream_reader_a5b8d61714dde7a6f75aa16555b85db18}{dtd\+Public\+Id()}, and \hyperlink{class_xml_stream_reader_a8021ea53fd25af7404bfe81a2e4e7bdd}{dtd\+System\+Id()}.
+
+Entity\+Reference The reader reports an entity reference that could not be resolved. The name of the reference is reported in \hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}, the replacement text in \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()}.
+
+Processing\+Instruction The reader reports a processing instruction in \hyperlink{class_xml_stream_reader_a66bd483fca16586142dd890cacb9b967}{processing\+Instruction\+Target()} and \hyperlink{class_xml_stream_reader_a2c9146676cc92895abaadc89f6fbc738}{processing\+Instruction\+Data()}. 
+
+Definition at line 230 of file xmlstream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_xml_stream_reader_ac25232b146a8737e6735544116fb703d}\label{class_xml_stream_reader_ac25232b146a8737e6735544116fb703d}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Xml\+Stream\+Reader()}{XmlStreamReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructs a stream reader.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()}, \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 380 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a21d81e0a48fc957b40b7b735ab4c2b10}\label{class_xml_stream_reader_a21d81e0a48fc957b40b7b735ab4c2b10}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Xml\+Stream\+Reader()}{XmlStreamReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}\item[{Q\+I\+O\+Device $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new stream reader that reads from {\itshape device}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 389 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a5e3dd56e92748dcb914a1d4444ec58dc}\label{class_xml_stream_reader_a5e3dd56e92748dcb914a1d4444ec58dc}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Xml\+Stream\+Reader()}{XmlStreamReader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new stream reader that reads from {\itshape data}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()}, \hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 400 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_adf9a5f6b6a076f53e62d5c414139f5dd}\label{class_xml_stream_reader_adf9a5f6b6a076f53e62d5c414139f5dd}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Xml\+Stream\+Reader()}{XmlStreamReader()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new stream reader that reads from {\itshape data}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()}, \hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 412 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ab8374c8328df1023e4274b780caefea3}\label{class_xml_stream_reader_ab8374c8328df1023e4274b780caefea3}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{Xml\+Stream\+Reader()}{XmlStreamReader()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a new stream reader that reads from {\itshape data}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()}, \hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 431 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ae1ee1ea88f07303fa7a25d9c800d646a}\label{class_xml_stream_reader_ae1ee1ea88f07303fa7a25d9c800d646a}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!````~Xml\+Stream\+Reader@{$\sim$\+Xml\+Stream\+Reader}}
+\index{````~Xml\+Stream\+Reader@{$\sim$\+Xml\+Stream\+Reader}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{$\sim$\+Xml\+Stream\+Reader()}{~XmlStreamReader()}}
+{\footnotesize\ttfamily Xml\+Stream\+Reader\+::$\sim$\+Xml\+Stream\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructs the reader. 
+
+Definition at line 441 of file xmlstream.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}\label{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{add\+Data()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::add\+Data (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{data }\end{DoxyParamCaption})}
+
+Adds more {\itshape data} for the reader to read. This function does nothing if the reader has a \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 491 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ac998bbe2fc600172e2d780a58708f358}\label{class_xml_stream_reader_ac998bbe2fc600172e2d780a58708f358}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{add\+Data()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::add\+Data (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{data }\end{DoxyParamCaption})}
+
+Adds more {\itshape data} for the reader to read. This function does nothing if the reader has a \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 507 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a4dc8d02a038a0b16e6a47f5d2a36d8a3}\label{class_xml_stream_reader_a4dc8d02a038a0b16e6a47f5d2a36d8a3}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!add\+Data@{add\+Data}}
+\index{add\+Data@{add\+Data}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{add\+Data()}{addData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::add\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+
+Adds more {\itshape data} for the reader to read. This function does nothing if the reader has a \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 524 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a6c6b71cc9f62ad5c1b85c207ba1be850}\label{class_xml_stream_reader_a6c6b71cc9f62ad5c1b85c207ba1be850}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!add\+Extra\+Namespace\+Declaration@{add\+Extra\+Namespace\+Declaration}}
+\index{add\+Extra\+Namespace\+Declaration@{add\+Extra\+Namespace\+Declaration}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{add\+Extra\+Namespace\+Declaration()}{addExtraNamespaceDeclaration()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::add\+Extra\+Namespace\+Declaration (\begin{DoxyParamCaption}\item[{const \hyperlink{class_xml_stream_namespace_declaration}{Xml\+Stream\+Namespace\+Declaration} \&}]{extra\+Namespace\+Declaration }\end{DoxyParamCaption})}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+Adds an {\itshape extra\+Namespace\+Declaration}. The declaration will be valid for children of the current element, or -\/ should the function be called before any elements are read -\/ for the entire X\+ML document.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}{namespace\+Declarations()}, \hyperlink{class_xml_stream_reader_a8661643768d54c1c49645a59abed5d29}{add\+Extra\+Namespace\+Declarations()}, set\+Namespace\+Processing() 
+\end{DoxySeeAlso}
+
+
+Definition at line 2056 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a8661643768d54c1c49645a59abed5d29}\label{class_xml_stream_reader_a8661643768d54c1c49645a59abed5d29}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!add\+Extra\+Namespace\+Declarations@{add\+Extra\+Namespace\+Declarations}}
+\index{add\+Extra\+Namespace\+Declarations@{add\+Extra\+Namespace\+Declarations}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{add\+Extra\+Namespace\+Declarations()}{addExtraNamespaceDeclarations()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::add\+Extra\+Namespace\+Declarations (\begin{DoxyParamCaption}\item[{const Xml\+Stream\+Namespace\+Declarations \&}]{extra\+Namespace\+Declarations }\end{DoxyParamCaption})}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+Adds a vector of declarations specified by {\itshape extra\+Namespace\+Declarations}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}{namespace\+Declarations()}, \hyperlink{class_xml_stream_reader_a6c6b71cc9f62ad5c1b85c207ba1be850}{add\+Extra\+Namespace\+Declaration()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2071 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}\label{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!at\+End@{at\+End}}
+\index{at\+End@{at\+End}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{at\+End()}{atEnd()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::at\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily true} if the reader has read until the end of the X\+ML document, or if an \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} has occurred and reading has been aborted. Otherwise, it returns {\ttfamily false}.
+
+When \hyperlink{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}{at\+End()} and \hyperlink{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}{has\+Error()} return true and \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} returns Premature\+End\+Of\+Document\+Error, it means the X\+ML has been well-\/formed so far, but a complete X\+ML document has not been parsed. The next chunk of X\+ML can be added with \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()}, if the X\+ML is being read from a Q\+Byte\+Array, or by waiting for more data to arrive if the X\+ML is being read from a Q\+I\+O\+Device. Either way, \hyperlink{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}{at\+End()} will return false once more data is available.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}{has\+Error()}, \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()}, \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}, Q\+I\+O\+Device\+::at\+End() 
+\end{DoxySeeAlso}
+
+
+Definition at line 561 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aaa89a6baad93837857847a3ec5d7710a}\label{class_xml_stream_reader_aaa89a6baad93837857847a3ec5d7710a}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!attributes@{attributes}}
+\index{attributes@{attributes}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{attributes()}{attributes()}}
+{\footnotesize\ttfamily \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} Xml\+Stream\+Reader\+::attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the attributes of a Start\+Element. 
+
+Definition at line 2245 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}\label{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!character\+Offset@{character\+Offset}}
+\index{character\+Offset@{character\+Offset}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{character\+Offset()}{characterOffset()}}
+{\footnotesize\ttfamily qint64 Xml\+Stream\+Reader\+::character\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current character offset, starting with 0.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}{line\+Number()}, \hyperlink{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}{column\+Number()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1937 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}\label{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!clear@{clear}}
+\index{clear@{clear}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Removes any \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()} or data from the reader and resets its internal state to the initial state.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 535 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}\label{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!column\+Number@{column\+Number}}
+\index{column\+Number@{column\+Number}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{column\+Number()}{columnNumber()}}
+{\footnotesize\ttfamily qint64 Xml\+Stream\+Reader\+::column\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current column number, starting with 0.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}{line\+Number()}, \hyperlink{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}{character\+Offset()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1927 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}\label{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!device@{device}}
+\index{device@{device}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily Q\+I\+O\+Device $\ast$ Xml\+Stream\+Reader\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current device associated with the \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader}, or 0 if no device has been assigned.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}{set\+Device()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 478 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a8326fe20290e37d1c1549737cc02d25b}\label{class_xml_stream_reader_a8326fe20290e37d1c1549737cc02d25b}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!document\+Encoding@{document\+Encoding}}
+\index{document\+Encoding@{document\+Encoding}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{document\+Encoding()}{documentEncoding()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::document\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  Start\+Document, this function returns the encoding string as specified in the X\+ML declaration. Otherwise an empty string is returned. 
+
+Definition at line 2860 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a6667b8f4c648c8f192802c8091f617fb}\label{class_xml_stream_reader_a6667b8f4c648c8f192802c8091f617fb}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!document\+Version@{document\+Version}}
+\index{document\+Version@{document\+Version}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{document\+Version()}{documentVersion()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::document\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  Start\+Document, this function returns the version string as specified in the X\+ML declaration. Otherwise an empty string is returned. 
+
+Definition at line 2845 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a17977920c069d3e4a71182aa07cb4eaa}\label{class_xml_stream_reader_a17977920c069d3e4a71182aa07cb4eaa}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!dtd\+Name@{dtd\+Name}}
+\index{dtd\+Name@{dtd\+Name}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{dtd\+Name()}{dtdName()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::dtd\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  D\+TD, this function returns the D\+TD\textquotesingle{}s name. Otherwise an empty string is returned. 
+
+Definition at line 1990 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a5b8d61714dde7a6f75aa16555b85db18}\label{class_xml_stream_reader_a5b8d61714dde7a6f75aa16555b85db18}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!dtd\+Public\+Id@{dtd\+Public\+Id}}
+\index{dtd\+Public\+Id@{dtd\+Public\+Id}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{dtd\+Public\+Id()}{dtdPublicId()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::dtd\+Public\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  D\+TD, this function returns the D\+TD\textquotesingle{}s public identifier. Otherwise an empty string is returned. 
+
+Definition at line 2005 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a8021ea53fd25af7404bfe81a2e4e7bdd}\label{class_xml_stream_reader_a8021ea53fd25af7404bfe81a2e4e7bdd}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!dtd\+System\+Id@{dtd\+System\+Id}}
+\index{dtd\+System\+Id@{dtd\+System\+Id}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{dtd\+System\+Id()}{dtdSystemId()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::dtd\+System\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  D\+TD, this function returns the D\+TD\textquotesingle{}s system identifier. Otherwise an empty string is returned. 
+
+Definition at line 2020 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a1746b1c8df6ec7a4172c5dbee907bfb3}\label{class_xml_stream_reader_a1746b1c8df6ec7a4172c5dbee907bfb3}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!entity\+Declarations@{entity\+Declarations}}
+\index{entity\+Declarations@{entity\+Declarations}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{entity\+Declarations()}{entityDeclarations()}}
+{\footnotesize\ttfamily Xml\+Stream\+Entity\+Declarations Xml\+Stream\+Reader\+::entity\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  D\+TD, this function returns the D\+TD\textquotesingle{}s unparsed (external) entity declarations. Otherwise an empty vector is returned.
+
+The Xml\+Stream\+Entity\+Declarations class is defined to be a Q\+Vector of \hyperlink{class_xml_stream_entity_declaration}{Xml\+Stream\+Entity\+Declaration}. 
+
+Definition at line 1975 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aac2531acc527bccec511df4c29ed2ff8}\label{class_xml_stream_reader_aac2531acc527bccec511df4c29ed2ff8}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!entity\+Resolver@{entity\+Resolver}}
+\index{entity\+Resolver@{entity\+Resolver}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{entity\+Resolver()}{entityResolver()}}
+{\footnotesize\ttfamily \hyperlink{class_xml_stream_entity_resolver}{Xml\+Stream\+Entity\+Resolver} $\ast$ Xml\+Stream\+Reader\+::entity\+Resolver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+Returns the entity resolver, or 0 if there is no entity resolver.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_af77e0f8b78b6cedfaec4a34634670893}{set\+Entity\+Resolver()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 239 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}\label{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!error@{error}}
+\index{error@{error}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily \hyperlink{class_xml_stream_reader_ae7aa6749ae6e9de9bcb6f084a9884286}{Xml\+Stream\+Reader\+::\+Error} Xml\+Stream\+Reader\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of the current error, or No\+Error if no error occurred.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String()}, \hyperlink{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}{raise\+Error()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2159 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}\label{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!error\+String@{error\+String}}
+\index{error\+String@{error\+String}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{error\+String()}{errorString()}}
+{\footnotesize\ttfamily Q\+String Xml\+Stream\+Reader\+::error\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the error message that was set with \hyperlink{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}{raise\+Error()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()}, \hyperlink{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}{line\+Number()}, \hyperlink{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}{column\+Number()}, \hyperlink{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}{character\+Offset()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2147 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}\label{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!has\+Error@{has\+Error}}
+\index{has\+Error@{has\+Error}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{has\+Error()}{hasError()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::has\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if an error has occurred, otherwise {\ttfamily false}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String()}, \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 331 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ad1c5f23d9c60ab41c032940191d71ae4}\label{class_xml_stream_reader_ad1c5f23d9c60ab41c032940191d71ae4}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+C\+D\+A\+TA@{is\+C\+D\+A\+TA}}
+\index{is\+C\+D\+A\+TA@{is\+C\+D\+A\+TA}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+C\+D\+A\+T\+A()}{isCDATA()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+C\+D\+A\+TA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily true} if the reader reports characters that stem from a C\+D\+A\+TA section; otherwise returns {\ttfamily false}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}{is\+Characters()}, \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2817 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}\label{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Characters@{is\+Characters}}
+\index{is\+Characters@{is\+Characters}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Characters()}{isCharacters()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Characters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Characters; otherwise returns {\ttfamily false}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a15550b223a59978b612b0fc32bd543e1}{is\+Whitespace()}, \hyperlink{class_xml_stream_reader_ad1c5f23d9c60ab41c032940191d71ae4}{is\+C\+D\+A\+T\+A()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 275 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ac3c807c55b3a957da46fe7c695cd7907}\label{class_xml_stream_reader_ac3c807c55b3a957da46fe7c695cd7907}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Comment@{is\+Comment}}
+\index{is\+Comment@{is\+Comment}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Comment()}{isComment()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Comment; otherwise returns {\ttfamily false}. 
+
+Definition at line 278 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_afd7dc97a37491da500428da151ca4913}\label{class_xml_stream_reader_afd7dc97a37491da500428da151ca4913}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+D\+TD@{is\+D\+TD}}
+\index{is\+D\+TD@{is\+D\+TD}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+D\+T\+D()}{isDTD()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+D\+TD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  D\+TD; otherwise returns {\ttfamily false}. 
+
+Definition at line 279 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a855b760b7aeec5b7fb177a88d9e7caee}\label{class_xml_stream_reader_a855b760b7aeec5b7fb177a88d9e7caee}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+End\+Document@{is\+End\+Document}}
+\index{is\+End\+Document@{is\+End\+Document}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+End\+Document()}{isEndDocument()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+End\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  End\+Document; otherwise returns {\ttfamily false}. 
+
+Definition at line 272 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a4262447470b01b9544d1e83bf9521b35}\label{class_xml_stream_reader_a4262447470b01b9544d1e83bf9521b35}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+End\+Element@{is\+End\+Element}}
+\index{is\+End\+Element@{is\+End\+Element}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+End\+Element()}{isEndElement()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+End\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  End\+Element; otherwise returns {\ttfamily false}. 
+
+Definition at line 274 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ac7d9fbea5bf99934c5d862c8ced0d44f}\label{class_xml_stream_reader_ac7d9fbea5bf99934c5d862c8ced0d44f}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Entity\+Reference@{is\+Entity\+Reference}}
+\index{is\+Entity\+Reference@{is\+Entity\+Reference}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Entity\+Reference()}{isEntityReference()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Entity\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Entity\+Reference; otherwise returns {\ttfamily false}. 
+
+Definition at line 280 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a66b16a5ab385fbfa167295f41022c37d}\label{class_xml_stream_reader_a66b16a5ab385fbfa167295f41022c37d}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Processing\+Instruction@{is\+Processing\+Instruction}}
+\index{is\+Processing\+Instruction@{is\+Processing\+Instruction}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Processing\+Instruction()}{isProcessingInstruction()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Processing\+Instruction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Processing\+Instruction; otherwise returns {\ttfamily false}. 
+
+Definition at line 281 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aa5678c8de5e5efd67e85b60dbda6374f}\label{class_xml_stream_reader_aa5678c8de5e5efd67e85b60dbda6374f}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Standalone\+Document@{is\+Standalone\+Document}}
+\index{is\+Standalone\+Document@{is\+Standalone\+Document}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Standalone\+Document()}{isStandaloneDocument()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Standalone\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily true} if this document has been declared standalone in the X\+ML declaration; otherwise returns {\ttfamily false}.
+
+If no X\+ML declaration has been parsed, this function returns {\ttfamily false}. 
+
+Definition at line 2831 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aa5a6f844839b4c7d893e3023f97feb4d}\label{class_xml_stream_reader_aa5a6f844839b4c7d893e3023f97feb4d}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Start\+Document@{is\+Start\+Document}}
+\index{is\+Start\+Document@{is\+Start\+Document}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Start\+Document()}{isStartDocument()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Start\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Start\+Document; otherwise returns {\ttfamily false}. 
+
+Definition at line 271 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a78cb57350cabab5e7ca7c1a8963a774d}\label{class_xml_stream_reader_a78cb57350cabab5e7ca7c1a8963a774d}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Start\+Element@{is\+Start\+Element}}
+\index{is\+Start\+Element@{is\+Start\+Element}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Start\+Element()}{isStartElement()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Start\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns {\ttfamily true} if \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} equals  Start\+Element; otherwise returns {\ttfamily false}. 
+
+Definition at line 273 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a15550b223a59978b612b0fc32bd543e1}\label{class_xml_stream_reader_a15550b223a59978b612b0fc32bd543e1}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!is\+Whitespace@{is\+Whitespace}}
+\index{is\+Whitespace@{is\+Whitespace}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{is\+Whitespace()}{isWhitespace()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::is\+Whitespace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns {\ttfamily true} if the reader reports characters that only consist of white-\/space; otherwise returns {\ttfamily false}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}{is\+Characters()}, \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2806 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}\label{class_xml_stream_reader_a74a3827867942f9904924f2004c4177e}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!line\+Number@{line\+Number}}
+\index{line\+Number@{line\+Number}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{line\+Number()}{lineNumber()}}
+{\footnotesize\ttfamily qint64 Xml\+Stream\+Reader\+::line\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current line number, starting with 1.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a88724d9577a835b0e8d84ed945c306df}{column\+Number()}, \hyperlink{class_xml_stream_reader_a08a187eb8969ddabf238e1f731bb754a}{character\+Offset()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1917 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}\label{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!name@{name}}
+\index{name@{name}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the local name of a Start\+Element, End\+Element, or an Entity\+Reference.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri()}, \hyperlink{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}{qualified\+Name()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2192 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}\label{class_xml_stream_reader_a3e6033d64f3744d90e96287f3a04d913}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!namespace\+Declarations@{namespace\+Declarations}}
+\index{namespace\+Declarations@{namespace\+Declarations}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{namespace\+Declarations()}{namespaceDeclarations()}}
+{\footnotesize\ttfamily Xml\+Stream\+Namespace\+Declarations Xml\+Stream\+Reader\+::namespace\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  Start\+Element, this function returns the element\textquotesingle{}s namespace declarations. Otherwise an empty vector is returned.
+
+The Xml\+Stream\+Namespace\+Declarations class is defined to be a Q\+Vector of \hyperlink{class_xml_stream_namespace_declaration}{Xml\+Stream\+Namespace\+Declaration}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a6c6b71cc9f62ad5c1b85c207ba1be850}{add\+Extra\+Namespace\+Declaration()}, \hyperlink{class_xml_stream_reader_a8661643768d54c1c49645a59abed5d29}{add\+Extra\+Namespace\+Declarations()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2037 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_ab834393cf21f28f8ae088b19033cacfa}\label{class_xml_stream_reader_ab834393cf21f28f8ae088b19033cacfa}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!namespace\+Processing@{namespace\+Processing}}
+\index{namespace\+Processing@{namespace\+Processing}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{namespace\+Processing()}{namespaceProcessing()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::namespace\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+the namespace-\/processing flag of the stream reader
+
+This property controls whether or not the stream reader processes namespaces. If enabled, the reader processes namespaces, otherwise it does not.
+
+By default, namespace-\/processing is enabled. 
+
+Definition at line 751 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}\label{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!namespace\+Uri@{namespace\+Uri}}
+\index{namespace\+Uri@{namespace\+Uri}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{namespace\+Uri()}{namespaceUri()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::namespace\+Uri (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the namespace\+Uri of a Start\+Element or End\+Element.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}, \hyperlink{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}{qualified\+Name()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2203 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_af1980e6e4fa0ec4468bb384000bf33db}\label{class_xml_stream_reader_af1980e6e4fa0ec4468bb384000bf33db}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!notation\+Declarations@{notation\+Declarations}}
+\index{notation\+Declarations@{notation\+Declarations}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{notation\+Declarations()}{notationDeclarations()}}
+{\footnotesize\ttfamily Xml\+Stream\+Notation\+Declarations Xml\+Stream\+Reader\+::notation\+Declarations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+If the \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} is  D\+TD, this function returns the D\+TD\textquotesingle{}s notation declarations. Otherwise an empty vector is returned.
+
+The Xml\+Stream\+Notation\+Declarations class is defined to be a Q\+Vector of \hyperlink{class_xml_stream_notation_declaration}{Xml\+Stream\+Notation\+Declaration}. 
+
+Definition at line 1960 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aed2c2d3189639c9f73dc50432c628204}\label{class_xml_stream_reader_aed2c2d3189639c9f73dc50432c628204}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!prefix@{prefix}}
+\index{prefix@{prefix}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{prefix()}{prefix()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+Returns the prefix of a Start\+Element or End\+Element.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}, \hyperlink{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}{qualified\+Name()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2236 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a2c9146676cc92895abaadc89f6fbc738}\label{class_xml_stream_reader_a2c9146676cc92895abaadc89f6fbc738}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!processing\+Instruction\+Data@{processing\+Instruction\+Data}}
+\index{processing\+Instruction\+Data@{processing\+Instruction\+Data}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{processing\+Instruction\+Data()}{processingInstructionData()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::processing\+Instruction\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the data of a Processing\+Instruction. 
+
+Definition at line 2179 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a66bd483fca16586142dd890cacb9b967}\label{class_xml_stream_reader_a66bd483fca16586142dd890cacb9b967}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!processing\+Instruction\+Target@{processing\+Instruction\+Target}}
+\index{processing\+Instruction\+Target@{processing\+Instruction\+Target}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{processing\+Instruction\+Target()}{processingInstructionTarget()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::processing\+Instruction\+Target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the target of a Processing\+Instruction. 
+
+Definition at line 2170 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}\label{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!qualified\+Name@{qualified\+Name}}
+\index{qualified\+Name@{qualified\+Name}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{qualified\+Name()}{qualifiedName()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::qualified\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the qualified name of a Start\+Element or End\+Element;
+
+A qualified name is the raw name of an element in the X\+ML data. It consists of the namespace prefix, followed by colon, followed by the element\textquotesingle{}s local name. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn\textquotesingle{}t use \hyperlink{class_xml_stream_reader_a1afff37e8245261beb5c31db56912b8c}{qualified\+Name()}, but the resolved \hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri()} and the attribute\textquotesingle{}s local \hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a09b44691e1e74daa6bdd4ed465d3c0a2}{name()}, \hyperlink{class_xml_stream_reader_aed2c2d3189639c9f73dc50432c628204}{prefix()}, \hyperlink{class_xml_stream_reader_a4ea3344f8632d1cd70edfaddf9a8027c}{namespace\+Uri()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2221 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}\label{class_xml_stream_reader_aae008ac9078fb7edb4a77ba3e76b8dfa}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!raise\+Error@{raise\+Error}}
+\index{raise\+Error@{raise\+Error}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{raise\+Error()}{raiseError()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::raise\+Error (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{message = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+Raises a custom error with an optional error {\itshape message}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()}, \hyperlink{class_xml_stream_reader_a119d913daa2a7b8174f0b26dcd7e9720}{error\+String()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2136 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a45f936b88df1b72f39c43d1c41fb9940}\label{class_xml_stream_reader_a45f936b88df1b72f39c43d1c41fb9940}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!read\+Element\+Text@{read\+Element\+Text}}
+\index{read\+Element\+Text@{read\+Element\+Text}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{read\+Element\+Text()}{readElementText()}}
+{\footnotesize\ttfamily Q\+String Xml\+Stream\+Reader\+::read\+Element\+Text (\begin{DoxyParamCaption}\item[{\hyperlink{class_xml_stream_reader_aa67823f6737762b7e1a426ac841e29fa}{Read\+Element\+Text\+Behaviour}}]{behaviour = {\ttfamily ErrorOnUnexpectedElement} }\end{DoxyParamCaption})}
+
+Convenience function to be called in case a Start\+Element was read. Reads until the corresponding End\+Element and returns all text in-\/between. In case of no error, the current token (see \hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()}) after having called this function is End\+Element.
+
+The function concatenates \hyperlink{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}{text()} when it reads either  Characters or Entity\+Reference tokens, but skips Processing\+Instruction and  Comment. If the current token is not Start\+Element, an empty string is returned.
+
+The {\itshape behaviour} defines what happens in case anything else is read before reaching End\+Element. The function can include the text from child elements (useful for example for H\+T\+ML), ignore child elements, or raise an Unexpected\+Element\+Error and return what was read so far (default).
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+
+
+Definition at line 2095 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}\label{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!read\+Next@{read\+Next}}
+\index{read\+Next@{read\+Next}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{read\+Next()}{readNext()}}
+{\footnotesize\ttfamily \hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Xml\+Stream\+Reader\+::\+Token\+Type} Xml\+Stream\+Reader\+::read\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads the next token and returns its type.
+
+With one exception, once an \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} is reported by \hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()}, further reading of the X\+ML stream is not possible. Then \hyperlink{class_xml_stream_reader_a4acf0ba0ea25300b66c9d85ba3e8dfb3}{at\+End()} returns {\ttfamily true}, \hyperlink{class_xml_stream_reader_a26bc2d6831322e5a1d86182295f912d0}{has\+Error()} returns {\ttfamily true}, and this function returns Xml\+Stream\+Reader\+::\+Invalid.
+
+The exception is when \hyperlink{class_xml_stream_reader_ae9a7e8fe9f15b0f5c4ec5fa080c6249f}{error()} returns Premature\+End\+Of\+Document\+Error. This error is reported when the end of an otherwise well-\/formed chunk of X\+ML is reached, but the chunk doesn\textquotesingle{}t represent a complete X\+ML document. In that case, parsing {\itshape can} be resumed by calling \hyperlink{class_xml_stream_reader_add6baa0f8790fc528c1fa6e05755f96b}{add\+Data()} to add the next chunk of X\+ML, when the stream is being read from a Q\+Byte\+Array, or by waiting for more data to arrive when the stream is being read from a \hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()}, \hyperlink{class_xml_stream_reader_a7e60a09f7692db1fccc420573b56c68b}{token\+String()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 594 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_acc156ff248a564ada18939f9382e0b05}\label{class_xml_stream_reader_acc156ff248a564ada18939f9382e0b05}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!read\+Next\+Start\+Element@{read\+Next\+Start\+Element}}
+\index{read\+Next\+Start\+Element@{read\+Next\+Start\+Element}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{read\+Next\+Start\+Element()}{readNextStartElement()}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Reader\+::read\+Next\+Start\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads until the next start element within the current element. Returns {\ttfamily true} when a start element was reached. When the end element was reached, or when an error occurred, false is returned.
+
+The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached. When the parser has reached the end element, the current element becomes the parent element.
+
+This is a convenience function for when you\textquotesingle{}re only concerned with parsing X\+ML elements. The \{\hyperlink{class_xml_stream}{Xml\+Stream} Bookmarks Example\} makes extensive use of this function.
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_adb18e6f9842e9b470cde16385732ad84}{read\+Next()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 650 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}\label{class_xml_stream_reader_a0d166c5c7814d44a0015a82f0500cee5}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!set\+Device@{set\+Device}}
+\index{set\+Device@{set\+Device}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{set\+Device()}{setDevice()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::set\+Device (\begin{DoxyParamCaption}\item[{Q\+I\+O\+Device $\ast$}]{device }\end{DoxyParamCaption})}
+
+Sets the current device to {\itshape device}. Setting the device resets the stream to its initial state.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_aa2a751d1b36fac13138b2f370683dfe7}{device()}, \hyperlink{class_xml_stream_reader_a2a67f5a1fff83d33214ccc9ec9494ca0}{clear()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 460 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_af77e0f8b78b6cedfaec4a34634670893}\label{class_xml_stream_reader_af77e0f8b78b6cedfaec4a34634670893}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!set\+Entity\+Resolver@{set\+Entity\+Resolver}}
+\index{set\+Entity\+Resolver@{set\+Entity\+Resolver}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{set\+Entity\+Resolver()}{setEntityResolver()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::set\+Entity\+Resolver (\begin{DoxyParamCaption}\item[{\hyperlink{class_xml_stream_entity_resolver}{Xml\+Stream\+Entity\+Resolver} $\ast$}]{resolver }\end{DoxyParamCaption})}
+
+\begin{DoxySince}{Since}
+4.\+4
+\end{DoxySince}
+Makes {\itshape resolver} the new \hyperlink{class_xml_stream_reader_aac2531acc527bccec511df4c29ed2ff8}{entity\+Resolver()}.
+
+The stream reader does {\itshape not} take ownership of the resolver. It\textquotesingle{}s the callers responsibility to ensure that the resolver is valid during the entire life-\/time of the stream reader object, or until another resolver or 0 is set.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_aac2531acc527bccec511df4c29ed2ff8}{entity\+Resolver()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 226 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a3a0bd3dc7aca930af2a53591309f9e8e}\label{class_xml_stream_reader_a3a0bd3dc7aca930af2a53591309f9e8e}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!skip\+Current\+Element@{skip\+Current\+Element}}
+\index{skip\+Current\+Element@{skip\+Current\+Element}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{skip\+Current\+Element()}{skipCurrentElement()}}
+{\footnotesize\ttfamily void Xml\+Stream\+Reader\+::skip\+Current\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads until the end of the current element, skipping any child nodes. This function is useful for skipping unknown elements.
+
+The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached. When the parser has reached the end element, the current element becomes the parent element.
+
+\begin{DoxySince}{Since}
+4.\+6 
+\end{DoxySince}
+
+
+Definition at line 672 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}\label{class_xml_stream_reader_a1d129d0171b231efac34d7ee4480a50f}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!text@{text}}
+\index{text@{text}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Reader\+::text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the text of  Characters,  Comment,  D\+TD, or Entity\+Reference. 
+
+Definition at line 1947 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a7e60a09f7692db1fccc420573b56c68b}\label{class_xml_stream_reader_a7e60a09f7692db1fccc420573b56c68b}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!token\+String@{token\+String}}
+\index{token\+String@{token\+String}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{token\+String()}{tokenString()}}
+{\footnotesize\ttfamily Q\+String Xml\+Stream\+Reader\+::token\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the reader\textquotesingle{}s current token as string.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}{token\+Type()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 761 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}\label{class_xml_stream_reader_a2c26bfb63c27f2992e24f038d65c8c0a}} 
+\index{Xml\+Stream\+Reader@{Xml\+Stream\+Reader}!token\+Type@{token\+Type}}
+\index{token\+Type@{token\+Type}!Xml\+Stream\+Reader@{Xml\+Stream\+Reader}}
+\subsubsection{\texorpdfstring{token\+Type()}{tokenType()}}
+{\footnotesize\ttfamily \hyperlink{class_xml_stream_reader_a99e2023f874f0ca648c996ae79c3b5f7}{Xml\+Stream\+Reader\+::\+Token\+Type} Xml\+Stream\+Reader\+::token\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of the current token.
+
+The current token can also be queried with the convenience functions \hyperlink{class_xml_stream_reader_aa5a6f844839b4c7d893e3023f97feb4d}{is\+Start\+Document()}, \hyperlink{class_xml_stream_reader_a855b760b7aeec5b7fb177a88d9e7caee}{is\+End\+Document()}, \hyperlink{class_xml_stream_reader_a78cb57350cabab5e7ca7c1a8963a774d}{is\+Start\+Element()}, \hyperlink{class_xml_stream_reader_a4262447470b01b9544d1e83bf9521b35}{is\+End\+Element()}, \hyperlink{class_xml_stream_reader_a6d14d53c064bab08ac876ffaf2448742}{is\+Characters()}, \hyperlink{class_xml_stream_reader_ac3c807c55b3a957da46fe7c695cd7907}{is\+Comment()}, \hyperlink{class_xml_stream_reader_afd7dc97a37491da500428da151ca4913}{is\+D\+T\+D()}, \hyperlink{class_xml_stream_reader_ac7d9fbea5bf99934c5d862c8ced0d44f}{is\+Entity\+Reference()}, and \hyperlink{class_xml_stream_reader_a66b16a5ab385fbfa167295f41022c37d}{is\+Processing\+Instruction()}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_xml_stream_reader_a7e60a09f7692db1fccc420573b56c68b}{token\+String()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 627 of file xmlstream.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/xmlstream/xmlstream.\+h\item 
+thirdparty/xmlstream/xmlstream.\+cpp\end{DoxyCompactItemize}

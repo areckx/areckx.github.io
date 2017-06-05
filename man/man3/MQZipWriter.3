@@ -1,0 +1,202 @@
+.TH "MQZipWriter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MQZipWriter
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBStatus\fP { \fBNoError\fP, \fBFileWriteError\fP, \fBFileOpenError\fP, \fBFilePermissionsError\fP, \fBFileError\fP }"
+.br
+.ti -1c
+.RI "enum \fBCompressionPolicy\fP { \fBAlwaysCompress\fP, \fBNeverCompress\fP, \fBAutoCompress\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMQZipWriter\fP (const QString &fileName, QIODevice::OpenMode mode=(QIODevice::WriteOnly|QIODevice::Truncate))"
+.br
+.ti -1c
+.RI "\fBMQZipWriter\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "QIODevice * \fBdevice\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisWritable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBexists\fP () const"
+.br
+.ti -1c
+.RI "Status \fBstatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCompressionPolicy\fP (CompressionPolicy policy)"
+.br
+.ti -1c
+.RI "CompressionPolicy \fBcompressionPolicy\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCreationPermissions\fP (QFile::Permissions permissions)"
+.br
+.ti -1c
+.RI "QFile::Permissions \fBcreationPermissions\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddFile\fP (const QString &fileName, const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBaddFile\fP (const QString &fileName, QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "void \fBaddDirectory\fP (const QString &dirName)"
+.br
+.ti -1c
+.RI "void \fBaddSymLink\fP (const QString &fileName, const QString &destination)"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 65 of file qzipwriter_p\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MQZipWriter::MQZipWriter (const QString & fileName, QIODevice::OpenMode mode = \fC(QIODevice::WriteOnly | QIODevice::Truncate)\fP)"
+Create a new zip archive that operates on the \fIarchive\fP filename\&. The file will be opened with the \fImode\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+isValid() 
+.RE
+.PP
+
+.PP
+Definition at line 1021 of file qzip\&.cpp\&.
+.SS "MQZipWriter::MQZipWriter (QIODevice * device)\fC [explicit]\fP"
+Create a new zip archive that operates on the archive found in \fIdevice\fP\&. You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent\&. 
+.PP
+Definition at line 1049 of file qzip\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MQZipWriter::addDirectory (const QString & dirName)"
+Create a new directory in the archive with the specified \fIdirName\fP and the \fIpermissions\fP; 
+.PP
+Definition at line 1209 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::addFile (const QString & fileName, const QByteArray & data)"
+Add a file to the archive with \fIdata\fP as the file contents\&. The file will be stored in the archive using the \fIfileName\fP which includes the full path in the archive\&.
+.PP
+The new file will get the file permissions based on the current creationPermissions and it will be compressed using the zip compression based on the current compression policy\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCreationPermissions()\fP 
+.PP
+\fBsetCompressionPolicy()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1176 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::addFile (const QString & fileName, QIODevice * device)"
+Add a file to the archive with \fIdevice\fP as the source of the contents\&. The contents returned from QIODevice::readAll() will be used as the filedata\&. The file will be stored in the archive using the \fIfileName\fP which includes the full path in the archive\&. 
+.PP
+Definition at line 1188 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::addSymLink (const QString & fileName, const QString & destination)"
+Create a new symbolic link in the archive with the specified \fIdirName\fP and the \fIpermissions\fP; A symbolic link contains the destination (relative) path and name\&. 
+.PP
+Definition at line 1223 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::close ()"
+Closes the zip file\&. 
+.PP
+Definition at line 1231 of file qzip\&.cpp\&.
+.SS "MQZipWriter::CompressionPolicy MQZipWriter::compressionPolicy () const"
+Returns the currently set compression policy\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCompressionPolicy()\fP 
+.PP
+\fBaddFile()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1135 of file qzip\&.cpp\&.
+.SS "QFile::Permissions MQZipWriter::creationPermissions () const"
+Returns the currently set creation permissions\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetCreationPermissions()\fP 
+.PP
+\fBaddFile()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1159 of file qzip\&.cpp\&.
+.SS "QIODevice * MQZipWriter::device () const"
+Returns device used for writing zip archive\&. 
+.PP
+Definition at line 1064 of file qzip\&.cpp\&.
+.SS "bool MQZipWriter::exists () const"
+Returns true if the file exists; otherwise returns false\&. 
+.PP
+Definition at line 1080 of file qzip\&.cpp\&.
+.SS "bool MQZipWriter::isWritable () const"
+Returns true if the user can write to the archive; otherwise returns false\&. 
+.PP
+Definition at line 1072 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::setCompressionPolicy (CompressionPolicy policy)"
+Sets the policy for compressing newly added files to the new \fIpolicy\fP\&.
+.PP
+\fBNote:\fP
+.RS 4
+the default policy is AlwaysCompress
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcompressionPolicy()\fP 
+.PP
+\fBaddFile()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1125 of file qzip\&.cpp\&.
+.SS "void MQZipWriter::setCreationPermissions (QFile::Permissions permissions)"
+Sets the permissions that will be used for newly added files\&.
+.PP
+\fBNote:\fP
+.RS 4
+the default permissions are QFile::ReadOwner | QFile::WriteOwner\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcreationPermissions()\fP 
+.PP
+\fBaddFile()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1148 of file qzip\&.cpp\&.
+.SS "MQZipWriter::Status MQZipWriter::status () const"
+Returns a status code indicating the first error that was met by \fBQZipWriter\fP, or QZipWriter::NoError if no error occurred\&. 
+.PP
+Definition at line 1104 of file qzip\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

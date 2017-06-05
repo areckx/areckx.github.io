@@ -1,0 +1,129 @@
+.TH "Ms::TDuration" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::TDuration
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDurationType\fP : signed char { \fBV_LONG\fP, \fBV_BREVE\fP, \fBV_WHOLE\fP, \fBV_HALF\fP, \fBV_QUARTER\fP, \fBV_EIGHTH\fP, \fBV_16TH\fP, \fBV_32ND\fP, \fBV_64TH\fP, \fBV_128TH\fP, \fBV_256TH\fP, \fBV_512TH\fP, \fBV_1024TH\fP, \fBV_ZERO\fP, \fBV_MEASURE\fP, \fBV_INVALID\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTDuration\fP (const \fBFraction\fP &l, bool truncate=false, int maxDots=4, DurationType maxType=DurationType::V_LONG)"
+.br
+.ti -1c
+.RI "\fBTDuration\fP (const QString &)"
+.br
+.ti -1c
+.RI "\fBTDuration\fP (DurationType t)"
+.br
+.ti -1c
+.RI "DurationType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisZero\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisMeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVal\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (DurationType t)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (const QString &)"
+.br
+.ti -1c
+.RI "int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const DurationType &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator>=\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<=\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "\fBTDuration\fP & \fBoperator\-=\fP (const \fBTDuration\fP &t)"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBoperator\-\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "\fBTDuration\fP & \fBoperator+=\fP (const \fBTDuration\fP &t)"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBoperator+\fP (const \fBTDuration\fP &t) const"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "NoteHead::Type \fBheadType\fP () const"
+.br
+.ti -1c
+.RI "int \fBhooks\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasStem\fP () const"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBshift\fP (int nSteps) const"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBshiftRetainDots\fP (int nSteps, bool stepDotted=false)"
+.br
+.ti -1c
+.RI "int \fBdots\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDots\fP (int v)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBfraction\fP () const"
+.br
+.ti -1c
+.RI "QString \fBdurationTypeUserName\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisValid\fP (\fBFraction\fP f)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 28 of file durationtype\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

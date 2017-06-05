@@ -1,0 +1,109 @@
+.TH "Ms::Page" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Page
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPage\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "virtual \fBPage\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "const QList< \fBSystem\fP * > & \fBsystems\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBSystem\fP * > & \fBsystems\fP ()"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP (int idx)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "void \fBappendSystem\fP (\fBSystem\fP *s)"
+.br
+.ti -1c
+.RI "int \fBno\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNo\fP (int n)"
+.br
+.ti -1c
+.RI "bool \fBisOdd\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBtm\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBbm\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBlm\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBrm\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "QList< \fBElement\fP * > \fBitems\fP (const QRectF &r)"
+.br
+.ti -1c
+.RI "QList< \fBElement\fP * > \fBitems\fP (const QPointF &p)"
+.br
+.ti -1c
+.RI "void \fBrebuildBspTree\fP ()"
+.br
+.ti -1c
+.RI "QPointF \fBpagePos\fP () const"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "QList< \fBElement\fP * > \fBelements\fP ()"
+.br
+.RI "list of visible elements "
+.ti -1c
+.RI "QRectF \fBtbbox\fP ()"
+.br
+.ti -1c
+.RI "int \fBendTick\fP () const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBpagenumber\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 34 of file page\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

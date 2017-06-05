@@ -1,0 +1,470 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ClassName
+%%Creator: Doxygen
+%%CreationDate: Time
+%%For: 
+%Magnification: 1.00
+%%Orientation: Portrait
+%%BoundingBox: 0 0 500 3729.729730
+%%Pages: 0
+%%BeginSetup
+%%EndSetup
+%%EndComments
+
+% ----- variables -----
+
+/boxwidth 0 def
+/boxheight 40 def
+/fontheight 24 def
+/marginwidth 10 def
+/distx 20 def
+/disty 40 def
+/boundaspect 0.134058 def  % aspect ratio of the BoundingBox (width/height)
+/boundx 500 def
+/boundy boundx boundaspect div def
+/xspacing 0 def
+/yspacing 0 def
+/rows 69 def
+/cols 2 def
+/scalefactor 0 def
+/boxfont /Times-Roman findfont fontheight scalefont def
+
+% ----- procedures -----
+
+/dotted { [1 4] 0 setdash } def
+/dashed { [5] 0 setdash } def
+/solid  { [] 0 setdash } def
+
+/max % result = MAX(arg1,arg2)
+{
+  /a exch def
+  /b exch def
+  a b gt {a} {b} ifelse
+} def
+
+/xoffset % result = MAX(0,(scalefactor-(boxwidth*cols+distx*(cols-1)))/2)
+{
+  0 scalefactor boxwidth cols mul distx cols 1 sub mul add sub 2 div max
+} def
+
+/cw % boxwidth = MAX(boxwidth, stringwidth(arg1))
+{
+  /str exch def
+  /boxwidth boxwidth str stringwidth pop max def
+} def
+
+/box % draws a box with text `arg1' at grid pos (arg2,arg3)
+{ gsave
+  2 setlinewidth
+  newpath
+  exch xspacing mul xoffset add
+  exch yspacing mul
+  moveto
+  boxwidth 0 rlineto 
+  0 boxheight rlineto 
+  boxwidth neg 0 rlineto 
+  0 boxheight neg rlineto 
+  closepath
+  dup stringwidth pop neg boxwidth add 2 div
+  boxheight fontheight 2 div sub 2 div
+  rmoveto show stroke
+  grestore
+} def  
+
+/mark
+{ newpath
+  exch xspacing mul xoffset add boxwidth add
+  exch yspacing mul
+  moveto
+  0 boxheight 4 div rlineto
+  boxheight neg 4 div boxheight neg 4 div rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/arrow
+{ newpath
+  moveto
+  3 -8 rlineto
+  -6 0 rlineto
+  3 8 rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/out % draws an output connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight add
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto 
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/in % draws an input connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul disty 2 div sub
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/hedge
+{
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight 2 div sub
+  /y exch def
+  /x exch def
+  newpath
+  x y moveto
+  boxwidth 2 div distx add 0 rlineto
+  stroke
+  1 eq
+  { newpath x boxwidth 2 div distx add add y moveto
+    -8 3 rlineto
+    0 -6 rlineto
+    8 3 rlineto
+    closepath
+    eofill
+    stroke
+  } if
+} def
+
+/vedge
+{
+  /ye exch def
+  /ys exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add dup
+  ys yspacing mul boxheight 2 div sub
+  moveto
+  ye yspacing mul boxheight 2 div sub
+  lineto
+  stroke
+} def
+
+/conn % connections the blocks from col `arg1' to `arg2' of row `arg3'
+{
+  /ys exch def
+  /xe exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add
+  ys yspacing mul disty 2 div sub
+  moveto
+  xspacing xe xs sub mul 0
+  rlineto
+  stroke
+} def
+
+% ----- main ------
+
+boxfont setfont
+1 boundaspect scale
+(Ms::UndoCommand) cw
+(Ms::AddBracket) cw
+(Ms::AddElement) cw
+(Ms::AddExcerpt) cw
+(Ms::ChangeBend) cw
+(Ms::ChangeBracketType) cw
+(Ms::ChangeChordStaffMove) cw
+(Ms::ChangeClefType) cw
+(Ms::ChangeDrumset) cw
+(Ms::ChangeElement) cw
+(Ms::ChangeEventList) cw
+(Ms::ChangeExcerptTitle) cw
+(Ms::ChangeFretting) cw
+(Ms::ChangeGap) cw
+(Ms::ChangeImage) cw
+(Ms::ChangeInstrument) cw
+(Ms::ChangeInstrumentLong) cw
+(Ms::ChangeInstrumentShort) cw
+(Ms::ChangeKeySig) cw
+(Ms::ChangeMeasureLen) cw
+(Ms::ChangeMetaTags) cw
+(Ms::ChangeMetaText) cw
+(Ms::ChangeMMRest) cw
+(Ms::ChangeMStaffProperties) cw
+(Ms::ChangeNoteEvent) cw
+(Ms::ChangeNoteEvents) cw
+(Ms::ChangeParent) cw
+(Ms::ChangePart) cw
+(Ms::ChangePatch) cw
+(Ms::ChangePitch) cw
+(Ms::ChangeProperty) cw
+(Ms::ChangeSpannerElements) cw
+(Ms::ChangeStaff) cw
+(Ms::ChangeStaffType) cw
+(Ms::ChangeStaffUserDist) cw
+(Ms::ChangeStartEndSpanner) cw
+(Ms::ChangeStyle) cw
+(Ms::ChangeStyleVal) cw
+(Ms::ChangeSynthesizerState) cw
+(Ms::ChangeText) cw
+(Ms::ChangeTremoloBar) cw
+(Ms::ChangeVelocity) cw
+(Ms::CloneVoice) cw
+(Ms::EditText) cw
+(Ms::ExchangeVoice) cw
+(Ms::InsertMStaff) cw
+(Ms::InsertPart) cw
+(Ms::InsertRemoveMeasures) cw
+(Ms::InsertStaff) cw
+(Ms::InsertStaves) cw
+(Ms::InsertTime) cw
+(Ms::LinkStaff) cw
+(Ms::LinkUnlink) cw
+(Ms::MoveElement) cw
+(Ms::MoveStaff) cw
+(Ms::RemoveBracket) cw
+(Ms::RemoveElement) cw
+(Ms::RemoveExcerpt) cw
+(Ms::RemoveMStaff) cw
+(Ms::RemovePart) cw
+(Ms::RemoveStaff) cw
+(Ms::RemoveStaves) cw
+(Ms::SaveState) cw
+(Ms::SortStaves) cw
+(Ms::SplitText) cw
+(Ms::SwapCR) cw
+(Ms::SwapExcerpt) cw
+(Ms::TransposeHarmony) cw
+(Ms::UnlinkStaff) cw
+/boxwidth boxwidth marginwidth 2 mul add def
+/xspacing boxwidth distx add def
+/yspacing boxheight disty add def
+/scalefactor 
+  boxwidth cols mul distx cols 1 sub mul add
+  boxheight rows mul disty rows 1 sub mul add boundaspect mul 
+  max def
+boundx scalefactor div boundy scalefactor div scale
+
+% ----- classes -----
+
+ (Ms::UndoCommand) 0.000000 68.000000 box
+ (Ms::AddBracket) 1.000000 67.000000 box
+ (Ms::AddElement) 1.000000 66.000000 box
+ (Ms::AddExcerpt) 1.000000 65.000000 box
+ (Ms::ChangeBend) 1.000000 64.000000 box
+ (Ms::ChangeBracketType) 1.000000 63.000000 box
+ (Ms::ChangeChordStaffMove) 1.000000 62.000000 box
+ (Ms::ChangeClefType) 1.000000 61.000000 box
+ (Ms::ChangeDrumset) 1.000000 60.000000 box
+ (Ms::ChangeElement) 1.000000 59.000000 box
+ (Ms::ChangeEventList) 1.000000 58.000000 box
+ (Ms::ChangeExcerptTitle) 1.000000 57.000000 box
+ (Ms::ChangeFretting) 1.000000 56.000000 box
+ (Ms::ChangeGap) 1.000000 55.000000 box
+ (Ms::ChangeImage) 1.000000 54.000000 box
+ (Ms::ChangeInstrument) 1.000000 53.000000 box
+ (Ms::ChangeInstrumentLong) 1.000000 52.000000 box
+ (Ms::ChangeInstrumentShort) 1.000000 51.000000 box
+ (Ms::ChangeKeySig) 1.000000 50.000000 box
+ (Ms::ChangeMeasureLen) 1.000000 49.000000 box
+ (Ms::ChangeMetaTags) 1.000000 48.000000 box
+ (Ms::ChangeMetaText) 1.000000 47.000000 box
+ (Ms::ChangeMMRest) 1.000000 46.000000 box
+ (Ms::ChangeMStaffProperties) 1.000000 45.000000 box
+ (Ms::ChangeNoteEvent) 1.000000 44.000000 box
+ (Ms::ChangeNoteEvents) 1.000000 43.000000 box
+ (Ms::ChangeParent) 1.000000 42.000000 box
+ (Ms::ChangePart) 1.000000 41.000000 box
+ (Ms::ChangePatch) 1.000000 40.000000 box
+ (Ms::ChangePitch) 1.000000 39.000000 box
+ (Ms::ChangeProperty) 1.000000 38.000000 box
+ (Ms::ChangeSpannerElements) 1.000000 37.000000 box
+ (Ms::ChangeStaff) 1.000000 36.000000 box
+ (Ms::ChangeStaffType) 1.000000 35.000000 box
+ (Ms::ChangeStaffUserDist) 1.000000 34.000000 box
+ (Ms::ChangeStartEndSpanner) 1.000000 33.000000 box
+ (Ms::ChangeStyle) 1.000000 32.000000 box
+ (Ms::ChangeStyleVal) 1.000000 31.000000 box
+ (Ms::ChangeSynthesizerState) 1.000000 30.000000 box
+ (Ms::ChangeText) 1.000000 29.000000 box
+1.000000 29.000000 mark
+ (Ms::ChangeTremoloBar) 1.000000 28.000000 box
+ (Ms::ChangeVelocity) 1.000000 27.000000 box
+ (Ms::CloneVoice) 1.000000 26.000000 box
+ (Ms::EditText) 1.000000 25.000000 box
+ (Ms::ExchangeVoice) 1.000000 24.000000 box
+ (Ms::InsertMStaff) 1.000000 23.000000 box
+ (Ms::InsertPart) 1.000000 22.000000 box
+ (Ms::InsertRemoveMeasures) 1.000000 21.000000 box
+1.000000 21.000000 mark
+ (Ms::InsertStaff) 1.000000 20.000000 box
+ (Ms::InsertStaves) 1.000000 19.000000 box
+ (Ms::InsertTime) 1.000000 18.000000 box
+ (Ms::LinkStaff) 1.000000 17.000000 box
+ (Ms::LinkUnlink) 1.000000 16.000000 box
+1.000000 16.000000 mark
+ (Ms::MoveElement) 1.000000 15.000000 box
+ (Ms::MoveStaff) 1.000000 14.000000 box
+ (Ms::RemoveBracket) 1.000000 13.000000 box
+ (Ms::RemoveElement) 1.000000 12.000000 box
+ (Ms::RemoveExcerpt) 1.000000 11.000000 box
+ (Ms::RemoveMStaff) 1.000000 10.000000 box
+ (Ms::RemovePart) 1.000000 9.000000 box
+ (Ms::RemoveStaff) 1.000000 8.000000 box
+ (Ms::RemoveStaves) 1.000000 7.000000 box
+ (Ms::SaveState) 1.000000 6.000000 box
+ (Ms::SortStaves) 1.000000 5.000000 box
+ (Ms::SplitText) 1.000000 4.000000 box
+ (Ms::SwapCR) 1.000000 3.000000 box
+ (Ms::SwapExcerpt) 1.000000 2.000000 box
+ (Ms::TransposeHarmony) 1.000000 1.000000 box
+ (Ms::UnlinkStaff) 1.000000 0.000000 box
+
+% ----- relations -----
+
+solid
+1 0.000000 67.250000 out
+solid
+0 0.000000 67.500000 hedge
+solid
+0 0.000000 66.500000 hedge
+solid
+0 0.000000 65.500000 hedge
+solid
+0 0.000000 64.500000 hedge
+solid
+0 0.000000 63.500000 hedge
+solid
+0 0.000000 62.500000 hedge
+solid
+0 0.000000 61.500000 hedge
+solid
+0 0.000000 60.500000 hedge
+solid
+0 0.000000 59.500000 hedge
+solid
+0 0.000000 58.500000 hedge
+solid
+0 0.000000 57.500000 hedge
+solid
+0 0.000000 56.500000 hedge
+solid
+0 0.000000 55.500000 hedge
+solid
+0 0.000000 54.500000 hedge
+solid
+0 0.000000 53.500000 hedge
+solid
+0 0.000000 52.500000 hedge
+solid
+0 0.000000 51.500000 hedge
+solid
+0 0.000000 50.500000 hedge
+solid
+0 0.000000 49.500000 hedge
+solid
+0 0.000000 48.500000 hedge
+solid
+0 0.000000 47.500000 hedge
+solid
+0 0.000000 46.500000 hedge
+solid
+0 0.000000 45.500000 hedge
+solid
+0 0.000000 44.500000 hedge
+solid
+0 0.000000 43.500000 hedge
+solid
+0 0.000000 42.500000 hedge
+solid
+0 0.000000 41.500000 hedge
+solid
+0 0.000000 40.500000 hedge
+solid
+0 0.000000 39.500000 hedge
+solid
+0 0.000000 38.500000 hedge
+solid
+0 0.000000 37.500000 hedge
+solid
+0 0.000000 36.500000 hedge
+solid
+0 0.000000 35.500000 hedge
+solid
+0 0.000000 34.500000 hedge
+solid
+0 0.000000 33.500000 hedge
+solid
+0 0.000000 32.500000 hedge
+solid
+0 0.000000 31.500000 hedge
+solid
+0 0.000000 30.500000 hedge
+solid
+0 0.000000 29.500000 hedge
+solid
+0 0.000000 28.500000 hedge
+solid
+0 0.000000 27.500000 hedge
+solid
+0 0.000000 26.500000 hedge
+solid
+0 0.000000 25.500000 hedge
+solid
+0 0.000000 24.500000 hedge
+solid
+0 0.000000 23.500000 hedge
+solid
+0 0.000000 22.500000 hedge
+solid
+0 0.000000 21.500000 hedge
+solid
+0 0.000000 20.500000 hedge
+solid
+0 0.000000 19.500000 hedge
+solid
+0 0.000000 18.500000 hedge
+solid
+0 0.000000 17.500000 hedge
+solid
+0 0.000000 16.500000 hedge
+solid
+0 0.000000 15.500000 hedge
+solid
+0 0.000000 14.500000 hedge
+solid
+0 0.000000 13.500000 hedge
+solid
+0 0.000000 12.500000 hedge
+solid
+0 0.000000 11.500000 hedge
+solid
+0 0.000000 10.500000 hedge
+solid
+0 0.000000 9.500000 hedge
+solid
+0 0.000000 8.500000 hedge
+solid
+0 0.000000 7.500000 hedge
+solid
+0 0.000000 6.500000 hedge
+solid
+0 0.000000 5.500000 hedge
+solid
+0 0.000000 4.500000 hedge
+solid
+0 0.000000 3.500000 hedge
+solid
+0 0.000000 2.500000 hedge
+solid
+0 0.000000 1.500000 hedge
+solid
+0 0.000000 0.500000 hedge
+solid
+0.000000 68.000000 0.500000 vedge

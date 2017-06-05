@@ -1,0 +1,77 @@
+.TH "SecurityHandler" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SecurityHandler
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBStandardSecurityHandler\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSecurityHandler\fP (\fBPDFDoc\fP *docA)"
+.br
+.ti -1c
+.RI "virtual GBool \fBisUnencrypted\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBcheckEncryption\fP (\fBGooString\fP *ownerPassword, \fBGooString\fP *userPassword)"
+.br
+.ti -1c
+.RI "virtual void * \fBmakeAuthData\fP (\fBGooString\fP *ownerPassword, \fBGooString\fP *userPassword)=0"
+.br
+.ti -1c
+.RI "virtual void * \fBgetAuthData\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBfreeAuthData\fP (void *authData)=0"
+.br
+.ti -1c
+.RI "virtual GBool \fBauthorize\fP (void *authData)=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetPermissionFlags\fP ()=0"
+.br
+.ti -1c
+.RI "virtual GBool \fBgetOwnerPasswordOk\fP ()=0"
+.br
+.ti -1c
+.RI "virtual Guchar * \fBgetFileKey\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetFileKeyLength\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetEncVersion\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetEncRevision\fP ()=0"
+.br
+.ti -1c
+.RI "virtual CryptAlgorithm \fBgetEncAlgorithm\fP ()=0"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSecurityHandler\fP * \fBmake\fP (\fBPDFDoc\fP *docA, \fBObject\fP *encryptDictA)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBdoc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file SecurityHandler\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

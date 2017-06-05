@@ -1,0 +1,97 @@
+.TH "Ms::Synthesizer" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Synthesizer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBAeolus\fP, \fBFluidS::Fluid\fP, and \fBZerberus\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinit\fP (float sr)"
+.br
+.ti -1c
+.RI "float \fBsampleRate\fP () const"
+.br
+.ti -1c
+.RI "virtual const char * \fBname\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBsetMasterTuning\fP (double)"
+.br
+.ti -1c
+.RI "virtual double \fBmasterTuning\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBloadSoundFonts\fP (const QStringList &)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBaddSoundFont\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual bool \fBremoveSoundFont\fP (const QString &)"
+.br
+.ti -1c
+.RI "virtual QStringList \fBsoundFonts\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBprocess\fP (unsigned, float *, float *, float *)=0"
+.br
+.ti -1c
+.RI "virtual void \fBplay\fP (const \fBPlayEvent\fP &)=0"
+.br
+.ti -1c
+.RI "virtual const QList< \fBMidiPatch\fP * > & \fBgetPatchInfo\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBSynthesizerGroup\fP \fBstate\fP () const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBsetState\fP (const \fBSynthesizerGroup\fP &)=0"
+.br
+.ti -1c
+.RI "virtual void \fBsetValue\fP (int, double)"
+.br
+.ti -1c
+.RI "virtual double \fBvalue\fP (int) const"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBactive\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetActive\fP (bool val=true)"
+.br
+.ti -1c
+.RI "virtual void \fBallSoundsOff\fP (int)"
+.br
+.ti -1c
+.RI "virtual void \fBallNotesOff\fP (int)"
+.br
+.ti -1c
+.RI "virtual \fBSynthesizerGui\fP * \fBgui\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fB_sampleRate\fP"
+.br
+.ti -1c
+.RI "\fBSynthesizerGui\fP * \fB_gui\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 29 of file synthesizer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

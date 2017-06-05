@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="kqoauthmanager__p_8h" kind="file" language="C++">
+    <compoundname>kqoauthmanager_p.h</compoundname>
+    <includes refid="kqoauthauthreplyserver_8h" local="yes">kqoauthauthreplyserver.h</includes>
+    <includes refid="kqoauthrequest_8h" local="yes">kqoauthrequest.h</includes>
+    <includedby refid="kqoauthmanager_8cpp" local="yes">thirdparty/kQOAuth/kqoauthmanager.cpp</includedby>
+    <incdepgraph>
+      <node id="81927">
+        <label>QObject</label>
+      </node>
+      <node id="81922">
+        <label>kqoauthauthreplyserver.h</label>
+        <link refid="kqoauthauthreplyserver_8h_source"/>
+        <childnode refid="81923" relation="include">
+        </childnode>
+        <childnode refid="81924" relation="include">
+        </childnode>
+      </node>
+      <node id="81928">
+        <label>QUrl</label>
+      </node>
+      <node id="81926">
+        <label>kqoauthrequest.h</label>
+        <link refid="kqoauthrequest_8h_source"/>
+        <childnode refid="81927" relation="include">
+        </childnode>
+        <childnode refid="81928" relation="include">
+        </childnode>
+        <childnode refid="81929" relation="include">
+        </childnode>
+        <childnode refid="81930" relation="include">
+        </childnode>
+        <childnode refid="81924" relation="include">
+        </childnode>
+      </node>
+      <node id="81930">
+        <label>QHttpMultiPart</label>
+      </node>
+      <node id="81925">
+        <label>QtCore/qglobal.h</label>
+      </node>
+      <node id="81921">
+        <label>thirdparty/kQOAuth/kqoauthmanager_p.h</label>
+        <link refid="kqoauthmanager__p_8h"/>
+        <childnode refid="81922" relation="include">
+        </childnode>
+        <childnode refid="81926" relation="include">
+        </childnode>
+      </node>
+      <node id="81924">
+        <label>kqoauthglobals.h</label>
+        <link refid="kqoauthglobals_8h_source"/>
+        <childnode refid="81925" relation="include">
+        </childnode>
+      </node>
+      <node id="81923">
+        <label>QTcpServer</label>
+      </node>
+      <node id="81929">
+        <label>QMultiMap</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="81932">
+        <label>thirdparty/kQOAuth/kqoauthmanager.cpp</label>
+        <link refid="kqoauthmanager_8cpp_source"/>
+      </node>
+      <node id="81931">
+        <label>thirdparty/kQOAuth/kqoauthmanager_p.h</label>
+        <link refid="kqoauthmanager__p_8h"/>
+        <childnode refid="81932" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_k_q_o_auth_manager_private" prot="public">KQOAuthManagerPrivate</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="20"><highlight class="preprocessor">#ifndef<sp/>KQOAUTHMANAGER_P_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>KQOAUTHMANAGER_P_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kqoauthauthreplyserver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kqoauthrequest.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_k_q_o_auth_manager_private" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_k_q_o_auth_manager_private" kindref="compound">KQOAuthManagerPrivate</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_q_o_auth_manager_private_1adecc49ccb0a6c6f48a48dc7ab54e89e9" kindref="member">KQOAuthManagerPrivate</ref>(<ref refid="class_k_q_o_auth_manager" kindref="compound">KQOAuthManager</ref><sp/>*parent);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>~<ref refid="class_k_q_o_auth_manager_private" kindref="compound">KQOAuthManagerPrivate</ref>();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<sp/>QPair&lt;QString,<sp/>QString&gt;<sp/>&gt;<sp/>createQueryParams(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>KQOAuthParameters<sp/>&amp;requestParams);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QMultiMap&lt;QString,<sp/>QString&gt;<sp/>createTokensFromResponse(QByteArray<sp/>reply);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setSuccessfulRequestToken(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMultiMap&lt;QString,<sp/>QString&gt;<sp/>&amp;request);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setSuccessfulAuthorized(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMultiMap&lt;QString,<sp/>QString&gt;<sp/>&amp;request);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>emitTokens();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>setupCallbackServer();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>KQOAuthManager::KQOAuthError<sp/>error;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_q_o_auth_request" kindref="compound">KQOAuthRequest</ref><sp/>*r;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>request<sp/>is<sp/>used<sp/>to<sp/>cache<sp/>the<sp/>user<sp/>sent<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_q_o_auth_request" kindref="compound">KQOAuthRequest</ref><sp/>*opaqueRequest;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>request<sp/>is<sp/>used<sp/>to<sp/>creating<sp/>opaque<sp/>convenience<sp/>requests<sp/>for<sp/>the<sp/>user.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_q_o_auth_manager" kindref="compound">KQOAuthManager</ref><sp/>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>q_ptr;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_k_q_o_auth_manager_private_1a2f70ace00de205f3d1f1bf79d1987bb0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>KQOAuthRequest::RequestType<sp/><ref refid="class_k_q_o_auth_manager_private_1a2f70ace00de205f3d1f1bf79d1987bb0" kindref="member">currentRequestType</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Variables<sp/>we<sp/>store<sp/>here<sp/>for<sp/>opaque<sp/>request<sp/>handling.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>The<sp/>variables<sp/>are<sp/>labeled<sp/>the<sp/>same<sp/>for<sp/>both<sp/>access<sp/>token<sp/>request</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>protected<sp/>resource<sp/>access.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>requestToken;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>requestTokenSecret;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>consumerKey;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>consumerKeySecret;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>requestVerifier;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>KQOAuthRequest::RequestSignatureMethod<sp/>signatureMethod;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_k_q_o_auth_auth_reply_server" kindref="compound">KQOAuthAuthReplyServer</ref><sp/>*callbackServer;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasTemporaryToken;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isVerified;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isAuthorized;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>autoAuth;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>handleAuthPageOpening;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>QNetworkAccessManager<sp/>*networkManager;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>managerUserSet;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;QNetworkReply*,<sp/>int&gt;<sp/>requestIds;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;KQOAuthRequest*,<sp/>QNetworkReply*&gt;<sp/>requestMap;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_DECLARE_PUBLIC(<ref refid="class_k_q_o_auth_manager" kindref="compound">KQOAuthManager</ref>);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>KQOAUTHMANAGER_P_H</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/kQOAuth/kqoauthmanager_p.h"/>
+  </compounddef>
+</doxygen>

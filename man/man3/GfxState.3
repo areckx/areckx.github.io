@@ -1,0 +1,395 @@
+.TH "GfxState" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GfxState
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBReusablePathIterator\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGfxState\fP (double hDPIA, double vDPIA, \fBPDFRectangle\fP *pageBox, int rotateA, GBool upsideDown)"
+.br
+.ti -1c
+.RI "\fBGfxState\fP * \fBcopy\fP (GBool copyPath=gFalse)"
+.br
+.ti -1c
+.RI "double \fBgetHDPI\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetVDPI\fP ()"
+.br
+.ti -1c
+.RI "double * \fBgetCTM\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetCTM\fP (\fBMatrix\fP *m)"
+.br
+.ti -1c
+.RI "double \fBgetX1\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetY1\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetX2\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetY2\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetPageWidth\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetPageHeight\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRotate\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxColor\fP * \fBgetFillColor\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxColor\fP * \fBgetStrokeColor\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetFillGray\fP (GfxGray *gray)"
+.br
+.ti -1c
+.RI "void \fBgetStrokeGray\fP (GfxGray *gray)"
+.br
+.ti -1c
+.RI "void \fBgetFillRGB\fP (\fBGfxRGB\fP *rgb)"
+.br
+.ti -1c
+.RI "void \fBgetStrokeRGB\fP (\fBGfxRGB\fP *rgb)"
+.br
+.ti -1c
+.RI "void \fBgetFillCMYK\fP (\fBGfxCMYK\fP *cmyk)"
+.br
+.ti -1c
+.RI "void \fBgetFillDeviceN\fP (\fBGfxColor\fP *deviceN)"
+.br
+.ti -1c
+.RI "void \fBgetStrokeCMYK\fP (\fBGfxCMYK\fP *cmyk)"
+.br
+.ti -1c
+.RI "void \fBgetStrokeDeviceN\fP (\fBGfxColor\fP *deviceN)"
+.br
+.ti -1c
+.RI "\fBGfxColorSpace\fP * \fBgetFillColorSpace\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxColorSpace\fP * \fBgetStrokeColorSpace\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxPattern\fP * \fBgetFillPattern\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxPattern\fP * \fBgetStrokePattern\fP ()"
+.br
+.ti -1c
+.RI "GfxBlendMode \fBgetBlendMode\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetFillOpacity\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetStrokeOpacity\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetFillOverprint\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetStrokeOverprint\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetOverprintMode\fP ()"
+.br
+.ti -1c
+.RI "\fBFunction\fP ** \fBgetTransfer\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetLineWidth\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetLineDash\fP (double **dash, int *length, double *start)"
+.br
+.ti -1c
+.RI "int \fBgetFlatness\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetLineJoin\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetLineCap\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMiterLimit\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetStrokeAdjust\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetAlphaIsShape\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetTextKnockout\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxFont\fP * \fBgetFont\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetFontSize\fP ()"
+.br
+.ti -1c
+.RI "double * \fBgetTextMat\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetCharSpace\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetWordSpace\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetHorizScaling\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetLeading\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetRise\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRender\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetRenderingIntent\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxPath\fP * \fBgetPath\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPath\fP (\fBGfxPath\fP *pathA)"
+.br
+.ti -1c
+.RI "double \fBgetCurX\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetCurY\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetClipBBox\fP (double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "void \fBgetUserClipBBox\fP (double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "double \fBgetLineX\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetLineY\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisCurPt\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisPath\fP ()"
+.br
+.ti -1c
+.RI "void \fBtransform\fP (double x1, double y1, double *x2, double *y2)"
+.br
+.ti -1c
+.RI "void \fBtransformDelta\fP (double x1, double y1, double *x2, double *y2)"
+.br
+.ti -1c
+.RI "void \fBtextTransform\fP (double x1, double y1, double *x2, double *y2)"
+.br
+.ti -1c
+.RI "void \fBtextTransformDelta\fP (double x1, double y1, double *x2, double *y2)"
+.br
+.ti -1c
+.RI "double \fBtransformWidth\fP (double w)"
+.br
+.ti -1c
+.RI "double \fBgetTransformedLineWidth\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetTransformedFontSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetFontTransMat\fP (double *m11, double *m12, double *m21, double *m22)"
+.br
+.ti -1c
+.RI "void \fBsetCTM\fP (double a, double b, double c, double d, double e, double f)"
+.br
+.ti -1c
+.RI "void \fBconcatCTM\fP (double a, double b, double c, double d, double e, double f)"
+.br
+.ti -1c
+.RI "void \fBshiftCTMAndClip\fP (double tx, double ty)"
+.br
+.ti -1c
+.RI "void \fBsetFillColorSpace\fP (\fBGfxColorSpace\fP *colorSpace)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeColorSpace\fP (\fBGfxColorSpace\fP *colorSpace)"
+.br
+.ti -1c
+.RI "void \fBsetFillColor\fP (\fBGfxColor\fP *\fBcolor\fP)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeColor\fP (\fBGfxColor\fP *\fBcolor\fP)"
+.br
+.ti -1c
+.RI "void \fBsetFillPattern\fP (\fBGfxPattern\fP *pattern)"
+.br
+.ti -1c
+.RI "void \fBsetStrokePattern\fP (\fBGfxPattern\fP *pattern)"
+.br
+.ti -1c
+.RI "void \fBsetBlendMode\fP (GfxBlendMode mode)"
+.br
+.ti -1c
+.RI "void \fBsetFillOpacity\fP (double opac)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeOpacity\fP (double opac)"
+.br
+.ti -1c
+.RI "void \fBsetFillOverprint\fP (GBool op)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeOverprint\fP (GBool op)"
+.br
+.ti -1c
+.RI "void \fBsetOverprintMode\fP (int op)"
+.br
+.ti -1c
+.RI "void \fBsetTransfer\fP (\fBFunction\fP **funcs)"
+.br
+.ti -1c
+.RI "void \fBsetLineWidth\fP (double width)"
+.br
+.ti -1c
+.RI "void \fBsetLineDash\fP (double *dash, int length, double start)"
+.br
+.ti -1c
+.RI "void \fBsetFlatness\fP (int flatness1)"
+.br
+.ti -1c
+.RI "void \fBsetLineJoin\fP (int lineJoin1)"
+.br
+.ti -1c
+.RI "void \fBsetLineCap\fP (int lineCap1)"
+.br
+.ti -1c
+.RI "void \fBsetMiterLimit\fP (double limit)"
+.br
+.ti -1c
+.RI "void \fBsetStrokeAdjust\fP (GBool sa)"
+.br
+.ti -1c
+.RI "void \fBsetAlphaIsShape\fP (GBool ais)"
+.br
+.ti -1c
+.RI "void \fBsetTextKnockout\fP (GBool tk)"
+.br
+.ti -1c
+.RI "void \fBsetFont\fP (\fBGfxFont\fP *fontA, double fontSizeA)"
+.br
+.ti -1c
+.RI "void \fBsetTextMat\fP (double a, double b, double c, double d, double e, double f)"
+.br
+.ti -1c
+.RI "void \fBsetCharSpace\fP (double space)"
+.br
+.ti -1c
+.RI "void \fBsetWordSpace\fP (double space)"
+.br
+.ti -1c
+.RI "void \fBsetHorizScaling\fP (double scale)"
+.br
+.ti -1c
+.RI "void \fBsetLeading\fP (double leadingA)"
+.br
+.ti -1c
+.RI "void \fBsetRise\fP (double riseA)"
+.br
+.ti -1c
+.RI "void \fBsetRender\fP (int renderA)"
+.br
+.ti -1c
+.RI "void \fBsetRenderingIntent\fP (const char *intent)"
+.br
+.ti -1c
+.RI "void \fBmoveTo\fP (double x, double y)"
+.br
+.ti -1c
+.RI "void \fBlineTo\fP (double x, double y)"
+.br
+.ti -1c
+.RI "void \fBcurveTo\fP (double x1, double y1, double x2, double y2, double x3, double y3)"
+.br
+.ti -1c
+.RI "void \fBclosePath\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearPath\fP ()"
+.br
+.ti -1c
+.RI "void \fBclip\fP ()"
+.br
+.ti -1c
+.RI "void \fBclipToStrokePath\fP ()"
+.br
+.ti -1c
+.RI "void \fBclipToRect\fP (double xMin, double yMin, double xMax, double yMax)"
+.br
+.ti -1c
+.RI "void \fBtextSetPos\fP (double tx, double ty)"
+.br
+.ti -1c
+.RI "void \fBtextMoveTo\fP (double tx, double ty)"
+.br
+.ti -1c
+.RI "void \fBtextShift\fP (double tx, double ty)"
+.br
+.ti -1c
+.RI "void \fBshift\fP (double dx, double dy)"
+.br
+.ti -1c
+.RI "\fBGfxState\fP * \fBsave\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxState\fP * \fBrestore\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBhasSaves\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisParentState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "GBool \fBparseBlendMode\fP (\fBObject\fP *obj, GfxBlendMode *mode)"
+.br
+.ti -1c
+.RI "\fBReusablePathIterator\fP * \fBgetReusablePath\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1340 of file GfxState\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

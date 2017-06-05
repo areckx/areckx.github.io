@@ -1,0 +1,69 @@
+\hypertarget{class_poppler_1_1_annotation_utils}{}\section{Poppler\+:\+:Annotation\+Utils Class Reference}
+\label{class_poppler_1_1_annotation_utils}\index{Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}}
+
+
+Helper class for (recursive) \hyperlink{class_poppler_1_1_annotation}{Annotation} retrieval/storage.  
+
+
+
+
+{\ttfamily \#include $<$poppler-\/annotation.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ \hyperlink{class_poppler_1_1_annotation_utils_a877dcd5f1e9f136ff86ae96de85712e0}{create\+Annotation} (const Q\+Dom\+Element \&ann\+Element)
+\item 
+static void \hyperlink{class_poppler_1_1_annotation_utils_a1ef4c62890bcf810bba8d8a08763d784}{store\+Annotation} (const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ann, Q\+Dom\+Element \&ann\+Element, Q\+Dom\+Document \&document)
+\item 
+static Q\+Dom\+Element \hyperlink{class_poppler_1_1_annotation_utils_add8a7dc39bd8225aa8d7ff7d53be70b8}{find\+Child\+Element} (const Q\+Dom\+Node \&parent\+Node, const Q\+String \&name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class for (recursive) \hyperlink{class_poppler_1_1_annotation}{Annotation} retrieval/storage. 
+
+Definition at line 73 of file poppler-\/annotation.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_annotation_utils_a877dcd5f1e9f136ff86ae96de85712e0}\label{class_poppler_1_1_annotation_utils_a877dcd5f1e9f136ff86ae96de85712e0}} 
+\index{Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}!create\+Annotation@{create\+Annotation}}
+\index{create\+Annotation@{create\+Annotation}!Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}}
+\subsubsection{\texorpdfstring{create\+Annotation()}{createAnnotation()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ Poppler\+::\+Annotation\+Utils\+::create\+Annotation (\begin{DoxyParamCaption}\item[{const Q\+Dom\+Element \&}]{ann\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Restore an \hyperlink{class_poppler_1_1_annotation}{Annotation} (with revisions if needed) from the D\+OM element {\ttfamily ann\+Element}. \begin{DoxyReturn}{Returns}
+a pointer to the complete \hyperlink{class_poppler_1_1_annotation}{Annotation} or 0 if element is invalid. 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_utils_add8a7dc39bd8225aa8d7ff7d53be70b8}\label{class_poppler_1_1_annotation_utils_add8a7dc39bd8225aa8d7ff7d53be70b8}} 
+\index{Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}!find\+Child\+Element@{find\+Child\+Element}}
+\index{find\+Child\+Element@{find\+Child\+Element}!Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}}
+\subsubsection{\texorpdfstring{find\+Child\+Element()}{findChildElement()}}
+{\footnotesize\ttfamily Q\+Dom\+Element Poppler\+::\+Annotation\+Utils\+::find\+Child\+Element (\begin{DoxyParamCaption}\item[{const Q\+Dom\+Node \&}]{parent\+Node,  }\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns an element called {\ttfamily name} from the direct children of {\ttfamily parent\+Node} or a null element if not found. 
+
+Definition at line 106 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_utils_a1ef4c62890bcf810bba8d8a08763d784}\label{class_poppler_1_1_annotation_utils_a1ef4c62890bcf810bba8d8a08763d784}} 
+\index{Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}!store\+Annotation@{store\+Annotation}}
+\index{store\+Annotation@{store\+Annotation}!Poppler\+::\+Annotation\+Utils@{Poppler\+::\+Annotation\+Utils}}
+\subsubsection{\texorpdfstring{store\+Annotation()}{storeAnnotation()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+Utils\+::store\+Annotation (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$}]{ann,  }\item[{Q\+Dom\+Element \&}]{ann\+Element,  }\item[{Q\+Dom\+Document \&}]{document }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Save the \hyperlink{class_poppler_1_1_annotation}{Annotation} {\ttfamily ann} as a child of {\ttfamily ann\+Element} taking care of saving all revisions if {\ttfamily ann} has any. 
+
+Definition at line 96 of file poppler-\/annotation.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+h\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+cc\end{DoxyCompactItemize}

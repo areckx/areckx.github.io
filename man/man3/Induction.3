@@ -1,0 +1,92 @@
+.TH "Induction" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Induction
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Induction\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBAgentList\fP \fBbeatInduction\fP (const \fBAgentParameters\fP &params, const EventList &events)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static double \fBclusterWidth\fP = 0\&.025"
+.br
+.ti -1c
+.RI "static double \fBminIOI\fP = 0\&.070"
+.br
+.ti -1c
+.RI "static double \fBmaxIOI\fP = 2\&.500"
+.br
+.ti -1c
+.RI "static double \fBminIBI\fP = 0\&.3"
+.br
+.ti -1c
+.RI "static double \fBmaxIBI\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static int \fBtopN\fP = 10"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Performs tempo induction by finding clusters of similar inter-onset intervals (IOIs), ranking them according to the number of intervals and relationships between them, and returning a set of tempo hypotheses for initialising the beat tracking agents\&. 
+.PP
+Definition at line 31 of file Induction\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAgentList\fP Induction::beatInduction (const \fBAgentParameters\fP & params, const EventList & events)\fC [static]\fP"
+Performs tempo induction (see JNMR 2001 paper by Simon Dixon for details)\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIevents\fP The onsets (or other events) from which the tempo is induced 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A list of beat tracking agents, where each is initialised with one of the top tempo hypotheses but no beats 
+.RE
+.PP
+
+.PP
+Definition at line 32 of file Induction\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "double Induction::clusterWidth = 0\&.025\fC [static]\fP"
+The maximum difference in IOIs which are in the same cluster 
+.PP
+Definition at line 35 of file Induction\&.h\&.
+.SS "double Induction::maxIBI = 1\&.0\fC [static]\fP"
+The maximum inter-beat interval (IBI), i\&.e\&. the minimum tempo hypothesis that can be returned\&. 1\&.00 seconds == 60 BPM 0\&.75 seconds == 80 BPM 0\&.60 seconds == 100 BPM 
+.PP
+Definition at line 56 of file Induction\&.h\&.
+.SS "double Induction::maxIOI = 2\&.500\fC [static]\fP"
+The maximum IOI for inclusion in a cluster 
+.PP
+Definition at line 41 of file Induction\&.h\&.
+.SS "double Induction::minIBI = 0\&.3\fC [static]\fP"
+The minimum inter-beat interval (IBI), i\&.e\&. the maximum tempo hypothesis that can be returned\&. 0\&.30 seconds == 200 BPM 0\&.25 seconds == 240 BPM 
+.PP
+Definition at line 48 of file Induction\&.h\&.
+.SS "double Induction::minIOI = 0\&.070\fC [static]\fP"
+The minimum IOI for inclusion in a cluster 
+.PP
+Definition at line 38 of file Induction\&.h\&.
+.SS "int Induction::topN = 10\fC [static]\fP"
+The maximum number of tempo hypotheses to return 
+.PP
+Definition at line 59 of file Induction\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

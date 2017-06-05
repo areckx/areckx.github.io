@@ -1,0 +1,37 @@
+.TH "Ms::VoiceOverlapDetector" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::VoiceOverlapDetector
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <musicxmlsupport\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddNote\fP (const int startTick, const int endTick, const QString &voice, const int staff)"
+.br
+.ti -1c
+.RI "void \fBdump\fP () const"
+.br
+.ti -1c
+.RI "void \fBnewMeasure\fP ()"
+.br
+.ti -1c
+.RI "bool \fBstavesOverlap\fP (const QString &voice) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Detect overlap in a voice, which is when a voice has two or more notes active at the same time\&. In theory this should not happen, as voices only move forward in time, but Sibelius 7 reuses voice numbers in multi- staff parts, which leads to overlap\&.
+.PP
+Current implementation does not detect voice overlap within a staff, but only between staves\&. 
+.PP
+Definition at line 109 of file musicxmlsupport\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

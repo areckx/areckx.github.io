@@ -1,0 +1,127 @@
+.TH "Ms::Glissando" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Glissando
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::SLine\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : char { \fBSTRAIGHT\fP, \fBWAVY\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlissando\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBGlissando\fP (const \fBGlissando\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBGlissando\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBLineSegment\fP * \fBcreateLineSegment\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "Type \fBglissandoType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGlissandoType\fP (Type v)"
+.br
+.ti -1c
+.RI "MScore::GlissandoStyle \fBglissandoStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGlissandoStyle\fP (MScore::GlissandoStyle s)"
+.br
+.ti -1c
+.RI "bool \fBplayGlissando\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayGlissando\fP (bool v)"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const QString &t)"
+.br
+.ti -1c
+.RI "bool \fBshowText\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowText\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBundoSetGlissandoType\fP (Type)"
+.br
+.ti -1c
+.RI "void \fBundoSetText\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBundoSetShowText\fP (bool)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBNote\fP * \fBguessInitialNote\fP (\fBChord\fP *chord)"
+.br
+.ti -1c
+.RI "static \fBNote\fP * \fBguessFinalNote\fP (\fBChord\fP *chord)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::Glissando::Type \fBglissandoType\fP"
+.br
+.ti -1c
+.RI "QString \fBtext\fP"
+.br
+.ti -1c
+.RI "bool \fBshowText\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 56 of file glissando\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

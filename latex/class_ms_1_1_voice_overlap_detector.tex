@@ -1,0 +1,36 @@
+\hypertarget{class_ms_1_1_voice_overlap_detector}{}\section{Ms\+:\+:Voice\+Overlap\+Detector Class Reference}
+\label{class_ms_1_1_voice_overlap_detector}\index{Ms\+::\+Voice\+Overlap\+Detector@{Ms\+::\+Voice\+Overlap\+Detector}}
+
+
+{\ttfamily \#include $<$musicxmlsupport.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_voice_overlap_detector_a5ae0da70122cb1cf079e5f63f8c95392}\label{class_ms_1_1_voice_overlap_detector_a5ae0da70122cb1cf079e5f63f8c95392}} 
+void {\bfseries add\+Note} (const int start\+Tick, const int end\+Tick, const Q\+String \&voice, const int staff)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_voice_overlap_detector_aa4874f3dbd2e8686474d5129b5ae96d1}\label{class_ms_1_1_voice_overlap_detector_aa4874f3dbd2e8686474d5129b5ae96d1}} 
+void {\bfseries dump} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_voice_overlap_detector_a1b990818138615d53a4129fb0b405f0d}\label{class_ms_1_1_voice_overlap_detector_a1b990818138615d53a4129fb0b405f0d}} 
+void {\bfseries new\+Measure} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_voice_overlap_detector_ac377135334ec99eef334c2194053a7b0}\label{class_ms_1_1_voice_overlap_detector_ac377135334ec99eef334c2194053a7b0}} 
+bool {\bfseries staves\+Overlap} (const Q\+String \&voice) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Detect overlap in a voice, which is when a voice has two or more notes active at the same time. In theory this should not happen, as voices only move forward in time, but Sibelius 7 reuses voice numbers in multi-\/ staff parts, which leads to overlap.
+
+Current implementation does not detect voice overlap within a staff, but only between staves. 
+
+Definition at line 109 of file musicxmlsupport.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mscore/musicxmlsupport.\+h\item 
+mscore/musicxmlsupport.\+cpp\end{DoxyCompactItemize}

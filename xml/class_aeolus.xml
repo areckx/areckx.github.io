@@ -1,0 +1,1008 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_aeolus" kind="class" language="C++" prot="public">
+    <compoundname>Aeolus</compoundname>
+    <basecompoundref refid="class_ms_1_1_synthesizer" prot="public" virt="non-virtual">Ms::Synthesizer</basecompoundref>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2" prot="private" static="no">
+        <name>@1</name>
+        <enumvalue id="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a40d87ded4f92e64873ac74f45369073d" prot="private">
+          <name>VOLUME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a221fe9707eeb241b84f62dc8ec43956b" prot="private">
+          <name>REVSIZE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a08529194e4d020d5b549c82307b27ae2" prot="private">
+          <name>REVTIME</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a2944f3a535383eb845b9c615432951f5" prot="private">
+          <name>STPOSIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="59" column="1" bodyfile="aeolus/aeolus.h" bodystart="59" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_aeolus_1ac6aa07c05a751a7564e0ff86fabe93e8" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; <ref refid="struct_ms_1_1_par_descr" kindref="compound">ParDescr</ref> &gt;</type>
+        <definition>const std::vector&lt; ParDescr &gt; Aeolus::pd</definition>
+        <argsstring></argsstring>
+        <name>pd</name>
+        <initializer>= {
+      { A_VOLUME,  &quot;volume&quot;,  true, 0.32f,   0.00f,  1.00f },
+      { A_REVSIZE, &quot;revsize&quot;, true, 0.075f,  0.025f, 0.15f },
+      { A_REVTIME, &quot;revtime&quot;, true, 4.0f,    2.0f,   7.00f },
+      { A_STPOSIT, &quot;stposit&quot;, true, 0.5f,   -1.00f,  1.0f  },
+      }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="51" column="1" bodyfile="aeolus/aeolus.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_aeolus_1a7e7e1d1bf9bab335aaafa84c07fa3451" prot="private" static="no" mutable="no">
+        <type><ref refid="class_model" kindref="compound">Model</ref> *</type>
+        <definition>Model* Aeolus::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="53" column="1" bodyfile="aeolus/aeolus.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a8d4918fca3e4b9374f0582d1bd7b4d63" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_ms_1_1_midi_patch" kindref="compound">MidiPatch</ref> * &gt;</type>
+        <definition>QList&lt;MidiPatch*&gt; Aeolus::patchList</definition>
+        <argsstring></argsstring>
+        <name>patchList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="54" column="1" bodyfile="aeolus/aeolus.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1af70200b3c2b909b078514bae6b297c17" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t Aeolus::_midimap[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>_midimap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="55" column="1" bodyfile="aeolus/aeolus.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a63040be58bed222318b0ff206022d0f2" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_sc_cmode</definition>
+        <argsstring></argsstring>
+        <name>_sc_cmode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="56" column="1" bodyfile="aeolus/aeolus.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a39df2cd3b7eccc057ccd04347948e974" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_sc_group</definition>
+        <argsstring></argsstring>
+        <name>_sc_group</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="57" column="1" bodyfile="aeolus/aeolus.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a90320dfb75c54ba66da8e58431b82677" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>volatile bool Aeolus::_running</definition>
+        <argsstring></argsstring>
+        <name>_running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="61" column="1" bodyfile="aeolus/aeolus.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1af6b0cdfa349d97b8b19db77f503b9c24" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_hold</definition>
+        <argsstring></argsstring>
+        <name>_hold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="62" column="1" bodyfile="aeolus/aeolus.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a7631119748cdba0e920c55d7bf054780" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_nplay</definition>
+        <argsstring></argsstring>
+        <name>_nplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="63" column="1" bodyfile="aeolus/aeolus.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a0a652ce0ca76db76836480c8d49888bf" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_nasect</definition>
+        <argsstring></argsstring>
+        <name>_nasect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="64" column="1" bodyfile="aeolus/aeolus.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a3d65ebefac8100371543d1b6047ba8e6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_ndivis</definition>
+        <argsstring></argsstring>
+        <name>_ndivis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="65" column="1" bodyfile="aeolus/aeolus.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1ae6987d924ea72bee7edb0b736e8d3238" prot="private" static="no" mutable="no">
+        <type><ref refid="class_asection" kindref="compound">Asection</ref> *</type>
+        <definition>Asection* Aeolus::_asectp[NASECT]</definition>
+        <argsstring>[NASECT]</argsstring>
+        <name>_asectp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="66" column="1" bodyfile="aeolus/aeolus.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a3fb808bbc0b40fc2fdfe1b07eeaeeaa5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_division" kindref="compound">Division</ref> *</type>
+        <definition>Division* Aeolus::_divisp[NDIVIS]</definition>
+        <argsstring>[NDIVIS]</argsstring>
+        <name>_divisp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="68" column="1" bodyfile="aeolus/aeolus.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a686fef8e7d15d577cf6ee60df15f6610" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Aeolus::_keymap[NNOTES]</definition>
+        <argsstring>[NNOTES]</argsstring>
+        <name>_keymap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="69" column="1" bodyfile="aeolus/aeolus.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1ab3fc0f28c963d6c82551257a0c207a4d" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::_audiopar[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>_audiopar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="70" column="1" bodyfile="aeolus/aeolus.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1ad0d1453b41dae81b7765c6bac9cc3ac5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::_revsize</definition>
+        <argsstring></argsstring>
+        <name>_revsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="71" column="1" bodyfile="aeolus/aeolus.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1aa8b389141f69a722811ca1b6fade5339" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::_revtime</definition>
+        <argsstring></argsstring>
+        <name>_revtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="72" column="1" bodyfile="aeolus/aeolus.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1aaccc095e1472f512fdf190f78c4d3895" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::nout</definition>
+        <argsstring></argsstring>
+        <name>nout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="74" column="1" bodyfile="aeolus/aeolus.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a0854407bb4103165d72a033f0459cc58" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::routb[PERIOD]</definition>
+        <argsstring>[PERIOD]</argsstring>
+        <name>routb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="75" column="1" bodyfile="aeolus/aeolus.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a7a685d59d07acb40141cf118665c7d49" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::loutb[PERIOD]</definition>
+        <argsstring>[PERIOD]</argsstring>
+        <name>loutb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="76" column="1" bodyfile="aeolus/aeolus.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a506027d19f7d65e5898d7ef2ce51d543" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Aeolus::_fsamp</definition>
+        <argsstring></argsstring>
+        <name>_fsamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="78" column="1" bodyfile="aeolus/aeolus.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1af1eaa6f2e49123c42da0645b2df17dc0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Aeolus::_fsize</definition>
+        <argsstring></argsstring>
+        <name>_fsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="79" column="1" bodyfile="aeolus/aeolus.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1ad17b973b5558bf13afee9e9ee48898f5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_synti_parameter" kindref="compound">SyntiParameter</ref> *</type>
+        <definition>SyntiParameter* Aeolus::_asectpar[NASECT]</definition>
+        <argsstring>[NASECT]</argsstring>
+        <name>_asectpar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="80" column="1" bodyfile="aeolus/aeolus.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1a03a2f8eb4d008379b5f729a0806e6b0e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_m__ifc__init" kindref="compound">M_ifc_init</ref> *</type>
+        <definition>M_ifc_init* Aeolus::_ifc_init</definition>
+        <argsstring></argsstring>
+        <name>_ifc_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="82" column="1" bodyfile="aeolus/aeolus.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1ab5b68cc368d3124180dc6884c24fbe9d" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Aeolus::_ifelms[NGROUP]</definition>
+        <argsstring>[NGROUP]</argsstring>
+        <name>_ifelms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="83" column="1" bodyfile="aeolus/aeolus.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_aeolus_1af3e7cc14647e5004bc4f3e293176889b" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char Aeolus::_tempstr[64]</definition>
+        <argsstring>[64]</argsstring>
+        <name>_tempstr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="84" column="1" bodyfile="aeolus/aeolus.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_aeolus_1a2bf2a0e9b454c55aa5dcb5aa4698697b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Model</definition>
+        <argsstring></argsstring>
+        <name>Model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="129" column="1" bodyfile="aeolus/aeolus.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_aeolus_1a23f54464ff84a752a77f62c997f3e7b8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::proc_synth</definition>
+        <argsstring>(int)</argsstring>
+        <name>proc_synth</name>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ae65d64223e3eff504c613ad7c79bf853" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::cond_key_off</definition>
+        <argsstring>(int m, int b)</argsstring>
+        <name>cond_key_off</name>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="87" column="1" bodyfile="aeolus/audio.cpp" bodystart="210" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a874c7310737bc13d5992794dcb2164c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::cond_key_on</definition>
+        <argsstring>(int m, int b)</argsstring>
+        <name>cond_key_on</name>
+        <param>
+          <type>int</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="88" column="1" bodyfile="aeolus/audio.cpp" bodystart="222" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a6373f99a48ed8a949818f46553ee52c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::audio_init</definition>
+        <argsstring>(int sampleRate)</argsstring>
+        <name>audio_init</name>
+        <param>
+          <type>int</type>
+          <declname>sampleRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="90" column="1" bodyfile="aeolus/audio.cpp" bodystart="38" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a0ea1a5b0100bd32bfeb2543452b432a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::audio_start</definition>
+        <argsstring>()</argsstring>
+        <name>audio_start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="91" column="1" bodyfile="aeolus/audio.cpp" bodystart="27" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1aa1d64b5851721f287a2314d390a5d60e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::key_off</definition>
+        <argsstring>(int n, int b)</argsstring>
+        <name>key_off</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="93" column="1" bodyfile="aeolus/audio.cpp" bodystart="232" bodyend="236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a6a336ef13e630d22991a1100e76b463c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::key_on</definition>
+        <argsstring>(int n, int b)</argsstring>
+        <name>key_on</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="94" column="1" bodyfile="aeolus/audio.cpp" bodystart="238" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a6dfb1ff4b9e7c3de2e68443f030beb27" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::newDivis</definition>
+        <argsstring>(M_new_divis *X)</argsstring>
+        <name>newDivis</name>
+        <param>
+          <type><ref refid="class_m__new__divis" kindref="compound">M_new_divis</ref> *</type>
+          <declname>X</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="95" column="1" bodyfile="aeolus/audio.cpp" bodystart="199" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ad73b6dfebe7e38b873c718f7361f9fc6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Aeolus::proc_queue</definition>
+        <argsstring>(uint32_t)</argsstring>
+        <name>proc_queue</name>
+        <param>
+          <type>uint32_t</type>
+          <defname>k</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="96" column="1" bodyfile="aeolus/audio.cpp" bodystart="62" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a46ddb53a732e6feaea5ddff88449a74f" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::setValue</definition>
+        <argsstring>(int idx, double value)</argsstring>
+        <name>setValue</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1acd7120fde084a24675bc379b23ad9d82">setValue</reimplements>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="98" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="202" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a5d79727d6ea1d33a0b13c64bed358192" prot="private" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double Aeolus::value</definition>
+        <argsstring>(int idx) const</argsstring>
+        <name>value</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a8ac899662e2a1ba66d2e071e7db5bc39">value</reimplements>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="99" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="225" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ac5742e3fc1a729fd1c11a670adb7a328" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="struct_ms_1_1_par_descr" kindref="compound">ParDescr</ref> *</type>
+        <definition>const ParDescr * Aeolus::parameter</definition>
+        <argsstring>(int idx) const</argsstring>
+        <name>parameter</name>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="100" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="270" bodyend="273"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_aeolus_1aece9b6e5fc794d319a11ef64894c8c69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Aeolus::Aeolus</definition>
+        <argsstring>()</argsstring>
+        <name>Aeolus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="103" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="55" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1af6a59e9d6a39387d3bc75e2103550e63" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Aeolus::~Aeolus</definition>
+        <argsstring>()</argsstring>
+        <name>~Aeolus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="104" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="74" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a31410e7798df6f1063bba1ad8151ced1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::init</definition>
+        <argsstring>(float sampleRate)</argsstring>
+        <name>init</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1afae81b084c72cce68466b9c8631e030e">init</reimplements>
+        <param>
+          <type>float</type>
+          <declname>sampleRate</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="105" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="87" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ac4514e808ac3180ea602008c845806cf" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const char *</type>
+        <definition>virtual const char* Aeolus::name</definition>
+        <argsstring>() const</argsstring>
+        <name>name</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a1a4eb6c510fc211a9e2c95e07712aba6">name</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="107" column="1" bodyfile="aeolus/aeolus.h" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1acfccf204a18ed1b81ba34a726c4986a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::setMasterTuning</definition>
+        <argsstring>(double)</argsstring>
+        <name>setMasterTuning</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1aa44808c442eb1e860ba6331dd67c77e8">setMasterTuning</reimplements>
+        <param>
+          <type>double</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="109" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="114" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a41ad2735189303d764c0015cb37b8320" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double Aeolus::masterTuning</definition>
+        <argsstring>() const</argsstring>
+        <name>masterTuning</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1aecc32dd0f133b6ed79e8a521a9679641">masterTuning</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="110" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a26a51cd3aeb6d8aadf9730954bc17b27" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool Aeolus::loadSoundFonts</definition>
+        <argsstring>(const QStringList &amp;)</argsstring>
+        <name>loadSoundFonts</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a0e524c9a40522a4dd0e4328390bf58ed">loadSoundFonts</reimplements>
+        <param>
+          <type>const QStringList &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="112" column="1" bodyfile="aeolus/aeolus.h" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a4e3b42ee6b37a09b02973688529d541f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>QStringList</type>
+        <definition>virtual QStringList Aeolus::soundFonts</definition>
+        <argsstring>() const</argsstring>
+        <name>soundFonts</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1ac021121461e98b7eb87d1e9042eb2d96">soundFonts</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="113" column="1" bodyfile="aeolus/aeolus.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a5c7bedbce524e30c64147e1c4334c8c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::process</definition>
+        <argsstring>(unsigned, float *, float *, float *)</argsstring>
+        <name>process</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a2546e6ee088f95151805bbaeca657907">process</reimplements>
+        <param>
+          <type>unsigned</type>
+          <defname>nframes</defname>
+        </param>
+        <param>
+          <type>float *</type>
+          <defname>out</defname>
+        </param>
+        <param>
+          <type>float *</type>
+        </param>
+        <param>
+          <type>float *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="115" column="1" bodyfile="aeolus/audio.cpp" bodystart="141" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ab89ab4df34d84ddb54e2523cd3f1d501" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::play</definition>
+        <argsstring>(const PlayEvent &amp;)</argsstring>
+        <name>play</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1ab13152564aa024a7bf8385a44e697633">play</reimplements>
+        <param>
+          <type>const <ref refid="class_ms_1_1_play_event" kindref="compound">PlayEvent</ref> &amp;</type>
+          <defname>event</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="116" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="131" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1aed3b863a177a823b82ade887a7902241" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const QList&lt; <ref refid="struct_ms_1_1_midi_patch" kindref="compound">MidiPatch</ref> * &gt; &amp;</type>
+        <definition>const QList&lt; MidiPatch * &gt; &amp; Aeolus::getPatchInfo</definition>
+        <argsstring>() const</argsstring>
+        <name>getPatchInfo</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1aca13e6f1f9d8994cd8c66e8d0c4c95a9">getPatchInfo</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="118" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="193" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a7d465faff2ddcef18a422f62621996a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_ms_1_1_synthesizer_group" kindref="compound">SynthesizerGroup</ref></type>
+        <definition>SynthesizerGroup Aeolus::state</definition>
+        <argsstring>() const</argsstring>
+        <name>state</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a1794f490f99b4e333bd75145986d51b4">state</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="121" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="246" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1ad834285919e4a0ad920f8946e4819f77" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::setState</definition>
+        <argsstring>(const SynthesizerGroup &amp;)</argsstring>
+        <name>setState</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a2ae475d66c1c500915fe304748e96013">setState</reimplements>
+        <param>
+          <type>const <ref refid="class_ms_1_1_synthesizer_group" kindref="compound">SynthesizerGroup</ref> &amp;</type>
+          <defname>g</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="122" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="260" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1af78d95b452968d61ee8926fe1ae1d436" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Aeolus::allSoundsOff</definition>
+        <argsstring>(int channel)</argsstring>
+        <name>allSoundsOff</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a0c74a0991b16bb09bf99761389f0eafa">allSoundsOff</reimplements>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="124" column="1" bodyfile="aeolus/aeolus.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a8e581e4bbfcbc6678b2a7f958785064e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Aeolus::allNotesOff</definition>
+        <argsstring>(int)</argsstring>
+        <name>allNotesOff</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a6ca4320120f9591c10bb938cb961e10f">allNotesOff</reimplements>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="125" column="1" bodyfile="aeolus/aeolus.cpp" bodystart="183" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_aeolus_1a9b5f1a6622d2fef850faa637f9405843" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_ms_1_1_synthesizer_gui" kindref="compound">SynthesizerGui</ref> *</type>
+        <definition>SynthesizerGui * Aeolus::gui</definition>
+        <argsstring>()</argsstring>
+        <name>gui</name>
+        <reimplements refid="class_ms_1_1_synthesizer_1a633213147959c6bbca8bf120386e2552">gui</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="aeolus/aeolus.h" line="127" column="1" bodyfile="aeolus/aeolusgui.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="166">
+        <label>Ms::Synthesizer</label>
+        <link refid="class_ms_1_1_synthesizer"/>
+      </node>
+      <node id="165">
+        <label>Aeolus</label>
+        <link refid="class_aeolus"/>
+        <childnode refid="166" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="168">
+        <label>Ms::Synthesizer</label>
+        <link refid="class_ms_1_1_synthesizer"/>
+        <childnode refid="169" relation="usage">
+          <edgelabel>_gui</edgelabel>
+        </childnode>
+      </node>
+      <node id="167">
+        <label>Aeolus</label>
+        <link refid="class_aeolus"/>
+        <childnode refid="168" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>QWidget</label>
+      </node>
+      <node id="169">
+        <label>Ms::SynthesizerGui</label>
+        <link refid="class_ms_1_1_synthesizer_gui"/>
+        <childnode refid="170" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="aeolus/aeolus.h" line="50" column="1" bodyfile="aeolus/aeolus.h" bodystart="50" bodyend="130"/>
+    <listofallmembers>
+      <member refid="class_aeolus_1ae6987d924ea72bee7edb0b736e8d3238" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_asectp</name></member>
+      <member refid="class_aeolus_1ad17b973b5558bf13afee9e9ee48898f5" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_asectpar</name></member>
+      <member refid="class_aeolus_1ab3fc0f28c963d6c82551257a0c207a4d" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_audiopar</name></member>
+      <member refid="class_aeolus_1a3fb808bbc0b40fc2fdfe1b07eeaeeaa5" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_divisp</name></member>
+      <member refid="class_aeolus_1a506027d19f7d65e5898d7ef2ce51d543" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_fsamp</name></member>
+      <member refid="class_aeolus_1af1eaa6f2e49123c42da0645b2df17dc0" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_fsize</name></member>
+      <member refid="class_ms_1_1_synthesizer_1af6b25c4d3a8e8469c6d66618d0291d3d" prot="protected" virt="non-virtual"><scope>Aeolus</scope><name>_gui</name></member>
+      <member refid="class_aeolus_1af6b0cdfa349d97b8b19db77f503b9c24" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_hold</name></member>
+      <member refid="class_aeolus_1a03a2f8eb4d008379b5f729a0806e6b0e" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_ifc_init</name></member>
+      <member refid="class_aeolus_1ab5b68cc368d3124180dc6884c24fbe9d" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_ifelms</name></member>
+      <member refid="class_aeolus_1a686fef8e7d15d577cf6ee60df15f6610" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_keymap</name></member>
+      <member refid="class_aeolus_1af70200b3c2b909b078514bae6b297c17" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_midimap</name></member>
+      <member refid="class_aeolus_1a0a652ce0ca76db76836480c8d49888bf" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_nasect</name></member>
+      <member refid="class_aeolus_1a3d65ebefac8100371543d1b6047ba8e6" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_ndivis</name></member>
+      <member refid="class_aeolus_1a7631119748cdba0e920c55d7bf054780" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_nplay</name></member>
+      <member refid="class_aeolus_1ad0d1453b41dae81b7765c6bac9cc3ac5" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_revsize</name></member>
+      <member refid="class_aeolus_1aa8b389141f69a722811ca1b6fade5339" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_revtime</name></member>
+      <member refid="class_aeolus_1a90320dfb75c54ba66da8e58431b82677" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_running</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a9c64d1dd4ba86a5a4f299f6cfd8e6ce1" prot="protected" virt="non-virtual"><scope>Aeolus</scope><name>_sampleRate</name></member>
+      <member refid="class_aeolus_1a63040be58bed222318b0ff206022d0f2" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_sc_cmode</name></member>
+      <member refid="class_aeolus_1a39df2cd3b7eccc057ccd04347948e974" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_sc_group</name></member>
+      <member refid="class_aeolus_1af3e7cc14647e5004bc4f3e293176889b" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>_tempstr</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a1489ca7e0be7e8a82c8f92d19446250a" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>active</name></member>
+      <member refid="class_ms_1_1_synthesizer_1ad86caa30e7b390303030c8342a29abda" prot="public" virt="virtual"><scope>Aeolus</scope><name>addSoundFont</name></member>
+      <member refid="class_aeolus_1aece9b6e5fc794d319a11ef64894c8c69" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>Aeolus</name></member>
+      <member refid="class_aeolus_1a8e581e4bbfcbc6678b2a7f958785064e" prot="public" virt="virtual"><scope>Aeolus</scope><name>allNotesOff</name></member>
+      <member refid="class_aeolus_1af78d95b452968d61ee8926fe1ae1d436" prot="public" virt="virtual"><scope>Aeolus</scope><name>allSoundsOff</name></member>
+      <member refid="class_aeolus_1a6373f99a48ed8a949818f46553ee52c0" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>audio_init</name></member>
+      <member refid="class_aeolus_1a0ea1a5b0100bd32bfeb2543452b432a6" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>audio_start</name></member>
+      <member refid="class_aeolus_1ae65d64223e3eff504c613ad7c79bf853" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>cond_key_off</name></member>
+      <member refid="class_aeolus_1a874c7310737bc13d5992794dcb2164c0" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>cond_key_on</name></member>
+      <member refid="class_aeolus_1aed3b863a177a823b82ade887a7902241" prot="public" virt="virtual"><scope>Aeolus</scope><name>getPatchInfo</name></member>
+      <member refid="class_aeolus_1a9b5f1a6622d2fef850faa637f9405843" prot="public" virt="virtual"><scope>Aeolus</scope><name>gui</name></member>
+      <member refid="class_aeolus_1a31410e7798df6f1063bba1ad8151ced1" prot="public" virt="virtual"><scope>Aeolus</scope><name>init</name></member>
+      <member refid="class_aeolus_1aa1d64b5851721f287a2314d390a5d60e" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>key_off</name></member>
+      <member refid="class_aeolus_1a6a336ef13e630d22991a1100e76b463c" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>key_on</name></member>
+      <member refid="class_aeolus_1a26a51cd3aeb6d8aadf9730954bc17b27" prot="public" virt="virtual"><scope>Aeolus</scope><name>loadSoundFonts</name></member>
+      <member refid="class_aeolus_1a7a685d59d07acb40141cf118665c7d49" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>loutb</name></member>
+      <member refid="class_aeolus_1a41ad2735189303d764c0015cb37b8320" prot="public" virt="virtual"><scope>Aeolus</scope><name>masterTuning</name></member>
+      <member refid="class_aeolus_1a7e7e1d1bf9bab335aaafa84c07fa3451" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>model</name></member>
+      <member refid="class_aeolus_1a2bf2a0e9b454c55aa5dcb5aa4698697b" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>Model</name></member>
+      <member refid="class_aeolus_1ac4514e808ac3180ea602008c845806cf" prot="public" virt="virtual"><scope>Aeolus</scope><name>name</name></member>
+      <member refid="class_aeolus_1a6dfb1ff4b9e7c3de2e68443f030beb27" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>newDivis</name></member>
+      <member refid="class_aeolus_1aaccc095e1472f512fdf190f78c4d3895" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>nout</name></member>
+      <member refid="class_aeolus_1ac5742e3fc1a729fd1c11a670adb7a328" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>parameter</name></member>
+      <member refid="class_aeolus_1a8d4918fca3e4b9374f0582d1bd7b4d63" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>patchList</name></member>
+      <member refid="class_aeolus_1ac6aa07c05a751a7564e0ff86fabe93e8" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>pd</name></member>
+      <member refid="class_aeolus_1ab89ab4df34d84ddb54e2523cd3f1d501" prot="public" virt="virtual"><scope>Aeolus</scope><name>play</name></member>
+      <member refid="class_aeolus_1ad73b6dfebe7e38b873c718f7361f9fc6" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>proc_queue</name></member>
+      <member refid="class_aeolus_1a23f54464ff84a752a77f62c997f3e7b8" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>proc_synth</name></member>
+      <member refid="class_aeolus_1a5c7bedbce524e30c64147e1c4334c8c0" prot="public" virt="virtual"><scope>Aeolus</scope><name>process</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a9bbb1200179ce31929693c124d89ed70" prot="public" virt="virtual"><scope>Aeolus</scope><name>removeSoundFont</name></member>
+      <member refid="class_ms_1_1_synthesizer_1aa5975e5c1cd998e67af694117cfa7773" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>reset</name></member>
+      <member refid="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a221fe9707eeb241b84f62dc8ec43956b" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>REVSIZE</name></member>
+      <member refid="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a08529194e4d020d5b549c82307b27ae2" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>REVTIME</name></member>
+      <member refid="class_aeolus_1a0854407bb4103165d72a033f0459cc58" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>routb</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a6d2fd5ec5d5f80696ebc83736943f23d" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>sampleRate</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a1b8d4feb8b1497b09502c9141d99f60a" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>setActive</name></member>
+      <member refid="class_aeolus_1acfccf204a18ed1b81ba34a726c4986a0" prot="public" virt="virtual"><scope>Aeolus</scope><name>setMasterTuning</name></member>
+      <member refid="class_aeolus_1ad834285919e4a0ad920f8946e4819f77" prot="public" virt="virtual"><scope>Aeolus</scope><name>setState</name></member>
+      <member refid="class_aeolus_1a46ddb53a732e6feaea5ddff88449a74f" prot="private" virt="virtual"><scope>Aeolus</scope><name>setValue</name></member>
+      <member refid="class_aeolus_1a4e3b42ee6b37a09b02973688529d541f" prot="public" virt="virtual"><scope>Aeolus</scope><name>soundFonts</name></member>
+      <member refid="class_aeolus_1a7d465faff2ddcef18a422f62621996a0" prot="public" virt="virtual"><scope>Aeolus</scope><name>state</name></member>
+      <member refid="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a2944f3a535383eb845b9c615432951f5" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>STPOSIT</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a8494d936ef88180f0f5e2c47b0612870" prot="public" virt="non-virtual"><scope>Aeolus</scope><name>Synthesizer</name></member>
+      <member refid="class_aeolus_1a5d79727d6ea1d33a0b13c64bed358192" prot="private" virt="virtual"><scope>Aeolus</scope><name>value</name></member>
+      <member refid="class_aeolus_1ac9f4138c5367c5f65b8e3e66607a20e2a40d87ded4f92e64873ac74f45369073d" prot="private" virt="non-virtual"><scope>Aeolus</scope><name>VOLUME</name></member>
+      <member refid="class_aeolus_1af6a59e9d6a39387d3bc75e2103550e63" prot="public" virt="virtual"><scope>Aeolus</scope><name>~Aeolus</name></member>
+      <member refid="class_ms_1_1_synthesizer_1a6763c77d88596a67f8c1225fd05d8697" prot="public" virt="virtual"><scope>Aeolus</scope><name>~Synthesizer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,222 @@
+\hypertarget{class_agent}{}\section{Agent Class Reference}
+\label{class_agent}\index{Agent@{Agent}}
+
+
+{\ttfamily \#include $<$Agent.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_agent_a4c3a0b0e41859d59e55d087c2396baa4}{Agent} (const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&params, double ibi)
+\item 
+\mbox{\Hypertarget{class_agent_a111c0107646bc0fe5f4815ca8d229512}\label{class_agent_a111c0107646bc0fe5f4815ca8d229512}} 
+\hyperlink{class_agent}{Agent} $\ast$ {\bfseries clone} () const
+\item 
+void \hyperlink{class_agent_a64b1bca4fe422141a348c20c5831a16d}{accept} (const \hyperlink{struct_event}{Event} \&e, double err, int beats)
+\item 
+bool \hyperlink{class_agent_a7aae45009593ec7febcf3c61909a724a}{consider\+As\+Beat} (const \hyperlink{struct_event}{Event} \&e, \hyperlink{class_agent_list}{Agent\+List} \&a)
+\item 
+void \hyperlink{class_agent_a0b45b44b745b3234c117d356de7b299c}{fill\+Beats} ()
+\item 
+void \hyperlink{class_agent_a1eedd701cb0b8551d6642afb710ba2a1}{fill\+Beats} (double start)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_agent_ac857e9fc1a2d40aa8c488c2b0892f796}{id\+Number}
+\item 
+double \hyperlink{class_agent_a6f12ce0139e8709d407fd20963b84d2f}{phase\+Score}
+\item 
+int \hyperlink{class_agent_abafab4395f0ebf00ca08cdffe8a87705}{beat\+Count}
+\item 
+double \hyperlink{class_agent_aa6ce02ae70357fef9fa397c2d129cb72}{beat\+Interval}
+\item 
+double \hyperlink{class_agent_ac6cfc0361e141992752f55ad4b3671d5}{initial\+Beat\+Interval}
+\item 
+double \hyperlink{class_agent_acc4850f7dcc7d04f56a770629282c551}{beat\+Time}
+\item 
+double \hyperlink{class_agent_a5aa8ad248a3aceecec676b89a0eb3791}{max\+Change}
+\item 
+Event\+List \hyperlink{class_agent_a32dd69961705fcd29f725ebf2a2e81b4}{events}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_agent}{Agent} is the central class for beat tracking. Each \hyperlink{class_agent}{Agent} object has a tempo hypothesis, a history of tracked beats, and a score evaluating the continuity, regularity and salience of its beat track. 
+
+Definition at line 69 of file Agent.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_agent_a4c3a0b0e41859d59e55d087c2396baa4}\label{class_agent_a4c3a0b0e41859d59e55d087c2396baa4}} 
+\index{Agent@{Agent}!Agent@{Agent}}
+\index{Agent@{Agent}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{Agent()}{Agent()}}
+{\footnotesize\ttfamily Agent\+::\+Agent (\begin{DoxyParamCaption}\item[{const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&}]{params,  }\item[{double}]{ibi }\end{DoxyParamCaption})}
+
+Constructor\+: the work is performed by init() 
+\begin{DoxyParams}{Parameters}
+{\em ibi} & The beat period (inter-\/beat interval) of the \hyperlink{class_agent}{Agent}\textquotesingle{}s tempo hypothesis. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file Agent.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_agent_a64b1bca4fe422141a348c20c5831a16d}\label{class_agent_a64b1bca4fe422141a348c20c5831a16d}} 
+\index{Agent@{Agent}!accept@{accept}}
+\index{accept@{accept}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void Agent\+::accept (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_event}{Event} \&}]{e,  }\item[{double}]{err,  }\item[{int}]{beats }\end{DoxyParamCaption})}
+
+Accept a new \hyperlink{struct_event}{Event} as a beat time, and update the state of the \hyperlink{class_agent}{Agent} accordingly. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \hyperlink{struct_event}{Event} which is accepted as being on the beat. \\
+\hline
+{\em err} & The difference between the predicted and actual beat times. \\
+\hline
+{\em beats} & The number of beats since the last beat that matched an \hyperlink{struct_event}{Event}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 58 of file Agent.\+cpp.
+
+\mbox{\Hypertarget{class_agent_a7aae45009593ec7febcf3c61909a724a}\label{class_agent_a7aae45009593ec7febcf3c61909a724a}} 
+\index{Agent@{Agent}!consider\+As\+Beat@{consider\+As\+Beat}}
+\index{consider\+As\+Beat@{consider\+As\+Beat}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{consider\+As\+Beat()}{considerAsBeat()}}
+{\footnotesize\ttfamily bool Agent\+::consider\+As\+Beat (\begin{DoxyParamCaption}\item[{const \hyperlink{struct_event}{Event} \&}]{e,  }\item[{\hyperlink{class_agent_list}{Agent\+List} \&}]{a }\end{DoxyParamCaption})}
+
+The given \hyperlink{struct_event}{Event} is tested for a possible beat time. The following situations can occur\+: 1) The \hyperlink{class_agent}{Agent} has no beats yet; the \hyperlink{struct_event}{Event} is accepted as the first beat. 2) The \hyperlink{struct_event}{Event} is beyond expiry\+Time seconds after the \hyperlink{class_agent}{Agent}\textquotesingle{}s last \textquotesingle{}confirming\textquotesingle{} beat; the \hyperlink{class_agent}{Agent} is terminated. 3) The \hyperlink{struct_event}{Event} is within the inner\+Margin of the beat prediction; it is accepted as a beat. 4) The \hyperlink{struct_event}{Event} is within the post\+Margin\textquotesingle{}s of the beat prediction; it is accepted as a beat by this \hyperlink{class_agent}{Agent}, and a new \hyperlink{class_agent}{Agent} is created which doesn\textquotesingle{}t accept it as a beat. 5) The \hyperlink{struct_event}{Event} is ignored because it is outside the windows around the \hyperlink{class_agent}{Agent}\textquotesingle{}s predicted beat time. 
+\begin{DoxyParams}{Parameters}
+{\em e} & The \hyperlink{struct_event}{Event} to be tested \\
+\hline
+{\em a} & The list of all agents, which is updated if a new agent is created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Indicate whether the given \hyperlink{struct_event}{Event} was accepted as a beat by this \hyperlink{class_agent}{Agent}. 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Agent.\+cpp.
+
+\mbox{\Hypertarget{class_agent_a0b45b44b745b3234c117d356de7b299c}\label{class_agent_a0b45b44b745b3234c117d356de7b299c}} 
+\index{Agent@{Agent}!fill\+Beats@{fill\+Beats}}
+\index{fill\+Beats@{fill\+Beats}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{fill\+Beats()}{fillBeats()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Agent\+::fill\+Beats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Interpolates missing beats in the \hyperlink{class_agent}{Agent}\textquotesingle{}s beat track, starting from the beginning of the piece. 
+
+Definition at line 144 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_a1eedd701cb0b8551d6642afb710ba2a1}\label{class_agent_a1eedd701cb0b8551d6642afb710ba2a1}} 
+\index{Agent@{Agent}!fill\+Beats@{fill\+Beats}}
+\index{fill\+Beats@{fill\+Beats}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{fill\+Beats()}{fillBeats()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Agent\+::fill\+Beats (\begin{DoxyParamCaption}\item[{double}]{start }\end{DoxyParamCaption})}
+
+Interpolates missing beats in the \hyperlink{class_agent}{Agent}\textquotesingle{}s beat track. 
+\begin{DoxyParams}{Parameters}
+{\em start} & Ignore beats earlier than this start time \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Agent.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_agent_abafab4395f0ebf00ca08cdffe8a87705}\label{class_agent_abafab4395f0ebf00ca08cdffe8a87705}} 
+\index{Agent@{Agent}!beat\+Count@{beat\+Count}}
+\index{beat\+Count@{beat\+Count}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{beat\+Count}{beatCount}}
+{\footnotesize\ttfamily int Agent\+::beat\+Count}
+
+The number of beats found by this \hyperlink{class_agent}{Agent}, including interpolated beats. 
+
+Definition at line 84 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_aa6ce02ae70357fef9fa397c2d129cb72}\label{class_agent_aa6ce02ae70357fef9fa397c2d129cb72}} 
+\index{Agent@{Agent}!beat\+Interval@{beat\+Interval}}
+\index{beat\+Interval@{beat\+Interval}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{beat\+Interval}{beatInterval}}
+{\footnotesize\ttfamily double Agent\+::beat\+Interval}
+
+The current tempo hypothesis of the \hyperlink{class_agent}{Agent}, expressed as the beat period in seconds. 
+
+Definition at line 89 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_acc4850f7dcc7d04f56a770629282c551}\label{class_agent_acc4850f7dcc7d04f56a770629282c551}} 
+\index{Agent@{Agent}!beat\+Time@{beat\+Time}}
+\index{beat\+Time@{beat\+Time}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{beat\+Time}{beatTime}}
+{\footnotesize\ttfamily double Agent\+::beat\+Time}
+
+The time of the most recent beat accepted by this \hyperlink{class_agent}{Agent}. 
+
+Definition at line 97 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_a32dd69961705fcd29f725ebf2a2e81b4}\label{class_agent_a32dd69961705fcd29f725ebf2a2e81b4}} 
+\index{Agent@{Agent}!events@{events}}
+\index{events@{events}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily Event\+List Agent\+::events}
+
+The list of Events (onsets) accepted by this \hyperlink{class_agent}{Agent} as beats, plus interpolated beats. 
+
+Definition at line 106 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_ac857e9fc1a2d40aa8c488c2b0892f796}\label{class_agent_ac857e9fc1a2d40aa8c488c2b0892f796}} 
+\index{Agent@{Agent}!id\+Number@{id\+Number}}
+\index{id\+Number@{id\+Number}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{id\+Number}{idNumber}}
+{\footnotesize\ttfamily int Agent\+::id\+Number}
+
+The \hyperlink{class_agent}{Agent}\textquotesingle{}s unique identity number. 
+
+Definition at line 73 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_ac6cfc0361e141992752f55ad4b3671d5}\label{class_agent_ac6cfc0361e141992752f55ad4b3671d5}} 
+\index{Agent@{Agent}!initial\+Beat\+Interval@{initial\+Beat\+Interval}}
+\index{initial\+Beat\+Interval@{initial\+Beat\+Interval}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{initial\+Beat\+Interval}{initialBeatInterval}}
+{\footnotesize\ttfamily double Agent\+::initial\+Beat\+Interval}
+
+The initial tempo hypothesis of the \hyperlink{class_agent}{Agent}, expressed as the beat period in seconds. 
+
+Definition at line 94 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_a5aa8ad248a3aceecec676b89a0eb3791}\label{class_agent_a5aa8ad248a3aceecec676b89a0eb3791}} 
+\index{Agent@{Agent}!max\+Change@{max\+Change}}
+\index{max\+Change@{max\+Change}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{max\+Change}{maxChange}}
+{\footnotesize\ttfamily double Agent\+::max\+Change}
+
+The maximum allowed deviation from the initial tempo, expressed as a fraction of the initial beat period. 
+
+Definition at line 102 of file Agent.\+h.
+
+\mbox{\Hypertarget{class_agent_a6f12ce0139e8709d407fd20963b84d2f}\label{class_agent_a6f12ce0139e8709d407fd20963b84d2f}} 
+\index{Agent@{Agent}!phase\+Score@{phase\+Score}}
+\index{phase\+Score@{phase\+Score}!Agent@{Agent}}
+\subsubsection{\texorpdfstring{phase\+Score}{phaseScore}}
+{\footnotesize\ttfamily double Agent\+::phase\+Score}
+
+Sum of salience values of the Events which have been interpreted as beats by this \hyperlink{class_agent}{Agent}, weighted by their nearness to the predicted beat times. 
+
+Definition at line 79 of file Agent.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/beatroot/Agent.\+h\item 
+thirdparty/beatroot/Agent.\+cpp\end{DoxyCompactItemize}

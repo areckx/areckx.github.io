@@ -1,0 +1,1320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_catalog" kind="class" language="C++" prot="public">
+    <compoundname>Catalog</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413a" prot="public" static="no">
+        <name>MarkInfoFlags</name>
+        <enumvalue id="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa70e25e224f7c24287821eff29854eaab" prot="public">
+          <name>markInfoNull</name>
+          <initializer>= 1 &lt;&lt; 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa2b1b17ebdc9f4ab3a9191debb112d598" prot="public">
+          <name>markInfoMarked</name>
+          <initializer>= 1 &lt;&lt; 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa970365229037d47c627fdd8d763002ab" prot="public">
+          <name>markInfoUserProperties</name>
+          <initializer>= 1 &lt;&lt; 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aace9e57f0862749fb0f4d7900b01b7457" prot="public">
+          <name>markInfoSuspects</name>
+          <initializer>= 1 &lt;&lt; 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="135" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="135" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640" prot="public" static="no">
+        <name>FormType</name>
+        <enumvalue id="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640a6bd2d5ccaac761685e4055c4e6587d14" prot="public">
+          <name>NoForm</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640a96968d9db64f3206510dc109777a8556" prot="public">
+          <name>AcroForm</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640ae583c57a4a6e9b57ae9159515a540bdd" prot="public">
+          <name>XfaForm</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="177" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="176" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69c" prot="public" static="no">
+        <name>PageMode</name>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cab4083c89c1f9d1359cb5c17f418b7189" prot="public">
+          <name>pageModeNone</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca7bb41a81d5c9cb28cff66b0ff1545c7e" prot="public">
+          <name>pageModeOutlines</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cabdde27ac4d83c7945014009408437f40" prot="public">
+          <name>pageModeThumbs</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69caf36fc35f9b07f9b2ae6155ecc7bf99fc" prot="public">
+          <name>pageModeFullScreen</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cabc174a4be78489b3a62ce90be8e82ed1" prot="public">
+          <name>pageModeOC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca8efb9c24df6d7e912695d78826bb58d1" prot="public">
+          <name>pageModeAttach</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca6812f96888992b98887c1a4b7499dfbf" prot="public">
+          <name>pageModeNull</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="188" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="188" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccd" prot="public" static="no">
+        <name>PageLayout</name>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaef6be7f0f61f12b88b51b57a04c1e724" prot="public">
+          <name>pageLayoutNone</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdabeedfb7d651d8a0bab228127f2447bc6" prot="public">
+          <name>pageLayoutSinglePage</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccda6ace7d1b28774baec4df656171faa596" prot="public">
+          <name>pageLayoutOneColumn</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdada69215b37ae9c6be3f68b5b59473da6" prot="public">
+          <name>pageLayoutTwoColumnLeft</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaa31925bb2c834e84deae942f49015fa5" prot="public">
+          <name>pageLayoutTwoColumnRight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaa613801c78a21c0b322a3c50e525dd91" prot="public">
+          <name>pageLayoutTwoPageLeft</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccda26e14d8f673ee450ff83064e26fdd7b3" prot="public">
+          <name>pageLayoutTwoPageRight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdae6e0aabcefa93201c80e4dfef24f11e5" prot="public">
+          <name>pageLayoutNull</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="197" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="197" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6e" prot="public" static="no">
+        <name>DocumentAdditionalActionsType</name>
+        <enumvalue id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea400359f896a45f389cd519e1d16ddd04" prot="public">
+          <name>actionCloseDocument</name>
+          <briefdescription>
+<para>Performed before closing the document. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6eacc48e6d7623b61d8a5ee4f20ae1ea52a" prot="public">
+          <name>actionSaveDocumentStart</name>
+          <briefdescription>
+<para>Performed before saving the document. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea2e5899ea62f07b5153060f3216cf4adc" prot="public">
+          <name>actionSaveDocumentFinish</name>
+          <briefdescription>
+<para>Performed after saving the document. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea96ae19db5be23faa8eafd57b139cb337" prot="public">
+          <name>actionPrintDocumentStart</name>
+          <briefdescription>
+<para>Performed before printing the document. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6eaf4d1ee724bdb0fee3e99dd3720e304b1" prot="public">
+          <name>actionPrintDocumentFinish</name>
+          <briefdescription>
+<para>Performed after printing the document. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="212" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="212" bodyend="218"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_catalog_1abb472ca2ed14878c2e44ffbd30a467c6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_p_d_f_doc" kindref="compound">PDFDoc</ref> *</type>
+        <definition>PDFDoc* Catalog::doc</definition>
+        <argsstring></argsstring>
+        <name>doc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="227" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a857761d1086350cbc9976b7575e01673" prot="private" static="no" mutable="no">
+        <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+        <definition>XRef* Catalog::xref</definition>
+        <argsstring></argsstring>
+        <name>xref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="228" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a71af117a82014be490e2f4f66618dd64" prot="private" static="no" mutable="no">
+        <type><ref refid="class_page" kindref="compound">Page</ref> **</type>
+        <definition>Page** Catalog::pages</definition>
+        <argsstring></argsstring>
+        <name>pages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="229" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a8ac5b1e5bc9652d0ca9ed8fa51010c19" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_ref" kindref="compound">Ref</ref> *</type>
+        <definition>Ref* Catalog::pageRefs</definition>
+        <argsstring></argsstring>
+        <name>pageRefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="230" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ab716fa2e0231b581dda7a62af636fb39" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Catalog::lastCachedPage</definition>
+        <argsstring></argsstring>
+        <name>lastCachedPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="231" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="231" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a9564b74b9e1d3fb935327e834b98d570" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_dict" kindref="compound">Dict</ref> * &gt; *</type>
+        <definition>std::vector&lt;Dict *&gt;* Catalog::pagesList</definition>
+        <argsstring></argsstring>
+        <name>pagesList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="232" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1adfe977ff6e29885aa5ca56fb3a5568fe" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_ref" kindref="compound">Ref</ref> &gt; *</type>
+        <definition>std::vector&lt;Ref&gt;* Catalog::pagesRefList</definition>
+        <argsstring></argsstring>
+        <name>pagesRefList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="233" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ad49e7d5572ef3427a913bfa76bad2c9e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_page_attrs" kindref="compound">PageAttrs</ref> * &gt; *</type>
+        <definition>std::vector&lt;PageAttrs *&gt;* Catalog::attrsList</definition>
+        <argsstring></argsstring>
+        <name>attrsList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="234" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="234" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ae96f9c4baece0d1b6fff9cbbd59d510b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt; *</type>
+        <definition>std::vector&lt;int&gt;* Catalog::kidsIdxList</definition>
+        <argsstring></argsstring>
+        <name>kidsIdxList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="235" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="235" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a17bfcfb5cacdf984b48a07d7e2395266" prot="private" static="no" mutable="no">
+        <type><ref refid="class_form" kindref="compound">Form</ref> *</type>
+        <definition>Form* Catalog::form</definition>
+        <argsstring></argsstring>
+        <name>form</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="236" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ac9453a96b930ae9bb65f397f37567e1c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_viewer_preferences" kindref="compound">ViewerPreferences</ref> *</type>
+        <definition>ViewerPreferences* Catalog::viewerPrefs</definition>
+        <argsstring></argsstring>
+        <name>viewerPrefs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="237" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a2e2febf9ca0c30af62653566aea0f8f9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Catalog::numPages</definition>
+        <argsstring></argsstring>
+        <name>numPages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="238" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a06c2e516763c19679681657beceda596" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Catalog::pagesSize</definition>
+        <argsstring></argsstring>
+        <name>pagesSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="239" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a0f8f569ec6df877863cd1969ddd49cea" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::dests</definition>
+        <argsstring></argsstring>
+        <name>dests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="240" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a12d05a42849e232d634be3112fcff505" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::names</definition>
+        <argsstring></argsstring>
+        <name>names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="241" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1acd7dc698f0ba73318cac0eb3405f8ad6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree* Catalog::destNameTree</definition>
+        <argsstring></argsstring>
+        <name>destNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="242" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ad397cf729449f8b4ded612eb724c3aeb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree* Catalog::embeddedFileNameTree</definition>
+        <argsstring></argsstring>
+        <name>embeddedFileNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="243" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a93346dc92f6cf12e60b82a28ca8bc4ac" prot="private" static="no" mutable="no">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree* Catalog::jsNameTree</definition>
+        <argsstring></argsstring>
+        <name>jsNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="244" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1aac9bd0648d5f92f085123f90ad73aa3f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>GooString* Catalog::baseURI</definition>
+        <argsstring></argsstring>
+        <name>baseURI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="245" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a522b880b45799f74288fcde14f963879" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::metadata</definition>
+        <argsstring></argsstring>
+        <name>metadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="246" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1afa24889d3c1cb2df7596ac50b9e6b6ba" prot="private" static="no" mutable="no">
+        <type><ref refid="class_struct_tree_root" kindref="compound">StructTreeRoot</ref> *</type>
+        <definition>StructTreeRoot* Catalog::structTreeRoot</definition>
+        <argsstring></argsstring>
+        <name>structTreeRoot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="247" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ab60a0687c4cffd00bd036add018704e5" prot="private" static="no" mutable="no">
+        <type>Guint</type>
+        <definition>Guint Catalog::markInfo</definition>
+        <argsstring></argsstring>
+        <name>markInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="248" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a505bbb40db87283d96104c85cad96b26" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::outline</definition>
+        <argsstring></argsstring>
+        <name>outline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="249" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="249" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a958036a80b68665820aad72ff2f2ae74" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::acroForm</definition>
+        <argsstring></argsstring>
+        <name>acroForm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="250" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a3892dfa586f49da65d17e8a6b1d9015f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::viewerPreferences</definition>
+        <argsstring></argsstring>
+        <name>viewerPreferences</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="251" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="251" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a63e88d95fd3a945523b717a9838edd78" prot="private" static="no" mutable="no">
+        <type><ref refid="class_o_c_gs" kindref="compound">OCGs</ref> *</type>
+        <definition>OCGs* Catalog::optContent</definition>
+        <argsstring></argsstring>
+        <name>optContent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="252" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a86f7771c8def91ad58e505117254ebc2" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool Catalog::ok</definition>
+        <argsstring></argsstring>
+        <name>ok</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="253" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a6fd1178e0aa08a9dd27a3062d69b2b10" prot="private" static="no" mutable="no">
+        <type><ref refid="class_page_label_info" kindref="compound">PageLabelInfo</ref> *</type>
+        <definition>PageLabelInfo* Catalog::pageLabelInfo</definition>
+        <argsstring></argsstring>
+        <name>pageLabelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="254" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a81e4daea4dd252669c6f9db66e411d0f" prot="private" static="no" mutable="no">
+        <type>PageMode</type>
+        <definition>PageMode Catalog::pageMode</definition>
+        <argsstring></argsstring>
+        <name>pageMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="255" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1a75cc0e0f1bccdffd22d84e3fd0216505" prot="private" static="no" mutable="no">
+        <type>PageLayout</type>
+        <definition>PageLayout Catalog::pageLayout</definition>
+        <argsstring></argsstring>
+        <name>pageLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="256" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1ac6c4041c9fa253c751ecab3faebff87e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object Catalog::additionalActions</definition>
+        <argsstring></argsstring>
+        <name>additionalActions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="257" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_catalog_1aa11869b7ec2f7be2cd101dec7f52cf2f" prot="private" static="no" mutable="no">
+        <type>GooMutex</type>
+        <definition>GooMutex Catalog::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="267" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_catalog_1a2696daacb3c692a0a9a9d04ab6f4953b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Catalog::Catalog</definition>
+        <argsstring>(PDFDoc *docA)</argsstring>
+        <name>Catalog</name>
+        <param>
+          <type><ref refid="class_p_d_f_doc" kindref="compound">PDFDoc</ref> *</type>
+          <declname>docA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="107" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="75" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1afd61fcc5031564dfc8e74e7af239caea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Catalog::~Catalog</definition>
+        <argsstring>()</argsstring>
+        <name>~Catalog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="110" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="149" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ac67dea88b8202438575402936a903749" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool Catalog::isOk</definition>
+        <argsstring>()</argsstring>
+        <name>isOk</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="113" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a82d12a24ea602356b186e6e4d5ef3c2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Catalog::getNumPages</definition>
+        <argsstring>()</argsstring>
+        <name>getNumPages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="116" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="803" bodyend="885"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a80484d8cf381b96a80d95331dad7c3a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_page" kindref="compound">Page</ref> *</type>
+        <definition>Page * Catalog::getPage</definition>
+        <argsstring>(int i)</argsstring>
+        <name>getPage</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="119" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="234" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a1a1033ae26ce817d89eb27f17639f4fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_ref" kindref="compound">Ref</ref> *</type>
+        <definition>Ref * Catalog::getPageRef</definition>
+        <argsstring>(int i)</argsstring>
+        <name>getPageRef</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="122" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="248" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a342a422c3a6e2fd2efebf2d18c30c575" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>GooString* Catalog::getBaseURI</definition>
+        <argsstring>()</argsstring>
+        <name>getBaseURI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="125" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ace4f8fbc0c37eb1dd8ce2884d8490008" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>GooString * Catalog::readMetadata</definition>
+        <argsstring>()</argsstring>
+        <name>readMetadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="129" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="200" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1aba08c1e8c1b08ff76fca8df835d78a8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_struct_tree_root" kindref="compound">StructTreeRoot</ref> *</type>
+        <definition>StructTreeRoot * Catalog::getStructTreeRoot</definition>
+        <argsstring>()</argsstring>
+        <name>getStructTreeRoot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="132" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="911" bodyend="933"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a2f62f7bfad942fdbdf7f0ae547f578ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Guint</type>
+        <definition>Guint Catalog::getMarkInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getMarkInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="141" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="935" bodyend="977"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1aeb22631bab68756be80a4babaa116a24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Catalog::findPage</definition>
+        <argsstring>(int num, int gen)</argsstring>
+        <name>findPage</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="145" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="441" bodyend="450"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a0c10c55547767d3a8cf61972f96c3187" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_link_dest" kindref="compound">LinkDest</ref> *</type>
+        <definition>LinkDest * Catalog::findDest</definition>
+        <argsstring>(GooString *name)</argsstring>
+        <name>findDest</name>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="149" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="452" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a33c9691909d4a3f14f5041cfe9ac2974" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+        <definition>Object * Catalog::getDests</definition>
+        <argsstring>()</argsstring>
+        <name>getDests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="151" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="999" bodyend="1017"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a1c6dc4cbbd614a17bb47b94cfc2b6eb7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Catalog::numEmbeddedFiles</definition>
+        <argsstring>()</argsstring>
+        <name>numEmbeddedFiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="154" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="154" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ac1499f14066de7a2c2a0c1235723b1b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_file_spec" kindref="compound">FileSpec</ref> *</type>
+        <definition>FileSpec * Catalog::embeddedFile</definition>
+        <argsstring>(int i)</argsstring>
+        <name>embeddedFile</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="157" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="497" bodyend="515"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a1bdf1696adcd308f87a45add76611020" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Catalog::numJS</definition>
+        <argsstring>()</argsstring>
+        <name>numJS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="160" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="160" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a263c6affe9d56181082e172d224cf198" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>GooString* Catalog::getJSName</definition>
+        <argsstring>(int i)</argsstring>
+        <name>getJSName</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="161" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="161" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a3dfa9e25de87ba914a59dd3a08447c4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>GooString * Catalog::getJS</definition>
+        <argsstring>(int i)</argsstring>
+        <name>getJS</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="164" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="517" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ab67a069e27355bd7ffa58a7ef8c119a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool Catalog::labelToIndex</definition>
+        <argsstring>(GooString *label, int *index)</argsstring>
+        <name>labelToIndex</name>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>label</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="167" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="766" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a23b313fc609bb378f1ae840b6b8b8609" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool Catalog::indexToLabel</definition>
+        <argsstring>(int index, GooString *label)</argsstring>
+        <name>indexToLabel</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="168" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="786" bodyend="801"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a688d21c55be6582d2c9e5a23c924c5e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+        <definition>Object * Catalog::getOutline</definition>
+        <argsstring>()</argsstring>
+        <name>getOutline</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="170" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="979" bodyend="997"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ac03161fc57ea21913eed8ed36ba00bee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+        <definition>Object* Catalog::getAcroForm</definition>
+        <argsstring>()</argsstring>
+        <name>getAcroForm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="172" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="172" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a9a6735468ae34db4787f0547029752b9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_o_c_gs" kindref="compound">OCGs</ref> *</type>
+        <definition>OCGs* Catalog::getOptContentConfig</definition>
+        <argsstring>()</argsstring>
+        <name>getOptContentConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="174" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="174" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a78b8c32e53bf951d050bb884043af433" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FormType</type>
+        <definition>Catalog::FormType Catalog::getFormType</definition>
+        <argsstring>()</argsstring>
+        <name>getFormType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="183" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1019" bodyend="1035"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a02e95fb2949bc74ef15543f3d8ab53c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_form" kindref="compound">Form</ref> *</type>
+        <definition>Form * Catalog::getForm</definition>
+        <argsstring>()</argsstring>
+        <name>getForm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="184" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1037" bodyend="1049"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ae527535d3ad76a21e79d1dc0ce3b376b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_viewer_preferences" kindref="compound">ViewerPreferences</ref> *</type>
+        <definition>ViewerPreferences * Catalog::getViewerPreferences</definition>
+        <argsstring>()</argsstring>
+        <name>getViewerPreferences</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="186" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1051" bodyend="1061"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1abde2ef48daa9e21efcfb7222f4cec9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PageMode</type>
+        <definition>Catalog::PageMode Catalog::getPageMode</definition>
+        <argsstring>()</argsstring>
+        <name>getPageMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="209" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="556" bodyend="590"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1ad70bb9db5c1bbf5e8feade7a17f04842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PageLayout</type>
+        <definition>Catalog::PageLayout Catalog::getPageLayout</definition>
+        <argsstring>()</argsstring>
+        <name>getPageLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="210" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="592" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a62ff5ba736455a2824cb7c4a2ea6f91f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_link_action" kindref="compound">LinkAction</ref> *</type>
+        <definition>LinkAction * Catalog::getAdditionalAction</definition>
+        <argsstring>(DocumentAdditionalActionsType type)</argsstring>
+        <name>getAdditionalAction</name>
+        <param>
+          <type><ref refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6e" kindref="member">DocumentAdditionalActionsType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="220" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1139" bodyend="1160"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_catalog_1a1619721c5da53fc21bed12cece8c57ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_page_label_info" kindref="compound">PageLabelInfo</ref> *</type>
+        <definition>PageLabelInfo * Catalog::getPageLabelInfo</definition>
+        <argsstring>()</argsstring>
+        <name>getPageLabelInfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="225" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="887" bodyend="909"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a6d04177050e480f81aad2cbd0d9a22f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool Catalog::cachePageTree</definition>
+        <argsstring>(int page)</argsstring>
+        <name>cachePageTree</name>
+        <param>
+          <type>int</type>
+          <declname>page</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="259" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="262" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a3db2637446f722993d99e98c05d19e80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+        <definition>Object* Catalog::findDestInTree</definition>
+        <argsstring>(Object *tree, GooString *name, Object *obj)</argsstring>
+        <name>findDestInTree</name>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="260" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a6ec9d705a432a325478820d0fb24c9d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+        <definition>Object * Catalog::getNames</definition>
+        <argsstring>()</argsstring>
+        <name>getNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="262" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1063" bodyend="1080"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a4730df39fe1972a7e181f1fa4c7b2d55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree * Catalog::getDestNameTree</definition>
+        <argsstring>()</argsstring>
+        <name>getDestNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="263" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1082" bodyend="1099"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1abd141c660ba444d08ac577f3c6b4175c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree * Catalog::getEmbeddedFileNameTree</definition>
+        <argsstring>()</argsstring>
+        <name>getEmbeddedFileNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="264" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1101" bodyend="1118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_catalog_1a58871688de6094f52619b97fe695552e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_name_tree" kindref="compound">NameTree</ref> *</type>
+        <definition>NameTree * Catalog::getJSNameTree</definition>
+        <argsstring>()</argsstring>
+        <name>getJSNameTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Catalog.h" line="265" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.cc" bodystart="1120" bodyend="1137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="thirdparty/poppler/poppler/Catalog.h" line="103" column="1" bodyfile="thirdparty/poppler/poppler/Catalog.h" bodystart="103" bodyend="270"/>
+    <listofallmembers>
+      <member refid="class_catalog_1a958036a80b68665820aad72ff2f2ae74" prot="private" virt="non-virtual"><scope>Catalog</scope><name>acroForm</name></member>
+      <member refid="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640a96968d9db64f3206510dc109777a8556" prot="public" virt="non-virtual"><scope>Catalog</scope><name>AcroForm</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea400359f896a45f389cd519e1d16ddd04" prot="public" virt="non-virtual"><scope>Catalog</scope><name>actionCloseDocument</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6eaf4d1ee724bdb0fee3e99dd3720e304b1" prot="public" virt="non-virtual"><scope>Catalog</scope><name>actionPrintDocumentFinish</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea96ae19db5be23faa8eafd57b139cb337" prot="public" virt="non-virtual"><scope>Catalog</scope><name>actionPrintDocumentStart</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6ea2e5899ea62f07b5153060f3216cf4adc" prot="public" virt="non-virtual"><scope>Catalog</scope><name>actionSaveDocumentFinish</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6eacc48e6d7623b61d8a5ee4f20ae1ea52a" prot="public" virt="non-virtual"><scope>Catalog</scope><name>actionSaveDocumentStart</name></member>
+      <member refid="class_catalog_1ac6c4041c9fa253c751ecab3faebff87e" prot="private" virt="non-virtual"><scope>Catalog</scope><name>additionalActions</name></member>
+      <member refid="class_catalog_1ad49e7d5572ef3427a913bfa76bad2c9e" prot="private" virt="non-virtual"><scope>Catalog</scope><name>attrsList</name></member>
+      <member refid="class_catalog_1aac9bd0648d5f92f085123f90ad73aa3f" prot="private" virt="non-virtual"><scope>Catalog</scope><name>baseURI</name></member>
+      <member refid="class_catalog_1a6d04177050e480f81aad2cbd0d9a22f3" prot="private" virt="non-virtual"><scope>Catalog</scope><name>cachePageTree</name></member>
+      <member refid="class_catalog_1a2696daacb3c692a0a9a9d04ab6f4953b" prot="public" virt="non-virtual"><scope>Catalog</scope><name>Catalog</name></member>
+      <member refid="class_catalog_1acd7dc698f0ba73318cac0eb3405f8ad6" prot="private" virt="non-virtual"><scope>Catalog</scope><name>destNameTree</name></member>
+      <member refid="class_catalog_1a0f8f569ec6df877863cd1969ddd49cea" prot="private" virt="non-virtual"><scope>Catalog</scope><name>dests</name></member>
+      <member refid="class_catalog_1abb472ca2ed14878c2e44ffbd30a467c6" prot="private" virt="non-virtual"><scope>Catalog</scope><name>doc</name></member>
+      <member refid="class_catalog_1acd1ae95dd8f85f0dae630c8904dcfb6e" prot="public" virt="non-virtual"><scope>Catalog</scope><name>DocumentAdditionalActionsType</name></member>
+      <member refid="class_catalog_1ac1499f14066de7a2c2a0c1235723b1b5" prot="public" virt="non-virtual"><scope>Catalog</scope><name>embeddedFile</name></member>
+      <member refid="class_catalog_1ad397cf729449f8b4ded612eb724c3aeb" prot="private" virt="non-virtual"><scope>Catalog</scope><name>embeddedFileNameTree</name></member>
+      <member refid="class_catalog_1a0c10c55547767d3a8cf61972f96c3187" prot="public" virt="non-virtual"><scope>Catalog</scope><name>findDest</name></member>
+      <member refid="class_catalog_1a3db2637446f722993d99e98c05d19e80" prot="private" virt="non-virtual"><scope>Catalog</scope><name>findDestInTree</name></member>
+      <member refid="class_catalog_1aeb22631bab68756be80a4babaa116a24" prot="public" virt="non-virtual"><scope>Catalog</scope><name>findPage</name></member>
+      <member refid="class_catalog_1a17bfcfb5cacdf984b48a07d7e2395266" prot="private" virt="non-virtual"><scope>Catalog</scope><name>form</name></member>
+      <member refid="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640" prot="public" virt="non-virtual"><scope>Catalog</scope><name>FormType</name></member>
+      <member refid="class_catalog_1ac03161fc57ea21913eed8ed36ba00bee" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getAcroForm</name></member>
+      <member refid="class_catalog_1a62ff5ba736455a2824cb7c4a2ea6f91f" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getAdditionalAction</name></member>
+      <member refid="class_catalog_1a342a422c3a6e2fd2efebf2d18c30c575" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getBaseURI</name></member>
+      <member refid="class_catalog_1a4730df39fe1972a7e181f1fa4c7b2d55" prot="private" virt="non-virtual"><scope>Catalog</scope><name>getDestNameTree</name></member>
+      <member refid="class_catalog_1a33c9691909d4a3f14f5041cfe9ac2974" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getDests</name></member>
+      <member refid="class_catalog_1abd141c660ba444d08ac577f3c6b4175c" prot="private" virt="non-virtual"><scope>Catalog</scope><name>getEmbeddedFileNameTree</name></member>
+      <member refid="class_catalog_1a02e95fb2949bc74ef15543f3d8ab53c2" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getForm</name></member>
+      <member refid="class_catalog_1a78b8c32e53bf951d050bb884043af433" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getFormType</name></member>
+      <member refid="class_catalog_1a3dfa9e25de87ba914a59dd3a08447c4a" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getJS</name></member>
+      <member refid="class_catalog_1a263c6affe9d56181082e172d224cf198" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getJSName</name></member>
+      <member refid="class_catalog_1a58871688de6094f52619b97fe695552e" prot="private" virt="non-virtual"><scope>Catalog</scope><name>getJSNameTree</name></member>
+      <member refid="class_catalog_1a2f62f7bfad942fdbdf7f0ae547f578ea" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getMarkInfo</name></member>
+      <member refid="class_catalog_1a6ec9d705a432a325478820d0fb24c9d9" prot="private" virt="non-virtual"><scope>Catalog</scope><name>getNames</name></member>
+      <member refid="class_catalog_1a82d12a24ea602356b186e6e4d5ef3c2f" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getNumPages</name></member>
+      <member refid="class_catalog_1a9a6735468ae34db4787f0547029752b9" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getOptContentConfig</name></member>
+      <member refid="class_catalog_1a688d21c55be6582d2c9e5a23c924c5e8" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getOutline</name></member>
+      <member refid="class_catalog_1a80484d8cf381b96a80d95331dad7c3a4" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getPage</name></member>
+      <member refid="class_catalog_1a1619721c5da53fc21bed12cece8c57ca" prot="private" virt="non-virtual"><scope>Catalog</scope><name>getPageLabelInfo</name></member>
+      <member refid="class_catalog_1ad70bb9db5c1bbf5e8feade7a17f04842" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getPageLayout</name></member>
+      <member refid="class_catalog_1abde2ef48daa9e21efcfb7222f4cec9bc" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getPageMode</name></member>
+      <member refid="class_catalog_1a1a1033ae26ce817d89eb27f17639f4fc" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getPageRef</name></member>
+      <member refid="class_catalog_1aba08c1e8c1b08ff76fca8df835d78a8f" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getStructTreeRoot</name></member>
+      <member refid="class_catalog_1ae527535d3ad76a21e79d1dc0ce3b376b" prot="public" virt="non-virtual"><scope>Catalog</scope><name>getViewerPreferences</name></member>
+      <member refid="class_catalog_1a23b313fc609bb378f1ae840b6b8b8609" prot="public" virt="non-virtual"><scope>Catalog</scope><name>indexToLabel</name></member>
+      <member refid="class_catalog_1ac67dea88b8202438575402936a903749" prot="public" virt="non-virtual"><scope>Catalog</scope><name>isOk</name></member>
+      <member refid="class_catalog_1a93346dc92f6cf12e60b82a28ca8bc4ac" prot="private" virt="non-virtual"><scope>Catalog</scope><name>jsNameTree</name></member>
+      <member refid="class_catalog_1ae96f9c4baece0d1b6fff9cbbd59d510b" prot="private" virt="non-virtual"><scope>Catalog</scope><name>kidsIdxList</name></member>
+      <member refid="class_catalog_1ab67a069e27355bd7ffa58a7ef8c119a7" prot="public" virt="non-virtual"><scope>Catalog</scope><name>labelToIndex</name></member>
+      <member refid="class_catalog_1ab716fa2e0231b581dda7a62af636fb39" prot="private" virt="non-virtual"><scope>Catalog</scope><name>lastCachedPage</name></member>
+      <member refid="class_catalog_1ab60a0687c4cffd00bd036add018704e5" prot="private" virt="non-virtual"><scope>Catalog</scope><name>markInfo</name></member>
+      <member refid="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413a" prot="public" virt="non-virtual"><scope>Catalog</scope><name>MarkInfoFlags</name></member>
+      <member refid="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa2b1b17ebdc9f4ab3a9191debb112d598" prot="public" virt="non-virtual"><scope>Catalog</scope><name>markInfoMarked</name></member>
+      <member refid="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa70e25e224f7c24287821eff29854eaab" prot="public" virt="non-virtual"><scope>Catalog</scope><name>markInfoNull</name></member>
+      <member refid="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aace9e57f0862749fb0f4d7900b01b7457" prot="public" virt="non-virtual"><scope>Catalog</scope><name>markInfoSuspects</name></member>
+      <member refid="class_catalog_1a62d29a6b49f690ce7412d8a92a9a413aa970365229037d47c627fdd8d763002ab" prot="public" virt="non-virtual"><scope>Catalog</scope><name>markInfoUserProperties</name></member>
+      <member refid="class_catalog_1a522b880b45799f74288fcde14f963879" prot="private" virt="non-virtual"><scope>Catalog</scope><name>metadata</name></member>
+      <member refid="class_catalog_1aa11869b7ec2f7be2cd101dec7f52cf2f" prot="private" virt="non-virtual"><scope>Catalog</scope><name>mutex</name></member>
+      <member refid="class_catalog_1a12d05a42849e232d634be3112fcff505" prot="private" virt="non-virtual"><scope>Catalog</scope><name>names</name></member>
+      <member refid="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640a6bd2d5ccaac761685e4055c4e6587d14" prot="public" virt="non-virtual"><scope>Catalog</scope><name>NoForm</name></member>
+      <member refid="class_catalog_1a1c6dc4cbbd614a17bb47b94cfc2b6eb7" prot="public" virt="non-virtual"><scope>Catalog</scope><name>numEmbeddedFiles</name></member>
+      <member refid="class_catalog_1a1bdf1696adcd308f87a45add76611020" prot="public" virt="non-virtual"><scope>Catalog</scope><name>numJS</name></member>
+      <member refid="class_catalog_1a2e2febf9ca0c30af62653566aea0f8f9" prot="private" virt="non-virtual"><scope>Catalog</scope><name>numPages</name></member>
+      <member refid="class_catalog_1a86f7771c8def91ad58e505117254ebc2" prot="private" virt="non-virtual"><scope>Catalog</scope><name>ok</name></member>
+      <member refid="class_catalog_1a63e88d95fd3a945523b717a9838edd78" prot="private" virt="non-virtual"><scope>Catalog</scope><name>optContent</name></member>
+      <member refid="class_catalog_1a505bbb40db87283d96104c85cad96b26" prot="private" virt="non-virtual"><scope>Catalog</scope><name>outline</name></member>
+      <member refid="class_catalog_1a6fd1178e0aa08a9dd27a3062d69b2b10" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pageLabelInfo</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccd" prot="public" virt="non-virtual"><scope>Catalog</scope><name>PageLayout</name></member>
+      <member refid="class_catalog_1a75cc0e0f1bccdffd22d84e3fd0216505" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pageLayout</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaef6be7f0f61f12b88b51b57a04c1e724" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutNone</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdae6e0aabcefa93201c80e4dfef24f11e5" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutNull</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccda6ace7d1b28774baec4df656171faa596" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutOneColumn</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdabeedfb7d651d8a0bab228127f2447bc6" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutSinglePage</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdada69215b37ae9c6be3f68b5b59473da6" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutTwoColumnLeft</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaa31925bb2c834e84deae942f49015fa5" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutTwoColumnRight</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccdaa613801c78a21c0b322a3c50e525dd91" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutTwoPageLeft</name></member>
+      <member refid="class_catalog_1aaf275073c64ef5ded901cfc0ca2dbccda26e14d8f673ee450ff83064e26fdd7b3" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageLayoutTwoPageRight</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69c" prot="public" virt="non-virtual"><scope>Catalog</scope><name>PageMode</name></member>
+      <member refid="class_catalog_1a81e4daea4dd252669c6f9db66e411d0f" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pageMode</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca8efb9c24df6d7e912695d78826bb58d1" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeAttach</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69caf36fc35f9b07f9b2ae6155ecc7bf99fc" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeFullScreen</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cab4083c89c1f9d1359cb5c17f418b7189" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeNone</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca6812f96888992b98887c1a4b7499dfbf" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeNull</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cabc174a4be78489b3a62ce90be8e82ed1" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeOC</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69ca7bb41a81d5c9cb28cff66b0ff1545c7e" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeOutlines</name></member>
+      <member refid="class_catalog_1aebb5dafdf6ebacd4d0ed10ec93b5d69cabdde27ac4d83c7945014009408437f40" prot="public" virt="non-virtual"><scope>Catalog</scope><name>pageModeThumbs</name></member>
+      <member refid="class_catalog_1a8ac5b1e5bc9652d0ca9ed8fa51010c19" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pageRefs</name></member>
+      <member refid="class_catalog_1a71af117a82014be490e2f4f66618dd64" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pages</name></member>
+      <member refid="class_catalog_1a9564b74b9e1d3fb935327e834b98d570" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pagesList</name></member>
+      <member refid="class_catalog_1adfe977ff6e29885aa5ca56fb3a5568fe" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pagesRefList</name></member>
+      <member refid="class_catalog_1a06c2e516763c19679681657beceda596" prot="private" virt="non-virtual"><scope>Catalog</scope><name>pagesSize</name></member>
+      <member refid="class_catalog_1ace4f8fbc0c37eb1dd8ce2884d8490008" prot="public" virt="non-virtual"><scope>Catalog</scope><name>readMetadata</name></member>
+      <member refid="class_catalog_1afa24889d3c1cb2df7596ac50b9e6b6ba" prot="private" virt="non-virtual"><scope>Catalog</scope><name>structTreeRoot</name></member>
+      <member refid="class_catalog_1a3892dfa586f49da65d17e8a6b1d9015f" prot="private" virt="non-virtual"><scope>Catalog</scope><name>viewerPreferences</name></member>
+      <member refid="class_catalog_1ac9453a96b930ae9bb65f397f37567e1c" prot="private" virt="non-virtual"><scope>Catalog</scope><name>viewerPrefs</name></member>
+      <member refid="class_catalog_1a6892c8a9ff1dd981586cfc9bbf45c640ae583c57a4a6e9b57ae9159515a540bdd" prot="public" virt="non-virtual"><scope>Catalog</scope><name>XfaForm</name></member>
+      <member refid="class_catalog_1a857761d1086350cbc9976b7575e01673" prot="private" virt="non-virtual"><scope>Catalog</scope><name>xref</name></member>
+      <member refid="class_catalog_1afd61fcc5031564dfc8e74e7af239caea" prot="public" virt="non-virtual"><scope>Catalog</scope><name>~Catalog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

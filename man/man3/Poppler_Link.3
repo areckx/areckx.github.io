@@ -1,0 +1,121 @@
+.TH "Poppler::Link" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::Link \- Encapsulates data that describes a link\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherited by \fBPoppler::LinkAction\fP, \fBPoppler::LinkBrowse\fP, \fBPoppler::LinkExecute\fP, \fBPoppler::LinkGoto\fP, \fBPoppler::LinkJavaScript\fP, \fBPoppler::LinkMovie\fP, \fBPoppler::LinkRendition\fP, and \fBPoppler::LinkSound\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLinkType\fP { \fBNone\fP, \fBGoto\fP, \fBExecute\fP, \fBBrowse\fP, \fBAction\fP, \fBSound\fP, \fBMovie\fP, \fBRendition\fP, \fBJavaScript\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBLinkType\fP \fBlinkType\fP () const"
+.br
+.ti -1c
+.RI "virtual \fB~Link\fP ()"
+.br
+.ti -1c
+.RI "QRectF \fBlinkArea\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Encapsulates data that describes a link\&. 
+
+This is the base class for links\&. It makes mandatory for inherited kind of links to reimplement the \fBlinkType()\fP method and return the type of the link described by the reimplemented class\&. 
+.PP
+Definition at line 172 of file poppler\-link\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::Link::LinkType\fP"
+The possible kinds of link\&.
+.PP
+Inherited classes must return an unique identifier 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINone \fP\fP
+Unknown link\&. 
+.TP
+\fB\fIGoto \fP\fP
+A 'Go To' link\&. 
+.TP
+\fB\fIExecute \fP\fP
+A command to be executed\&. 
+.TP
+\fB\fIBrowse \fP\fP
+An URL to be browsed (eg 'http://poppler\&.freedesktop\&.org') 
+.TP
+\fB\fIAction \fP\fP
+A 'standard' action to be executed in the viewer\&. 
+.TP
+\fB\fISound \fP\fP
+A link representing a sound to be played\&. 
+.TP
+\fB\fIMovie \fP\fP
+An action to be executed on a movie\&. 
+.TP
+\fB\fIRendition \fP\fP
+A rendition link\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.TP
+\fB\fIJavaScript \fP\fP
+A JavaScript code to be interpreted\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::Link::~Link ()\fC [virtual]\fP"
+Destructor\&. 
+.PP
+Definition at line 419 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRectF Poppler::Link::linkArea () const"
+The area of a \fBPage\fP where the link should be active\&.
+.PP
+\fBNote:\fP
+.RS 4
+this can be a null rect, in this case the link represents a general action\&. The area is given in 0\&.\&.1 range 
+.RE
+.PP
+
+.PP
+Definition at line 439 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP Poppler::Link::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented in \fBPoppler::LinkMovie\fP, \fBPoppler::LinkJavaScript\fP, \fBPoppler::LinkRendition\fP, \fBPoppler::LinkSound\fP, \fBPoppler::LinkAction\fP, \fBPoppler::LinkBrowse\fP, \fBPoppler::LinkExecute\fP, and \fBPoppler::LinkGoto\fP\&.
+.PP
+Definition at line 434 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

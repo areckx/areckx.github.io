@@ -1,0 +1,126 @@
+.TH "Poppler::FormFieldText" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FormFieldText
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-form\&.h>\fP
+.PP
+Inherits \fBPoppler::FormField\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTextType\fP { \fBNormal\fP, \fBMultiline\fP, \fBFileSelect\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBFormType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBTextType\fP \fBtextType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const QString &\fBtext\fP)"
+.br
+.ti -1c
+.RI "bool \fBisPassword\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisRichText\fP () const"
+.br
+.ti -1c
+.RI "int \fBmaximumLength\fP () const"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBtextAlignment\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcanBeSpellChecked\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A form field that represents a text input\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 183 of file poppler\-form\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::FormFieldText::TextType\fP"
+The particular type of this text field\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINormal \fP\fP
+A simple singleline text field\&. 
+.TP
+\fB\fIMultiline \fP\fP
+A multiline text field\&. 
+.TP
+\fB\fIFileSelect \fP\fP
+An input field to select the path of a file on disk\&. 
+.PP
+Definition at line 189 of file poppler\-form\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool FormFieldText::canBeSpellChecked () const"
+Whether the text inserted manually in the field (where possible) can be spell-checked\&. 
+.PP
+Definition at line 310 of file poppler\-form\&.cc\&.
+.SS "bool FormFieldText::isPassword () const"
+Whether this text field is a password input, eg its text \fBmust\fP be replaced with asterisks\&.
+.PP
+Always false for \fBFileSelect\fP text fields\&. 
+.PP
+Definition at line 286 of file poppler\-form\&.cc\&.
+.SS "bool FormFieldText::isRichText () const"
+Whether this text field should allow rich text\&. 
+.PP
+Definition at line 292 of file poppler\-form\&.cc\&.
+.SS "int FormFieldText::maximumLength () const"
+The maximum length for the text of this field, or -1 if not set\&. 
+.PP
+Definition at line 298 of file poppler\-form\&.cc\&.
+.SS "void FormFieldText::setText (const QString & text)"
+Sets the text associated with the text field to the specified \fCtext\fP\&. 
+.PP
+Definition at line 278 of file poppler\-form\&.cc\&.
+.SS "QString FormFieldText::text () const"
+The text associated with the text field\&. 
+.PP
+Definition at line 272 of file poppler\-form\&.cc\&.
+.SS "Qt::Alignment FormFieldText::textAlignment () const"
+The horizontal alignment for the text of this text field\&. 
+.PP
+Definition at line 305 of file poppler\-form\&.cc\&.
+.SS "\fBFormFieldText::TextType\fP FormFieldText::textType () const"
+The text type of the text field\&. 
+.PP
+Definition at line 262 of file poppler\-form\&.cc\&.
+.SS "\fBFormField::FormType\fP FormFieldText::type () const\fC [virtual]\fP"
+The type of the field\&. 
+.PP
+Implements \fBPoppler::FormField\fP\&.
+.PP
+Definition at line 257 of file poppler\-form\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

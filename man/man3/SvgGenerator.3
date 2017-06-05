@@ -1,0 +1,343 @@
+.TH "SvgGenerator" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SvgGenerator \- The \fBSvgGenerator\fP class provides a paint device that is used to create SVG drawings\&. \&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QPaintDevice\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSvgGenerator\fP ()"
+.br
+.ti -1c
+.RI "\fB~SvgGenerator\fP ()"
+.br
+.ti -1c
+.RI "QString \fBtitle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTitle\fP (const QString &\fBtitle\fP)"
+.br
+.ti -1c
+.RI "QString \fBdescription\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDescription\fP (const QString &\fBdescription\fP)"
+.br
+.ti -1c
+.RI "QSize \fBsize\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (const QSize &\fBsize\fP)"
+.br
+.ti -1c
+.RI "QRect \fBviewBox\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBviewBoxF\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetViewBox\fP (const QRect &\fBviewBox\fP)"
+.br
+.ti -1c
+.RI "void \fBsetViewBox\fP (const QRectF &\fBviewBox\fP)"
+.br
+.ti -1c
+.RI "QString \fBfileName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFileName\fP (const QString &\fBfileName\fP)"
+.br
+.ti -1c
+.RI "QIODevice * \fBoutputDevice\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOutputDevice\fP (QIODevice *\fBoutputDevice\fP)"
+.br
+.ti -1c
+.RI "void \fBsetResolution\fP (int dpi)"
+.br
+.ti -1c
+.RI "int \fBresolution\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetElement\fP (const \fBMs::Element\fP *e)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "QPaintEngine * \fBpaintEngine\fP () const"
+.br
+.ti -1c
+.RI "int \fBmetric\fP (QPaintDevice::PaintDeviceMetric metric) const"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QSize \fBsize\fP"
+.br
+.RI "the size of the generated SVG drawing "
+.ti -1c
+.RI "QRectF \fBviewBox\fP"
+.br
+.RI "the viewBox of the generated SVG drawing "
+.ti -1c
+.RI "QString \fBtitle\fP"
+.br
+.RI "the title of the generated SVG drawing "
+.ti -1c
+.RI "QString \fBdescription\fP"
+.br
+.RI "the description of the generated SVG drawing "
+.ti -1c
+.RI "QString \fBfileName\fP"
+.br
+.RI "the target filename for the generated SVG drawing "
+.ti -1c
+.RI "QIODevice \fBoutputDevice\fP"
+.br
+.RI "the output device for the generated SVG drawing "
+.ti -1c
+.RI "int \fBresolution\fP"
+.br
+.RI "the resolution of the generated output "
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBSvgGenerator\fP class provides a paint device that is used to create SVG drawings\&. \&. 
+
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.3 This paint device represents a Scalable Vector Graphics (SVG) drawing\&. Like QPrinter, it is designed as a write-only device that generates output in a specific format\&.
+.RE
+.PP
+To write an SVG file, you first need to configure the output by setting the  fileName or  outputDevice properties\&. It is usually necessary to specify the size of the drawing by setting the  size property, and in some cases where the drawing will be included in another, the  viewBox property also needs to be set\&.
+.PP
+.PP
+.nf
+.fi
+.PP
+ Other meta-data can be specified by setting the \fItitle\fP, \fIdescription\fP and \fIresolution\fP properties\&.
+.PP
+As with other QPaintDevice subclasses, a QPainter object is used to paint onto an instance of this class:
+.PP
+.PP
+.nf
+.fi
+.PP
+ 
+.PP
+.nf
+
+.fi
+.PP
+ Painting is performed in the same way as for any other paint device\&. However, it is necessary to use the QPainter::begin() and {QPainter::}{end()} to explicitly begin and end painting on the device\&.
+.PP
+The {SVG Generator Example} shows how the same painting commands can be used for painting a widget and writing an SVG file\&.
+.PP
+\fBSee also:\fP
+.RS 4
+SvgRenderer, SvgWidget, {About SVG} 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file svggenerator\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SvgGenerator::SvgGenerator ()"
+Constructs a new generator\&. 
+.PP
+Definition at line 726 of file svggenerator\&.cpp\&.
+.SS "SvgGenerator::~SvgGenerator ()"
+Destroys the generator\&. 
+.PP
+Definition at line 738 of file svggenerator\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int SvgGenerator::metric (QPaintDevice::PaintDeviceMetric metric) const\fC [protected]\fP"
+
+.PP
+Definition at line 958 of file svggenerator\&.cpp\&.
+.SS "QPaintEngine * SvgGenerator::paintEngine () const\fC [protected]\fP"
+Returns the paint engine used to render graphics to be converted to SVG format information\&. 
+.PP
+Definition at line 949 of file svggenerator\&.cpp\&.
+.SS "void SvgGenerator::setElement (const \fBMs::Element\fP * e)"
+\fBsetElement()\fP function Sets the _element variable in \fBSvgPaintEngine\fP\&. Called by saveSVG() in \fBmscore/file\&.cpp\fP\&. 
+.PP
+Definition at line 997 of file svggenerator\&.cpp\&.
+.SH "Property Documentation"
+.PP 
+.SS "QString SvgGenerator::description\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the description of the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtitle\fP 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file svggenerator\&.h\&.
+.SS "QString SvgGenerator::fileName\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the target filename for the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBoutputDevice\fP 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file svggenerator\&.h\&.
+.SS "QIODevice * SvgGenerator::outputDevice\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the output device for the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+If both output device and file name are specified, the output device will have precedence\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBfileName\fP 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file svggenerator\&.h\&.
+.SS "int SvgGenerator::resolution\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the resolution of the generated output 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+The resolution is specified in dots per inch, and is used to calculate the physical size of an SVG drawing\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsize\fP, \fBviewBox\fP 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file svggenerator\&.h\&.
+.SS "QSize SvgGenerator::size\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the size of the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+By default this property is set to \fC\fP{QSize(-1, -1)}, which indicates that the generator should not output the width and height attributes of the \fC\fP <svg> element\&.
+.PP
+\fBNote:\fP
+.RS 4
+It is not possible to change this property while a QPainter is active on the generator\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBviewBox\fP, \fBresolution\fP 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file svggenerator\&.h\&.
+.SS "QString SvgGenerator::title\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the title of the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBdescription\fP 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file svggenerator\&.h\&.
+.SS "QRect SvgGenerator::viewBox\fC [read]\fP, \fC [write]\fP"
+
+.PP
+the viewBox of the generated SVG drawing 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+By default this property is set to \fC\fP{QRect(0, 0, -1, -1)}, which indicates that the generator should not output the viewBox attribute of the \fC\fP <svg> element\&.
+.PP
+\fBNote:\fP
+.RS 4
+It is not possible to change this property while a QPainter is active on the generator\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBviewBox()\fP, \fBsize\fP, \fBresolution\fP
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+4\&.5
+.RE
+.PP
+Returns viewBoxF()\&.toRect()\&.
+.PP
+\fBSee also:\fP
+.RS 4
+viewBoxF() 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file svggenerator\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

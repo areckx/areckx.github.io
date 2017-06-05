@@ -1,0 +1,27 @@
+var class_ms_1_1_example_view =
+[
+    [ "ExampleView", "class_ms_1_1_example_view.html#aef93b941d33345bd6f166f7b14c4d4db", null ],
+    [ "~ExampleView", "class_ms_1_1_example_view.html#ac4acfcd64e3f3a8e22d826b5425b4c6e", null ],
+    [ "adjustCanvasPosition", "class_ms_1_1_example_view.html#afbf71717a55906151b1733e2756dbbce", null ],
+    [ "beamPropertyDropped", "class_ms_1_1_example_view.html#ad7c64b9170bef97d0d54d2ca37b23858", null ],
+    [ "changeEditElement", "class_ms_1_1_example_view.html#a551cd78e76e5e88673ae51fa0dc52772", null ],
+    [ "cmdAddHairpin", "class_ms_1_1_example_view.html#a0ff8515c05f381a90f95bb629f234074", null ],
+    [ "cmdAddSlur", "class_ms_1_1_example_view.html#af65e2171c8f7d0d55b4ca085cd6e6eed", null ],
+    [ "cursor", "class_ms_1_1_example_view.html#aeb6d951d59f9b7e2d40bbe158b880d53", null ],
+    [ "dataChanged", "class_ms_1_1_example_view.html#a8d132a367d636b1759618e341085bb7f", null ],
+    [ "dragExampleView", "class_ms_1_1_example_view.html#a399550e242605e3eebd5f7418a9e7a7c", null ],
+    [ "drawBackground", "class_ms_1_1_example_view.html#a289567f81d82d9fb80e82410a9b45697", null ],
+    [ "elementNear", "class_ms_1_1_example_view.html#af01463989013c8bc2be9ab30a2b87bfb", null ],
+    [ "getGrip", "class_ms_1_1_example_view.html#a35f1cfd02b2937697431047b37621ba6", null ],
+    [ "gripCount", "class_ms_1_1_example_view.html#ab37065ea7018cb04610ff55e95d078b4", null ],
+    [ "layoutChanged", "class_ms_1_1_example_view.html#a5931ce5714dce9431eb511ac586df55f", null ],
+    [ "noteClicked", "class_ms_1_1_example_view.html#a557dea86586d4cc855066c5acb3726f0", null ],
+    [ "removeScore", "class_ms_1_1_example_view.html#acb85573ac6533a1321f85e2a32476cbd", null ],
+    [ "resetMatrix", "class_ms_1_1_example_view.html#a526397b9a151f8d1bb49525144c7c144", null ],
+    [ "setCursor", "class_ms_1_1_example_view.html#aa7e70c32abb55a1ccb7794fe691b531c", null ],
+    [ "setDropRectangle", "class_ms_1_1_example_view.html#af5676cf510243265048bcfcdbde275ca", null ],
+    [ "setScore", "class_ms_1_1_example_view.html#ad3139964f857b37c5e443561a0fb5d89", null ],
+    [ "startEdit", "class_ms_1_1_example_view.html#ad19ffc3c7b2881a0f95cdbb6a9a2d61e", null ],
+    [ "startEdit", "class_ms_1_1_example_view.html#aa89daa0c6582ec1150b49f46b83f31cb", null ],
+    [ "updateAll", "class_ms_1_1_example_view.html#a057c9be38059d1f751bbf919c1753bd3", null ]
+];

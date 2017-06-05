@@ -1,0 +1,96 @@
+.TH "TransitionData" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TransitionData \- generic data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <transitiondata\&.h>\fP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBComboBoxData\fP, \fBLabelData\fP, \fBLineEditData\fP, and \fBStackedWidgetData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransitionData\fP (QObject *parent, QWidget *target, int)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~TransitionData\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual void \fBsetEnabled\fP (bool value)"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual bool \fBenabled\fP (void) const"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int duration)"
+.br
+.RI "duration "
+.ti -1c
+.RI "void \fBsetMaxRenderTime\fP (int value)"
+.br
+.RI "max render time "
+.ti -1c
+.RI "const int & \fBmaxRenderTime\fP (void) const"
+.br
+.RI "max renderTime "
+.ti -1c
+.RI "void \fBstartClock\fP (void)"
+.br
+.RI "start clock "
+.ti -1c
+.RI "bool \fBslow\fP (void) const"
+.br
+.RI "check if rendering is two slow "
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBinitializeAnimation\fP (void)=0"
+.br
+.RI "initialize animation "
+.ti -1c
+.RI "virtual bool \fBanimate\fP (void)=0"
+.br
+.RI "animate "
+.ti -1c
+.RI "virtual void \fBfinishAnimation\fP (void)"
+.br
+.RI "finish animation "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual const \fBTransitionWidget::Pointer\fP & \fBtransition\fP (void) const"
+.br
+.RI "transition widget "
+.ti -1c
+.RI "void \fBsetRecursiveCheck\fP (bool value)"
+.br
+.RI "used to avoid recursion when grabbing widgets "
+.ti -1c
+.RI "bool \fBrecursiveCheck\fP (void) const"
+.br
+.RI "used to avoid recursion when grabbing widgets "
+.in -1c
+.SH "Detailed Description"
+.PP 
+generic data 
+.PP
+Definition at line 33 of file transitiondata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

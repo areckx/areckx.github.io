@@ -1,0 +1,124 @@
+.TH "Ms::Arpeggio" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Arpeggio
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArpeggio\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "virtual \fBArpeggio\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "ArpeggioType \fBarpeggioType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetArpeggioType\fP (ArpeggioType v)"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBchord\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &e) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "int \fBspan\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSpan\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetHeight\fP (qreal)"
+.br
+.ti -1c
+.RI "qreal \fBuserLen1\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBuserLen2\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserLen1\fP (qreal v)"
+.br
+.ti -1c
+.RI "void \fBsetUserLen2\fP (qreal v)"
+.br
+.ti -1c
+.RI "bool \fBplayArpeggio\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPlayArpeggio\fP (bool p)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID propertyId) const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 30 of file arpeggio\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Arpeggio::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 368 of file arpeggio\&.cpp\&.
+.SS "\fBElement\fP * Ms::Arpeggio::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 377 of file arpeggio\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,71 @@
+.TH "Ms::StringData" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::StringData
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStringData\fP (int numFrets, int numStrings, int strings[])"
+.br
+.ti -1c
+.RI "\fBStringData\fP (int numFrets, QList< \fBinstrString\fP > &strings)"
+.br
+.ti -1c
+.RI "bool \fBconvertPitch\fP (int pitch, \fBStaff\fP *staff, int tick, int *string, int *fret) const"
+.br
+.ti -1c
+.RI "int \fBfret\fP (int pitch, int string, \fBStaff\fP *staff, int tick) const"
+.br
+.ti -1c
+.RI "void \fBfretChords\fP (\fBChord\fP *chord) const"
+.br
+.ti -1c
+.RI "int \fBgetPitch\fP (int string, int fret, \fBStaff\fP *staff, int tick) const"
+.br
+.ti -1c
+.RI "int \fBstrings\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBinstrString\fP > \fBstringList\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBinstrString\fP > & \fBstringList\fP ()"
+.br
+.ti -1c
+.RI "int \fBfrets\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFrets\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "void \fBwriteMusicXML\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBStringData\fP &d) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBpitchOffsetAt\fP (\fBStaff\fP *staff, int tick)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file stringdata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

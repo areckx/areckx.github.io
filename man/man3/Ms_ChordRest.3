@@ -1,0 +1,336 @@
+.TH "Ms::ChordRest" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::ChordRest \- Virtual base class\&. Chords and rests can be part of a beam\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <chordrest\&.h>\fP
+.PP
+Inherits \fBMs::DurationElement\fP\&.
+.PP
+Inherited by \fBMs::Chord\fP, and \fBMs::Rest\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChordRest\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP (const \fBChordRest\fP &, bool link=false)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP & \fBoperator=\fP (const \fBChordRest\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBundoUnlink\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBmeasure\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "void \fBsetBeamMode\fP (Beam::Mode m)"
+.br
+.ti -1c
+.RI "void \fBundoSetBeamMode\fP (Beam::Mode m)"
+.br
+.ti -1c
+.RI "Beam::Mode \fBbeamMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBeam\fP (\fBBeam\fP *b)"
+.br
+.ti -1c
+.RI "virtual \fBBeam\fP * \fBbeam\fP () const"
+.br
+.ti -1c
+.RI "int \fBbeams\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBupPos\fP () const =0"
+.br
+.ti -1c
+.RI "virtual qreal \fBdownPos\fP () const =0"
+.br
+.ti -1c
+.RI "virtual qreal \fBcenterX\fP () const =0"
+.br
+.ti -1c
+.RI "int \fBline\fP (bool up) const"
+.br
+.ti -1c
+.RI "int \fBline\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBupLine\fP () const =0"
+.br
+.ti -1c
+.RI "virtual int \fBdownLine\fP () const =0"
+.br
+.ti -1c
+.RI "virtual QPointF \fBstemPos\fP () const =0"
+.br
+.ti -1c
+.RI "virtual qreal \fBstemPosX\fP () const =0"
+.br
+.ti -1c
+.RI "virtual QPointF \fBstemPosBeam\fP () const =0"
+.br
+.ti -1c
+.RI "bool \fBup\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUp\fP (bool val)"
+.br
+.ti -1c
+.RI "QVector< \fBArticulation\fP * > & \fBarticulations\fP ()"
+.br
+.ti -1c
+.RI "const QVector< \fBArticulation\fP * > & \fBarticulations\fP () const"
+.br
+.ti -1c
+.RI "\fBArticulation\fP * \fBhasArticulation\fP (const \fBArticulation\fP *)"
+.br
+.ti -1c
+.RI "bool \fBsmall\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSmall\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBundoSetSmall\fP (bool val)"
+.br
+.ti -1c
+.RI "int \fBstaffMove\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStaffMove\fP (int val)"
+.br
+.ti -1c
+.RI "virtual int \fBvStaffIdx\fP () const override"
+.br
+.ti -1c
+.RI "void \fBlayoutArticulations\fP ()"
+.br
+.ti -1c
+.RI "const \fBTDuration\fP \fBdurationType\fP () const"
+.br
+.ti -1c
+.RI "const \fBTDuration\fP \fBactualDurationType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDurationType\fP (TDuration::DurationType t)"
+.br
+.ti -1c
+.RI "void \fBsetDurationType\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetDurationType\fP (int ticks)"
+.br
+.ti -1c
+.RI "void \fBsetDurationType\fP (\fBTDuration\fP v)"
+.br
+.ti -1c
+.RI "void \fBsetDots\fP (int n)"
+.br
+.ti -1c
+.RI "int \fBdots\fP () const"
+.br
+.ti -1c
+.RI "int \fBactualDots\fP () const"
+.br
+.ti -1c
+.RI "int \fBdurationTypeTicks\fP ()"
+.br
+.ti -1c
+.RI "QString \fBdurationUserName\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetTrack\fP (int val) override"
+.br
+.ti -1c
+.RI "const std::vector< \fBLyrics\fP * > & \fBlyrics\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBLyrics\fP * > & \fBlyrics\fP ()"
+.br
+.ti -1c
+.RI "\fBLyrics\fP * \fBlyrics\fP (int verse, Placement) const"
+.br
+.ti -1c
+.RI "int \fBlastVerse\fP (Placement) const"
+.br
+.ti -1c
+.RI "void \fBflipLyrics\fP (\fBLyrics\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveDeleteBeam\fP (bool beamed)"
+.br
+.ti -1c
+.RI "\fBElementList\fP & \fBel\fP ()"
+.br
+.ti -1c
+.RI "const \fBElementList\fP & \fBel\fP () const"
+.br
+.ti -1c
+.RI "CrossMeasure \fBcrossMeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCrossMeasure\fP (CrossMeasure val)"
+.br
+.ti -1c
+.RI "virtual void \fBcrossMeasureSetup\fP (bool)"
+.br
+.ti -1c
+.RI "\fBTDuration\fP \fBcrossMeasureDurationType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCrossMeasureDurationType\fP (\fBTDuration\fP v)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "bool \fBisGrace\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisGraceBefore\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisGraceAfter\fP () const"
+.br
+.ti -1c
+.RI "void \fBwriteBeam\fP (\fBXmlWriter\fP &xml)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnextSegmentAfterCR\fP (SegmentType types) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s) override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleExtraInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayoutStem1\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBcomputeUp\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisFullMeasureRest\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBremoveMarkings\fP (bool keepTremolo=false)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< \fBArticulation\fP * > \fB_articulations\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBLyrics\fP * > \fB_lyrics\fP"
+.br
+.ti -1c
+.RI "\fBTabDurationSymbol\fP * \fB_tabDur\fP"
+.br
+.ti -1c
+.RI "\fBBeam\fP * \fB_beam\fP"
+.br
+.ti -1c
+.RI "Beam::Mode \fB_beamMode\fP"
+.br
+.ti -1c
+.RI "bool \fB_up\fP"
+.br
+.ti -1c
+.RI "bool \fB_small\fP"
+.br
+.ti -1c
+.RI "CrossMeasure \fB_crossMeasure\fP"
+.br
+.RI "0: no cross-measure modification; 1: 1st note of a mod\&.; -1: 2nd note "
+.ti -1c
+.RI "\fBTDuration\fP \fB_crossMeasureTDur\fP"
+.br
+.RI "the total Duration type of the combined notes "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::Beam::Mode \fBbeamMode\fP"
+.br
+.ti -1c
+.RI "int \fBdurationType\fP"
+.br
+.ti -1c
+.RI "bool \fBsmall\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Virtual base class\&. Chords and rests can be part of a beam\&. 
+.PP
+Definition at line 51 of file chordrest\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBElement\fP * Ms::ChordRest::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Reimplemented in \fBMs::Chord\fP, and \fBMs::Rest\fP\&.
+.PP
+Definition at line 684 of file chordrest\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

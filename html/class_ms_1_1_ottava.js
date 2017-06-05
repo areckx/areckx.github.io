@@ -1,0 +1,28 @@
+var class_ms_1_1_ottava =
+[
+    [ "Ottava", "class_ms_1_1_ottava.html#aa9a3e7d924ff07b5e579c26c58957ae5", null ],
+    [ "Ottava", "class_ms_1_1_ottava.html#ad13d24169c90bf42c0cdae9e3e90ab03", null ],
+    [ "accessibleInfo", "class_ms_1_1_ottava.html#a6eb01a143c74345c80610418a3eab1c2", null ],
+    [ "clone", "class_ms_1_1_ottava.html#af56e2b7a0d7b5f071eea8ceca1393a71", null ],
+    [ "createLineSegment", "class_ms_1_1_ottava.html#abcfb6166b110d5aed2daf95e4e057af0", null ],
+    [ "endEdit", "class_ms_1_1_ottava.html#a15c6d2d7b8f75adb57f9f4b3dfb1fc14", null ],
+    [ "getProperty", "class_ms_1_1_ottava.html#aab7fdcaee5361da52a11132bbb6bec83", null ],
+    [ "getPropertyStyle", "class_ms_1_1_ottava.html#a6a2e05de79d24d9a524227ea8de970c9", null ],
+    [ "numbersOnly", "class_ms_1_1_ottava.html#a03960f91a50095606a59ee0b81fa7b42", null ],
+    [ "ottavaType", "class_ms_1_1_ottava.html#a1ad808ce94f4a5ddc17b9adcc86802f0", null ],
+    [ "pitchShift", "class_ms_1_1_ottava.html#ae810085d11b2cd1dcf266e31897c799d", null ],
+    [ "propertyDefault", "class_ms_1_1_ottava.html#ae26c249729363a1b17bfaeb4891d893f", null ],
+    [ "propertyFlags", "class_ms_1_1_ottava.html#aad2a7a3d7d57db86047e3ce86af9e9fa", null ],
+    [ "read", "class_ms_1_1_ottava.html#a9fd0ed41e95d8799eec21a38ac864186", null ],
+    [ "readProperties", "class_ms_1_1_ottava.html#ad3ef6fa7360c89e7c6fbcb6cbcc6aba1", null ],
+    [ "reset", "class_ms_1_1_ottava.html#a014e6a9c9f48a11ea6d34e955688bd54", null ],
+    [ "setNumbersOnly", "class_ms_1_1_ottava.html#a042053802aaab155026d5d37d150521c", null ],
+    [ "setOttavaType", "class_ms_1_1_ottava.html#afbad30e457b9aed99bc0b22791ffa85a", null ],
+    [ "setProperty", "class_ms_1_1_ottava.html#a4b37b4449dc24b877149f30886ae2fc1", null ],
+    [ "setYoff", "class_ms_1_1_ottava.html#afcfba369399772d26c8a85d03a56c4aa", null ],
+    [ "styleChanged", "class_ms_1_1_ottava.html#afb280129cc4ab11d939c1607daa8b60b", null ],
+    [ "type", "class_ms_1_1_ottava.html#ac30104b27d55fa1ad1345b4ca11eed10", null ],
+    [ "undoSetOttavaType", "class_ms_1_1_ottava.html#ad7b5ab0c230919ff56fae08a385db0af", null ],
+    [ "write", "class_ms_1_1_ottava.html#a977e44915c716bb5e7f77090271eaa92", null ],
+    [ "OttavaSegment", "class_ms_1_1_ottava.html#a0bed203fbbf096f5ce104f52080418c0", null ]
+];

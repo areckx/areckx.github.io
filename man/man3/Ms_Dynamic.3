@@ -1,0 +1,131 @@
+.TH "Ms::Dynamic" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Dynamic \- dynamics marker; determines midi velocity  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dynamic\&.h>\fP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : char { \fBOTHER\fP, \fBPPPPPP\fP, \fBPPPPP\fP, \fBPPPP\fP, \fBPPP\fP, \fBPP\fP, \fBP\fP, \fBMP\fP, \fBMF\fP, \fBF\fP, \fBFF\fP, \fBFFF\fP, \fBFFFF\fP, \fBFFFFF\fP, \fBFFFFFF\fP, \fBFP\fP, \fBSF\fP, \fBSFZ\fP, \fBSFF\fP, \fBSFFZ\fP, \fBSFP\fP, \fBSFPP\fP, \fBRFZ\fP, \fBRF\fP, \fBFZ\fP, \fBM\fP, \fBR\fP, \fBS\fP, \fBZ\fP }"
+.br
+.ti -1c
+.RI "enum \fBRange\fP : char { \fBSTAFF\fP, \fBPART\fP, \fBSYSTEM\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDynamic\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBDynamic\fP (const \fBDynamic\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBDynamic\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDynamicType\fP (Type val)"
+.br
+.ti -1c
+.RI "void \fBsetDynamicType\fP (const QString &)"
+.br
+.ti -1c
+.RI "QString \fBdynamicTypeName\fP () const"
+.br
+.ti -1c
+.RI "Type \fBdynamicType\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBsubtypeName\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetVelocity\fP (int v)"
+.br
+.ti -1c
+.RI "int \fBvelocity\fP () const"
+.br
+.ti -1c
+.RI "Range \fBdynRange\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDynRange\fP (Range t)"
+.br
+.ti -1c
+.RI "void \fBundoSetDynRange\fP (Range t)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "void \fBdoAutoplace\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Ms::Dynamic::Range \fBrange\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+dynamics marker; determines midi velocity 
+.PP
+Definition at line 31 of file dynamic\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

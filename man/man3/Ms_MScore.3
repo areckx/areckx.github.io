@@ -1,0 +1,256 @@
+.TH "Ms::MScore" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MScore
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDirectionH\fP : char { \fBAUTO\fP, \fBLEFT\fP, \fBRIGHT\fP }"
+.br
+.ti -1c
+.RI "enum \fBOrnamentStyle\fP : char { \fBDEFAULT\fP, \fBBAROQUE\fP }"
+.br
+.ti -1c
+.RI "enum \fBGlissandoStyle\fP : char { \fBCHROMATIC\fP, \fBWHITE_KEYS\fP, \fBBLACK_KEYS\fP, \fBDIATONIC\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBendCmd\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "static const \fBMStyle\fP & \fBbaseStyle\fP ()"
+.br
+.ti -1c
+.RI "static \fBMStyle\fP & \fBdefaultStyle\fP ()"
+.br
+.ti -1c
+.RI "static const \fBMStyle\fP * \fBdefaultStyleForParts\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetDefaultStyle\fP (const \fBMStyle\fP &s)"
+.br
+.ti -1c
+.RI "static void \fBdefaultStyleForPartsHasChanged\fP ()"
+.br
+.ti -1c
+.RI "static const QString & \fBglobalShare\fP ()"
+.br
+.ti -1c
+.RI "static qreal \fBhRaster\fP ()"
+.br
+.ti -1c
+.RI "static qreal \fBvRaster\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetHRaster\fP (int val)"
+.br
+.ti -1c
+.RI "static void \fBsetVRaster\fP (int val)"
+.br
+.ti -1c
+.RI "static void \fBsetNudgeStep\fP (qreal val)"
+.br
+.ti -1c
+.RI "static void \fBsetNudgeStep10\fP (qreal val)"
+.br
+.ti -1c
+.RI "static void \fBsetNudgeStep50\fP (qreal val)"
+.br
+.ti -1c
+.RI "static bool \fBverticalOrientation\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetVerticalOrientation\fP (bool val)"
+.br
+.ti -1c
+.RI "static \fBMPaintDevice\fP * \fBpaintDevice\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsetError\fP (MsError e)"
+.br
+.ti -1c
+.RI "static const char * \fBerrorMessage\fP ()"
+.br
+.ti -1c
+.RI "static const char * \fBerrorGroup\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static MsError \fB_error\fP { MS_NO_ERROR }"
+.br
+.ti -1c
+.RI "static std::vector< \fBMScoreError\fP > \fBerrorList\fP"
+.br
+.ti -1c
+.RI "static QColor \fBselectColor\fP [4]"
+.br
+.ti -1c
+.RI "static QColor \fBdefaultColor\fP"
+.br
+.ti -1c
+.RI "static QColor \fBdropColor\fP"
+.br
+.ti -1c
+.RI "static QColor \fBlayoutBreakColor\fP"
+.br
+.ti -1c
+.RI "static QColor \fBframeMarginColor\fP"
+.br
+.ti -1c
+.RI "static QColor \fBbgColor\fP"
+.br
+.ti -1c
+.RI "static bool \fBwarnPitchRange\fP"
+.br
+.ti -1c
+.RI "static bool \fBplayRepeats\fP"
+.br
+.ti -1c
+.RI "static bool \fBpanPlayback\fP"
+.br
+.ti -1c
+.RI "static qreal \fBnudgeStep\fP"
+.br
+.ti -1c
+.RI "static qreal \fBnudgeStep10\fP"
+.br
+.ti -1c
+.RI "static qreal \fBnudgeStep50\fP"
+.br
+.ti -1c
+.RI "static int \fBdefaultPlayDuration\fP"
+.br
+.ti -1c
+.RI "static QString \fBlastError\fP"
+.br
+.ti -1c
+.RI "static bool \fBnoHorizontalStretch\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBnoVerticalStretch\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBshowSegmentShapes\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBshowMeasureShapes\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBshowBoundingRect\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBshowCorruptedMeasures\fP = true"
+.br
+.ti -1c
+.RI "static bool \fBuseFallbackFont\fP = true"
+.br
+.ti -1c
+.RI "static bool \fBdebugMode\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBtestMode\fP = false"
+.br
+.ti -1c
+.RI "static int \fBdivision\fP = 480"
+.br
+.ti -1c
+.RI "static int \fBsampleRate\fP = 44100"
+.br
+.ti -1c
+.RI "static int \fBmtcType\fP"
+.br
+.ti -1c
+.RI "static \fBSequencer\fP * \fBseq\fP = 0"
+.br
+.ti -1c
+.RI "static bool \fBsaveTemplateMode\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBnoGui\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBnoExcerpts\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBnoImages\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBpdfPrinting\fP = false"
+.br
+.ti -1c
+.RI "static bool \fBsvgPrinting\fP = false"
+.br
+.ti -1c
+.RI "static double \fBpixelRatio\fP = 0\&.8"
+.br
+.ti -1c
+.RI "static qreal \fBverticalPageGap\fP = 5\&.0"
+.br
+.ti -1c
+.RI "static qreal \fBhorizontalPageGapEven\fP = 1\&.0"
+.br
+.ti -1c
+.RI "static qreal \fBhorizontalPageGapOdd\fP = 50\&.0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 381 of file mscore\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector< \fBMScoreError\fP > Ms::MScore::errorList\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+{
+      { MS_NO_ERROR,                     0,    0                                                                           },
+
+      { NO_NOTE_SELECTED,                "s1", TR("No note selected:\nPlease select a note and retry\n")                   },
+      { NO_CHORD_REST_SELECTED,          "s2", TR("No chord/rest selected:\nPlease select a chord or rest and retry")      },
+      { NO_LYRICS_SELECTED,              "s3", TR("No note or lyrics selected:\nPlease select a note or lyrics and retry") },
+      { NO_NOTE_REST_SELECTED,           "s4", TR("No note or rest selected:\nPlease select a note or rest and retry")     },
+      { NO_NOTE_SLUR_SELECTED,           "s5", TR("No note or slur selected:\nPlease select a note or slur and retry")     },
+      { NO_STAFF_SELECTED,               "s6", TR("No staff selected:\nPlease select one or more staves and retry\n")      },
+      { NO_NOTE_FIGUREDBASS_SELECTED,    "s7", TR("No note or figured bass selected:\nPlease select a note or figured bass and retry") },
+
+      { CANNOT_INSERT_TUPLET,            "t1", TR("Cannot insert chord/rest in tuplet")                                    },
+      { CANNOT_SPLIT_TUPLET,             "t2", TR("Cannot split tuplet")                                                   },
+      { CANNOT_SPLIT_MEASURE_FIRST_BEAT, "m1", TR("Cannot split measure here:\n" "First beat of measure")                  },
+      { CANNOT_SPLIT_MEASURE_TUPLET,     "m2", TR("Cannot split measure here:\n" "Cannot split tuplet")                    },
+
+      { NO_DEST,                         "p1", TR("No destination to paste")                                               },
+      { DEST_TUPLET,                     "p2", TR("Cannot paste into tuplet")                                              },
+      { TUPLET_CROSSES_BAR,              "p3", TR("Tuplet cannot cross barlines")                                          },
+      { DEST_LOCAL_TIME_SIGNATURE,       "p4", TR("Cannot paste in local time signature")                                  },
+      { DEST_TREMOLO,                    "p5", TR("Cannot paste in tremolo")                                               },
+      { NO_MIME,                         "p6", TR("Nothing to paste")                                                      },
+      { DEST_NO_CR,                      "p7", TR("Destination is not a chord or rest")                                    },
+      { CANNOT_CHANGE_LOCAL_TIMESIG,     "l1", TR("Cannot change local time signature:\nMeasure is not empty")             },
+      }
+.fi
+.PP
+Definition at line 404 of file mscore\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,263 @@
+.TH "ssl_ctx_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ssl_ctx_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSSL_CIPHER\fP) *cipher_list"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSSL_CIPHER\fP) *cipher_list_by_id"
+.br
+.ti -1c
+.RI "\fBLHASH_OF\fP (\fBSSL_SESSION\fP) *sessions"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509\fP) *extra_certs"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSSL_COMP\fP) *comp_methods"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509_NAME\fP) *client_CA"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSRTP_PROTECTION_PROFILE\fP) *srtp_profiles"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBSSL_METHOD\fP * \fBmethod\fP"
+.br
+.ti -1c
+.RI "struct \fBx509_store_st\fP * \fBcert_store\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBsession_cache_size\fP"
+.br
+.ti -1c
+.RI "struct \fBssl_session_st\fP * \fBsession_cache_head\fP"
+.br
+.ti -1c
+.RI "struct \fBssl_session_st\fP * \fBsession_cache_tail\fP"
+.br
+.ti -1c
+.RI "int \fBsession_cache_mode\fP"
+.br
+.ti -1c
+.RI "long \fBsession_timeout\fP"
+.br
+.ti -1c
+.RI "int(* \fBnew_session_cb\fP )(struct \fBssl_st\fP *ssl, \fBSSL_SESSION\fP *sess)"
+.br
+.ti -1c
+.RI "void(* \fBremove_session_cb\fP )(struct \fBssl_ctx_st\fP *ctx, \fBSSL_SESSION\fP *sess)"
+.br
+.ti -1c
+.RI "\fBSSL_SESSION\fP *(* \fBget_session_cb\fP )(struct \fBssl_st\fP *ssl, unsigned char *data, int len, int *copy)"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   int \fBsess_connect\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_connect_renegotiate\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_connect_good\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_accept\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_accept_renegotiate\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_accept_good\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_miss\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_timeout\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_cache_full\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_hit\fP"
+.br
+.ti -1c
+.RI "   int \fBsess_cb_hit\fP"
+.br
+.ti -1c
+.RI "} \fBstats\fP"
+.br
+.ti -1c
+.RI "int \fBreferences\fP"
+.br
+.ti -1c
+.RI "int(* \fBapp_verify_callback\fP )(\fBX509_STORE_CTX\fP *, void *)"
+.br
+.ti -1c
+.RI "void * \fBapp_verify_arg\fP"
+.br
+.ti -1c
+.RI "pem_password_cb * \fBdefault_passwd_callback\fP"
+.br
+.ti -1c
+.RI "void * \fBdefault_passwd_callback_userdata\fP"
+.br
+.ti -1c
+.RI "int(* \fBclient_cert_cb\fP )(\fBSSL\fP *ssl, \fBX509\fP **x509, \fBEVP_PKEY\fP **pkey)"
+.br
+.ti -1c
+.RI "int(* \fBapp_gen_cookie_cb\fP )(\fBSSL\fP *ssl, unsigned char *cookie, unsigned int *cookie_len)"
+.br
+.ti -1c
+.RI "int(* \fBapp_verify_cookie_cb\fP )(\fBSSL\fP *ssl, unsigned char *cookie, unsigned int cookie_len)"
+.br
+.ti -1c
+.RI "\fBCRYPTO_EX_DATA\fP \fBex_data\fP"
+.br
+.ti -1c
+.RI "const \fBEVP_MD\fP * \fBrsa_md5\fP"
+.br
+.ti -1c
+.RI "const \fBEVP_MD\fP * \fBmd5\fP"
+.br
+.ti -1c
+.RI "const \fBEVP_MD\fP * \fBsha1\fP"
+.br
+.ti -1c
+.RI "void(* \fBinfo_callback\fP )(const \fBSSL\fP *ssl, int type, int val)"
+.br
+.ti -1c
+.RI "unsigned long \fBoptions\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBmode\fP"
+.br
+.ti -1c
+.RI "long \fBmax_cert_list\fP"
+.br
+.ti -1c
+.RI "struct cert_st * \fBcert\fP"
+.br
+.ti -1c
+.RI "int \fBread_ahead\fP"
+.br
+.ti -1c
+.RI "void(* \fBmsg_callback\fP )(int write_p, int version, int content_type, const void *buf, size_t len, \fBSSL\fP *ssl, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBmsg_callback_arg\fP"
+.br
+.ti -1c
+.RI "int \fBverify_mode\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBsid_ctx_length\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBsid_ctx\fP [SSL_MAX_SID_CTX_LENGTH]"
+.br
+.ti -1c
+.RI "int(* \fBdefault_verify_callback\fP )(int ok, \fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "GEN_SESSION_CB \fBgenerate_session_id\fP"
+.br
+.ti -1c
+.RI "\fBX509_VERIFY_PARAM\fP * \fBparam\fP"
+.br
+.ti -1c
+.RI "int \fBquiet_shutdown\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBmax_send_fragment\fP"
+.br
+.ti -1c
+.RI "ENGINE * \fBclient_cert_engine\fP"
+.br
+.ti -1c
+.RI "int(* \fBtlsext_servername_callback\fP )(\fBSSL\fP *, int *, void *)"
+.br
+.ti -1c
+.RI "void * \fBtlsext_servername_arg\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBtlsext_tick_key_name\fP [16]"
+.br
+.ti -1c
+.RI "unsigned char \fBtlsext_tick_hmac_key\fP [16]"
+.br
+.ti -1c
+.RI "unsigned char \fBtlsext_tick_aes_key\fP [16]"
+.br
+.ti -1c
+.RI "int(* \fBtlsext_ticket_key_cb\fP )(\fBSSL\fP *ssl, unsigned char *name, unsigned char *iv, \fBEVP_CIPHER_CTX\fP *ectx, \fBHMAC_CTX\fP *hctx, int enc)"
+.br
+.ti -1c
+.RI "int(* \fBtlsext_status_cb\fP )(\fBSSL\fP *ssl, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBtlsext_status_arg\fP"
+.br
+.ti -1c
+.RI "int(* \fBtlsext_opaque_prf_input_callback\fP )(\fBSSL\fP *, void *peerinput, size_t len, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBtlsext_opaque_prf_input_callback_arg\fP"
+.br
+.ti -1c
+.RI "char * \fBpsk_identity_hint\fP"
+.br
+.ti -1c
+.RI "unsigned int(* \fBpsk_client_callback\fP )(\fBSSL\fP *ssl, const char *hint, char *identity, unsigned int max_identity_len, unsigned char *psk, unsigned int max_psk_len)"
+.br
+.ti -1c
+.RI "unsigned int(* \fBpsk_server_callback\fP )(\fBSSL\fP *ssl, const char *identity, unsigned char *psk, unsigned int max_psk_len)"
+.br
+.ti -1c
+.RI "unsigned int \fBfreelist_max_len\fP"
+.br
+.ti -1c
+.RI "struct ssl3_buf_freelist_st * \fBwbuf_freelist\fP"
+.br
+.ti -1c
+.RI "struct ssl3_buf_freelist_st * \fBrbuf_freelist\fP"
+.br
+.ti -1c
+.RI "\fBSRP_CTX\fP \fBsrp_ctx\fP"
+.br
+.ti -1c
+.RI "int(* \fBnext_protos_advertised_cb\fP )(\fBSSL\fP *s, const unsigned char **buf, unsigned int *len, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBnext_protos_advertised_cb_arg\fP"
+.br
+.ti -1c
+.RI "int(* \fBnext_proto_select_cb\fP )(\fBSSL\fP *s, unsigned char **out, unsigned char *outlen, const unsigned char *in, unsigned int inlen, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBnext_proto_select_cb_arg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 785 of file ssl\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

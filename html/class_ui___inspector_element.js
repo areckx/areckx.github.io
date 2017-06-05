@@ -1,0 +1,25 @@
+var class_ui___inspector_element =
+[
+    [ "retranslateUi", "class_ui___inspector_element.html#ae68bc7b4e0af71f4c2432b95a1823740", null ],
+    [ "setupUi", "class_ui___inspector_element.html#a059015c8dc6e0e03a58531f8b7b118b7", null ],
+    [ "autoplace", "class_ui___inspector_element.html#ab6d54701f4ba473a6241f020ad58c709", null ],
+    [ "color", "class_ui___inspector_element.html#a8fa85cdc7ae5695317ce14cb0f98e2f8", null ],
+    [ "frame", "class_ui___inspector_element.html#a424e6bb1c74f8001bb05ad258564d20c", null ],
+    [ "gridLayout", "class_ui___inspector_element.html#a7b911650f79cb1256fa490593e0ac6ba", null ],
+    [ "horizontalLayout", "class_ui___inspector_element.html#abf278c41aff60e45d6b65a3ec16adb46", null ],
+    [ "label", "class_ui___inspector_element.html#a3322e2c75214d7134c85e701b6cf4797", null ],
+    [ "label_4", "class_ui___inspector_element.html#a3f8834668fe46241d9b19aaa1966923c", null ],
+    [ "offset", "class_ui___inspector_element.html#a762ded41cd2fe867b6afb9248b0f6317", null ],
+    [ "offsetLabel", "class_ui___inspector_element.html#ad50a5465d42b232c299fd2a24704041a", null ],
+    [ "panel", "class_ui___inspector_element.html#a537b5fd3bfb0dbbeb0416d4132b24257", null ],
+    [ "resetAutoplace", "class_ui___inspector_element.html#a94dc04dd08390a94c3cd2878370c3af3", null ],
+    [ "resetColor", "class_ui___inspector_element.html#af48e7b8cec08971558bb18beb08ca9f6", null ],
+    [ "resetOffset", "class_ui___inspector_element.html#ae2e9b16a7dec992ae26e1716dd930f39", null ],
+    [ "resetVisible", "class_ui___inspector_element.html#a3c03a4666abec083083fcbbaebe60614", null ],
+    [ "resetZ", "class_ui___inspector_element.html#a17621308c647c50100147a551819fd87", null ],
+    [ "title", "class_ui___inspector_element.html#ad56eb9aa8adf2d6cc32675cfab5d2d62", null ],
+    [ "verticalLayout", "class_ui___inspector_element.html#aa821f6464638a24112725d86d9c0f16a", null ],
+    [ "visible", "class_ui___inspector_element.html#aff47693045d375e3b7b1506885942403", null ],
+    [ "widget", "class_ui___inspector_element.html#a31dd2d3224f226dc0bd85e8959515a43", null ],
+    [ "z", "class_ui___inspector_element.html#a094b24be2109a402edfa4a716d963b03", null ]
+];

@@ -1,0 +1,353 @@
+\hypertarget{class_poppler_1_1_p_s_converter}{}\section{Poppler\+:\+:P\+S\+Converter Class Reference}
+\label{class_poppler_1_1_p_s_converter}\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+
+
+{\ttfamily \#include $<$poppler-\/qt5.\+h$>$}
+
+Inheritance diagram for Poppler\+:\+:P\+S\+Converter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_poppler_1_1_p_s_converter}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3}{P\+S\+Option} \{ \newline
+\hyperlink{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3aafbba87d5aedf2373ef24086e2d900fb}{Printing} = 0x00000001, 
+{\bfseries Strict\+Margins} = 0x00000002, 
+{\bfseries Force\+Rasterization} = 0x00000004, 
+\hyperlink{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ae5039d580000741162804cb3e2ad332c}{Print\+To\+E\+PS} = 0x00000008, 
+\newline
+\hyperlink{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ab5286f62bdece4c9b120ecb1a98ecb89}{Hide\+Annotations} = 0x00000010
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poppler_1_1_p_s_converter_a8065c6cbe3b926a69fba4ded23c0246a}{$\sim$\+P\+S\+Converter} ()
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_ab1b834475ed943018c56843cfede95b7}{set\+Page\+List} (const Q\+List$<$ int $>$ \&page\+List)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_aa88fc3e34646758809472acee3987624}{set\+Title} (const Q\+String \&title)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_ad91c3171f4d97e7fc43bb06edc4fb9b1}{set\+H\+D\+PI} (double h\+D\+PI)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a77d7cb4807c5b1661e2483927ae9954d}{set\+V\+D\+PI} (double v\+D\+PI)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_ae17b403bf29c0123477b816fd9d8662c}{set\+Rotate} (int rotate)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_ae110aaa5e605065d65097769dd970045}{set\+Paper\+Width} (int paper\+Width)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_aa06d1f5965ba68bd7ee5b90828fd515f}{set\+Paper\+Height} (int paper\+Height)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a406eebb20d93933b9b4499d6848d9808}{set\+Right\+Margin} (int margin\+Right)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a45373befaea228d0a961f9327f0e27bf}{set\+Bottom\+Margin} (int margin\+Bottom)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a8062eaac0b2cfdc4930c6f39593abc9a}{set\+Left\+Margin} (int margin\+Left)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a59403e5586a27c147885ca1cb03e2fa5}{set\+Top\+Margin} (int margin\+Top)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a27a0d7c675d881f4932e0f330da49a04}{set\+Strict\+Margins} (bool strict\+Margins)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_aca8e393fa509c2cfe7302b8ddc5b1b62}{set\+Force\+Rasterize} (bool force\+Rasterize)
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a11268ce2b1f53480accb3782ab070e2a}{set\+P\+S\+Options} (P\+S\+Options options)
+\item 
+P\+S\+Options \hyperlink{class_poppler_1_1_p_s_converter_ac52aec45730a525c2f4f7d9d142815ac}{ps\+Options} () const
+\item 
+void \hyperlink{class_poppler_1_1_p_s_converter_a3cdcdc3ed5cebb1f69e80c66d08b5948}{set\+Page\+Converted\+Callback} (void($\ast$callback)(int page, void $\ast$payload), void $\ast$payload)
+\item 
+bool \hyperlink{class_poppler_1_1_p_s_converter_a106cc524ec1d73ab7f6bbb6cf1deede9}{convert} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a883538034e58fc5c0de7d4e4cab3cef7}\label{class_poppler_1_1_p_s_converter_a883538034e58fc5c0de7d4e4cab3cef7}} 
+class {\bfseries Document}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Converts a P\+DF to PS
+
+Sizes have to be in Points (1/72 inch)
+
+If you are using Q\+Printer you can get paper size by doing\+: 
+\begin{DoxyCode}
+QPrinter dummy(QPrinter::PrinterResolution);
+dummy.setFullPage(\textcolor{keyword}{true});
+dummy.setPageSize(myPageSize);
+width = dummy.width();
+height = dummy.height();
+\end{DoxyCode}
+
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 1497 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3}\label{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!P\+S\+Option@{P\+S\+Option}}
+\index{P\+S\+Option@{P\+S\+Option}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{P\+S\+Option}{PSOption}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3}{Poppler\+::\+P\+S\+Converter\+::\+P\+S\+Option}}
+
+Options for the PS export.
+
+\begin{DoxySince}{Since}
+0.\+10 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Printing@{Printing}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!Printing@{Printing}}}\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3aafbba87d5aedf2373ef24086e2d900fb}\label{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3aafbba87d5aedf2373ef24086e2d900fb}} 
+Printing&The PS is generated for printing purposes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Print\+To\+E\+PS@{Print\+To\+E\+PS}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!Print\+To\+E\+PS@{Print\+To\+E\+PS}}}\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ae5039d580000741162804cb3e2ad332c}\label{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ae5039d580000741162804cb3e2ad332c}} 
+Print\+To\+E\+PS&Output E\+PS instead of PS. \begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hide\+Annotations@{Hide\+Annotations}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!Hide\+Annotations@{Hide\+Annotations}}}\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ab5286f62bdece4c9b120ecb1a98ecb89}\label{class_poppler_1_1_p_s_converter_a3577a2109eceaf783ce4b0c51cd5c5b3ab5286f62bdece4c9b120ecb1a98ecb89}} 
+Hide\+Annotations&Don\textquotesingle{}t print annotations. \begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1506 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a8065c6cbe3b926a69fba4ded23c0246a}\label{class_poppler_1_1_p_s_converter_a8065c6cbe3b926a69fba4ded23c0246a}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!````~P\+S\+Converter@{$\sim$\+P\+S\+Converter}}
+\index{````~P\+S\+Converter@{$\sim$\+P\+S\+Converter}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{$\sim$\+P\+S\+Converter()}{~PSConverter()}}
+{\footnotesize\ttfamily Poppler\+::\+P\+S\+Converter\+::$\sim$\+P\+S\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+Definition at line 77 of file poppler-\/ps-\/converter.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a106cc524ec1d73ab7f6bbb6cf1deede9}\label{class_poppler_1_1_p_s_converter_a106cc524ec1d73ab7f6bbb6cf1deede9}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!convert@{convert}}
+\index{convert@{convert}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily bool Poppler\+::\+P\+S\+Converter\+::convert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Does the conversion.
+
+\begin{DoxyReturn}{Returns}
+whether the conversion succeeded 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_poppler_1_1_base_converter_a272756d051ce3795a89772eaa93cadca}{Poppler\+::\+Base\+Converter}.
+
+
+
+Definition at line 192 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_ac52aec45730a525c2f4f7d9d142815ac}\label{class_poppler_1_1_p_s_converter_ac52aec45730a525c2f4f7d9d142815ac}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!ps\+Options@{ps\+Options}}
+\index{ps\+Options@{ps\+Options}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{ps\+Options()}{psOptions()}}
+{\footnotesize\ttfamily P\+S\+Converter\+::\+P\+S\+Options Poppler\+::\+P\+S\+Converter\+::ps\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The currently set options for the PS export.
+
+The default flags are\+: Printing.
+
+\begin{DoxySince}{Since}
+0.\+10 
+\end{DoxySince}
+
+
+Definition at line 171 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a45373befaea228d0a961f9327f0e27bf}\label{class_poppler_1_1_p_s_converter_a45373befaea228d0a961f9327f0e27bf}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Bottom\+Margin@{set\+Bottom\+Margin}}
+\index{set\+Bottom\+Margin@{set\+Bottom\+Margin}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Bottom\+Margin()}{setBottomMargin()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Bottom\+Margin (\begin{DoxyParamCaption}\item[{int}]{margin\+Bottom }\end{DoxyParamCaption})}
+
+Sets the output bottom margin. Defaults to 0 
+
+Definition at line 129 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_aca8e393fa509c2cfe7302b8ddc5b1b62}\label{class_poppler_1_1_p_s_converter_aca8e393fa509c2cfe7302b8ddc5b1b62}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Force\+Rasterize@{set\+Force\+Rasterize}}
+\index{set\+Force\+Rasterize@{set\+Force\+Rasterize}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Force\+Rasterize()}{setForceRasterize()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Force\+Rasterize (\begin{DoxyParamCaption}\item[{bool}]{force\+Rasterize }\end{DoxyParamCaption})}
+
+Defines if the page will be rasterized to an image before printing. Defaults to false 
+
+Definition at line 156 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_ad91c3171f4d97e7fc43bb06edc4fb9b1}\label{class_poppler_1_1_p_s_converter_ad91c3171f4d97e7fc43bb06edc4fb9b1}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+H\+D\+PI@{set\+H\+D\+PI}}
+\index{set\+H\+D\+PI@{set\+H\+D\+PI}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+H\+D\+P\+I()}{setHDPI()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+H\+D\+PI (\begin{DoxyParamCaption}\item[{double}]{h\+D\+PI }\end{DoxyParamCaption})}
+
+Sets the horizontal D\+PI. Defaults to 72.\+0 
+
+Definition at line 93 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a8062eaac0b2cfdc4930c6f39593abc9a}\label{class_poppler_1_1_p_s_converter_a8062eaac0b2cfdc4930c6f39593abc9a}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Left\+Margin@{set\+Left\+Margin}}
+\index{set\+Left\+Margin@{set\+Left\+Margin}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Left\+Margin()}{setLeftMargin()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Left\+Margin (\begin{DoxyParamCaption}\item[{int}]{margin\+Left }\end{DoxyParamCaption})}
+
+Sets the output left margin. Defaults to 0 
+
+Definition at line 135 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a3cdcdc3ed5cebb1f69e80c66d08b5948}\label{class_poppler_1_1_p_s_converter_a3cdcdc3ed5cebb1f69e80c66d08b5948}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Page\+Converted\+Callback@{set\+Page\+Converted\+Callback}}
+\index{set\+Page\+Converted\+Callback@{set\+Page\+Converted\+Callback}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Page\+Converted\+Callback()}{setPageConvertedCallback()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Page\+Converted\+Callback (\begin{DoxyParamCaption}\item[{void($\ast$)(int page, void $\ast$payload)}]{callback,  }\item[{void $\ast$}]{payload }\end{DoxyParamCaption})}
+
+Sets a function that will be called each time a page is converted.
+
+The payload belongs to the caller.
+
+\begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+
+
+Definition at line 177 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_ab1b834475ed943018c56843cfede95b7}\label{class_poppler_1_1_p_s_converter_ab1b834475ed943018c56843cfede95b7}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Page\+List@{set\+Page\+List}}
+\index{set\+Page\+List@{set\+Page\+List}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Page\+List()}{setPageList()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Page\+List (\begin{DoxyParamCaption}\item[{const Q\+List$<$ int $>$ \&}]{page\+List }\end{DoxyParamCaption})}
+
+Sets the list of pages to print. Mandatory. 
+
+Definition at line 81 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_aa06d1f5965ba68bd7ee5b90828fd515f}\label{class_poppler_1_1_p_s_converter_aa06d1f5965ba68bd7ee5b90828fd515f}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Paper\+Height@{set\+Paper\+Height}}
+\index{set\+Paper\+Height@{set\+Paper\+Height}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Paper\+Height()}{setPaperHeight()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Paper\+Height (\begin{DoxyParamCaption}\item[{int}]{paper\+Height }\end{DoxyParamCaption})}
+
+Sets the output paper height. Has to be set. 
+
+Definition at line 117 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_ae110aaa5e605065d65097769dd970045}\label{class_poppler_1_1_p_s_converter_ae110aaa5e605065d65097769dd970045}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Paper\+Width@{set\+Paper\+Width}}
+\index{set\+Paper\+Width@{set\+Paper\+Width}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Paper\+Width()}{setPaperWidth()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Paper\+Width (\begin{DoxyParamCaption}\item[{int}]{paper\+Width }\end{DoxyParamCaption})}
+
+Sets the output paper width. Has to be set. 
+
+Definition at line 111 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a11268ce2b1f53480accb3782ab070e2a}\label{class_poppler_1_1_p_s_converter_a11268ce2b1f53480accb3782ab070e2a}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+P\+S\+Options@{set\+P\+S\+Options}}
+\index{set\+P\+S\+Options@{set\+P\+S\+Options}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+P\+S\+Options()}{setPSOptions()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+P\+S\+Options (\begin{DoxyParamCaption}\item[{P\+S\+Options}]{options }\end{DoxyParamCaption})}
+
+Sets the options for the PS export.
+
+\begin{DoxySince}{Since}
+0.\+10 
+\end{DoxySince}
+
+
+Definition at line 165 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a406eebb20d93933b9b4499d6848d9808}\label{class_poppler_1_1_p_s_converter_a406eebb20d93933b9b4499d6848d9808}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Right\+Margin@{set\+Right\+Margin}}
+\index{set\+Right\+Margin@{set\+Right\+Margin}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Right\+Margin()}{setRightMargin()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Right\+Margin (\begin{DoxyParamCaption}\item[{int}]{margin\+Right }\end{DoxyParamCaption})}
+
+Sets the output right margin. Defaults to 0 
+
+Definition at line 123 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_ae17b403bf29c0123477b816fd9d8662c}\label{class_poppler_1_1_p_s_converter_ae17b403bf29c0123477b816fd9d8662c}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Rotate@{set\+Rotate}}
+\index{set\+Rotate@{set\+Rotate}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Rotate()}{setRotate()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Rotate (\begin{DoxyParamCaption}\item[{int}]{rotate }\end{DoxyParamCaption})}
+
+Sets the rotate. Defaults to not rotated 
+
+Definition at line 105 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a27a0d7c675d881f4932e0f330da49a04}\label{class_poppler_1_1_p_s_converter_a27a0d7c675d881f4932e0f330da49a04}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Strict\+Margins@{set\+Strict\+Margins}}
+\index{set\+Strict\+Margins@{set\+Strict\+Margins}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Strict\+Margins()}{setStrictMargins()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Strict\+Margins (\begin{DoxyParamCaption}\item[{bool}]{strict\+Margins }\end{DoxyParamCaption})}
+
+Defines if margins have to be strictly followed (even if that means changing aspect ratio), or if the margins can be adapted to keep aspect ratio.
+
+Defaults to false. 
+
+Definition at line 147 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_aa88fc3e34646758809472acee3987624}\label{class_poppler_1_1_p_s_converter_aa88fc3e34646758809472acee3987624}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Title()}{setTitle()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Title (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{title }\end{DoxyParamCaption})}
+
+Sets the title of the PS \hyperlink{class_poppler_1_1_document}{Document}. Optional 
+
+Definition at line 87 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a59403e5586a27c147885ca1cb03e2fa5}\label{class_poppler_1_1_p_s_converter_a59403e5586a27c147885ca1cb03e2fa5}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+Top\+Margin@{set\+Top\+Margin}}
+\index{set\+Top\+Margin@{set\+Top\+Margin}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+Top\+Margin()}{setTopMargin()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+Top\+Margin (\begin{DoxyParamCaption}\item[{int}]{margin\+Top }\end{DoxyParamCaption})}
+
+Sets the output top margin. Defaults to 0 
+
+Definition at line 141 of file poppler-\/ps-\/converter.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_p_s_converter_a77d7cb4807c5b1661e2483927ae9954d}\label{class_poppler_1_1_p_s_converter_a77d7cb4807c5b1661e2483927ae9954d}} 
+\index{Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}!set\+V\+D\+PI@{set\+V\+D\+PI}}
+\index{set\+V\+D\+PI@{set\+V\+D\+PI}!Poppler\+::\+P\+S\+Converter@{Poppler\+::\+P\+S\+Converter}}
+\subsubsection{\texorpdfstring{set\+V\+D\+P\+I()}{setVDPI()}}
+{\footnotesize\ttfamily void Poppler\+::\+P\+S\+Converter\+::set\+V\+D\+PI (\begin{DoxyParamCaption}\item[{double}]{v\+D\+PI }\end{DoxyParamCaption})}
+
+Sets the vertical D\+PI. Defaults to 72.\+0 
+
+Definition at line 99 of file poppler-\/ps-\/converter.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/qt5.\+h\item 
+thirdparty/poppler/qt5/poppler-\/ps-\/converter.\+cc\end{DoxyCompactItemize}

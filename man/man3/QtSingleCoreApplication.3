@@ -1,0 +1,116 @@
+.TH "QtSingleCoreApplication" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QtSingleCoreApplication \- A variant of the \fBQtSingleApplication\fP class for non-GUI applications\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qtsinglecoreapplication\&.h>\fP
+.PP
+Inherits QCoreApplication\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsendMessage\fP (const QString &message, int timeout=5000)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBmessageReceived\fP (const QString &message)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQtSingleCoreApplication\fP (int &argc, char **argv)"
+.br
+.ti -1c
+.RI "\fBQtSingleCoreApplication\fP (const QString &\fBid\fP, int &argc, char **argv)"
+.br
+.ti -1c
+.RI "bool \fBisRunning\fP ()"
+.br
+.ti -1c
+.RI "QString \fBid\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A variant of the \fBQtSingleApplication\fP class for non-GUI applications\&. 
+
+This class is a variant of \fBQtSingleApplication\fP suited for use in console (non-GUI) applications\&. It is an extension of QCoreApplication (instead of QApplication)\&. It does not require the QtGui library\&.
+.PP
+The API and usage is identical to \fBQtSingleApplication\fP, except that functions relating to the 'activation window' are not present, for obvious reasons\&. Please refer to the \fBQtSingleApplication\fP documentation for explanation of the usage\&.
+.PP
+A \fBQtSingleCoreApplication\fP instance can communicate to a \fBQtSingleApplication\fP instance if they share the same application id\&. Hence, this class can be used to create a light-weight command-line tool that sends commands to a GUI application\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBQtSingleApplication\fP 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file qtsinglecoreapplication\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QtSingleCoreApplication::QtSingleCoreApplication (int & argc, char ** argv)"
+Creates a \fBQtSingleCoreApplication\fP object\&. The application identifier will be QCoreApplication::applicationFilePath()\&. \fIargc\fP and \fIargv\fP are passed on to the QCoreAppliation constructor\&. 
+.PP
+Definition at line 73 of file qtsinglecoreapplication\&.cpp\&.
+.SS "QtSingleCoreApplication::QtSingleCoreApplication (const QString & appId, int & argc, char ** argv)"
+Creates a \fBQtSingleCoreApplication\fP object with the application identifier \fIappId\fP\&. \fIargc\fP and \fIargv\fP are passed on to the QCoreAppliation constructor\&. 
+.PP
+Definition at line 86 of file qtsinglecoreapplication\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString QtSingleCoreApplication::id () const"
+Returns the application identifier\&. Two processes with the same identifier will be regarded as instances of the same application\&. 
+.PP
+Definition at line 136 of file qtsinglecoreapplication\&.cpp\&.
+.SS "bool QtSingleCoreApplication::isRunning (void)"
+Returns true if another instance of this application is running; otherwise false\&.
+.PP
+This function does not find instances of this application that are being run by a different user (on Windows: that are running in another session)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsendMessage()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file qtsinglecoreapplication\&.cpp\&.
+.SS "void QtSingleCoreApplication::messageReceived (const QString & message)\fC [signal]\fP"
+This signal is emitted when the current instance receives a \fImessage\fP from another instance of this application\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsendMessage()\fP 
+.RE
+.PP
+
+.SS "bool QtSingleCoreApplication::sendMessage (const QString & message, int timeout = \fC5000\fP)\fC [slot]\fP"
+Tries to send the text \fImessage\fP to the currently running instance\&. The \fBQtSingleCoreApplication\fP object in the running instance will emit the \fBmessageReceived()\fP signal when it receives the message\&.
+.PP
+This function returns true if the message has been sent to, and processed by, the current instance\&. If there is no instance currently running, or if the running instance fails to process the message within \fItimeout\fP milliseconds, this function return false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisRunning()\fP, \fBmessageReceived()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 125 of file qtsinglecoreapplication\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,1887 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_fluid_s_1_1_voice" kind="class" language="C++" prot="public">
+    <compoundname>FluidS::Voice</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a3f0abf523d36bc8a28915c6d8e1ea783" prot="private" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Voice::interp_coeff_linear</definition>
+        <argsstring>[FLUID_INTERP_MAX][2]</argsstring>
+        <name>interp_coeff_linear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="66" column="1" bodyfile="fluid/voice.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ac55de221ca5a1653f96e6704e570d15b" prot="private" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Voice::interp_coeff</definition>
+        <argsstring>[FLUID_INTERP_MAX][4]</argsstring>
+        <name>interp_coeff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="67" column="1" bodyfile="fluid/voice.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a36e2664288eecafd4f9de0e128630281" prot="private" static="yes" mutable="no">
+        <type>float</type>
+        <definition>float Voice::sinc_table7</definition>
+        <argsstring>[FLUID_INTERP_MAX][7]</argsstring>
+        <name>sinc_table7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="68" column="1" bodyfile="fluid/voice.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a9b8aa14547274ef9d5adb2506bd00c82" prot="private" static="no" mutable="no">
+        <type><ref refid="class_fluid_s_1_1_fluid" kindref="compound">Fluid</ref> *</type>
+        <definition>Fluid* FluidS::Voice::_fluid</definition>
+        <argsstring></argsstring>
+        <name>_fluid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="70" column="1" bodyfile="fluid/voice.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a64cf861491cd5fceedeabd8cc965d32b" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double FluidS::Voice::_noteTuning</definition>
+        <argsstring></argsstring>
+        <name>_noteTuning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="71" column="1" bodyfile="fluid/voice.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1abafc5faf1306969bb3f34cfc3eed4e98" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="76" column="1" bodyfile="fluid/voice.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ad71ace7a22f223773231eb9dce62c631" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char FluidS::Voice::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="78" column="1" bodyfile="fluid/voice.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a38f867999b786be906ede962aec3befc" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char FluidS::Voice::chan</definition>
+        <argsstring></argsstring>
+        <name>chan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="79" column="1" bodyfile="fluid/voice.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a4ae601e3e10717b36d2af2a3844353be" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char FluidS::Voice::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="80" column="1" bodyfile="fluid/voice.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1af25fef1fb635df56b3d2521918a3dceb" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char FluidS::Voice::vel</definition>
+        <argsstring></argsstring>
+        <name>vel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="81" column="1" bodyfile="fluid/voice.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1abebe9528618ac5965fdba011bd4df0a3" prot="public" static="no" mutable="no">
+        <type><ref refid="class_fluid_s_1_1_channel" kindref="compound">Channel</ref> *</type>
+        <definition>Channel* FluidS::Voice::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="83" column="1" bodyfile="fluid/voice.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1adbe2cef898e353be6e425d45987d0726" prot="public" static="no" mutable="no">
+        <type><ref refid="class_fluid_s_1_1_generator" kindref="compound">Generator</ref></type>
+        <definition>Generator FluidS::Voice::gen[GEN_LAST]</definition>
+        <argsstring>[GEN_LAST]</argsstring>
+        <name>gen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="84" column="1" bodyfile="fluid/voice.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a4970c346ea860c3fb3c64f20b18899e1" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_fluid_s_1_1_mod" kindref="compound">Mod</ref></type>
+        <definition>Mod FluidS::Voice::mod[FLUID_NUM_MOD]</definition>
+        <argsstring>[FLUID_NUM_MOD]</argsstring>
+        <name>mod</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="85" column="1" bodyfile="fluid/voice.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a16a59cc3ba7ae23f18fc66d422dae2df" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::mod_count</definition>
+        <argsstring></argsstring>
+        <name>mod_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="87" column="1" bodyfile="fluid/voice.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae8eaf8b8277b3183f18b93ec097add8f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::has_looped</definition>
+        <argsstring></argsstring>
+        <name>has_looped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="88" column="1" bodyfile="fluid/voice.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1acffab6f10caad5efffee9996b603a8b0" prot="public" static="no" mutable="no">
+        <type><ref refid="class_fluid_s_1_1_sample" kindref="compound">Sample</ref> *</type>
+        <definition>Sample* FluidS::Voice::sample</definition>
+        <argsstring></argsstring>
+        <name>sample</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="89" column="1" bodyfile="fluid/voice.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a5f3bdcd866929540a5a009c474de55bb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::check_sample_sanity_flag</definition>
+        <argsstring></argsstring>
+        <name>check_sample_sanity_flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="90" column="1" bodyfile="fluid/voice.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a8df342de51c58d2bb99a69da7876f75b" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::ticks</definition>
+        <argsstring></argsstring>
+        <name>ticks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="92" column="1" bodyfile="fluid/voice.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a6f48cba0c6093e1343722a7e694f5ad1" prot="public" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal FluidS::Voice::amp</definition>
+        <argsstring></argsstring>
+        <name>amp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="94" column="1" bodyfile="fluid/voice.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a7bc57a75d7a2e417dc781e04f5b4c173" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_fluid_s_1_1_phase" kindref="compound">Phase</ref></type>
+        <definition>Phase FluidS::Voice::phase</definition>
+        <argsstring></argsstring>
+        <name>phase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="95" column="1" bodyfile="fluid/voice.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a79637ee3401cc1096705687b3507931e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::phase_incr</definition>
+        <argsstring></argsstring>
+        <name>phase_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="98" column="1" bodyfile="fluid/voice.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1acf33c57d9bbfdbf10dd2a2d8cb484eec" prot="public" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal FluidS::Voice::amp_incr</definition>
+        <argsstring></argsstring>
+        <name>amp_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="99" column="1" bodyfile="fluid/voice.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a0333407addd922252ca4183e422b8bed" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* FluidS::Voice::dsp_buf</definition>
+        <argsstring></argsstring>
+        <name>dsp_buf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="100" column="1" bodyfile="fluid/voice.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a5c88d0f9db9c4302aafe1597a8ef6625" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::pitch</definition>
+        <argsstring></argsstring>
+        <name>pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="103" column="1" bodyfile="fluid/voice.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a8b688baf5e55b289d5dfb300c68e1d7e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::attenuation</definition>
+        <argsstring></argsstring>
+        <name>attenuation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="104" column="1" bodyfile="fluid/voice.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1aedfa1e97e958ccd94e6b1e8541ebf999" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::min_attenuation_cB</definition>
+        <argsstring></argsstring>
+        <name>min_attenuation_cB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="105" column="1" bodyfile="fluid/voice.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a6207d6cbbda463166f3b4f90f80709a0" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::root_pitch</definition>
+        <argsstring></argsstring>
+        <name>root_pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="107" column="1" bodyfile="fluid/voice.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a9b9cba9d9ae8ab045b91eb0eba7058a1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="110" column="1" bodyfile="fluid/voice.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1acfde1281267ab38e410ec947ae1877a0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="111" column="1" bodyfile="fluid/voice.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae89139e48f9b6f416bdfedce83c182e1" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::loopstart</definition>
+        <argsstring></argsstring>
+        <name>loopstart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="112" column="1" bodyfile="fluid/voice.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a3ce212d62e2f155fb1801f621fb251bb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::loopend</definition>
+        <argsstring></argsstring>
+        <name>loopend</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="113" column="1" bodyfile="fluid/voice.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a6bb0ea3d4e69c2487b28858fb9620fdf" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_fluid_s_1_1fluid__env__data__t" kindref="compound">fluid_env_data_t</ref></type>
+        <definition>fluid_env_data_t FluidS::Voice::volenv_data[FLUID_VOICE_ENVLAST]</definition>
+        <argsstring>[FLUID_VOICE_ENVLAST]</argsstring>
+        <name>volenv_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="116" column="1" bodyfile="fluid/voice.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a36966404dcefaf9c517986c46276233c" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::volenv_count</definition>
+        <argsstring></argsstring>
+        <name>volenv_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="117" column="1" bodyfile="fluid/voice.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a3fcc3f07a8734e263674ada3c878b8c8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::volenv_section</definition>
+        <argsstring></argsstring>
+        <name>volenv_section</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="118" column="1" bodyfile="fluid/voice.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a1539163f35c51c5b373643ebef327f77" prot="public" static="no" mutable="no">
+        <type>std::map&lt; int, qreal &gt;</type>
+        <definition>std::map&lt;int, qreal&gt; FluidS::Voice::Sample2AmpInc</definition>
+        <argsstring></argsstring>
+        <name>Sample2AmpInc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="119" column="1" bodyfile="fluid/voice.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a95e5e7f1aa6004044ca3d0bee7821a92" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::volenv_val</definition>
+        <argsstring></argsstring>
+        <name>volenv_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="120" column="1" bodyfile="fluid/voice.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1af77b321d64f87de27607f611990a1e46" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amplitude_that_reaches_noise_floor_nonloop</definition>
+        <argsstring></argsstring>
+        <name>amplitude_that_reaches_noise_floor_nonloop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="121" column="1" bodyfile="fluid/voice.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a404cd546d9352fabf689445ff1aebad6" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amplitude_that_reaches_noise_floor_loop</definition>
+        <argsstring></argsstring>
+        <name>amplitude_that_reaches_noise_floor_loop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="122" column="1" bodyfile="fluid/voice.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a792ff6cf9ab170c962b3a31f17809e95" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::positionToTurnOff</definition>
+        <argsstring></argsstring>
+        <name>positionToTurnOff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="123" column="1" bodyfile="fluid/voice.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a5a82ddac12a3ef4480024e3008227a6d" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_fluid_s_1_1fluid__env__data__t" kindref="compound">fluid_env_data_t</ref></type>
+        <definition>fluid_env_data_t FluidS::Voice::modenv_data[FLUID_VOICE_ENVLAST]</definition>
+        <argsstring>[FLUID_VOICE_ENVLAST]</argsstring>
+        <name>modenv_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="126" column="1" bodyfile="fluid/voice.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1abb42e181795b06a4e07de6a372fc0d7f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::modenv_count</definition>
+        <argsstring></argsstring>
+        <name>modenv_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="127" column="1" bodyfile="fluid/voice.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1abf60af48e3bdaa1c758159e236d5b585" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::modenv_section</definition>
+        <argsstring></argsstring>
+        <name>modenv_section</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="128" column="1" bodyfile="fluid/voice.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1aa9c19edf11212ac0177f5fd0c6ebc982" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modenv_val</definition>
+        <argsstring></argsstring>
+        <name>modenv_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="129" column="1" bodyfile="fluid/voice.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a746ef2f83c41df91c83faed1e3ebdcb4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modenv_to_fc</definition>
+        <argsstring></argsstring>
+        <name>modenv_to_fc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="130" column="1" bodyfile="fluid/voice.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1abf1f4cf617763e64a29ffb68c1b607fe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modenv_to_pitch</definition>
+        <argsstring></argsstring>
+        <name>modenv_to_pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="131" column="1" bodyfile="fluid/voice.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ab33f6ade868929817bdaa94e7c27400f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modlfo_val</definition>
+        <argsstring></argsstring>
+        <name>modlfo_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="134" column="1" bodyfile="fluid/voice.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a9ac9773526aae1e8f54c3b5e3d7a7f55" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::modlfo_delay</definition>
+        <argsstring></argsstring>
+        <name>modlfo_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="135" column="1" bodyfile="fluid/voice.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1aa0a37a2436f63e3606c0ce5b05b62c2b" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::modlfo_pos</definition>
+        <argsstring></argsstring>
+        <name>modlfo_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="136" column="1" bodyfile="fluid/voice.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a1dab1bb59f7116c286fe78c9a25faa20" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::modlfo_dur</definition>
+        <argsstring></argsstring>
+        <name>modlfo_dur</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="137" column="1" bodyfile="fluid/voice.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a60752cb5a30f9cf27d2e54b0131b3d13" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modlfo_to_fc</definition>
+        <argsstring></argsstring>
+        <name>modlfo_to_fc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="138" column="1" bodyfile="fluid/voice.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ab8168b290df1b7843daa2310d2f5621f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modlfo_to_pitch</definition>
+        <argsstring></argsstring>
+        <name>modlfo_to_pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="139" column="1" bodyfile="fluid/voice.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae780ce1e52ab97ed0ec4a82f37488417" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::modlfo_to_vol</definition>
+        <argsstring></argsstring>
+        <name>modlfo_to_vol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="140" column="1" bodyfile="fluid/voice.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a80a3d6bde051cbaa81d3787e3068e6a0" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::viblfo_val</definition>
+        <argsstring></argsstring>
+        <name>viblfo_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="143" column="1" bodyfile="fluid/voice.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ac4a500b800e46b36fa58ee8a8ba5b0f0" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::viblfo_delay</definition>
+        <argsstring></argsstring>
+        <name>viblfo_delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="144" column="1" bodyfile="fluid/voice.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a7ad965509125b07684e6d9871f6e7755" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::viblfo_incr</definition>
+        <argsstring></argsstring>
+        <name>viblfo_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="145" column="1" bodyfile="fluid/voice.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a95cdadb72f62f081353d68a754a641dd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::viblfo_to_pitch</definition>
+        <argsstring></argsstring>
+        <name>viblfo_to_pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="146" column="1" bodyfile="fluid/voice.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a2288e95a45a429ce7ee6abc9adec8249" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::fres</definition>
+        <argsstring></argsstring>
+        <name>fres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="149" column="1" bodyfile="fluid/voice.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae55d33b9dbd2a43fca9cc0cb1ce54371" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::last_fres</definition>
+        <argsstring></argsstring>
+        <name>last_fres</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="150" column="1" bodyfile="fluid/voice.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1af6c1025187a47124aa4003a56d16a3da" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::q_lin</definition>
+        <argsstring></argsstring>
+        <name>q_lin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="153" column="1" bodyfile="fluid/voice.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1adf89b06b2f9c152edc4c50664971ca9b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::filter_gain</definition>
+        <argsstring></argsstring>
+        <name>filter_gain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="154" column="1" bodyfile="fluid/voice.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a7962d1bb4ebcf0fbd26d989126bb3ed4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::hist1</definition>
+        <argsstring></argsstring>
+        <name>hist1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="155" column="1" bodyfile="fluid/voice.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1af4f808b98259df93342a54d49891314d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::hist2</definition>
+        <argsstring></argsstring>
+        <name>hist2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="155" column="1" bodyfile="fluid/voice.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1afc14a59aca39d0661a4f8bd8e1377e51" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::filter_startup</definition>
+        <argsstring></argsstring>
+        <name>filter_startup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="156" column="1" bodyfile="fluid/voice.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a9528c80f28ae28f84dfb8de35de2d2da" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::b02</definition>
+        <argsstring></argsstring>
+        <name>b02</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="162" column="1" bodyfile="fluid/voice.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a57a61443ef07887d0c7f47e5d4743aa4" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::b1</definition>
+        <argsstring></argsstring>
+        <name>b1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="163" column="1" bodyfile="fluid/voice.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a95e327752233414ea9b8d16ab05f9191" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::a1</definition>
+        <argsstring></argsstring>
+        <name>a1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="164" column="1" bodyfile="fluid/voice.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a5baaa7bdd31498baf50f8271216248d8" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::a2</definition>
+        <argsstring></argsstring>
+        <name>a2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="165" column="1" bodyfile="fluid/voice.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a5bc1199ceb6799af23a38b7c71acb590" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::b02_incr</definition>
+        <argsstring></argsstring>
+        <name>b02_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="167" column="1" bodyfile="fluid/voice.h" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a3a3d3cb037c6d5d5541d8805fda4690b" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::b1_incr</definition>
+        <argsstring></argsstring>
+        <name>b1_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="168" column="1" bodyfile="fluid/voice.h" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ab99e3c516090a1617c9be809e2abe080" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::a1_incr</definition>
+        <argsstring></argsstring>
+        <name>a1_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="169" column="1" bodyfile="fluid/voice.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1af113648f38f703ae307beb8ef9839f1f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::a2_incr</definition>
+        <argsstring></argsstring>
+        <name>a2_incr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="170" column="1" bodyfile="fluid/voice.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae9f9986b163be58695d1c1ac29f0e9b7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::filter_coeff_incr_count</definition>
+        <argsstring></argsstring>
+        <name>filter_coeff_incr_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="171" column="1" bodyfile="fluid/voice.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ae64672cbcf2a548985932c6dfd4cd23d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::pan</definition>
+        <argsstring></argsstring>
+        <name>pan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="174" column="1" bodyfile="fluid/voice.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a03ee1ae04f8c68541be5f00f72e8b53d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amp_left</definition>
+        <argsstring></argsstring>
+        <name>amp_left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="175" column="1" bodyfile="fluid/voice.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a6854829544035797c65b5b38124f183e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amp_right</definition>
+        <argsstring></argsstring>
+        <name>amp_right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="176" column="1" bodyfile="fluid/voice.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a297eda3a484890217d6acf6803e5836e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::reverb_send</definition>
+        <argsstring></argsstring>
+        <name>reverb_send</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="179" column="1" bodyfile="fluid/voice.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1aa5ed6a1714be5518517889369dc04eab" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amp_reverb</definition>
+        <argsstring></argsstring>
+        <name>amp_reverb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="180" column="1" bodyfile="fluid/voice.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a325d2a04fc78c37304a16e72c8a5b24a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::chorus_send</definition>
+        <argsstring></argsstring>
+        <name>chorus_send</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="183" column="1" bodyfile="fluid/voice.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a045df37c21abab195b905d7113fdaabb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float FluidS::Voice::amp_chorus</definition>
+        <argsstring></argsstring>
+        <name>amp_chorus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="184" column="1" bodyfile="fluid/voice.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a045edf6153559c10f1a23944034679ca" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::interp_method</definition>
+        <argsstring></argsstring>
+        <name>interp_method</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="187" column="1" bodyfile="fluid/voice.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1ac71c7c2680156834347931316852dc10" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FluidS::Voice::debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="190" column="1" bodyfile="fluid/voice.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_fluid_s_1_1_voice_1a06c4669ea0c4c6c7aeb6c01d47318e97" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double FluidS::Voice::ref</definition>
+        <argsstring></argsstring>
+        <name>ref</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="191" column="1" bodyfile="fluid/voice.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1af2f0a9ab1c9570be0be02c375c230d5d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::effects</definition>
+        <argsstring>(int count, float *out, float *effect1, float *effect2)</argsstring>
+        <name>effects</name>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>effect1</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>effect2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="73" column="1" bodyfile="fluid/voice.cpp" bodystart="1791" bodyend="1843"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a99bde03d499c8c0826397cfeef4f8f59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Voice::Voice</definition>
+        <argsstring>(Fluid *)</argsstring>
+        <name>Voice</name>
+        <param>
+          <type><ref refid="class_fluid_s_1_1_fluid" kindref="compound">Fluid</ref> *</type>
+          <defname>f</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="194" column="1" bodyfile="fluid/voice.cpp" bodystart="83" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1aee17989d591015ac1bb530c1b59845db" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_fluid_s_1_1_channel" kindref="compound">Channel</ref> *</type>
+        <definition>Channel* FluidS::Voice::get_channel</definition>
+        <argsstring>() const</argsstring>
+        <name>get_channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="195" column="1" bodyfile="fluid/voice.h" bodystart="195" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a1508bbd8f513837917505d23b627dd33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::voice_start</definition>
+        <argsstring>()</argsstring>
+        <name>voice_start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="196" column="1" bodyfile="fluid/voice.cpp" bodystart="654" bodyend="795"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a24c7a2babbd0f0714eb0e8d01730a778" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::off</definition>
+        <argsstring>()</argsstring>
+        <name>off</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="197" column="1" bodyfile="fluid/voice.cpp" bodystart="1444" bodyend="1453"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1abb4c18cb455b0de6c43ab52ec880efc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FluidS::Voice::init</definition>
+        <argsstring>(Sample *, Channel *, int key, int vel, unsigned id, double tuning)</argsstring>
+        <name>init</name>
+        <param>
+          <type><ref refid="class_fluid_s_1_1_sample" kindref="compound">Sample</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="class_fluid_s_1_1_channel" kindref="compound">Channel</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>vel</declname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>tuning</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="198" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a9361579f265a1ce25df3a55477dc83de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::gen_incr</definition>
+        <argsstring>(int i, float val)</argsstring>
+        <name>gen_incr</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="199" column="1" bodyfile="fluid/voice.cpp" bodystart="208" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a431b869873ed78c2949ca13faa6f6b99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::gen_set</definition>
+        <argsstring>(int i, float val)</argsstring>
+        <name>gen_set</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="200" column="1" bodyfile="fluid/voice.cpp" bodystart="198" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1aa5a43efb6120df8c9fee504f19e43063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Voice::gen_get</definition>
+        <argsstring>(int gen)</argsstring>
+        <name>gen_get</name>
+        <param>
+          <type>int</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="201" column="1" bodyfile="fluid/voice.cpp" bodystart="218" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1acf9e43c99188c7c1290d8ebf9383b046" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int FluidS::Voice::get_id</definition>
+        <argsstring>() const</argsstring>
+        <name>get_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="202" column="1" bodyfile="fluid/voice.h" bodystart="202" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a57567e90fed01748628ea8733bc34ac6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::isPlaying</definition>
+        <argsstring>()</argsstring>
+        <name>isPlaying</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="203" column="1" bodyfile="fluid/voice.h" bodystart="203" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a5495479514cb10d0040e4fd7d1a77da8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::set_param</definition>
+        <argsstring>(int gen, float nrpn_value, int abs)</argsstring>
+        <name>set_param</name>
+        <param>
+          <type>int</type>
+          <declname>gen</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>nrpn_value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>abs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="204" column="1" bodyfile="fluid/voice.cpp" bodystart="1704" bodyend="1709"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1acaa0a1d8b3a451e9c1a2ea41c7e1a758" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::update_param</definition>
+        <argsstring>(int gen)</argsstring>
+        <name>update_param</name>
+        <param>
+          <type>int</type>
+          <declname>gen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="211" column="1" bodyfile="fluid/voice.cpp" bodystart="862" bodyend="1273"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a99d7c39c3ae7ce1046afd5ff032796bb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double FluidS::Voice::GEN</definition>
+        <argsstring>(int n)</argsstring>
+        <name>GEN</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="213" column="1" bodyfile="fluid/voice.h" bodystart="213" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1ae50c72121f4700b97c407ef260efb94b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::modulate_all</definition>
+        <argsstring>()</argsstring>
+        <name>modulate_all</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>fluid_voice_modulate_all</para><para>Update all the modulators. This function is called after a ALL_CTRL_OFF MIDI message has been received (CC 121). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="215" column="1" bodyfile="fluid/voice.cpp" bodystart="1336" bodyend="1366"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a474d2173990e1d7996168688a6c111c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::modulate</definition>
+        <argsstring>(bool _cc, int _ctrl)</argsstring>
+        <name>modulate</name>
+        <param>
+          <type>bool</type>
+          <declname>_cc</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_ctrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>fluid_voice_modulate</para><para>In this implementation, I want to make sure that all controllers are event based: the parameter values of the DSP algorithm should only be updates when a controller event arrived and not at every iteration of the audio cycle (which would probably be feasible if the synth was made in silicon).</para><para>The update is done in three steps:</para><para><itemizedlist>
+<listitem><para>first, we look for all the modulators that have the changed controller as a source. This will yield a list of generators that will be changed because of the controller event.</para></listitem><listitem><para>For every changed generator, calculate its new value. This is the sum of its original value plus the values of al the attached modulators.</para></listitem><listitem><para>For every changed generator, convert its value to the correct unit of the corresponding DSP parameter </para></listitem></itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="216" column="1" bodyfile="fluid/voice.cpp" bodystart="1298" bodyend="1327"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a2a2ef454e88e617c90ebbd4c54d6189c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Voice::get_lower_boundary_for_attenuation</definition>
+        <argsstring>()</argsstring>
+        <name>get_lower_boundary_for_attenuation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="217" column="1" bodyfile="fluid/voice.cpp" bodystart="1527" bodyend="1566"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1affe4ab3af432f986cb7e9b181251943b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::check_sample_sanity</definition>
+        <argsstring>()</argsstring>
+        <name>check_sample_sanity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="218" column="1" bodyfile="fluid/voice.cpp" bodystart="1574" bodyend="1698"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1ad376063d7493ced068c484eebd6caf67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::noteoff</definition>
+        <argsstring>()</argsstring>
+        <name>noteoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="219" column="1" bodyfile="fluid/voice.cpp" bodystart="1371" bodyend="1396"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a7ec7cd83c7123ab83cb0efd83df32a1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::kill_excl</definition>
+        <argsstring>()</argsstring>
+        <name>kill_excl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="220" column="1" bodyfile="fluid/voice.cpp" bodystart="1410" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1ac03d9facb18a4f4feef6cfd31fd6cc5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Voice::calculate_hold_decay_frames</definition>
+        <argsstring>(int gen_base, int gen_key2base, int is_decay)</argsstring>
+        <name>calculate_hold_decay_frames</name>
+        <param>
+          <type>int</type>
+          <declname>gen_base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>gen_key2base</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>is_decay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="221" column="1" bodyfile="fluid/voice.cpp" bodystart="800" bodyend="841"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a57fe4e2f6fffa022b8e248ebba22d276" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::RELEASED</definition>
+        <argsstring>() const</argsstring>
+        <name>RELEASED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="227" column="1" bodyfile="fluid/voice.h" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1ae940776dd639b827b795370ee476dd87" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::SUSTAINED</definition>
+        <argsstring>() const</argsstring>
+        <name>SUSTAINED</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="228" column="1" bodyfile="fluid/voice.h" bodystart="228" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a95f2782fd35429cedf1b35079d8c25d2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::PLAYING</definition>
+        <argsstring>() const</argsstring>
+        <name>PLAYING</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="229" column="1" bodyfile="fluid/voice.h" bodystart="229" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1abdd2f7ea1c3d1c7eec5a352ecd3c5c6c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FluidS::Voice::ON</definition>
+        <argsstring>() const</argsstring>
+        <name>ON</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="230" column="1" bodyfile="fluid/voice.h" bodystart="230" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1adbcb814bc16933850aa62ac143d26ec8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int FluidS::Voice::SAMPLEMODE</definition>
+        <argsstring>() const</argsstring>
+        <name>SAMPLEMODE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="231" column="1" bodyfile="fluid/voice.h" bodystart="231" bodyend="231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a0a1353697aa093972e9c94423bfb8a5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::calcVolEnv</definition>
+        <argsstring>(int n, fluid_env_data_t *env_data)</argsstring>
+        <name>calcVolEnv</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_fluid_s_1_1fluid__env__data__t" kindref="compound">fluid_env_data_t</ref> *</type>
+          <declname>env_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="233" column="1" bodyfile="fluid/voice.cpp" bodystart="223" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a297618a723d834b7036a931f7f05b037" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::write</definition>
+        <argsstring>(unsigned n, float *out, float *reverb, float *chorus)</argsstring>
+        <name>write</name>
+        <param>
+          <type>unsigned</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>reverb</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>chorus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="234" column="1" bodyfile="fluid/voice.cpp" bodystart="247" bodyend="647"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a2dccce3950c858362fabbf34922a7190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::add_mod</definition>
+        <argsstring>(const Mod *mod, int mode)</argsstring>
+        <name>add_mod</name>
+        <param>
+          <type>const <ref refid="struct_fluid_s_1_1_mod" kindref="compound">Mod</ref> *</type>
+          <declname>mod</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="235" column="1" bodyfile="fluid/voice.cpp" bodystart="1466" bodyend="1512"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a2d83337397921d9738a50d9e07eef0a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Voice::updateAmpInc</definition>
+        <argsstring>(unsigned int &amp;nextNewAmpInc, std::map&lt; int, qreal &gt;::iterator &amp;curSample2AmpInc, qreal &amp;dsp_amp_incr, unsigned int &amp;dsp_i)</argsstring>
+        <name>updateAmpInc</name>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>nextNewAmpInc</declname>
+        </param>
+        <param>
+          <type>std::map&lt; int, qreal &gt;::iterator &amp;</type>
+          <declname>curSample2AmpInc</declname>
+        </param>
+        <param>
+          <type>qreal &amp;</type>
+          <declname>dsp_amp_incr</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>dsp_i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="238" column="1" bodyfile="fluid/dsp.cpp" bodystart="49" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a92845f5a0f2835a4ef6211be0a1f9f79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Voice::dsp_float_interpolate_none</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>dsp_float_interpolate_none</name>
+        <param>
+          <type>unsigned</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="239" column="1" bodyfile="fluid/dsp.cpp" bodystart="142" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1ac6777b36aaffbf3f4141010979788a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Voice::dsp_float_interpolate_linear</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>dsp_float_interpolate_linear</name>
+        <param>
+          <type>unsigned</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="240" column="1" bodyfile="fluid/dsp.cpp" bodystart="209" bodyend="297"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a42a17e404e716cb1fefac3dd50f6a280" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Voice::dsp_float_interpolate_4th_order</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>dsp_float_interpolate_4th_order</name>
+        <param>
+          <type>unsigned</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="241" column="1" bodyfile="fluid/dsp.cpp" bodystart="306" bodyend="442"/>
+      </memberdef>
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a1993f84b48811a87997397c7096f67bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Voice::dsp_float_interpolate_7th_order</definition>
+        <argsstring>(unsigned)</argsstring>
+        <name>dsp_float_interpolate_7th_order</name>
+        <param>
+          <type>unsigned</type>
+          <defname>n</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="242" column="1" bodyfile="fluid/dsp.cpp" bodystart="451" bodyend="698"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_fluid_s_1_1_voice_1a238be7ff4900b92941039be496a1e58f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Voice::dsp_float_config</definition>
+        <argsstring>()</argsstring>
+        <name>dsp_float_config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fluid/voice.h" line="237" column="1" bodyfile="fluid/dsp.cpp" bodystart="93" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="20428">
+        <label>FluidS::Channel</label>
+        <link refid="class_fluid_s_1_1_channel"/>
+      </node>
+      <node id="20429">
+        <label>FluidS::Phase</label>
+        <link refid="struct_fluid_s_1_1_phase"/>
+      </node>
+      <node id="20427">
+        <label>FluidS::Voice</label>
+        <link refid="class_fluid_s_1_1_voice"/>
+        <childnode refid="20428" relation="usage">
+          <edgelabel>channel</edgelabel>
+        </childnode>
+        <childnode refid="20429" relation="usage">
+          <edgelabel>phase</edgelabel>
+        </childnode>
+        <childnode refid="20430" relation="usage">
+          <edgelabel>modenv_data</edgelabel>
+          <edgelabel>volenv_data</edgelabel>
+        </childnode>
+        <childnode refid="20431" relation="usage">
+          <edgelabel>mod</edgelabel>
+        </childnode>
+        <childnode refid="20432" relation="usage">
+          <edgelabel>sample</edgelabel>
+        </childnode>
+        <childnode refid="20434" relation="usage">
+          <edgelabel>gen</edgelabel>
+        </childnode>
+      </node>
+      <node id="20430">
+        <label>FluidS::fluid_env_data_t</label>
+        <link refid="struct_fluid_s_1_1fluid__env__data__t"/>
+      </node>
+      <node id="20433">
+        <label>FluidS::SFont</label>
+        <link refid="class_fluid_s_1_1_s_font"/>
+      </node>
+      <node id="20434">
+        <label>FluidS::Generator</label>
+        <link refid="class_fluid_s_1_1_generator"/>
+      </node>
+      <node id="20431">
+        <label>FluidS::Mod</label>
+        <link refid="struct_fluid_s_1_1_mod"/>
+      </node>
+      <node id="20432">
+        <label>FluidS::Sample</label>
+        <link refid="class_fluid_s_1_1_sample"/>
+        <childnode refid="20433" relation="usage">
+          <edgelabel>sf</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="fluid/voice.h" line="65" column="1" bodyfile="fluid/voice.h" bodystart="64" bodyend="243"/>
+    <listofallmembers>
+      <member refid="class_fluid_s_1_1_voice_1a9b8aa14547274ef9d5adb2506bd00c82" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>_fluid</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a64cf861491cd5fceedeabd8cc965d32b" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>_noteTuning</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a95e327752233414ea9b8d16ab05f9191" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>a1</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ab99e3c516090a1617c9be809e2abe080" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>a1_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5baaa7bdd31498baf50f8271216248d8" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>a2</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af113648f38f703ae307beb8ef9839f1f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>a2_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a2dccce3950c858362fabbf34922a7190" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>add_mod</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a6f48cba0c6093e1343722a7e694f5ad1" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a045df37c21abab195b905d7113fdaabb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp_chorus</name></member>
+      <member refid="class_fluid_s_1_1_voice_1acf33c57d9bbfdbf10dd2a2d8cb484eec" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a03ee1ae04f8c68541be5f00f72e8b53d" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp_left</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aa5ed6a1714be5518517889369dc04eab" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp_reverb</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a6854829544035797c65b5b38124f183e" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amp_right</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a404cd546d9352fabf689445ff1aebad6" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amplitude_that_reaches_noise_floor_loop</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af77b321d64f87de27607f611990a1e46" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>amplitude_that_reaches_noise_floor_nonloop</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a8b688baf5e55b289d5dfb300c68e1d7e" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>attenuation</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a9528c80f28ae28f84dfb8de35de2d2da" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>b02</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5bc1199ceb6799af23a38b7c71acb590" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>b02_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a57a61443ef07887d0c7f47e5d4743aa4" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>b1</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a3a3d3cb037c6d5d5541d8805fda4690b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>b1_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ac03d9facb18a4f4feef6cfd31fd6cc5f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>calculate_hold_decay_frames</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a0a1353697aa093972e9c94423bfb8a5d" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>calcVolEnv</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a38f867999b786be906ede962aec3befc" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>chan</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abebe9528618ac5965fdba011bd4df0a3" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>channel</name></member>
+      <member refid="class_fluid_s_1_1_voice_1affe4ab3af432f986cb7e9b181251943b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>check_sample_sanity</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5f3bdcd866929540a5a009c474de55bb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>check_sample_sanity_flag</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a325d2a04fc78c37304a16e72c8a5b24a" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>chorus_send</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ac71c7c2680156834347931316852dc10" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>debug</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a0333407addd922252ca4183e422b8bed" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_buf</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a238be7ff4900b92941039be496a1e58f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_float_config</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a42a17e404e716cb1fefac3dd50f6a280" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_float_interpolate_4th_order</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a1993f84b48811a87997397c7096f67bb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_float_interpolate_7th_order</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ac6777b36aaffbf3f4141010979788a47" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_float_interpolate_linear</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a92845f5a0f2835a4ef6211be0a1f9f79" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>dsp_float_interpolate_none</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af2f0a9ab1c9570be0be02c375c230d5d" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>effects</name></member>
+      <member refid="class_fluid_s_1_1_voice_1acfde1281267ab38e410ec947ae1877a0" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>end</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae9f9986b163be58695d1c1ac29f0e9b7" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>filter_coeff_incr_count</name></member>
+      <member refid="class_fluid_s_1_1_voice_1adf89b06b2f9c152edc4c50664971ca9b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>filter_gain</name></member>
+      <member refid="class_fluid_s_1_1_voice_1afc14a59aca39d0661a4f8bd8e1377e51" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>filter_startup</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a2288e95a45a429ce7ee6abc9adec8249" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>fres</name></member>
+      <member refid="class_fluid_s_1_1_voice_1adbe2cef898e353be6e425d45987d0726" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>gen</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a99d7c39c3ae7ce1046afd5ff032796bb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>GEN</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aa5a43efb6120df8c9fee504f19e43063" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>gen_get</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a9361579f265a1ce25df3a55477dc83de" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>gen_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a431b869873ed78c2949ca13faa6f6b99" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>gen_set</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aee17989d591015ac1bb530c1b59845db" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>get_channel</name></member>
+      <member refid="class_fluid_s_1_1_voice_1acf9e43c99188c7c1290d8ebf9383b046" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>get_id</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a2a2ef454e88e617c90ebbd4c54d6189c" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>get_lower_boundary_for_attenuation</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae8eaf8b8277b3183f18b93ec097add8f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>has_looped</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a7962d1bb4ebcf0fbd26d989126bb3ed4" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>hist1</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af4f808b98259df93342a54d49891314d" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>hist2</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abafc5faf1306969bb3f34cfc3eed4e98" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>id</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abb4c18cb455b0de6c43ab52ec880efc1" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>init</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ac55de221ca5a1653f96e6704e570d15b" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>interp_coeff</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a3f0abf523d36bc8a28915c6d8e1ea783" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>interp_coeff_linear</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a045edf6153559c10f1a23944034679ca" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>interp_method</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a57567e90fed01748628ea8733bc34ac6" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>isPlaying</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a4ae601e3e10717b36d2af2a3844353be" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>key</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a7ec7cd83c7123ab83cb0efd83df32a1f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>kill_excl</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae55d33b9dbd2a43fca9cc0cb1ce54371" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>last_fres</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a3ce212d62e2f155fb1801f621fb251bb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>loopend</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae89139e48f9b6f416bdfedce83c182e1" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>loopstart</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aedfa1e97e958ccd94e6b1e8541ebf999" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>min_attenuation_cB</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a4970c346ea860c3fb3c64f20b18899e1" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>mod</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a16a59cc3ba7ae23f18fc66d422dae2df" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>mod_count</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abb42e181795b06a4e07de6a372fc0d7f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_count</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5a82ddac12a3ef4480024e3008227a6d" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_data</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abf60af48e3bdaa1c758159e236d5b585" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_section</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a746ef2f83c41df91c83faed1e3ebdcb4" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_to_fc</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abf1f4cf617763e64a29ffb68c1b607fe" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_to_pitch</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aa9c19edf11212ac0177f5fd0c6ebc982" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modenv_val</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a9ac9773526aae1e8f54c3b5e3d7a7f55" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_delay</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a1dab1bb59f7116c286fe78c9a25faa20" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_dur</name></member>
+      <member refid="class_fluid_s_1_1_voice_1aa0a37a2436f63e3606c0ce5b05b62c2b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_pos</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a60752cb5a30f9cf27d2e54b0131b3d13" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_to_fc</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ab8168b290df1b7843daa2310d2f5621f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_to_pitch</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae780ce1e52ab97ed0ec4a82f37488417" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_to_vol</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ab33f6ade868929817bdaa94e7c27400f" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modlfo_val</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a474d2173990e1d7996168688a6c111c2" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modulate</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae50c72121f4700b97c407ef260efb94b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>modulate_all</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ad376063d7493ced068c484eebd6caf67" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>noteoff</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a24c7a2babbd0f0714eb0e8d01730a778" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>off</name></member>
+      <member refid="class_fluid_s_1_1_voice_1abdd2f7ea1c3d1c7eec5a352ecd3c5c6c" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>ON</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae64672cbcf2a548985932c6dfd4cd23d" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>pan</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a7bc57a75d7a2e417dc781e04f5b4c173" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>phase</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a79637ee3401cc1096705687b3507931e" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>phase_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5c88d0f9db9c4302aafe1597a8ef6625" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>pitch</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a95f2782fd35429cedf1b35079d8c25d2" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>PLAYING</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a792ff6cf9ab170c962b3a31f17809e95" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>positionToTurnOff</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af6c1025187a47124aa4003a56d16a3da" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>q_lin</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a06c4669ea0c4c6c7aeb6c01d47318e97" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>ref</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a57fe4e2f6fffa022b8e248ebba22d276" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>RELEASED</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a297eda3a484890217d6acf6803e5836e" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>reverb_send</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a6207d6cbbda463166f3b4f90f80709a0" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>root_pitch</name></member>
+      <member refid="class_fluid_s_1_1_voice_1acffab6f10caad5efffee9996b603a8b0" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>sample</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a1539163f35c51c5b373643ebef327f77" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>Sample2AmpInc</name></member>
+      <member refid="class_fluid_s_1_1_voice_1adbcb814bc16933850aa62ac143d26ec8" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>SAMPLEMODE</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a5495479514cb10d0040e4fd7d1a77da8" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>set_param</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a36e2664288eecafd4f9de0e128630281" prot="private" virt="non-virtual"><scope>FluidS::Voice</scope><name>sinc_table7</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a9b9cba9d9ae8ab045b91eb0eba7058a1" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>start</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ad71ace7a22f223773231eb9dce62c631" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>status</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ae940776dd639b827b795370ee476dd87" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>SUSTAINED</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a8df342de51c58d2bb99a69da7876f75b" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>ticks</name></member>
+      <member refid="class_fluid_s_1_1_voice_1acaa0a1d8b3a451e9c1a2ea41c7e1a758" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>update_param</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a2d83337397921d9738a50d9e07eef0a8" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>updateAmpInc</name></member>
+      <member refid="class_fluid_s_1_1_voice_1af25fef1fb635df56b3d2521918a3dceb" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>vel</name></member>
+      <member refid="class_fluid_s_1_1_voice_1ac4a500b800e46b36fa58ee8a8ba5b0f0" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>viblfo_delay</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a7ad965509125b07684e6d9871f6e7755" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>viblfo_incr</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a95cdadb72f62f081353d68a754a641dd" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>viblfo_to_pitch</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a80a3d6bde051cbaa81d3787e3068e6a0" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>viblfo_val</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a99bde03d499c8c0826397cfeef4f8f59" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>Voice</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a1508bbd8f513837917505d23b627dd33" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>voice_start</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a36966404dcefaf9c517986c46276233c" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>volenv_count</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a6bb0ea3d4e69c2487b28858fb9620fdf" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>volenv_data</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a3fcc3f07a8734e263674ada3c878b8c8" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>volenv_section</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a95e5e7f1aa6004044ca3d0bee7821a92" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>volenv_val</name></member>
+      <member refid="class_fluid_s_1_1_voice_1a297618a723d834b7036a931f7f05b037" prot="public" virt="non-virtual"><scope>FluidS::Voice</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

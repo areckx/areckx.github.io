@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="md_mtest__r_e_a_d_m_e" kind="page">
+    <compoundname>md_mtest_README</compoundname>
+    <title>Building &amp; running the tests</title>
+    <detaileddescription>
+<para>To build all tests:</para><para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>Linux </para></entry><entry thead="yes"><para>OSX </para></entry><entry thead="yes"><para>Windows  </para></entry></row>
+<row>
+<entry thead="no"><para>make debug<linebreak/>
+sudo make installdebug<linebreak/>
+cd build.debug/mtest<linebreak/>
+make </para></entry><entry thead="no"><para>make -f Makefile.osx debug<linebreak/>
+make -f Makefile.osx installdebug<linebreak/>
+cd build.debug/mtest<linebreak/>
+make -f Makefile.osx </para></entry><entry thead="no"><para>mingw32-make -f Makefile.mingw debug<linebreak/>
+mingw32-make -f Makefile.mingw installdebug<linebreak/>
+cd build.debug<linebreak/>
+mingw32-make -f Makefile.mingw </para></entry></row>
+</table>
+To run all tests: <verbatim>ctest
+</verbatim></para><para>To run only one test (for debugging purposes): <verbatim>cd libmscore/join/
+./tst_join
+</verbatim></para><para>To see how the CI environment is doing it check <computeroutput>.travis.yml</computeroutput> and <computeroutput>build/run_tests.sh</computeroutput></para><para><bold>Note: You need to have <computeroutput>diff</computeroutput> in your path. For Windows, get a copy of <ulink url="http://gnuwin32.sourceforge.net/packages/diffutils.htm">diffutils for Windows</ulink>.</bold></para><para><heading level="1">Test case conventions </heading>
+</para><para>Tests are grouped in directories by feature (like libmscore or mxl). In these directories, each subdirectory represents a test suite for a particular sub feature.</para><para>The name of a test suite directory should be descriptive. The CPP file for the tests should use the same name as the directory, for example <computeroutput>tst_foo.cpp</computeroutput> in directory <computeroutput>foo</computeroutput>. It&apos;s good practice to include a README file in a test suite directory.</para><para>Test suite CPP files contain one slot per test case. Each file should be called foo-XX with XX being an incrementing count. If a test case uses a file and a ref file, they should be called <computeroutput>foo-XX</computeroutput> and <computeroutput>foo-XX-ref</computeroutput>, with the extension .mscx. A test case should not reuse a file from another test case.</para><para>To create reference or original files, MuseScore can be run with the <computeroutput>-t</computeroutput> command line argument and it will save all the files in the session in test mode. Such files do not contain platform or version information and do contain extra data for tracing (for example, they contains pixel level position for beams).</para><para><heading level="1">How to write a test case </heading>
+</para><para><heading level="2">Import test </heading>
+</para><para><itemizedlist>
+<listitem><para>Open a short file containing an individual case in one of the formats supported by MuseScore</para></listitem><listitem><para>Save in MuseScore format</para></listitem><listitem><para>Compare with reference file</para></listitem></itemizedlist>
+</para><para>At first the test will fail because there is no reference file. Open the file created by the test case in MuseScore and try to edit it to be sure it&apos;s valid. If the file is valid, save it (without version number) as a reference file.</para><para><heading level="2"><ref refid="class_object" kindref="compound">Object</ref> read write </heading>
+</para><para>Create a test case for all elements and all properties in each element. See <computeroutput>libmscore/note</computeroutput></para><para><itemizedlist>
+<listitem><para>Create an object</para></listitem><listitem><para>Set a property</para></listitem><listitem><para>Write and read the object</para></listitem><listitem><para>Check if the property has the right value</para></listitem></itemizedlist>
+</para><para><heading level="2">Action tests </heading>
+</para><para>See <computeroutput>libmscore/join</computeroutput> or <computeroutput>libmscore/split</computeroutput> for example</para><para><itemizedlist>
+<listitem><para>Read a score file</para></listitem><listitem><para>Apply an action</para></listitem><listitem><para>Write the file</para></listitem><listitem><para>Compare with a reference</para></listitem><listitem><para>(Undo the action)</para></listitem><listitem><para>(Compare with original file)</para></listitem></itemizedlist>
+</para><para><heading level="2">Compatibility tests </heading>
+</para><para>Most of them are in <computeroutput>mtest/libmscore/compat</computeroutput></para><para><itemizedlist>
+<listitem><para>Read a score file from an older version of MuseScore</para></listitem><listitem><para>Write the file</para></listitem><listitem><para>Compare with a reference file </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

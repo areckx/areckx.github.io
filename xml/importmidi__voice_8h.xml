@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="importmidi__voice_8h" kind="file" language="C++">
+    <compoundname>importmidi_voice.h</compoundname>
+    <includes refid="importmidi__operation_8h" local="yes">importmidi_operation.h</includes>
+    <includedby refid="importmidi_8cpp" local="yes">mscore/importmidi/importmidi.cpp</includedby>
+    <includedby refid="importmidi__quant_8cpp" local="yes">mscore/importmidi/importmidi_quant.cpp</includedby>
+    <includedby refid="importmidi__simplify_8cpp" local="yes">mscore/importmidi/importmidi_simplify.cpp</includedby>
+    <includedby refid="importmidi__tuplet__voice_8cpp" local="yes">mscore/importmidi/importmidi_tuplet_voice.cpp</includedby>
+    <includedby refid="importmidi__voice_8cpp" local="yes">mscore/importmidi/importmidi_voice.cpp</includedby>
+    <incdepgraph>
+      <node id="54388">
+        <label>importmidi_fraction.h</label>
+        <link refid="importmidi__fraction_8h_source"/>
+        <childnode refid="54389" relation="include">
+        </childnode>
+      </node>
+      <node id="54387">
+        <label>importmidi_operation.h</label>
+        <link refid="importmidi__operation_8h_source"/>
+        <childnode refid="54388" relation="include">
+        </childnode>
+        <childnode refid="54391" relation="include">
+        </childnode>
+      </node>
+      <node id="54389">
+        <label>libmscore/fraction.h</label>
+        <link refid="fraction_8h_source"/>
+        <childnode refid="54390" relation="include">
+        </childnode>
+      </node>
+      <node id="54391">
+        <label>set</label>
+      </node>
+      <node id="54390">
+        <label>config.h</label>
+      </node>
+      <node id="54386">
+        <label>mscore/importmidi/importmidi_voice.h</label>
+        <link refid="importmidi__voice_8h"/>
+        <childnode refid="54387" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="54394">
+        <label>mscore/importmidi/importmidi_quant.cpp</label>
+        <link refid="importmidi__quant_8cpp_source"/>
+      </node>
+      <node id="54393">
+        <label>mscore/importmidi/importmidi.cpp</label>
+        <link refid="importmidi_8cpp_source"/>
+      </node>
+      <node id="54397">
+        <label>mscore/importmidi/importmidi_voice.cpp</label>
+        <link refid="importmidi__voice_8cpp_source"/>
+      </node>
+      <node id="54395">
+        <label>mscore/importmidi/importmidi_simplify.cpp</label>
+        <link refid="importmidi__simplify_8cpp_source"/>
+      </node>
+      <node id="54396">
+        <label>mscore/importmidi/importmidi_tuplet_voice.cpp</label>
+        <link refid="importmidi__tuplet__voice_8cpp_source"/>
+      </node>
+      <node id="54392">
+        <label>mscore/importmidi/importmidi_voice.h</label>
+        <link refid="importmidi__voice_8h"/>
+        <childnode refid="54393" relation="include">
+        </childnode>
+        <childnode refid="54394" relation="include">
+        </childnode>
+        <childnode refid="54395" relation="include">
+        </childnode>
+        <childnode refid="54396" relation="include">
+        </childnode>
+        <childnode refid="54397" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_ms">Ms</innernamespace>
+    <innernamespace refid="namespace_ms_1_1_midi_tuplet">Ms::MidiTuplet</innernamespace>
+    <innernamespace refid="namespace_ms_1_1_midi_voice">Ms::MidiVoice</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>IMPORTMIDI_VOICE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMPORTMIDI_VOICE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;importmidi_operation.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ms" kindref="compound">Ms</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MTrack;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">TimeSigMap;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MidiChord;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">MidiTuplet<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TupletData;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">MidiVoice<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>toIntVoiceCount(MidiOperations::VoiceCount<sp/>value);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>voiceLimit();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>separateVoices(std::multimap&lt;int,<sp/>MTrack&gt;<sp/>&amp;tracks,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TimeSigMap<sp/>*sigmap);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>splitChordToVoice(</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;ReducedFraction,<sp/>MidiChord&gt;::iterator<sp/>&amp;chordIt,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QSet&lt;int&gt;<sp/>&amp;notesToMove,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newVoice,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;ReducedFraction,<sp/>MidiChord&gt;<sp/>&amp;chords,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;ReducedFraction,<sp/>MidiTuplet::TupletData&gt;<sp/>&amp;tuplets,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;ReducedFraction,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::multimap&lt;ReducedFraction,<sp/>MidiTuplet::TupletData&gt;::iterator&gt;<sp/>&amp;insertedTuplets,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ReducedFraction<sp/>&amp;maxChordLength,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>allowParallelTuplets<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>areVoicesSame(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::multimap&lt;ReducedFraction,<sp/>MidiChord&gt;<sp/>&amp;chords);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>MidiVoice</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>IMPORTMIDI_VOICE_H</highlight></codeline>
+    </programlisting>
+    <location file="mscore/importmidi/importmidi_voice.h"/>
+  </compounddef>
+</doxygen>

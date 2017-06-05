@@ -1,0 +1,278 @@
+.TH "Object" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Object
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBzeroUnion\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitBool\fP (GBool boolnA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitInt\fP (int intgA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitReal\fP (double realA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitString\fP (\fBGooString\fP *stringA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitName\fP (const char *nameA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitNull\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitArray\fP (\fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitDict\fP (\fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitDict\fP (\fBDict\fP *dictA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitStream\fP (\fBStream\fP *streamA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitRef\fP (int numA, int genA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitCmd\fP (char *cmdA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitError\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitEOF\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBinitInt64\fP (long long int64gA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBcopy\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBshallowCopy\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBfetch\fP (\fBXRef\fP *xref, \fBObject\fP *obj, int recursion=0)"
+.br
+.ti -1c
+.RI "void \fBfree\fP ()"
+.br
+.ti -1c
+.RI "ObjType \fBgetType\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisBool\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisInt\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisReal\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisNum\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisString\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisName\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisNull\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisArray\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisDict\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisStream\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisRef\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisCmd\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisError\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisEOF\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisNone\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisInt64\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisIntOrInt64\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisName\fP (const char *nameA)"
+.br
+.ti -1c
+.RI "GBool \fBisDict\fP (const char *dictType)"
+.br
+.ti -1c
+.RI "GBool \fBisStream\fP (char *dictType)"
+.br
+.ti -1c
+.RI "GBool \fBisCmd\fP (const char *cmdA)"
+.br
+.ti -1c
+.RI "GBool \fBgetBool\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetInt\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetReal\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetNum\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetString\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBtakeString\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetName\fP ()"
+.br
+.ti -1c
+.RI "\fBArray\fP * \fBgetArray\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetDict\fP ()"
+.br
+.ti -1c
+.RI "\fBStream\fP * \fBgetStream\fP ()"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetRef\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRefNum\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRefGen\fP ()"
+.br
+.ti -1c
+.RI "char * \fBgetCmd\fP ()"
+.br
+.ti -1c
+.RI "long long \fBgetInt64\fP ()"
+.br
+.ti -1c
+.RI "long long \fBgetIntOrInt64\fP ()"
+.br
+.ti -1c
+.RI "int \fBarrayGetLength\fP ()"
+.br
+.ti -1c
+.RI "void \fBarrayAdd\fP (\fBObject\fP *elem)"
+.br
+.ti -1c
+.RI "void \fBarrayRemove\fP (int i)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBarrayGet\fP (int i, \fBObject\fP *obj, int recursion)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBarrayGetNF\fP (int i, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "int \fBdictGetLength\fP ()"
+.br
+.ti -1c
+.RI "void \fBdictAdd\fP (char *key, \fBObject\fP *val)"
+.br
+.ti -1c
+.RI "void \fBdictSet\fP (const char *key, \fBObject\fP *val)"
+.br
+.ti -1c
+.RI "GBool \fBdictIs\fP (const char *dictType)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBdictLookup\fP (const char *key, \fBObject\fP *obj, int recursion=0)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBdictLookupNF\fP (const char *key, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "char * \fBdictGetKey\fP (int i)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBdictGetVal\fP (int i, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBdictGetValNF\fP (int i, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "GBool \fBstreamIs\fP (char *dictType)"
+.br
+.ti -1c
+.RI "void \fBstreamReset\fP ()"
+.br
+.ti -1c
+.RI "void \fBstreamClose\fP ()"
+.br
+.ti -1c
+.RI "int \fBstreamGetChar\fP ()"
+.br
+.ti -1c
+.RI "int \fBstreamGetChars\fP (int nChars, Guchar *buffer)"
+.br
+.ti -1c
+.RI "int \fBstreamLookChar\fP ()"
+.br
+.ti -1c
+.RI "char * \fBstreamGetLine\fP (char *buf, int size)"
+.br
+.ti -1c
+.RI "Goffset \fBstreamGetPos\fP ()"
+.br
+.ti -1c
+.RI "void \fBstreamSetPos\fP (Goffset pos, int dir=0)"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBstreamGetDict\fP ()"
+.br
+.ti -1c
+.RI "const char * \fBgetTypeName\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP (FILE *f=stdout)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBmemCheck\fP (FILE *f)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 122 of file Object\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

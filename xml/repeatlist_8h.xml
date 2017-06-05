@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="repeatlist_8h" kind="file" language="C++">
+    <compoundname>repeatlist.h</compoundname>
+    <includedby refid="cursor_8cpp" local="yes">libmscore/cursor.cpp</includedby>
+    <includedby refid="rendermidi_8cpp" local="yes">libmscore/rendermidi.cpp</includedby>
+    <includedby refid="repeatlist_8cpp" local="yes">libmscore/repeatlist.cpp</includedby>
+    <includedby refid="score_8cpp" local="yes">libmscore/score.cpp</includedby>
+    <includedby refid="exportmidi_8cpp" local="yes">mscore/exportmidi.cpp</includedby>
+    <includedby refid="file_8cpp" local="yes">mscore/file.cpp</includedby>
+    <includedby refid="jackaudio_8cpp" local="yes">mscore/jackaudio.cpp</includedby>
+    <includedby refid="pianoroll_8cpp" local="yes">mscore/pianoroll.cpp</includedby>
+    <includedby refid="playpanel_8cpp" local="yes">mscore/playpanel.cpp</includedby>
+    <includedby refid="save_positions_8cpp" local="yes">mscore/savePositions.cpp</includedby>
+    <includedby refid="scoreview_8cpp" local="yes">mscore/scoreview.cpp</includedby>
+    <includedby refid="seq_8cpp" local="yes">mscore/seq.cpp</includedby>
+    <includedby refid="tst__repeat_8cpp" local="yes">mtest/libmscore/repeat/tst_repeat.cpp</includedby>
+    <invincdepgraph>
+      <node id="34274">
+        <label>mscore/playpanel.cpp</label>
+        <link refid="playpanel_8cpp_source"/>
+      </node>
+      <node id="34278">
+        <label>mtest/libmscore/repeat/tst_repeat.cpp</label>
+        <link refid="tst__repeat_8cpp_source"/>
+      </node>
+      <node id="34270">
+        <label>mscore/exportmidi.cpp</label>
+        <link refid="exportmidi_8cpp_source"/>
+      </node>
+      <node id="34269">
+        <label>libmscore/score.cpp</label>
+        <link refid="score_8cpp"/>
+      </node>
+      <node id="34277">
+        <label>mscore/seq.cpp</label>
+        <link refid="seq_8cpp_source"/>
+      </node>
+      <node id="34267">
+        <label>libmscore/rendermidi.cpp</label>
+        <link refid="rendermidi_8cpp"/>
+      </node>
+      <node id="34268">
+        <label>libmscore/repeatlist.cpp</label>
+        <link refid="repeatlist_8cpp_source"/>
+      </node>
+      <node id="34272">
+        <label>mscore/jackaudio.cpp</label>
+        <link refid="jackaudio_8cpp_source"/>
+      </node>
+      <node id="34266">
+        <label>libmscore/cursor.cpp</label>
+        <link refid="cursor_8cpp_source"/>
+      </node>
+      <node id="34276">
+        <label>mscore/scoreview.cpp</label>
+        <link refid="scoreview_8cpp_source"/>
+      </node>
+      <node id="34273">
+        <label>mscore/pianoroll.cpp</label>
+        <link refid="pianoroll_8cpp_source"/>
+      </node>
+      <node id="34271">
+        <label>mscore/file.cpp</label>
+        <link refid="file_8cpp_source"/>
+      </node>
+      <node id="34265">
+        <label>libmscore/repeatlist.h</label>
+        <link refid="repeatlist_8h"/>
+        <childnode refid="34266" relation="include">
+        </childnode>
+        <childnode refid="34267" relation="include">
+        </childnode>
+        <childnode refid="34268" relation="include">
+        </childnode>
+        <childnode refid="34269" relation="include">
+        </childnode>
+        <childnode refid="34270" relation="include">
+        </childnode>
+        <childnode refid="34271" relation="include">
+        </childnode>
+        <childnode refid="34272" relation="include">
+        </childnode>
+        <childnode refid="34273" relation="include">
+        </childnode>
+        <childnode refid="34274" relation="include">
+        </childnode>
+        <childnode refid="34275" relation="include">
+        </childnode>
+        <childnode refid="34276" relation="include">
+        </childnode>
+        <childnode refid="34277" relation="include">
+        </childnode>
+        <childnode refid="34278" relation="include">
+        </childnode>
+      </node>
+      <node id="34275">
+        <label>mscore/savePositions.cpp</label>
+        <link refid="save_positions_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_ms_1_1_repeat_segment" prot="public">Ms::RepeatSegment</innerclass>
+    <innerclass refid="class_ms_1_1_repeat_list" prot="public">Ms::RepeatList</innerclass>
+    <innernamespace refid="namespace_ms">Ms</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>MuseScore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Music<sp/>Composition<sp/>&amp;<sp/>Notation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>2009-2011<sp/>Werner<sp/>Schweer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>version<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation<sp/>and<sp/>appearing<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>the<sp/>file<sp/>LICENCE.GPL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__REPEATLIST_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__REPEATLIST_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ms" kindref="compound">Ms</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Score;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Measure;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>RepeatSegment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="class_ms_1_1_repeat_segment" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_ms_1_1_repeat_segment" kindref="compound">RepeatSegment</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tick;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>tick</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>utick;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>qreal<sp/>utime;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>qreal<sp/>timeOffset;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ms_1_1_repeat_segment" kindref="compound">RepeatSegment</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>RepeatList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_ms_1_1_repeat_list" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_ms_1_1_repeat_list" kindref="compound">RepeatList</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QList&lt;RepeatSegment*&gt;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ms_1_1_score" kindref="compound">Score</ref>*<sp/>_score;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">mutable</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>idx1,<sp/>idx2;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>cached<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ms_1_1_repeat_segment" kindref="compound">RepeatSegment</ref>*<sp/>rs;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>tmp<sp/>value<sp/>during<sp/>unwind()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref>*<sp/>jumpToStartRepeat(<ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref>*);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unwindSection(<ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref>*<sp/>fm,<sp/><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref>*<sp/>em);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ms_1_1_repeat_list" kindref="compound">RepeatList</ref>(<ref refid="class_ms_1_1_score" kindref="compound">Score</ref>*<sp/>s);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>unwind();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>utick2tick(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tick)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tick2utick(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tick)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>dump()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>utime2utick(qreal)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>qreal<sp/>utick2utime(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>ticks();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="libmscore/repeatlist.h"/>
+  </compounddef>
+</doxygen>

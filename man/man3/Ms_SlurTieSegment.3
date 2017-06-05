@@ -1,0 +1,88 @@
+.TH "Ms::SlurTieSegment" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::SlurTieSegment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::SpannerSegment\fP\&.
+.PP
+Inherited by \fBMs::SlurSegment\fP, and \fBMs::TieSegment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSlurTieSegment\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBSlurTieSegment\fP (const \fBSlurTieSegment\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal, qreal) override"
+.br
+.ti -1c
+.RI "\fBSlurTie\fP * \fBslurTie\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBmove\fP (const QPointF &s) override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "void \fBsetSlurOffset\fP (Grip i, const QPointF &val)"
+.br
+.ti -1c
+.RI "const struct \fBUP\fP & \fBups\fP (Grip i) const"
+.br
+.ti -1c
+.RI "struct \fBUP\fP & \fBups\fP (Grip i)"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.ti -1c
+.RI "void \fBwriteSlur\fP (\fBXmlWriter\fP &xml, int no) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBUP\fP \fB_ups\fP [int(Grip::GRIPS)]"
+.br
+.ti -1c
+.RI "QPainterPath \fBpath\fP"
+.br
+.ti -1c
+.RI "QPainterPath \fBshapePath\fP"
+.br
+.ti -1c
+.RI "\fBShape\fP \fB_shape\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 55 of file slurtie\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

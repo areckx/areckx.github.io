@@ -1,0 +1,69 @@
+.TH "QOscClient" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QOscClient \- Client-object for outgoing OSC-Datagrams\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qoscclient\&.h>\fP
+.PP
+Inherits \fBQOscBase\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendData\fP (QString, QVariant=QVariant::Invalid)"
+.br
+.ti -1c
+.RI "void \fBsendData\fP (QString, QList< QVariant >)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQOscClient\fP (const QHostAddress &, quint16 port, QObject *)"
+.br
+.RI "An OSC-connection to a specific host/port\&. "
+.ti -1c
+.RI "\fB~QOscClient\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBsetAddress\fP (const QHostAddress &, quint16 port)"
+.br
+.RI "( Re- )Set the host/port to send messages to "
+.ti -1c
+.RI "void \fBsetAnswerAddress\fP (\fBQOscServer\fP *)"
+.br
+.RI "Set a hostaddress for feedback/answers\&. "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Client-object for outgoing OSC-Datagrams\&. 
+
+This class allows to send OSC-messages to a specified host/port\&. 
+.PP
+Definition at line 35 of file qoscclient\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QOscClient::QOscClient (const QHostAddress & address, quint16 port, QObject * p)"
+
+.PP
+An OSC-connection to a specific host/port\&. This creates a new OSC-connection to the specified host/port\&. Later the servers host/port can be changed via \fBsetAddress()\fP; 
+.PP
+Definition at line 21 of file qoscclient\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void QOscClient::setAnswerAddress (\fBQOscServer\fP *)"
+
+.PP
+Set a hostaddress for feedback/answers\&. If you want answers for your messages you can indicate this by setting the OSC-Server that is to get these answers\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

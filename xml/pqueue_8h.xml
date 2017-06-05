@@ -1,0 +1,429 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pqueue_8h" kind="file" language="C++">
+    <compoundname>pqueue.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">string.h</includes>
+    <includedby refid="dtls1_8h" local="no">thirdparty/openssl/include/openssl/dtls1.h</includedby>
+    <incdepgraph>
+      <node id="83325">
+        <label>thirdparty/openssl/include/openssl/pqueue.h</label>
+        <link refid="pqueue_8h"/>
+        <childnode refid="83326" relation="include">
+        </childnode>
+        <childnode refid="83327" relation="include">
+        </childnode>
+        <childnode refid="83328" relation="include">
+        </childnode>
+      </node>
+      <node id="83327">
+        <label>stdlib.h</label>
+      </node>
+      <node id="83328">
+        <label>string.h</label>
+      </node>
+      <node id="83326">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="83329">
+        <label>thirdparty/openssl/include/openssl/pqueue.h</label>
+        <link refid="pqueue_8h"/>
+        <childnode refid="83330" relation="include">
+        </childnode>
+      </node>
+      <node id="83332">
+        <label>thirdparty/kQOAuth/kqoauthutils.cpp</label>
+        <link refid="kqoauthutils_8cpp_source"/>
+      </node>
+      <node id="83333">
+        <label>thirdparty/openssl/include/openssl/ssl3.h</label>
+        <link refid="ssl3_8h_source"/>
+        <childnode refid="83331" relation="include">
+        </childnode>
+      </node>
+      <node id="83330">
+        <label>thirdparty/openssl/include/openssl/dtls1.h</label>
+        <link refid="dtls1_8h_source"/>
+        <childnode refid="83331" relation="include">
+        </childnode>
+      </node>
+      <node id="83331">
+        <label>thirdparty/openssl/include/openssl/ssl.h</label>
+        <link refid="ssl_8h_source"/>
+        <childnode refid="83332" relation="include">
+        </childnode>
+        <childnode refid="83333" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct__pitem" prot="public">_pitem</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="pqueue_8h_1a9e7788165522481521851e337ac42054" prot="public" static="no">
+        <type>struct _pqueue *</type>
+        <definition>typedef struct _pqueue* pqueue</definition>
+        <argsstring></argsstring>
+        <name>pqueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="70" column="1" bodyfile="thirdparty/openssl/include/openssl/pqueue.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pqueue_8h_1ad58a02ae59704ddfd4f0f934afb0e99a" prot="public" static="no">
+        <type>struct <ref refid="struct__pitem" kindref="compound">_pitem</ref></type>
+        <definition>typedef struct _pitem  pitem</definition>
+        <argsstring></argsstring>
+        <name>pitem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="77" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pqueue_8h_1a2b7f349099757a0f45cce83772cbb848" prot="public" static="no">
+        <type>struct <ref refid="struct__pitem" kindref="compound">_pitem</ref> *</type>
+        <definition>typedef struct _pitem* piterator</definition>
+        <argsstring></argsstring>
+        <name>piterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="79" column="1" bodyfile="thirdparty/openssl/include/openssl/pqueue.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pqueue_8h_1a9cf666037bccc254a6799b9f65ad663b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pitem_new</definition>
+        <argsstring>(unsigned char *prio64be, void *data)</argsstring>
+        <name>pitem_new</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>prio64be</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="81" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1aaf7c05ae52d91d8936012d52f58b584f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pitem_free</definition>
+        <argsstring>(pitem *item)</argsstring>
+        <name>pitem_free</name>
+        <param>
+          <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a5b1629b7c8e022795244106dd4f4583d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pqueue</type>
+        <definition>pqueue pqueue_new</definition>
+        <argsstring>(void)</argsstring>
+        <name>pqueue_new</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a98c6175992a49fbcea583545e69233ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pqueue_free</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_free</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a7ca2e9d70ad9804de3430b2e1e5ed1db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_insert</definition>
+        <argsstring>(pqueue pq, pitem *item)</argsstring>
+        <name>pqueue_insert</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <param>
+          <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="87" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1ac6a0954c05b94d145ee00174cade6686" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_peek</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_peek</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1adad310898753d65f63de5000158df601" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_pop</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_pop</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a75d3ab7331f2f9116c34c505ac192e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_find</definition>
+        <argsstring>(pqueue pq, unsigned char *prio64be)</argsstring>
+        <name>pqueue_find</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>prio64be</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="90" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a224a8b8ad3daddbeeb790cc4ad1f00a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_iterator</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_iterator</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1a761d41ee9d993504b00f7dece723858f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct__pitem" kindref="compound">pitem</ref> *</type>
+        <definition>pitem* pqueue_next</definition>
+        <argsstring>(piterator *iter)</argsstring>
+        <name>pqueue_next</name>
+        <param>
+          <type><ref refid="struct__pitem" kindref="compound">piterator</ref> *</type>
+          <declname>iter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1abb432937a5885a1f07875011b70b81d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void pqueue_print</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_print</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="94" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="pqueue_8h_1af3a461159e13711ca2ce9f774009e5c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int pqueue_size</definition>
+        <argsstring>(pqueue pq)</argsstring>
+        <name>pqueue_size</name>
+        <param>
+          <type>pqueue</type>
+          <declname>pq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/pqueue.h" line="95" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>crypto/pqueue/pqueue.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>DTLS<sp/>implementation<sp/>written<sp/>by<sp/>Nagendra<sp/>Modadugu</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>(nagendra@cs.stanford.edu)<sp/>for<sp/>the<sp/>OpenSSL<sp/>project<sp/>2005.<sp/><sp/></highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>1999-2005<sp/>The<sp/>OpenSSL<sp/>Project.<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>1.<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.<sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>2.<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>3.<sp/>All<sp/>advertising<sp/>materials<sp/>mentioning<sp/>features<sp/>or<sp/>use<sp/>of<sp/>this</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>software<sp/>must<sp/>display<sp/>the<sp/>following<sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit.<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>4.<sp/>The<sp/>names<sp/>&quot;OpenSSL<sp/>Toolkit&quot;<sp/>and<sp/>&quot;OpenSSL<sp/>Project&quot;<sp/>must<sp/>not<sp/>be<sp/>used<sp/>to</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>without</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>prior<sp/>written<sp/>permission.<sp/>For<sp/>written<sp/>permission,<sp/>please<sp/>contact</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>openssl-core@OpenSSL.org.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>5.<sp/>Products<sp/>derived<sp/>from<sp/>this<sp/>software<sp/>may<sp/>not<sp/>be<sp/>called<sp/>&quot;OpenSSL&quot;</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>nor<sp/>may<sp/>&quot;OpenSSL&quot;<sp/>appear<sp/>in<sp/>their<sp/>names<sp/>without<sp/>prior<sp/>written</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>permission<sp/>of<sp/>the<sp/>OpenSSL<sp/>Project.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>6.<sp/>Redistributions<sp/>of<sp/>any<sp/>form<sp/>whatsoever<sp/>must<sp/>retain<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>acknowledgment:</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>&quot;This<sp/>product<sp/>includes<sp/>software<sp/>developed<sp/>by<sp/>the<sp/>OpenSSL<sp/>Project</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>for<sp/>use<sp/>in<sp/>the<sp/>OpenSSL<sp/>Toolkit<sp/>(http://www.OpenSSL.org/)&quot;</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>EXPRESSED<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/><sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>OpenSSL<sp/>PROJECT<sp/>OR</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>ITS<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>====================================================================</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/>This<sp/>product<sp/>includes<sp/>cryptographic<sp/>software<sp/>written<sp/>by<sp/>Eric<sp/>Young</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>(eay@cryptsoft.com).<sp/><sp/>This<sp/>product<sp/>includes<sp/>software<sp/>written<sp/>by<sp/>Tim</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>Hudson<sp/>(tjh@cryptsoft.com).</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADER_PQUEUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_PQUEUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">_pqueue<sp/>*pqueue;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="struct__pitem" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__pitem" kindref="compound">_pitem</ref></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>priority[8];<sp/></highlight><highlight class="comment">/*<sp/>64-bit<sp/>value<sp/>in<sp/>big-endian<sp/>encoding<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__pitem" kindref="compound">_pitem</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/><ref refid="struct__pitem" kindref="compound">pitem</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct__pitem" kindref="compound">_pitem</ref><sp/>*<ref refid="struct__pitem" kindref="compound">piterator</ref>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pitem_new(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prio64be,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*data);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>pitem_free(<ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">pqueue<sp/>pqueue_new(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>pqueue_free(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_insert(pqueue<sp/>pq,<sp/><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*item);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_peek(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_pop(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_find(pqueue<sp/>pq,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*prio64be);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_iterator(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><ref refid="struct__pitem" kindref="compound">pitem</ref><sp/>*pqueue_next(piterator<sp/>*iter);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/>pqueue_print(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>pqueue_size(pqueue<sp/>pq);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>!<sp/>HEADER_PQUEUE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/openssl/include/openssl/pqueue.h"/>
+  </compounddef>
+</doxygen>

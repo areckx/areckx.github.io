@@ -1,0 +1,99 @@
+.TH "Stream" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Stream
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBBaseStream\fP, and \fBFilterStream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBincRef\fP ()"
+.br
+.ti -1c
+.RI "int \fBdecRef\fP ()"
+.br
+.ti -1c
+.RI "virtual StreamKind \fBgetKind\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "int \fBdoGetChars\fP (int nChars, Guchar *buffer)"
+.br
+.ti -1c
+.RI "void \fBfillGooString\fP (\fBGooString\fP *s)"
+.br
+.ti -1c
+.RI "Guchar * \fBtoUnsignedChars\fP (int *length, int initialSize=4096, int sizeIncrement=4096)"
+.br
+.ti -1c
+.RI "virtual int \fBgetChar\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBlookChar\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetRawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBgetRawChars\fP (int nChars, int *buffer)"
+.br
+.ti -1c
+.RI "virtual int \fBgetUnfilteredChar\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBunfilteredReset\fP ()=0"
+.br
+.ti -1c
+.RI "virtual char * \fBgetLine\fP (char *buf, int size)"
+.br
+.ti -1c
+.RI "virtual Goffset \fBgetPos\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBsetPos\fP (Goffset pos, int dir=0)=0"
+.br
+.ti -1c
+.RI "virtual \fBGooString\fP * \fBgetPSFilter\fP (int psLevel, const char *indent)"
+.br
+.ti -1c
+.RI "virtual GBool \fBisBinary\fP (GBool last=gTrue)=0"
+.br
+.ti -1c
+.RI "virtual \fBBaseStream\fP * \fBgetBaseStream\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBStream\fP * \fBgetUndecodedStream\fP ()=0"
+.br
+.ti -1c
+.RI "virtual \fBDict\fP * \fBgetDict\fP ()=0"
+.br
+.ti -1c
+.RI "virtual GBool \fBisEncoder\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBgetImageParams\fP (int *, StreamColorSpaceMode *)"
+.br
+.ti -1c
+.RI "virtual \fBStream\fP * \fBgetNextStream\fP ()"
+.br
+.ti -1c
+.RI "\fBStream\fP * \fBaddFilters\fP (\fBObject\fP *dict, int recursion=0)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 98 of file Stream\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

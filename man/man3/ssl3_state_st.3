@@ -1,0 +1,241 @@
+.TH "ssl3_state_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ssl3_state_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "long \fBflags\fP"
+.br
+.ti -1c
+.RI "int \fBdelay_buf_pop_ret\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBread_sequence\fP [8]"
+.br
+.ti -1c
+.RI "int \fBread_mac_secret_size\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBread_mac_secret\fP [EVP_MAX_MD_SIZE]"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_sequence\fP [8]"
+.br
+.ti -1c
+.RI "int \fBwrite_mac_secret_size\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_mac_secret\fP [EVP_MAX_MD_SIZE]"
+.br
+.ti -1c
+.RI "unsigned char \fBserver_random\fP [SSL3_RANDOM_SIZE]"
+.br
+.ti -1c
+.RI "unsigned char \fBclient_random\fP [SSL3_RANDOM_SIZE]"
+.br
+.ti -1c
+.RI "int \fBneed_empty_fragments\fP"
+.br
+.ti -1c
+.RI "int \fBempty_fragment_done\fP"
+.br
+.ti -1c
+.RI "int \fBinit_extra\fP"
+.br
+.ti -1c
+.RI "\fBSSL3_BUFFER\fP \fBrbuf\fP"
+.br
+.ti -1c
+.RI "\fBSSL3_BUFFER\fP \fBwbuf\fP"
+.br
+.ti -1c
+.RI "\fBSSL3_RECORD\fP \fBrrec\fP"
+.br
+.ti -1c
+.RI "\fBSSL3_RECORD\fP \fBwrec\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBalert_fragment\fP [2]"
+.br
+.ti -1c
+.RI "unsigned int \fBalert_fragment_len\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBhandshake_fragment\fP [4]"
+.br
+.ti -1c
+.RI "unsigned int \fBhandshake_fragment_len\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBwnum\fP"
+.br
+.ti -1c
+.RI "int \fBwpend_tot\fP"
+.br
+.ti -1c
+.RI "int \fBwpend_type\fP"
+.br
+.ti -1c
+.RI "int \fBwpend_ret\fP"
+.br
+.ti -1c
+.RI "const unsigned char * \fBwpend_buf\fP"
+.br
+.ti -1c
+.RI "\fBBIO\fP * \fBhandshake_buffer\fP"
+.br
+.ti -1c
+.RI "\fBEVP_MD_CTX\fP ** \fBhandshake_dgst\fP"
+.br
+.ti -1c
+.RI "int \fBchange_cipher_spec\fP"
+.br
+.ti -1c
+.RI "int \fBwarn_alert\fP"
+.br
+.ti -1c
+.RI "int \fBfatal_alert\fP"
+.br
+.ti -1c
+.RI "int \fBalert_dispatch\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBsend_alert\fP [2]"
+.br
+.ti -1c
+.RI "int \fBrenegotiate\fP"
+.br
+.ti -1c
+.RI "int \fBtotal_renegotiations\fP"
+.br
+.ti -1c
+.RI "int \fBnum_renegotiations\fP"
+.br
+.ti -1c
+.RI "int \fBin_read_app_data\fP"
+.br
+.ti -1c
+.RI "void * \fBclient_opaque_prf_input\fP"
+.br
+.ti -1c
+.RI "size_t \fBclient_opaque_prf_input_len\fP"
+.br
+.ti -1c
+.RI "void * \fBserver_opaque_prf_input\fP"
+.br
+.ti -1c
+.RI "size_t \fBserver_opaque_prf_input_len\fP"
+.br
+.ti -1c
+.RI "struct {"
+.br
+.ti -1c
+.RI "   unsigned char \fBcert_verify_md\fP [EVP_MAX_MD_SIZE *2]"
+.br
+.ti -1c
+.RI "   unsigned char \fBfinish_md\fP [EVP_MAX_MD_SIZE *2]"
+.br
+.ti -1c
+.RI "   int \fBfinish_md_len\fP"
+.br
+.ti -1c
+.RI "   unsigned char \fBpeer_finish_md\fP [EVP_MAX_MD_SIZE *2]"
+.br
+.ti -1c
+.RI "   int \fBpeer_finish_md_len\fP"
+.br
+.ti -1c
+.RI "   unsigned long \fBmessage_size\fP"
+.br
+.ti -1c
+.RI "   int \fBmessage_type\fP"
+.br
+.ti -1c
+.RI "   const \fBSSL_CIPHER\fP * \fBnew_cipher\fP"
+.br
+.ti -1c
+.RI "   \fBDH\fP * \fBdh\fP"
+.br
+.ti -1c
+.RI "   EC_KEY * \fBecdh\fP"
+.br
+.ti -1c
+.RI "   int \fBnext_state\fP"
+.br
+.ti -1c
+.RI "   int \fBreuse_message\fP"
+.br
+.ti -1c
+.RI "   int \fBcert_req\fP"
+.br
+.ti -1c
+.RI "   int \fBctype_num\fP"
+.br
+.ti -1c
+.RI "   char \fBctype\fP [SSL3_CT_NUMBER]"
+.br
+.ti -1c
+.RI "   int \fBuse_rsa_tmp\fP"
+.br
+.ti -1c
+.RI "   int \fBkey_block_length\fP"
+.br
+.ti -1c
+.RI "   unsigned char * \fBkey_block\fP"
+.br
+.ti -1c
+.RI "   const \fBEVP_CIPHER\fP * \fBnew_sym_enc\fP"
+.br
+.ti -1c
+.RI "   const \fBEVP_MD\fP * \fBnew_hash\fP"
+.br
+.ti -1c
+.RI "   int \fBnew_mac_pkey_type\fP"
+.br
+.ti -1c
+.RI "   int \fBnew_mac_secret_size\fP"
+.br
+.ti -1c
+.RI "   const \fBSSL_COMP\fP * \fBnew_compression\fP"
+.br
+.ti -1c
+.RI "   int \fBcert_request\fP"
+.br
+.ti -1c
+.RI "} \fBtmp\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBprevious_client_finished\fP [EVP_MAX_MD_SIZE]"
+.br
+.ti -1c
+.RI "unsigned char \fBprevious_client_finished_len\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBprevious_server_finished\fP [EVP_MAX_MD_SIZE]"
+.br
+.ti -1c
+.RI "unsigned char \fBprevious_server_finished_len\fP"
+.br
+.ti -1c
+.RI "int \fBsend_connection_binding\fP"
+.br
+.ti -1c
+.RI "int \fBnext_proto_neg_seen\fP"
+.br
+.ti -1c
+.RI "char \fBis_probably_safari\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 411 of file ssl3\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,831 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_alsa_driver" kind="class" language="C++" prot="public">
+    <compoundname>Ms::AlsaDriver</compoundname>
+      <sectiondef kind="private-type">
+      <memberdef kind="enum" id="class_ms_1_1_alsa_driver_1a2d5ecc0e14afdfcf8e3de1dccfe5cb2e" prot="private" static="no">
+        <name>@42</name>
+        <enumvalue id="class_ms_1_1_alsa_driver_1a2d5ecc0e14afdfcf8e3de1dccfe5cb2ea403219a43f724a536229d10f07df71e2" prot="private">
+          <name>MAXPFD</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_alsa_driver_1a2d5ecc0e14afdfcf8e3de1dccfe5cb2eaba66908de32d7b1cbfb0837b8133740d" prot="private">
+          <name>MAXPLAY</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="54" column="1" bodyfile="mscore/alsa.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_ms_1_1_alsa_driver_1aa68e52781792b9c07303de1dba7e8d83" prot="private" static="no">
+        <type>char *(*</type>
+        <definition>typedef char*(* Ms::AlsaDriver::play_function) (const float *, char *, int, int)</definition>
+        <argsstring>)(const float *, char *, int, int)</argsstring>
+        <name>play_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="51" column="1" bodyfile="mscore/alsa.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="class_ms_1_1_alsa_driver_1a9e512fd25415611b69a5af99bd940161" prot="private" static="no">
+        <type>char *(*</type>
+        <definition>typedef char*(* Ms::AlsaDriver::clear_function) (char *, int, int)</definition>
+        <argsstring>)(char *, int, int)</argsstring>
+        <name>clear_function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="52" column="1" bodyfile="mscore/alsa.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1adfaaec06b5e92766f18b0505b1275bfd" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::AlsaDriver::_name</definition>
+        <argsstring></argsstring>
+        <name>_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="50" column="1" bodyfile="mscore/alsa.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1ab49133df3998d033a9a04b80086c590d" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Ms::AlsaDriver::_rate</definition>
+        <argsstring></argsstring>
+        <name>_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="60" column="1" bodyfile="mscore/alsa.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a3bcc7cf03901a8bd221127aab5b923b8" prot="private" static="no" mutable="no">
+        <type>snd_pcm_uframes_t</type>
+        <definition>snd_pcm_uframes_t Ms::AlsaDriver::_frsize</definition>
+        <argsstring></argsstring>
+        <name>_frsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="61" column="1" bodyfile="mscore/alsa.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a489633f43ed30d23fa7997e989c8a236" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Ms::AlsaDriver::_nfrags</definition>
+        <argsstring></argsstring>
+        <name>_nfrags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="62" column="1" bodyfile="mscore/alsa.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1ac119a7d4a1433fdfc20f24db20658e48" prot="private" static="no" mutable="no">
+        <type>snd_pcm_format_t</type>
+        <definition>snd_pcm_format_t Ms::AlsaDriver::_play_format</definition>
+        <argsstring></argsstring>
+        <name>_play_format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="63" column="1" bodyfile="mscore/alsa.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a075eee7c58b5fd3c3fed6c5913e9ad91" prot="private" static="no" mutable="no">
+        <type>snd_pcm_access_t</type>
+        <definition>snd_pcm_access_t Ms::AlsaDriver::_play_access</definition>
+        <argsstring></argsstring>
+        <name>_play_access</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="64" column="1" bodyfile="mscore/alsa.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a8e0b846bc2b0f6f65b8dbf09531b1d4f" prot="private" static="no" mutable="no">
+        <type>snd_pcm_t *</type>
+        <definition>snd_pcm_t* Ms::AlsaDriver::_play_handle</definition>
+        <argsstring></argsstring>
+        <name>_play_handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="65" column="1" bodyfile="mscore/alsa.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a568e43e9bdc6e3501c3120d771309c8a" prot="private" static="no" mutable="no">
+        <type>snd_pcm_hw_params_t *</type>
+        <definition>snd_pcm_hw_params_t* Ms::AlsaDriver::_play_hwpar</definition>
+        <argsstring></argsstring>
+        <name>_play_hwpar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="66" column="1" bodyfile="mscore/alsa.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a61e90edde66b30aba4bd5cdc03e3c4d5" prot="private" static="no" mutable="no">
+        <type>snd_pcm_sw_params_t *</type>
+        <definition>snd_pcm_sw_params_t* Ms::AlsaDriver::_play_swpar</definition>
+        <argsstring></argsstring>
+        <name>_play_swpar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="67" column="1" bodyfile="mscore/alsa.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a1e22856bb6cfab15e970e9e25aeed2bc" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Ms::AlsaDriver::_play_nchan</definition>
+        <argsstring></argsstring>
+        <name>_play_nchan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="68" column="1" bodyfile="mscore/alsa.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1aea0774333480c9c0ced75b19c5cd1985" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::_play_npfd</definition>
+        <argsstring></argsstring>
+        <name>_play_npfd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="69" column="1" bodyfile="mscore/alsa.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1ac2b42439e7ecc8be7dca7a816175cb13" prot="private" static="no" mutable="no">
+        <type>PollFd</type>
+        <definition>PollFd Ms::AlsaDriver::_pfd[MAXPFD]</definition>
+        <argsstring>[MAXPFD]</argsstring>
+        <name>_pfd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="70" column="1" bodyfile="mscore/alsa.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a35562d4c0703a508eea0f58637b2f54b" prot="private" static="no" mutable="no">
+        <type>snd_pcm_uframes_t</type>
+        <definition>snd_pcm_uframes_t Ms::AlsaDriver::_capt_offs</definition>
+        <argsstring></argsstring>
+        <name>_capt_offs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="71" column="1" bodyfile="mscore/alsa.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a7d74c8805c36515af98addab4dad2615" prot="private" static="no" mutable="no">
+        <type>snd_pcm_uframes_t</type>
+        <definition>snd_pcm_uframes_t Ms::AlsaDriver::_play_offs</definition>
+        <argsstring></argsstring>
+        <name>_play_offs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="72" column="1" bodyfile="mscore/alsa.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a692ece578e1f311dfe07e8171374f78e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::_play_step</definition>
+        <argsstring></argsstring>
+        <name>_play_step</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="73" column="1" bodyfile="mscore/alsa.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1af96910fad01048eb45a9919ead7972ce" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Ms::AlsaDriver::_play_ptr[MAXPLAY]</definition>
+        <argsstring>[MAXPLAY]</argsstring>
+        <name>_play_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="74" column="1" bodyfile="mscore/alsa.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a1f8e3d1d6bb5c99e5008df8fa36af3e0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::_stat</definition>
+        <argsstring></argsstring>
+        <name>_stat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="75" column="1" bodyfile="mscore/alsa.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a42c9702319eb83d601670dd9e633f055" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::_pcnt</definition>
+        <argsstring></argsstring>
+        <name>_pcnt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="76" column="1" bodyfile="mscore/alsa.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1ada4d5616b3abdec720ce8081514bbd6e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::_xrun</definition>
+        <argsstring></argsstring>
+        <name>_xrun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="77" column="1" bodyfile="mscore/alsa.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1ae08e7ff4fff7042f932f0b239026cf24" prot="private" static="no" mutable="no">
+        <type>clear_function</type>
+        <definition>clear_function Ms::AlsaDriver::_clear_func</definition>
+        <argsstring></argsstring>
+        <name>_clear_func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="78" column="1" bodyfile="mscore/alsa.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1aabacace19e7b5375caaa6fb4c259615a" prot="private" static="no" mutable="no">
+        <type>play_function</type>
+        <definition>play_function Ms::AlsaDriver::_play_func</definition>
+        <argsstring></argsstring>
+        <name>_play_func</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="79" column="1" bodyfile="mscore/alsa.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_alsa_driver_1a4d229a302a14ea1579358fda10fba8e7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::mmappedInterface</definition>
+        <argsstring></argsstring>
+        <name>mmappedInterface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="80" column="1" bodyfile="mscore/alsa.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1af6d5011c4d65e9c6f60fe626472521a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::setHwpar</definition>
+        <argsstring>(snd_pcm_t *handle, snd_pcm_hw_params_t *hwpar)</argsstring>
+        <name>setHwpar</name>
+        <param>
+          <type>snd_pcm_t *</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>snd_pcm_hw_params_t *</type>
+          <declname>hwpar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a00ce9a172e345ce8a378605749b4d13d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::setSwpar</definition>
+        <argsstring>(snd_pcm_t *handle, snd_pcm_sw_params_t *swpar)</argsstring>
+        <name>setSwpar</name>
+        <param>
+          <type>snd_pcm_t *</type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>snd_pcm_sw_params_t *</type>
+          <declname>swpar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1af4c90fe0879f7e367148afc23d7bfdc4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::recover</definition>
+        <argsstring>()</argsstring>
+        <name>recover</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1aad0c218afd09d263e4b57142aca7bda9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::playInit</definition>
+        <argsstring>(snd_pcm_uframes_t len)</argsstring>
+        <name>playInit</name>
+        <param>
+          <type>snd_pcm_uframes_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1aef6d218f5ef4946014be48f9bfce618a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>snd_pcm_sframes_t</type>
+        <definition>snd_pcm_sframes_t Ms::AlsaDriver::pcmWait</definition>
+        <argsstring>()</argsstring>
+        <name>pcmWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="89" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a59b6ad5151782fe7cc90c7d20967529c" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>snd_pcm_t *</type>
+        <definition>snd_pcm_t* Ms::AlsaDriver::playHandle</definition>
+        <argsstring>() const</argsstring>
+        <name>playHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="90" column="1" bodyfile="mscore/alsa.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1ac5377ed441407a7f0257504effd15f0c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaDriver::clearChan</definition>
+        <argsstring>(int chan, snd_pcm_uframes_t len)</argsstring>
+        <name>clearChan</name>
+        <param>
+          <type>int</type>
+          <declname>chan</declname>
+        </param>
+        <param>
+          <type>snd_pcm_uframes_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="91" column="1" bodyfile="mscore/alsa.h" bodystart="91" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1ac573cd1c3bdd48c07a2eb224f096d645" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::clear_32le</definition>
+        <argsstring>(char *dst, int step, int nfrm)</argsstring>
+        <name>clear_32le</name>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a7fd9dde7bef557cfa4574129f3a0345f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::clear_24le</definition>
+        <argsstring>(char *dst, int step, int nfrm)</argsstring>
+        <name>clear_24le</name>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1aec7fc758f64595a71a74d75d3ed5e815" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::clear_16le</definition>
+        <argsstring>(char *dst, int step, int nfrm)</argsstring>
+        <name>clear_16le</name>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="84" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a7aa2537fb54c60e90243584689c52445" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::play_32le</definition>
+        <argsstring>(const float *src, char *dst, int step, int nfrm)</argsstring>
+        <name>play_32le</name>
+        <param>
+          <type>const float *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="85" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a6d74ac30d04207a80dea504315d9b288" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::play_24le</definition>
+        <argsstring>(const float *src, char *dst, int step, int nfrm)</argsstring>
+        <name>play_24le</name>
+        <param>
+          <type>const float *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1af806fe384793b017a9e7bf20931448ec" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>static char* Ms::AlsaDriver::play_16le</definition>
+        <argsstring>(const float *src, char *dst, int step, int nfrm)</argsstring>
+        <name>play_16le</name>
+        <param>
+          <type>const float *</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>dst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nfrm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="87" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a0ce32b17f82e1208db619bce1e129fe4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::AlsaDriver::AlsaDriver</definition>
+        <argsstring>(QString, unsigned, snd_pcm_uframes_t, unsigned)</argsstring>
+        <name>AlsaDriver</name>
+        <param>
+          <type>QString</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <param>
+          <type>snd_pcm_uframes_t</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="96" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a6c779c16d961985428eedaf8dff44cfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::AlsaDriver::~AlsaDriver</definition>
+        <argsstring>()</argsstring>
+        <name>~AlsaDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1ad10700356b2b4046d3ee8bac69b78005" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="98" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1aef6977fda12be79010cfc7218bb23058" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaDriver::printinfo</definition>
+        <argsstring>()</argsstring>
+        <name>printinfo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="99" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a3b1e612781e213018b68ea9b6baa44e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::AlsaDriver::pcmStart</definition>
+        <argsstring>()</argsstring>
+        <name>pcmStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="100" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a8737b5d42b31c51d00661ac699b0e985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::AlsaDriver::pcmStop</definition>
+        <argsstring>()</argsstring>
+        <name>pcmStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="101" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a552c37798be2053031c399b0aa82ef5b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>snd_pcm_uframes_t</type>
+        <definition>snd_pcm_uframes_t Ms::AlsaDriver::fsize</definition>
+        <argsstring>() const</argsstring>
+        <name>fsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="102" column="1" bodyfile="mscore/alsa.h" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1a59ddf595b06d1d1351e2a2f88a5f571e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int Ms::AlsaDriver::sampleRate</definition>
+        <argsstring>() const</argsstring>
+        <name>sampleRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="103" column="1" bodyfile="mscore/alsa.h" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_alsa_driver_1afd055d3f649593b86cf12df026fe2e88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::AlsaDriver::write</definition>
+        <argsstring>(int n, float *l, float *r)</argsstring>
+        <name>write</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/alsa.h" line="104" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mscore/alsa.h" line="49" column="1" bodyfile="mscore/alsa.h" bodystart="49" bodyend="105"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_alsa_driver_1a35562d4c0703a508eea0f58637b2f54b" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_capt_offs</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ae08e7ff4fff7042f932f0b239026cf24" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_clear_func</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a3bcc7cf03901a8bd221127aab5b923b8" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_frsize</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1adfaaec06b5e92766f18b0505b1275bfd" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_name</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a489633f43ed30d23fa7997e989c8a236" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_nfrags</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a42c9702319eb83d601670dd9e633f055" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_pcnt</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ac2b42439e7ecc8be7dca7a816175cb13" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_pfd</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a075eee7c58b5fd3c3fed6c5913e9ad91" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_access</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ac119a7d4a1433fdfc20f24db20658e48" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_format</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aabacace19e7b5375caaa6fb4c259615a" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_func</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a8e0b846bc2b0f6f65b8dbf09531b1d4f" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_handle</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a568e43e9bdc6e3501c3120d771309c8a" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_hwpar</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a1e22856bb6cfab15e970e9e25aeed2bc" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_nchan</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aea0774333480c9c0ced75b19c5cd1985" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_npfd</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a7d74c8805c36515af98addab4dad2615" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_offs</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1af96910fad01048eb45a9919ead7972ce" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_ptr</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a692ece578e1f311dfe07e8171374f78e" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_step</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a61e90edde66b30aba4bd5cdc03e3c4d5" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_play_swpar</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ab49133df3998d033a9a04b80086c590d" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_rate</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a1f8e3d1d6bb5c99e5008df8fa36af3e0" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_stat</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ada4d5616b3abdec720ce8081514bbd6e" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>_xrun</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a0ce32b17f82e1208db619bce1e129fe4" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>AlsaDriver</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aec7fc758f64595a71a74d75d3ed5e815" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>clear_16le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a7fd9dde7bef557cfa4574129f3a0345f" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>clear_24le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ac573cd1c3bdd48c07a2eb224f096d645" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>clear_32le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a9e512fd25415611b69a5af99bd940161" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>clear_function</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ac5377ed441407a7f0257504effd15f0c" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>clearChan</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a552c37798be2053031c399b0aa82ef5b" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>fsize</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1ad10700356b2b4046d3ee8bac69b78005" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>init</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a2d5ecc0e14afdfcf8e3de1dccfe5cb2ea403219a43f724a536229d10f07df71e2" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>MAXPFD</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a2d5ecc0e14afdfcf8e3de1dccfe5cb2eaba66908de32d7b1cbfb0837b8133740d" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>MAXPLAY</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a4d229a302a14ea1579358fda10fba8e7" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>mmappedInterface</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a3b1e612781e213018b68ea9b6baa44e3" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>pcmStart</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a8737b5d42b31c51d00661ac699b0e985" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>pcmStop</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aef6d218f5ef4946014be48f9bfce618a" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>pcmWait</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1af806fe384793b017a9e7bf20931448ec" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>play_16le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a6d74ac30d04207a80dea504315d9b288" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>play_24le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a7aa2537fb54c60e90243584689c52445" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>play_32le</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aa68e52781792b9c07303de1dba7e8d83" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>play_function</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a59b6ad5151782fe7cc90c7d20967529c" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>playHandle</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aad0c218afd09d263e4b57142aca7bda9" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>playInit</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1aef6977fda12be79010cfc7218bb23058" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>printinfo</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1af4c90fe0879f7e367148afc23d7bfdc4" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>recover</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a59ddf595b06d1d1351e2a2f88a5f571e" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>sampleRate</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1af6d5011c4d65e9c6f60fe626472521a1" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>setHwpar</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a00ce9a172e345ce8a378605749b4d13d" prot="private" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>setSwpar</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1afd055d3f649593b86cf12df026fe2e88" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>write</name></member>
+      <member refid="class_ms_1_1_alsa_driver_1a6c779c16d961985428eedaf8dff44cfc" prot="public" virt="non-virtual"><scope>Ms::AlsaDriver</scope><name>~AlsaDriver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

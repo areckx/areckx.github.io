@@ -1,0 +1,131 @@
+.TH "Ms::Jump" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Jump \- \fBJump\fP label\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <jump\&.h>\fP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : char { \fBDC\fP, \fBDC_AL_FINE\fP, \fBDC_AL_CODA\fP, \fBDS_AL_CODA\fP, \fBDS_AL_FINE\fP, \fBDS\fP, \fBUSER\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJump\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetJumpType\fP (Type t)"
+.br
+.ti -1c
+.RI "Type \fBjumpType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBjumpTypeUserName\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBJump\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "QString \fBjumpTo\fP () const"
+.br
+.ti -1c
+.RI "QString \fBplayUntil\fP () const"
+.br
+.ti -1c
+.RI "QString \fBcontinueAt\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetJumpTo\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetPlayUntil\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetContinueAt\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBundoSetJumpTo\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBundoSetPlayUntil\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBundoSetContinueAt\fP (const QString &s)"
+.br
+.ti -1c
+.RI "bool \fBplayRepeats\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayRepeats\fP (bool val)"
+.br
+.ti -1c
+.RI "virtual bool \fBsystemFlag\fP () const override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "QString \fBcontinueAt\fP"
+.br
+.ti -1c
+.RI "QString \fBjumpTo\fP"
+.br
+.ti -1c
+.RI "QString \fBplayUntil\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBJump\fP label\&. 
+.PP
+Definition at line 34 of file jump\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_tiff_writer_8cc" kind="file" language="C++">
+    <compoundname>TiffWriter.cc</compoundname>
+    <includes refid="_tiff_writer_8h" local="yes">TiffWriter.h</includes>
+    <incdepgraph>
+      <node id="85218">
+        <label>thirdparty/poppler/goo/TiffWriter.cc</label>
+        <link refid="_tiff_writer_8cc"/>
+        <childnode refid="85219" relation="include">
+        </childnode>
+      </node>
+      <node id="85219">
+        <label>TiffWriter.h</label>
+        <link refid="_tiff_writer_8h_source"/>
+        <childnode refid="85220" relation="include">
+        </childnode>
+      </node>
+      <node id="85220">
+        <label>poppler-config.h</label>
+        <link refid="poppler-config_8h_source"/>
+        <childnode refid="85221" relation="include">
+        </childnode>
+      </node>
+      <node id="85221">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>TiffWriter.cc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>GPLv2<sp/>or<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2010,<sp/>2012<sp/>William<sp/>Bader<sp/>&lt;williambader@hotmail.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2012<sp/>Albert<sp/>Astals<sp/>Cid<sp/>&lt;aacid@kde.org&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2012<sp/>Adrian<sp/>Johnson<sp/>&lt;ajohnson@redneon.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2012<sp/>Pino<sp/>Toscano<sp/>&lt;pino@kde.org&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2014<sp/>Steven<sp/>Lee<sp/>&lt;roc.sky@gmail.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;TiffWriter.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>ENABLE_LIBTIFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;io.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tiffio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">TiffWriterPrivate<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>TIFF<sp/>*f;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>LibTiff<sp/>file<sp/>context</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numRows;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>rows<sp/>in<sp/>the<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>curRow;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>rows<sp/>written</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*compressionString;<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>compression<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>TiffWriter::Format<sp/>format;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>format<sp/>of<sp/>image<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">TiffWriter::~TiffWriter()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>priv;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">TiffWriter::TiffWriter(Format<sp/>formatA)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>priv<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>TiffWriterPrivate;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>priv-&gt;f<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>priv-&gt;numRows<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>priv-&gt;curRow<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>priv-&gt;compressionString<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>priv-&gt;format<sp/>=<sp/>formatA;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>compression<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TiffWriter::setCompressionString(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*compressionStringArg)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>priv-&gt;compressionString<sp/>=<sp/>compressionStringArg;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Write<sp/>a<sp/>TIFF<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TiffWriter::init(FILE<sp/>*openedFile,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hDPI,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vDPI)</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compression;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>uint16<sp/>photometric<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>uint32<sp/>rowsperstrip<sp/>=<sp/>(uint32)<sp/>-1;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>bitspersample;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>uint16<sp/>samplesperpixel<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">compression_name_tag<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*compressionName;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>name<sp/>of<sp/>the<sp/>compression<sp/>option<sp/>from<sp/>the<sp/>command<sp/>line</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>compressionCode;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>internal<sp/>libtiff<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*compressionDescription;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>descriptive<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>}<sp/>compressionList[]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;none&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/>COMPRESSION_NONE,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;no<sp/>compression&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittrle&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITTRLE,<sp/></highlight><highlight class="stringliteral">&quot;CCITT<sp/>modified<sp/>Huffman<sp/>RLE&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittfax3&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITTFAX3,</highlight><highlight class="stringliteral">&quot;CCITT<sp/>Group<sp/>3<sp/>fax<sp/>encoding&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittt4&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITT_T4,<sp/><sp/></highlight><highlight class="stringliteral">&quot;CCITT<sp/>T.4<sp/>(TIFF<sp/>6<sp/>name)&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittfax4&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITTFAX4,<sp/></highlight><highlight class="stringliteral">&quot;CCITT<sp/>Group<sp/>4<sp/>fax<sp/>encoding&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittt6&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITT_T6,<sp/><sp/></highlight><highlight class="stringliteral">&quot;CCITT<sp/>T.6<sp/>(TIFF<sp/>6<sp/>name)&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;lzw&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>COMPRESSION_LZW,<sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Lempel-Ziv<sp/><sp/>&amp;<sp/>Welch&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ojpeg&quot;</highlight><highlight class="normal">,<sp/><sp/>COMPRESSION_OJPEG,<sp/><sp/></highlight><highlight class="stringliteral">&quot;!6.0<sp/>JPEG&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;jpeg&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/>COMPRESSION_JPEG,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%JPEG<sp/>DCT<sp/>compression&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;next&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/>COMPRESSION_NEXT,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;NeXT<sp/>2-bit<sp/>RLE&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;packbits&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_PACKBITS,<sp/></highlight><highlight class="stringliteral">&quot;Macintosh<sp/>RLE&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;ccittrlew&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_CCITTRLEW,<sp/></highlight><highlight class="stringliteral">&quot;CCITT<sp/>modified<sp/>Huffman<sp/>RLE<sp/>w/<sp/>word<sp/>alignment&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;deflate&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_DEFLATE,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Deflate<sp/>compression&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;adeflate&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_ADOBE_DEFLATE,<sp/></highlight><highlight class="stringliteral">&quot;Deflate<sp/>compression,<sp/>as<sp/>recognized<sp/>by<sp/>Adobe&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;dcs&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/><sp/>COMPRESSION_DCS,<sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Kodak<sp/>DCS<sp/>encoding&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;jbig&quot;</highlight><highlight class="normal">,<sp/><sp/><sp/>COMPRESSION_JBIG,<sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ISO<sp/>JBIG&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/></highlight><highlight class="stringliteral">&quot;jp2000&quot;</highlight><highlight class="normal">,<sp/>COMPRESSION_JP2000,<sp/></highlight><highlight class="stringliteral">&quot;Leadtools<sp/>JPEG2000&quot;</highlight><highlight class="normal"><sp/>},</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>NULL,<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>NULL<sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Initialize</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>priv-&gt;f<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>priv-&gt;curRow<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Store<sp/>the<sp/>number<sp/>of<sp/>rows</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>priv-&gt;numRows<sp/>=<sp/>height;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>compression</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>compression<sp/>=<sp/>COMPRESSION_NONE;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(priv-&gt;compressionString<sp/>==<sp/>NULL<sp/>||<sp/>strcmp(priv-&gt;compressionString,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>compression<sp/>=<sp/>COMPRESSION_NONE;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>compressionList[i].compressionName<sp/>!=<sp/>NULL;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(strcmp(priv-&gt;compressionString,<sp/>compressionList[i].compressionName)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>compression<sp/>=<sp/>compressionList[i].compressionCode;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(compressionList[i].compressionName<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;TiffWriter:<sp/>Unknown<sp/>compression<sp/>type<sp/>&apos;%.10s&apos;,<sp/>using<sp/>&apos;none&apos;.\n&quot;</highlight><highlight class="normal">,<sp/>priv-&gt;compressionString);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;Known<sp/>compression<sp/>types<sp/>(the<sp/>tiff<sp/>library<sp/>might<sp/>not<sp/>support<sp/>every<sp/>type)\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/>compressionList[i].compressionName<sp/>!=<sp/>NULL;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;%10s<sp/>%s\n&quot;</highlight><highlight class="normal">,<sp/>compressionList[i].compressionName,<sp/>compressionList[i].compressionDescription);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>bits<sp/>per<sp/>sample,<sp/>samples<sp/>per<sp/>pixel,<sp/>and<sp/>photometric<sp/>type<sp/>from<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>bitspersample<sp/>=<sp/>(priv-&gt;format<sp/>==<sp/>MONOCHROME<sp/>?<sp/>1<sp/>:<sp/>8);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(priv-&gt;format)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>MONOCHROME:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>GRAY:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>samplesperpixel<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>photometric<sp/>=<sp/>PHOTOMETRIC_MINISBLACK;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>RGB:</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>samplesperpixel<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>photometric<sp/>=<sp/>PHOTOMETRIC_RGB;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>RGBA_PREMULTIPLIED:</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>samplesperpixel<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>photometric<sp/>=<sp/>PHOTOMETRIC_RGB;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>CMYK:</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>samplesperpixel<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>photometric<sp/>=<sp/>PHOTOMETRIC_SEPARATED;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Open<sp/>the<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(openedFile<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;TiffWriter:<sp/>No<sp/>output<sp/>file<sp/>given.\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//Convert<sp/>C<sp/>Library<sp/>handle<sp/>to<sp/>Win32<sp/>Handle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>priv-&gt;f<sp/>=<sp/>TIFFFdOpen(_get_osfhandle(fileno(openedFile)),<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>priv-&gt;f<sp/>=<sp/>TIFFFdOpen(fileno(openedFile),<sp/></highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!priv-&gt;f)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>TIFF<sp/>tags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_IMAGEWIDTH,<sp/><sp/>width);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_IMAGELENGTH,<sp/>height);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_ORIENTATION,<sp/>ORIENTATION_TOPLEFT);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_SAMPLESPERPIXEL,<sp/>samplesperpixel);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_BITSPERSAMPLE,<sp/>bitspersample);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_PLANARCONFIG,<sp/>PLANARCONFIG_CONTIG);</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_PHOTOMETRIC,<sp/>photometric);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_COMPRESSION,<sp/>(uint16)<sp/>compression);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_ROWSPERSTRIP,<sp/>TIFFDefaultStripSize(priv-&gt;f,<sp/>rowsperstrip));</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_XRESOLUTION,<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>hDPI);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_YRESOLUTION,<sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>vDPI);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_RESOLUTIONUNIT,<sp/>RESUNIT_INCH);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(priv-&gt;format<sp/>==<sp/>RGBA_PREMULTIPLIED)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16<sp/>extra<sp/>=<sp/>EXTRASAMPLE_ASSOCALPHA;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_EXTRASAMPLES,<sp/>1,<sp/>&amp;extra);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(priv-&gt;format<sp/>==<sp/>CMYK)<sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_INKSET,<sp/>INKSET_CMYK);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>TIFFSetField(priv-&gt;f,<sp/>TIFFTAG_NUMBEROFINKS,<sp/>4);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TiffWriter::writePointers(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**rowPointers,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rowCount)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>all<sp/>rows<sp/>to<sp/>the<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>rowCount;<sp/>row++)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TIFFWriteScanline(priv-&gt;f,<sp/>rowPointers[row],<sp/>row,<sp/>0)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;TiffWriter:<sp/>Error<sp/>writing<sp/>tiff<sp/>row<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>row);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TiffWriter::writeRow(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>**rowData)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>single<sp/>row</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(TIFFWriteScanline(priv-&gt;f,<sp/>*rowData,<sp/>priv-&gt;curRow,<sp/>0)<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/></highlight><highlight class="stringliteral">&quot;TiffWriter:<sp/>Error<sp/>writing<sp/>tiff<sp/>row<sp/>%d\n&quot;</highlight><highlight class="normal">,<sp/>priv-&gt;curRow);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>priv-&gt;curRow++;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>TiffWriter::close()</highlight></codeline>
+<codeline lineno="228"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Close<sp/>the<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>TIFFClose(priv-&gt;f);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/goo/TiffWriter.cc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,129 @@
+.TH "Ms::MasterSynthesizer" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MasterSynthesizer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsfChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetGain\fP (float f)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBsoundFontChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBgainChanged\fP (float)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBregisterSynthesizer\fP (\fBSynthesizer\fP *)"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "float \fBsampleRate\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSampleRate\fP (float val)"
+.br
+.ti -1c
+.RI "void \fBprocess\fP (unsigned, float *)"
+.br
+.ti -1c
+.RI "void \fBplay\fP (const \fBNPlayEvent\fP &, unsigned)"
+.br
+.ti -1c
+.RI "void \fBsetMasterTuning\fP (double val)"
+.br
+.ti -1c
+.RI "double \fBmasterTuning\fP () const"
+.br
+.ti -1c
+.RI "int \fBindex\fP (const QString &) const"
+.br
+.ti -1c
+.RI "QString \fBname\fP (unsigned) const"
+.br
+.ti -1c
+.RI "QList< \fBMidiPatch\fP * > \fBgetPatchInfo\fP () const"
+.br
+.ti -1c
+.RI "\fBSynthesizerState\fP \fBstate\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsetState\fP (const \fBSynthesizerState\fP &)"
+.br
+.ti -1c
+.RI "\fBSynthesizer\fP * \fBsynthesizer\fP (const QString &name)"
+.br
+.ti -1c
+.RI "const std::vector< \fBEffect\fP * > & \fBeffectList\fP (int ab) const"
+.br
+.ti -1c
+.RI "const std::vector< \fBSynthesizer\fP * > \fBsynthesizer\fP () const"
+.br
+.ti -1c
+.RI "void \fBregisterEffect\fP (int ab, \fBEffect\fP *)"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "void \fBallSoundsOff\fP (int channel)"
+.br
+.ti -1c
+.RI "void \fBallNotesOff\fP (int channel)"
+.br
+.ti -1c
+.RI "void \fBsetEffect\fP (int ab, int idx)"
+.br
+.ti -1c
+.RI "\fBEffect\fP * \fBeffect\fP (int ab)"
+.br
+.ti -1c
+.RI "int \fBindexOfEffect\fP (int ab)"
+.br
+.ti -1c
+.RI "float \fBgain\fP () const"
+.br
+.ti -1c
+.RI "float \fBboost\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBoost\fP (float v)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBMAX_BUFFERSIZE\fP = 8192"
+.br
+.ti -1c
+.RI "static const int \fBMAX_EFFECTS\fP = 2"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file msynthesizer\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

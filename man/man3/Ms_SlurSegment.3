@@ -1,0 +1,88 @@
+.TH "Ms::SlurSegment" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::SlurSegment \- a single segment of slur; also used for \fBTie\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <slur\&.h>\fP
+.PP
+Inherits \fBMs::SlurTieSegment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSlurSegment\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBSlurSegment\fP (const \fBSlurSegment\fP &ss)"
+.br
+.ti -1c
+.RI "virtual \fBSlurSegment\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBsubtypeName\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "void \fBlayoutSegment\fP (const QPointF &p1, const QPointF &p2)"
+.br
+.ti -1c
+.RI "bool \fBisEdited\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgripAnchor\fP (Grip grip) const override"
+.br
+.ti -1c
+.RI "QPointF \fBgetGrip\fP (Grip) const override"
+.br
+.ti -1c
+.RI "void \fBsetGrip\fP (Grip, const QPointF &) override"
+.br
+.ti -1c
+.RI "\fBSlur\fP * \fBslur\fP () const"
+.br
+.ti -1c
+.RI "void \fBcomputeBezier\fP (QPointF so=QPointF())"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBchangeAnchor\fP (\fBMuseScoreView\fP *, Grip, \fBElement\fP *)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+a single segment of slur; also used for \fBTie\fP 
+.PP
+Definition at line 25 of file slur\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

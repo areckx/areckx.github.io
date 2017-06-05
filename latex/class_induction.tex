@@ -1,0 +1,123 @@
+\hypertarget{class_induction}{}\section{Induction Class Reference}
+\label{class_induction}\index{Induction@{Induction}}
+
+
+{\ttfamily \#include $<$Induction.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_agent_list}{Agent\+List} \hyperlink{class_induction_ad6cfd2e62ae5262273d83a0b858bee33}{beat\+Induction} (const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&params, const Event\+List \&events)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{class_induction_a2ab726717d99a6edb75bcd47c4ecdec4}{cluster\+Width} = 0.\+025
+\item 
+static double \hyperlink{class_induction_a79992fbf54461174a5b7113397210c0a}{min\+I\+OI} = 0.\+070
+\item 
+static double \hyperlink{class_induction_ab279072ddf4b9340c14a90622513f52a}{max\+I\+OI} = 2.\+500
+\item 
+static double \hyperlink{class_induction_ae8c5b515b4df99e1c1003f42f9f5c13a}{min\+I\+BI} = 0.\+3
+\item 
+static double \hyperlink{class_induction_a4f369d04b9ef6a70b1da601489d8b859}{max\+I\+BI} = 1.\+0
+\item 
+static int \hyperlink{class_induction_ae128800b79984f390a9a00a7850e6f7d}{topN} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Performs tempo induction by finding clusters of similar inter-\/onset intervals (I\+O\+Is), ranking them according to the number of intervals and relationships between them, and returning a set of tempo hypotheses for initialising the beat tracking agents. 
+
+Definition at line 31 of file Induction.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_induction_ad6cfd2e62ae5262273d83a0b858bee33}\label{class_induction_ad6cfd2e62ae5262273d83a0b858bee33}} 
+\index{Induction@{Induction}!beat\+Induction@{beat\+Induction}}
+\index{beat\+Induction@{beat\+Induction}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{beat\+Induction()}{beatInduction()}}
+{\footnotesize\ttfamily \hyperlink{class_agent_list}{Agent\+List} Induction\+::beat\+Induction (\begin{DoxyParamCaption}\item[{const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&}]{params,  }\item[{const Event\+List \&}]{events }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Performs tempo induction (see J\+N\+MR 2001 paper by Simon Dixon for details). 
+\begin{DoxyParams}{Parameters}
+{\em events} & The onsets (or other events) from which the tempo is induced \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of beat tracking agents, where each is initialised with one of the top tempo hypotheses but no beats 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Induction.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_induction_a2ab726717d99a6edb75bcd47c4ecdec4}\label{class_induction_a2ab726717d99a6edb75bcd47c4ecdec4}} 
+\index{Induction@{Induction}!cluster\+Width@{cluster\+Width}}
+\index{cluster\+Width@{cluster\+Width}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{cluster\+Width}{clusterWidth}}
+{\footnotesize\ttfamily double Induction\+::cluster\+Width = 0.\+025\hspace{0.3cm}{\ttfamily [static]}}
+
+The maximum difference in I\+O\+Is which are in the same cluster 
+
+Definition at line 35 of file Induction.\+h.
+
+\mbox{\Hypertarget{class_induction_a4f369d04b9ef6a70b1da601489d8b859}\label{class_induction_a4f369d04b9ef6a70b1da601489d8b859}} 
+\index{Induction@{Induction}!max\+I\+BI@{max\+I\+BI}}
+\index{max\+I\+BI@{max\+I\+BI}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{max\+I\+BI}{maxIBI}}
+{\footnotesize\ttfamily double Induction\+::max\+I\+BI = 1.\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+The maximum inter-\/beat interval (I\+BI), i.\+e. the minimum tempo hypothesis that can be returned. 1.\+00 seconds == 60 B\+PM 0.\+75 seconds == 80 B\+PM 0.\+60 seconds == 100 B\+PM 
+
+Definition at line 56 of file Induction.\+h.
+
+\mbox{\Hypertarget{class_induction_ab279072ddf4b9340c14a90622513f52a}\label{class_induction_ab279072ddf4b9340c14a90622513f52a}} 
+\index{Induction@{Induction}!max\+I\+OI@{max\+I\+OI}}
+\index{max\+I\+OI@{max\+I\+OI}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{max\+I\+OI}{maxIOI}}
+{\footnotesize\ttfamily double Induction\+::max\+I\+OI = 2.\+500\hspace{0.3cm}{\ttfamily [static]}}
+
+The maximum I\+OI for inclusion in a cluster 
+
+Definition at line 41 of file Induction.\+h.
+
+\mbox{\Hypertarget{class_induction_ae8c5b515b4df99e1c1003f42f9f5c13a}\label{class_induction_ae8c5b515b4df99e1c1003f42f9f5c13a}} 
+\index{Induction@{Induction}!min\+I\+BI@{min\+I\+BI}}
+\index{min\+I\+BI@{min\+I\+BI}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{min\+I\+BI}{minIBI}}
+{\footnotesize\ttfamily double Induction\+::min\+I\+BI = 0.\+3\hspace{0.3cm}{\ttfamily [static]}}
+
+The minimum inter-\/beat interval (I\+BI), i.\+e. the maximum tempo hypothesis that can be returned. 0.\+30 seconds == 200 B\+PM 0.\+25 seconds == 240 B\+PM 
+
+Definition at line 48 of file Induction.\+h.
+
+\mbox{\Hypertarget{class_induction_a79992fbf54461174a5b7113397210c0a}\label{class_induction_a79992fbf54461174a5b7113397210c0a}} 
+\index{Induction@{Induction}!min\+I\+OI@{min\+I\+OI}}
+\index{min\+I\+OI@{min\+I\+OI}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{min\+I\+OI}{minIOI}}
+{\footnotesize\ttfamily double Induction\+::min\+I\+OI = 0.\+070\hspace{0.3cm}{\ttfamily [static]}}
+
+The minimum I\+OI for inclusion in a cluster 
+
+Definition at line 38 of file Induction.\+h.
+
+\mbox{\Hypertarget{class_induction_ae128800b79984f390a9a00a7850e6f7d}\label{class_induction_ae128800b79984f390a9a00a7850e6f7d}} 
+\index{Induction@{Induction}!topN@{topN}}
+\index{topN@{topN}!Induction@{Induction}}
+\subsubsection{\texorpdfstring{topN}{topN}}
+{\footnotesize\ttfamily int Induction\+::topN = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+The maximum number of tempo hypotheses to return 
+
+Definition at line 59 of file Induction.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/beatroot/Induction.\+h\item 
+thirdparty/beatroot/Induction.\+cpp\end{DoxyCompactItemize}

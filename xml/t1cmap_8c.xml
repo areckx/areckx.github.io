@@ -1,0 +1,809 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="t1cmap_8c" kind="file" language="C++">
+    <compoundname>t1cmap.c</compoundname>
+    <includes refid="t1cmap_8h" local="yes">t1cmap.h</includes>
+    <includes refid="psauxerr_8h" local="yes">psauxerr.h</includes>
+    <includedby refid="psaux_8c" local="yes">thirdparty/freetype/src/psaux/psaux.c</includedby>
+    <incdepgraph>
+      <node id="80581">
+        <label>psauxerr.h</label>
+        <link refid="psauxerr_8h_source"/>
+      </node>
+      <node id="80580">
+        <label>ft2build.h</label>
+      </node>
+      <node id="80578">
+        <label>thirdparty/freetype/src/psaux/t1cmap.c</label>
+        <link refid="t1cmap_8c"/>
+        <childnode refid="80579" relation="include">
+        </childnode>
+        <childnode refid="80581" relation="include">
+        </childnode>
+      </node>
+      <node id="80579">
+        <label>t1cmap.h</label>
+        <link refid="t1cmap_8h_source"/>
+        <childnode refid="80580" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="80582">
+        <label>thirdparty/freetype/src/psaux/t1cmap.c</label>
+        <link refid="t1cmap_8c"/>
+        <childnode refid="80583" relation="include">
+        </childnode>
+      </node>
+      <node id="80583">
+        <label>thirdparty/freetype/src/psaux/psaux.c</label>
+        <link refid="psaux_8c_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="t1cmap_8c_1ad01f68c41d33f9e2fa2c8151d42ca4e7" prot="public" static="no" mutable="no">
+        <type>FT_CALLBACK_TABLE_DEF const <ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></type>
+        <definition>FT_CALLBACK_TABLE_DEF const FT_CMap_ClassRec t1_cmap_standard_class_rec</definition>
+        <argsstring></argsstring>
+        <name>t1_cmap_standard_class_rec</name>
+        <initializer>=
+  {
+    sizeof ( <ref refid="struct_t1___c_map_std_rec__" kindref="compound">T1_CMapStdRec</ref> ),
+
+    (FT_CMap_InitFunc)     t1_cmap_standard_init,
+    (FT_CMap_DoneFunc)     t1_cmap_std_done,
+    (FT_CMap_CharIndexFunc)t1_cmap_std_char_index,
+    (FT_CMap_CharNextFunc) t1_cmap_std_char_next,
+
+    NULL, NULL, NULL, NULL, NULL
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="135" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t1cmap_8c_1a668b72f60ce09bbbc01f98d249fd284e" prot="public" static="no" mutable="no">
+        <type>FT_CALLBACK_TABLE_DEF const <ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></type>
+        <definition>FT_CALLBACK_TABLE_DEF const FT_CMap_ClassRec t1_cmap_expert_class_rec</definition>
+        <argsstring></argsstring>
+        <name>t1_cmap_expert_class_rec</name>
+        <initializer>=
+  {
+    sizeof ( <ref refid="struct_t1___c_map_std_rec__" kindref="compound">T1_CMapStdRec</ref> ),
+
+    (FT_CMap_InitFunc)     t1_cmap_expert_init,
+    (FT_CMap_DoneFunc)     t1_cmap_std_done,
+    (FT_CMap_CharIndexFunc)t1_cmap_std_char_index,
+    (FT_CMap_CharNextFunc) t1_cmap_std_char_next,
+
+    NULL, NULL, NULL, NULL, NULL
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="160" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t1cmap_8c_1a7019f6f9e6b7d5ebf292a050d279ef78" prot="public" static="no" mutable="no">
+        <type>FT_CALLBACK_TABLE_DEF const <ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></type>
+        <definition>FT_CALLBACK_TABLE_DEF const FT_CMap_ClassRec t1_cmap_custom_class_rec</definition>
+        <argsstring></argsstring>
+        <name>t1_cmap_custom_class_rec</name>
+        <initializer>=
+  {
+    sizeof ( <ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustomRec</ref> ),
+
+    (FT_CMap_InitFunc)     t1_cmap_custom_init,
+    (FT_CMap_DoneFunc)     t1_cmap_custom_done,
+    (FT_CMap_CharIndexFunc)t1_cmap_custom_char_index,
+    (FT_CMap_CharNextFunc) t1_cmap_custom_char_next,
+
+    NULL, NULL, NULL, NULL, NULL
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="256" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="t1cmap_8c_1a8ca6ac02d71eedb2e588a2cb4ac4d4a1" prot="public" static="no" mutable="no">
+        <type>FT_CALLBACK_TABLE_DEF const <ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></type>
+        <definition>FT_CALLBACK_TABLE_DEF const FT_CMap_ClassRec t1_cmap_unicode_class_rec</definition>
+        <argsstring></argsstring>
+        <name>t1_cmap_unicode_class_rec</name>
+        <initializer>=
+  {
+    sizeof ( <ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_UnicodesRec</ref> ),
+
+    (FT_CMap_InitFunc)     t1_cmap_unicode_init,
+    (FT_CMap_DoneFunc)     t1_cmap_unicode_done,
+    (FT_CMap_CharIndexFunc)t1_cmap_unicode_char_index,
+    (FT_CMap_CharNextFunc) t1_cmap_unicode_char_next,
+
+    NULL, NULL, NULL, NULL, NULL
+  }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="342" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="t1cmap_8c_1a8a768bd79cbdc9eb829e788f365d4f09" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void t1_cmap_std_init</definition>
+        <argsstring>(T1_CMapStd cmap, FT_Int is_expert)</argsstring>
+        <name>t1_cmap_std_init</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_Int</type>
+          <declname>is_expert</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="35" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1aa858efbbaf21ff7108380a858180c753" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_std_done</definition>
+        <argsstring>(T1_CMapStd cmap)</argsstring>
+        <name>t1_cmap_std_done</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="53" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a22bf758e07b5c475979596479d9fb943" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_std_char_index</definition>
+        <argsstring>(T1_CMapStd cmap, FT_UInt32 char_code)</argsstring>
+        <name>t1_cmap_std_char_index</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>char_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="63" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="63" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a713829c21dc00f0af4994e1b28285bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_std_char_next</definition>
+        <argsstring>(T1_CMapStd cmap, FT_UInt32 *pchar_code)</argsstring>
+        <name>t1_cmap_std_char_next</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_UInt32 *</type>
+          <declname>pchar_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="99" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="99" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1ae235c758d31d2f971cf35418cf25658f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_standard_init</definition>
+        <argsstring>(T1_CMapStd cmap, FT_Pointer pointer)</argsstring>
+        <name>t1_cmap_standard_init</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="123" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="123" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a34700627017adcad6aeb70175038a913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_expert_init</definition>
+        <argsstring>(T1_CMapStd cmap, FT_Pointer pointer)</argsstring>
+        <name>t1_cmap_expert_init</name>
+        <param>
+          <type>T1_CMapStd</type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="149" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="149" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a8e63a67e0db3179e287169782614e167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_custom_init</definition>
+        <argsstring>(T1_CMapCustom cmap, FT_Pointer pointer)</argsstring>
+        <name>t1_cmap_custom_init</name>
+        <param>
+          <type><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref></type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="183" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="183" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1aafa4f84b55bf8e3bededd047a0d7bed2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_custom_done</definition>
+        <argsstring>(T1_CMapCustom cmap)</argsstring>
+        <name>t1_cmap_custom_done</name>
+        <param>
+          <type><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref></type>
+          <declname>cmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="204" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="204" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1afba5c360621cd01cbca9a6950e07254d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_custom_char_index</definition>
+        <argsstring>(T1_CMapCustom cmap, FT_UInt32 char_code)</argsstring>
+        <name>t1_cmap_custom_char_index</name>
+        <param>
+          <type><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref></type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>char_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="213" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="213" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a7f8bfa89b1afb64850e35a554f229e40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_custom_char_next</definition>
+        <argsstring>(T1_CMapCustom cmap, FT_UInt32 *pchar_code)</argsstring>
+        <name>t1_cmap_custom_char_next</name>
+        <param>
+          <type><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref></type>
+          <declname>cmap</declname>
+        </param>
+        <param>
+          <type>FT_UInt32 *</type>
+          <declname>pchar_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="228" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="228" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a2e26a3f4a47c7a49667e495c85c89f9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>psaux_get_glyph_name</definition>
+        <argsstring>(T1_Face face, FT_UInt idx)</argsstring>
+        <name>psaux_get_glyph_name</name>
+        <param>
+          <type><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>FT_UInt</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="278" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="278" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a9464f26830b230031a11a2f3ff89b6db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_unicode_init</definition>
+        <argsstring>(PS_Unicodes unicodes, FT_Pointer pointer)</argsstring>
+        <name>t1_cmap_unicode_init</name>
+        <param>
+          <type><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref></type>
+          <declname>unicodes</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>pointer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="286" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="286" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1aed15f9e53bac5359988fb9ed0aaa15f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_unicode_done</definition>
+        <argsstring>(PS_Unicodes unicodes)</argsstring>
+        <name>t1_cmap_unicode_done</name>
+        <param>
+          <type><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref></type>
+          <declname>unicodes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="306" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="306" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1ad7fb96b09d5227196e3e3d85c3bc2edd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_unicode_char_index</definition>
+        <argsstring>(PS_Unicodes unicodes, FT_UInt32 char_code)</argsstring>
+        <name>t1_cmap_unicode_char_index</name>
+        <param>
+          <type><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref></type>
+          <declname>unicodes</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>char_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="318" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="318" bodyend="326"/>
+      </memberdef>
+      <memberdef kind="function" id="t1cmap_8c_1a6d4ba598cce24e0cf94fb5f682fc00af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>t1_cmap_unicode_char_next</definition>
+        <argsstring>(PS_Unicodes unicodes, FT_UInt32 *pchar_code)</argsstring>
+        <name>t1_cmap_unicode_char_next</name>
+        <param>
+          <type><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref></type>
+          <declname>unicodes</declname>
+        </param>
+        <param>
+          <type>FT_UInt32 *</type>
+          <declname>pchar_code</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/psaux/t1cmap.c" line="330" column="1" bodyfile="thirdparty/freetype/src/psaux/t1cmap.c" bodystart="330" bodyend="338"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>t1cmap.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>Type<sp/>1<sp/>character<sp/>map<sp/>support<sp/>(body).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2002-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;t1cmap.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_INTERNAL_DEBUG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;psauxerr.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE1<sp/>STANDARD<sp/>(AND<sp/>EXPERT)<sp/>ENCODING<sp/>CMAPS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>t1_cmap_std_init(<sp/>T1_CMapStd<sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/><sp/><sp/>is_expert<sp/>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/><sp/>=<sp/>(<ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref>)FT_CMAP_FACE(<sp/>cmap<sp/>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Service_PsCMaps<sp/><sp/>psnames<sp/>=<sp/>(FT_Service_PsCMaps)face-&gt;psnames;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;num_glyphs<sp/><sp/><sp/><sp/>=<sp/>(FT_UInt)face-&gt;type1.num_glyphs;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;glyph_names<sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">*)face-&gt;type1.glyph_names;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;sid_to_string<sp/>=<sp/>psnames-&gt;adobe_std_strings;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;code_to_sid<sp/><sp/><sp/>=<sp/>is_expert<sp/>?<sp/>psnames-&gt;adobe_expert_encoding</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>psnames-&gt;adobe_std_encoding;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_ASSERT(<sp/>cmap-&gt;code_to_sid<sp/>!=<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>t1_cmap_std_done(<sp/>T1_CMapStd<sp/><sp/>cmap<sp/>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;num_glyphs<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;glyph_names<sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;sid_to_string<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;code_to_sid<sp/><sp/><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt<sp/>)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>t1_cmap_std_char_index(<sp/>T1_CMapStd<sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/>char_code<sp/>)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/>result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>char_code<sp/>&lt;<sp/>256<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>code,<sp/>n;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/>glyph_name;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>convert<sp/>character<sp/>code<sp/>to<sp/>Adobe<sp/>SID<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>code<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>cmap-&gt;code_to_sid[char_code];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>glyph_name<sp/>=<sp/>cmap-&gt;sid_to_string(<sp/>code<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>look<sp/>for<sp/>the<sp/>corresponding<sp/>glyph<sp/>name<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>n<sp/>=<sp/>0;<sp/>n<sp/>&lt;<sp/>cmap-&gt;num_glyphs;<sp/>n++<sp/>)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>gname<sp/>=<sp/>cmap-&gt;glyph_names[n];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>gname<sp/>&amp;&amp;<sp/>gname[0]<sp/>==<sp/>glyph_name[0]<sp/><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_strcmp(<sp/>gname,<sp/>glyph_name<sp/>)<sp/>==<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>n;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt32<sp/>)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>t1_cmap_std_char_next(<sp/>T1_CMapStd<sp/><sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/>*pchar_code<sp/>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/>result<sp/><sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/>char_code<sp/>=<sp/>*pchar_code<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<sp/>char_code<sp/>&lt;<sp/>256<sp/>)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>t1_cmap_std_char_index(<sp/>cmap,<sp/>char_code<sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>result<sp/>!=<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>Exit;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>char_code++;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>char_code<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>Exit:</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>*pchar_code<sp/>=<sp/>char_code;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>t1_cmap_standard_init(<sp/>T1_CMapStd<sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/>pointer<sp/>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>pointer<sp/>);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>t1_cmap_std_init(<sp/>cmap,<sp/>0<sp/>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>FT_CALLBACK_TABLE_DEF<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>t1_cmap_standard_class_rec<sp/>=</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_t1___c_map_std_rec__" kindref="compound">T1_CMapStdRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_InitFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_standard_init,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_DoneFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_std_done,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharIndexFunc)t1_cmap_std_char_index,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharNextFunc)<sp/>t1_cmap_std_char_next,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>t1_cmap_expert_init(<sp/>T1_CMapStd<sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/>pointer<sp/>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>pointer<sp/>);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>t1_cmap_std_init(<sp/>cmap,<sp/>1<sp/>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>FT_CALLBACK_TABLE_DEF<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/>t1_cmap_expert_class_rec<sp/>=</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_t1___c_map_std_rec__" kindref="compound">T1_CMapStdRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_InitFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_expert_init,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_DoneFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_std_done,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharIndexFunc)t1_cmap_std_char_index,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharNextFunc)<sp/>t1_cmap_std_char_next,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE1<sp/>CUSTOM<sp/>ENCODING<sp/>CMAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/>t1_cmap_custom_init(<sp/><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref><sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/><sp/><sp/><sp/>pointer<sp/>)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/><sp/><sp/>=<sp/>(<ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref>)FT_CMAP_FACE(<sp/>cmap<sp/>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>T1_Encoding<sp/><sp/>encoding<sp/>=<sp/>&amp;face-&gt;type1.encoding;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>pointer<sp/>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;first<sp/><sp/><sp/>=<sp/>(FT_UInt)encoding-&gt;code_first;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;count<sp/><sp/><sp/>=<sp/>(FT_UInt)encoding-&gt;code_last<sp/>-<sp/>cmap-&gt;first;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;indices<sp/>=<sp/>encoding-&gt;char_index;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_ASSERT(<sp/>cmap-&gt;indices<sp/>!=<sp/>NULL<sp/>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_ASSERT(<sp/>encoding-&gt;code_first<sp/>&lt;=<sp/>encoding-&gt;code_last<sp/>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/>t1_cmap_custom_done(<sp/><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref><sp/><sp/>cmap<sp/>)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;indices<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;first<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>cmap-&gt;count<sp/><sp/><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt<sp/>)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>t1_cmap_custom_char_index(<sp/><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref><sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/><sp/><sp/>char_code<sp/>)</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/>result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>(<sp/>char_code<sp/>&gt;=<sp/>cmap-&gt;first<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>char_code<sp/>&lt;<sp/>(<sp/>cmap-&gt;first<sp/>+<sp/>cmap-&gt;count<sp/>)<sp/>)<sp/>)</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>cmap-&gt;indices[char_code];</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt32<sp/>)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>t1_cmap_custom_char_next(<sp/><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustom</ref><sp/><sp/>cmap,</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/><sp/>*pchar_code<sp/>)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/>result<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/>char_code<sp/>=<sp/>*pchar_code;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>++char_code;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>char_code<sp/>&lt;<sp/>cmap-&gt;first<sp/>)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>char_code<sp/>=<sp/>cmap-&gt;first;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>;<sp/>char_code<sp/>&lt;<sp/>(<sp/>cmap-&gt;first<sp/>+<sp/>cmap-&gt;count<sp/>);<sp/>char_code++<sp/>)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>cmap-&gt;indices[char_code];</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>result<sp/>!=<sp/>0<sp/>)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>Exit;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>char_code<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>Exit:</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>*pchar_code<sp/>=<sp/>char_code;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>FT_CALLBACK_TABLE_DEF<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>t1_cmap_custom_class_rec<sp/>=</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_t1___c_map_custom_rec__" kindref="compound">T1_CMapCustomRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_InitFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_custom_init,</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_DoneFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_custom_done,</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharIndexFunc)t1_cmap_custom_char_index,</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharNextFunc)<sp/>t1_cmap_custom_char_next,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TYPE1<sp/>SYNTHETIC<sp/>UNICODE<sp/>ENCODING<sp/>CMAP<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*****<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*****/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>psaux_get_glyph_name(<sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/>idx<sp/>)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>face-&gt;type1.glyph_names[idx];</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/>t1_cmap_unicode_init(<sp/><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref><sp/><sp/>unicodes,</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/><sp/>pointer<sp/>)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/><sp/>=<sp/>(<ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref>)FT_CMAP_FACE(<sp/>unicodes<sp/>);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Memory<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memory<sp/><sp/>=<sp/>FT_FACE_MEMORY(<sp/>face<sp/>);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Service_PsCMaps<sp/><sp/>psnames<sp/>=<sp/>(FT_Service_PsCMaps)face-&gt;psnames;</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UNUSED(<sp/>pointer<sp/>);</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>psnames-&gt;unicodes_init(<sp/>memory,</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unicodes,</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(FT_UInt)face-&gt;type1.num_glyphs,</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(PS_GetGlyphNameFunc)&amp;psaux_get_glyph_name,</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(PS_FreeGlyphNameFunc)NULL,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(FT_Pointer)face<sp/>);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/>t1_cmap_unicode_done(<sp/><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref><sp/><sp/>unicodes<sp/>)</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/>=<sp/>FT_CMAP_FACE(<sp/>unicodes<sp/>);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Memory<sp/><sp/>memory<sp/>=<sp/>FT_FACE_MEMORY(<sp/>face<sp/>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_FREE(<sp/>unicodes-&gt;maps<sp/>);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>unicodes-&gt;num_maps<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt<sp/>)</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>t1_cmap_unicode_char_index(<sp/><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref><sp/><sp/>unicodes,</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/>char_code<sp/>)</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/><sp/>=<sp/>(<ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref>)FT_CMAP_FACE(<sp/>unicodes<sp/>);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Service_PsCMaps<sp/><sp/>psnames<sp/>=<sp/>(FT_Service_PsCMaps)face-&gt;psnames;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>psnames-&gt;unicodes_char_index(<sp/>unicodes,<sp/>char_code<sp/>);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/>FT_CALLBACK_DEF(<sp/>FT_UInt32<sp/>)</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/>t1_cmap_unicode_char_next(<sp/><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_Unicodes</ref><sp/><sp/>unicodes,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/>*pchar_code<sp/>)</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face<sp/><sp/><sp/><sp/>=<sp/>(<ref refid="struct_t1___face_rec__" kindref="compound">T1_Face</ref>)FT_CMAP_FACE(<sp/>unicodes<sp/>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_Service_PsCMaps<sp/><sp/>psnames<sp/>=<sp/>(FT_Service_PsCMaps)face-&gt;psnames;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>psnames-&gt;unicodes_char_next(<sp/>unicodes,<sp/>pchar_code<sp/>);</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/>FT_CALLBACK_TABLE_DEF<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_f_t___c_map___class_rec__" kindref="compound">FT_CMap_ClassRec</ref></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/>t1_cmap_unicode_class_rec<sp/>=</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>(<sp/><ref refid="struct_p_s___unicodes_rec__" kindref="compound">PS_UnicodesRec</ref><sp/>),</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_InitFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_unicode_init,</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_DoneFunc)<sp/><sp/><sp/><sp/><sp/>t1_cmap_unicode_done,</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharIndexFunc)t1_cmap_unicode_char_index,</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/>(FT_CMap_CharNextFunc)<sp/>t1_cmap_unicode_char_next,</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/psaux/t1cmap.c"/>
+  </compounddef>
+</doxygen>

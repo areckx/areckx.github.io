@@ -1,0 +1,159 @@
+.TH "XmlStreamAttribute" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamAttribute \- The \fBXmlStreamAttribute\fP class represents a single XML attribute\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlStreamAttribute\fP ()"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttribute\fP (const QString &\fBqualifiedName\fP, const QString &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttribute\fP (const QString &\fBnamespaceUri\fP, const QString &\fBname\fP, const QString &\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttribute\fP (const \fBXmlStreamAttribute\fP &)"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttribute\fP & \fBoperator=\fP (const \fBXmlStreamAttribute\fP &)"
+.br
+.ti -1c
+.RI "\fB~XmlStreamAttribute\fP ()"
+.br
+.ti -1c
+.RI "QStringRef \fBnamespaceUri\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBname\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBqualifiedName\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBprefix\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBvalue\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisDefault\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBXmlStreamAttribute\fP &other) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBXmlStreamAttribute\fP &other) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBXmlStreamReaderPrivate\fP"
+.br
+.ti -1c
+.RI "class \fBXmlStreamAttributes\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBXmlStreamAttribute\fP class represents a single XML attribute\&. 
+
+QtCore 
+.PP
+\fBSince:\fP
+.RS 4
+4\&.3 
+.RE
+.PP
+An attribute consists of an optionally empty \fBnamespaceUri()\fP, a \fBname()\fP, a \fBvalue()\fP, and an \fBisDefault()\fP attribute\&.
+.PP
+The raw XML attribute name is returned as \fBqualifiedName()\fP\&. 
+.PP
+Definition at line 70 of file xmlstream\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "XmlStreamAttribute::XmlStreamAttribute ()"
+Creates an empty attribute\&. 
+.PP
+Definition at line 2271 of file xmlstream\&.cpp\&.
+.SS "XmlStreamAttribute::XmlStreamAttribute (const QString & qualifiedName, const QString & value)"
+Constructs an attribute with qualified name \fIqualifiedName\fP and value \fIvalue\fP\&. 
+.PP
+Definition at line 2297 of file xmlstream\&.cpp\&.
+.SS "XmlStreamAttribute::XmlStreamAttribute (const QString & namespaceUri, const QString & name, const QString & value)"
+Constructs an attribute in the namespace described with \fInamespaceUri\fP with \fIname\fP and value \fIvalue\fP\&. 
+.PP
+Definition at line 2286 of file xmlstream\&.cpp\&.
+.SS "XmlStreamAttribute::XmlStreamAttribute (const \fBXmlStreamAttribute\fP & other)"
+Creates a copy of \fIother\fP\&. 
+.PP
+Definition at line 2360 of file xmlstream\&.cpp\&.
+.SS "XmlStreamAttribute::~XmlStreamAttribute ()"
+Destructs an attribute\&. 
+.PP
+Definition at line 2279 of file xmlstream\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool XmlStreamAttribute::isDefault () const\fC [inline]\fP"
+Returns \fCtrue\fP if the parser added this attribute with a default value following an ATTLIST declaration in the DTD; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 92 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttribute::name () const\fC [inline]\fP"
+Returns the attribute's local name\&. 
+.PP
+Definition at line 84 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttribute::namespaceUri () const\fC [inline]\fP"
+Returns the attribute's resolved namespaceUri, or an empty string reference if the attribute does not have a defined namespace\&. 
+.PP
+Definition at line 83 of file xmlstream\&.h\&.
+.SS "bool XmlStreamAttribute::operator!= (const \fBXmlStreamAttribute\fP & other) const\fC [inline]\fP"
+Compares this attribute with \fIother\fP and returns \fCtrue\fP if they are not equal; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 98 of file xmlstream\&.h\&.
+.SS "\fBXmlStreamAttribute\fP & XmlStreamAttribute::operator= (const \fBXmlStreamAttribute\fP & other)"
+Assigns \fIother\fP to this attribute\&. 
+.PP
+Definition at line 2368 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamAttribute::operator== (const \fBXmlStreamAttribute\fP & other) const\fC [inline]\fP"
+Compares this attribute with \fIother\fP and returns \fCtrue\fP if they are equal; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 93 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttribute::prefix () const\fC [inline]\fP"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4 Returns the attribute's namespace prefix\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBname()\fP, \fBqualifiedName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttribute::qualifiedName () const\fC [inline]\fP"
+Returns the attribute's qualified name\&.
+.PP
+A qualified name is the raw name of an attribute in the XML data\&. It consists of the namespace \fBprefix()\fP, followed by colon, followed by the attribute's local \fBname()\fP\&. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use \fBqualifiedName()\fP, but the resolved \fBnamespaceUri()\fP and the attribute's local \fBname()\fP\&. 
+.PP
+Definition at line 85 of file xmlstream\&.h\&.
+.SS "QStringRef XmlStreamAttribute::value (void) const\fC [inline]\fP"
+Returns the attribute's value\&. 
+.PP
+Definition at line 91 of file xmlstream\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

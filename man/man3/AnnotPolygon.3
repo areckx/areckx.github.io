@@ -1,0 +1,71 @@
+.TH "AnnotPolygon" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnnotPolygon
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBAnnotMarkup\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnnotPolygonIntent\fP { \fBpolygonCloud\fP, \fBpolylineDimension\fP, \fBpolygonDimension\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnotPolygon\fP (\fBPDFDoc\fP *docA, \fBPDFRectangle\fP *rect, AnnotSubtype subType)"
+.br
+.ti -1c
+.RI "\fBAnnotPolygon\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBGfx\fP *gfx, GBool printing)"
+.br
+.ti -1c
+.RI "void \fBsetType\fP (AnnotSubtype new_type)"
+.br
+.ti -1c
+.RI "void \fBsetVertices\fP (\fBAnnotPath\fP *path)"
+.br
+.ti -1c
+.RI "void \fBsetStartEndStyle\fP (AnnotLineEndingStyle start, AnnotLineEndingStyle end)"
+.br
+.ti -1c
+.RI "void \fBsetInteriorColor\fP (\fBAnnotColor\fP *new_color)"
+.br
+.ti -1c
+.RI "void \fBsetIntent\fP (AnnotPolygonIntent new_intent)"
+.br
+.ti -1c
+.RI "\fBAnnotPath\fP * \fBgetVertices\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBgetStartStyle\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBgetEndStyle\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotColor\fP * \fBgetInteriorColor\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotBorderEffect\fP * \fBgetBorderEffect\fP () const"
+.br
+.ti -1c
+.RI "AnnotPolygonIntent \fBgetIntent\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 1128 of file Annot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

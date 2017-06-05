@@ -1,0 +1,157 @@
+.TH "Poppler::TextAnnotation" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::TextAnnotation \- \fBAnnotation\fP containing text\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-annotation\&.h>\fP
+.PP
+Inherits \fBPoppler::Annotation\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTextType\fP { \fBLinked\fP, \fBInPlace\fP }"
+.br
+.ti -1c
+.RI "enum \fBInplaceIntent\fP { \fBUnknown\fP, \fBCallout\fP, \fBTypeWriter\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextAnnotation\fP (TextType type)"
+.br
+.ti -1c
+.RI "virtual \fBSubType\fP \fBsubType\fP () const"
+.br
+.ti -1c
+.RI "TextType \fBtextType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtextIcon\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTextIcon\fP (const QString &icon)"
+.br
+.ti -1c
+.RI "QFont \fBtextFont\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTextFont\fP (const QFont &\fBfont\fP)"
+.br
+.ti -1c
+.RI "int \fBinplaceAlign\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetInplaceAlign\fP (int align)"
+.br
+.ti -1c
+.RI "QPointF \fBcalloutPoint\fP (int id) const"
+.br
+.ti -1c
+.RI "QVector< QPointF > \fBcalloutPoints\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCalloutPoints\fP (const QVector< QPointF > &points)"
+.br
+.ti -1c
+.RI "InplaceIntent \fBinplaceIntent\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetInplaceIntent\fP (InplaceIntent intent)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnotationUtils\fP"
+.br
+.ti -1c
+.RI "class \fBAnnotationPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAnnotation\fP containing text\&. 
+
+A text annotation is an object showing some text directly on the page, or linked to the contents using an icon shown on a page\&. 
+.PP
+Definition at line 445 of file poppler\-annotation\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QVector< QPointF > Poppler::TextAnnotation::calloutPoints () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 2163 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::TextAnnotation::setCalloutPoints (const QVector< QPointF > & points)"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 2191 of file poppler\-annotation\&.cc\&.
+.SS "void Poppler::TextAnnotation::setTextIcon (const QString & icon)"
+Set the name of the icon to use for this text annotation\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtextIcon\fP for the list of standard names 
+.RE
+.PP
+
+.PP
+Definition at line 2056 of file poppler\-annotation\&.cc\&.
+.SS "\fBAnnotation::SubType\fP Poppler::TextAnnotation::subType () const\fC [virtual]\fP"
+The type of the annotation\&. 
+.PP
+Implements \fBPoppler::Annotation\fP\&.
+.PP
+Definition at line 2011 of file poppler\-annotation\&.cc\&.
+.SS "QString Poppler::TextAnnotation::textIcon () const"
+The name of the icon for this text annotation\&.
+.PP
+Standard names for text annotation icons are:
+.IP "\(bu" 2
+Comment
+.IP "\(bu" 2
+Help
+.IP "\(bu" 2
+Insert
+.IP "\(bu" 2
+Key
+.IP "\(bu" 2
+NewParagraph
+.IP "\(bu" 2
+Note (this is the default icon to use)
+.IP "\(bu" 2
+Paragraph 
+.PP
+
+.PP
+Definition at line 2040 of file poppler\-annotation\&.cc\&.
+.SS "TextAnnotation::TextType Poppler::TextAnnotation::textType () const"
+The type of text annotation represented by this object 
+.PP
+Definition at line 2016 of file poppler\-annotation\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,89 @@
+.TH "Ms::Volta" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Volta
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::TextLineBase\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP : char { \fBOPEN\fP, \fBCLOSED\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVolta\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "virtual \fBVolta\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBLineSegment\fP * \fBcreateLineSegment\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &e) override"
+.br
+.ti -1c
+.RI "QList< int > \fBendings\fP () const"
+.br
+.ti -1c
+.RI "QList< int > & \fBendings\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetEndings\fP (const QList< int > &l)"
+.br
+.ti -1c
+.RI "void \fBsetText\fP (const QString &s)"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasEnding\fP (int repeat) const"
+.br
+.ti -1c
+.RI "void \fBsetVoltaType\fP (Volta::Type)"
+.br
+.ti -1c
+.RI "Type \fBvoltaType\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsystemFlag\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 56 of file volta\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

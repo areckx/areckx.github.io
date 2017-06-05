@@ -1,0 +1,308 @@
+.TH "ssl_st" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ssl_st
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSSL_CIPHER\fP) *cipher_list"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSSL_CIPHER\fP) *cipher_list_by_id"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBX509_NAME\fP) *client_CA"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBOCSP_RESPID\fP) *tlsext_ocsp_ids"
+.br
+.ti -1c
+.RI "\fBSTACK_OF\fP (\fBSRTP_PROTECTION_PROFILE\fP) *srtp_profiles"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBversion\fP"
+.br
+.ti -1c
+.RI "int \fBtype\fP"
+.br
+.ti -1c
+.RI "const \fBSSL_METHOD\fP * \fBmethod\fP"
+.br
+.ti -1c
+.RI "\fBBIO\fP * \fBrbio\fP"
+.br
+.ti -1c
+.RI "\fBBIO\fP * \fBwbio\fP"
+.br
+.ti -1c
+.RI "\fBBIO\fP * \fBbbio\fP"
+.br
+.ti -1c
+.RI "int \fBrwstate\fP"
+.br
+.ti -1c
+.RI "int \fBin_handshake\fP"
+.br
+.ti -1c
+.RI "int(* \fBhandshake_func\fP )(\fBSSL\fP *)"
+.br
+.ti -1c
+.RI "int \fBserver\fP"
+.br
+.ti -1c
+.RI "int \fBnew_session\fP"
+.br
+.ti -1c
+.RI "int \fBquiet_shutdown\fP"
+.br
+.ti -1c
+.RI "int \fBshutdown\fP"
+.br
+.ti -1c
+.RI "int \fBstate\fP"
+.br
+.ti -1c
+.RI "int \fBrstate\fP"
+.br
+.ti -1c
+.RI "\fBBUF_MEM\fP * \fBinit_buf\fP"
+.br
+.ti -1c
+.RI "void * \fBinit_msg\fP"
+.br
+.ti -1c
+.RI "int \fBinit_num\fP"
+.br
+.ti -1c
+.RI "int \fBinit_off\fP"
+.br
+.ti -1c
+.RI "unsigned char * \fBpacket\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBpacket_length\fP"
+.br
+.ti -1c
+.RI "struct \fBssl2_state_st\fP * \fBs2\fP"
+.br
+.ti -1c
+.RI "struct \fBssl3_state_st\fP * \fBs3\fP"
+.br
+.ti -1c
+.RI "struct \fBdtls1_state_st\fP * \fBd1\fP"
+.br
+.ti -1c
+.RI "int \fBread_ahead\fP"
+.br
+.ti -1c
+.RI "void(* \fBmsg_callback\fP )(int write_p, int version, int content_type, const void *buf, size_t len, \fBSSL\fP *ssl, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBmsg_callback_arg\fP"
+.br
+.ti -1c
+.RI "int \fBhit\fP"
+.br
+.ti -1c
+.RI "\fBX509_VERIFY_PARAM\fP * \fBparam\fP"
+.br
+.ti -1c
+.RI "int \fBmac_flags\fP"
+.br
+.ti -1c
+.RI "\fBEVP_CIPHER_CTX\fP * \fBenc_read_ctx\fP"
+.br
+.ti -1c
+.RI "\fBEVP_MD_CTX\fP * \fBread_hash\fP"
+.br
+.ti -1c
+.RI "\fBCOMP_CTX\fP * \fBexpand\fP"
+.br
+.ti -1c
+.RI "\fBEVP_CIPHER_CTX\fP * \fBenc_write_ctx\fP"
+.br
+.ti -1c
+.RI "\fBEVP_MD_CTX\fP * \fBwrite_hash\fP"
+.br
+.ti -1c
+.RI "\fBCOMP_CTX\fP * \fBcompress\fP"
+.br
+.ti -1c
+.RI "struct cert_st * \fBcert\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBsid_ctx_length\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBsid_ctx\fP [SSL_MAX_SID_CTX_LENGTH]"
+.br
+.ti -1c
+.RI "\fBSSL_SESSION\fP * \fBsession\fP"
+.br
+.ti -1c
+.RI "GEN_SESSION_CB \fBgenerate_session_id\fP"
+.br
+.ti -1c
+.RI "int \fBverify_mode\fP"
+.br
+.ti -1c
+.RI "int(* \fBverify_callback\fP )(int ok, \fBX509_STORE_CTX\fP *ctx)"
+.br
+.ti -1c
+.RI "void(* \fBinfo_callback\fP )(const \fBSSL\fP *ssl, int type, int val)"
+.br
+.ti -1c
+.RI "int \fBerror\fP"
+.br
+.ti -1c
+.RI "int \fBerror_code\fP"
+.br
+.ti -1c
+.RI "\fBKSSL_CTX\fP * \fBkssl_ctx\fP"
+.br
+.ti -1c
+.RI "unsigned int(* \fBpsk_client_callback\fP )(\fBSSL\fP *ssl, const char *hint, char *identity, unsigned int max_identity_len, unsigned char *psk, unsigned int max_psk_len)"
+.br
+.ti -1c
+.RI "unsigned int(* \fBpsk_server_callback\fP )(\fBSSL\fP *ssl, const char *identity, unsigned char *psk, unsigned int max_psk_len)"
+.br
+.ti -1c
+.RI "\fBSSL_CTX\fP * \fBctx\fP"
+.br
+.ti -1c
+.RI "int \fBdebug\fP"
+.br
+.ti -1c
+.RI "long \fBverify_result\fP"
+.br
+.ti -1c
+.RI "\fBCRYPTO_EX_DATA\fP \fBex_data\fP"
+.br
+.ti -1c
+.RI "int \fBreferences\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBoptions\fP"
+.br
+.ti -1c
+.RI "unsigned long \fBmode\fP"
+.br
+.ti -1c
+.RI "long \fBmax_cert_list\fP"
+.br
+.ti -1c
+.RI "int \fBfirst_packet\fP"
+.br
+.ti -1c
+.RI "int \fBclient_version\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBmax_send_fragment\fP"
+.br
+.ti -1c
+.RI "void(* \fBtlsext_debug_cb\fP )(\fBSSL\fP *s, int client_server, int type, unsigned char *data, int len, void *arg)"
+.br
+.ti -1c
+.RI "void * \fBtlsext_debug_arg\fP"
+.br
+.ti -1c
+.RI "char * \fBtlsext_hostname\fP"
+.br
+.ti -1c
+.RI "int \fBservername_done\fP"
+.br
+.ti -1c
+.RI "int \fBtlsext_status_type\fP"
+.br
+.ti -1c
+.RI "int \fBtlsext_status_expected\fP"
+.br
+.ti -1c
+.RI "X509_EXTENSIONS * \fBtlsext_ocsp_exts\fP"
+.br
+.ti -1c
+.RI "unsigned char * \fBtlsext_ocsp_resp\fP"
+.br
+.ti -1c
+.RI "int \fBtlsext_ocsp_resplen\fP"
+.br
+.ti -1c
+.RI "int \fBtlsext_ticket_expected\fP"
+.br
+.ti -1c
+.RI "size_t \fBtlsext_ecpointformatlist_length\fP"
+.br
+.ti -1c
+.RI "unsigned char * \fBtlsext_ecpointformatlist\fP"
+.br
+.ti -1c
+.RI "size_t \fBtlsext_ellipticcurvelist_length\fP"
+.br
+.ti -1c
+.RI "unsigned char * \fBtlsext_ellipticcurvelist\fP"
+.br
+.ti -1c
+.RI "void * \fBtlsext_opaque_prf_input\fP"
+.br
+.ti -1c
+.RI "size_t \fBtlsext_opaque_prf_input_len\fP"
+.br
+.ti -1c
+.RI "\fBTLS_SESSION_TICKET_EXT\fP * \fBtlsext_session_ticket\fP"
+.br
+.ti -1c
+.RI "tls_session_ticket_ext_cb_fn \fBtls_session_ticket_ext_cb\fP"
+.br
+.ti -1c
+.RI "void * \fBtls_session_ticket_ext_cb_arg\fP"
+.br
+.ti -1c
+.RI "tls_session_secret_cb_fn \fBtls_session_secret_cb\fP"
+.br
+.ti -1c
+.RI "void * \fBtls_session_secret_cb_arg\fP"
+.br
+.ti -1c
+.RI "\fBSSL_CTX\fP * \fBinitial_ctx\fP"
+.br
+.ti -1c
+.RI "unsigned char * \fBnext_proto_negotiated\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBnext_proto_negotiated_len\fP"
+.br
+.ti -1c
+.RI "\fBSRTP_PROTECTION_PROFILE\fP * \fBsrtp_profile\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBtlsext_heartbeat\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBtlsext_hb_pending\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBtlsext_hb_seq\fP"
+.br
+.ti -1c
+.RI "int \fBrenegotiate\fP"
+.br
+.ti -1c
+.RI "\fBSRP_CTX\fP \fBsrp_ctx\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1121 of file ssl\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,385 @@
+.TH "FluidS::Voice" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FluidS::Voice
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVoice\fP (\fBFluid\fP *)"
+.br
+.ti -1c
+.RI "\fBChannel\fP * \fBget_channel\fP () const"
+.br
+.ti -1c
+.RI "void \fBvoice_start\fP ()"
+.br
+.ti -1c
+.RI "void \fBoff\fP ()"
+.br
+.ti -1c
+.RI "void \fBinit\fP (\fBSample\fP *, \fBChannel\fP *, int key, int vel, unsigned id, double tuning)"
+.br
+.ti -1c
+.RI "void \fBgen_incr\fP (int i, float val)"
+.br
+.ti -1c
+.RI "void \fBgen_set\fP (int i, float val)"
+.br
+.ti -1c
+.RI "float \fBgen_get\fP (int gen)"
+.br
+.ti -1c
+.RI "unsigned int \fBget_id\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisPlaying\fP ()"
+.br
+.ti -1c
+.RI "void \fBset_param\fP (int gen, float nrpn_value, int abs)"
+.br
+.ti -1c
+.RI "void \fBupdate_param\fP (int gen)"
+.br
+.ti -1c
+.RI "double \fBGEN\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBmodulate_all\fP ()"
+.br
+.ti -1c
+.RI "void \fBmodulate\fP (bool _cc, int _ctrl)"
+.br
+.ti -1c
+.RI "float \fBget_lower_boundary_for_attenuation\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheck_sample_sanity\fP ()"
+.br
+.ti -1c
+.RI "void \fBnoteoff\fP ()"
+.br
+.ti -1c
+.RI "void \fBkill_excl\fP ()"
+.br
+.ti -1c
+.RI "int \fBcalculate_hold_decay_frames\fP (int gen_base, int gen_key2base, int is_decay)"
+.br
+.ti -1c
+.RI "bool \fBRELEASED\fP () const"
+.br
+.ti -1c
+.RI "bool \fBSUSTAINED\fP () const"
+.br
+.ti -1c
+.RI "bool \fBPLAYING\fP () const"
+.br
+.ti -1c
+.RI "bool \fBON\fP () const"
+.br
+.ti -1c
+.RI "int \fBSAMPLEMODE\fP () const"
+.br
+.ti -1c
+.RI "void \fBcalcVolEnv\fP (int n, \fBfluid_env_data_t\fP *env_data)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (unsigned n, float *out, float *reverb, float *chorus)"
+.br
+.ti -1c
+.RI "void \fBadd_mod\fP (const \fBMod\fP *mod, int mode)"
+.br
+.ti -1c
+.RI "bool \fBupdateAmpInc\fP (unsigned int &nextNewAmpInc, std::map< int, qreal >::iterator &curSample2AmpInc, qreal &dsp_amp_incr, unsigned int &dsp_i)"
+.br
+.ti -1c
+.RI "int \fBdsp_float_interpolate_none\fP (unsigned)"
+.br
+.ti -1c
+.RI "int \fBdsp_float_interpolate_linear\fP (unsigned)"
+.br
+.ti -1c
+.RI "int \fBdsp_float_interpolate_4th_order\fP (unsigned)"
+.br
+.ti -1c
+.RI "int \fBdsp_float_interpolate_7th_order\fP (unsigned)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBdsp_float_config\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned int \fBid\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBstatus\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBchan\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBkey\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBvel\fP"
+.br
+.ti -1c
+.RI "\fBChannel\fP * \fBchannel\fP"
+.br
+.ti -1c
+.RI "\fBGenerator\fP \fBgen\fP [GEN_LAST]"
+.br
+.ti -1c
+.RI "\fBMod\fP \fBmod\fP [FLUID_NUM_MOD]"
+.br
+.ti -1c
+.RI "int \fBmod_count\fP"
+.br
+.ti -1c
+.RI "bool \fBhas_looped\fP"
+.br
+.ti -1c
+.RI "\fBSample\fP * \fBsample\fP"
+.br
+.ti -1c
+.RI "int \fBcheck_sample_sanity_flag\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBticks\fP"
+.br
+.ti -1c
+.RI "qreal \fBamp\fP"
+.br
+.ti -1c
+.RI "\fBPhase\fP \fBphase\fP"
+.br
+.ti -1c
+.RI "float \fBphase_incr\fP"
+.br
+.ti -1c
+.RI "qreal \fBamp_incr\fP"
+.br
+.ti -1c
+.RI "float * \fBdsp_buf\fP"
+.br
+.ti -1c
+.RI "float \fBpitch\fP"
+.br
+.ti -1c
+.RI "float \fBattenuation\fP"
+.br
+.ti -1c
+.RI "float \fBmin_attenuation_cB\fP"
+.br
+.ti -1c
+.RI "float \fBroot_pitch\fP"
+.br
+.ti -1c
+.RI "int \fBstart\fP"
+.br
+.ti -1c
+.RI "int \fBend\fP"
+.br
+.ti -1c
+.RI "int \fBloopstart\fP"
+.br
+.ti -1c
+.RI "int \fBloopend\fP"
+.br
+.ti -1c
+.RI "\fBfluid_env_data_t\fP \fBvolenv_data\fP [FLUID_VOICE_ENVLAST]"
+.br
+.ti -1c
+.RI "unsigned int \fBvolenv_count\fP"
+.br
+.ti -1c
+.RI "int \fBvolenv_section\fP"
+.br
+.ti -1c
+.RI "std::map< int, qreal > \fBSample2AmpInc\fP"
+.br
+.ti -1c
+.RI "float \fBvolenv_val\fP"
+.br
+.ti -1c
+.RI "float \fBamplitude_that_reaches_noise_floor_nonloop\fP"
+.br
+.ti -1c
+.RI "float \fBamplitude_that_reaches_noise_floor_loop\fP"
+.br
+.ti -1c
+.RI "int \fBpositionToTurnOff\fP"
+.br
+.ti -1c
+.RI "\fBfluid_env_data_t\fP \fBmodenv_data\fP [FLUID_VOICE_ENVLAST]"
+.br
+.ti -1c
+.RI "unsigned int \fBmodenv_count\fP"
+.br
+.ti -1c
+.RI "int \fBmodenv_section\fP"
+.br
+.ti -1c
+.RI "float \fBmodenv_val\fP"
+.br
+.ti -1c
+.RI "float \fBmodenv_to_fc\fP"
+.br
+.ti -1c
+.RI "float \fBmodenv_to_pitch\fP"
+.br
+.ti -1c
+.RI "float \fBmodlfo_val\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBmodlfo_delay\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBmodlfo_pos\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBmodlfo_dur\fP"
+.br
+.ti -1c
+.RI "float \fBmodlfo_to_fc\fP"
+.br
+.ti -1c
+.RI "float \fBmodlfo_to_pitch\fP"
+.br
+.ti -1c
+.RI "float \fBmodlfo_to_vol\fP"
+.br
+.ti -1c
+.RI "float \fBviblfo_val\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBviblfo_delay\fP"
+.br
+.ti -1c
+.RI "float \fBviblfo_incr\fP"
+.br
+.ti -1c
+.RI "float \fBviblfo_to_pitch\fP"
+.br
+.ti -1c
+.RI "float \fBfres\fP"
+.br
+.ti -1c
+.RI "float \fBlast_fres\fP"
+.br
+.ti -1c
+.RI "float \fBq_lin\fP"
+.br
+.ti -1c
+.RI "float \fBfilter_gain\fP"
+.br
+.ti -1c
+.RI "float \fBhist1\fP"
+.br
+.ti -1c
+.RI "float \fBhist2\fP"
+.br
+.ti -1c
+.RI "int \fBfilter_startup\fP"
+.br
+.ti -1c
+.RI "float \fBb02\fP"
+.br
+.ti -1c
+.RI "float \fBb1\fP"
+.br
+.ti -1c
+.RI "float \fBa1\fP"
+.br
+.ti -1c
+.RI "float \fBa2\fP"
+.br
+.ti -1c
+.RI "float \fBb02_incr\fP"
+.br
+.ti -1c
+.RI "float \fBb1_incr\fP"
+.br
+.ti -1c
+.RI "float \fBa1_incr\fP"
+.br
+.ti -1c
+.RI "float \fBa2_incr\fP"
+.br
+.ti -1c
+.RI "int \fBfilter_coeff_incr_count\fP"
+.br
+.ti -1c
+.RI "float \fBpan\fP"
+.br
+.ti -1c
+.RI "float \fBamp_left\fP"
+.br
+.ti -1c
+.RI "float \fBamp_right\fP"
+.br
+.ti -1c
+.RI "float \fBreverb_send\fP"
+.br
+.ti -1c
+.RI "float \fBamp_reverb\fP"
+.br
+.ti -1c
+.RI "float \fBchorus_send\fP"
+.br
+.ti -1c
+.RI "float \fBamp_chorus\fP"
+.br
+.ti -1c
+.RI "int \fBinterp_method\fP"
+.br
+.ti -1c
+.RI "int \fBdebug\fP"
+.br
+.ti -1c
+.RI "double \fBref\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 64 of file voice\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Voice::modulate (bool _cc, int _ctrl)"
+fluid_voice_modulate
+.PP
+In this implementation, I want to make sure that all controllers are event based: the parameter values of the DSP algorithm should only be updates when a controller event arrived and not at every iteration of the audio cycle (which would probably be feasible if the synth was made in silicon)\&.
+.PP
+The update is done in three steps:
+.PP
+.IP "\(bu" 2
+first, we look for all the modulators that have the changed controller as a source\&. This will yield a list of generators that will be changed because of the controller event\&.
+.IP "\(bu" 2
+For every changed generator, calculate its new value\&. This is the sum of its original value plus the values of al the attached modulators\&.
+.IP "\(bu" 2
+For every changed generator, convert its value to the correct unit of the corresponding DSP parameter 
+.PP
+
+.PP
+Definition at line 1298 of file voice\&.cpp\&.
+.SS "void Voice::modulate_all ()"
+fluid_voice_modulate_all
+.PP
+Update all the modulators\&. This function is called after a ALL_CTRL_OFF MIDI message has been received (CC 121)\&. 
+.PP
+Definition at line 1336 of file voice\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

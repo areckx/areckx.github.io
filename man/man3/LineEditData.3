@@ -1,0 +1,102 @@
+.TH "LineEditData" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LineEditData \- generic data  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lineeditdata\&.h>\fP
+.PP
+Inherits \fBTransitionData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLineEditData\fP (QObject *, QLineEdit *, int)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~LineEditData\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "bool \fBeventFilter\fP (QObject *, QEvent *)"
+.br
+.RI "event filter "
+.ti -1c
+.RI "bool \fBisLocked\fP (void) const"
+.br
+.RI "returns true if animations are locked "
+.ti -1c
+.RI "void \fBlockAnimations\fP (void)"
+.br
+.RI "start lock animation timer "
+.ti -1c
+.RI "void \fBunlockAnimations\fP (void)"
+.br
+.RI "start lock animation timer "
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBtextEdited\fP (void)"
+.br
+.RI "text edited "
+.ti -1c
+.RI "virtual void \fBselectionChanged\fP (void)"
+.br
+.RI "selection changed "
+.ti -1c
+.RI "virtual void \fBtextChanged\fP (void)"
+.br
+.RI "text changed "
+.ti -1c
+.RI "virtual bool \fBinitializeAnimation\fP (void)"
+.br
+.RI "initialize animation "
+.ti -1c
+.RI "virtual bool \fBanimate\fP (void)"
+.br
+.RI "animate "
+.ti -1c
+.RI "virtual void \fBtargetDestroyed\fP (void)"
+.br
+.RI "called when target is destroyed "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBtimerEvent\fP (QTimerEvent *)"
+.br
+.RI "timer event "
+.ti -1c
+.RI "QRect \fBtargetRect\fP (void) const"
+.br
+.RI "target rect "
+.ti -1c
+.RI "void \fBcheckClearButton\fP (void)"
+.br
+.RI "check if target has clear button "
+.in -1c
+.SH "Detailed Description"
+.PP 
+generic data 
+.PP
+Definition at line 33 of file lineeditdata\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRect LineEditData::targetRect (void) const\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+target rect return rect corresponding to the area to be updated when animating 
+.PP
+Definition at line 91 of file lineeditdata\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

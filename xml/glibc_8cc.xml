@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="glibc_8cc" kind="file" language="C++">
+    <compoundname>glibc.cc</compoundname>
+    <includes refid="glibc_8h" local="yes">glibc.h</includes>
+    <incdepgraph>
+      <node id="84129">
+        <label>glibc.h</label>
+        <link refid="glibc_8h_source"/>
+        <childnode refid="84130" relation="include">
+        </childnode>
+        <childnode refid="84131" relation="include">
+        </childnode>
+      </node>
+      <node id="84131">
+        <label>time.h</label>
+      </node>
+      <node id="84128">
+        <label>thirdparty/poppler/goo/glibc.cc</label>
+        <link refid="glibc_8cc"/>
+        <childnode refid="84129" relation="include">
+        </childnode>
+      </node>
+      <node id="84130">
+        <label>config.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="glibc_8cc_1a6ef8fd14c34a80c3fee2ef2694491514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct tm *</type>
+        <definition>struct tm* gmtime_r</definition>
+        <argsstring>(const time_t *timep, struct tm *result)</argsstring>
+        <name>gmtime_r</name>
+        <param>
+          <type>const time_t *</type>
+          <declname>timep</declname>
+        </param>
+        <param>
+          <type>struct tm *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.cc" line="16" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="16" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="glibc_8cc_1a47c0c928ef136f13663444f1b1f01de7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>struct tm *</type>
+        <definition>struct tm* localtime_r</definition>
+        <argsstring>(const time_t *timep, struct tm *result)</argsstring>
+        <name>localtime_r</name>
+        <param>
+          <type>const time_t *</type>
+          <declname>timep</declname>
+        </param>
+        <param>
+          <type>struct tm *</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.cc" line="27" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="27" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="glibc_8cc_1a87424e4ef76499ca58575a98f816d198" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>static time_t getLocalTimeZoneOffset</definition>
+        <argsstring>()</argsstring>
+        <name>getLocalTimeZoneOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.cc" line="38" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="38" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="glibc_8cc_1a4fd5240e99b2a9bf19bc0fe39f6ffc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>time_t</type>
+        <definition>time_t timegm</definition>
+        <argsstring>(struct tm *tm)</argsstring>
+        <name>timegm</name>
+        <param>
+          <type>struct tm *</type>
+          <declname>tm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/glibc.cc" line="48" column="1" bodyfile="thirdparty/poppler/goo/glibc.cc" bodystart="48" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>glibc.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Emulate<sp/>various<sp/>non-portable<sp/>glibc<sp/>functions.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>is<sp/>licensed<sp/>under<sp/>the<sp/>GPLv2<sp/>or<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2016<sp/>Adrian<sp/>Johnson<sp/>&lt;ajohnson@redneon.com&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;glibc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_GMTIME_R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*gmtime_r(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>*timep,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*result)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>gt<sp/>=<sp/>gmtime(timep);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gt)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>*result<sp/>=<sp/>*gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gt;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_LOCALTIME_R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*localtime_r(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>time_t<sp/>*timep,<sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*result)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*lt;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>lt<sp/>=<sp/>localtime(timep);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>*result<sp/>=<sp/>*lt;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lt;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAVE_TIMEGM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>offset<sp/>of<sp/>local<sp/>time<sp/>from<sp/>UTC<sp/>in<sp/>seconds.<sp/>DST<sp/>is<sp/>ignored.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>time_t<sp/>getLocalTimeZoneOffset()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>time_t<sp/>utc,<sp/>local;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>tm_utc;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>time<sp/>(&amp;utc);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>gmtime_r(&amp;utc,<sp/>&amp;tm_utc);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>local<sp/>=<sp/>mktime(&amp;tm_utc);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>difftime(utc,<sp/>local);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">time_t<sp/>timegm(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>tm<sp/>*tm)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>tm-&gt;tm_isdst<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>time_t<sp/>t<sp/>=<sp/>mktime(tm);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>t<sp/>+=<sp/>getLocalTimeZoneOffset();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>t;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/goo/glibc.cc"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,109 @@
+.TH "XmlStreamWriterPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamWriterPrivate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBXmlStreamPrivateTagStack\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlStreamWriterPrivate\fP (\fBXmlStreamWriter\fP *q)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const QStringRef &)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBwriteEscaped\fP (const QString &, bool escapeWhitespace=false)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const char *s, int len)"
+.br
+.ti -1c
+.RI "template<int N> void \fBwrite\fP (const char(&s)[N])"
+.br
+.ti -1c
+.RI "bool \fBfinishStartElement\fP (bool contents=true)"
+.br
+.ti -1c
+.RI "void \fBwriteStartElement\fP (const QString &namespaceUri, const QString &name)"
+.br
+.ti -1c
+.RI "void \fBcheckIfASCIICompatibleCodec\fP ()"
+.br
+.ti -1c
+.RI "\fBNamespaceDeclaration\fP & \fBfindNamespace\fP (const QString &namespaceUri, bool writeDeclaration=false, bool noDefault=false)"
+.br
+.ti -1c
+.RI "void \fBwriteNamespaceDeclaration\fP (const \fBNamespaceDeclaration\fP &namespaceDeclaration)"
+.br
+.ti -1c
+.RI "void \fBindent\fP (int level)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QIODevice * \fBdevice\fP"
+.br
+.ti -1c
+.RI "QString * \fBstringDevice\fP"
+.br
+.ti -1c
+.RI "uint \fBdeleteDevice\fP:1"
+.br
+.ti -1c
+.RI "uint \fBinStartElement\fP:1"
+.br
+.ti -1c
+.RI "uint \fBinEmptyElement\fP:1"
+.br
+.ti -1c
+.RI "uint \fBlastWasStartElement\fP:1"
+.br
+.ti -1c
+.RI "uint \fBwroteSomething\fP:1"
+.br
+.ti -1c
+.RI "uint \fBhasError\fP:1"
+.br
+.ti -1c
+.RI "uint \fBautoFormatting\fP:1"
+.br
+.ti -1c
+.RI "uint \fBisCodecASCIICompatible\fP:1"
+.br
+.ti -1c
+.RI "QByteArray \fBautoFormattingIndent\fP"
+.br
+.ti -1c
+.RI "\fBNamespaceDeclaration\fP \fBemptyNamespace\fP"
+.br
+.ti -1c
+.RI "int \fBlastNamespaceDeclaration\fP"
+.br
+.ti -1c
+.RI "QTextCodec * \fBcodec\fP"
+.br
+.ti -1c
+.RI "QTextEncoder * \fBencoder\fP"
+.br
+.ti -1c
+.RI "int \fBnamespacePrefixCount\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 2947 of file xmlstream\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

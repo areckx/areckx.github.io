@@ -1,0 +1,267 @@
+.TH "StyleHelper" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+StyleHelper
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStatefulBrush\fP \fBviewHoverBrush\fP () const"
+.br
+.ti -1c
+.RI "\fBStatefulBrush\fP \fBviewFocusBrush\fP () const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBhole\fP (const QColor &\fBcolor\fP, qreal shade, int size, bool outline) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBholeFlat\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "void \fBfillHole\fP (QPainter &, const QRect &, int size=7) const"
+.br
+.ti -1c
+.RI "void \fBrenderHole\fP (QPainter *p, const QColor &\fBcolor\fP, const QRect &r, bool focus=false, bool hover=false, TileSet::Tiles posFlags=TileSet::Ring, bool outline=false) const"
+.br
+.RI "generic hole "
+.ti -1c
+.RI "void \fBrenderHole\fP (QPainter *p, const QColor &, const QRect &r, bool focus, bool hover, qreal opacity, AnimationMode animationMode, TileSet::Tiles posFlags=TileSet::Ring, bool outline=false) const"
+.br
+.RI "generic hole (with animated glow) "
+.ti -1c
+.RI "\fBTileSet\fP * \fBholeFocused\fP (const QColor &, const QColor &glowColor, qreal shade, int size=7, bool outline=false) const"
+.br
+.ti -1c
+.RI "const QColor & \fBcalcMidColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "const QWidget * \fBcheckAutoFillBackground\fP (const QWidget *) const"
+.br
+.ti -1c
+.RI "const QColor & \fBbackgroundColor\fP (const QColor &\fBcolor\fP, int height, int y) const"
+.br
+.RI "returns menu background color matching position in a top level widget of given height "
+.ti -1c
+.RI "const QColor & \fBbackgroundColor\fP (const QColor &, qreal ratio) const"
+.br
+.ti -1c
+.RI "const QColor & \fBbackgroundColor\fP (const QColor &\fBcolor\fP, const QWidget *w, const QPoint &point) const"
+.br
+.ti -1c
+.RI "const QColor & \fBbackgroundRadialColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "const QColor & \fBbackgroundTopColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "const QColor & \fBbackgroundBottomColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "bool \fBlowThreshold\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "bool \fBhighThreshold\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "const QColor & \fBcalcLightColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "const QColor & \fBcalcDarkColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "void \fBdrawInverseShadow\fP (QPainter &, const QColor &, int pad, int size, qreal fuzz) const"
+.br
+.ti -1c
+.RI "void \fBdrawInverseGlow\fP (QPainter &, const QColor &, int pad, int size, int rsize) const"
+.br
+.ti -1c
+.RI "const QColor & \fBcalcShadowColor\fP (const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "void \fBrenderMenuBackground\fP (QPainter *p, const QRect &clipRect, const QWidget *widget, const QPalette &pal) const"
+.br
+.ti -1c
+.RI "void \fBrenderMenuBackground\fP (QPainter *, const QRect &, const QWidget *, const QColor &) const"
+.br
+.ti -1c
+.RI "QPixmap \fBverticalGradient\fP (const QColor &\fBcolor\fP, int height, int offset=0) const"
+.br
+.ti -1c
+.RI "QPixmap \fBradialGradient\fP (const QColor &\fBcolor\fP, int width, int height=64) const"
+.br
+.ti -1c
+.RI "bool \fBhasAlphaChannel\fP (const QWidget *) const"
+.br
+.ti -1c
+.RI "bool \fBcompositingActive\fP () const"
+.br
+.ti -1c
+.RI "void \fBrenderWindowBackground\fP (QPainter *p, const QRect &clipRect, const QWidget *widget, const QPalette &pal, int y_shift=\-23, int gradientHeight=64) const"
+.br
+.ti -1c
+.RI "void \fBrenderWindowBackground\fP (QPainter *p, const QRect &clipRect, const QWidget *widget, const QWidget *window, const QPalette &pal, int y_shift=\-23, int gradientHeight=64) const"
+.br
+.ti -1c
+.RI "void \fBrenderWindowBackground\fP (QPainter *p, const QRect &clipRect, const QWidget *widget, const QColor &\fBcolor\fP, int y_shift=\-23, int gradientHeight=64) const"
+.br
+.RI "render window background using a given color as a reference "
+.ti -1c
+.RI "void \fBrenderWindowBackground\fP (QPainter *p, const QRect &clipRect, const QWidget *widget, const QWidget *window, const QColor &\fBcolor\fP, int y_shift=\-23, int gradientHeight=64) const"
+.br
+.RI "render window background using a given color as a reference "
+.ti -1c
+.RI "void \fBrenderDot\fP (QPainter *, const QPoint &, const QColor &) const"
+.br
+.ti -1c
+.RI "void \fBdrawSeparator\fP (QPainter *p, const QRect &r, const QColor &\fBcolor\fP, Qt::Orientation orientation) const"
+.br
+.ti -1c
+.RI "const QColor & \fBdecoColor\fP (const QColor &background, const QColor &\fBcolor\fP) const"
+.br
+.ti -1c
+.RI "QRegion \fBroundedMask\fP (const QRect &, int left=1, int right=1, int top=1, int bottom=1) const"
+.br
+.RI "returns a region matching given rect, with rounded corners, based on the multipliers "
+.in -1c
+.PP
+.RI "\fBslabs\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "void \fBfillSlab\fP (QPainter &, const QRect &, int size=7) const"
+.br
+.ti -1c
+.RI "QPixmap \fBprogressBarIndicator\fP (const QPalette &, const QRect &) const"
+.br
+.ti -1c
+.RI "QPixmap \fBdialSlab\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "QPixmap \fBdialSlabFocused\fP (const QColor &, const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "QPixmap \fBroundSlab\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "QPixmap \fBroundSlabFocused\fP (const QColor &, const QColor &glowColor, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBslabFocused\fP (const QColor &, const QColor &glowColor, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBslabSunken\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBslabInverted\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBslab\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.ti -1c
+.RI "void \fBdrawFloatFrame\fP (QPainter *p, const QRect r, const QColor &\fBcolor\fP, bool drawUglyShadow=true, bool isActive=false, const QColor &frameColor=QColor(), TileSet::Tiles tiles=TileSet::Ring) const"
+.br
+.RI "draw frame that mimics some sort of shadows around a panel "
+.ti -1c
+.RI "\fBTileSet\fP * \fBscrollHole\fP (const QColor &, Qt::Orientation orientation, bool smallShadow=false) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBroundCorner\fP (const QColor &, int size=5) const"
+.br
+.RI "round corners (used for Menus, combobox drop-down, detached toolbars and dockwidgets "
+.ti -1c
+.RI "\fBTileSet\fP * \fBslope\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.RI "groupbox background "
+.ti -1c
+.RI "\fBTileSet\fP * \fBselection\fP (const QColor &, int height, bool custom) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBslitFocused\fP (const QColor &) const"
+.br
+.RI "focus rect for flat toolbuttons "
+.ti -1c
+.RI "void \fBdrawSlab\fP (QPainter &, const QColor &, qreal shade) const"
+.br
+.ti -1c
+.RI "void \fBdrawShadow\fP (QPainter &, const QColor &, int size) const"
+.br
+.ti -1c
+.RI "void \fBdrawOuterGlow\fP (QPainter &, const QColor &, int size) const"
+.br
+.ti -1c
+.RI "void \fBdrawRoundSlab\fP (QPainter &, const QColor &, qreal) const"
+.br
+.ti -1c
+.RI "const QColor & \fBmenuBackgroundColor\fP (const QColor &\fBcolor\fP, const QWidget *w, const QPoint &point) const"
+.br
+.RI "returns menu background color matching position in a given menu widget "
+.ti -1c
+.RI "const QColor & \fBmenuBackgroundColor\fP (const QColor &\fBcolor\fP, int height, int y) const"
+.br
+.RI "returns menu background color matching position in a menu widget of given height "
+.ti -1c
+.RI "\fBTileSet\fP * \fBgroove\fP (const QColor &, qreal shade, int size=7) const"
+.br
+.RI "scrollbar groove "
+.ti -1c
+.RI "QPalette \fBmergePalettes\fP (const QPalette &, qreal ratio) const"
+.br
+.ti -1c
+.RI "\fBTileSet\fP * \fBdockFrame\fP (const QColor &, int size)"
+.br
+.ti -1c
+.RI "QPixmap \fBwindecoButton\fP (const QColor &\fBcolor\fP, bool pressed, int size=21) const"
+.br
+.ti -1c
+.RI "const \fBStatefulBrush\fP & \fBviewNegativeTextBrush\fP (void) const"
+.br
+.RI "negative text brush (used for close button hover) "
+.ti -1c
+.RI "void \fBinvalidateCaches\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMaxCacheSize\fP (int value)"
+.br
+.ti -1c
+.RI "void \fBreloadConfig\fP ()"
+.br
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QColor \fBalphaColor\fP (QColor \fBcolor\fP, qreal alpha)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 39 of file stylehelper\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void StyleHelper::drawFloatFrame (QPainter * p, const QRect r, const QColor & color, bool drawUglyShadow = \fCtrue\fP, bool isActive = \fCfalse\fP, const QColor & frameColor = \fCQColor()\fP, TileSet::Tiles tiles = \fCTileSet::Ring\fP) const"
+
+.PP
+draw frame that mimics some sort of shadows around a panel it is used for menus, detached dock panels and toolbar, as well as window decoration when compositing is disabled 
+.PP
+Definition at line 1370 of file stylehelper\&.cpp\&.
+.SS "void StyleHelper::renderWindowBackground (QPainter * p, const QRect & clipRect, const QWidget * widget, const QWidget * window, const QPalette & pal, int y_shift = \fC\-23\fP, int gradientHeight = \fC64\fP) const\fC [inline]\fP"
+y_shift: shift the background gradient upwards, to fit with the windec gradientHeight: the height of the generated gradient\&. for different heights, the gradient is translated so that it is always at the same position from the bottom 
+.PP
+Definition at line 161 of file stylehelper\&.h\&.
+.SS "QRegion StyleHelper::roundedMask (const QRect & r, int left = \fC1\fP, int right = \fC1\fP, int top = \fC1\fP, int bottom = \fC1\fP) const"
+
+.PP
+returns a region matching given rect, with rounded corners, based on the multipliers setting any of the multipliers to zero will result in no corners shown on the corresponding side 
+.PP
+Definition at line 915 of file stylehelper\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

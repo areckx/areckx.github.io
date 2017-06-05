@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_debugger" kind="class" language="C++" prot="public">
+    <compoundname>Ms::Debugger</compoundname>
+    <basecompoundref refid="class_ms_1_1_abstract_dialog" prot="public" virt="non-virtual">Ms::AbstractDialog</basecompoundref>
+    <basecompoundref refid="class_ui_1_1_debugger_base" prot="public" virt="non-virtual">Ui::DebuggerBase</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_debugger_1ab302540ce4a655cd657e042fcd40e87b" prot="private" static="no" mutable="no">
+        <type>QStack&lt; <ref refid="class_ms_1_1_element" kindref="compound">Element</ref> * &gt;</type>
+        <definition>QStack&lt;Element*&gt; Ms::Debugger::backStack</definition>
+        <argsstring></argsstring>
+        <name>backStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="84" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_debugger_1a9c3a3c20523afc7b7daf20ece3cb0fca" prot="private" static="no" mutable="no">
+        <type>QStack&lt; <ref refid="class_ms_1_1_element" kindref="compound">Element</ref> * &gt;</type>
+        <definition>QStack&lt;Element*&gt; Ms::Debugger::forwardStack</definition>
+        <argsstring></argsstring>
+        <name>forwardStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="85" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_debugger_1aa451cd39b14dd5c23626e79023b67b71" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_show_element_base" kindref="compound">ShowElementBase</ref> *</type>
+        <definition>ShowElementBase* Ms::Debugger::elementViews[int(ElementType::MAXTYPE)]</definition>
+        <argsstring>[int(ElementType::MAXTYPE)]</argsstring>
+        <name>elementViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="87" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_debugger_1aed8bba8d99b7676a13641ba47c4646f3" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+        <definition>Score* Ms::Debugger::cs</definition>
+        <argsstring></argsstring>
+        <name>cs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="96" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_debugger_1a8f7f40351779f0ea0f32bcedcf2365c2" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+        <definition>Element* Ms::Debugger::curElement</definition>
+        <argsstring></argsstring>
+        <name>curElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="97" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a627ff28ef9fb469b03d04a48df78c4c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Debugger::searchElement</definition>
+        <argsstring>(QTreeWidgetItem *pi, Element *el)</argsstring>
+        <name>searchElement</name>
+        <param>
+          <type>QTreeWidgetItem *</type>
+          <declname>pi</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="89" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="516" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a658dbdec58dbed7ad6c90c36e4bb985c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::updateElement</definition>
+        <argsstring>(Element *)</argsstring>
+        <name>updateElement</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <defname>el</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="90" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="586" bodyend="680"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1aeae5ec10110773edd567e85ce4c2c73b" prot="private" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::showEvent</definition>
+        <argsstring>(QShowEvent *)</argsstring>
+        <name>showEvent</name>
+        <param>
+          <type>QShowEvent *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="91" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="274" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1adb44a2bc12341dca2e2588c8d80182f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::addMeasure</definition>
+        <argsstring>(ElementItem *mi, Measure *measure)</argsstring>
+        <name>addMeasure</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element_item" kindref="compound">ElementItem</ref> *</type>
+          <declname>mi</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+          <declname>measure</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="92" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="371" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a0a183ffe2e1460aae5f184fb783a1497" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::readSettings</definition>
+        <argsstring>()</argsstring>
+        <name>readSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="93" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="221" bodyend="231"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a3d56e6f36a4957d3433a3eed48eb0637" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void Ms::Debugger::retranslate</definition>
+        <argsstring>()</argsstring>
+        <name>retranslate</name>
+        <reimplements refid="class_ms_1_1_abstract_dialog_1ab3e5ad9b82fa50484aeae4873cd7c850">retranslate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="98" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="98" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1ae9b531110ee5ec0b1d2c0698fcbb33fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::itemClicked</definition>
+        <argsstring>(QTreeWidgetItem *, int)</argsstring>
+        <name>itemClicked</name>
+        <param>
+          <type>QTreeWidgetItem *</type>
+          <defname>i</defname>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="101" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="566" bodyend="580"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1ab2acea5486c48d66d4913a284f22d3b4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::itemExpanded</definition>
+        <argsstring>(QTreeWidgetItem *)</argsstring>
+        <name>itemExpanded</name>
+        <param>
+          <type>QTreeWidgetItem *</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="102" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="557" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1a06dac363420f34d269ce7cfa8637db8b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::layoutScore</definition>
+        <argsstring>()</argsstring>
+        <name>layoutScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="103" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="237" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1a18b4721ec2ac867c55d60f5cc7361031" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::backClicked</definition>
+        <argsstring>()</argsstring>
+        <name>backClicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="104" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="2180" bodyend="2188"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1a588cb60751a78e7cd9d214e78c3975bc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::forwardClicked</definition>
+        <argsstring>()</argsstring>
+        <name>forwardClicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="105" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="2194" bodyend="2202"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1ab85a14c01f0f521fa503cae26f463a3b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::selectElement</definition>
+        <argsstring>()</argsstring>
+        <name>selectElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="106" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="171" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1a7329930cf5bcd52a98c870bba70a6be5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::resetElement</definition>
+        <argsstring>()</argsstring>
+        <name>resetElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="107" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="182" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1aabcf5840f089d8bce31c7f579b43229b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::layout</definition>
+        <argsstring>()</argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="108" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="194" bodyend="201"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1a9c0cb96b0d473bfa08757c3faef328d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::setElement</definition>
+        <argsstring>(Element *)</argsstring>
+        <name>setElement</name>
+        <param>
+          <type><ref refid="class_ms_1_1_element" kindref="compound">Element</ref> *</type>
+          <defname>el</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="111" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="542" bodyend="551"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_debugger_1afcfbd294da3204446e1bfe02e806c9a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::reloadClicked</definition>
+        <argsstring>()</argsstring>
+        <name>reloadClicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="112" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="2208" bodyend="2214"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a489398b2b97a0fc21a453df8df9db0fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Debugger::Debugger</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>Debugger</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="115" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="138" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a0992a59675225bfab24639bb8a6317bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::writeSettings</definition>
+        <argsstring>()</argsstring>
+        <name>writeSettings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="116" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="207" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_debugger_1a619b0e2b4ee09c4436ce95c776ba20be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Debugger::updateList</definition>
+        <argsstring>(Score *)</argsstring>
+        <name>updateList</name>
+        <param>
+          <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+          <defname>s</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/debugger/debugger.h" line="117" column="1" bodyfile="mscore/debugger/debugger.cpp" bodystart="427" bodyend="510"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3807">
+        <label>Ms::Debugger</label>
+        <link refid="class_ms_1_1_debugger"/>
+        <childnode refid="3808" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3810" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3811">
+        <label>Ui_DebuggerBase</label>
+        <link refid="class_ui___debugger_base"/>
+      </node>
+      <node id="3810">
+        <label>Ui::DebuggerBase</label>
+        <link refid="class_ui_1_1_debugger_base"/>
+        <childnode refid="3811" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3808">
+        <label>Ms::AbstractDialog</label>
+        <link refid="class_ms_1_1_abstract_dialog"/>
+        <childnode refid="3809" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3809">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3812">
+        <label>Ms::Debugger</label>
+        <link refid="class_ms_1_1_debugger"/>
+        <childnode refid="3813" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3815" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3817" relation="usage">
+          <edgelabel>cs</edgelabel>
+        </childnode>
+        <childnode refid="3824" relation="usage">
+          <edgelabel>curElement</edgelabel>
+        </childnode>
+      </node>
+      <node id="3816">
+        <label>Ui_DebuggerBase</label>
+        <link refid="class_ui___debugger_base"/>
+      </node>
+      <node id="3818">
+        <label>QObject</label>
+      </node>
+      <node id="3815">
+        <label>Ui::DebuggerBase</label>
+        <link refid="class_ui_1_1_debugger_base"/>
+        <childnode refid="3816" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3813">
+        <label>Ms::AbstractDialog</label>
+        <link refid="class_ms_1_1_abstract_dialog"/>
+        <childnode refid="3814" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3823">
+        <label>std::list&lt; SynthesizerGroup &gt;</label>
+      </node>
+      <node id="3822">
+        <label>Ms::SynthesizerState</label>
+        <link refid="class_ms_1_1_synthesizer_state"/>
+        <childnode refid="3823" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3819">
+        <label>Ms::ScoreElement</label>
+        <link refid="class_ms_1_1_score_element"/>
+        <childnode refid="3820" relation="usage">
+          <edgelabel>_links</edgelabel>
+        </childnode>
+      </node>
+      <node id="3814">
+        <label>QDialog</label>
+      </node>
+      <node id="3820">
+        <label>Ms::LinkedElements</label>
+        <link refid="class_ms_1_1_linked_elements"/>
+        <childnode refid="3821" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3817">
+        <label>Ms::Score</label>
+        <link refid="class_ms_1_1_score"/>
+        <childnode refid="3818" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3819" relation="private-inheritance">
+        </childnode>
+        <childnode refid="3822" relation="usage">
+          <edgelabel>_synthesizerState</edgelabel>
+        </childnode>
+      </node>
+      <node id="3824">
+        <label>Ms::Element</label>
+        <link refid="class_ms_1_1_element"/>
+        <childnode refid="3819" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3821">
+        <label>QList&lt; ScoreElement *&gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/debugger/debugger.h" line="81" column="1" bodyfile="mscore/debugger/debugger.h" bodystart="81" bodyend="118"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_abstract_dialog_1af8fab1deef53ce82b8230e0c11c36ff9" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>AbstractDialog</name></member>
+      <member refid="class_ms_1_1_debugger_1adb44a2bc12341dca2e2588c8d80182f2" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>addMeasure</name></member>
+      <member refid="class_ui___debugger_base_1af6d82edb7be733cd89a67c3a99d940dd" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>back</name></member>
+      <member refid="class_ms_1_1_debugger_1a18b4721ec2ac867c55d60f5cc7361031" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>backClicked</name></member>
+      <member refid="class_ms_1_1_debugger_1ab302540ce4a655cd657e042fcd40e87b" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>backStack</name></member>
+      <member refid="class_ms_1_1_abstract_dialog_1a8b3a49dc3c7531f0a3234078b3aa97e1" prot="protected" virt="virtual"><scope>Ms::Debugger</scope><name>changeEvent</name></member>
+      <member refid="class_ms_1_1_debugger_1aed8bba8d99b7676a13641ba47c4646f3" prot="protected" virt="non-virtual"><scope>Ms::Debugger</scope><name>cs</name></member>
+      <member refid="class_ms_1_1_debugger_1a8f7f40351779f0ea0f32bcedcf2365c2" prot="protected" virt="non-virtual"><scope>Ms::Debugger</scope><name>curElement</name></member>
+      <member refid="class_ms_1_1_debugger_1a489398b2b97a0fc21a453df8df9db0fe" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>Debugger</name></member>
+      <member refid="class_ms_1_1_debugger_1aa451cd39b14dd5c23626e79023b67b71" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>elementViews</name></member>
+      <member refid="class_ui___debugger_base_1a49cb1503a015bdd7af2b8701bbc6d305" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>forward</name></member>
+      <member refid="class_ms_1_1_debugger_1a588cb60751a78e7cd9d214e78c3975bc" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>forwardClicked</name></member>
+      <member refid="class_ms_1_1_debugger_1a9c3a3c20523afc7b7daf20ece3cb0fca" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>forwardStack</name></member>
+      <member refid="class_ui___debugger_base_1a3e7690e42e050502ffceada67178fdfe" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>horizontalLayout</name></member>
+      <member refid="class_ui___debugger_base_1acd14d57318a24086ef740e89764eda2e" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>horizontalSpacer</name></member>
+      <member refid="class_ui___debugger_base_1a10012b1d332fee4fe3257368c9424081" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>horizontalSpacer_2</name></member>
+      <member refid="class_ms_1_1_debugger_1ae9b531110ee5ec0b1d2c0698fcbb33fc" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>itemClicked</name></member>
+      <member refid="class_ms_1_1_debugger_1ab2acea5486c48d66d4913a284f22d3b4" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>itemExpanded</name></member>
+      <member refid="class_ms_1_1_debugger_1aabcf5840f089d8bce31c7f579b43229b" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>layout</name></member>
+      <member refid="class_ui___debugger_base_1a4dccaf08af3999411d347cab03c3e711" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>layoutButton</name></member>
+      <member refid="class_ms_1_1_debugger_1a06dac363420f34d269ce7cfa8637db8b" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>layoutScore</name></member>
+      <member refid="class_ui___debugger_base_1ac507723c727a437607a76ae7c3a36887" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>list</name></member>
+      <member refid="class_ui___debugger_base_1a60f3c4d0a8d2760523fc53106b1ad046" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>page</name></member>
+      <member refid="class_ui___debugger_base_1a53eed4514b75087834e04f3da9cde0d1" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>page_2</name></member>
+      <member refid="class_ms_1_1_debugger_1a0a183ffe2e1460aae5f184fb783a1497" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>readSettings</name></member>
+      <member refid="class_ui___debugger_base_1af87ea2db3d3705f4e87761dcc43e15d1" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>reload</name></member>
+      <member refid="class_ms_1_1_debugger_1afcfbd294da3204446e1bfe02e806c9a6" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>reloadClicked</name></member>
+      <member refid="class_ui___debugger_base_1af92391a3e6697930985e7caec50cc08e" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>resetButton</name></member>
+      <member refid="class_ms_1_1_debugger_1a7329930cf5bcd52a98c870bba70a6be5" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>resetElement</name></member>
+      <member refid="class_ms_1_1_debugger_1a3d56e6f36a4957d3433a3eed48eb0637" prot="protected" virt="virtual"><scope>Ms::Debugger</scope><name>retranslate</name></member>
+      <member refid="class_ui___debugger_base_1a4b57069c73849012f612572b83e1fe54" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>retranslateUi</name></member>
+      <member refid="class_ms_1_1_debugger_1a627ff28ef9fb469b03d04a48df78c4c5" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>searchElement</name></member>
+      <member refid="class_ui___debugger_base_1aeca085bf6f4fc0deda13693a60e6442b" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>selectButton</name></member>
+      <member refid="class_ms_1_1_debugger_1ab85a14c01f0f521fa503cae26f463a3b" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>selectElement</name></member>
+      <member refid="class_ms_1_1_debugger_1a9c0cb96b0d473bfa08757c3faef328d8" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>setElement</name></member>
+      <member refid="class_ui___debugger_base_1a9b1a50fe2b138ffe688392cf9d1ddf1b" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>setupUi</name></member>
+      <member refid="class_ms_1_1_debugger_1aeae5ec10110773edd567e85ce4c2c73b" prot="private" virt="virtual"><scope>Ms::Debugger</scope><name>showEvent</name></member>
+      <member refid="class_ui___debugger_base_1a0e360c9a9503f40b646fd0b6d0668157" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>split</name></member>
+      <member refid="class_ui___debugger_base_1a9d42db05f2aceb6da45adf796a609ac5" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>stack</name></member>
+      <member refid="class_ms_1_1_debugger_1a658dbdec58dbed7ad6c90c36e4bb985c" prot="private" virt="non-virtual"><scope>Ms::Debugger</scope><name>updateElement</name></member>
+      <member refid="class_ms_1_1_debugger_1a619b0e2b4ee09c4436ce95c776ba20be" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>updateList</name></member>
+      <member refid="class_ui___debugger_base_1acd635324dc2878b6b43f20e7078b2e7e" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>verticalLayout</name></member>
+      <member refid="class_ms_1_1_debugger_1a0992a59675225bfab24639bb8a6317bc" prot="public" virt="non-virtual"><scope>Ms::Debugger</scope><name>writeSettings</name></member>
+      <member refid="class_ms_1_1_abstract_dialog_1ac9ce9a5aadc40a75793cf14e969719fb" prot="public" virt="virtual"><scope>Ms::Debugger</scope><name>~AbstractDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,652 @@
+\hypertarget{class_poppler_1_1_annotation}{}\section{Poppler\+:\+:Annotation Class Reference}
+\label{class_poppler_1_1_annotation}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+
+
+\hyperlink{class_poppler_1_1_annotation}{Annotation} class holding properties shared by all annotations.  
+
+
+
+
+{\ttfamily \#include $<$poppler-\/annotation.\+h$>$}
+
+Inheritance diagram for Poppler\+:\+:Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_poppler_1_1_annotation}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_poppler_1_1_annotation_1_1_popup}{Popup}
+\begin{DoxyCompactList}\small\item\em Container class for \hyperlink{class_poppler_1_1_annotation}{Annotation} pop-\/up window information. \end{DoxyCompactList}\item 
+class \hyperlink{class_poppler_1_1_annotation_1_1_style}{Style}
+\begin{DoxyCompactList}\small\item\em Container class for \hyperlink{class_poppler_1_1_annotation}{Annotation} style information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Sub\+Type} \{ \newline
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa6bd741de6409191ae955f87afdf30c31}{A\+Text} = 1, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fae1aecf8329750ced9f833f0019b43720}{A\+Line} = 2, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fadd10e52b73cf0d41989bc12a82ca0aad}{A\+Geom} = 3, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2384dbe2c0ca6dc6bb51b08b79426aea}{A\+Highlight} = 4, 
+\newline
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa408e3d4395a1553c2bb7ea944180f7fe}{A\+Stamp} = 5, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa8d9a4dbed303724abdff7a96a88d5abb}{A\+Ink} = 6, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa9cf6f3b575b16e7f2bdc0133b87d7cd9}{A\+Link} = 7, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa32db0efab9343be54a9d18e52cd64f75}{A\+Caret} = 8, 
+\newline
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4ae26d75bb61ae5561233b3317057489}{A\+File\+Attachment} = 9, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4f378fc5e31f79f9b75009b492f505d2}{A\+Sound} = 10, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4bfc2a21c8bad606d508152c9d89ba78}{A\+Movie} = 11, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fab7e5d7275ead1db82ecf0c2ac190accc}{A\+Screen} = 12, 
+\newline
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2ebaab2ce6030d1f99dc0596b71bdd8e}{A\+Widget} = 13, 
+\hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa5847a71be848b7516dee43d8ccd3d927}{A\+Rich\+Media} = 14, 
+{\bfseries A\+\_\+\+B\+A\+SE} = 0
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}{Flag} \{ \newline
+\hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a9cf0643c008c2c3f617590b129e48d3e}{Hidden} = 1, 
+{\bfseries Fixed\+Size} = 2, 
+\hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}{Fixed\+Rotation} = 4, 
+\hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270abc4b217d0e1932558a182595a1ffadaf}{Deny\+Print} = 8, 
+\newline
+{\bfseries Deny\+Write} = 16, 
+{\bfseries Deny\+Delete} = 32, 
+{\bfseries Toggle\+Hiding\+On\+Mouse} = 64, 
+{\bfseries External} = 128
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a1161a85deb01303891e12b6550625c28}\label{class_poppler_1_1_annotation_a1161a85deb01303891e12b6550625c28}} 
+enum {\bfseries Line\+Style} \{ \newline
+{\bfseries Solid} = 1, 
+{\bfseries Dashed} = 2, 
+{\bfseries Beveled} = 4, 
+{\bfseries Inset} = 8, 
+\newline
+{\bfseries Underline} = 16
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a57ad1d13d00f9d186ce7ac3e7a3acd98}\label{class_poppler_1_1_annotation_a57ad1d13d00f9d186ce7ac3e7a3acd98}} 
+enum {\bfseries Line\+Effect} \{ {\bfseries No\+Effect} = 1, 
+{\bfseries Cloudy} = 2
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_ad1add377087c19d65ecfdaf0ed7ceb32}\label{class_poppler_1_1_annotation_ad1add377087c19d65ecfdaf0ed7ceb32}} 
+enum {\bfseries Rev\+Scope} \{ {\bfseries Root} = 0, 
+{\bfseries Reply} = 1, 
+{\bfseries Group} = 2, 
+{\bfseries Delete} = 4
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a724faeb040662a8c3287f35925f67a18}\label{class_poppler_1_1_annotation_a724faeb040662a8c3287f35925f67a18}} 
+enum {\bfseries Rev\+Type} \{ \newline
+{\bfseries None} = 1, 
+{\bfseries Marked} = 2, 
+{\bfseries Unmarked} = 4, 
+{\bfseries Accepted} = 8, 
+\newline
+{\bfseries Rejected} = 16, 
+{\bfseries Cancelled} = 32, 
+{\bfseries Completed} = 64
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97}{Additional\+Action\+Type} \{ \newline
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aee2c0fc83347cd007648580bcbbad7d0}{Cursor\+Entering\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97ac6dc3772b30bfa14e7508aff6fe80b10}{Cursor\+Leaving\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a282cc09a8997b7a185131cbbca222305}{Mouse\+Pressed\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a00ec3a0e67e06661be5e4512863277bb}{Mouse\+Released\+Action}, 
+\newline
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a11fea0eab0e5fe95c9b2e49b60634a09}{Focus\+In\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a96b69f44fecbdddbe2a3eac3663101ed}{Focus\+Out\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a1abe49ff4ff00c18dba2d1a1f02fa81a}{Page\+Opening\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aadfe2f87822cb8ece97c4e2866149f9c}{Page\+Closing\+Action}, 
+\newline
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aed0387be629aea936c955a2383e51ba7}{Page\+Visible\+Action}, 
+\hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a9f96283019b53b0dac7e6fd40eb51aec}{Page\+Invisible\+Action}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_poppler_1_1_annotation_aa14606418f3fb5a1ab0a52223c6e1511}{author} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_a519a5f64785bf1381921f6f62dded881}{set\+Author} (const Q\+String \&\hyperlink{class_poppler_1_1_annotation_aa14606418f3fb5a1ab0a52223c6e1511}{author})
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a46413990e613a73d1e57157268c61eff}\label{class_poppler_1_1_annotation_a46413990e613a73d1e57157268c61eff}} 
+Q\+String {\bfseries contents} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_addd60a937680432518eda158dcac894b}\label{class_poppler_1_1_annotation_addd60a937680432518eda158dcac894b}} 
+void {\bfseries set\+Contents} (const Q\+String \&contents)
+\item 
+Q\+String \hyperlink{class_poppler_1_1_annotation_ac23456377d420ace54b1f7eb4d389423}{unique\+Name} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_aa2e24fbf5e2cd28af8e1b62876c39663}{set\+Unique\+Name} (const Q\+String \&\hyperlink{class_poppler_1_1_annotation_ac23456377d420ace54b1f7eb4d389423}{unique\+Name})
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_af7b41f7e359ffa61305d36ba72bb8f2e}\label{class_poppler_1_1_annotation_af7b41f7e359ffa61305d36ba72bb8f2e}} 
+Q\+Date\+Time {\bfseries modification\+Date} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a814ec2c7ccc7aace106510a43bcc858e}\label{class_poppler_1_1_annotation_a814ec2c7ccc7aace106510a43bcc858e}} 
+void {\bfseries set\+Modification\+Date} (const Q\+Date\+Time \&date)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_ae1f9bc6498d4b30e82755895b1fd10f6}\label{class_poppler_1_1_annotation_ae1f9bc6498d4b30e82755895b1fd10f6}} 
+Q\+Date\+Time {\bfseries creation\+Date} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a9f520b6e61052d40207f8a8959dd9d17}\label{class_poppler_1_1_annotation_a9f520b6e61052d40207f8a8959dd9d17}} 
+void {\bfseries set\+Creation\+Date} (const Q\+Date\+Time \&date)
+\item 
+int \hyperlink{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}{flags} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}{set\+Flags} (int \hyperlink{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}{flags})
+\item 
+Q\+RectF \hyperlink{class_poppler_1_1_annotation_a659d9288f67ff988f75df0fa9d3ca2fb}{boundary} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}{set\+Boundary} (const Q\+RectF \&\hyperlink{class_poppler_1_1_annotation_a659d9288f67ff988f75df0fa9d3ca2fb}{boundary})
+\item 
+\hyperlink{class_poppler_1_1_annotation_1_1_style}{Style} \hyperlink{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}{style} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_afa93b9a0da6de47a74b5e296924afc42}{set\+Style} (const \hyperlink{class_poppler_1_1_annotation_1_1_style}{Style} \&\hyperlink{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}{style})
+\item 
+\hyperlink{class_poppler_1_1_annotation_1_1_popup}{Popup} \hyperlink{class_poppler_1_1_annotation_a6db96f04d0f70ceb167e2be0a8e3887f}{popup} () const
+\item 
+void \hyperlink{class_poppler_1_1_annotation_a583671f690f965995b9be23554722900}{set\+Popup} (const \hyperlink{class_poppler_1_1_annotation_1_1_popup}{Popup} \&\hyperlink{class_poppler_1_1_annotation_a6db96f04d0f70ceb167e2be0a8e3887f}{popup})
+\item 
+Rev\+Scope \hyperlink{class_poppler_1_1_annotation_ad9fb16c5e50ac91e51f4ea3547eea2ad}{revision\+Scope} () const
+\item 
+Rev\+Type \hyperlink{class_poppler_1_1_annotation_a1aafb6d259755a1ed36498c70c9837ef}{revision\+Type} () const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ \hyperlink{class_poppler_1_1_annotation_a9d0a905f8eea751f5b33e38245383ecb}{revisions} () const
+\item 
+virtual \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Sub\+Type} \hyperlink{class_poppler_1_1_annotation_aef7fa1532193b41fbeba6e577579d984}{sub\+Type} () const =0
+\item 
+virtual \hyperlink{class_poppler_1_1_annotation_a1594b95bca33b18fae1bdc1606e28985}{$\sim$\+Annotation} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a13daac1cbc1823e18498579fc26b344f}\label{class_poppler_1_1_annotation_a13daac1cbc1823e18498579fc26b344f}} 
+class {\bfseries Annotation\+Utils}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a82099dad2133e65fd919529c37688d4e}\label{class_poppler_1_1_annotation_a82099dad2133e65fd919529c37688d4e}} 
+class {\bfseries Link\+Movie}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a42c733079a41829fb8ce58ccd61ad450}\label{class_poppler_1_1_annotation_a42c733079a41829fb8ce58ccd61ad450}} 
+class {\bfseries Link\+Rendition}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_poppler_1_1_annotation}{Annotation} class holding properties shared by all annotations. 
+
+An \hyperlink{class_poppler_1_1_annotation}{Annotation} is an object (text note, highlight, sound, popup window, ..) contained by a \hyperlink{class_poppler_1_1_page}{Page} in the document.
+
+\begin{DoxyWarning}{Warning}
+Different \hyperlink{class_poppler_1_1_annotation}{Annotation} objects might point to the same annotation.
+\end{DoxyWarning}
+\hypertarget{class_poppler_1_1_annotation_annotCreation}{}\subsection{How to add annotations}\label{class_poppler_1_1_annotation_annotCreation}
+Create an \hyperlink{class_poppler_1_1_annotation}{Annotation} object of the desired subclass (for example \hyperlink{class_poppler_1_1_text_annotation}{Text\+Annotation}) and set its properties\+: 
+\begin{DoxyCode}
+\hyperlink{class_poppler_1_1_text_annotation}{Poppler::TextAnnotation}* myann = \textcolor{keyword}{new} 
+      \hyperlink{class_poppler_1_1_text_annotation}{Poppler::TextAnnotation}(Poppler::TextAnnotation::InPlace);
+myann->\hyperlink{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}{setBoundary}(QRectF(0.1, 0.1, 0.2, 0.2)); \textcolor{comment}{// normalized coordinates: (0,0) is top-left,
+       (1,1) is bottom-right}
+myann->setContents(\textcolor{stringliteral}{"Hello, world!"});
+\end{DoxyCode}
+ \begin{DoxyNote}{Note}
+Always set a boundary rectangle, or nothing will be shown!
+\end{DoxyNote}
+Obtain a pointer to the \hyperlink{class_poppler_1_1_page}{Page} where you want to add the annotation (refer to req for instructions) and add the annotation\+: 
+\begin{DoxyCode}
+\hyperlink{class_poppler_1_1_page}{Poppler::Page}* mypage = ...;
+mypage->\hyperlink{class_poppler_1_1_page_a1235aa9d06e6f66c38f9bab4ac6a5bef}{addAnnotation}(myann);
+\end{DoxyCode}
+
+
+You can keep on editing the annotation after it has been added to the page\+: 
+\begin{DoxyCode}
+myann->setContents(\textcolor{stringliteral}{"World, hello!"}); \textcolor{comment}{// Let's change text...}
+myann->\hyperlink{class_poppler_1_1_annotation_a519a5f64785bf1381921f6f62dded881}{setAuthor}(\textcolor{stringliteral}{"Your name here"});  \textcolor{comment}{// ...and set an author too}
+\end{DoxyCode}
+
+
+When you\textquotesingle{}re done with editing the annotation, you must destroy the \hyperlink{class_poppler_1_1_annotation}{Annotation} object\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{delete} myann;
+\end{DoxyCode}
+
+
+Use the \hyperlink{class_poppler_1_1_p_d_f_converter}{P\+D\+F\+Converter} class to save the modified document.\hypertarget{class_poppler_1_1_annotation_annotFixedRotation}{}\subsection{Fixed\+Rotation flag specifics}\label{class_poppler_1_1_annotation_annotFixedRotation}
+According to the P\+DF specification, annotations whose \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}{Annotation\+::\+Fixed\+Rotation} flag is set must always be shown in their original orientation, no matter what the current rendering rotation or the page\textquotesingle{}s \hyperlink{class_poppler_1_1_page_a168a4a6c452eb365a4cd7170d6a98e29}{Page\+::orientation()} values are. In comparison with regular annotations, such annotations should therefore be transformed by an extra rotation at rendering time to \char`\"{}undo\char`\"{} such context-\/related rotations, which is equal to {\ttfamily -\/(rendering\+\_\+rotation + page\+\_\+orientation)}. The rotation pivot is the top-\/left corner of the boundary rectangle.
+
+In practice, Poppler\textquotesingle{}s \hyperlink{class_poppler_1_1_page_a204d8018439dabf54b3b6f80be843dc3}{Page\+::render\+To\+Image} only \char`\"{}unrotates\char`\"{} the page orientation, and does {\bfseries not} unrotate the rendering rotation. This ensures consistent renderings at different \hyperlink{class_poppler_1_1_page_a9c9a4e1bc301cd2ab4eac0b51f0dc0ec}{Page\+::\+Rotation} values\+: annotations are always positioned as if they were being positioned at the default page orientation.
+
+Just like regular annotations, Poppler Qt4 exposes normalized coordinates relative to the page\textquotesingle{}s default orientation. However, behind the scenes, the coordinate system is different and Poppler transparently transforms each shape. If you never call either \hyperlink{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}{Annotation\+::set\+Flags} or \hyperlink{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}{Annotation\+::set\+Boundary}, you don\textquotesingle{}t need to worry about this; but if you do call them, then you need to adhere to the following rules\+:
+\begin{DoxyItemize}
+\item Whenever you toggle the \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}{Annotation\+::\+Fixed\+Rotation} flag, you {\bfseries must} set again the boundary rectangle first, and then you {\bfseries must} set again any other geometry-\/related property.
+\item Whenever you modify the boundary rectangle of an annotation whose \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}{Annotation\+::\+Fixed\+Rotation} flag is set, you {\bfseries must} set again any other geometry-\/related property.
+\end{DoxyItemize}
+
+These two rules are necessary to make Poppler\textquotesingle{}s transparent coordinate conversion work properly. 
+
+Definition at line 173 of file poppler-\/annotation.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Additional\+Action\+Type@{Additional\+Action\+Type}}
+\index{Additional\+Action\+Type@{Additional\+Action\+Type}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{Additional\+Action\+Type}{AdditionalActionType}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97}{Poppler\+::\+Annotation\+::\+Additional\+Action\+Type}}
+
+Describes the flags from an annotations \textquotesingle{}AA\textquotesingle{} dictionary.
+
+This flag is used by the additional\+Action() method for \hyperlink{class_poppler_1_1_screen_annotation}{Screen\+Annotation} and \hyperlink{class_poppler_1_1_widget_annotation}{Widget\+Annotation}.
+
+\begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cursor\+Entering\+Action@{Cursor\+Entering\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Cursor\+Entering\+Action@{Cursor\+Entering\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aee2c0fc83347cd007648580bcbbad7d0}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aee2c0fc83347cd007648580bcbbad7d0}} 
+Cursor\+Entering\+Action&Performed when the cursor enters the annotation\textquotesingle{}s active area. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cursor\+Leaving\+Action@{Cursor\+Leaving\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Cursor\+Leaving\+Action@{Cursor\+Leaving\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97ac6dc3772b30bfa14e7508aff6fe80b10}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97ac6dc3772b30bfa14e7508aff6fe80b10}} 
+Cursor\+Leaving\+Action&Performed when the cursor exists the annotation\textquotesingle{}s active area. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mouse\+Pressed\+Action@{Mouse\+Pressed\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Mouse\+Pressed\+Action@{Mouse\+Pressed\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a282cc09a8997b7a185131cbbca222305}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a282cc09a8997b7a185131cbbca222305}} 
+Mouse\+Pressed\+Action&Performed when the mouse button is pressed inside the annotation\textquotesingle{}s active area. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mouse\+Released\+Action@{Mouse\+Released\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Mouse\+Released\+Action@{Mouse\+Released\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a00ec3a0e67e06661be5e4512863277bb}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a00ec3a0e67e06661be5e4512863277bb}} 
+Mouse\+Released\+Action&Performed when the mouse button is released inside the annotation\textquotesingle{}s active area. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Focus\+In\+Action@{Focus\+In\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Focus\+In\+Action@{Focus\+In\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a11fea0eab0e5fe95c9b2e49b60634a09}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a11fea0eab0e5fe95c9b2e49b60634a09}} 
+Focus\+In\+Action&Performed when the annotation receives the input focus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Focus\+Out\+Action@{Focus\+Out\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Focus\+Out\+Action@{Focus\+Out\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a96b69f44fecbdddbe2a3eac3663101ed}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a96b69f44fecbdddbe2a3eac3663101ed}} 
+Focus\+Out\+Action&Performed when the annotation loses the input focus. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Page\+Opening\+Action@{Page\+Opening\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Page\+Opening\+Action@{Page\+Opening\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a1abe49ff4ff00c18dba2d1a1f02fa81a}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a1abe49ff4ff00c18dba2d1a1f02fa81a}} 
+Page\+Opening\+Action&Performed when the page containing the annotation is opened. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Page\+Closing\+Action@{Page\+Closing\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Page\+Closing\+Action@{Page\+Closing\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aadfe2f87822cb8ece97c4e2866149f9c}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aadfe2f87822cb8ece97c4e2866149f9c}} 
+Page\+Closing\+Action&Performed when the page containing the annotation is closed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Page\+Visible\+Action@{Page\+Visible\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Page\+Visible\+Action@{Page\+Visible\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aed0387be629aea936c955a2383e51ba7}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97aed0387be629aea936c955a2383e51ba7}} 
+Page\+Visible\+Action&Performed when the page containing the annotation becomes visible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Page\+Invisible\+Action@{Page\+Invisible\+Action}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Page\+Invisible\+Action@{Page\+Invisible\+Action}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a9f96283019b53b0dac7e6fd40eb51aec}\label{class_poppler_1_1_annotation_adab1fa85588b8f9fcdf20cdf37c1be97a9f96283019b53b0dac7e6fd40eb51aec}} 
+Page\+Invisible\+Action&Performed when the page containing the annotation becomes invisible. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 411 of file poppler-\/annotation.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}\label{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Flag@{Flag}}
+\index{Flag@{Flag}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{Flag}{Flag}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}{Poppler\+::\+Annotation\+::\+Flag}}
+
+\hyperlink{class_poppler_1_1_annotation}{Annotation} flags
+
+They can be OR\textquotesingle{}d together (e.\+g. \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}{Annotation\+::\+Fixed\+Rotation} $\vert$ \hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270abc4b217d0e1932558a182595a1ffadaf}{Annotation\+::\+Deny\+Print}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}{flags()}, \hyperlink{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}{set\+Flags(int)} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hidden@{Hidden}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Hidden@{Hidden}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a9cf0643c008c2c3f617590b129e48d3e}\label{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a9cf0643c008c2c3f617590b129e48d3e}} 
+Hidden&Do not display or print the annotation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fixed\+Rotation@{Fixed\+Rotation}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Fixed\+Rotation@{Fixed\+Rotation}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}\label{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270a61bee11edae896858409dd65d14d3a70}} 
+Fixed\+Rotation&Do not rotate the annotation according to page orientation and rendering rotation. \begin{DoxyWarning}{Warning}
+Extra care is needed with this flag\+: see \hyperlink{class_poppler_1_1_annotation_annotFixedRotation}{Fixed\+Rotation flag specifics} 
+\end{DoxyWarning}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Deny\+Print@{Deny\+Print}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Deny\+Print@{Deny\+Print}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270abc4b217d0e1932558a182595a1ffadaf}\label{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270abc4b217d0e1932558a182595a1ffadaf}} 
+Deny\+Print&Do not print the annotation. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 214 of file poppler-\/annotation.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!Sub\+Type@{Sub\+Type}}
+\index{Sub\+Type@{Sub\+Type}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{Sub\+Type}{SubType}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Poppler\+::\+Annotation\+::\+Sub\+Type}}
+
+\hyperlink{class_poppler_1_1_annotation}{Annotation} subclasses
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_aef7fa1532193b41fbeba6e577579d984}{sub\+Type()} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Text@{A\+Text}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Text@{A\+Text}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa6bd741de6409191ae955f87afdf30c31}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa6bd741de6409191ae955f87afdf30c31}} 
+A\+Text&\hyperlink{class_poppler_1_1_text_annotation}{Text\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Line@{A\+Line}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Line@{A\+Line}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fae1aecf8329750ced9f833f0019b43720}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fae1aecf8329750ced9f833f0019b43720}} 
+A\+Line&\hyperlink{class_poppler_1_1_line_annotation}{Line\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Geom@{A\+Geom}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Geom@{A\+Geom}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fadd10e52b73cf0d41989bc12a82ca0aad}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fadd10e52b73cf0d41989bc12a82ca0aad}} 
+A\+Geom&\hyperlink{class_poppler_1_1_geom_annotation}{Geom\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Highlight@{A\+Highlight}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Highlight@{A\+Highlight}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2384dbe2c0ca6dc6bb51b08b79426aea}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2384dbe2c0ca6dc6bb51b08b79426aea}} 
+A\+Highlight&\hyperlink{class_poppler_1_1_highlight_annotation}{Highlight\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Stamp@{A\+Stamp}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Stamp@{A\+Stamp}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa408e3d4395a1553c2bb7ea944180f7fe}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa408e3d4395a1553c2bb7ea944180f7fe}} 
+A\+Stamp&\hyperlink{class_poppler_1_1_stamp_annotation}{Stamp\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Ink@{A\+Ink}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Ink@{A\+Ink}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa8d9a4dbed303724abdff7a96a88d5abb}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa8d9a4dbed303724abdff7a96a88d5abb}} 
+A\+Ink&\hyperlink{class_poppler_1_1_ink_annotation}{Ink\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Link@{A\+Link}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Link@{A\+Link}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa9cf6f3b575b16e7f2bdc0133b87d7cd9}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa9cf6f3b575b16e7f2bdc0133b87d7cd9}} 
+A\+Link&\hyperlink{class_poppler_1_1_link_annotation}{Link\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Caret@{A\+Caret}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Caret@{A\+Caret}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa32db0efab9343be54a9d18e52cd64f75}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa32db0efab9343be54a9d18e52cd64f75}} 
+A\+Caret&\hyperlink{class_poppler_1_1_caret_annotation}{Caret\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+File\+Attachment@{A\+File\+Attachment}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+File\+Attachment@{A\+File\+Attachment}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4ae26d75bb61ae5561233b3317057489}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4ae26d75bb61ae5561233b3317057489}} 
+A\+File\+Attachment&\hyperlink{class_poppler_1_1_file_attachment_annotation}{File\+Attachment\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Sound@{A\+Sound}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Sound@{A\+Sound}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4f378fc5e31f79f9b75009b492f505d2}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4f378fc5e31f79f9b75009b492f505d2}} 
+A\+Sound&\hyperlink{class_poppler_1_1_sound_annotation}{Sound\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Movie@{A\+Movie}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Movie@{A\+Movie}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4bfc2a21c8bad606d508152c9d89ba78}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa4bfc2a21c8bad606d508152c9d89ba78}} 
+A\+Movie&\hyperlink{class_poppler_1_1_movie_annotation}{Movie\+Annotation}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Screen@{A\+Screen}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Screen@{A\+Screen}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fab7e5d7275ead1db82ecf0c2ac190accc}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fab7e5d7275ead1db82ecf0c2ac190accc}} 
+A\+Screen&\hyperlink{class_poppler_1_1_screen_annotation}{Screen\+Annotation}. \begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Widget@{A\+Widget}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Widget@{A\+Widget}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2ebaab2ce6030d1f99dc0596b71bdd8e}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa2ebaab2ce6030d1f99dc0596b71bdd8e}} 
+A\+Widget&\hyperlink{class_poppler_1_1_widget_annotation}{Widget\+Annotation}. \begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+Rich\+Media@{A\+Rich\+Media}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!A\+Rich\+Media@{A\+Rich\+Media}}}\mbox{\Hypertarget{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa5847a71be848b7516dee43d8ccd3d927}\label{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113fa5847a71be848b7516dee43d8ccd3d927}} 
+A\+Rich\+Media&\hyperlink{class_poppler_1_1_rich_media_annotation}{Rich\+Media\+Annotation}. \begin{DoxySince}{Since}
+0.\+36 
+\end{DoxySince}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 187 of file poppler-\/annotation.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a1594b95bca33b18fae1bdc1606e28985}\label{class_poppler_1_1_annotation_a1594b95bca33b18fae1bdc1606e28985}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!````~Annotation@{$\sim$\+Annotation}}
+\index{````~Annotation@{$\sim$\+Annotation}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{$\sim$\+Annotation()}{~Annotation()}}
+{\footnotesize\ttfamily Poppler\+::\+Annotation\+::$\sim$\+Annotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor. 
+
+Definition at line 1066 of file poppler-\/annotation.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_annotation_aa14606418f3fb5a1ab0a52223c6e1511}\label{class_poppler_1_1_annotation_aa14606418f3fb5a1ab0a52223c6e1511}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!author@{author}}
+\index{author@{author}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{author()}{author()}}
+{\footnotesize\ttfamily Q\+String Poppler\+::\+Annotation\+::author (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the author of the annotation. 
+
+Definition at line 1337 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a659d9288f67ff988f75df0fa9d3ca2fb}\label{class_poppler_1_1_annotation_a659d9288f67ff988f75df0fa9d3ca2fb}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!boundary@{boundary}}
+\index{boundary@{boundary}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{boundary()}{boundary()}}
+{\footnotesize\ttfamily Q\+RectF Poppler\+::\+Annotation\+::boundary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns this annotation\textquotesingle{}s boundary rectangle in normalized coordinates
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}{set\+Boundary(const Q\+Rect\+F\&)} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1555 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}\label{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!flags@{flags}}
+\index{flags@{flags}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily int Poppler\+::\+Annotation\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns this annotation\textquotesingle{}s flags
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}{Flag}, \hyperlink{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}{set\+Flags(int)} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1532 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a6db96f04d0f70ceb167e2be0a8e3887f}\label{class_poppler_1_1_annotation_a6db96f04d0f70ceb167e2be0a8e3887f}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!popup@{popup}}
+\index{popup@{popup}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{popup()}{popup()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_annotation_1_1_popup}{Annotation\+::\+Popup} Poppler\+::\+Annotation\+::popup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1660 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a9d0a905f8eea751f5b33e38245383ecb}\label{class_poppler_1_1_annotation_a9d0a905f8eea751f5b33e38245383ecb}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!revisions@{revisions}}
+\index{revisions@{revisions}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{revisions()}{revisions()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_annotation}{Annotation} $\ast$ $>$ Poppler\+::\+Annotation\+::revisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the revisions of this annotation
+
+\begin{DoxyNote}{Note}
+The caller owns the returned annotations and they should be deleted when no longer required.
+\end{DoxyNote}
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1797 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_ad9fb16c5e50ac91e51f4ea3547eea2ad}\label{class_poppler_1_1_annotation_ad9fb16c5e50ac91e51f4ea3547eea2ad}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!revision\+Scope@{revision\+Scope}}
+\index{revision\+Scope@{revision\+Scope}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{revision\+Scope()}{revisionScope()}}
+{\footnotesize\ttfamily Annotation\+::\+Rev\+Scope Poppler\+::\+Annotation\+::revision\+Scope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1741 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a1aafb6d259755a1ed36498c70c9837ef}\label{class_poppler_1_1_annotation_a1aafb6d259755a1ed36498c70c9837ef}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!revision\+Type@{revision\+Type}}
+\index{revision\+Type@{revision\+Type}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{revision\+Type()}{revisionType()}}
+{\footnotesize\ttfamily Annotation\+::\+Rev\+Type Poppler\+::\+Annotation\+::revision\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1764 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a519a5f64785bf1381921f6f62dded881}\label{class_poppler_1_1_annotation_a519a5f64785bf1381921f6f62dded881}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Author@{set\+Author}}
+\index{set\+Author@{set\+Author}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Author()}{setAuthor()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Author (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{author }\end{DoxyParamCaption})}
+
+Sets a new author for the annotation. 
+
+Definition at line 1348 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}\label{class_poppler_1_1_annotation_ad7632d611ff26ec76cc42d301d2296e9}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Boundary@{set\+Boundary}}
+\index{set\+Boundary@{set\+Boundary}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Boundary()}{setBoundary()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Boundary (\begin{DoxyParamCaption}\item[{const Q\+RectF \&}]{boundary }\end{DoxyParamCaption})}
+
+Sets this annotation\textquotesingle{}s boundary rectangle
+
+The boundary rectangle is the smallest rectangle that contains the annotation.
+
+\begin{DoxyWarning}{Warning}
+This property is mandatory\+: you must always set this.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_a659d9288f67ff988f75df0fa9d3ca2fb}{boundary()}, \hyperlink{class_poppler_1_1_annotation_annotFixedRotation}{Fixed\+Rotation flag specifics} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1566 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}\label{class_poppler_1_1_annotation_abb788875ed4ed5e593e979afc70555db}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Flags@{set\+Flags}}
+\index{set\+Flags@{set\+Flags}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Flags()}{setFlags()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Flags (\begin{DoxyParamCaption}\item[{int}]{flags }\end{DoxyParamCaption})}
+
+Sets this annotation\textquotesingle{}s flags
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_annotation_a8c2dca956649e4ce454361d5b75dc270}{Flag}, \hyperlink{class_poppler_1_1_annotation_a34a97344409f4ebb1fa9e26d5bc19c71}{flags()}, \hyperlink{class_poppler_1_1_annotation_annotFixedRotation}{Fixed\+Rotation flag specifics} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1542 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a583671f690f965995b9be23554722900}\label{class_poppler_1_1_annotation_a583671f690f965995b9be23554722900}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Popup@{set\+Popup}}
+\index{set\+Popup@{set\+Popup}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Popup()}{setPopup()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Popup (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_annotation_1_1_popup}{Popup} \&}]{popup }\end{DoxyParamCaption})}
+
+\begin{DoxyWarning}{Warning}
+Currently does nothing 
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1712 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_afa93b9a0da6de47a74b5e296924afc42}\label{class_poppler_1_1_annotation_afa93b9a0da6de47a74b5e296924afc42}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Style()}{setStyle()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Style (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_annotation_1_1_style}{Style} \&}]{style }\end{DoxyParamCaption})}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1637 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_aa2e24fbf5e2cd28af8e1b62876c39663}\label{class_poppler_1_1_annotation_aa2e24fbf5e2cd28af8e1b62876c39663}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!set\+Unique\+Name@{set\+Unique\+Name}}
+\index{set\+Unique\+Name@{set\+Unique\+Name}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{set\+Unique\+Name()}{setUniqueName()}}
+{\footnotesize\ttfamily void Poppler\+::\+Annotation\+::set\+Unique\+Name (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{unique\+Name }\end{DoxyParamCaption})}
+
+Sets a new unique name for the annotation.
+
+\begin{DoxyNote}{Note}
+no check of the new unique\+Name is done 
+\end{DoxyNote}
+
+
+Definition at line 1402 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}\label{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!style@{style}}
+\index{style@{style}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{style()}{style()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_annotation_1_1_style}{Annotation\+::\+Style} Poppler\+::\+Annotation\+::style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 1580 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_aef7fa1532193b41fbeba6e577579d984}\label{class_poppler_1_1_annotation_aef7fa1532193b41fbeba6e577579d984}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{sub\+Type()}{subType()}}
+{\footnotesize\ttfamily virtual \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Sub\+Type} Poppler\+::\+Annotation\+::sub\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+The type of the annotation. 
+
+Implemented in \hyperlink{class_poppler_1_1_rich_media_annotation_ae853275d25fdd1e415ce28045dbc857f}{Poppler\+::\+Rich\+Media\+Annotation}, \hyperlink{class_poppler_1_1_widget_annotation_a7ddc61e33e4418459f3a266ceea2b5a4}{Poppler\+::\+Widget\+Annotation}, \hyperlink{class_poppler_1_1_screen_annotation_a7a8076dfda640ecf040db9acdd8b3ecf}{Poppler\+::\+Screen\+Annotation}, \hyperlink{class_poppler_1_1_movie_annotation_ab4443ef588d984f52fcb93669da3e88d}{Poppler\+::\+Movie\+Annotation}, \hyperlink{class_poppler_1_1_sound_annotation_af66d5ce084a1ac8ad21a2102942bf909}{Poppler\+::\+Sound\+Annotation}, \hyperlink{class_poppler_1_1_file_attachment_annotation_a7c3d7b8924142ece38d3909af0cf1425}{Poppler\+::\+File\+Attachment\+Annotation}, \hyperlink{class_poppler_1_1_caret_annotation_a08a713ef697a4e318d20a1271d912b89}{Poppler\+::\+Caret\+Annotation}, \hyperlink{class_poppler_1_1_link_annotation_a05dbb8a3128989c44214ab9e3a1335dd}{Poppler\+::\+Link\+Annotation}, \hyperlink{class_poppler_1_1_ink_annotation_a800926980dc58d7b1d805f0ca8bab73f}{Poppler\+::\+Ink\+Annotation}, \hyperlink{class_poppler_1_1_stamp_annotation_ad4140dc18ea7dfc4b844afc1d0abdf74}{Poppler\+::\+Stamp\+Annotation}, \hyperlink{class_poppler_1_1_highlight_annotation_ab71e12c01a8005c2fb4a4db9c218c8da}{Poppler\+::\+Highlight\+Annotation}, \hyperlink{class_poppler_1_1_geom_annotation_a275700b4d5f06381f18ece403a1169d3}{Poppler\+::\+Geom\+Annotation}, \hyperlink{class_poppler_1_1_line_annotation_aa6afc935d75cfdac20653814b0fe40f0}{Poppler\+::\+Line\+Annotation}, and \hyperlink{class_poppler_1_1_text_annotation_aa2c1926b6e06b1527a43f651fea34aaa}{Poppler\+::\+Text\+Annotation}.
+
+\mbox{\Hypertarget{class_poppler_1_1_annotation_ac23456377d420ace54b1f7eb4d389423}\label{class_poppler_1_1_annotation_ac23456377d420ace54b1f7eb4d389423}} 
+\index{Poppler\+::\+Annotation@{Poppler\+::\+Annotation}!unique\+Name@{unique\+Name}}
+\index{unique\+Name@{unique\+Name}!Poppler\+::\+Annotation@{Poppler\+::\+Annotation}}
+\subsubsection{\texorpdfstring{unique\+Name()}{uniqueName()}}
+{\footnotesize\ttfamily Q\+String Poppler\+::\+Annotation\+::unique\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the unique name (ID) of the annotation. 
+
+Definition at line 1392 of file poppler-\/annotation.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+h\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+cc\end{DoxyCompactItemize}

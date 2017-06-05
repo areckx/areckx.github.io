@@ -1,0 +1,73 @@
+.TH "MenuBarBaseEngine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuBarBaseEngine \- stores menubar hovered action and timeLine  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <menubarengine\&.h>\fP
+.PP
+Inherits \fBBaseEngine\fP\&.
+.PP
+Inherited by \fBMenuBarEngineV1\fP, and \fBMenuBarEngineV2\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenuBarBaseEngine\fP (QObject *parent)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~MenuBarBaseEngine\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual bool \fBregisterWidget\fP (QWidget *)=0"
+.br
+.RI "register menubar "
+.ti -1c
+.RI "virtual bool \fBisAnimated\fP (const QObject *, const QPoint &)"
+.br
+.RI "true if widget is animated "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (const QObject *, const QPoint &)"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual QRect \fBcurrentRect\fP (const QObject *, const QPoint &)"
+.br
+.RI "return 'hover' rect position when widget is animated "
+.ti -1c
+.RI "virtual QRect \fBanimatedRect\fP (const QObject *)"
+.br
+.RI "animated rect "
+.ti -1c
+.RI "virtual bool \fBisTimerActive\fP (const QObject *)"
+.br
+.RI "timer "
+.ti -1c
+.RI "virtual void \fBsetEnabled\fP (bool)=0"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int)=0"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual void \fBsetFollowMouseDuration\fP (int)"
+.br
+.RI "duration "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+stores menubar hovered action and timeLine 
+.PP
+Definition at line 35 of file menubarengine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

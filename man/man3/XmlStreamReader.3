@@ -1,0 +1,908 @@
+.TH "XmlStreamReader" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamReader \- The \fBXmlStreamReader\fP class provides a fast parser for reading well-formed XML via a simple streaming API\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBTokenType\fP { \fBNoToken\fP = 0, \fBInvalid\fP, \fBStartDocument\fP, \fBEndDocument\fP, \fBStartElement\fP, \fBEndElement\fP, \fBCharacters\fP, \fBComment\fP, \fBDTD\fP, \fBEntityReference\fP, \fBProcessingInstruction\fP }"
+.br
+.ti -1c
+.RI "enum \fBReadElementTextBehaviour\fP { \fBErrorOnUnexpectedElement\fP, \fBIncludeChildElements\fP, \fBSkipChildElements\fP }"
+.br
+.ti -1c
+.RI "enum \fBError\fP { \fBNoError\fP, \fBUnexpectedElementError\fP, \fBCustomError\fP, \fBNotWellFormedError\fP, \fBPrematureEndOfDocumentError\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlStreamReader\fP ()"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader\fP (const QString &data)"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader\fP (const char *data)"
+.br
+.ti -1c
+.RI "\fB~XmlStreamReader\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDevice\fP (QIODevice *\fBdevice\fP)"
+.br
+.ti -1c
+.RI "QIODevice * \fBdevice\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QByteArray &data)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const QString &data)"
+.br
+.ti -1c
+.RI "void \fBaddData\fP (const char *data)"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBatEnd\fP () const"
+.br
+.ti -1c
+.RI "\fBTokenType\fP \fBreadNext\fP ()"
+.br
+.ti -1c
+.RI "bool \fBreadNextStartElement\fP ()"
+.br
+.ti -1c
+.RI "void \fBskipCurrentElement\fP ()"
+.br
+.ti -1c
+.RI "\fBTokenType\fP \fBtokenType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtokenString\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNamespaceProcessing\fP (bool)"
+.br
+.ti -1c
+.RI "bool \fBnamespaceProcessing\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStartDocument\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEndDocument\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStartElement\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEndElement\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisCharacters\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisWhitespace\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisCDATA\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisComment\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisDTD\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEntityReference\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisProcessingInstruction\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStandaloneDocument\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBdocumentVersion\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBdocumentEncoding\fP () const"
+.br
+.ti -1c
+.RI "qint64 \fBlineNumber\fP () const"
+.br
+.ti -1c
+.RI "qint64 \fBcolumnNumber\fP () const"
+.br
+.ti -1c
+.RI "qint64 \fBcharacterOffset\fP () const"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttributes\fP \fBattributes\fP () const"
+.br
+.ti -1c
+.RI "QString \fBreadElementText\fP (\fBReadElementTextBehaviour\fP behaviour=ErrorOnUnexpectedElement)"
+.br
+.ti -1c
+.RI "QStringRef \fBname\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBnamespaceUri\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBqualifiedName\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBprefix\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBprocessingInstructionTarget\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBprocessingInstructionData\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBtext\fP () const"
+.br
+.ti -1c
+.RI "XmlStreamNamespaceDeclarations \fBnamespaceDeclarations\fP () const"
+.br
+.ti -1c
+.RI "void \fBaddExtraNamespaceDeclaration\fP (const \fBXmlStreamNamespaceDeclaration\fP &extraNamespaceDeclaraction)"
+.br
+.ti -1c
+.RI "void \fBaddExtraNamespaceDeclarations\fP (const XmlStreamNamespaceDeclarations &extraNamespaceDeclaractions)"
+.br
+.ti -1c
+.RI "XmlStreamNotationDeclarations \fBnotationDeclarations\fP () const"
+.br
+.ti -1c
+.RI "XmlStreamEntityDeclarations \fBentityDeclarations\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdName\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdPublicId\fP () const"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdSystemId\fP () const"
+.br
+.ti -1c
+.RI "void \fBraiseError\fP (const QString &message=QString())"
+.br
+.ti -1c
+.RI "QString \fBerrorString\fP () const"
+.br
+.ti -1c
+.RI "\fBError\fP \fBerror\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasError\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEntityResolver\fP (\fBXmlStreamEntityResolver\fP *resolver)"
+.br
+.ti -1c
+.RI "\fBXmlStreamEntityResolver\fP * \fBentityResolver\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBXmlStreamReader\fP class provides a fast parser for reading well-formed XML via a simple streaming API\&. 
+
+QtCore  
+.PP
+\fBSince:\fP
+.RS 4
+4\&.3
+.RE
+.PP
+\fBXmlStreamReader\fP is a faster and more convenient replacement for Qt's own SAX parser (see QXmlSimpleReader)\&. In some cases it might also be a faster and more convenient alternative for use in applications that would otherwise use a DOM tree (see QDomDocument)\&. \fBXmlStreamReader\fP reads data either from a QIODevice (see \fBsetDevice()\fP), or from a raw QByteArray (see \fBaddData()\fP)\&.
+.PP
+Qt provides \fBXmlStreamWriter\fP for writing XML\&.
+.PP
+The basic concept of a stream reader is to report an XML document as a stream of tokens, similar to SAX\&. The main difference between \fBXmlStreamReader\fP and SAX is \fIhow\fP these XML tokens are reported\&. With SAX, the application must provide handlers (callback functions) that receive so-called XML \fIevents\fP from the parser at the parser's convenience\&. With \fBXmlStreamReader\fP, the application code itself drives the loop and pulls \fItokens\fP from the reader, one after another, as it needs them\&. This is done by calling \fBreadNext()\fP, where the reader reads from the input stream until it completes the next token, at which point it returns the \fBtokenType()\fP\&. A set of convenient functions including \fBisStartElement()\fP and \fBtext()\fP can then be used to examine the token to obtain information about what has been read\&. The big advantage of this \fIpulling\fP approach is the possibility to build recursive descent parsers with it, meaning you can split your XML parsing code easily into different methods or classes\&. This makes it easy to keep track of the application's own state when parsing XML\&.
+.PP
+A typical loop with \fBXmlStreamReader\fP looks like this:
+.PP
+.PP
+.nf
+.fi
+.PP
+.PP
+\fBXmlStreamReader\fP is a well-formed XML 1\&.0 parser that does \fInot\fP include external parsed entities\&. As long as no error occurs, the application code can thus be assured that the data provided by the stream reader satisfies the W3C's criteria for well-formed XML\&. For example, you can be certain that all tags are indeed nested and closed properly, that references to internal entities have been replaced with the correct replacement text, and that attributes have been normalized or added according to the internal subset of the DTD\&.
+.PP
+If an error occurs while parsing, \fBatEnd()\fP and \fBhasError()\fP return true, and \fBerror()\fP returns the error that occurred\&. The functions \fBerrorString()\fP, \fBlineNumber()\fP, \fBcolumnNumber()\fP, and \fBcharacterOffset()\fP are for constructing an appropriate error or warning message\&. To simplify application code, \fBXmlStreamReader\fP contains a \fBraiseError()\fP mechanism that lets you raise custom errors that trigger the same error handling described\&.
+.PP
+The {\fBXmlStream\fP Bookmarks Example} illustrates how to use the recursive descent technique to read an XML bookmark file (XBEL) with a stream reader\&.
+.PP
+Definition at line 227 of file xmlstream\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBXmlStreamReader::Error\fP"
+This enum specifies different error cases
+.PP
+NoError No error has occurred\&.
+.PP
+CustomError A custom error has been raised with \fBraiseError()\fP
+.PP
+NotWellFormedError The parser internally raised an error due to the read XML not being well-formed\&.
+.PP
+PrematureEndOfDocumentError The input stream ended before a well-formed XML document was parsed\&. Recovery from this error is possible if more XML arrives in the stream, either by calling \fBaddData()\fP or by waiting for it to arrive on the \fBdevice()\fP\&.
+.PP
+UnexpectedElementError The parser encountered an element that was different to those it expected\&. 
+.PP
+Definition at line 320 of file xmlstream\&.h\&.
+.SS "enum \fBXmlStreamReader::ReadElementTextBehaviour\fP"
+This enum specifies the different behaviours of \fBreadElementText()\fP\&.
+.PP
+ErrorOnUnexpectedElement Raise an UnexpectedElementError and return what was read so far when a child element is encountered\&.
+.PP
+IncludeChildElements Recursively include the text from child elements\&.
+.PP
+SkipChildElements Skip child elements\&.
+.PP
+\fBSince:\fP
+.RS 4
+4\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 293 of file xmlstream\&.h\&.
+.SS "enum \fBXmlStreamReader::TokenType\fP"
+This enum specifies the type of token the reader just read\&.
+.PP
+NoToken The reader has not yet read anything\&.
+.PP
+Invalid An error has occurred, reported in \fBerror()\fP and \fBerrorString()\fP\&.
+.PP
+StartDocument The reader reports the XML version number in \fBdocumentVersion()\fP, and the encoding as specified in the XML document in \fBdocumentEncoding()\fP\&. If the document is declared standalone, \fBisStandaloneDocument()\fP returns \fCtrue\fP; otherwise it returns \fCfalse\fP\&.
+.PP
+EndDocument The reader reports the end of the document\&.
+.PP
+StartElement The reader reports the start of an element with \fBnamespaceUri()\fP and \fBname()\fP\&. Empty elements are also reported as StartElement, followed directly by EndElement\&. The convenience function \fBreadElementText()\fP can be called to concatenate all content until the corresponding EndElement\&. Attributes are reported in \fBattributes()\fP, namespace declarations in \fBnamespaceDeclarations()\fP\&.
+.PP
+EndElement The reader reports the end of an element with \fBnamespaceUri()\fP and \fBname()\fP\&.
+.PP
+Characters The reader reports characters in \fBtext()\fP\&. If the characters are all white-space, \fBisWhitespace()\fP returns \fCtrue\fP\&. If the characters stem from a CDATA section, \fBisCDATA()\fP returns \fCtrue\fP\&.
+.PP
+Comment The reader reports a comment in \fBtext()\fP\&.
+.PP
+DTD The reader reports a DTD in \fBtext()\fP, notation declarations in \fBnotationDeclarations()\fP, and entity declarations in \fBentityDeclarations()\fP\&. Details of the DTD declaration are reported in in \fBdtdName()\fP, \fBdtdPublicId()\fP, and \fBdtdSystemId()\fP\&.
+.PP
+EntityReference The reader reports an entity reference that could not be resolved\&. The name of the reference is reported in \fBname()\fP, the replacement text in \fBtext()\fP\&.
+.PP
+ProcessingInstruction The reader reports a processing instruction in \fBprocessingInstructionTarget()\fP and \fBprocessingInstructionData()\fP\&. 
+.PP
+Definition at line 230 of file xmlstream\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "XmlStreamReader::XmlStreamReader ()"
+Constructs a stream reader\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDevice()\fP, \fBaddData()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 380 of file xmlstream\&.cpp\&.
+.SS "XmlStreamReader::XmlStreamReader (QIODevice * device)\fC [explicit]\fP"
+Creates a new stream reader that reads from \fIdevice\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDevice()\fP, \fBclear()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 389 of file xmlstream\&.cpp\&.
+.SS "XmlStreamReader::XmlStreamReader (const QByteArray & data)\fC [explicit]\fP"
+Creates a new stream reader that reads from \fIdata\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData()\fP, \fBclear()\fP, \fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 400 of file xmlstream\&.cpp\&.
+.SS "XmlStreamReader::XmlStreamReader (const QString & data)\fC [explicit]\fP"
+Creates a new stream reader that reads from \fIdata\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData()\fP, \fBclear()\fP, \fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 412 of file xmlstream\&.cpp\&.
+.SS "XmlStreamReader::XmlStreamReader (const char * data)\fC [explicit]\fP"
+Creates a new stream reader that reads from \fIdata\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData()\fP, \fBclear()\fP, \fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 431 of file xmlstream\&.cpp\&.
+.SS "XmlStreamReader::~XmlStreamReader ()"
+Destructs the reader\&. 
+.PP
+Definition at line 441 of file xmlstream\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void XmlStreamReader::addData (const QByteArray & data)"
+Adds more \fIdata\fP for the reader to read\&. This function does nothing if the reader has a \fBdevice()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBreadNext()\fP, \fBclear()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 491 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::addData (const QString & data)"
+Adds more \fIdata\fP for the reader to read\&. This function does nothing if the reader has a \fBdevice()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBreadNext()\fP, \fBclear()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 507 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::addData (const char * data)"
+Adds more \fIdata\fP for the reader to read\&. This function does nothing if the reader has a \fBdevice()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBreadNext()\fP, \fBclear()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 524 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::addExtraNamespaceDeclaration (const \fBXmlStreamNamespaceDeclaration\fP & extraNamespaceDeclaration)"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Adds an \fIextraNamespaceDeclaration\fP\&. The declaration will be valid for children of the current element, or - should the function be called before any elements are read - for the entire XML document\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBnamespaceDeclarations()\fP, \fBaddExtraNamespaceDeclarations()\fP, setNamespaceProcessing() 
+.RE
+.PP
+
+.PP
+Definition at line 2056 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::addExtraNamespaceDeclarations (const XmlStreamNamespaceDeclarations & extraNamespaceDeclarations)"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Adds a vector of declarations specified by \fIextraNamespaceDeclarations\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBnamespaceDeclarations()\fP, \fBaddExtraNamespaceDeclaration()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2071 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::atEnd () const"
+Returns \fCtrue\fP if the reader has read until the end of the XML document, or if an \fBerror()\fP has occurred and reading has been aborted\&. Otherwise, it returns \fCfalse\fP\&.
+.PP
+When \fBatEnd()\fP and \fBhasError()\fP return true and \fBerror()\fP returns PrematureEndOfDocumentError, it means the XML has been well-formed so far, but a complete XML document has not been parsed\&. The next chunk of XML can be added with \fBaddData()\fP, if the XML is being read from a QByteArray, or by waiting for more data to arrive if the XML is being read from a QIODevice\&. Either way, \fBatEnd()\fP will return false once more data is available\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBhasError()\fP, \fBerror()\fP, \fBdevice()\fP, QIODevice::atEnd() 
+.RE
+.PP
+
+.PP
+Definition at line 561 of file xmlstream\&.cpp\&.
+.SS "\fBXmlStreamAttributes\fP XmlStreamReader::attributes () const"
+Returns the attributes of a StartElement\&. 
+.PP
+Definition at line 2245 of file xmlstream\&.cpp\&.
+.SS "qint64 XmlStreamReader::characterOffset () const"
+Returns the current character offset, starting with 0\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlineNumber()\fP, \fBcolumnNumber()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1937 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::clear (void)"
+Removes any \fBdevice()\fP or data from the reader and resets its internal state to the initial state\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddData()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 535 of file xmlstream\&.cpp\&.
+.SS "qint64 XmlStreamReader::columnNumber () const"
+Returns the current column number, starting with 0\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlineNumber()\fP, \fBcharacterOffset()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1927 of file xmlstream\&.cpp\&.
+.SS "QIODevice * XmlStreamReader::device () const"
+Returns the current device associated with the \fBXmlStreamReader\fP, or 0 if no device has been assigned\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetDevice()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 478 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::documentEncoding () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+If the \fBtokenType()\fP is  StartDocument, this function returns the encoding string as specified in the XML declaration\&. Otherwise an empty string is returned\&. 
+.PP
+Definition at line 2860 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::documentVersion () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+If the \fBtokenType()\fP is  StartDocument, this function returns the version string as specified in the XML declaration\&. Otherwise an empty string is returned\&. 
+.PP
+Definition at line 2845 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::dtdName () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+If the \fBtokenType()\fP is  DTD, this function returns the DTD's name\&. Otherwise an empty string is returned\&. 
+.PP
+Definition at line 1990 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::dtdPublicId () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+If the \fBtokenType()\fP is  DTD, this function returns the DTD's public identifier\&. Otherwise an empty string is returned\&. 
+.PP
+Definition at line 2005 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::dtdSystemId () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+If the \fBtokenType()\fP is  DTD, this function returns the DTD's system identifier\&. Otherwise an empty string is returned\&. 
+.PP
+Definition at line 2020 of file xmlstream\&.cpp\&.
+.SS "XmlStreamEntityDeclarations XmlStreamReader::entityDeclarations () const"
+If the \fBtokenType()\fP is  DTD, this function returns the DTD's unparsed (external) entity declarations\&. Otherwise an empty vector is returned\&.
+.PP
+The XmlStreamEntityDeclarations class is defined to be a QVector of \fBXmlStreamEntityDeclaration\fP\&. 
+.PP
+Definition at line 1975 of file xmlstream\&.cpp\&.
+.SS "\fBXmlStreamEntityResolver\fP * XmlStreamReader::entityResolver () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Returns the entity resolver, or 0 if there is no entity resolver\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsetEntityResolver()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file xmlstream\&.cpp\&.
+.SS "\fBXmlStreamReader::Error\fP XmlStreamReader::error () const"
+Returns the type of the current error, or NoError if no error occurred\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBerrorString()\fP, \fBraiseError()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2159 of file xmlstream\&.cpp\&.
+.SS "QString XmlStreamReader::errorString () const"
+Returns the error message that was set with \fBraiseError()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBerror()\fP, \fBlineNumber()\fP, \fBcolumnNumber()\fP, \fBcharacterOffset()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2147 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::hasError () const\fC [inline]\fP"
+Returns \fCtrue\fP if an error has occurred, otherwise \fCfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBerrorString()\fP, \fBerror()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 331 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isCDATA () const"
+Returns \fCtrue\fP if the reader reports characters that stem from a CDATA section; otherwise returns \fCfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisCharacters()\fP, \fBtext()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2817 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::isCharacters () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  Characters; otherwise returns \fCfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisWhitespace()\fP, \fBisCDATA()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 275 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isComment () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  Comment; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 278 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isDTD () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  DTD; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 279 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isEndDocument () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  EndDocument; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 272 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isEndElement () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  EndElement; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 274 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isEntityReference () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  EntityReference; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 280 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isProcessingInstruction () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  ProcessingInstruction; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 281 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isStandaloneDocument () const"
+Returns \fCtrue\fP if this document has been declared standalone in the XML declaration; otherwise returns \fCfalse\fP\&.
+.PP
+If no XML declaration has been parsed, this function returns \fCfalse\fP\&. 
+.PP
+Definition at line 2831 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::isStartDocument () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  StartDocument; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 271 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isStartElement () const\fC [inline]\fP"
+Returns \fCtrue\fP if \fBtokenType()\fP equals  StartElement; otherwise returns \fCfalse\fP\&. 
+.PP
+Definition at line 273 of file xmlstream\&.h\&.
+.SS "bool XmlStreamReader::isWhitespace () const"
+Returns \fCtrue\fP if the reader reports characters that only consist of white-space; otherwise returns \fCfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisCharacters()\fP, \fBtext()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2806 of file xmlstream\&.cpp\&.
+.SS "qint64 XmlStreamReader::lineNumber () const"
+Returns the current line number, starting with 1\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBcolumnNumber()\fP, \fBcharacterOffset()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 1917 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::name () const"
+Returns the local name of a StartElement, EndElement, or an EntityReference\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBnamespaceUri()\fP, \fBqualifiedName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2192 of file xmlstream\&.cpp\&.
+.SS "XmlStreamNamespaceDeclarations XmlStreamReader::namespaceDeclarations () const"
+If the \fBtokenType()\fP is  StartElement, this function returns the element's namespace declarations\&. Otherwise an empty vector is returned\&.
+.PP
+The XmlStreamNamespaceDeclarations class is defined to be a QVector of \fBXmlStreamNamespaceDeclaration\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBaddExtraNamespaceDeclaration()\fP, \fBaddExtraNamespaceDeclarations()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2037 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::namespaceProcessing () const"
+the namespace-processing flag of the stream reader
+.PP
+This property controls whether or not the stream reader processes namespaces\&. If enabled, the reader processes namespaces, otherwise it does not\&.
+.PP
+By default, namespace-processing is enabled\&. 
+.PP
+Definition at line 751 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::namespaceUri () const"
+Returns the namespaceUri of a StartElement or EndElement\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBname()\fP, \fBqualifiedName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2203 of file xmlstream\&.cpp\&.
+.SS "XmlStreamNotationDeclarations XmlStreamReader::notationDeclarations () const"
+If the \fBtokenType()\fP is  DTD, this function returns the DTD's notation declarations\&. Otherwise an empty vector is returned\&.
+.PP
+The XmlStreamNotationDeclarations class is defined to be a QVector of \fBXmlStreamNotationDeclaration\fP\&. 
+.PP
+Definition at line 1960 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::prefix () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Returns the prefix of a StartElement or EndElement\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBname()\fP, \fBqualifiedName()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2236 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::processingInstructionData () const"
+Returns the data of a ProcessingInstruction\&. 
+.PP
+Definition at line 2179 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::processingInstructionTarget () const"
+Returns the target of a ProcessingInstruction\&. 
+.PP
+Definition at line 2170 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::qualifiedName () const"
+Returns the qualified name of a StartElement or EndElement;
+.PP
+A qualified name is the raw name of an element in the XML data\&. It consists of the namespace prefix, followed by colon, followed by the element's local name\&. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use \fBqualifiedName()\fP, but the resolved \fBnamespaceUri()\fP and the attribute's local \fBname()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBname()\fP, \fBprefix()\fP, \fBnamespaceUri()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2221 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::raiseError (const QString & message = \fCQString()\fP)"
+Raises a custom error with an optional error \fImessage\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBerror()\fP, \fBerrorString()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2136 of file xmlstream\&.cpp\&.
+.SS "QString XmlStreamReader::readElementText (\fBReadElementTextBehaviour\fP behaviour = \fCErrorOnUnexpectedElement\fP)"
+Convenience function to be called in case a StartElement was read\&. Reads until the corresponding EndElement and returns all text in-between\&. In case of no error, the current token (see \fBtokenType()\fP) after having called this function is EndElement\&.
+.PP
+The function concatenates \fBtext()\fP when it reads either  Characters or EntityReference tokens, but skips ProcessingInstruction and  Comment\&. If the current token is not StartElement, an empty string is returned\&.
+.PP
+The \fIbehaviour\fP defines what happens in case anything else is read before reaching EndElement\&. The function can include the text from child elements (useful for example for HTML), ignore child elements, or raise an UnexpectedElementError and return what was read so far (default)\&.
+.PP
+\fBSince:\fP
+.RS 4
+4\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 2095 of file xmlstream\&.cpp\&.
+.SS "\fBXmlStreamReader::TokenType\fP XmlStreamReader::readNext ()"
+Reads the next token and returns its type\&.
+.PP
+With one exception, once an \fBerror()\fP is reported by \fBreadNext()\fP, further reading of the XML stream is not possible\&. Then \fBatEnd()\fP returns \fCtrue\fP, \fBhasError()\fP returns \fCtrue\fP, and this function returns XmlStreamReader::Invalid\&.
+.PP
+The exception is when \fBerror()\fP returns PrematureEndOfDocumentError\&. This error is reported when the end of an otherwise well-formed chunk of XML is reached, but the chunk doesn't represent a complete XML document\&. In that case, parsing \fIcan\fP be resumed by calling \fBaddData()\fP to add the next chunk of XML, when the stream is being read from a QByteArray, or by waiting for more data to arrive when the stream is being read from a \fBdevice()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtokenType()\fP, \fBtokenString()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 594 of file xmlstream\&.cpp\&.
+.SS "bool XmlStreamReader::readNextStartElement ()"
+Reads until the next start element within the current element\&. Returns \fCtrue\fP when a start element was reached\&. When the end element was reached, or when an error occurred, false is returned\&.
+.PP
+The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached\&. When the parser has reached the end element, the current element becomes the parent element\&.
+.PP
+This is a convenience function for when you're only concerned with parsing XML elements\&. The {\fBXmlStream\fP Bookmarks Example} makes extensive use of this function\&.
+.PP
+\fBSince:\fP
+.RS 4
+4\&.6 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBreadNext()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 650 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::setDevice (QIODevice * device)"
+Sets the current device to \fIdevice\fP\&. Setting the device resets the stream to its initial state\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBdevice()\fP, \fBclear()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 460 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::setEntityResolver (\fBXmlStreamEntityResolver\fP * resolver)"
+
+.PP
+\fBSince:\fP
+.RS 4
+4\&.4
+.RE
+.PP
+Makes \fIresolver\fP the new \fBentityResolver()\fP\&.
+.PP
+The stream reader does \fInot\fP take ownership of the resolver\&. It's the callers responsibility to ensure that the resolver is valid during the entire life-time of the stream reader object, or until another resolver or 0 is set\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBentityResolver()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 226 of file xmlstream\&.cpp\&.
+.SS "void XmlStreamReader::skipCurrentElement ()"
+Reads until the end of the current element, skipping any child nodes\&. This function is useful for skipping unknown elements\&.
+.PP
+The current element is the element matching the most recently parsed start element of which a matching end element has not yet been reached\&. When the parser has reached the end element, the current element becomes the parent element\&.
+.PP
+\fBSince:\fP
+.RS 4
+4\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 672 of file xmlstream\&.cpp\&.
+.SS "QStringRef XmlStreamReader::text () const"
+Returns the text of  Characters,  Comment,  DTD, or EntityReference\&. 
+.PP
+Definition at line 1947 of file xmlstream\&.cpp\&.
+.SS "QString XmlStreamReader::tokenString () const"
+Returns the reader's current token as string\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtokenType()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 761 of file xmlstream\&.cpp\&.
+.SS "\fBXmlStreamReader::TokenType\fP XmlStreamReader::tokenType () const"
+Returns the type of the current token\&.
+.PP
+The current token can also be queried with the convenience functions \fBisStartDocument()\fP, \fBisEndDocument()\fP, \fBisStartElement()\fP, \fBisEndElement()\fP, \fBisCharacters()\fP, \fBisComment()\fP, \fBisDTD()\fP, \fBisEntityReference()\fP, and \fBisProcessingInstruction()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtokenString()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 627 of file xmlstream\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

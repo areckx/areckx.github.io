@@ -1,0 +1,159 @@
+.TH "Poppler::FormFieldChoice" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FormFieldChoice
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-form\&.h>\fP
+.PP
+Inherits \fBPoppler::FormField\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBChoiceType\fP { \fBComboBox\fP, \fBListBox\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBFormType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBChoiceType\fP \fBchoiceType\fP () const"
+.br
+.ti -1c
+.RI "QStringList \fBchoices\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEditable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBmultiSelect\fP () const"
+.br
+.ti -1c
+.RI "QList< int > \fBcurrentChoices\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCurrentChoices\fP (const QList< int > &choice)"
+.br
+.ti -1c
+.RI "QString \fBeditChoice\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEditChoice\fP (const QString &text)"
+.br
+.ti -1c
+.RI "Qt::Alignment \fBtextAlignment\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcanBeSpellChecked\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A form field that represents a choice field\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 256 of file poppler\-form\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::FormFieldChoice::ChoiceType\fP"
+The particular type of this choice field\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIComboBox \fP\fP
+A simple singleline text field\&. 
+.TP
+\fB\fIListBox \fP\fP
+A multiline text field\&. 
+.PP
+Definition at line 262 of file poppler\-form\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool FormFieldChoice::canBeSpellChecked () const"
+Whether the text inserted manually in the field (where possible) can be spell-checked\&. 
+.PP
+.nf
+Returns false if the field is not an editable text field.
+.fi
+.PP
+ 
+.PP
+Definition at line 410 of file poppler\-form\&.cc\&.
+.SS "QStringList FormFieldChoice::choices () const"
+The possible choices of the choice field\&. 
+.PP
+Definition at line 339 of file poppler\-form\&.cc\&.
+.SS "\fBFormFieldChoice::ChoiceType\fP FormFieldChoice::choiceType () const"
+The choice type of the choice field\&. 
+.PP
+Definition at line 331 of file poppler\-form\&.cc\&.
+.SS "QList< int > FormFieldChoice::currentChoices () const"
+The currently selected choices\&. 
+.PP
+Definition at line 364 of file poppler\-form\&.cc\&.
+.SS "QString FormFieldChoice::editChoice () const"
+The text entered into an editable combo box choice field\&. Otherwise a null string\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file poppler\-form\&.cc\&.
+.SS "bool FormFieldChoice::isEditable () const"
+Whether this \fBFormFieldChoice::ComboBox\fP is editable, i\&.e\&. the user can type in a custom value\&.
+.PP
+Always false for the other types of choices\&. 
+.PP
+Definition at line 352 of file poppler\-form\&.cc\&.
+.SS "bool FormFieldChoice::multiSelect () const"
+Whether more than one choice of this \fBFormFieldChoice::ListBox\fP can be selected at the same time\&.
+.PP
+Always false for the other types of choices\&. 
+.PP
+Definition at line 358 of file poppler\-form\&.cc\&.
+.SS "void FormFieldChoice::setCurrentChoices (const QList< int > & choice)"
+Sets the selected choices to \fCchoice\fP\&. 
+.PP
+Definition at line 375 of file poppler\-form\&.cc\&.
+.SS "void FormFieldChoice::setEditChoice (const QString & text)"
+Sets the text entered into an editable combo box choice field\&. Otherwise does nothing\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 393 of file poppler\-form\&.cc\&.
+.SS "Qt::Alignment FormFieldChoice::textAlignment () const"
+The horizontal alignment for the text of this text field\&. 
+.PP
+Definition at line 405 of file poppler\-form\&.cc\&.
+.SS "\fBFormFieldChoice::FormType\fP FormFieldChoice::type () const\fC [virtual]\fP"
+The type of the field\&. 
+.PP
+Implements \fBPoppler::FormField\fP\&.
+.PP
+Definition at line 326 of file poppler\-form\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

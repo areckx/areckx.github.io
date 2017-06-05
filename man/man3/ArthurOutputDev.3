@@ -1,0 +1,157 @@
+.TH "ArthurOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArthurOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFontHinting\fP { \fBNoHinting\fP = 0, \fBSlightHinting\fP, \fBFullHinting\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArthurOutputDev\fP (QPainter *painter)"
+.br
+.ti -1c
+.RI "void \fBsetFontHinting\fP (\fBFontHinting\fP hinting)"
+.br
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateAll\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCTM\fP (\fBGfxState\fP *state, double m11, double m12, double m21, double m22, double m31, double m32)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineDash\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFlatness\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineJoin\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineCap\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMiterLimit\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineWidth\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOpacity\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawChar\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, double originX, double originY, CharCode code, int nBytes, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual GBool \fBbeginType3Char\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, CharCode code, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "virtual void \fBendType3Char\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBendTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D0\fP (\fBGfxState\fP *state, double wx, double wy)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D1\fP (\fBGfxState\fP *state, double wx, double wy, double llx, double lly, double urx, double ury)"
+.br
+.ti -1c
+.RI "void \fBstartDoc\fP (\fBXRef\fP *xrefA)"
+.br
+.ti -1c
+.RI "GBool \fBisReverseVideo\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 54 of file ArthurOutputDev\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBArthurOutputDev::FontHinting\fP"
+Describes how fonts are distorted (aka hinted) to fit the pixel grid\&. More hinting means sharper edges and less adherence to the true letter shapes\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINoHinting \fP\fP
+Font shapes are left unchanged\&. 
+.TP
+\fB\fISlightHinting \fP\fP
+Font shapes are distorted vertically only\&. 
+.TP
+\fB\fIFullHinting \fP\fP
+Font shapes are distorted horizontally and vertically\&. 
+.PP
+Definition at line 60 of file ArthurOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

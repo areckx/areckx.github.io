@@ -1,0 +1,112 @@
+.TH "SplashPath" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SplashPath
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashPath\fP * \fBcopy\fP ()"
+.br
+.ti -1c
+.RI "void \fBappend\fP (\fBSplashPath\fP *path)"
+.br
+.ti -1c
+.RI "SplashError \fBmoveTo\fP (SplashCoord x, SplashCoord y)"
+.br
+.ti -1c
+.RI "SplashError \fBlineTo\fP (SplashCoord x, SplashCoord y)"
+.br
+.ti -1c
+.RI "SplashError \fBcurveTo\fP (SplashCoord x1, SplashCoord y1, SplashCoord x2, SplashCoord y2, SplashCoord x3, SplashCoord y3)"
+.br
+.ti -1c
+.RI "SplashError \fBclose\fP (GBool force=gFalse)"
+.br
+.ti -1c
+.RI "void \fBaddStrokeAdjustHint\fP (int ctrl0, int ctrl1, int firstPt, int lastPt)"
+.br
+.ti -1c
+.RI "void \fBoffset\fP (SplashCoord dx, SplashCoord dy)"
+.br
+.ti -1c
+.RI "int \fBgetLength\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetPoint\fP (int i, double *x, double *y, Guchar *f)"
+.br
+.ti -1c
+.RI "GBool \fBgetCurPt\fP (SplashCoord *x, SplashCoord *y)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashPath\fP (\fBSplashPath\fP *path)"
+.br
+.ti -1c
+.RI "void \fBgrow\fP (int nPts)"
+.br
+.ti -1c
+.RI "GBool \fBnoCurrentPoint\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBonePointSubpath\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBopenSubpath\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashPathPoint\fP * \fBpts\fP"
+.br
+.ti -1c
+.RI "Guchar * \fBflags\fP"
+.br
+.ti -1c
+.RI "int \fBlength\fP"
+.br
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "int \fBcurSubpath\fP"
+.br
+.ti -1c
+.RI "\fBSplashPathHint\fP * \fBhints\fP"
+.br
+.ti -1c
+.RI "int \fBhintsLength\fP"
+.br
+.ti -1c
+.RI "int \fBhintsSize\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSplashXPath\fP"
+.br
+.ti -1c
+.RI "class \fBSplash\fP"
+.br
+.ti -1c
+.RI "class \fBArthurOutputDev\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 54 of file SplashPath\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

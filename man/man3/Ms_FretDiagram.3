@@ -1,0 +1,180 @@
+.TH "Ms::FretDiagram" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::FretDiagram \- Fretboard diagram\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fret\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFretDiagram\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBFretDiagram\fP (const \fBFretDiagram\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual \fBFretDiagram\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual QLineF \fBdragAnchor\fP () const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const override"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "void \fBreadMusicXML\fP (\fBXmlReader\fP &de)"
+.br
+.ti -1c
+.RI "void \fBwriteMusicXML\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "int \fBstrings\fP () const"
+.br
+.ti -1c
+.RI "int \fBfrets\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOffset\fP (int offset)"
+.br
+.ti -1c
+.RI "void \fBsetStrings\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBsetFrets\fP (int n)"
+.br
+.ti -1c
+.RI "void \fBsetDot\fP (int string, int fret)"
+.br
+.ti -1c
+.RI "void \fBsetBarre\fP (int fret)"
+.br
+.ti -1c
+.RI "void \fBsetMarker\fP (int string, int marker)"
+.br
+.ti -1c
+.RI "void \fBsetFingering\fP (int string, int finger)"
+.br
+.ti -1c
+.RI "int \fBfretOffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFretOffset\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBmaxFrets\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMaxFrets\fP (int val)"
+.br
+.ti -1c
+.RI "char \fBdot\fP (int s) const"
+.br
+.ti -1c
+.RI "char \fBmarker\fP (int s) const"
+.br
+.ti -1c
+.RI "char \fBfingering\fP (int s) const"
+.br
+.ti -1c
+.RI "int \fBbarre\fP () const"
+.br
+.ti -1c
+.RI "\fBHarmony\fP * \fBharmony\fP () const"
+.br
+.ti -1c
+.RI "void \fBinit\fP (\fBMs::StringData\fP *, \fBChord\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "qreal \fBuserMag\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserMag\fP (qreal m)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFretDiagram\fP * \fBfromString\fP (\fBScore\fP *score, const QString &s)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Fretboard diagram\&. 
+.PP
+Definition at line 38 of file fret\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::FretDiagram::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 538 of file fret\&.cpp\&.
+.SS "\fBElement\fP * Ms::FretDiagram::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 547 of file fret\&.cpp\&.
+.SS "\fBFretDiagram\fP * Ms::FretDiagram::fromString (\fBScore\fP * score, const QString & s)\fC [static]\fP"
+Create diagram from string like 'XO-123' Always assume barre on the first visible fret 
+.PP
+Definition at line 88 of file fret\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

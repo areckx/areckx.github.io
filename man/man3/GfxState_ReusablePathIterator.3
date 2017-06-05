@@ -1,0 +1,73 @@
+.TH "GfxState::ReusablePathIterator" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GfxState::ReusablePathIterator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GfxState\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBReusablePathIterator\fP (\fBGfxPath\fP *path)"
+.br
+.ti -1c
+.RI "bool \fBisEnd\fP () const"
+.br
+.ti -1c
+.RI "void \fBnext\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCoord\fP (double x, double y)"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+When GfxState::getReusablePath() is invoked, the currently active path is taken per reference and its coordinates can be re-edited\&.
+.PP
+A \fBReusablePathIterator\fP is intented to reduce overhead when the same path type is used a lot of times, only with different coordinates\&. It allows just to update the coordinates (occuring in the same order as in the original path)\&. 
+.PP
+Definition at line 1351 of file GfxState\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GfxState::ReusablePathIterator::ReusablePathIterator (\fBGfxPath\fP * path)"
+Creates the \fBReusablePathIterator\fP\&. This should only be done from GfxState::getReusablePath()\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP the path as it is used so far\&. Changing this path, deleting it or starting a new path from scratch will most likely invalidate the iterator (and may cause serious problems)\&. Make sure the path's memory structure is not changed during the lifetime of the \fBReusablePathIterator\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 6583 of file GfxState\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool GfxState::ReusablePathIterator::isEnd () const"
+Returns true if and only if the current iterator position is beyond the last valid point\&.
+.PP
+A call to \fBsetCoord()\fP will be undefined\&. 
+.PP
+Definition at line 6596 of file GfxState\&.cc\&.
+.SS "void GfxState::ReusablePathIterator::next ()"
+Advances the iterator\&. 
+.PP
+Definition at line 6600 of file GfxState\&.cc\&.
+.SS "void GfxState::ReusablePathIterator::reset ()"
+Resets the iterator\&. 
+.PP
+Definition at line 6617 of file GfxState\&.cc\&.
+.SS "void GfxState::ReusablePathIterator::setCoord (double x, double y)"
+Updates the coordinates associated to the current iterator position\&. 
+.PP
+Definition at line 6612 of file GfxState\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

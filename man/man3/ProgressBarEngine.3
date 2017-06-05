@@ -1,0 +1,94 @@
+.TH "ProgressBarEngine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ProgressBarEngine \- handles progress bar animations  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <progressbarengine\&.h>\fP
+.PP
+Inherits \fBBaseEngine\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBunregisterWidget\fP (QObject *object)"
+.br
+.RI "remove widget from map "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProgressBarEngine\fP (QObject *object)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~ProgressBarEngine\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual bool \fBregisterWidget\fP (QWidget *)"
+.br
+.RI "register menubar "
+.ti -1c
+.RI "virtual bool \fBisAnimated\fP (const QObject *object)"
+.br
+.RI "true if widget is animated "
+.ti -1c
+.RI "virtual int \fBvalue\fP (const QObject *object)"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual void \fBsetEnabled\fP (bool \fBvalue\fP)"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int \fBvalue\fP)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual void \fBsetBusyIndicatorEnabled\fP (bool \fBvalue\fP)"
+.br
+.RI "busy indicator enability "
+.ti -1c
+.RI "virtual bool \fBbusyIndicatorEnabled\fP (void) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetBusyStepDuration\fP (int \fBvalue\fP)"
+.br
+.RI "busy indicator step duration "
+.ti -1c
+.RI "virtual int \fBbusyStepDuration\fP (void) const"
+.br
+.RI "busy indicator step duration "
+.ti -1c
+.RI "virtual void \fBstartBusyTimer\fP (void)"
+.br
+.RI "start busy timer "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBtimerEvent\fP (QTimerEvent *)"
+.br
+.RI "timer event "
+.ti -1c
+.RI "\fBDataMap\fP< \fBProgressBarData\fP >::Value \fBdata\fP (const QObject *)"
+.br
+.RI "returns data associated to widget "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+handles progress bar animations 
+.PP
+Definition at line 35 of file progressbarengine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

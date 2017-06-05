@@ -1,0 +1,146 @@
+.TH "Poppler::FormField" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FormField
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-form\&.h>\fP
+.PP
+Inherited by \fBPoppler::FormFieldButton\fP, \fBPoppler::FormFieldChoice\fP, and \fBPoppler::FormFieldText\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFormType\fP { \fBFormButton\fP, \fBFormText\fP, \fBFormChoice\fP, \fBFormSignature\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBFormType\fP \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "QRectF \fBrect\fP () const"
+.br
+.ti -1c
+.RI "int \fBid\fP () const"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "QString \fBfullyQualifiedName\fP () const"
+.br
+.ti -1c
+.RI "QString \fBuiName\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisReadOnly\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisVisible\fP () const"
+.br
+.ti -1c
+.RI "\fBLink\fP * \fBactivationAction\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The base class representing a form field\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file poppler\-form\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::FormField::FormType\fP"
+The different types of form field\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIFormButton \fP\fP
+A button field\&. See \fBButtonType\fP\&. 
+.TP
+\fB\fIFormText \fP\fP
+A text field\&. See \fBTextType\fP\&. 
+.TP
+\fB\fIFormChoice \fP\fP
+A single choice field\&. See \fBChoiceType\fP\&. 
+.TP
+\fB\fIFormSignature \fP\fP
+A signature field\&. 
+.PP
+Definition at line 51 of file poppler\-form\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLink\fP * FormField::activationAction () const"
+The activation action of this form field\&.
+.PP
+\fBNote:\fP
+.RS 4
+It may be null\&. 
+.RE
+.PP
+
+.PP
+Definition at line 143 of file poppler\-form\&.cc\&.
+.SS "QString FormField::fullyQualifiedName () const"
+The internal fully qualified name of the field\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.18 
+.RE
+.PP
+
+.PP
+Definition at line 113 of file poppler\-form\&.cc\&.
+.SS "int FormField::id () const"
+The ID of the field\&. 
+.PP
+Definition at line 98 of file poppler\-form\&.cc\&.
+.SS "bool FormField::isReadOnly () const"
+Whether this form field is read-only\&. 
+.PP
+Definition at line 133 of file poppler\-form\&.cc\&.
+.SS "bool FormField::isVisible () const"
+Whether this form field is visible\&. 
+.PP
+Definition at line 138 of file poppler\-form\&.cc\&.
+.SS "QString FormField::name () const"
+The internal name of the field\&. 
+.PP
+Definition at line 103 of file poppler\-form\&.cc\&.
+.SS "QRectF FormField::rect () const"
+
+.PP
+\fBReturns:\fP
+.RS 4
+The size of the field, in normalized coordinates, i\&.e\&. [0\&.\&.1] with regard to the dimensions (cropbox) of the page 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file poppler\-form\&.cc\&.
+.SS "virtual \fBFormType\fP Poppler::FormField::type () const\fC [pure virtual]\fP"
+The type of the field\&. 
+.PP
+Implemented in \fBPoppler::FormFieldChoice\fP, \fBPoppler::FormFieldText\fP, and \fBPoppler::FormFieldButton\fP\&.
+.SS "QString FormField::uiName () const"
+The name of the field to be used in user interface (eg messages to the user)\&. 
+.PP
+Definition at line 123 of file poppler\-form\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

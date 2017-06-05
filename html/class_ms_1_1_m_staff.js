@@ -1,0 +1,26 @@
+var class_ms_1_1_m_staff =
+[
+    [ "MStaff", "class_ms_1_1_m_staff.html#ad44779102b81a4620f5a1ddf07774ba4", null ],
+    [ "~MStaff", "class_ms_1_1_m_staff.html#aa708c22012e71e2f34ea32cef3461dc9", null ],
+    [ "MStaff", "class_ms_1_1_m_staff.html#a44b094189add92868eec2fb68b7802c5", null ],
+    [ "corrupted", "class_ms_1_1_m_staff.html#a59ead6fcfdcff72e582cb2c67722842d", null ],
+    [ "hasVoices", "class_ms_1_1_m_staff.html#a716cf297623cd8648d20591826452934", null ],
+    [ "lines", "class_ms_1_1_m_staff.html#a041c3a7ee0840b9da7d30a4df99b296f", null ],
+    [ "noText", "class_ms_1_1_m_staff.html#ade7eae5ca8fe8d80324449ebc4bf5ea1", null ],
+    [ "setCorrupted", "class_ms_1_1_m_staff.html#a930334f25476a9ef33a8b8ecff63795c", null ],
+    [ "setHasVoices", "class_ms_1_1_m_staff.html#a603da3b6be7664f23a1cb7d60216be44", null ],
+    [ "setLines", "class_ms_1_1_m_staff.html#a9e074af4f92172f25ca2a00de71d0550", null ],
+    [ "setNoText", "class_ms_1_1_m_staff.html#a664ace3bb181278e9fcd41ffb2ead400", null ],
+    [ "setScore", "class_ms_1_1_m_staff.html#a5c822eb5566827cf62ef1d4344be88d2", null ],
+    [ "setSlashStyle", "class_ms_1_1_m_staff.html#ad6284ac31b2f1e9a638a5850b0ad8855", null ],
+    [ "setTrack", "class_ms_1_1_m_staff.html#a2333afc43017bebe8316a6092ae26200", null ],
+    [ "setVisible", "class_ms_1_1_m_staff.html#ad18c9173aae39dbd97770c65e17bf141", null ],
+    [ "setVspacerDown", "class_ms_1_1_m_staff.html#ae4f844e66b1a144acbc96cc0854975eb", null ],
+    [ "setVspacerUp", "class_ms_1_1_m_staff.html#ad4cfb80fbfc65bb4cedbf4ffa7fa5075", null ],
+    [ "shape", "class_ms_1_1_m_staff.html#a19e0076b7f5179e9759297fa0988e48a", null ],
+    [ "shape", "class_ms_1_1_m_staff.html#ad0468d2682390f6a873bf8a5bca2e890", null ],
+    [ "slashStyle", "class_ms_1_1_m_staff.html#ad89d1e5d9ef605fd04f1544a0c1acb90", null ],
+    [ "visible", "class_ms_1_1_m_staff.html#a698ed6f7368e15414b6e06d2e04fde31", null ],
+    [ "vspacerDown", "class_ms_1_1_m_staff.html#ae74877ec5db0771ee6f4eca32560c59b", null ],
+    [ "vspacerUp", "class_ms_1_1_m_staff.html#a1b1e5839292f0f03716fa15f86b845c8", null ]
+];

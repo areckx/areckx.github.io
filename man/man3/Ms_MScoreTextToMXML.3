@@ -1,0 +1,44 @@
+.TH "Ms::MScoreTextToMXML" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MScoreTextToMXML
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMScoreTextToMXML\fP (const QString &tag, const QString &attr, const \fBCharFormat\fP &defFmt, const QString &mtf)"
+.br
+.ti -1c
+.RI "void \fBwriteTextFragments\fP (const QList< \fBTextFragment\fP > &fr, \fBXmlWriter\fP &xml)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBtoPlainText\fP (const QString &text)"
+.br
+.ti -1c
+.RI "static QString \fBtoPlainTextPlusSymbols\fP (const QList< \fBTextFragment\fP > &list)"
+.br
+.ti -1c
+.RI "static bool \fBsplit\fP (const QList< \fBTextFragment\fP > &in, const int pos, const int len, QList< \fBTextFragment\fP > &left, QList< \fBTextFragment\fP > &mid, QList< \fBTextFragment\fP > &right)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 31 of file musicxmlfonthandler\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::MScoreTextToMXML::split (const QList< \fBTextFragment\fP > & in, const int pos, const int len, QList< \fBTextFragment\fP > & left, QList< \fBTextFragment\fP > & mid, QList< \fBTextFragment\fP > & right)\fC [static]\fP"
+Split \fIin\fP into \fIleft\fP, \fImid\fP and \fIright\fP\&. Mid starts at \fIpos\fP and is \fIlen\fP characters long\&. \fBPos\fP and len refer to the representation returned by toPlainTextPlusSymbols()\&. TODO Make sure surrogate pairs are handled correctly Return true if OK, false on error\&. 
+.PP
+Definition at line 160 of file musicxmlfonthandler\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

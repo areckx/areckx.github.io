@@ -1,0 +1,202 @@
+\hypertarget{class_agent_list}{}\section{Agent\+List Class Reference}
+\label{class_agent_list}\index{Agent\+List@{Agent\+List}}
+
+
+{\ttfamily \#include $<$Agent\+List.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_agent_list_a631c10e4f7044e77d7927f1d543da7da}\label{class_agent_list_a631c10e4f7044e77d7927f1d543da7da}} 
+typedef std\+::vector$<$ \hyperlink{class_agent}{Agent} $\ast$ $>$ {\bfseries Container}
+\item 
+\mbox{\Hypertarget{class_agent_list_af8a18adbf172b9e8782b7bb1367a49c1}\label{class_agent_list_af8a18adbf172b9e8782b7bb1367a49c1}} 
+typedef Container\+::iterator {\bfseries iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_agent_list_a39c87b05a95fab15702297610aa538e9}\label{class_agent_list_a39c87b05a95fab15702297610aa538e9}} 
+bool {\bfseries empty} () const
+\item 
+\mbox{\Hypertarget{class_agent_list_af53de5a34a37f538f91cea23622b3ef2}\label{class_agent_list_af53de5a34a37f538f91cea23622b3ef2}} 
+Container\+::iterator {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{class_agent_list_ae1c8a6806e5d3243895a57324067fb4c}\label{class_agent_list_ae1c8a6806e5d3243895a57324067fb4c}} 
+Container\+::iterator {\bfseries end} ()
+\item 
+\mbox{\Hypertarget{class_agent_list_a2096c9ef7e7f6bb6b0de028b89951c83}\label{class_agent_list_a2096c9ef7e7f6bb6b0de028b89951c83}} 
+size\+\_\+t {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{class_agent_list_a1d269d101495d0c6fdbccd67a28edbfb}\label{class_agent_list_a1d269d101495d0c6fdbccd67a28edbfb}} 
+void {\bfseries push\+\_\+back} (\hyperlink{class_agent}{Agent} $\ast$a)
+\item 
+void \hyperlink{class_agent_list_ab87ca56331120c2dd7174464879acad7}{add} (\hyperlink{class_agent}{Agent} $\ast$a)
+\item 
+void \hyperlink{class_agent_list_abe2ceeb7ffcf4d07375677d6f238afc1}{add} (\hyperlink{class_agent}{Agent} $\ast$new\+Agent, bool \hyperlink{class_agent_list_a70c1d9daa4e814f6ebfd45f84f9ce73f}{sort})
+\item 
+void \hyperlink{class_agent_list_a70c1d9daa4e814f6ebfd45f84f9ce73f}{sort} ()
+\item 
+void \hyperlink{class_agent_list_af44adc7160efd1062dd9c631f2349aa7}{remove} (const iterator \&itr)
+\item 
+void \hyperlink{class_agent_list_a671100a72e0990f371c6ca892b020498}{beat\+Track} (const Event\+List \&el, const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&params)
+\item 
+void \hyperlink{class_agent_list_a74c40095f26a193e815ae2c7e8f8269d}{beat\+Track} (const Event\+List \&el, const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&params, double stop)
+\item 
+\hyperlink{class_agent}{Agent} $\ast$ \hyperlink{class_agent_list_af9d27edccc5f7915d4d3f554778e108c}{best\+Agent} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_agent_list_a0c56c3377c849c460e5a74c835d4f635}{use\+Average\+Salience} = false
+\item 
+static const double \hyperlink{class_agent_list_a8da51527cedc40ee03bec9d9b4db0a2d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+BI} = 0.\+02
+\item 
+static const double \hyperlink{class_agent_list_aa06e5fc242ea1f390252c4e2a03ce163}{D\+E\+F\+A\+U\+L\+T\+\_\+\+BT} = 0.\+04
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{struct_class}{Class} for maintaining the set of all Agents involved in beat tracking a piece of music. 
+
+Definition at line 30 of file Agent\+List.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_agent_list_ab87ca56331120c2dd7174464879acad7}\label{class_agent_list_ab87ca56331120c2dd7174464879acad7}} 
+\index{Agent\+List@{Agent\+List}!add@{add}}
+\index{add@{add}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Agent\+List\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{class_agent}{Agent} $\ast$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Inserts new\+Agent into the list in ascending order of beat\+Interval 
+
+Definition at line 54 of file Agent\+List.\+h.
+
+\mbox{\Hypertarget{class_agent_list_abe2ceeb7ffcf4d07375677d6f238afc1}\label{class_agent_list_abe2ceeb7ffcf4d07375677d6f238afc1}} 
+\index{Agent\+List@{Agent\+List}!add@{add}}
+\index{add@{add}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Agent\+List\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{class_agent}{Agent} $\ast$}]{new\+Agent,  }\item[{bool}]{sort }\end{DoxyParamCaption})}
+
+Appends new\+Agent to list (sort==false), or inserts new\+Agent into the list in ascending order of beat\+Interval 
+\begin{DoxyParams}{Parameters}
+{\em new\+Agent} & The agent to be added to the list \\
+\hline
+{\em sort} & Flag indicating whether the list is sorted or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Agent\+List.\+cpp.
+
+\mbox{\Hypertarget{class_agent_list_a671100a72e0990f371c6ca892b020498}\label{class_agent_list_a671100a72e0990f371c6ca892b020498}} 
+\index{Agent\+List@{Agent\+List}!beat\+Track@{beat\+Track}}
+\index{beat\+Track@{beat\+Track}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{beat\+Track()}{beatTrack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Agent\+List\+::beat\+Track (\begin{DoxyParamCaption}\item[{const Event\+List \&}]{el,  }\item[{const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&}]{params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Perform beat tracking on a list of events (onsets). 
+\begin{DoxyParams}{Parameters}
+{\em el} & The list of onsets (or events or peaks) to beat track \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Agent\+List.\+h.
+
+\mbox{\Hypertarget{class_agent_list_a74c40095f26a193e815ae2c7e8f8269d}\label{class_agent_list_a74c40095f26a193e815ae2c7e8f8269d}} 
+\index{Agent\+List@{Agent\+List}!beat\+Track@{beat\+Track}}
+\index{beat\+Track@{beat\+Track}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{beat\+Track()}{beatTrack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Agent\+List\+::beat\+Track (\begin{DoxyParamCaption}\item[{const Event\+List \&}]{el,  }\item[{const \hyperlink{class_agent_parameters}{Agent\+Parameters} \&}]{params,  }\item[{double}]{stop }\end{DoxyParamCaption})}
+
+Perform beat tracking on a list of events (onsets). 
+\begin{DoxyParams}{Parameters}
+{\em el} & The list of onsets (or events or peaks) to beat track. \\
+\hline
+{\em stop} & Do not find beats after {\ttfamily stop} seconds. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Agent\+List.\+cpp.
+
+\mbox{\Hypertarget{class_agent_list_af9d27edccc5f7915d4d3f554778e108c}\label{class_agent_list_af9d27edccc5f7915d4d3f554778e108c}} 
+\index{Agent\+List@{Agent\+List}!best\+Agent@{best\+Agent}}
+\index{best\+Agent@{best\+Agent}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{best\+Agent()}{bestAgent()}}
+{\footnotesize\ttfamily \hyperlink{class_agent}{Agent} $\ast$ Agent\+List\+::best\+Agent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Finds the \hyperlink{class_agent}{Agent} with the highest score in the list, or N\+U\+LL if beat tracking has failed. \begin{DoxyReturn}{Returns}
+The \hyperlink{class_agent}{Agent} with the highest score 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file Agent\+List.\+cpp.
+
+\mbox{\Hypertarget{class_agent_list_af44adc7160efd1062dd9c631f2349aa7}\label{class_agent_list_af44adc7160efd1062dd9c631f2349aa7}} 
+\index{Agent\+List@{Agent\+List}!remove@{remove}}
+\index{remove@{remove}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Agent\+List\+::remove (\begin{DoxyParamCaption}\item[{const iterator \&}]{itr }\end{DoxyParamCaption})}
+
+Removes the given item from the list. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Points to the \hyperlink{class_agent}{Agent} which is removed from the list \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file Agent\+List.\+cpp.
+
+\mbox{\Hypertarget{class_agent_list_a70c1d9daa4e814f6ebfd45f84f9ce73f}\label{class_agent_list_a70c1d9daa4e814f6ebfd45f84f9ce73f}} 
+\index{Agent\+List@{Agent\+List}!sort@{sort}}
+\index{sort@{sort}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void Agent\+List\+::sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sorts the \hyperlink{class_agent_list}{Agent\+List} by increasing beat\+Interval. 
+
+Definition at line 35 of file Agent\+List.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_agent_list_a8da51527cedc40ee03bec9d9b4db0a2d}\label{class_agent_list_a8da51527cedc40ee03bec9d9b4db0a2d}} 
+\index{Agent\+List@{Agent\+List}!D\+E\+F\+A\+U\+L\+T\+\_\+\+BI@{D\+E\+F\+A\+U\+L\+T\+\_\+\+BI}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+BI@{D\+E\+F\+A\+U\+L\+T\+\_\+\+BI}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+BI}{DEFAULT\_BI}}
+{\footnotesize\ttfamily const double Agent\+List\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+BI = 0.\+02\hspace{0.3cm}{\ttfamily [static]}}
+
+For the purpose of removing duplicate agents, the default J\+ND of I\+BI 
+
+Definition at line 48 of file Agent\+List.\+h.
+
+\mbox{\Hypertarget{class_agent_list_aa06e5fc242ea1f390252c4e2a03ce163}\label{class_agent_list_aa06e5fc242ea1f390252c4e2a03ce163}} 
+\index{Agent\+List@{Agent\+List}!D\+E\+F\+A\+U\+L\+T\+\_\+\+BT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+BT}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+BT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+BT}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+BT}{DEFAULT\_BT}}
+{\footnotesize\ttfamily const double Agent\+List\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+BT = 0.\+04\hspace{0.3cm}{\ttfamily [static]}}
+
+For the purpose of removing duplicate agents, the default J\+ND of phase 
+
+Definition at line 51 of file Agent\+List.\+h.
+
+\mbox{\Hypertarget{class_agent_list_a0c56c3377c849c460e5a74c835d4f635}\label{class_agent_list_a0c56c3377c849c460e5a74c835d4f635}} 
+\index{Agent\+List@{Agent\+List}!use\+Average\+Salience@{use\+Average\+Salience}}
+\index{use\+Average\+Salience@{use\+Average\+Salience}!Agent\+List@{Agent\+List}}
+\subsubsection{\texorpdfstring{use\+Average\+Salience}{useAverageSalience}}
+{\footnotesize\ttfamily bool Agent\+List\+::use\+Average\+Salience = false\hspace{0.3cm}{\ttfamily [static]}}
+
+Flag for choice between sum and average beat salience values for \hyperlink{class_agent}{Agent} scores. The use of summed saliences favours faster tempi or lower metrical levels. 
+
+Definition at line 45 of file Agent\+List.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/beatroot/Agent\+List.\+h\item 
+thirdparty/beatroot/Agent\+List.\+cpp\end{DoxyCompactItemize}

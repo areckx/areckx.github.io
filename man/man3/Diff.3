@@ -1,0 +1,108 @@
+.TH "Diff" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Diff
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <diff_match_patch\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDiff\fP (Operation _operation, const QString &_text)"
+.br
+.ti -1c
+.RI "bool \fBisNull\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtoString\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBDiff\fP &d) const"
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBDiff\fP &d) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBstrOperation\fP (Operation op)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Operation \fBoperation\fP"
+.br
+.ti -1c
+.RI "QString \fBtext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBClass\fP representing one diff operation\&. 
+.PP
+Definition at line 82 of file diff_match_patch\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Diff::Diff (Operation _operation, const QString & _text)"
+Constructor\&. Initializes the diff with the provided values\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoperation\fP One of INSERT, DELETE or EQUAL\&. 
+.br
+\fItext\fP The text being applied\&.
+.RE
+.PP
+Constructor\&. Initializes the diff with the provided values\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoperation\fP One of INSERT, DELETE or EQUAL 
+.br
+\fItext\fP The text being applied 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file diff_match_patch\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Diff::operator== (const \fBDiff\fP & d) const"
+Is this \fBDiff\fP equivalent to another \fBDiff\fP? 
+.PP
+\fBParameters:\fP
+.RS 4
+\fId\fP Another \fBDiff\fP to compare against 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true or false 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file diff_match_patch\&.cpp\&.
+.SS "QString Diff::toString () const"
+Display a human-readable version of this \fBDiff\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+text version 
+.RE
+.PP
+
+.PP
+Definition at line 66 of file diff_match_patch\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

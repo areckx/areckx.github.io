@@ -1,0 +1,1287 @@
+\hypertarget{class_poppler_1_1_document}{}\section{Poppler\+:\+:Document Class Reference}
+\label{class_poppler_1_1_document}\index{Poppler\+::\+Document@{Poppler\+::\+Document}}
+
+
+P\+DF document.  
+
+
+
+
+{\ttfamily \#include $<$poppler-\/qt5.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}{Page\+Mode} \{ \newline
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba4b709ee334e2c3ea2bd8df2680de501e}{Use\+None}, 
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba0a1bf7b447a3f36898f6c5b286f53b21}{Use\+Outlines}, 
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba5984e71380eaffa41b4a90bb9c4a965b}{Use\+Thumbs}, 
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba942ce16a97060ae7ebe6513d9a860cd7}{Full\+Screen}, 
+\newline
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822bae61492f6fb35469e734e8f41a292c4e9}{Use\+OC}, 
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba382b116328e14edd5929cfcc28c69f04}{Use\+Attach}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}{Page\+Layout} \{ \newline
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda711c5286c04de74232bc6a2ca4a4a05d}{No\+Layout}, 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda6b412a622f9456f7b8d08d0d120229a1}{Single\+Page}, 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdab1c3ce0dc45101db622b30a7e36f7e1b}{One\+Column}, 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda35e0e5c15423834c6515cf2df64cdd12}{Two\+Column\+Left}, 
+\newline
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdaa0759d4fea75041b18268728d7fff3ce}{Two\+Column\+Right}, 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda244de645e7bbd445e6744ddb3ac1af25}{Two\+Page\+Left}, 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda163344c5dc4e772a11150199ea8843e8}{Two\+Page\+Right}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Render\+Backend} \{ \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb}{Splash\+Backend}, 
+\hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a0f307432c54a0b7abab57224be1ca393}{Arthur\+Backend}
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}{Render\+Hint} \{ \newline
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ada9db4e49f6de26900a79f47098babb8}{Antialiasing} = 0x00000001, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ab1183a50eacc9fad47051cfa1670379c}{Text\+Antialiasing} = 0x00000002, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a3bca408d4c25964bf2dc5f4e39dddcb2}{Text\+Hinting} = 0x00000004, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a72582e881c58f1dbedf698933dca2481}{Text\+Slight\+Hinting} = 0x00000008, 
+\newline
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9aa1c1ac9cb8050a56e009983d3840167e}{Overprint\+Preview} = 0x00000010, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9adb5b52f62cace40cad54686996392d14}{Thin\+Line\+Solid} = 0x00000020, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a422db551ee9b68a511acb2cbec60d554}{Thin\+Line\+Shape} = 0x00000040, 
+\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a17ba082f080a64b0a11002fbae7b25ce}{Ignore\+Paper\+Color} = 0x00000080
+ \}
+\item 
+enum \hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}{Form\+Type} \{ \hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aeb3b8136fe25d4752bbfa11e8606d8ca}{No\+Form}, 
+\hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3a799535334a5e3b4be6e5cc37dc15dae8}{Acro\+Form}, 
+\hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aa2a0e50c1e623fd10ec0163a998c7db0}{Xfa\+Form}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_poppler_1_1_document_a8b4dd39c8b59c19ab935d772e067f0c4}{set\+Color\+Display\+Profile} (void $\ast$output\+ProfileA)
+\item 
+void \hyperlink{class_poppler_1_1_document_aa72744f77b5b185fee257e32847f62c4}{set\+Color\+Display\+Profile\+Name} (const Q\+String \&name)
+\item 
+void $\ast$ \hyperlink{class_poppler_1_1_document_a9f234d4f9b916787d88bfda9b29af08e}{color\+Rgb\+Profile} () const
+\item 
+void $\ast$ \hyperlink{class_poppler_1_1_document_a48f8c5ecc4e261d6059ca055912adf6a}{color\+Display\+Profile} () const
+\item 
+\hyperlink{class_poppler_1_1_page}{Page} $\ast$ \hyperlink{class_poppler_1_1_document_ae4535b0dc763d6be42d775fa5d40c93a}{page} (int index) const
+\item 
+\hyperlink{class_poppler_1_1_page}{Page} $\ast$ \hyperlink{class_poppler_1_1_document_a362452915b71f8d534114781c27e6dc0}{page} (const Q\+String \&label) const
+\item 
+int \hyperlink{class_poppler_1_1_document_a260f9b7105860a757aa1b018cd4f6ccb}{num\+Pages} () const
+\item 
+\hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}{Page\+Mode} \hyperlink{class_poppler_1_1_document_a9dd899cd7515f97320994c2a24cee316}{page\+Mode} () const
+\item 
+\hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}{Page\+Layout} \hyperlink{class_poppler_1_1_document_a7074424a989911de79f781ab77b23652}{page\+Layout} () const
+\item 
+Qt\+::\+Layout\+Direction \hyperlink{class_poppler_1_1_document_a854e191808926d0bcf277a97243f5737}{text\+Direction} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a5eb83ee712c9e146ccbcb21c3a9ce662}{unlock} (const Q\+Byte\+Array \&owner\+Password, const Q\+Byte\+Array \&user\+Password)
+\item 
+bool \hyperlink{class_poppler_1_1_document_a21399ffda439d05aa493dceba9bf8c50}{is\+Locked} () const
+\item 
+Q\+Date\+Time \hyperlink{class_poppler_1_1_document_a7e97595aa9634c4bc65d4bdd3ae6314f}{date} (const Q\+String \&data) const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_document_a9ef8eb4458c344ca1533d9af02bc98d5}{info} (const Q\+String \&data) const
+\item 
+Q\+String\+List \hyperlink{class_poppler_1_1_document_a476e9e81b22ead0bf46e086bda3abe98}{info\+Keys} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_aa14566ce82018b575cee3179fbb3f912}{is\+Encrypted} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a0699e1c95414e826dbe2400305d6ba29}{is\+Linearized} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_adf941fadec1ccca91f2e209f935c497d}{ok\+To\+Print} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a8fcbb451e7fcd2a72d0dce90a7815de4}{ok\+To\+Print\+High\+Res} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a0d779137e2bd544a1b1cb6251770f544}{ok\+To\+Change} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a22090fb7613d582f4e3327f55bc6e5b4}{ok\+To\+Copy} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a33fa45a3666edcdc9b5deb34861a6670}{ok\+To\+Add\+Notes} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_afff0dbfbc5bc11c18784d814db1c4178}{ok\+To\+Fill\+Form} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a19f94305b3a268141f8bf350334cfb33}{ok\+To\+Create\+Form\+Fields} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a9c792ce1274bace5cf18cf77934f993e}{ok\+To\+Extract\+For\+Accessibility} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_aabaf987b173987c4ed587ecc70a21edd}{ok\+To\+Assemble} () const
+\item 
+void \hyperlink{class_poppler_1_1_document_a1edbfdfd0b5adf4be650c2636a309181}{get\+Pdf\+Version} (int $\ast$major, int $\ast$minor) const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_font_info}{Font\+Info} $>$ \hyperlink{class_poppler_1_1_document_ad08deee0fbcf175c979c6057f78bded6}{fonts} () const
+\item 
+\hyperlink{class_poppler_1_1_font_iterator}{Font\+Iterator} $\ast$ \hyperlink{class_poppler_1_1_document_ab7554a98e1cd7b472fe4f1e33565581b}{new\+Font\+Iterator} (int start\+Page=0) const
+\item 
+Q\+Byte\+Array \hyperlink{class_poppler_1_1_document_a5b4ce85bc240c703e45dfa94d6838ce5}{font\+Data} (const \hyperlink{class_poppler_1_1_font_info}{Font\+Info} \&\hyperlink{structfont}{font}) const
+\item 
+Q\+List$<$ \hyperlink{class_poppler_1_1_embedded_file}{Embedded\+File} $\ast$ $>$ \hyperlink{class_poppler_1_1_document_aab2376871d1323457d826747e53a2f00}{embedded\+Files} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_ab64db4502e26726709d7385cf06823ee}{has\+Embedded\+Files} () const
+\item 
+Q\+Dom\+Document $\ast$ \hyperlink{class_poppler_1_1_document_a3b622bb1d5a5c7f24a9baf8efc5d7b1f}{toc} () const
+\item 
+\hyperlink{class_poppler_1_1_link_destination}{Link\+Destination} $\ast$ \hyperlink{class_poppler_1_1_document_adce7c161b57d9d8a89888697da1d8c90}{link\+Destination} (const Q\+String \&name)
+\item 
+void \hyperlink{class_poppler_1_1_document_a4901da93d4deac9a263a219c33642176}{set\+Paper\+Color} (const Q\+Color \&\hyperlink{structcolor}{color})
+\item 
+Q\+Color \hyperlink{class_poppler_1_1_document_adb81a852324b3a581826c184f154d4ef}{paper\+Color} () const
+\item 
+void \hyperlink{class_poppler_1_1_document_a81a758f83530fa1cfaddf748c6be89c9}{set\+Render\+Backend} (\hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Render\+Backend} backend)
+\item 
+\hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Render\+Backend} \hyperlink{class_poppler_1_1_document_ae9aefd54aa4b72dc46bea2c114a02cbe}{render\+Backend} () const
+\item 
+void \hyperlink{class_poppler_1_1_document_a3f7655bb9e6893515bbc64b90b487ffc}{set\+Render\+Hint} (\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}{Render\+Hint} hint, bool on=true)
+\item 
+Render\+Hints \hyperlink{class_poppler_1_1_document_a0dfc519e40d570461d26ce5b49e87466}{render\+Hints} () const
+\item 
+\hyperlink{class_poppler_1_1_p_s_converter}{P\+S\+Converter} $\ast$ \hyperlink{class_poppler_1_1_document_ab8c34ac2172d450753660bc7c31c82d7}{ps\+Converter} () const
+\item 
+\hyperlink{class_poppler_1_1_p_d_f_converter}{P\+D\+F\+Converter} $\ast$ \hyperlink{class_poppler_1_1_document_a1ba7a683fae5246efacedb7d82e4b997}{pdf\+Converter} () const
+\item 
+Q\+String \hyperlink{class_poppler_1_1_document_a86276327f2b7d265a11977c33ec07b26}{metadata} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a2db8898b2818eecc73896195ef421a70}{has\+Optional\+Content} () const
+\item 
+\hyperlink{class_poppler_1_1_opt_content_model}{Opt\+Content\+Model} $\ast$ \hyperlink{class_poppler_1_1_document_aac1edcc34ce0b1bb00aaa3f372157a41}{optional\+Content\+Model} ()
+\item 
+Q\+String\+List \hyperlink{class_poppler_1_1_document_aed91a0b3de99b9e8f951afea0ad8fd60}{scripts} () const
+\item 
+bool \hyperlink{class_poppler_1_1_document_a2544975242e00dfb494ecb907e1ac829}{get\+Pdf\+Id} (Q\+Byte\+Array $\ast$permanent\+Id, Q\+Byte\+Array $\ast$update\+Id) const
+\item 
+\hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}{Form\+Type} \hyperlink{class_poppler_1_1_document_a551458a3d6236a1cea3ab24d26953c06}{form\+Type} () const
+\item 
+\hyperlink{class_poppler_1_1_document_ab0b992bb0e530f12ff665fba46418af2}{$\sim$\+Document} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_poppler_1_1_document}{Document} $\ast$ \hyperlink{class_poppler_1_1_document_a89330667f1fbc13cdc481cc61f417c82}{load} (const Q\+String \&file\+Path, const Q\+Byte\+Array \&owner\+Password=Q\+Byte\+Array(), const Q\+Byte\+Array \&user\+Password=Q\+Byte\+Array())
+\item 
+static \hyperlink{class_poppler_1_1_document}{Document} $\ast$ \hyperlink{class_poppler_1_1_document_a47379f6241b011a58c1d8f10cea10dfc}{load\+From\+Data} (const Q\+Byte\+Array \&file\+Contents, const Q\+Byte\+Array \&owner\+Password=Q\+Byte\+Array(), const Q\+Byte\+Array \&user\+Password=Q\+Byte\+Array())
+\item 
+static Q\+Set$<$ \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Render\+Backend} $>$ \hyperlink{class_poppler_1_1_document_a3a664ff0948be89cd7ef2585f9e56659}{available\+Render\+Backends} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_document_a66d145c56e1747e0aecb5309042ab183}\label{class_poppler_1_1_document_a66d145c56e1747e0aecb5309042ab183}} 
+class {\bfseries Page}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_document_a5f30d346de2175fe7a14e3faac37e209}\label{class_poppler_1_1_document_a5f30d346de2175fe7a14e3faac37e209}} 
+class {\bfseries Document\+Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+P\+DF document. 
+
+The \hyperlink{class_poppler_1_1_document}{Document} class represents a P\+DF document\+: its pages, and all the global properties, metadata, etc.\hypertarget{class_poppler_1_1_document_ownership}{}\subsection{Ownership of the returned objects}\label{class_poppler_1_1_document_ownership}
+All the functions that returns class pointers create new object, and the responsability of those is given to the callee.
+
+The only exception is \hyperlink{class_poppler_1_1_page_aff7331566a9cbf659f625f73ee05f746}{Page\+::transition()}.\hypertarget{class_poppler_1_1_document_document-loading}{}\subsection{Loading}\label{class_poppler_1_1_document_document-loading}
+To get a \hyperlink{class_poppler_1_1_document}{Document}, you have to load it via the \hyperlink{class_poppler_1_1_document_a89330667f1fbc13cdc481cc61f417c82}{load()} \& \hyperlink{class_poppler_1_1_document_a47379f6241b011a58c1d8f10cea10dfc}{load\+From\+Data()} functions.
+
+In all the functions that have passwords as arguments, they {\bfseries must} be Latin1 encoded. If you have a password that is a U\+T\+F-\/8 string, you need to use Q\+String\+::to\+Latin1() (or similar) to convert the password first. If you have a U\+T\+F-\/8 character array, consider converting it to a Q\+String first (Q\+String\+::from\+Utf8(), or similar) before converting to Latin1 encoding.\hypertarget{class_poppler_1_1_document_document-rendering}{}\subsection{Rendering}\label{class_poppler_1_1_document_document-rendering}
+To render pages of a document, you have different \hyperlink{class_poppler_1_1_document}{Document} functions to set various options.\hypertarget{class_poppler_1_1_document_document-rendering-backend}{}\subsubsection{Backends}\label{class_poppler_1_1_document_document-rendering-backend}
+Poppler offers a different backends for rendering the pages. Currently there are two backends (see \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Render\+Backend}), but only the \hyperlink{class_splash}{Splash} engine works well and has been tested.
+
+The available rendering backends can be discovered via \hyperlink{class_poppler_1_1_document_a3a664ff0948be89cd7ef2585f9e56659}{available\+Render\+Backends()}. The current rendering backend can be changed using \hyperlink{class_poppler_1_1_document_a81a758f83530fa1cfaddf748c6be89c9}{set\+Render\+Backend()}. Please note that setting a backend not listed in the available ones will always result in null Q\+Image\textquotesingle{}s.\hypertarget{class_poppler_1_1_document_document-cms}{}\subsection{Color management support}\label{class_poppler_1_1_document_document-cms}
+Poppler, if compiled with this support, provides functions to handle color profiles.
+
+To know whether the Poppler version you are using has support for color management, you can query \hyperlink{namespace_poppler_a21ef0e2c0c9cfed4548570f8d9c47879}{Poppler\+::is\+Cms\+Available()}. In case it is not avilable, all the color management-\/related functions will either do nothing or return null. 
+
+Definition at line 842 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}\label{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Form\+Type@{Form\+Type}}
+\index{Form\+Type@{Form\+Type}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{Form\+Type}{FormType}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}{Poppler\+::\+Document\+::\+Form\+Type}}
+
+\hyperlink{class_form}{Form} types
+
+\begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Form@{No\+Form}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!No\+Form@{No\+Form}}}\mbox{\Hypertarget{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aeb3b8136fe25d4752bbfa11e8606d8ca}\label{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aeb3b8136fe25d4752bbfa11e8606d8ca}} 
+No\+Form&\hyperlink{class_poppler_1_1_document}{Document} doesn\textquotesingle{}t contain forms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Acro\+Form@{Acro\+Form}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Acro\+Form@{Acro\+Form}}}\mbox{\Hypertarget{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3a799535334a5e3b4be6e5cc37dc15dae8}\label{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3a799535334a5e3b4be6e5cc37dc15dae8}} 
+Acro\+Form&Acro\+Form. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Xfa\+Form@{Xfa\+Form}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Xfa\+Form@{Xfa\+Form}}}\mbox{\Hypertarget{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aa2a0e50c1e623fd10ec0163a998c7db0}\label{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3aa2a0e50c1e623fd10ec0163a998c7db0}} 
+Xfa\+Form&Adobe X\+ML Forms Architecture (X\+FA), currently unsupported. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 904 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Page\+Layout@{Page\+Layout}}
+\index{Page\+Layout@{Page\+Layout}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{Page\+Layout}{PageLayout}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}{Poppler\+::\+Document\+::\+Page\+Layout}}
+
+The page layout \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{No\+Layout@{No\+Layout}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!No\+Layout@{No\+Layout}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda711c5286c04de74232bc6a2ca4a4a05d}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda711c5286c04de74232bc6a2ca4a4a05d}} 
+No\+Layout&Layout not specified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Single\+Page@{Single\+Page}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Single\+Page@{Single\+Page}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda6b412a622f9456f7b8d08d0d120229a1}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda6b412a622f9456f7b8d08d0d120229a1}} 
+Single\+Page&Display a single page. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{One\+Column@{One\+Column}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!One\+Column@{One\+Column}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdab1c3ce0dc45101db622b30a7e36f7e1b}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdab1c3ce0dc45101db622b30a7e36f7e1b}} 
+One\+Column&Display a single column of pages. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Two\+Column\+Left@{Two\+Column\+Left}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Two\+Column\+Left@{Two\+Column\+Left}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda35e0e5c15423834c6515cf2df64cdd12}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda35e0e5c15423834c6515cf2df64cdd12}} 
+Two\+Column\+Left&Display the pages in two columns, with odd-\/numbered pages on the left. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Two\+Column\+Right@{Two\+Column\+Right}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Two\+Column\+Right@{Two\+Column\+Right}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdaa0759d4fea75041b18268728d7fff3ce}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbdaa0759d4fea75041b18268728d7fff3ce}} 
+Two\+Column\+Right&Display the pages in two columns, with odd-\/numbered pages on the right. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Two\+Page\+Left@{Two\+Page\+Left}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Two\+Page\+Left@{Two\+Page\+Left}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda244de645e7bbd445e6744ddb3ac1af25}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda244de645e7bbd445e6744ddb3ac1af25}} 
+Two\+Page\+Left&Display the pages two at a time, with odd-\/numbered pages on the left. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Two\+Page\+Right@{Two\+Page\+Right}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Two\+Page\+Right@{Two\+Page\+Right}}}\mbox{\Hypertarget{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda163344c5dc4e772a11150199ea8843e8}\label{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbda163344c5dc4e772a11150199ea8843e8}} 
+Two\+Page\+Right&Display the pages two at a time, with odd-\/numbered pages on the right. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 862 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Page\+Mode@{Page\+Mode}}
+\index{Page\+Mode@{Page\+Mode}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{Page\+Mode}{PageMode}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}{Poppler\+::\+Document\+::\+Page\+Mode}}
+
+The page mode \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Use\+None@{Use\+None}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Use\+None@{Use\+None}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba4b709ee334e2c3ea2bd8df2680de501e}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba4b709ee334e2c3ea2bd8df2680de501e}} 
+Use\+None&No mode -\/ neither document outline nor thumbnail images are visible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Use\+Outlines@{Use\+Outlines}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Use\+Outlines@{Use\+Outlines}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba0a1bf7b447a3f36898f6c5b286f53b21}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba0a1bf7b447a3f36898f6c5b286f53b21}} 
+Use\+Outlines&\hyperlink{class_poppler_1_1_document}{Document} outline visible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Use\+Thumbs@{Use\+Thumbs}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Use\+Thumbs@{Use\+Thumbs}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba5984e71380eaffa41b4a90bb9c4a965b}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba5984e71380eaffa41b4a90bb9c4a965b}} 
+Use\+Thumbs&Thumbnail images visible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Full\+Screen@{Full\+Screen}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Full\+Screen@{Full\+Screen}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba942ce16a97060ae7ebe6513d9a860cd7}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba942ce16a97060ae7ebe6513d9a860cd7}} 
+Full\+Screen&Fullscreen mode (no menubar, windows controls etc) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Use\+OC@{Use\+OC}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Use\+OC@{Use\+OC}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822bae61492f6fb35469e734e8f41a292c4e9}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822bae61492f6fb35469e734e8f41a292c4e9}} 
+Use\+OC&Optional content group panel visible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Use\+Attach@{Use\+Attach}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Use\+Attach@{Use\+Attach}}}\mbox{\Hypertarget{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba382b116328e14edd5929cfcc28c69f04}\label{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822ba382b116328e14edd5929cfcc28c69f04}} 
+Use\+Attach&Attachments panel visible. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 850 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}\label{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Render\+Backend@{Render\+Backend}}
+\index{Render\+Backend@{Render\+Backend}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{Render\+Backend}{RenderBackend}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Poppler\+::\+Document\+::\+Render\+Backend}}
+
+The render backends available
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Splash\+Backend@{Splash\+Backend}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Splash\+Backend@{Splash\+Backend}}}\mbox{\Hypertarget{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb}\label{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb}} 
+Splash\+Backend&\hyperlink{class_splash}{Splash} backend. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arthur\+Backend@{Arthur\+Backend}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Arthur\+Backend@{Arthur\+Backend}}}\mbox{\Hypertarget{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a0f307432c54a0b7abab57224be1ca393}\label{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a0f307432c54a0b7abab57224be1ca393}} 
+Arthur\+Backend&Arthur (Qt) backend. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 877 of file poppler-\/qt5.\+h.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Render\+Hint@{Render\+Hint}}
+\index{Render\+Hint@{Render\+Hint}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{Render\+Hint}{RenderHint}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}{Poppler\+::\+Document\+::\+Render\+Hint}}
+
+The render hints available
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Antialiasing@{Antialiasing}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Antialiasing@{Antialiasing}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ada9db4e49f6de26900a79f47098babb8}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ada9db4e49f6de26900a79f47098babb8}} 
+Antialiasing&Antialiasing for graphics. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text\+Antialiasing@{Text\+Antialiasing}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Text\+Antialiasing@{Text\+Antialiasing}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ab1183a50eacc9fad47051cfa1670379c}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9ab1183a50eacc9fad47051cfa1670379c}} 
+Text\+Antialiasing&Antialiasing for text. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text\+Hinting@{Text\+Hinting}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Text\+Hinting@{Text\+Hinting}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a3bca408d4c25964bf2dc5f4e39dddcb2}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a3bca408d4c25964bf2dc5f4e39dddcb2}} 
+Text\+Hinting&Hinting for text. \begin{DoxySince}{Since}
+0.\+12.\+1 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Text\+Slight\+Hinting@{Text\+Slight\+Hinting}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Text\+Slight\+Hinting@{Text\+Slight\+Hinting}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a72582e881c58f1dbedf698933dca2481}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a72582e881c58f1dbedf698933dca2481}} 
+Text\+Slight\+Hinting&Lighter hinting for text when combined with Text\+Hinting. \begin{DoxySince}{Since}
+0.\+18 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Overprint\+Preview@{Overprint\+Preview}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Overprint\+Preview@{Overprint\+Preview}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9aa1c1ac9cb8050a56e009983d3840167e}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9aa1c1ac9cb8050a56e009983d3840167e}} 
+Overprint\+Preview&Overprint preview. \begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Thin\+Line\+Solid@{Thin\+Line\+Solid}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Thin\+Line\+Solid@{Thin\+Line\+Solid}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9adb5b52f62cace40cad54686996392d14}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9adb5b52f62cace40cad54686996392d14}} 
+Thin\+Line\+Solid&Enhance thin lines solid. \begin{DoxySince}{Since}
+0.\+24 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Thin\+Line\+Shape@{Thin\+Line\+Shape}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Thin\+Line\+Shape@{Thin\+Line\+Shape}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a422db551ee9b68a511acb2cbec60d554}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a422db551ee9b68a511acb2cbec60d554}} 
+Thin\+Line\+Shape&Enhance thin lines shape. Wins over Thin\+Line\+Solid. \begin{DoxySince}{Since}
+0.\+24 
+\end{DoxySince}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ignore\+Paper\+Color@{Ignore\+Paper\+Color}!Poppler\+::\+Document@{Poppler\+::\+Document}}\index{Poppler\+::\+Document@{Poppler\+::\+Document}!Ignore\+Paper\+Color@{Ignore\+Paper\+Color}}}\mbox{\Hypertarget{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a17ba082f080a64b0a11002fbae7b25ce}\label{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9a17ba082f080a64b0a11002fbae7b25ce}} 
+Ignore\+Paper\+Color&Do not compose with the paper color. \begin{DoxySince}{Since}
+0.\+35 
+\end{DoxySince}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 887 of file poppler-\/qt5.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_document_ab0b992bb0e530f12ff665fba46418af2}\label{class_poppler_1_1_document_ab0b992bb0e530f12ff665fba46418af2}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!````~Document@{$\sim$\+Document}}
+\index{````~Document@{$\sim$\+Document}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{$\sim$\+Document()}{~Document()}}
+{\footnotesize\ttfamily Poppler\+::\+Document\+::$\sim$\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. 
+
+Definition at line 106 of file poppler-\/document.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_document_a3a664ff0948be89cd7ef2585f9e56659}\label{class_poppler_1_1_document_a3a664ff0948be89cd7ef2585f9e56659}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!available\+Render\+Backends@{available\+Render\+Backends}}
+\index{available\+Render\+Backends@{available\+Render\+Backends}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{available\+Render\+Backends()}{availableRenderBackends()}}
+{\footnotesize\ttfamily Q\+Set$<$ \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Document\+::\+Render\+Backend} $>$ Poppler\+::\+Document\+::available\+Render\+Backends (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+The available rendering backends.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 524 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a48f8c5ecc4e261d6059ca055912adf6a}\label{class_poppler_1_1_document_a48f8c5ecc4e261d6059ca055912adf6a}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!color\+Display\+Profile@{color\+Display\+Profile}}
+\index{color\+Display\+Profile@{color\+Display\+Profile}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{color\+Display\+Profile()}{colorDisplayProfile()}}
+{\footnotesize\ttfamily void $\ast$ Poppler\+::\+Document\+::color\+Display\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the current display profile.
+
+\begin{DoxyReturn}{Returns}
+a {\ttfamily cms\+H\+P\+R\+O\+F\+I\+LE} of the L\+C\+MS library.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 496 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a9f234d4f9b916787d88bfda9b29af08e}\label{class_poppler_1_1_document_a9f234d4f9b916787d88bfda9b29af08e}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!color\+Rgb\+Profile@{color\+Rgb\+Profile}}
+\index{color\+Rgb\+Profile@{color\+Rgb\+Profile}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{color\+Rgb\+Profile()}{colorRgbProfile()}}
+{\footnotesize\ttfamily void $\ast$ Poppler\+::\+Document\+::color\+Rgb\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the current R\+GB profile.
+
+\begin{DoxyReturn}{Returns}
+a {\ttfamily cms\+H\+P\+R\+O\+F\+I\+LE} of the L\+C\+MS library.
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 487 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a7e97595aa9634c4bc65d4bdd3ae6314f}\label{class_poppler_1_1_document_a7e97595aa9634c4bc65d4bdd3ae6314f}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!date@{date}}
+\index{date@{date}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{date()}{date()}}
+{\footnotesize\ttfamily Q\+Date\+Time Poppler\+::\+Document\+::date (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{data }\end{DoxyParamCaption}) const}
+
+The date associated with the document
+
+You would use this method with something like\+: 
+\begin{DoxyCode}
+QDateTime created = m\_doc->date(\textcolor{stringliteral}{"CreationDate"});
+QDateTime modified = m\_doc->date(\textcolor{stringliteral}{"ModDate"});
+\end{DoxyCode}
+
+
+The available dates are\+:
+\begin{DoxyItemize}
+\item Creation\+Date\+: the date of creation of the document
+\item Mod\+Date\+: the date of the last change in the document
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the type of date that is required \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 327 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aab2376871d1323457d826747e53a2f00}\label{class_poppler_1_1_document_aab2376871d1323457d826747e53a2f00}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!embedded\+Files@{embedded\+Files}}
+\index{embedded\+Files@{embedded\+Files}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{embedded\+Files()}{embeddedFiles()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_embedded_file}{Embedded\+File} $\ast$ $>$ Poppler\+::\+Document\+::embedded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The documents embedded within the P\+DF document.
+
+\begin{DoxyNote}{Note}
+there are two types of embedded document -\/ this call only accesses documents that are embedded at the document level. 
+\end{DoxyNote}
+
+
+Definition at line 230 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a5b4ce85bc240c703e45dfa94d6838ce5}\label{class_poppler_1_1_document_a5b4ce85bc240c703e45dfa94d6838ce5}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!font\+Data@{font\+Data}}
+\index{font\+Data@{font\+Data}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{font\+Data()}{fontData()}}
+{\footnotesize\ttfamily Q\+Byte\+Array Poppler\+::\+Document\+::font\+Data (\begin{DoxyParamCaption}\item[{const \hyperlink{class_poppler_1_1_font_info}{Font\+Info} \&}]{font }\end{DoxyParamCaption}) const}
+
+The font data if the font is an embedded one.
+
+\begin{DoxySince}{Since}
+0.\+10 
+\end{DoxySince}
+
+
+Definition at line 240 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ad08deee0fbcf175c979c6057f78bded6}\label{class_poppler_1_1_document_ad08deee0fbcf175c979c6057f78bded6}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!fonts@{fonts}}
+\index{fonts@{fonts}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{fonts()}{fonts()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{class_poppler_1_1_font_info}{Font\+Info} $>$ Poppler\+::\+Document\+::fonts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The fonts within the P\+DF document.
+
+This is a shorthand for getting all the fonts at once.
+
+\begin{DoxyNote}{Note}
+this can take a very long time to run with a large document. You may wish to use a \hyperlink{class_poppler_1_1_font_iterator}{Font\+Iterator} if you have more than say 20 pages
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_document_ab7554a98e1cd7b472fe4f1e33565581b}{new\+Font\+Iterator()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 219 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a551458a3d6236a1cea3ab24d26953c06}\label{class_poppler_1_1_document_a551458a3d6236a1cea3ab24d26953c06}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!form\+Type@{form\+Type}}
+\index{form\+Type@{form\+Type}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{form\+Type()}{formType()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document_ac761c69f98b581e2e027e309b6b9d8b3}{Document\+::\+Form\+Type} Poppler\+::\+Document\+::form\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the type of forms contained in the document
+
+\begin{DoxySince}{Since}
+0.\+22 
+\end{DoxySince}
+
+
+Definition at line 621 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a2544975242e00dfb494ecb907e1ac829}\label{class_poppler_1_1_document_a2544975242e00dfb494ecb907e1ac829}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!get\+Pdf\+Id@{get\+Pdf\+Id}}
+\index{get\+Pdf\+Id@{get\+Pdf\+Id}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{get\+Pdf\+Id()}{getPdfId()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::get\+Pdf\+Id (\begin{DoxyParamCaption}\item[{Q\+Byte\+Array $\ast$}]{permanent\+Id,  }\item[{Q\+Byte\+Array $\ast$}]{update\+Id }\end{DoxyParamCaption}) const}
+
+The P\+DF identifiers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em permanent\+Id} & an optional pointer to a variable where store the permanent ID of the document \\
+\hline
+{\em update\+Id} & an optional pointer to a variable where store the update ID of the document\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the document has the I\+Ds
+\end{DoxyReturn}
+\begin{DoxySince}{Since}
+0.\+16 
+\end{DoxySince}
+
+
+Definition at line 605 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a1edbfdfd0b5adf4be650c2636a309181}\label{class_poppler_1_1_document_a1edbfdfd0b5adf4be650c2636a309181}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!get\+Pdf\+Version@{get\+Pdf\+Version}}
+\index{get\+Pdf\+Version@{get\+Pdf\+Version}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{get\+Pdf\+Version()}{getPdfVersion()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::get\+Pdf\+Version (\begin{DoxyParamCaption}\item[{int $\ast$}]{major,  }\item[{int $\ast$}]{minor }\end{DoxyParamCaption}) const}
+
+The version of the P\+DF specification that the document conforms to
+
+
+\begin{DoxyParams}{Parameters}
+{\em major} & an optional pointer to a variable where store the \char`\"{}major\char`\"{} number of the version \\
+\hline
+{\em minor} & an optional pointer to a variable where store the \char`\"{}minor\char`\"{} number of the version\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 412 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ab64db4502e26726709d7385cf06823ee}\label{class_poppler_1_1_document_ab64db4502e26726709d7385cf06823ee}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!has\+Embedded\+Files@{has\+Embedded\+Files}}
+\index{has\+Embedded\+Files@{has\+Embedded\+Files}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{has\+Embedded\+Files()}{hasEmbeddedFiles()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::has\+Embedded\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Whether there are any documents embedded in this P\+DF document. 
+
+Definition at line 431 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a2db8898b2818eecc73896195ef421a70}\label{class_poppler_1_1_document_a2db8898b2818eecc73896195ef421a70}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!has\+Optional\+Content@{has\+Optional\+Content}}
+\index{has\+Optional\+Content@{has\+Optional\+Content}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{has\+Optional\+Content()}{hasOptionalContent()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::has\+Optional\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test whether this document has \char`\"{}optional content\char`\"{}.
+
+Optional content is used to optionally turn on (display) and turn off (not display) some elements of the document. The most common use of this is for layers in design applications, but it can be used for a range of things, such as not including some content in printing, and displaying content in the appropriate language.
+
+\begin{DoxySince}{Since}
+0.\+8 
+\end{DoxySince}
+
+
+Definition at line 577 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a9ef8eb4458c344ca1533d9af02bc98d5}\label{class_poppler_1_1_document_a9ef8eb4458c344ca1533d9af02bc98d5}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!info@{info}}
+\index{info@{info}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily Q\+String Poppler\+::\+Document\+::info (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{data }\end{DoxyParamCaption}) const}
+
+Get specified information associated with the document
+
+You would use this method with something like\+: 
+\begin{DoxyCode}
+QString title = m\_doc->info(\textcolor{stringliteral}{"Title"});
+QString subject = m\_doc->info(\textcolor{stringliteral}{"Subject"});
+\end{DoxyCode}
+
+
+In addition to {\ttfamily Title} and {\ttfamily Subject}, other information that may be available include {\ttfamily Author}, {\ttfamily Keywords}, {\ttfamily Creator} and {\ttfamily Producer}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & the information that is required\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_document_a476e9e81b22ead0bf46e086bda3abe98}{info\+Keys()} to get a list of the available keys 
+\end{DoxySeeAlso}
+
+
+Definition at line 268 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a476e9e81b22ead0bf46e086bda3abe98}\label{class_poppler_1_1_document_a476e9e81b22ead0bf46e086bda3abe98}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!info\+Keys@{info\+Keys}}
+\index{info\+Keys@{info\+Keys}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{info\+Keys()}{infoKeys()}}
+{\footnotesize\ttfamily Q\+String\+List Poppler\+::\+Document\+::info\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Obtain a list of the available string information keys. 
+
+Definition at line 300 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aa14566ce82018b575cee3179fbb3f912}\label{class_poppler_1_1_document_aa14566ce82018b575cee3179fbb3f912}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!is\+Encrypted@{is\+Encrypted}}
+\index{is\+Encrypted@{is\+Encrypted}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{is\+Encrypted()}{isEncrypted()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::is\+Encrypted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the document is encrypted 
+
+Definition at line 357 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a0699e1c95414e826dbe2400305d6ba29}\label{class_poppler_1_1_document_a0699e1c95414e826dbe2400305d6ba29}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!is\+Linearized@{is\+Linearized}}
+\index{is\+Linearized@{is\+Linearized}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{is\+Linearized()}{isLinearized()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::is\+Linearized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the document is linearised
+
+In some cases, this is called \char`\"{}fast web view\char`\"{}, since it is mostly an optimisation for viewing over the Web. 
+
+Definition at line 362 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a21399ffda439d05aa493dceba9bf8c50}\label{class_poppler_1_1_document_a21399ffda439d05aa493dceba9bf8c50}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!is\+Locked@{is\+Locked}}
+\index{is\+Locked@{is\+Locked}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{is\+Locked()}{isLocked()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::is\+Locked (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Determine if the document is locked 
+
+Definition at line 122 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_adce7c161b57d9d8a89888697da1d8c90}\label{class_poppler_1_1_document_adce7c161b57d9d8a89888697da1d8c90}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!link\+Destination@{link\+Destination}}
+\index{link\+Destination@{link\+Destination}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{link\+Destination()}{linkDestination()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_link_destination}{Link\+Destination} $\ast$ Poppler\+::\+Document\+::link\+Destination (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})}
+
+Tries to resolve the named destination {\ttfamily name}.
+
+\begin{DoxyNote}{Note}
+this operation starts a search through the whole document
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+a new \hyperlink{class_poppler_1_1_link_destination}{Link\+Destination} object if the named destination was actually found, or N\+U\+LL otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 453 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a89330667f1fbc13cdc481cc61f417c82}\label{class_poppler_1_1_document_a89330667f1fbc13cdc481cc61f417c82}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!load@{load}}
+\index{load@{load}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document}{Document} $\ast$ Poppler\+::\+Document\+::load (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Path,  }\item[{const Q\+Byte\+Array \&}]{owner\+Password = {\ttfamily QByteArray()},  }\item[{const Q\+Byte\+Array \&}]{user\+Password = {\ttfamily QByteArray()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Load the document from a file on disk
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & the name (and path, if required) of the file to load \\
+\hline
+{\em owner\+Password} & the Latin1-\/encoded owner password to use in loading the file \\
+\hline
+{\em user\+Password} & the Latin1-\/encoded user (\char`\"{}open\char`\"{}) password to use in loading the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded document, or N\+U\+LL on error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The caller owns the pointer to \hyperlink{class_poppler_1_1_document}{Document}, and this should be deleted when no longer required.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The returning document may be locked if a password is required to open the file, and one is not provided (as the user\+Password). 
+\end{DoxyWarning}
+
+
+Definition at line 60 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a47379f6241b011a58c1d8f10cea10dfc}\label{class_poppler_1_1_document_a47379f6241b011a58c1d8f10cea10dfc}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!load\+From\+Data@{load\+From\+Data}}
+\index{load\+From\+Data@{load\+From\+Data}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{load\+From\+Data()}{loadFromData()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document}{Document} $\ast$ Poppler\+::\+Document\+::load\+From\+Data (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{file\+Contents,  }\item[{const Q\+Byte\+Array \&}]{owner\+Password = {\ttfamily QByteArray()},  }\item[{const Q\+Byte\+Array \&}]{user\+Password = {\ttfamily QByteArray()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Load the document from memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Contents} & the file contents. They are copied so there is no need to keep the byte array around for the full life time of the document. \\
+\hline
+{\em owner\+Password} & the Latin1-\/encoded owner password to use in loading the file \\
+\hline
+{\em user\+Password} & the Latin1-\/encoded user (\char`\"{}open\char`\"{}) password to use in loading the file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the loaded document, or N\+U\+LL on error
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The caller owns the pointer to \hyperlink{class_poppler_1_1_document}{Document}, and this should be deleted when no longer required.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+The returning document may be locked if a password is required to open the file, and one is not provided (as the user\+Password).
+\end{DoxyWarning}
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 69 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a86276327f2b7d265a11977c33ec07b26}\label{class_poppler_1_1_document_a86276327f2b7d265a11977c33ec07b26}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!metadata@{metadata}}
+\index{metadata@{metadata}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{metadata()}{metadata()}}
+{\footnotesize\ttfamily Q\+String Poppler\+::\+Document\+::metadata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the metadata stream contents
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 564 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ab7554a98e1cd7b472fe4f1e33565581b}\label{class_poppler_1_1_document_ab7554a98e1cd7b472fe4f1e33565581b}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!new\+Font\+Iterator@{new\+Font\+Iterator}}
+\index{new\+Font\+Iterator@{new\+Font\+Iterator}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{new\+Font\+Iterator()}{newFontIterator()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_font_iterator}{Font\+Iterator} $\ast$ Poppler\+::\+Document\+::new\+Font\+Iterator (\begin{DoxyParamCaption}\item[{int}]{start\+Page = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+Creates a new \hyperlink{class_poppler_1_1_font_iterator}{Font\+Iterator} object for font scanning.
+
+The new iterator can be used for reading the font information of the document, reading page by page.
+
+The caller is responsible for the returned object, ie it should freed it when no more useful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Page} & the initial page from which start reading fonts\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_poppler_1_1_document_ad08deee0fbcf175c979c6057f78bded6}{fonts()}
+\end{DoxySeeAlso}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 235 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a260f9b7105860a757aa1b018cd4f6ccb}\label{class_poppler_1_1_document_a260f9b7105860a757aa1b018cd4f6ccb}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!num\+Pages@{num\+Pages}}
+\index{num\+Pages@{num\+Pages}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{num\+Pages()}{numPages()}}
+{\footnotesize\ttfamily int Poppler\+::\+Document\+::num\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The number of pages in the document 
+
+Definition at line 214 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a33fa45a3666edcdc9b5deb34861a6670}\label{class_poppler_1_1_document_a33fa45a3666edcdc9b5deb34861a6670}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Add\+Notes@{ok\+To\+Add\+Notes}}
+\index{ok\+To\+Add\+Notes@{ok\+To\+Add\+Notes}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Add\+Notes()}{okToAddNotes()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Add\+Notes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow annotations to be added or modified, and interactive form fields (including signature fields) to be completed. 
+
+Definition at line 387 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aabaf987b173987c4ed587ecc70a21edd}\label{class_poppler_1_1_document_aabaf987b173987c4ed587ecc70a21edd}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Assemble@{ok\+To\+Assemble}}
+\index{ok\+To\+Assemble@{ok\+To\+Assemble}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Assemble()}{okToAssemble()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Assemble (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow it to be \char`\"{}assembled\char`\"{} -\/ insertion, rotation and deletion of pages; or creation of bookmarks and thumbnail images.
+
+\begin{DoxyNote}{Note}
+this can be true even if \hyperlink{class_poppler_1_1_document_a0d779137e2bd544a1b1cb6251770f544}{ok\+To\+Change()} is false 
+\end{DoxyNote}
+
+
+Definition at line 407 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a0d779137e2bd544a1b1cb6251770f544}\label{class_poppler_1_1_document_a0d779137e2bd544a1b1cb6251770f544}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Change@{ok\+To\+Change}}
+\index{ok\+To\+Change@{ok\+To\+Change}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Change()}{okToChange()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow it to be changed.
+
+\begin{DoxyNote}{Note}
+depending on the type of change, it may be more appropriate to check other properties as well. 
+\end{DoxyNote}
+
+
+Definition at line 377 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a22090fb7613d582f4e3327f55bc6e5b4}\label{class_poppler_1_1_document_a22090fb7613d582f4e3327f55bc6e5b4}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Copy@{ok\+To\+Copy}}
+\index{ok\+To\+Copy@{ok\+To\+Copy}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Copy()}{okToCopy()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Copy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow the contents to be copied / extracted 
+
+Definition at line 382 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a19f94305b3a268141f8bf350334cfb33}\label{class_poppler_1_1_document_a19f94305b3a268141f8bf350334cfb33}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Create\+Form\+Fields@{ok\+To\+Create\+Form\+Fields}}
+\index{ok\+To\+Create\+Form\+Fields@{ok\+To\+Create\+Form\+Fields}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Create\+Form\+Fields()}{okToCreateFormFields()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Create\+Form\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow interactive form fields (including signature fields) to be set, created and modified 
+
+Definition at line 397 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a9c792ce1274bace5cf18cf77934f993e}\label{class_poppler_1_1_document_a9c792ce1274bace5cf18cf77934f993e}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Extract\+For\+Accessibility@{ok\+To\+Extract\+For\+Accessibility}}
+\index{ok\+To\+Extract\+For\+Accessibility@{ok\+To\+Extract\+For\+Accessibility}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Extract\+For\+Accessibility()}{okToExtractForAccessibility()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Extract\+For\+Accessibility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow content extraction (text and perhaps other content) for accessibility usage (eg for a screen reader) 
+
+Definition at line 402 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_afff0dbfbc5bc11c18784d814db1c4178}\label{class_poppler_1_1_document_afff0dbfbc5bc11c18784d814db1c4178}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Fill\+Form@{ok\+To\+Fill\+Form}}
+\index{ok\+To\+Fill\+Form@{ok\+To\+Fill\+Form}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Fill\+Form()}{okToFillForm()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Fill\+Form (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow interactive form fields (including signature fields) to be completed.
+
+\begin{DoxyNote}{Note}
+this can be true even if \hyperlink{class_poppler_1_1_document_a33fa45a3666edcdc9b5deb34861a6670}{ok\+To\+Add\+Notes()} is false -\/ this means that only form completion is permitted. 
+\end{DoxyNote}
+
+
+Definition at line 392 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_adf941fadec1ccca91f2e209f935c497d}\label{class_poppler_1_1_document_adf941fadec1ccca91f2e209f935c497d}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Print@{ok\+To\+Print}}
+\index{ok\+To\+Print@{ok\+To\+Print}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Print()}{okToPrint()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow it to be printed 
+
+Definition at line 367 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a8fcbb451e7fcd2a72d0dce90a7815de4}\label{class_poppler_1_1_document_a8fcbb451e7fcd2a72d0dce90a7815de4}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ok\+To\+Print\+High\+Res@{ok\+To\+Print\+High\+Res}}
+\index{ok\+To\+Print\+High\+Res@{ok\+To\+Print\+High\+Res}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ok\+To\+Print\+High\+Res()}{okToPrintHighRes()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::ok\+To\+Print\+High\+Res (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Test if the permissions on the document allow it to be printed at high resolution 
+
+Definition at line 372 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aac1edcc34ce0b1bb00aaa3f372157a41}\label{class_poppler_1_1_document_aac1edcc34ce0b1bb00aaa3f372157a41}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!optional\+Content\+Model@{optional\+Content\+Model}}
+\index{optional\+Content\+Model@{optional\+Content\+Model}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{optional\+Content\+Model()}{optionalContentModel()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_opt_content_model}{Opt\+Content\+Model} $\ast$ Poppler\+::\+Document\+::optional\+Content\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Itemviews model for optional content.
+
+The model is owned by the document.
+
+\begin{DoxySince}{Since}
+0.\+8 
+\end{DoxySince}
+
+
+Definition at line 582 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ae4535b0dc763d6be42d775fa5d40c93a}\label{class_poppler_1_1_document_ae4535b0dc763d6be42d775fa5d40c93a}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!page@{page}}
+\index{page@{page}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{page()}{page()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_page}{Page} $\ast$ Poppler\+::\+Document\+::page (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Get a specified \hyperlink{class_poppler_1_1_page}{Page}
+
+Note that this follows the P\+DF standard of being zero based -\/ if you want the first page, then you need an index of zero.
+
+The caller gets the ownership of the returned object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & the page number index \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a362452915b71f8d534114781c27e6dc0}\label{class_poppler_1_1_document_a362452915b71f8d534114781c27e6dc0}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!page@{page}}
+\index{page@{page}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{page()}{page()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_page}{Page} $\ast$ Poppler\+::\+Document\+::page (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{label }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+The intent is that you can pass in a label like {\ttfamily \char`\"{}ix\char`\"{}} and get the page with that label (which might be in the table of contents), or pass in {\ttfamily \char`\"{}1\char`\"{}} and get the page that the user expects (which might not be the first page, if there is a title page and a table of contents).
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & the page label \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 420 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a7074424a989911de79f781ab77b23652}\label{class_poppler_1_1_document_a7074424a989911de79f781ab77b23652}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!page\+Layout@{page\+Layout}}
+\index{page\+Layout@{page\+Layout}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{page\+Layout()}{pageLayout()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document_a27b1574f15e09ae08b7acf7cc98f3fbd}{Document\+::\+Page\+Layout} Poppler\+::\+Document\+::page\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The layout that pages should be shown in when the document is first opened. This basically describes how pages are shown relative to each other. 
+
+Definition at line 177 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a9dd899cd7515f97320994c2a24cee316}\label{class_poppler_1_1_document_a9dd899cd7515f97320994c2a24cee316}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!page\+Mode@{page\+Mode}}
+\index{page\+Mode@{page\+Mode}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{page\+Mode()}{pageMode()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document_a7157091ddc85f62b02cfc35a08c4822b}{Document\+::\+Page\+Mode} Poppler\+::\+Document\+::page\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The type of mode that should be used by the application when the document is opened. Note that while this is called page mode, it is really viewer application mode. 
+
+Definition at line 157 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_adb81a852324b3a581826c184f154d4ef}\label{class_poppler_1_1_document_adb81a852324b3a581826c184f154d4ef}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!paper\+Color@{paper\+Color}}
+\index{paper\+Color@{paper\+Color}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{paper\+Color()}{paperColor()}}
+{\footnotesize\ttfamily Q\+Color Poppler\+::\+Document\+::paper\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The paper color
+
+The default color is white. 
+
+Definition at line 505 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a1ba7a683fae5246efacedb7d82e4b997}\label{class_poppler_1_1_document_a1ba7a683fae5246efacedb7d82e4b997}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!pdf\+Converter@{pdf\+Converter}}
+\index{pdf\+Converter@{pdf\+Converter}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{pdf\+Converter()}{pdfConverter()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_p_d_f_converter}{P\+D\+F\+Converter} $\ast$ Poppler\+::\+Document\+::pdf\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets a new P\+DF converter for this document.
+
+The caller gets the ownership of the returned converter.
+
+\begin{DoxySince}{Since}
+0.\+8 
+\end{DoxySince}
+
+
+Definition at line 559 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ab8c34ac2172d450753660bc7c31c82d7}\label{class_poppler_1_1_document_ab8c34ac2172d450753660bc7c31c82d7}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!ps\+Converter@{ps\+Converter}}
+\index{ps\+Converter@{ps\+Converter}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{ps\+Converter()}{psConverter()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_p_s_converter}{P\+S\+Converter} $\ast$ Poppler\+::\+Document\+::ps\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets a new PS converter for this document.
+
+The caller gets the ownership of the returned converter.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 554 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_ae9aefd54aa4b72dc46bea2c114a02cbe}\label{class_poppler_1_1_document_ae9aefd54aa4b72dc46bea2c114a02cbe}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!render\+Backend@{render\+Backend}}
+\index{render\+Backend@{render\+Backend}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{render\+Backend()}{renderBackend()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Document\+::\+Render\+Backend} Poppler\+::\+Document\+::render\+Backend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The currently set render backend
+
+The default backend is \hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247a1a046556585f9df9a7657fbbc64340bb}{Splash\+Backend}
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 519 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a0dfc519e40d570461d26ce5b49e87466}\label{class_poppler_1_1_document_a0dfc519e40d570461d26ce5b49e87466}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!render\+Hints@{render\+Hints}}
+\index{render\+Hints@{render\+Hints}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{render\+Hints()}{renderHints()}}
+{\footnotesize\ttfamily Document\+::\+Render\+Hints Poppler\+::\+Document\+::render\+Hints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The currently set render hints.
+
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 549 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aed91a0b3de99b9e8f951afea0ad8fd60}\label{class_poppler_1_1_document_aed91a0b3de99b9e8f951afea0ad8fd60}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!scripts@{scripts}}
+\index{scripts@{scripts}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{scripts()}{scripts()}}
+{\footnotesize\ttfamily Q\+String\+List Poppler\+::\+Document\+::scripts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Document-\/level Java\+Script scripts.
+
+Returns the list of document level Java\+Script scripts to be always executed before any other script.
+
+\begin{DoxySince}{Since}
+0.\+10 
+\end{DoxySince}
+
+
+Definition at line 590 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a8b4dd39c8b59c19ab935d772e067f0c4}\label{class_poppler_1_1_document_a8b4dd39c8b59c19ab935d772e067f0c4}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!set\+Color\+Display\+Profile@{set\+Color\+Display\+Profile}}
+\index{set\+Color\+Display\+Profile@{set\+Color\+Display\+Profile}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{set\+Color\+Display\+Profile()}{setColorDisplayProfile()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::set\+Color\+Display\+Profile (\begin{DoxyParamCaption}\item[{void $\ast$}]{output\+ProfileA }\end{DoxyParamCaption})}
+
+Set a color display profile for the current document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+ProfileA} & is a {\ttfamily cms\+H\+P\+R\+O\+F\+I\+LE} of the L\+C\+MS library.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 467 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_aa72744f77b5b185fee257e32847f62c4}\label{class_poppler_1_1_document_aa72744f77b5b185fee257e32847f62c4}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!set\+Color\+Display\+Profile\+Name@{set\+Color\+Display\+Profile\+Name}}
+\index{set\+Color\+Display\+Profile\+Name@{set\+Color\+Display\+Profile\+Name}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{set\+Color\+Display\+Profile\+Name()}{setColorDisplayProfileName()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::set\+Color\+Display\+Profile\+Name (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{name }\end{DoxyParamCaption})}
+
+Set a color display profile for the current document.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the display profile to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+12 
+\end{DoxySince}
+
+
+Definition at line 476 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a4901da93d4deac9a263a219c33642176}\label{class_poppler_1_1_document_a4901da93d4deac9a263a219c33642176}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!set\+Paper\+Color@{set\+Paper\+Color}}
+\index{set\+Paper\+Color@{set\+Paper\+Color}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{set\+Paper\+Color()}{setPaperColor()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::set\+Paper\+Color (\begin{DoxyParamCaption}\item[{const Q\+Color \&}]{color }\end{DoxyParamCaption})}
+
+Sets the paper color
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & the new paper color \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 462 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a81a758f83530fa1cfaddf748c6be89c9}\label{class_poppler_1_1_document_a81a758f83530fa1cfaddf748c6be89c9}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!set\+Render\+Backend@{set\+Render\+Backend}}
+\index{set\+Render\+Backend@{set\+Render\+Backend}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{set\+Render\+Backend()}{setRenderBackend()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::set\+Render\+Backend (\begin{DoxyParamCaption}\item[{\hyperlink{class_poppler_1_1_document_a4b0a8ab6b6f686c8802a0ad112d48247}{Document\+::\+Render\+Backend}}]{backend }\end{DoxyParamCaption})}
+
+Sets the backend used to render the pages.
+
+
+\begin{DoxyParams}{Parameters}
+{\em backend} & the new rendering backend\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 510 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a3f7655bb9e6893515bbc64b90b487ffc}\label{class_poppler_1_1_document_a3f7655bb9e6893515bbc64b90b487ffc}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!set\+Render\+Hint@{set\+Render\+Hint}}
+\index{set\+Render\+Hint@{set\+Render\+Hint}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{set\+Render\+Hint()}{setRenderHint()}}
+{\footnotesize\ttfamily void Poppler\+::\+Document\+::set\+Render\+Hint (\begin{DoxyParamCaption}\item[{\hyperlink{class_poppler_1_1_document_a8420ce678235ee6214fbd91f5ae2f4e9}{Document\+::\+Render\+Hint}}]{hint,  }\item[{bool}]{on = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Sets the render {\ttfamily hint} .
+
+\begin{DoxyNote}{Note}
+some hints may not be supported by some rendering backends.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em on} & whether the flag should be added or removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySince}{Since}
+0.\+6 
+\end{DoxySince}
+
+
+Definition at line 534 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a854e191808926d0bcf277a97243f5737}\label{class_poppler_1_1_document_a854e191808926d0bcf277a97243f5737}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!text\+Direction@{text\+Direction}}
+\index{text\+Direction@{text\+Direction}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{text\+Direction()}{textDirection()}}
+{\footnotesize\ttfamily Qt\+::\+Layout\+Direction Poppler\+::\+Document\+::text\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+The predominant reading order for text as supplied by the document\textquotesingle{}s viewer preferences.
+
+\begin{DoxySince}{Since}
+0.\+26 
+\end{DoxySince}
+
+
+Definition at line 199 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a3b622bb1d5a5c7f24a9baf8efc5d7b1f}\label{class_poppler_1_1_document_a3b622bb1d5a5c7f24a9baf8efc5d7b1f}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!toc@{toc}}
+\index{toc@{toc}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{toc()}{toc()}}
+{\footnotesize\ttfamily Q\+Dom\+Document $\ast$ Poppler\+::\+Document\+::toc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Gets the table of contents (T\+OC) of the \hyperlink{class_poppler_1_1_document}{Document}.
+
+The caller is responsable for the returned object.
+
+In the tree the tag name is the \textquotesingle{}screen\textquotesingle{} name of the entry. A tag can have attributes. Here follows the list of tag attributes with meaning\+:
+\begin{DoxyItemize}
+\item Destination\+: A string description of the referred destination
+\item Destination\+Name\+: A \textquotesingle{}named reference\textquotesingle{} to the viewport
+\item External\+File\+Name\+: A link to a external filename
+\item Open\+: A bool value that tells whether the subbranch of the item is open or not
+\end{DoxyItemize}
+
+Resolving the final destination for each item can be done in the following way\+:
+\begin{DoxyItemize}
+\item first, checking for \textquotesingle{}Destination\textquotesingle{}\+: if not empty, then a \hyperlink{class_poppler_1_1_link_destination}{Link\+Destination} can be constructed straight with it
+\item as second step, if the \textquotesingle{}Destination\+Name\textquotesingle{} is not empty, then the destination can be resolved using \hyperlink{class_poppler_1_1_document_adce7c161b57d9d8a89888697da1d8c90}{link\+Destination()}
+\end{DoxyItemize}
+
+Note also that if \textquotesingle{}External\+File\+Name\textquotesingle{} is not emtpy, then the destination refers to that document (and not to the current one).
+
+\begin{DoxyReturn}{Returns}
+the T\+OC, or N\+U\+LL if the \hyperlink{class_poppler_1_1_document}{Document} does not have one 
+\end{DoxyReturn}
+
+
+Definition at line 436 of file poppler-\/document.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_document_a5eb83ee712c9e146ccbcb21c3a9ce662}\label{class_poppler_1_1_document_a5eb83ee712c9e146ccbcb21c3a9ce662}} 
+\index{Poppler\+::\+Document@{Poppler\+::\+Document}!unlock@{unlock}}
+\index{unlock@{unlock}!Poppler\+::\+Document@{Poppler\+::\+Document}}
+\subsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily bool Poppler\+::\+Document\+::unlock (\begin{DoxyParamCaption}\item[{const Q\+Byte\+Array \&}]{owner\+Password,  }\item[{const Q\+Byte\+Array \&}]{user\+Password }\end{DoxyParamCaption})}
+
+Provide the passwords required to unlock the document
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Password} & the Latin1-\/encoded owner password to use in loading the file \\
+\hline
+{\em user\+Password} & the Latin1-\/encoded user (\char`\"{}open\char`\"{}) password to use in loading the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file poppler-\/document.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/qt5.\+h\item 
+thirdparty/poppler/qt5/poppler-\/document.\+cc\end{DoxyCompactItemize}

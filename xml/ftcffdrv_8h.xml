@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ftcffdrv_8h" kind="file" language="C++">
+    <compoundname>ftcffdrv.h</compoundname>
+    <includes local="no">ft2build.h</includes>
+    <incdepgraph>
+      <node id="77443">
+        <label>ft2build.h</label>
+      </node>
+      <node id="77442">
+        <label>thirdparty/freetype/include/freetype/ftcffdrv.h</label>
+        <link refid="ftcffdrv_8h"/>
+        <childnode refid="77443" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="ftcffdrv_8h_1a7becc2978a259bccedfc84461f8e24d1" prot="public" static="no">
+        <name>FT_CFF_HINTING_FREETYPE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/include/freetype/ftcffdrv.h" line="171" column="9" bodyfile="thirdparty/freetype/include/freetype/ftcffdrv.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="ftcffdrv_8h_1acb636457a5a7db69d08f324883b64b6d" prot="public" static="no">
+        <name>FT_CFF_HINTING_ADOBE</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/include/freetype/ftcffdrv.h" line="172" column="9" bodyfile="thirdparty/freetype/include/freetype/ftcffdrv.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>ftcffdrv.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>FreeType<sp/>API<sp/>for<sp/>controlling<sp/>the<sp/>CFF<sp/>driver<sp/>(specification<sp/>only).<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2013-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__FTCFFDRV_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__FTCFFDRV_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ft2build.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_FREETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FREETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;freetype.h<sp/>of<sp/>FreeType<sp/>1<sp/>has<sp/>been<sp/>loaded!&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Please<sp/>fix<sp/>the<sp/>directory<sp/>search<sp/>order<sp/>for<sp/>header<sp/>files&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;so<sp/>that<sp/>freetype.h<sp/>of<sp/>FreeType<sp/>2<sp/>is<sp/>found<sp/>first.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">FT_BEGIN_HEADER</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**************************************************************************</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@section:</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>cff_driver</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@title:</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>CFF<sp/>driver</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@abstract:</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Controlling<sp/>the<sp/>CFF<sp/>driver<sp/>module.</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>While<sp/>FreeType&apos;s<sp/>CFF<sp/>driver<sp/>doesn&apos;t<sp/>expose<sp/>API<sp/>functions<sp/>by<sp/>itself,</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>it<sp/>is<sp/>possible<sp/>to<sp/>control<sp/>its<sp/>behaviour<sp/>with<sp/>@FT_Property_Set<sp/>and</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>@FT_Property_Get.<sp/><sp/>The<sp/>list<sp/>below<sp/>gives<sp/>the<sp/>available<sp/>properties</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>together<sp/>with<sp/>the<sp/>necessary<sp/>macros<sp/>and<sp/>structures.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>CFF<sp/>driver&apos;s<sp/>module<sp/>name<sp/>is<sp/>`cff&apos;.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>*Hinting*<sp/>*and*<sp/>*antialiasing*<sp/>*principles*<sp/>*of*<sp/>*the*<sp/>*new*<sp/>*engine*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>rasterizer<sp/>is<sp/>positioning<sp/>horizontal<sp/>features<sp/>(e.g.,<sp/>ascender</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>height<sp/>&amp;<sp/>x-height,<sp/>or<sp/>crossbars)<sp/>on<sp/>the<sp/>pixel<sp/>grid<sp/>and<sp/>minimizing<sp/>the</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>amount<sp/>of<sp/>antialiasing<sp/>applied<sp/>to<sp/>them,<sp/>while<sp/>placing<sp/>vertical</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>features<sp/>(vertical<sp/>stems)<sp/>on<sp/>the<sp/>pixel<sp/>grid<sp/>without<sp/>hinting,<sp/>thus</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>representing<sp/>the<sp/>stem<sp/>position<sp/>and<sp/>weight<sp/>accurately.<sp/><sp/>Sometimes<sp/>the</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>vertical<sp/>stems<sp/>may<sp/>be<sp/>only<sp/>partially<sp/>black.<sp/><sp/>In<sp/>this<sp/>context,</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>`antialiasing&apos;<sp/>means<sp/>that<sp/>stems<sp/>are<sp/>not<sp/>positioned<sp/>exactly<sp/>on<sp/>pixel</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>borders,<sp/>causing<sp/>a<sp/>fuzzy<sp/>appearance.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>There<sp/>are<sp/>two<sp/>principles<sp/>behind<sp/>this<sp/>approach.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>1)<sp/>No<sp/>hinting<sp/>in<sp/>the<sp/>horizontal<sp/>direction:<sp/>Unlike<sp/>`superhinted&apos;</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>TrueType,<sp/>which<sp/>changes<sp/>glyph<sp/>widths<sp/>to<sp/>accommodate<sp/>regular</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>inter-glyph<sp/>spacing,<sp/>Adobe&apos;s<sp/>approach<sp/>is<sp/>`faithful<sp/>to<sp/>the<sp/>design&apos;<sp/>in</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>representing<sp/>both<sp/>the<sp/>glyph<sp/>width<sp/>and<sp/>the<sp/>inter-glyph<sp/>spacing</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>designed<sp/>for<sp/>the<sp/>font.<sp/><sp/>This<sp/>makes<sp/>the<sp/>screen<sp/>display<sp/>as<sp/>close<sp/>as<sp/>it</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>can<sp/>be<sp/>to<sp/>the<sp/>result<sp/>one<sp/>would<sp/>get<sp/>with<sp/>infinite<sp/>resolution,<sp/>while</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>preserving<sp/>what<sp/>is<sp/>considered<sp/>the<sp/>key<sp/>characteristics<sp/>of<sp/>each<sp/>glyph.</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Note<sp/>that<sp/>the<sp/>distances<sp/>between<sp/>unhinted<sp/>and<sp/>grid-fitted<sp/>positions<sp/>at</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>small<sp/>sizes<sp/>are<sp/>comparable<sp/>to<sp/>kerning<sp/>values<sp/>and<sp/>thus<sp/>would<sp/>be</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>noticeable<sp/>(and<sp/>distracting)<sp/>while<sp/>reading<sp/>if<sp/>hinting<sp/>were<sp/>applied.</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>One<sp/>of<sp/>the<sp/>reasons<sp/>to<sp/>not<sp/>hint<sp/>horizontally<sp/>is<sp/>antialiasing<sp/>for<sp/>LCD</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>screens:<sp/>The<sp/>pixel<sp/>geometry<sp/>of<sp/>modern<sp/>displays<sp/>supplies<sp/>three</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>vertical<sp/>sub-pixels<sp/>as<sp/>the<sp/>eye<sp/>moves<sp/>horizontally<sp/>across<sp/>each<sp/>visible</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>pixel.<sp/><sp/>On<sp/>devices<sp/>where<sp/>we<sp/>can<sp/>be<sp/>certain<sp/>this<sp/>characteristic<sp/>is</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>present<sp/>a<sp/>rasterizer<sp/>can<sp/>take<sp/>advantage<sp/>of<sp/>the<sp/>sub-pixels<sp/>to<sp/>add</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>increments<sp/>of<sp/>weight.<sp/><sp/>In<sp/>Western<sp/>writing<sp/>systems<sp/>this<sp/>turns<sp/>out<sp/>to</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>be<sp/>the<sp/>more<sp/>critical<sp/>direction<sp/>anyway;<sp/>the<sp/>weights<sp/>and<sp/>spacing<sp/>of</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>vertical<sp/>stems<sp/>(see<sp/>above)<sp/>are<sp/>central<sp/>to<sp/>Armenian,<sp/>Cyrillic,<sp/>Greek,</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>and<sp/>Latin<sp/>type<sp/>designs.<sp/><sp/>Even<sp/>when<sp/>the<sp/>rasterizer<sp/>uses<sp/>greyscale</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>antialiasing<sp/>instead<sp/>of<sp/>color<sp/>(a<sp/>necessary<sp/>compromise<sp/>when<sp/>one</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>doesn&apos;t<sp/>know<sp/>the<sp/>screen<sp/>characteristics),<sp/>the<sp/>unhinted<sp/>vertical</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>features<sp/>preserve<sp/>the<sp/>design&apos;s<sp/>weight<sp/>and<sp/>spacing<sp/>much<sp/>better<sp/>than</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>aliased<sp/>type<sp/>would.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>2)<sp/>Aligment<sp/>in<sp/>the<sp/>vertical<sp/>direction:<sp/>Weights<sp/>and<sp/>spacing<sp/>along<sp/>the</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>y~axis<sp/>are<sp/>less<sp/>critical;<sp/>what<sp/>is<sp/>much<sp/>more<sp/>important<sp/>is<sp/>the<sp/>visual</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>alignment<sp/>of<sp/>related<sp/>features<sp/>(like<sp/>cap-height<sp/>and<sp/>x-height).<sp/><sp/>The</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>sense<sp/>of<sp/>alignment<sp/>for<sp/>these<sp/>is<sp/>enhanced<sp/>by<sp/>the<sp/>sharpness<sp/>of<sp/>grid-fit</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>edges,<sp/>while<sp/>the<sp/>cruder<sp/>vertical<sp/>resolution<sp/>(full<sp/>pixels<sp/>instead<sp/>of</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>1/3<sp/>pixels)<sp/>is<sp/>less<sp/>of<sp/>a<sp/>problem.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>On<sp/>the<sp/>technical<sp/>side,<sp/>horizontal<sp/>alignment<sp/>zones<sp/>for<sp/>ascender,</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>x-height,<sp/>and<sp/>other<sp/>important<sp/>height<sp/>values<sp/>(traditionally<sp/>called</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>`blue<sp/>zones&apos;)<sp/>as<sp/>defined<sp/>in<sp/>the<sp/>font<sp/>are<sp/>positioned<sp/>independently,</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>each<sp/>being<sp/>rounded<sp/>to<sp/>the<sp/>nearest<sp/>pixel<sp/>edge,<sp/>taking<sp/>care<sp/>of</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>overshoot<sp/>suppression<sp/>at<sp/>small<sp/>sizes,<sp/>stem<sp/>darkening,<sp/>and<sp/>scaling.</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Hstems<sp/>(this<sp/>is,<sp/>hint<sp/>values<sp/>defined<sp/>in<sp/>the<sp/>font<sp/>to<sp/>help<sp/>align</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>horizontal<sp/>features)<sp/>that<sp/>fall<sp/>within<sp/>a<sp/>blue<sp/>zone<sp/>are<sp/>said<sp/>to<sp/>be</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>`captured&apos;<sp/>and<sp/>are<sp/>aligned<sp/>to<sp/>that<sp/>zone.<sp/><sp/>Uncaptured<sp/>stems<sp/>are<sp/>moved</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>in<sp/>one<sp/>of<sp/>four<sp/>ways,<sp/>top<sp/>edge<sp/>up<sp/>or<sp/>down,<sp/>bottom<sp/>edge<sp/>up<sp/>or<sp/>down.</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Unless<sp/>there<sp/>are<sp/>conflicting<sp/>hstems,<sp/>the<sp/>smallest<sp/>movement<sp/>is<sp/>taken</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>to<sp/>minimize<sp/>distortion.</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@order:</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>hinting-engine</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>no-stem-darkening</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>darkening-parameters</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**************************************************************************</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@property:</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>hinting-engine</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Thanks<sp/>to<sp/>Adobe,<sp/>which<sp/>contributed<sp/>a<sp/>new<sp/>hinting<sp/>(and<sp/>parsing)</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>engine,<sp/>an<sp/>application<sp/>can<sp/>select<sp/>between<sp/>`freetype&apos;<sp/>and<sp/>`adobe&apos;<sp/>if</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>compiled<sp/>with<sp/>CFF_CONFIG_OPTION_OLD_ENGINE.<sp/><sp/>If<sp/>this<sp/>configuration</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>macro<sp/>isn&apos;t<sp/>defined,<sp/>`hinting-engine&apos;<sp/>does<sp/>nothing.</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>default<sp/>engine<sp/>is<sp/>`freetype&apos;<sp/>if<sp/>CFF_CONFIG_OPTION_OLD_ENGINE<sp/>is</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>defined,<sp/>and<sp/>`adobe&apos;<sp/>otherwise.</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>following<sp/>example<sp/>code<sp/>demonstrates<sp/>how<sp/>to<sp/>select<sp/>Adobe&apos;s<sp/>hinting</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>engine<sp/>(omitting<sp/>the<sp/>error<sp/>handling).</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Library<sp/><sp/>library;</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/>hinting_engine<sp/>=<sp/>FT_CFF_HINTING_ADOBE;</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Init_FreeType(<sp/>&amp;library<sp/>);</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Property_Set(<sp/>library,<sp/>&quot;cff&quot;,</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;hinting-engine&quot;,<sp/>&amp;hinting_engine<sp/>);</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>This<sp/>property<sp/>can<sp/>be<sp/>used<sp/>with<sp/>@FT_Property_Get<sp/>also.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**************************************************************************</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@enum:</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>FT_CFF_HINTING_XXX</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>A<sp/>list<sp/>of<sp/>constants<sp/>used<sp/>for<sp/>the<sp/>@hinting-engine<sp/>property<sp/>to<sp/>select</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>the<sp/>hinting<sp/>engine<sp/>for<sp/>CFF<sp/>fonts.</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@values:</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>FT_CFF_HINTING_FREETYPE<sp/>::</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>Use<sp/>the<sp/>old<sp/>FreeType<sp/>hinting<sp/>engine.</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>FT_CFF_HINTING_ADOBE<sp/>::</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>Use<sp/>the<sp/>hinting<sp/>engine<sp/>contributed<sp/>by<sp/>Adobe.</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FT_CFF_HINTING_FREETYPE<sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FT_CFF_HINTING_ADOBE<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**************************************************************************</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@property:</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>no-stem-darkening</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>By<sp/>default,<sp/>the<sp/>Adobe<sp/>CFF<sp/>engine<sp/>darkens<sp/>stems<sp/>at<sp/>smaller<sp/>sizes,</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>regardless<sp/>of<sp/>hinting,<sp/>to<sp/>enhance<sp/>contrast.<sp/><sp/>This<sp/>feature<sp/>requires</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>a<sp/>rendering<sp/>system<sp/>with<sp/>proper<sp/>gamma<sp/>correction.<sp/><sp/>Setting<sp/>this</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>property,<sp/>stem<sp/>darkening<sp/>gets<sp/>switched<sp/>off.</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>Note<sp/>that<sp/>stem<sp/>darkening<sp/>is<sp/>never<sp/>applied<sp/>if<sp/>@FT_LOAD_NO_SCALE<sp/>is<sp/>set.</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Library<sp/><sp/>library;</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/>no_stem_darkening<sp/>=<sp/>TRUE;</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Init_FreeType(<sp/>&amp;library<sp/>);</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Property_Set(<sp/>library,<sp/>&quot;cff&quot;,</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;no-stem-darkening&quot;,<sp/>&amp;no_stem_darkening<sp/>);</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>This<sp/>property<sp/>can<sp/>be<sp/>used<sp/>with<sp/>@FT_Property_Get<sp/>also.</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**************************************************************************</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@property:</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>darkening-parameters</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>By<sp/>default,<sp/>the<sp/>Adobe<sp/>CFF<sp/>engine<sp/>darkens<sp/>stems<sp/>as<sp/>follows<sp/>(if<sp/>the</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>`no-stem-darkening&apos;<sp/>property<sp/>isn&apos;t<sp/>set):</highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>stem<sp/>width<sp/>&lt;=<sp/>0.5px:<sp/><sp/><sp/>darkening<sp/>amount<sp/>=<sp/>0.4px</highlight></codeline>
+<codeline lineno="216"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>stem<sp/>width<sp/><sp/>=<sp/>1px:<sp/><sp/><sp/><sp/><sp/>darkening<sp/>amount<sp/>=<sp/>0.275px</highlight></codeline>
+<codeline lineno="217"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>stem<sp/>width<sp/><sp/>=<sp/>1.667px:<sp/>darkening<sp/>amount<sp/>=<sp/>0.275px</highlight></codeline>
+<codeline lineno="218"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>stem<sp/>width<sp/>&gt;=<sp/>2.333px:<sp/>darkening<sp/>amount<sp/>=<sp/>0px</highlight></codeline>
+<codeline lineno="219"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="221"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>and<sp/>piecewise<sp/>linear<sp/>in-between.<sp/><sp/>At<sp/>configuration<sp/>time,<sp/>these<sp/>four</highlight></codeline>
+<codeline lineno="222"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>control<sp/>points<sp/>can<sp/>be<sp/>set<sp/>with<sp/>the<sp/>macro</highlight></codeline>
+<codeline lineno="223"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>`CFF_CONFIG_OPTION_DARKENING_PARAMETERS&apos;.<sp/><sp/>At<sp/>runtime,<sp/>the<sp/>control</highlight></codeline>
+<codeline lineno="224"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>points<sp/>can<sp/>be<sp/>changed<sp/>using<sp/>the<sp/>`darkening-parameters&apos;<sp/>property,<sp/>as</highlight></codeline>
+<codeline lineno="225"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>the<sp/>following<sp/>example<sp/>demonstrates.</highlight></codeline>
+<codeline lineno="226"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="227"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="228"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Library<sp/><sp/>library;</highlight></codeline>
+<codeline lineno="229"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/><sp/><sp/>darken_params[8]<sp/>=<sp/>{<sp/><sp/>500,<sp/>300,<sp/><sp/><sp/>//<sp/>x1,<sp/>y1</highlight></codeline>
+<codeline lineno="230"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1000,<sp/>200,<sp/><sp/><sp/>//<sp/>x2,<sp/>y2</highlight></codeline>
+<codeline lineno="231"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1500,<sp/>100,<sp/><sp/><sp/>//<sp/>x3,<sp/>y3</highlight></codeline>
+<codeline lineno="232"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2000,<sp/><sp/><sp/>0<sp/>};<sp/>//<sp/>x4,<sp/>y4</highlight></codeline>
+<codeline lineno="233"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="234"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="235"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Init_FreeType(<sp/>&amp;library<sp/>);</highlight></codeline>
+<codeline lineno="236"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="237"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/>FT_Property_Set(<sp/>library,<sp/>&quot;cff&quot;,</highlight></codeline>
+<codeline lineno="238"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;darkening-parameters&quot;,<sp/>darken_params<sp/>);</highlight></codeline>
+<codeline lineno="239"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="240"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="241"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>The<sp/>x~values<sp/>give<sp/>the<sp/>stem<sp/>width,<sp/>and<sp/>the<sp/>y~values<sp/>the<sp/>darkening</highlight></codeline>
+<codeline lineno="242"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>amount.<sp/><sp/>The<sp/>unit<sp/>is<sp/>1000th<sp/>of<sp/>pixels.<sp/><sp/>All<sp/>coordinate<sp/>values<sp/>must<sp/>be</highlight></codeline>
+<codeline lineno="243"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>positive;<sp/>the<sp/>x~values<sp/>must<sp/>be<sp/>monotonically<sp/>increasing;<sp/>the</highlight></codeline>
+<codeline lineno="244"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>y~values<sp/>must<sp/>be<sp/>monotonically<sp/>decreasing<sp/>and<sp/>smaller<sp/>than<sp/>or</highlight></codeline>
+<codeline lineno="245"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>equal<sp/>to<sp/>500<sp/>(corresponding<sp/>to<sp/>half<sp/>a<sp/>pixel);<sp/>the<sp/>slope<sp/>of<sp/>each</highlight></codeline>
+<codeline lineno="246"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>linear<sp/>piece<sp/>must<sp/>be<sp/>shallower<sp/>than<sp/>-1<sp/>(e.g.,<sp/>-.4).</highlight></codeline>
+<codeline lineno="247"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="248"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="249"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/>This<sp/>property<sp/>can<sp/>be<sp/>used<sp/>with<sp/>@FT_Property_Get<sp/>also.</highlight></codeline>
+<codeline lineno="250"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="251"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal">FT_END_HEADER</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__FTCFFDRV_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/include/freetype/ftcffdrv.h"/>
+  </compounddef>
+</doxygen>

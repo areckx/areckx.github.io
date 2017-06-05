@@ -1,0 +1,91 @@
+.TH "Bww::MsScWriter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Bww::MsScWriter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBBww::Writer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMsScWriter\fP ()"
+.br
+.ti -1c
+.RI "void \fBbeginMeasure\fP (const \fBBww::MeasureBeginFlags\fP mbf)"
+.br
+.ti -1c
+.RI "void \fBendMeasure\fP (const \fBBww::MeasureEndFlags\fP mef)"
+.br
+.ti -1c
+.RI "void \fBheader\fP (const QString title, const QString type, const QString composer, const QString footer, const unsigned int temp)"
+.br
+.ti -1c
+.RI "void \fBnote\fP (const QString pitch, const QVector< Bww::BeamType > beamList, const QString type, const int dots, bool tieStart=false, bool tieStop=false, StartStop triplet=ST_NONE, bool grace=false)"
+.br
+.ti -1c
+.RI "void \fBsetScore\fP (\fBMs::Score\fP *s)"
+.br
+.ti -1c
+.RI "void \fBtsig\fP (const int beats, const int beat)"
+.br
+.ti -1c
+.RI "void \fBtrailer\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The writer that imports into MuseScore\&. 
+.PP
+Definition at line 128 of file importbww\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Bww::MsScWriter::MsScWriter ()"
+\fBMsScWriter\fP constructor\&. 
+.PP
+Definition at line 174 of file importbww\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Bww::MsScWriter::beginMeasure (const \fBBww::MeasureBeginFlags\fP mbf)\fC [virtual]\fP"
+Begin a new measure\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 209 of file importbww\&.cpp\&.
+.SS "void Bww::MsScWriter::endMeasure (const \fBBww::MeasureEndFlags\fP mef)\fC [virtual]\fP"
+End the current measure\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 276 of file importbww\&.cpp\&.
+.SS "void Bww::MsScWriter::header (const QString title, const QString type, const QString composer, const QString footer, const unsigned int temp)\fC [virtual]\fP"
+Write the header\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 410 of file importbww\&.cpp\&.
+.SS "void Bww::MsScWriter::note (const QString pitch, const QVector< Bww::BeamType > beamList, const QString type, const int dots, bool tieStart = \fCfalse\fP, bool tieStop = \fCfalse\fP, StartStop triplet = \fCST_NONE\fP, bool grace = \fCfalse\fP)\fC [virtual]\fP"
+Write a single note\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 321 of file importbww\&.cpp\&.
+.SS "void Bww::MsScWriter::trailer ()\fC [virtual]\fP"
+Write the trailer\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 472 of file importbww\&.cpp\&.
+.SS "void Bww::MsScWriter::tsig (const int bts, const int bt)\fC [virtual]\fP"
+Store beats and beat type for later use\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 457 of file importbww\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

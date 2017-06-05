@@ -1,0 +1,62 @@
+.TH "Poppler::OptContentItem" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::OptContentItem
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBItemState\fP { \fBOn\fP, \fBOff\fP, \fBHeadingOnly\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOptContentItem\fP (\fBOptionalContentGroup\fP *group)"
+.br
+.ti -1c
+.RI "\fBOptContentItem\fP (const QString &label)"
+.br
+.ti -1c
+.RI "QString \fBname\fP () const"
+.br
+.ti -1c
+.RI "ItemState \fBstate\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsetState\fP (ItemState state, QSet< \fBOptContentItem\fP *> &changedItems)"
+.br
+.ti -1c
+.RI "QList< \fBOptContentItem\fP * > \fBchildList\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetParent\fP (\fBOptContentItem\fP *parent)"
+.br
+.ti -1c
+.RI "\fBOptContentItem\fP * \fBparent\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (\fBOptContentItem\fP *child)"
+.br
+.ti -1c
+.RI "void \fBappendRBGroup\fP (\fBRadioButtonGroup\fP *rbgroup)"
+.br
+.ti -1c
+.RI "bool \fBisEnabled\fP () const"
+.br
+.ti -1c
+.RI "QSet< \fBOptContentItem\fP * > \fBrecurseListChildren\fP (bool includeMe=false) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 51 of file poppler\-optcontent\-private\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

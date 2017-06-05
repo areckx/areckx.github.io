@@ -1,0 +1,25 @@
+var class_ms_1_1_m_track =
+[
+    [ "MTrack", "class_ms_1_1_m_track.html#a17e08f7c662eac98b5e5061ce34735a3", null ],
+    [ "MTrack", "class_ms_1_1_m_track.html#a6b07ee628fea7bcdb2cba12e67ca24fe", null ],
+    [ "createKeys", "class_ms_1_1_m_track.html#ac340830bfb1526dac9d6806150b75724", null ],
+    [ "createNotes", "class_ms_1_1_m_track.html#a4c5c7570a6b4ddbb52a0fcc8f2baa476", null ],
+    [ "fillGapWithRests", "class_ms_1_1_m_track.html#a21ab2a26c4016276ff9ef4a583dd8fdf", null ],
+    [ "operator=", "class_ms_1_1_m_track.html#ad4ad65ee938aad16f4568c5868c8a839", null ],
+    [ "processMeta", "class_ms_1_1_m_track.html#a2c0184f71227b248a39f6ed94fb9a5ca", null ],
+    [ "processPendingNotes", "class_ms_1_1_m_track.html#abcae8ede750c205b80f05864f468bc88", null ],
+    [ "toDurationList", "class_ms_1_1_m_track.html#afb6c1c7caed45a4da11f6327a5fdc03c", null ],
+    [ "updateTupletsFromChords", "class_ms_1_1_m_track.html#a20a533aebe7674a23594344af848dc28", null ],
+    [ "chords", "class_ms_1_1_m_track.html#a0871d9a10ff4b1bc15e3bf52fd213f14", null ],
+    [ "division", "class_ms_1_1_m_track.html#a56ece03d2342dce05e91f1cadb6d68cb", null ],
+    [ "hadInitialNotes", "class_ms_1_1_m_track.html#a985595462b9aa274d48c8d5c51ad7476", null ],
+    [ "hasKey", "class_ms_1_1_m_track.html#a2f7b2e6098cfe99bd3a9c51b2d0fa34e", null ],
+    [ "indexOfOperation", "class_ms_1_1_m_track.html#a1dc50a307db4599c86ab42ad33173799", null ],
+    [ "isDivisionInTps", "class_ms_1_1_m_track.html#a9b4fd2b00c2ef5034b9637e0dc43e2e6", null ],
+    [ "mtrack", "class_ms_1_1_m_track.html#ac8bbf88361be72df8cf20afbb6924a44", null ],
+    [ "name", "class_ms_1_1_m_track.html#a9279e8b51585be5c95b7477345fe06b8", null ],
+    [ "program", "class_ms_1_1_m_track.html#a3bd81928cc1473b3d553160380226ced", null ],
+    [ "staff", "class_ms_1_1_m_track.html#a5023531607b12a8a22051aec9a85d341", null ],
+    [ "tuplets", "class_ms_1_1_m_track.html#afe4606fbfe78f1f21ceb40d60cdaf5bb", null ],
+    [ "volumes", "class_ms_1_1_m_track.html#ab717a5805387914b2dfa86ddfebafa97", null ]
+];

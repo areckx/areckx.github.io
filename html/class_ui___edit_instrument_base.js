@@ -1,0 +1,27 @@
+var class_ui___edit_instrument_base =
+[
+    [ "retranslateUi", "class_ui___edit_instrument_base.html#ad418a93fe511bd7dade672bea8a791a4", null ],
+    [ "setupUi", "class_ui___edit_instrument_base.html#ab69dd4a0e30e46fc1ac626235cd64e47", null ],
+    [ "buttonCancel", "class_ui___edit_instrument_base.html#addb9b800596c8f4ff9268cfe5a8640b8", null ],
+    [ "buttonOk", "class_ui___edit_instrument_base.html#abc1824db35fdd20c8edc6f6a5d7a1b41", null ],
+    [ "gridLayout", "class_ui___edit_instrument_base.html#a89b4df7b2e8ee99b9612c846389e8ae4", null ],
+    [ "gridLayout1", "class_ui___edit_instrument_base.html#a0b85c37e2ebd74c0b01df2be9206db88", null ],
+    [ "groupBox", "class_ui___edit_instrument_base.html#abb305169cc6c08e52bac73cd066edeca", null ],
+    [ "hboxLayout", "class_ui___edit_instrument_base.html#aff4fcd9d9d598a065db07ea10cee0f1a", null ],
+    [ "label", "class_ui___edit_instrument_base.html#acb0ec34aaab6f18f0285e5fd43547c77", null ],
+    [ "label_2", "class_ui___edit_instrument_base.html#a4d2091889ead539065be471c9e77dd9c", null ],
+    [ "label_3", "class_ui___edit_instrument_base.html#a77e97d8afafaa88e475b550f37b2d21b", null ],
+    [ "label_5", "class_ui___edit_instrument_base.html#aa1a18d3570fb70d708560995e6cb15b5", null ],
+    [ "label_6", "class_ui___edit_instrument_base.html#a581785231b58b8a050fb7e44ac7eaf9d", null ],
+    [ "label_7", "class_ui___edit_instrument_base.html#a39b14f6e54b66101f8066d712cd4cef4", null ],
+    [ "maxPitch", "class_ui___edit_instrument_base.html#a288e19ecccf50210914ea78da35a41b4", null ],
+    [ "midiProgram", "class_ui___edit_instrument_base.html#aec92ff633e8d3db10219b266dde4b528", null ],
+    [ "minPitch", "class_ui___edit_instrument_base.html#afb352f5a6207705a23eae922d6c1522b", null ],
+    [ "nameEdit", "class_ui___edit_instrument_base.html#af60bf791c1fc9c2fc893069cb5b10cad", null ],
+    [ "shortNameEdit", "class_ui___edit_instrument_base.html#a2a6c3245919902cca5d58f7d65e44105", null ],
+    [ "spacerItem", "class_ui___edit_instrument_base.html#acfa28e3fc60f66a48b77314339388162", null ],
+    [ "staves", "class_ui___edit_instrument_base.html#ad02b255e5a658d8cb762fdcd69bb0210", null ],
+    [ "transposeChromatic", "class_ui___edit_instrument_base.html#aa20a43fca2582fdfe3060168f9206513", null ],
+    [ "transposeDiatonic", "class_ui___edit_instrument_base.html#af42b77e2e0d1dd9c7be2ab01f8b282a9", null ],
+    [ "verticalSpacer", "class_ui___edit_instrument_base.html#a97a387ace65a667e1f474da518461f77", null ]
+];

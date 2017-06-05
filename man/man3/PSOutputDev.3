@@ -1,0 +1,328 @@
+.TH "PSOutputDev" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PSOutputDev
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOutputDev\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPSOutputDev\fP (const char *fileName, \fBPDFDoc\fP *docA, char *psTitleA, const std::vector< int > &pages, PSOutMode modeA, int paperWidthA=\-1, int paperHeightA=\-1, GBool noCrop=gFalse, GBool duplexA=gTrue, int imgLLXA=0, int imgLLYA=0, int imgURXA=0, int imgURYA=0, GBool forceRasterizeA=gFalse, GBool manualCtrlA=gFalse, PSOutCustomCodeCbk customCodeCbkA=NULL, void *customCodeCbkDataA=NULL)"
+.br
+.ti -1c
+.RI "\fBPSOutputDev\fP (PSOutputFunc outputFuncA, void *outputStreamA, char *psTitleA, \fBPDFDoc\fP *docA, const std::vector< int > &pages, PSOutMode modeA, int paperWidthA=\-1, int paperHeightA=\-1, GBool noCrop=gFalse, GBool duplexA=gTrue, int imgLLXA=0, int imgLLYA=0, int imgURXA=0, int imgURYA=0, GBool forceRasterizeA=gFalse, GBool manualCtrlA=gFalse, PSOutCustomCodeCbk customCodeCbkA=NULL, void *customCodeCbkDataA=NULL)"
+.br
+.ti -1c
+.RI "virtual GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBupsideDown\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawChar\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseTilingPatternFill\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseShadedFills\fP (int type)"
+.br
+.ti -1c
+.RI "virtual GBool \fBuseDrawForm\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBinterpretType3Chars\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBneedClipToCropBox\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteHeader\fP (const std::vector< int > &pages, \fBPDFRectangle\fP *mediaBox, \fBPDFRectangle\fP *cropBox, int pageRotate, char *pstitle)"
+.br
+.ti -1c
+.RI "void \fBwriteXpdfProcset\fP ()"
+.br
+.ti -1c
+.RI "void \fBwritePageTrailer\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteTrailer\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBcheckPageSlice\fP (\fBPage\fP *page, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, int sliceX, int sliceY, int sliceW, int sliceH, GBool printing, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL)"
+.br
+.ti -1c
+.RI "virtual void \fBstartPage\fP (int pageNum, \fBGfxState\fP *state, \fBXRef\fP *xref)"
+.br
+.ti -1c
+.RI "virtual void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreState\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCTM\fP (\fBGfxState\fP *state, double m11, double m12, double m21, double m22, double m31, double m32)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineDash\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFlatness\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineJoin\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineCap\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateMiterLimit\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateLineWidth\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColorSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColorSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeColor\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFillOverprint\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateStrokeOverprint\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateOverprintMode\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateTransfer\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateTextMat\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateCharSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateRender\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateRise\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateWordSpace\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateHorizScaling\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateTextPos\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBupdateTextShift\fP (\fBGfxState\fP *state, double shift)"
+.br
+.ti -1c
+.RI "virtual void \fBsaveTextPos\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBrestoreTextPos\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBstroke\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBfill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoFill\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual GBool \fBtilingPatternFill\fP (\fBGfxState\fP *state, \fBGfx\fP *gfx, \fBCatalog\fP *cat, \fBObject\fP *str, double *pmat, int paintType, int tilingType, \fBDict\fP *resDict, double *mat, double *bbox, int x0, int y0, int x1, int y1, double xStep, double yStep)"
+.br
+.ti -1c
+.RI "virtual GBool \fBfunctionShadedFill\fP (\fBGfxState\fP *state, \fBGfxFunctionShading\fP *shading)"
+.br
+.ti -1c
+.RI "virtual GBool \fBaxialShadedFill\fP (\fBGfxState\fP *state, \fBGfxAxialShading\fP *shading, double, double)"
+.br
+.ti -1c
+.RI "virtual GBool \fBradialShadedFill\fP (\fBGfxState\fP *state, \fBGfxRadialShading\fP *shading, double, double)"
+.br
+.ti -1c
+.RI "virtual void \fBclip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBeoClip\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBclipToStrokePath\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawString\fP (\fBGfxState\fP *state, \fBGooString\fP *s)"
+.br
+.ti -1c
+.RI "virtual void \fBbeginTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBendTextObject\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool interpolate, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, GBool invert, GBool inlineImg, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBunsetSoftMaskFromImageMask\fP (\fBGfxState\fP *state, double *baseMatrix)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, int *maskColors, GBool inlineImg)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawMaskedImage\fP (\fBGfxState\fP *state, \fBObject\fP *ref, \fBStream\fP *str, int width, int height, \fBGfxImageColorMap\fP *colorMap, GBool interpolate, \fBStream\fP *maskStr, int maskWidth, int maskHeight, GBool maskInvert, GBool maskInterpolate)"
+.br
+.ti -1c
+.RI "virtual void \fBopiBegin\fP (\fBGfxState\fP *state, \fBDict\fP *opiDict)"
+.br
+.ti -1c
+.RI "virtual void \fBopiEnd\fP (\fBGfxState\fP *state, \fBDict\fP *opiDict)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D0\fP (\fBGfxState\fP *state, double wx, double wy)"
+.br
+.ti -1c
+.RI "virtual void \fBtype3D1\fP (\fBGfxState\fP *state, double wx, double wy, double llx, double lly, double urx, double ury)"
+.br
+.ti -1c
+.RI "virtual void \fBdrawForm\fP (\fBRef\fP ref)"
+.br
+.ti -1c
+.RI "virtual void \fBpsXObject\fP (\fBStream\fP *psStream, \fBStream\fP *level1Stream)"
+.br
+.ti -1c
+.RI "void \fBsetOffset\fP (double x, double y)"
+.br
+.ti -1c
+.RI "void \fBsetScale\fP (double x, double y)"
+.br
+.ti -1c
+.RI "void \fBsetRotate\fP (int rotateA)"
+.br
+.ti -1c
+.RI "void \fBsetClip\fP (double llx, double lly, double urx, double ury)"
+.br
+.ti -1c
+.RI "void \fBsetUnderlayCbk\fP (void(*cbk)(\fBPSOutputDev\fP *psOut, void *data), void *data)"
+.br
+.ti -1c
+.RI "void \fBsetOverlayCbk\fP (void(*cbk)(\fBPSOutputDev\fP *psOut, void *data), void *data)"
+.br
+.ti -1c
+.RI "void \fBsetDisplayText\fP (GBool display)"
+.br
+.ti -1c
+.RI "void \fBsetRasterAntialias\fP (GBool a)"
+.br
+.ti -1c
+.RI "void \fBsetRasterResolution\fP (double r)"
+.br
+.ti -1c
+.RI "void \fBsetRasterMono\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetUncompressPreloadedImages\fP (GBool b)"
+.br
+.ti -1c
+.RI "GBool \fBgetEmbedType1\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetEmbedTrueType\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetEmbedCIDPostScript\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetEmbedCIDTrueType\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetFontPassthrough\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetOptimizeColorSpace\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetEnableLZW\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetEnableFlate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetEmbedType1\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetEmbedTrueType\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetEmbedCIDPostScript\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetEmbedCIDTrueType\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetFontPassthrough\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetOptimizeColorSpace\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetPreloadImagesForms\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetGenerateOPI\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetUseASCIIHex\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetUseBinary\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetEnableLZW\fP (GBool b)"
+.br
+.ti -1c
+.RI "void \fBsetEnableFlate\fP (GBool b)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBWinPDFPrinter\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 93 of file PSOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,531 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="pfrload_8h" kind="file" language="C++">
+    <compoundname>pfrload.h</compoundname>
+    <includes refid="pfrobjs_8h" local="yes">pfrobjs.h</includes>
+    <includedby refid="pfrload_8c" local="yes">thirdparty/freetype/src/pfr/pfrload.c</includedby>
+    <includedby refid="pfrgload_8c" local="yes">thirdparty/freetype/src/pfr/pfrgload.c</includedby>
+    <includedby refid="pfrobjs_8c" local="yes">thirdparty/freetype/src/pfr/pfrobjs.c</includedby>
+    <includedby refid="pfrsbit_8c" local="yes">thirdparty/freetype/src/pfr/pfrsbit.c</includedby>
+    <incdepgraph>
+      <node id="80433">
+        <label>thirdparty/freetype/src/pfr/pfrload.h</label>
+        <link refid="pfrload_8h"/>
+        <childnode refid="80434" relation="include">
+        </childnode>
+      </node>
+      <node id="80436">
+        <label>ft2build.h</label>
+      </node>
+      <node id="80435">
+        <label>pfrtypes.h</label>
+        <link refid="pfrtypes_8h_source"/>
+        <childnode refid="80436" relation="include">
+        </childnode>
+      </node>
+      <node id="80434">
+        <label>pfrobjs.h</label>
+        <link refid="pfrobjs_8h_source"/>
+        <childnode refid="80435" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="80440">
+        <label>thirdparty/freetype/src/pfr/pfrgload.c</label>
+        <link refid="pfrgload_8c_source"/>
+        <childnode refid="80439" relation="include">
+        </childnode>
+      </node>
+      <node id="80438">
+        <label>thirdparty/freetype/src/pfr/pfrload.c</label>
+        <link refid="pfrload_8c_source"/>
+        <childnode refid="80439" relation="include">
+        </childnode>
+      </node>
+      <node id="80437">
+        <label>thirdparty/freetype/src/pfr/pfrload.h</label>
+        <link refid="pfrload_8h"/>
+        <childnode refid="80438" relation="include">
+        </childnode>
+        <childnode refid="80440" relation="include">
+        </childnode>
+        <childnode refid="80441" relation="include">
+        </childnode>
+        <childnode refid="80442" relation="include">
+        </childnode>
+      </node>
+      <node id="80442">
+        <label>thirdparty/freetype/src/pfr/pfrsbit.c</label>
+        <link refid="pfrsbit_8c_source"/>
+        <childnode refid="80439" relation="include">
+        </childnode>
+      </node>
+      <node id="80439">
+        <label>thirdparty/freetype/src/pfr/pfr.c</label>
+        <link refid="pfr_8c_source"/>
+      </node>
+      <node id="80441">
+        <label>thirdparty/freetype/src/pfr/pfrobjs.c</label>
+        <link refid="pfrobjs_8c_source"/>
+        <childnode refid="80439" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_p_f_r___extra_item_rec__" prot="public">PFR_ExtraItemRec_</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="pfrload_8h_1a4c7f3e5dbb09b1536bada46cc295976e" prot="public" static="no">
+        <name>PFR_CHECK</name>
+        <param><defname>x</defname></param>
+        <initializer>do                       \
+                        {                        \
+                          if ( p + (x) &gt; limit ) \
+                            goto Too_Short;      \
+                        } while ( 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="31" column="10" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1a9f073839d78f30d56393e8c22062242b" prot="public" static="no">
+        <name>PFR_NEXT_BYTE</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_BYTE( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="38" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1a298b8929ec3c565fe40e36013a9662fa" prot="public" static="no">
+        <name>PFR_NEXT_INT8</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_CHAR( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="39" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1a5af6eaf207dde25f35a874abd10ca4c4" prot="public" static="no">
+        <name>PFR_NEXT_SHORT</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_SHORT( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="40" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1ac436468476017101d116c2a056ab4c72" prot="public" static="no">
+        <name>PFR_NEXT_USHORT</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_USHORT( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="41" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1a676d18085eedc697799872fee7da85c0" prot="public" static="no">
+        <name>PFR_NEXT_LONG</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_OFF3( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="42" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="pfrload_8h_1a010484d7c192fd90e44825e299b48367" prot="public" static="no">
+        <name>PFR_NEXT_ULONG</name>
+        <param><defname>p</defname></param>
+        <initializer>FT_NEXT_UOFF3( p )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="43" column="9" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="pfrload_8h_1aa49bb28e287f167c8fd56850d6c6dce4" prot="public" static="no">
+        <type>FT_Error(*</type>
+        <definition>typedef FT_Error(* PFR_ExtraItem_ParseFunc) (FT_Byte *p, FT_Byte *limit, FT_Pointer data)</definition>
+        <argsstring>)(FT_Byte *p, FT_Byte *limit, FT_Pointer data)</argsstring>
+        <name>PFR_ExtraItem_ParseFunc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="48" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pfrload_8h_1a532cdffb7a9a2965ddfb4b5fafbc4a26" prot="public" static="no">
+        <type>struct <ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItemRec_</ref></type>
+        <definition>typedef struct PFR_ExtraItemRec_  PFR_ExtraItemRec</definition>
+        <argsstring></argsstring>
+        <name>PFR_ExtraItemRec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="pfrload_8h_1a7c08560a22e70fa39bb2fb6dd44be0e4" prot="public" static="no">
+        <type>const struct <ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItemRec_</ref> *</type>
+        <definition>typedef const struct PFR_ExtraItemRec_* PFR_ExtraItem</definition>
+        <argsstring></argsstring>
+        <name>PFR_ExtraItem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="60" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pfrload_8h_1a97d0336ab1ba4bfb0b7f286b51dca955" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_extra_items_skip</definition>
+        <argsstring>(FT_Byte **pp, FT_Byte *limit)</argsstring>
+        <name>pfr_extra_items_skip</name>
+        <param>
+          <type>FT_Byte **</type>
+          <declname>pp</declname>
+        </param>
+        <param>
+          <type>FT_Byte *</type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="64" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1a8e57ce249daf43d38320b13740001292" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_extra_items_parse</definition>
+        <argsstring>(FT_Byte **pp, FT_Byte *limit, PFR_ExtraItem item_list, FT_Pointer item_data)</argsstring>
+        <name>pfr_extra_items_parse</name>
+        <param>
+          <type>FT_Byte **</type>
+          <declname>pp</declname>
+        </param>
+        <param>
+          <type>FT_Byte *</type>
+          <declname>limit</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItem</ref></type>
+          <declname>item_list</declname>
+        </param>
+        <param>
+          <type>FT_Pointer</type>
+          <declname>item_data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="68" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="47" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1a9c06580b1cfdc8a954f63abfaa259a57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_header_load</definition>
+        <argsstring>(PFR_Header header, FT_Stream stream)</argsstring>
+        <name>pfr_header_load</name>
+        <param>
+          <type>PFR_Header</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="76" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="153" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1ac3f6e0bff7e3e53b748aeab8b68934a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_header_check</definition>
+        <argsstring>(PFR_Header header)</argsstring>
+        <name>pfr_header_check</name>
+        <param>
+          <type>PFR_Header</type>
+          <declname>header</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="81" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="173" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1a7828db278265c4be0b7b5c50eadc384a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_log_font_count</definition>
+        <argsstring>(FT_Stream stream, FT_UInt32 log_section_offset, FT_Long *acount)</argsstring>
+        <name>pfr_log_font_count</name>
+        <param>
+          <type><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>log_section_offset</declname>
+        </param>
+        <param>
+          <type>FT_Long *</type>
+          <declname>acount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="86" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="200" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1a6dc17dadbba7dc3e4c3998fbb90d0fc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_log_font_load</definition>
+        <argsstring>(PFR_LogFont log_font, FT_Stream stream, FT_UInt face_index, FT_UInt32 section_offset, FT_Bool size_increment)</argsstring>
+        <name>pfr_log_font_load</name>
+        <param>
+          <type><ref refid="struct_p_f_r___log_font_rec__" kindref="compound">PFR_LogFont</ref></type>
+          <declname>log_font</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>FT_UInt</type>
+          <declname>face_index</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>section_offset</declname>
+        </param>
+        <param>
+          <type>FT_Bool</type>
+          <declname>size_increment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="92" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="221" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1ad00578e6a700b74f88e2e2b9faff9d54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_phy_font_load</definition>
+        <argsstring>(PFR_PhyFont phy_font, FT_Stream stream, FT_UInt32 offset, FT_UInt32 size)</argsstring>
+        <name>pfr_phy_font_load</name>
+        <param>
+          <type><ref refid="struct_p_f_r___phy_font_rec__" kindref="compound">PFR_PhyFont</ref></type>
+          <declname>phy_font</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>offset</declname>
+        </param>
+        <param>
+          <type>FT_UInt32</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="101" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="713" bodyend="938"/>
+      </memberdef>
+      <memberdef kind="function" id="pfrload_8h_1aac1db4b22a570697f905282ea9e77f5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>pfr_phy_font_done</definition>
+        <argsstring>(PFR_PhyFont phy_font, FT_Memory memory)</argsstring>
+        <name>pfr_phy_font_done</name>
+        <param>
+          <type><ref refid="struct_p_f_r___phy_font_rec__" kindref="compound">PFR_PhyFont</ref></type>
+          <declname>phy_font</declname>
+        </param>
+        <param>
+          <type>FT_Memory</type>
+          <declname>memory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/src/pfr/pfrload.h" line="108" column="1" bodyfile="thirdparty/freetype/src/pfr/pfrload.c" bodystart="669" bodyend="709"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>pfrload.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>FreeType<sp/>PFR<sp/>loader<sp/>(specification).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2002-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PFRLOAD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PFRLOAD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pfrobjs.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_INTERNAL_STREAM_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">FT_BEGIN_HEADER</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>PFR_CONFIG_NO_CHECKS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_CHECK(<sp/>x<sp/>)<sp/><sp/>do<sp/>{<sp/>}<sp/>while<sp/>(<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_CHECK(<sp/>x<sp/>)<sp/><sp/>do<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(<sp/>p<sp/>+<sp/>(x)<sp/>&gt;<sp/>limit<sp/>)<sp/>\</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>goto<sp/>Too_Short;<sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>while<sp/>(<sp/>0<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_BYTE(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>FT_NEXT_BYTE(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_INT8(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>FT_NEXT_CHAR(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_SHORT(<sp/>p<sp/>)<sp/><sp/><sp/>FT_NEXT_SHORT(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_USHORT(<sp/>p<sp/>)<sp/><sp/>FT_NEXT_USHORT(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_LONG(<sp/>p<sp/>)<sp/><sp/><sp/><sp/>FT_NEXT_OFF3(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PFR_NEXT_ULONG(<sp/>p<sp/>)<sp/><sp/><sp/>FT_NEXT_UOFF3(<sp/>p<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>handling<sp/>extra<sp/>items<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>FT_Error</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>(*PFR_ExtraItem_ParseFunc)(<sp/>FT_Byte*<sp/><sp/><sp/><sp/>p,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Byte*<sp/><sp/><sp/><sp/>limit,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/>data<sp/>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="struct_p_f_r___extra_item_rec__" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/><sp/></highlight><highlight class="normal"><ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItemRec_</ref></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>type;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>PFR_ExtraItem_ParseFunc<sp/><sp/>parser;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>}<sp/><ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItemRec</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItemRec_</ref>*<sp/><sp/><ref refid="struct_p_f_r___extra_item_rec__" kindref="compound">PFR_ExtraItem</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>pfr_extra_items_skip(<sp/>FT_Byte*<sp/><sp/>*pp,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Byte*<sp/><sp/>limit<sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>pfr_extra_items_parse(<sp/>FT_Byte*<sp/><sp/><sp/><sp/><sp/><sp/>*pp,</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Byte*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>limit,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PFR_ExtraItem<sp/><sp/>item_list,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Pointer<sp/><sp/><sp/><sp/><sp/>item_data<sp/>);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>a<sp/>PFR<sp/>header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>pfr_header_load(<sp/>PFR_Header<sp/><sp/>header,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/>stream<sp/>);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>check<sp/>a<sp/>PFR<sp/>header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Bool<sp/>)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>pfr_header_check(<sp/>PFR_Header<sp/><sp/>header<sp/>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>return<sp/>number<sp/>of<sp/>logical<sp/>fonts<sp/>in<sp/>this<sp/>file<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>pfr_log_font_count(<sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/>stream,</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/>log_section_offset,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Long<sp/><sp/><sp/><sp/>*acount<sp/>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>a<sp/>pfr<sp/>logical<sp/>font<sp/>entry<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>pfr_log_font_load(<sp/><ref refid="struct_p_f_r___log_font_rec__" kindref="compound">PFR_LogFont</ref><sp/><sp/>log_font,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/><sp/>stream,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/><sp/><sp/><sp/>face_index,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/>section_offset,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/><sp/><sp/><sp/><sp/>size_increment<sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>load<sp/>a<sp/>physical<sp/>font<sp/>entry<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>pfr_phy_font_load(<sp/><ref refid="struct_p_f_r___phy_font_rec__" kindref="compound">PFR_PhyFont</ref><sp/><sp/>phy_font,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_f_t___stream_rec__" kindref="compound">FT_Stream</ref><sp/><sp/><sp/><sp/>stream,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/>offset,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt32<sp/><sp/><sp/><sp/>size<sp/>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>finalize<sp/>a<sp/>physical<sp/>font<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>FT_LOCAL(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>pfr_phy_font_done(<sp/><ref refid="struct_p_f_r___phy_font_rec__" kindref="compound">PFR_PhyFont</ref><sp/><sp/>phy_font,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Memory<sp/><sp/><sp/><sp/>memory<sp/>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">FT_END_HEADER</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__PFRLOAD_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/src/pfr/pfrload.h"/>
+  </compounddef>
+</doxygen>

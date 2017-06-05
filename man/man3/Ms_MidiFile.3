@@ -1,0 +1,107 @@
+.TH "Ms::MidiFile" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MidiFile
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBread\fP (QIODevice *)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (QIODevice *)"
+.br
+.ti -1c
+.RI "void \fBreadXml\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "QList< \fBMidiTrack\fP > & \fBtracks\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBMidiTrack\fP > & \fBtracks\fP () const"
+.br
+.ti -1c
+.RI "MidiType \fBmidiType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMidiType\fP (MidiType mt)"
+.br
+.ti -1c
+.RI "int \fBformat\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFormat\fP (int fmt)"
+.br
+.ti -1c
+.RI "int \fBdivision\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisDivisionInTps\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDivision\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBseparateChannel\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBwrite\fP (const void *, qint64)"
+.br
+.ti -1c
+.RI "void \fBwriteShort\fP (int)"
+.br
+.ti -1c
+.RI "void \fBwriteLong\fP (int)"
+.br
+.ti -1c
+.RI "bool \fBwriteTrack\fP (const \fBMidiTrack\fP &)"
+.br
+.ti -1c
+.RI "void \fBputvl\fP (unsigned)"
+.br
+.ti -1c
+.RI "void \fBput\fP (unsigned char c)"
+.br
+.ti -1c
+.RI "void \fBwriteStatus\fP (int type, int channel)"
+.br
+.ti -1c
+.RI "void \fBread\fP (void *, qint64)"
+.br
+.ti -1c
+.RI "int \fBgetvl\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadShort\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadLong\fP ()"
+.br
+.ti -1c
+.RI "bool \fBreadEvent\fP (\fBMidiEvent\fP *)"
+.br
+.ti -1c
+.RI "bool \fBreadTrack\fP ()"
+.br
+.ti -1c
+.RI "void \fBskip\fP (qint64)"
+.br
+.ti -1c
+.RI "void \fBresetRunningStatus\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 70 of file midifile\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

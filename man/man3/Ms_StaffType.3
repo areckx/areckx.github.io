@@ -1,0 +1,369 @@
+.TH "Ms::StaffType" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::StaffType
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStaffType\fP (StaffGroup sg, const QString &xml, const QString &name, int lines, int stpOff, qreal lineDist, bool genClef, bool showBarLines, bool stemless, bool genTimeSig, bool genKeySig, bool showLedgerLines)"
+.br
+.ti -1c
+.RI "\fBStaffType\fP (StaffGroup sg, const QString &xml, const QString &name, int lines, int stpOff, qreal lineDist, bool genClef, bool showBarLines, bool stemless, bool genTimesig, const QString &durFontName, qreal durFontSize, qreal durFontUserY, qreal genDur, const QString &fretFontName, qreal fretFontSize, qreal fretFontUserY, TablatureSymbolRepeat symRepeat, bool linesThrough, TablatureMinimStyle minimStyle, bool onLines, bool showRests, bool stemsDown, bool stemThrough, bool upsideDown, bool showTabFingering, bool useNumbers, bool showBackTied)"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBStaffType\fP &) const"
+.br
+.ti -1c
+.RI "bool \fBisSameStructure\fP (const \fBStaffType\fP &) const"
+.br
+.ti -1c
+.RI "StaffGroup \fBgroup\fP () const"
+.br
+.ti -1c
+.RI "const QString & \fBname\fP () const"
+.br
+.ti -1c
+.RI "const QString & \fBxmlName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (const QString &val)"
+.br
+.ti -1c
+.RI "void \fBsetXmlName\fP (const QString &val)"
+.br
+.ti -1c
+.RI "const char * \fBgroupName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLines\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBlines\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStepOffset\fP (int v)"
+.br
+.ti -1c
+.RI "int \fBstepOffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineDistance\fP (const \fBSpatium\fP &val)"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fBlineDistance\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGenClef\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBgenClef\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowBarlines\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBshowBarlines\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBuserMag\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsmall\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserMag\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetSmall\fP (bool val)"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fByoffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetYoffset\fP (\fBSpatium\fP val)"
+.br
+.ti -1c
+.RI "qreal \fBspatium\fP (\fBScore\fP *) const"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "void \fBsetSlashStyle\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBslashStyle\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgenTimesig\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGenTimesig\fP (bool val)"
+.br
+.ti -1c
+.RI "qreal \fBdoty1\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBdoty2\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGenKeysig\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBgenKeysig\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowLedgerLines\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBshowLedgerLines\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoteHeadScheme\fP (NoteHeadScheme s)"
+.br
+.ti -1c
+.RI "NoteHeadScheme \fBnoteHeadScheme\fP ()"
+.br
+.ti -1c
+.RI "QString \fBfretString\fP (int fret, int string, bool ghost) const"
+.br
+.ti -1c
+.RI "QString \fBdurationString\fP (TDuration::DurationType type, int dots) const"
+.br
+.ti -1c
+.RI "int \fBphysStringToVisual\fP (int strg) const"
+.br
+.ti -1c
+.RI "int \fBvisualStringToPhys\fP (int line) const"
+.br
+.ti -1c
+.RI "qreal \fBphysStringToYOffset\fP (int strg) const"
+.br
+.ti -1c
+.RI "QString \fBtabBassStringPrefix\fP (int strg, bool *hasFret) const"
+.br
+.ti -1c
+.RI "void \fBdrawInputStringMarks\fP (QPainter *p, int string, int voice, QRectF rect) const"
+.br
+.ti -1c
+.RI "int \fBnumOfTabLedgerLines\fP (int string) const"
+.br
+.ti -1c
+.RI "qreal \fBdurationBoxH\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBdurationBoxY\fP ()"
+.br
+.ti -1c
+.RI "const QFont & \fBdurationFont\fP ()"
+.br
+.ti -1c
+.RI "const QString \fBdurationFontName\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBdurationFontSize\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBdurationFontUserY\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBdurationFontYOffset\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBdurationGridYOffset\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBfretBoxH\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBfretBoxY\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBfretMaskH\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBfretMaskY\fP ()"
+.br
+.ti -1c
+.RI "const QFont & \fBfretFont\fP () const"
+.br
+.ti -1c
+.RI "const QString \fBfretFontName\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBfretFontSize\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBfretFontUserY\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBfretFontYOffset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBgenDurations\fP () const"
+.br
+.ti -1c
+.RI "bool \fBlinesThrough\fP () const"
+.br
+.ti -1c
+.RI "TablatureMinimStyle \fBminimStyle\fP () const"
+.br
+.ti -1c
+.RI "TablatureSymbolRepeat \fBsymRepeat\fP () const"
+.br
+.ti -1c
+.RI "bool \fBonLines\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowRests\fP () const"
+.br
+.ti -1c
+.RI "bool \fBstemsDown\fP () const"
+.br
+.ti -1c
+.RI "bool \fBstemThrough\fP () const"
+.br
+.ti -1c
+.RI "bool \fBupsideDown\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowTabFingering\fP () const"
+.br
+.ti -1c
+.RI "bool \fBuseNumbers\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowBackTied\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDurationFontName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetDurationFontSize\fP (qreal)"
+.br
+.ti -1c
+.RI "void \fBsetDurationFontUserY\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetFretFontName\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBsetFretFontSize\fP (qreal)"
+.br
+.ti -1c
+.RI "void \fBsetFretFontUserY\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetGenDurations\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetLinesThrough\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetMinimStyle\fP (TablatureMinimStyle val)"
+.br
+.ti -1c
+.RI "void \fBsetSymbolRepeat\fP (TablatureSymbolRepeat val)"
+.br
+.ti -1c
+.RI "void \fBsetOnLines\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBsetShowRests\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetStemsDown\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetStemsThrough\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetUpsideDown\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetShowTabFingering\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetUseNumbers\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetShowBackTied\fP (bool val)"
+.br
+.ti -1c
+.RI "QPointF \fBchordStemPos\fP (const \fBChord\fP *) const"
+.br
+.ti -1c
+.RI "qreal \fBchordRestStemPosY\fP (const \fBChordRest\fP *) const"
+.br
+.ti -1c
+.RI "qreal \fBchordStemPosX\fP (const \fBChord\fP *) const"
+.br
+.ti -1c
+.RI "QPointF \fBchordStemPosBeam\fP (const \fBChord\fP *) const"
+.br
+.ti -1c
+.RI "qreal \fBchordStemLength\fP (const \fBChord\fP *) const"
+.br
+.ti -1c
+.RI "bool \fBisTabStaff\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBgroupName\fP (StaffGroup)"
+.br
+.ti -1c
+.RI "static const \fBStaffType\fP * \fBgetDefaultPreset\fP (StaffGroup grp)"
+.br
+.ti -1c
+.RI "static const \fBStaffType\fP * \fBpreset\fP (StaffTypes idx)"
+.br
+.ti -1c
+.RI "static const \fBStaffType\fP * \fBpresetFromXmlName\fP (QString &xmlName)"
+.br
+.ti -1c
+.RI "static QList< QString > \fBfontNames\fP (bool bDuration)"
+.br
+.ti -1c
+.RI "static bool \fBfontData\fP (bool bDuration, int nIdx, QString *pFamily, QString *pDisplayName, qreal *pSize, qreal *pYOff)"
+.br
+.ti -1c
+.RI "static void \fBinitStaffTypes\fP ()"
+.br
+.ti -1c
+.RI "static const std::vector< \fBStaffType\fP > & \fBpresets\fP ()"
+.br
+.ti -1c
+.RI "static QString \fBscheme2userName\fP (NoteHeadScheme ns)"
+.br
+.ti -1c
+.RI "static QString \fBscheme2name\fP (NoteHeadScheme ns)"
+.br
+.ti -1c
+.RI "static NoteHeadScheme \fBname2scheme\fP (QString name)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTabDurationSymbol\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 170 of file stafftype\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

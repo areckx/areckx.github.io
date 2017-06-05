@@ -1,0 +1,93 @@
+.TH "Bww::MxmlWriter" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Bww::MxmlWriter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mxmlwriter\&.h>\fP
+.PP
+Inherits \fBBww::Writer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMxmlWriter\fP ()"
+.br
+.ti -1c
+.RI "void \fBbeginMeasure\fP (const \fBBww::MeasureBeginFlags\fP mbf)"
+.br
+.ti -1c
+.RI "void \fBendMeasure\fP (const \fBBww::MeasureEndFlags\fP mef)"
+.br
+.ti -1c
+.RI "void \fBheader\fP (const QString title, const QString type, const QString composer, const QString footer, const unsigned int temp)"
+.br
+.ti -1c
+.RI "void \fBnote\fP (const QString pitch, const QVector< BeamType > beamList, const QString type, const int dots, bool tieStart=false, bool tieStop=false, StartStop triplet=ST_NONE, bool grace=false)"
+.br
+.ti -1c
+.RI "void \fBsetOutDevice\fP (QIODevice *outDevice)"
+.br
+.ti -1c
+.RI "void \fBtsig\fP (const int beats, const int beat)"
+.br
+.ti -1c
+.RI "void \fBtrailer\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The writer that generates MusicXML output\&. 
+.PP
+Definition at line 44 of file mxmlwriter\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Bww::MxmlWriter::MxmlWriter ()"
+\fBMxmlWriter\fP constructor\&. 
+.PP
+Definition at line 37 of file mxmlwriter\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Bww::MxmlWriter::beginMeasure (const \fBBww::MeasureBeginFlags\fP mbf)\fC [virtual]\fP"
+Begin a new measure\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 69 of file mxmlwriter\&.cpp\&.
+.SS "void Bww::MxmlWriter::endMeasure (const \fBBww::MeasureEndFlags\fP mef)\fC [virtual]\fP"
+End the current measure\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 150 of file mxmlwriter\&.cpp\&.
+.SS "void Bww::MxmlWriter::header (const QString title, const QString type, const QString composer, const QString footer, const unsigned int temp)\fC [virtual]\fP"
+Write the header\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 279 of file mxmlwriter\&.cpp\&.
+.SS "void Bww::MxmlWriter::note (const QString pitch, const QVector< BeamType > beamList, const QString type, const int dots, bool tieStart = \fCfalse\fP, bool tieStop = \fCfalse\fP, StartStop triplet = \fCST_NONE\fP, bool grace = \fCfalse\fP)\fC [virtual]\fP"
+Write a single note\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 188 of file mxmlwriter\&.cpp\&.
+.SS "void Bww::MxmlWriter::trailer ()\fC [virtual]\fP"
+Write the trailer\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 348 of file mxmlwriter\&.cpp\&.
+.SS "void Bww::MxmlWriter::tsig (const int bts, const int bt)\fC [virtual]\fP"
+Store beats and beat type for later use\&. 
+.PP
+Implements \fBBww::Writer\fP\&.
+.PP
+Definition at line 333 of file mxmlwriter\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

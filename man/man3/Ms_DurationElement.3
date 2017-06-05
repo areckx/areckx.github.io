@@ -1,0 +1,80 @@
+.TH "Ms::DurationElement" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::DurationElement \- Virtual base class for \fBChord\fP, \fBRest\fP and \fBTuplet\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <duration\&.h>\fP
+.PP
+Inherits \fBMs::Element\fP\&.
+.PP
+Inherited by \fBMs::ChordRest\fP, and \fBMs::Tuplet\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDurationElement\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBDurationElement\fP (const \fBDurationElement\fP &e)"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &e)"
+.br
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "void \fBwriteTuplet\fP (\fBXmlWriter\fP &xml)"
+.br
+.ti -1c
+.RI "void \fBsetTuplet\fP (\fBTuplet\fP *t)"
+.br
+.ti -1c
+.RI "\fBTuplet\fP * \fBtuplet\fP () const"
+.br
+.ti -1c
+.RI "\fBTuplet\fP * \fBtopTuplet\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBBeam\fP * \fBbeam\fP () const"
+.br
+.ti -1c
+.RI "int \fBactualTicks\fP () const"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBactualFraction\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBFraction\fP \fBduration\fP () const"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBglobalDuration\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDuration\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Virtual base class for \fBChord\fP, \fBRest\fP and \fBTuplet\fP\&. 
+.PP
+Definition at line 34 of file duration\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

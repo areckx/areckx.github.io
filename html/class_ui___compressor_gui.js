@@ -1,0 +1,28 @@
+var class_ui___compressor_gui =
+[
+    [ "retranslateUi", "class_ui___compressor_gui.html#a369a8bf41fb61e941a2fe11f75dd1f0b", null ],
+    [ "setupUi", "class_ui___compressor_gui.html#ac98d2e01425cf1d961ac7ecf4aa99e6a", null ],
+    [ "attack", "class_ui___compressor_gui.html#a792c329f4decf4bc0da1583575d08cc6", null ],
+    [ "attackSpinBox", "class_ui___compressor_gui.html#ab3a53165d0d5a508dbf8dfade4390821", null ],
+    [ "gain", "class_ui___compressor_gui.html#a5b2c3b3498e5b29ecb372f69e21740f8", null ],
+    [ "gainSpinBox", "class_ui___compressor_gui.html#a7749a62f10edfe12e5e150c2534c86a6", null ],
+    [ "gridLayout", "class_ui___compressor_gui.html#af58f5b577be1305b22390e1d6515c689", null ],
+    [ "knee", "class_ui___compressor_gui.html#a3ca927aa438acff1548ce9c37b725048", null ],
+    [ "kneeSpinBox", "class_ui___compressor_gui.html#a4b0bc5df029c9687e464adf3f556565c", null ],
+    [ "label", "class_ui___compressor_gui.html#aa0349da89eeca7d06033a40cbd4cc542", null ],
+    [ "label1", "class_ui___compressor_gui.html#a57deb4e4ec907404090d3f4310181320", null ],
+    [ "label2", "class_ui___compressor_gui.html#a76d1bddbadb1cf2893597e84a60ebfaf", null ],
+    [ "label3", "class_ui___compressor_gui.html#a520d930a2d4d3743ca484e2ec424f4d4", null ],
+    [ "label4", "class_ui___compressor_gui.html#ae0cc1f44e555fc4da09a1ac0c7b7a302", null ],
+    [ "label5", "class_ui___compressor_gui.html#ace16f32a19133b71a7e3c3fd30ab026d", null ],
+    [ "label6", "class_ui___compressor_gui.html#ae4687f80ab25f1b092c1a24346a11ca5", null ],
+    [ "label_8", "class_ui___compressor_gui.html#a5b275b04fd7f577310c692f644050ea6", null ],
+    [ "ratio", "class_ui___compressor_gui.html#a11af7353a71260e554181d1d81afe2dc", null ],
+    [ "ratioSpinBox", "class_ui___compressor_gui.html#a45a514c50f2f59048da5c6acc2a46d9d", null ],
+    [ "release", "class_ui___compressor_gui.html#aa1cd610477dfeb589c6ec28322e0510b", null ],
+    [ "releaseSpinBox", "class_ui___compressor_gui.html#a219f1facdb181253611d41bfa94b11d1", null ],
+    [ "rms", "class_ui___compressor_gui.html#a59af6118af2b5072f0c83ee161ceb04e", null ],
+    [ "rmsSpinBox", "class_ui___compressor_gui.html#a6d2a483227a58b7e0eea845751960e5f", null ],
+    [ "threshold", "class_ui___compressor_gui.html#ae9dc95281738c86286cad879a4f8e2e6", null ],
+    [ "thresholdSpinBox", "class_ui___compressor_gui.html#a23bd62e43636188198e460728fb3441b", null ]
+];

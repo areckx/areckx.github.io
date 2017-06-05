@@ -1,0 +1,121 @@
+.TH "Poppler::AnnotationPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::AnnotationPrivate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QSharedData\&.
+.PP
+Inherited by \fBPoppler::CaretAnnotationPrivate\fP, \fBPoppler::FileAttachmentAnnotationPrivate\fP, \fBPoppler::GeomAnnotationPrivate\fP, \fBPoppler::HighlightAnnotationPrivate\fP, \fBPoppler::InkAnnotationPrivate\fP, \fBPoppler::LineAnnotationPrivate\fP, \fBPoppler::LinkAnnotationPrivate\fP, \fBPoppler::MovieAnnotationPrivate\fP, \fBPoppler::RichMediaAnnotationPrivate\fP, \fBPoppler::ScreenAnnotationPrivate\fP, \fBPoppler::SoundAnnotationPrivate\fP, \fBPoppler::StampAnnotationPrivate\fP, \fBPoppler::TextAnnotationPrivate\fP, and \fBPoppler::WidgetAnnotationPrivate\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddRevision\fP (\fBAnnotation\fP *ann, Annotation::RevScope scope, Annotation::RevType type)"
+.br
+.ti -1c
+.RI "virtual \fBAnnotation\fP * \fBmakeAlias\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBtieToNativeAnnot\fP (\fBAnnot\fP *ann, ::\fBPage\fP *page, \fBDocumentData\fP *doc)"
+.br
+.ti -1c
+.RI "virtual \fBAnnot\fP * \fBcreateNativeAnnot\fP (::\fBPage\fP *destPage, \fBDocumentData\fP *doc)=0"
+.br
+.ti -1c
+.RI "void \fBflushBaseAnnotationProperties\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillNormalizationMTX\fP (double MTX[6], int pageRotation) const"
+.br
+.ti -1c
+.RI "void \fBfillTransformationMTX\fP (double MTX[6]) const"
+.br
+.ti -1c
+.RI "QRectF \fBfromPdfRectangle\fP (const \fBPDFRectangle\fP &r) const"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP \fBboundaryToPdfRectangle\fP (const QRectF &r, int flags) const"
+.br
+.ti -1c
+.RI "\fBAnnotPath\fP * \fBtoAnnotPath\fP (const QLinkedList< QPointF > &l) const"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBpdfObjectReference\fP () const"
+.br
+.ti -1c
+.RI "\fBLink\fP * \fBadditionalAction\fP (\fBAnnotation::AdditionalActionType\fP type) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QList< \fBAnnotation\fP * > \fBfindAnnotations\fP (::\fBPage\fP *pdfPage, \fBDocumentData\fP *doc, const QSet< \fBAnnotation::SubType\fP > &subtypes, int parentId=0)"
+.br
+.ti -1c
+.RI "static void \fBaddAnnotationToPage\fP (::\fBPage\fP *pdfPage, \fBDocumentData\fP *doc, const \fBAnnotation\fP *ann)"
+.br
+.ti -1c
+.RI "static void \fBremoveAnnotationFromPage\fP (::\fBPage\fP *pdfPage, const \fBAnnotation\fP *ann)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBauthor\fP"
+.br
+.ti -1c
+.RI "QString \fBcontents\fP"
+.br
+.ti -1c
+.RI "QString \fBuniqueName\fP"
+.br
+.ti -1c
+.RI "QDateTime \fBmodDate\fP"
+.br
+.ti -1c
+.RI "QDateTime \fBcreationDate\fP"
+.br
+.ti -1c
+.RI "int \fBflags\fP"
+.br
+.ti -1c
+.RI "QRectF \fBboundary\fP"
+.br
+.ti -1c
+.RI "\fBAnnotation::Style\fP \fBstyle\fP"
+.br
+.ti -1c
+.RI "\fBAnnotation::Popup\fP \fBpopup\fP"
+.br
+.ti -1c
+.RI "Annotation::RevScope \fBrevisionScope\fP"
+.br
+.ti -1c
+.RI "Annotation::RevType \fBrevisionType\fP"
+.br
+.ti -1c
+.RI "QList< \fBAnnotation\fP * > \fBrevisions\fP"
+.br
+.ti -1c
+.RI "\fBAnnot\fP * \fBpdfAnnot\fP"
+.br
+.ti -1c
+.RI "::\fBPage\fP * \fBpdfPage\fP"
+.br
+.ti -1c
+.RI "\fBDocumentData\fP * \fBparentDoc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 43 of file poppler\-annotation\-private\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

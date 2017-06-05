@@ -1,0 +1,209 @@
+.TH "PDFDoc" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PDFDoc
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPDFDoc\fP (\fBGooString\fP *fileNameA, \fBGooString\fP *ownerPassword=NULL, \fBGooString\fP *userPassword=NULL, void *guiDataA=NULL)"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP (\fBBaseStream\fP *strA, \fBGooString\fP *ownerPassword=NULL, \fBGooString\fP *userPassword=NULL, void *guiDataA=NULL)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetErrorCode\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetFopenErrno\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetFileName\fP ()"
+.br
+.ti -1c
+.RI "\fBLinearization\fP * \fBgetLinearization\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBcheckLinearization\fP ()"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBgetXRef\fP ()"
+.br
+.ti -1c
+.RI "\fBCatalog\fP * \fBgetCatalog\fP ()"
+.br
+.ti -1c
+.RI "\fBOCGs\fP * \fBgetOptContentConfig\fP ()"
+.br
+.ti -1c
+.RI "\fBBaseStream\fP * \fBgetBaseStream\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetPageMediaWidth\fP (int page)"
+.br
+.ti -1c
+.RI "double \fBgetPageMediaHeight\fP (int page)"
+.br
+.ti -1c
+.RI "double \fBgetPageCropWidth\fP (int page)"
+.br
+.ti -1c
+.RI "double \fBgetPageCropHeight\fP (int page)"
+.br
+.ti -1c
+.RI "int \fBgetPageRotate\fP (int page)"
+.br
+.ti -1c
+.RI "int \fBgetNumPages\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBreadMetadata\fP ()"
+.br
+.ti -1c
+.RI "\fBStructTreeRoot\fP * \fBgetStructTreeRoot\fP ()"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBgetPage\fP (int page)"
+.br
+.ti -1c
+.RI "void \fBdisplayPage\fP (\fBOutputDev\fP *out, int page, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, GBool printing, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL, GBool copyXRef=gFalse)"
+.br
+.ti -1c
+.RI "void \fBdisplayPages\fP (\fBOutputDev\fP *out, int firstPage, int lastPage, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, GBool printing, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL)"
+.br
+.ti -1c
+.RI "void \fBdisplayPageSlice\fP (\fBOutputDev\fP *out, int page, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, GBool printing, int sliceX, int sliceY, int sliceW, int sliceH, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL, GBool copyXRef=gFalse)"
+.br
+.ti -1c
+.RI "int \fBfindPage\fP (int num, int gen)"
+.br
+.ti -1c
+.RI "\fBLinks\fP * \fBgetLinks\fP (int page)"
+.br
+.ti -1c
+.RI "\fBLinkDest\fP * \fBfindDest\fP (\fBGooString\fP *name)"
+.br
+.ti -1c
+.RI "void \fBprocessLinks\fP (\fBOutputDev\fP *out, int page)"
+.br
+.ti -1c
+.RI "\fBOutline\fP * \fBgetOutline\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisEncrypted\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBFormWidgetSignature\fP * > \fBgetSignatureWidgets\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBokToPrint\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToPrintHighRes\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToChange\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToCopy\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAddNotes\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToFillForm\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAccessibility\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBokToAssemble\fP (GBool ignoreOwnerPW=gFalse)"
+.br
+.ti -1c
+.RI "GBool \fBisLinearized\fP (GBool tryingToReconstruct=gFalse)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetDocInfo\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetDocInfoNF\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "int \fBgetPDFMajorVersion\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetPDFMinorVersion\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetID\fP (\fBGooString\fP *permanent_id, \fBGooString\fP *update_id)"
+.br
+.ti -1c
+.RI "int \fBsavePageAs\fP (\fBGooString\fP *name, int pageNo)"
+.br
+.ti -1c
+.RI "int \fBsaveAs\fP (\fBGooString\fP *name, PDFWriteMode mode=writeStandard)"
+.br
+.ti -1c
+.RI "int \fBsaveAs\fP (\fBOutStream\fP *outStr, PDFWriteMode mode=writeStandard)"
+.br
+.ti -1c
+.RI "int \fBsaveWithoutChangesAs\fP (\fBGooString\fP *name)"
+.br
+.ti -1c
+.RI "int \fBsaveWithoutChangesAs\fP (\fBOutStream\fP *outStr)"
+.br
+.ti -1c
+.RI "void * \fBgetGUIData\fP ()"
+.br
+.ti -1c
+.RI "void \fBreplacePageDict\fP (int pageNo, int rotate, \fBPDFRectangle\fP *mediaBox, \fBPDFRectangle\fP *cropBox)"
+.br
+.ti -1c
+.RI "void \fBmarkPageObjects\fP (\fBDict\fP *pageDict, \fBXRef\fP *xRef, \fBXRef\fP *countRef, Guint numOffset, int oldRefNum, int newRefNum)"
+.br
+.ti -1c
+.RI "GBool \fBmarkAnnotations\fP (\fBObject\fP *annots, \fBXRef\fP *xRef, \fBXRef\fP *countRef, Guint numOffset, int oldPageNum, int newPageNum)"
+.br
+.ti -1c
+.RI "void \fBmarkAcroForm\fP (\fBObject\fP *acrpForm, \fBXRef\fP *xRef, \fBXRef\fP *countRef, Guint numOffset, int oldPageNum, int newPageNum)"
+.br
+.ti -1c
+.RI "Guint \fBwritePageObjects\fP (\fBOutStream\fP *outStr, \fBXRef\fP *xRef, Guint numOffset, GBool combine=gFalse)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBPDFDoc\fP * \fBErrorPDFDoc\fP (int errorCode, \fBGooString\fP *fileNameA=NULL)"
+.br
+.ti -1c
+.RI "static void \fBwriteObject\fP (\fBObject\fP *obj, \fBOutStream\fP *outStr, \fBXRef\fP *xref, Guint numOffset, Guchar *fileKey, CryptAlgorithm encAlgorithm, int keyLength, int objNum, int objGen)"
+.br
+.ti -1c
+.RI "static void \fBwriteHeader\fP (\fBOutStream\fP *outStr, int major, int minor)"
+.br
+.ti -1c
+.RI "static \fBDict\fP * \fBcreateTrailerDict\fP (int uxrefSize, GBool incrUpdate, Goffset startxRef, \fBRef\fP *root, \fBXRef\fP *xRef, const char *fileName, Goffset fileSize)"
+.br
+.ti -1c
+.RI "static void \fBwriteXRefTableTrailer\fP (\fBDict\fP *trailerDict, \fBXRef\fP *uxref, GBool writeAllEntries, Goffset uxrefOffset, \fBOutStream\fP *outStr, \fBXRef\fP *xRef)"
+.br
+.ti -1c
+.RI "static void \fBwriteXRefStreamTrailer\fP (\fBDict\fP *trailerDict, \fBXRef\fP *uxref, \fBRef\fP *uxrefStreamRef, Goffset uxrefOffset, \fBOutStream\fP *outStr, \fBXRef\fP *xRef)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 80 of file PDFDoc\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

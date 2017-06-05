@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="qtlockedfile_8cpp" kind="file" language="C++">
+    <compoundname>qtlockedfile.cpp</compoundname>
+    <includes refid="qtlockedfile_8h" local="yes">qtlockedfile.h</includes>
+    <includedby refid="qtlocalpeer_8cpp" local="yes">thirdparty/singleapp/src/qtlocalpeer.cpp</includedby>
+    <incdepgraph>
+      <node id="93315">
+        <label>qtlockedfile.h</label>
+        <link refid="qtlockedfile_8h_source"/>
+        <childnode refid="93316" relation="include">
+        </childnode>
+      </node>
+      <node id="93314">
+        <label>thirdparty/singleapp/src/qtlockedfile.cpp</label>
+        <link refid="qtlockedfile_8cpp"/>
+        <childnode refid="93315" relation="include">
+        </childnode>
+      </node>
+      <node id="93316">
+        <label>QFile</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="93317">
+        <label>thirdparty/singleapp/src/qtlockedfile.cpp</label>
+        <link refid="qtlockedfile_8cpp"/>
+        <childnode refid="93318" relation="include">
+        </childnode>
+      </node>
+      <node id="93318">
+        <label>thirdparty/singleapp/src/qtlocalpeer.cpp</label>
+        <link refid="qtlocalpeer_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">**<sp/>Copyright<sp/>(C)<sp/>2013<sp/>Digia<sp/>Plc<sp/>and/or<sp/>its<sp/>subsidiary(-ies).</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">**<sp/>Contact:<sp/>http://www.qt-project.org/legal</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">**<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>Qt<sp/>Solutions<sp/>component.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">**<sp/>$QT_BEGIN_LICENSE:BSD$</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">**<sp/>You<sp/>may<sp/>use<sp/>this<sp/>file<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>BSD<sp/>license<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">**<sp/>&quot;Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">**<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">**<sp/>met:</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>Digia<sp/>Plc<sp/>and<sp/>its<sp/>Subsidiary(-ies)<sp/>nor<sp/>the<sp/>names</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>of<sp/>its<sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">**<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">**<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">**<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">**<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">**<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">**<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">**<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">**<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">**<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">**<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">**<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.&quot;</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">**<sp/>$QT_END_LICENSE$</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;qtlockedfile.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="class_qt_l_p___private_1_1_qt_locked_file_1a69bf1d82b1ca46f97466634d8f9587aa" refkind="member"><highlight class="normal">QtLockedFile::QtLockedFile()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QFile()</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>wmutex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>rmutex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lock_mode<sp/>=<sp/>NoLock;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="class_qt_l_p___private_1_1_qt_locked_file_1a8b7a228ae02dca4bb99743219d0cdb7b" refkind="member"><highlight class="normal"><ref refid="class_qt_l_p___private_1_1_qt_locked_file_1a69bf1d82b1ca46f97466634d8f9587aa" kindref="member">QtLockedFile::QtLockedFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;name)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QFile(name)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>wmutex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>rmutex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>m_lock_mode<sp/>=<sp/>NoLock;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="class_qt_l_p___private_1_1_qt_locked_file_1a2e81bbaa7b1aaa83cf79284e66dbad79" refkind="member"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_qt_l_p___private_1_1_qt_locked_file_1a2e81bbaa7b1aaa83cf79284e66dbad79" kindref="member">QtLockedFile::open</ref>(OpenMode<sp/>mode)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mode<sp/>&amp;<sp/>QIODevice::Truncate)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qWarning(</highlight><highlight class="stringliteral">&quot;QtLockedFile::open():<sp/>Truncate<sp/>mode<sp/>not<sp/>allowed.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QFile::open(mode);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="class_qt_l_p___private_1_1_qt_locked_file_1a0800b8ae9f4d268fe6968b9075f64bb3" refkind="member"><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_qt_l_p___private_1_1_qt_locked_file_1a0800b8ae9f4d268fe6968b9075f64bb3" kindref="member">QtLockedFile::isLocked</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="139"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_lock_mode<sp/>!=<sp/>NoLock;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="class_qt_l_p___private_1_1_qt_locked_file_1a0ae096d85cb722b1563521ad2b6dbde2" refkind="member"><highlight class="normal"><ref refid="class_qt_l_p___private_1_1_qt_locked_file_1ab9a54228983e33cf1fb8dace52141f26" kindref="member">QtLockedFile::LockMode</ref><sp/><ref refid="class_qt_l_p___private_1_1_qt_locked_file_1a0ae096d85cb722b1563521ad2b6dbde2" kindref="member">QtLockedFile::lockMode</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="150"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_lock_mode;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/singleapp/src/qtlockedfile.cpp"/>
+  </compounddef>
+</doxygen>

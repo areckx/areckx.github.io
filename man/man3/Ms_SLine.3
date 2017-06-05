@@ -1,0 +1,139 @@
+.TH "Ms::SLine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::SLine \- virtual base class for \fBHairpin\fP, \fBTrill\fP and \fBTextLine\fP  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <line\&.h>\fP
+.PP
+Inherits \fBMs::Spanner\fP\&.
+.PP
+Inherited by \fBMs::Glissando\fP, \fBMs::LyricsLine\fP, \fBMs::TextLineBase\fP, and \fBMs::Trill\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSLine\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBSLine\fP (const \fBSLine\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBSpannerSegment\fP * \fBlayoutSystem\fP (\fBSystem\fP *) override"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &node)"
+.br
+.ti -1c
+.RI "void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "virtual \fBLineSegment\fP * \fBcreateLineSegment\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBsetLen\fP (qreal l)"
+.br
+.ti -1c
+.RI "virtual const QRectF & \fBbbox\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "bool \fBdiagonal\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDiagonal\fP (bool v)"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fBlineWidth\fP () const"
+.br
+.ti -1c
+.RI "QColor \fBlineColor\fP () const"
+.br
+.ti -1c
+.RI "Qt::PenStyle \fBlineStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineWidth\fP (const \fBSpatium\fP &v)"
+.br
+.ti -1c
+.RI "void \fBsetLineColor\fP (const QColor &v)"
+.br
+.ti -1c
+.RI "void \fBsetLineStyle\fP (Qt::PenStyle v)"
+.br
+.ti -1c
+.RI "qreal \fBdashLineLen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDashLineLen\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBdashGapLen\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDashGapLen\fP (qreal val)"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP * \fBfrontSegment\fP () const"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP * \fBbackSegment\fP () const"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP * \fBtakeFirstSegment\fP ()"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP * \fBtakeLastSegment\fP ()"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP * \fBsegmentAt\fP (int n) const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual QPointF \fBlinePos\fP (Grip, \fBSystem\fP **system) const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBLineSegment\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+virtual base class for \fBHairpin\fP, \fBTrill\fP and \fBTextLine\fP 
+.PP
+Definition at line 72 of file line\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

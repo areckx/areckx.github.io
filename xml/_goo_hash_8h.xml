@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_goo_hash_8h" kind="file" language="C++">
+    <compoundname>GooHash.h</compoundname>
+    <includes refid="gtypes_8h" local="yes">gtypes.h</includes>
+    <includedby refid="_fo_fi_true_type_8cc" local="yes">thirdparty/poppler/fofi/FoFiTrueType.cc</includedby>
+    <includedby refid="_goo_hash_8cc" local="yes">thirdparty/poppler/goo/GooHash.cc</includedby>
+    <includedby refid="_gfx_8cc" local="yes">thirdparty/poppler/poppler/Gfx.cc</includedby>
+    <includedby refid="_global_params_8cc" local="yes">thirdparty/poppler/poppler/GlobalParams.cc</includedby>
+    <includedby refid="_global_params_win_8cc" local="yes">thirdparty/poppler/poppler/GlobalParamsWin.cc</includedby>
+    <includedby refid="_output_dev_8cc" local="yes">thirdparty/poppler/poppler/OutputDev.cc</includedby>
+    <includedby refid="_p_s_output_dev_8cc" local="yes">thirdparty/poppler/poppler/PSOutputDev.cc</includedby>
+    <incdepgraph>
+      <node id="84341">
+        <label>poppler-config.h</label>
+        <link refid="poppler-config_8h_source"/>
+        <childnode refid="84342" relation="include">
+        </childnode>
+      </node>
+      <node id="84340">
+        <label>gtypes.h</label>
+        <link refid="gtypes_8h_source"/>
+        <childnode refid="84341" relation="include">
+        </childnode>
+      </node>
+      <node id="84342">
+        <label>stdio.h</label>
+      </node>
+      <node id="84339">
+        <label>thirdparty/poppler/goo/GooHash.h</label>
+        <link refid="_goo_hash_8h"/>
+        <childnode refid="84340" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="84348">
+        <label>thirdparty/poppler/poppler/GlobalParamsWin.cc</label>
+        <link refid="_global_params_win_8cc_source"/>
+      </node>
+      <node id="84345">
+        <label>thirdparty/poppler/goo/GooHash.cc</label>
+        <link refid="_goo_hash_8cc_source"/>
+      </node>
+      <node id="84350">
+        <label>thirdparty/poppler/poppler/PSOutputDev.cc</label>
+        <link refid="_p_s_output_dev_8cc_source"/>
+      </node>
+      <node id="84349">
+        <label>thirdparty/poppler/poppler/OutputDev.cc</label>
+        <link refid="_output_dev_8cc_source"/>
+      </node>
+      <node id="84344">
+        <label>thirdparty/poppler/fofi/FoFiTrueType.cc</label>
+        <link refid="_fo_fi_true_type_8cc_source"/>
+      </node>
+      <node id="84347">
+        <label>thirdparty/poppler/poppler/GlobalParams.cc</label>
+        <link refid="_global_params_8cc_source"/>
+      </node>
+      <node id="84346">
+        <label>thirdparty/poppler/poppler/Gfx.cc</label>
+        <link refid="_gfx_8cc_source"/>
+      </node>
+      <node id="84343">
+        <label>thirdparty/poppler/goo/GooHash.h</label>
+        <link refid="_goo_hash_8h"/>
+        <childnode refid="84344" relation="include">
+        </childnode>
+        <childnode refid="84345" relation="include">
+        </childnode>
+        <childnode refid="84346" relation="include">
+        </childnode>
+        <childnode refid="84347" relation="include">
+        </childnode>
+        <childnode refid="84348" relation="include">
+        </childnode>
+        <childnode refid="84349" relation="include">
+        </childnode>
+        <childnode refid="84350" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_goo_hash" prot="public">GooHash</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_goo_hash_8h_1a91aa7fc60fca6d6438cfc7905d0828c6" prot="public" static="no">
+        <name>deleteGooHash</name>
+        <param><defname>hash</defname></param>
+        <param><defname>T</defname></param>
+        <initializer>do {                                             \
+    <ref refid="class_goo_hash" kindref="compound">GooHash</ref> *_hash = (hash);                         \
+    {                                              \
+      <ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref> *_iter;                            \
+      <ref refid="class_goo_string" kindref="compound">GooString</ref> *_key;                               \
+      void *_p;                                    \
+      _hash-&gt;startIter(&amp;_iter);                    \
+      while (_hash-&gt;getNext(&amp;_iter, &amp;_key, &amp;_p)) { \
+        delete (T*)_p;                             \
+      }                                            \
+      delete _hash;                                \
+    }                                              \
+  } while(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/goo/GooHash.h" line="77" column="9" bodyfile="thirdparty/poppler/goo/GooHash.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>GooHash.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>2001-2003<sp/>Glyph<sp/>&amp;<sp/>Cog,<sp/>LLC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Modified<sp/>under<sp/>the<sp/>Poppler<sp/>project<sp/>-<sp/>http://poppler.freedesktop.org</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>All<sp/>changes<sp/>made<sp/>under<sp/>the<sp/>Poppler<sp/>project<sp/>to<sp/>this<sp/>file<sp/>are<sp/>licensed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>under<sp/>GPL<sp/>version<sp/>2<sp/>or<sp/>later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Copyright<sp/>(C)<sp/>2012<sp/>Albert<sp/>Astals<sp/>Cid<sp/>&lt;aacid@kde.org&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>To<sp/>see<sp/>a<sp/>description<sp/>of<sp/>the<sp/>changes<sp/>please<sp/>see<sp/>the<sp/>Changelog<sp/>file<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">//<sp/>came<sp/>with<sp/>your<sp/>tarball<sp/>or<sp/>type<sp/>make<sp/>ChangeLog<sp/>if<sp/>you<sp/>are<sp/>building<sp/>from<sp/>git</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">//========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>GHASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GHASH_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_GCC_PRAGMAS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gtypes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_goo_string" kindref="compound">GooString</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_goo_hash_bucket" kindref="compound">GooHashBucket</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_goo_hash" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_goo_hash" kindref="compound">GooHash</ref><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="class_goo_hash" kindref="compound">GooHash</ref>(GBool<sp/>deleteKeysA<sp/>=<sp/>gFalse);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>~<ref refid="class_goo_hash" kindref="compound">GooHash</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*val);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>add(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>replace(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*val);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>replace(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*lookup(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lookupInt(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*lookup(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lookupInt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>removeInt(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">remove</highlight><highlight class="normal">(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>removeInt(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getLength()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>len;<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>startIter(<ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref><sp/>**iter);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>GBool<sp/>getNext(<ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref><sp/>**iter,<sp/><ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>**key,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**val);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>GBool<sp/>getNext(<ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref><sp/>**iter,<sp/><ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>**key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*val);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>killIter(<ref refid="struct_goo_hash_iter" kindref="compound">GooHashIter</ref><sp/>**iter);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="class_goo_hash" kindref="compound">GooHash</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_goo_hash" kindref="compound">GooHash</ref><sp/>&amp;other);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><ref refid="class_goo_hash" kindref="compound">GooHash</ref>&amp;<sp/>operator=(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_goo_hash" kindref="compound">GooHash</ref><sp/>&amp;other);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>expand();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="struct_goo_hash_bucket" kindref="compound">GooHashBucket</ref><sp/>*find(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*h);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="struct_goo_hash_bucket" kindref="compound">GooHashBucket</ref><sp/>*find(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*h);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hash(<ref refid="class_goo_string" kindref="compound">GooString</ref><sp/>*key);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hash(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>GBool<sp/>deleteKeys;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>set<sp/>if<sp/>key<sp/>strings<sp/>should<sp/>be<sp/>deleted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>buckets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>len;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>number<sp/>of<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="struct_goo_hash_bucket" kindref="compound">GooHashBucket</ref><sp/>**tab;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>deleteGooHash(hash,<sp/>T)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="78"><highlight class="preprocessor"><sp/><sp/>do<sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="79"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>GooHash<sp/>*_hash<sp/>=<sp/>(hash);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="80"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="81"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>GooHashIter<sp/>*_iter;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="82"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>GooString<sp/>*_key;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="83"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>void<sp/>*_p;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="84"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>_hash-&gt;startIter(&amp;_iter);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="85"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(_hash-&gt;getNext(&amp;_iter,<sp/>&amp;_key,<sp/>&amp;_p))<sp/>{<sp/>\</highlight></codeline>
+<codeline lineno="86"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delete<sp/>(T*)_p;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="87"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="88"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/>delete<sp/>_hash;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="89"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"><sp/><sp/>}<sp/>while(0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/poppler/goo/GooHash.h"/>
+  </compounddef>
+</doxygen>

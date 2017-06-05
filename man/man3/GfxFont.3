@@ -1,0 +1,224 @@
+.TH "GfxFont" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GfxFont
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBGfx8BitFont\fP, and \fBGfxCIDFont\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBStretch\fP { \fBStretchNotDefined\fP, \fBUltraCondensed\fP, \fBExtraCondensed\fP, \fBCondensed\fP, \fBSemiCondensed\fP, \fBNormal\fP, \fBSemiExpanded\fP, \fBExpanded\fP, \fBExtraExpanded\fP, \fBUltraExpanded\fP }"
+.br
+.ti -1c
+.RI "enum \fBWeight\fP { \fBWeightNotDefined\fP, \fBW100\fP, \fBW200\fP, \fBW300\fP, \fBW400\fP, \fBW500\fP, \fBW600\fP, \fBW700\fP, \fBW800\fP, \fBW900\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGfxFont\fP (const char *tagA, \fBRef\fP idA, \fBGooString\fP *nameA, GfxFontType typeA, \fBRef\fP embFontIDA)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "void \fBincRefCnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBdecRefCnt\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetTag\fP ()"
+.br
+.ti -1c
+.RI "\fBRef\fP * \fBgetID\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBmatches\fP (char *tagA)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetFamily\fP ()"
+.br
+.ti -1c
+.RI "Stretch \fBgetStretch\fP ()"
+.br
+.ti -1c
+.RI "Weight \fBgetWeight\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetName\fP ()"
+.br
+.ti -1c
+.RI "GfxFontType \fBgetType\fP ()"
+.br
+.ti -1c
+.RI "virtual GBool \fBisCIDFont\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBgetEmbeddedFontID\fP (\fBRef\fP *embID)"
+.br
+.ti -1c
+.RI "GBool \fBinvalidateEmbeddedFont\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetEmbeddedFontName\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetFlags\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisFixedWidth\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisSerif\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisSymbolic\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisItalic\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisBold\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBCharCodeToUnicode\fP * \fBgetToUnicode\fP ()=0"
+.br
+.ti -1c
+.RI "double * \fBgetFontMatrix\fP ()"
+.br
+.ti -1c
+.RI "double * \fBgetFontBBox\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetAscent\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetDescent\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBgetWMode\fP ()"
+.br
+.ti -1c
+.RI "\fBGfxFontLoc\fP * \fBlocateFont\fP (\fBXRef\fP *xref, \fBPSOutputDev\fP *ps)"
+.br
+.ti -1c
+.RI "char * \fBreadEmbFontFile\fP (\fBXRef\fP *xref, int *len)"
+.br
+.ti -1c
+.RI "virtual int \fBgetNextChar\fP (char *s, int len, CharCode *code, Unicode **u, int *uLen, double *dx, double *dy, double *ox, double *oy)=0"
+.br
+.ti -1c
+.RI "GBool \fBhasToUnicodeCMap\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetEncodingName\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBGfxFont\fP * \fBmakeFont\fP (\fBXRef\fP *xref, const char *tagA, \fBRef\fP idA, \fBDict\fP *fontDict)"
+.br
+.ti -1c
+.RI "static \fBGfxFontLoc\fP * \fBlocateBase14Font\fP (\fBGooString\fP *base14Name)"
+.br
+.ti -1c
+.RI "static const char * \fBgetAlternateName\fP (const char *name)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBreadFontDescriptor\fP (\fBXRef\fP *xref, \fBDict\fP *fontDict)"
+.br
+.ti -1c
+.RI "\fBCharCodeToUnicode\fP * \fBreadToUnicodeCMap\fP (\fBDict\fP *fontDict, int nBits, \fBCharCodeToUnicode\fP *ctu)"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static GfxFontType \fBgetFontType\fP (\fBXRef\fP *xref, \fBDict\fP *fontDict, \fBRef\fP *embID)"
+.br
+.ti -1c
+.RI "static \fBGfxFontLoc\fP * \fBgetExternalFont\fP (\fBGooString\fP *path, GBool cid)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBGooString\fP * \fBtag\fP"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBid\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBname\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBfamily\fP"
+.br
+.ti -1c
+.RI "Stretch \fBstretch\fP"
+.br
+.ti -1c
+.RI "Weight \fBweight\fP"
+.br
+.ti -1c
+.RI "GfxFontType \fBtype\fP"
+.br
+.ti -1c
+.RI "int \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBembFontName\fP"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBembFontID\fP"
+.br
+.ti -1c
+.RI "double \fBfontMat\fP [6]"
+.br
+.ti -1c
+.RI "double \fBfontBBox\fP [4]"
+.br
+.ti -1c
+.RI "double \fBmissingWidth\fP"
+.br
+.ti -1c
+.RI "double \fBascent\fP"
+.br
+.ti -1c
+.RI "double \fBdescent\fP"
+.br
+.ti -1c
+.RI "int \fBrefCnt\fP"
+.br
+.ti -1c
+.RI "GBool \fBok\fP"
+.br
+.ti -1c
+.RI "GBool \fBhasToUnicode\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBencodingName\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 146 of file GfxFont\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

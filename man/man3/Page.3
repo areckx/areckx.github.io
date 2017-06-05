@@ -1,0 +1,173 @@
+.TH "Page" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Page
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPageAdditionalActionsType\fP { \fBactionOpenPage\fP, \fBactionClosePage\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPage\fP (\fBPDFDoc\fP *docA, int numA, \fBDict\fP *pageDict, \fBRef\fP pageRefA, \fBPageAttrs\fP *attrsA, \fBForm\fP *form)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetNum\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetMediaBox\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetCropBox\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBisCropped\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMediaWidth\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetMediaHeight\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetCropWidth\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetCropHeight\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetBleedBox\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetTrimBox\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetArtBox\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRotate\fP ()"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetLastModified\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetBoxColorInfo\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetGroup\fP ()"
+.br
+.ti -1c
+.RI "\fBStream\fP * \fBgetMetadata\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetPieceInfo\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetSeparationInfo\fP ()"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBgetDoc\fP ()"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetRef\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetResourceDict\fP ()"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetResourceDictCopy\fP (\fBXRef\fP *xrefA)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetAnnots\fP (\fBObject\fP *obj, \fBXRef\fP *xrefA=NULL)"
+.br
+.ti -1c
+.RI "void \fBaddAnnot\fP (\fBAnnot\fP *annot)"
+.br
+.ti -1c
+.RI "void \fBremoveAnnot\fP (\fBAnnot\fP *annot)"
+.br
+.ti -1c
+.RI "\fBLinks\fP * \fBgetLinks\fP ()"
+.br
+.ti -1c
+.RI "\fBAnnots\fP * \fBgetAnnots\fP (\fBXRef\fP *xrefA=NULL)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetContents\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetThumb\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "GBool \fBloadThumb\fP (unsigned char **data, int *width, int *height, int *rowstride)"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetTrans\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBFormPageWidgets\fP * \fBgetFormWidgets\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetDuration\fP ()"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetActions\fP (\fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "\fBLinkAction\fP * \fBgetAdditionalAction\fP (\fBPageAdditionalActionsType\fP type)"
+.br
+.ti -1c
+.RI "\fBGfx\fP * \fBcreateGfx\fP (\fBOutputDev\fP *out, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, int sliceX, int sliceY, int sliceW, int sliceH, GBool printing, GBool(*abortCheckCbk)(void *data), void *abortCheckCbkData, \fBXRef\fP *xrefA=NULL)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (\fBOutputDev\fP *out, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, GBool printing, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL, GBool copyXRef=gFalse)"
+.br
+.ti -1c
+.RI "void \fBdisplaySlice\fP (\fBOutputDev\fP *out, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool crop, int sliceX, int sliceY, int sliceW, int sliceH, GBool printing, GBool(*abortCheckCbk)(void *data)=NULL, void *abortCheckCbkData=NULL, GBool(*annotDisplayDecideCbk)(\fBAnnot\fP *annot, void *user_data)=NULL, void *annotDisplayDecideCbkData=NULL, GBool copyXRef=gFalse)"
+.br
+.ti -1c
+.RI "void \fBdisplay\fP (\fBGfx\fP *gfx)"
+.br
+.ti -1c
+.RI "void \fBmakeBox\fP (double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool upsideDown, double sliceX, double sliceY, double sliceW, double sliceH, \fBPDFRectangle\fP *box, GBool *crop)"
+.br
+.ti -1c
+.RI "void \fBprocessLinks\fP (\fBOutputDev\fP *out)"
+.br
+.ti -1c
+.RI "void \fBgetDefaultCTM\fP (double *ctm, double hDPI, double vDPI, int rotate, GBool useMediaBox, GBool upsideDown)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 140 of file Page\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPage::PageAdditionalActionsType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIactionOpenPage \fP\fP
+Performed when opening the page\&. 
+.TP
+\fB\fIactionClosePage \fP\fP
+Performed when closing the page\&. 
+.PP
+Definition at line 216 of file Page\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

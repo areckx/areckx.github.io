@@ -1,0 +1,203 @@
+\hypertarget{class_m_q_zip_reader}{}\section{M\+Q\+Zip\+Reader Class Reference}
+\label{class_m_q_zip_reader}\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_m_q_zip_reader_1_1_file_info}{File\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_q_zip_reader_a60fbc02d0096c9a7de57fc28011a6850}\label{class_m_q_zip_reader_a60fbc02d0096c9a7de57fc28011a6850}} 
+enum {\bfseries Status} \{ \newline
+{\bfseries No\+Error}, 
+{\bfseries File\+Read\+Error}, 
+{\bfseries File\+Open\+Error}, 
+{\bfseries File\+Permissions\+Error}, 
+\newline
+{\bfseries File\+Error}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q_zip_reader_a3b7f7b85a1674386dc4a7b7240f4e2dc}{M\+Q\+Zip\+Reader} (const Q\+String \&file\+Name, Q\+I\+O\+Device\+::\+Open\+Mode mode=Q\+I\+O\+Device\+::\+Read\+Only)
+\item 
+\hyperlink{class_m_q_zip_reader_ab8f57ca2da4654b4696b0fa7635d2cff}{M\+Q\+Zip\+Reader} (Q\+I\+O\+Device $\ast$\hyperlink{class_m_q_zip_reader_aff10cccb86592a1d9c228195996fdd11}{device})
+\item 
+\hyperlink{class_m_q_zip_reader_ac669746daffc30103dab493e990ca141}{$\sim$\+M\+Q\+Zip\+Reader} ()
+\item 
+Q\+I\+O\+Device $\ast$ \hyperlink{class_m_q_zip_reader_aff10cccb86592a1d9c228195996fdd11}{device} () const
+\item 
+bool \hyperlink{class_m_q_zip_reader_a54bd229faa64c78ec36475da770831d6}{is\+Readable} () const
+\item 
+bool \hyperlink{class_m_q_zip_reader_aa5e59037b1d83324f7f5d55d9289079a}{exists} () const
+\item 
+Q\+List$<$ \hyperlink{struct_m_q_zip_reader_1_1_file_info}{File\+Info} $>$ \hyperlink{class_m_q_zip_reader_a73e39077044aed4642ee02252cc08970}{file\+Info\+List} () const
+\item 
+int \hyperlink{class_m_q_zip_reader_a31a932689f554f36f097b96387788e94}{count} () const
+\item 
+\hyperlink{struct_m_q_zip_reader_1_1_file_info}{File\+Info} \hyperlink{class_m_q_zip_reader_a93ce1fd5d0d56e582b882a1335d43449}{entry\+Info\+At} (int index) const
+\item 
+Q\+Byte\+Array \hyperlink{class_m_q_zip_reader_a6f6a36b121208a4fae0f17c9c4f3fd93}{file\+Data} (const Q\+String \&file\+Name) const
+\item 
+bool \hyperlink{class_m_q_zip_reader_abe62477c78fb2964a80d502821608962}{extract\+All} (const Q\+String \&destination\+Dir) const
+\item 
+Status \hyperlink{class_m_q_zip_reader_a0d69600eed44ee33e5b8e8cc90238452}{status} () const
+\item 
+void \hyperlink{class_m_q_zip_reader_a4f83f0feb67643ef0f119669184a4edd}{close} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 66 of file qzipreader\+\_\+p.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_m_q_zip_reader_a3b7f7b85a1674386dc4a7b7240f4e2dc}\label{class_m_q_zip_reader_a3b7f7b85a1674386dc4a7b7240f4e2dc}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{M\+Q\+Zip\+Reader()}{MQZipReader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Reader\+::\+M\+Q\+Zip\+Reader (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{archive,  }\item[{Q\+I\+O\+Device\+::\+Open\+Mode}]{mode = {\ttfamily QIODevice\+:\+:ReadOnly} }\end{DoxyParamCaption})}
+
+Create a new zip archive that operates on the {\itshape file\+Name}. The file will be opened with the {\itshape mode}. 
+
+Definition at line 736 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_ab8f57ca2da4654b4696b0fa7635d2cff}\label{class_m_q_zip_reader_ab8f57ca2da4654b4696b0fa7635d2cff}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{M\+Q\+Zip\+Reader()}{MQZipReader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Reader\+::\+M\+Q\+Zip\+Reader (\begin{DoxyParamCaption}\item[{Q\+I\+O\+Device $\ast$}]{device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Create a new zip archive that operates on the archive found in {\itshape device}. You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent. 
+
+Definition at line 764 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_ac669746daffc30103dab493e990ca141}\label{class_m_q_zip_reader_ac669746daffc30103dab493e990ca141}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!````~M\+Q\+Zip\+Reader@{$\sim$\+M\+Q\+Zip\+Reader}}
+\index{````~M\+Q\+Zip\+Reader@{$\sim$\+M\+Q\+Zip\+Reader}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{$\sim$\+M\+Q\+Zip\+Reader()}{~MQZipReader()}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Reader\+::$\sim$\+M\+Q\+Zip\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Desctructor 
+
+Definition at line 773 of file qzip.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_m_q_zip_reader_a4f83f0feb67643ef0f119669184a4edd}\label{class_m_q_zip_reader_a4f83f0feb67643ef0f119669184a4edd}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!close@{close}}
+\index{close@{close}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void M\+Q\+Zip\+Reader\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close the zip file. 
+
+Definition at line 996 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a31a932689f554f36f097b96387788e94}\label{class_m_q_zip_reader_a31a932689f554f36f097b96387788e94}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!count@{count}}
+\index{count@{count}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{count()}{count()}}
+{\footnotesize\ttfamily int M\+Q\+Zip\+Reader\+::count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the number of items in the zip archive. 
+
+Definition at line 825 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_aff10cccb86592a1d9c228195996fdd11}\label{class_m_q_zip_reader_aff10cccb86592a1d9c228195996fdd11}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!device@{device}}
+\index{device@{device}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily Q\+I\+O\+Device $\ast$ M\+Q\+Zip\+Reader\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns device used for reading zip archive. 
+
+Definition at line 782 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a93ce1fd5d0d56e582b882a1335d43449}\label{class_m_q_zip_reader_a93ce1fd5d0d56e582b882a1335d43449}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!entry\+Info\+At@{entry\+Info\+At}}
+\index{entry\+Info\+At@{entry\+Info\+At}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{entry\+Info\+At()}{entryInfoAt()}}
+{\footnotesize\ttfamily \hyperlink{struct_m_q_zip_reader_1_1_file_info}{M\+Q\+Zip\+Reader\+::\+File\+Info} M\+Q\+Zip\+Reader\+::entry\+Info\+At (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Returns a \hyperlink{struct_m_q_zip_reader_1_1_file_info}{File\+Info} of an entry in the zipfile. The {\itshape index} is the index into the directory listing of the zipfile. Returns an invalid \hyperlink{struct_m_q_zip_reader_1_1_file_info}{File\+Info} if {\itshape index} is out of boundaries.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_m_q_zip_reader_a73e39077044aed4642ee02252cc08970}{file\+Info\+List()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 838 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_aa5e59037b1d83324f7f5d55d9289079a}\label{class_m_q_zip_reader_aa5e59037b1d83324f7f5d55d9289079a}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!exists@{exists}}
+\index{exists@{exists}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily bool M\+Q\+Zip\+Reader\+::exists (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if the file exists; otherwise returns false. 
+
+Definition at line 798 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_abe62477c78fb2964a80d502821608962}\label{class_m_q_zip_reader_abe62477c78fb2964a80d502821608962}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!extract\+All@{extract\+All}}
+\index{extract\+All@{extract\+All}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{extract\+All()}{extractAll()}}
+{\footnotesize\ttfamily bool M\+Q\+Zip\+Reader\+::extract\+All (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{destination\+Dir }\end{DoxyParamCaption}) const}
+
+Extracts the full contents of the zip file into {\itshape destination\+Dir} on the local filesystem. In case writing or linking a file fails, the extraction will be aborted. 
+
+Definition at line 922 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a6f6a36b121208a4fae0f17c9c4f3fd93}\label{class_m_q_zip_reader_a6f6a36b121208a4fae0f17c9c4f3fd93}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!file\+Data@{file\+Data}}
+\index{file\+Data@{file\+Data}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{file\+Data()}{fileData()}}
+{\footnotesize\ttfamily Q\+Byte\+Array M\+Q\+Zip\+Reader\+::file\+Data (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{file\+Name }\end{DoxyParamCaption}) const}
+
+Fetch the file contents from the zip archive and return the uncompressed bytes. 
+
+Definition at line 850 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a73e39077044aed4642ee02252cc08970}\label{class_m_q_zip_reader_a73e39077044aed4642ee02252cc08970}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!file\+Info\+List@{file\+Info\+List}}
+\index{file\+Info\+List@{file\+Info\+List}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{file\+Info\+List()}{fileInfoList()}}
+{\footnotesize\ttfamily Q\+List$<$ \hyperlink{struct_m_q_zip_reader_1_1_file_info}{M\+Q\+Zip\+Reader\+::\+File\+Info} $>$ M\+Q\+Zip\+Reader\+::file\+Info\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the list of files the archive contains. 
+
+Definition at line 809 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a54bd229faa64c78ec36475da770831d6}\label{class_m_q_zip_reader_a54bd229faa64c78ec36475da770831d6}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!is\+Readable@{is\+Readable}}
+\index{is\+Readable@{is\+Readable}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{is\+Readable()}{isReadable()}}
+{\footnotesize\ttfamily bool M\+Q\+Zip\+Reader\+::is\+Readable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns true if the user can read the file; otherwise returns false. 
+
+Definition at line 790 of file qzip.\+cpp.
+
+\mbox{\Hypertarget{class_m_q_zip_reader_a0d69600eed44ee33e5b8e8cc90238452}\label{class_m_q_zip_reader_a0d69600eed44ee33e5b8e8cc90238452}} 
+\index{M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}!status@{status}}
+\index{status@{status}!M\+Q\+Zip\+Reader@{M\+Q\+Zip\+Reader}}
+\subsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily M\+Q\+Zip\+Reader\+::\+Status M\+Q\+Zip\+Reader\+::status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns a status code indicating the first error that was met by \hyperlink{class_q_zip_reader}{Q\+Zip\+Reader}, or Q\+Zip\+Reader\+::\+No\+Error if no error occurred. 
+
+Definition at line 988 of file qzip.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/qzip/qzipreader\+\_\+p.\+h\item 
+thirdparty/qzip/qzip.\+cpp\end{DoxyCompactItemize}

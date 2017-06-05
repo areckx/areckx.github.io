@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="ftcid_8h" kind="file" language="C++">
+    <compoundname>ftcid.h</compoundname>
+    <includes local="no">ft2build.h</includes>
+    <incdepgraph>
+      <node id="77447">
+        <label>thirdparty/freetype/include/freetype/ftcid.h</label>
+        <link refid="ftcid_8h"/>
+        <childnode refid="77448" relation="include">
+        </childnode>
+      </node>
+      <node id="77448">
+        <label>ft2build.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ftcid_8h_1a4d090c134b19ca4528a4dd09094630f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>FT_BEGIN_HEADER</type>
+        <definition>FT_BEGIN_HEADER FT_Get_CID_Registry_Ordering_Supplement</definition>
+        <argsstring>(FT_Face face, const char **registry, const char **ordering, FT_Int *supplement)</argsstring>
+        <name>FT_Get_CID_Registry_Ordering_Supplement</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>registry</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>ordering</declname>
+        </param>
+        <param>
+          <type>FT_Int *</type>
+          <declname>supplement</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/include/freetype/ftcid.h" line="87" column="1" bodyfile="thirdparty/freetype/src/base/ftcid.c" bodystart="28" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="ftcid_8h_1a87e51d0237b4f8f1f505efaf7e5721f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FT_Get_CID_Is_Internally_CID_Keyed</definition>
+        <argsstring>(FT_Face face, FT_Bool *is_cid)</argsstring>
+        <name>FT_Get_CID_Is_Internally_CID_Keyed</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>FT_Bool *</type>
+          <declname>is_cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/include/freetype/ftcid.h" line="122" column="1" bodyfile="thirdparty/freetype/src/base/ftcid.c" bodystart="66" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="ftcid_8h_1adf755d4e91c6ecac8bd637f52ae3b8ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FT_Get_CID_From_Glyph_Index</definition>
+        <argsstring>(FT_Face face, FT_UInt glyph_index, FT_UInt *cid)</argsstring>
+        <name>FT_Get_CID_From_Glyph_Index</name>
+        <param>
+          <type><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref></type>
+          <declname>face</declname>
+        </param>
+        <param>
+          <type>FT_UInt</type>
+          <declname>glyph_index</declname>
+        </param>
+        <param>
+          <type>FT_UInt *</type>
+          <declname>cid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/freetype/include/freetype/ftcid.h" line="156" column="1" bodyfile="thirdparty/freetype/src/base/ftcid.c" bodystart="92" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>ftcid.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>FreeType<sp/>API<sp/>for<sp/>accessing<sp/>CID<sp/>font<sp/>information<sp/>(specification).<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2007-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Dereg<sp/>Clegg<sp/>and<sp/>Michael<sp/>Toftdal.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__FTCID_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__FTCID_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ft2build.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>FT_FREETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>FREETYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;freetype.h<sp/>of<sp/>FreeType<sp/>1<sp/>has<sp/>been<sp/>loaded!&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Please<sp/>fix<sp/>the<sp/>directory<sp/>search<sp/>order<sp/>for<sp/>header<sp/>files&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;so<sp/>that<sp/>freetype.h<sp/>of<sp/>FreeType<sp/>2<sp/>is<sp/>found<sp/>first.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">FT_BEGIN_HEADER</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Section&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>cid_fonts<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Title&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>CID<sp/>Fonts<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Abstract&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>CID-keyed<sp/>font<sp/>specific<sp/>API.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;Description&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>This<sp/>section<sp/>contains<sp/>the<sp/>declaration<sp/>of<sp/>CID-keyed<sp/>font<sp/>specific<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>functions.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**********************************************************************</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@function:</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FT_Get_CID_Registry_Ordering_Supplement</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>Retrieve<sp/>the<sp/>Registry/Ordering/Supplement<sp/>triple<sp/>(also<sp/>known<sp/>as<sp/>the</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>&quot;R/O/S&quot;)<sp/>from<sp/>a<sp/>CID-keyed<sp/>font.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@input:</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>face<sp/>::</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>handle<sp/>to<sp/>the<sp/>input<sp/>face.</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@output:</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>registry<sp/>::</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>registry,<sp/>as<sp/>a<sp/>C~string,<sp/>owned<sp/>by<sp/>the<sp/>face.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>ordering<sp/>::</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>ordering,<sp/>as<sp/>a<sp/>C~string,<sp/>owned<sp/>by<sp/>the<sp/>face.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>supplement<sp/>::</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>supplement.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return:</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FreeType<sp/>error<sp/>code.<sp/><sp/>0~means<sp/>success.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>This<sp/>function<sp/>only<sp/>works<sp/>with<sp/>CID<sp/>faces,<sp/>returning<sp/>an<sp/>error</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>otherwise.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@since:</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>2.3.6</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>FT_EXPORT(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>FT_Get_CID_Registry_Ordering_Supplement(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/>*registry,</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><sp/>*ordering,</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Int<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*supplement);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**********************************************************************</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@function:</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FT_Get_CID_Is_Internally_CID_Keyed</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>Retrieve<sp/>the<sp/>type<sp/>of<sp/>the<sp/>input<sp/>face,<sp/>CID<sp/>keyed<sp/>or<sp/>not.<sp/><sp/>In</highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>constrast<sp/>to<sp/>the<sp/>@FT_IS_CID_KEYED<sp/>macro<sp/>this<sp/>function<sp/>returns</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>successfully<sp/>also<sp/>for<sp/>CID-keyed<sp/>fonts<sp/>in<sp/>an<sp/>SNFT<sp/>wrapper.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@input:</highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>face<sp/>::</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>handle<sp/>to<sp/>the<sp/>input<sp/>face.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@output:</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>is_cid<sp/>::</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>type<sp/>of<sp/>the<sp/>face<sp/>as<sp/>an<sp/>@FT_Bool.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return:</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FreeType<sp/>error<sp/>code.<sp/><sp/>0~means<sp/>success.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>This<sp/>function<sp/>only<sp/>works<sp/>with<sp/>CID<sp/>faces<sp/>and<sp/>OpenType<sp/>fonts,</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>returning<sp/>an<sp/>error<sp/>otherwise.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@since:</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>2.3.9</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>FT_EXPORT(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>FT_Get_CID_Is_Internally_CID_Keyed(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_Bool<sp/><sp/>*is_cid<sp/>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/**********************************************************************</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@function:</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FT_Get_CID_From_Glyph_Index</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@description:</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>Retrieve<sp/>the<sp/>CID<sp/>of<sp/>the<sp/>input<sp/>glyph<sp/>index.</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@input:</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>face<sp/>::</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>A<sp/>handle<sp/>to<sp/>the<sp/>input<sp/>face.</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>glyph_index<sp/>::</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>input<sp/>glyph<sp/>index.</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@output:</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>cid<sp/>::</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>CID<sp/>as<sp/>an<sp/>@FT_UInt.</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@return:</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>FreeType<sp/>error<sp/>code.<sp/><sp/>0~means<sp/>success.</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@note:</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>This<sp/>function<sp/>only<sp/>works<sp/>with<sp/>CID<sp/>faces<sp/>and<sp/>OpenType<sp/>fonts,</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>returning<sp/>an<sp/>error<sp/>otherwise.</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/><sp/><sp/>*<sp/>@since:</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/><sp/><sp/>*<sp/><sp/><sp/><sp/>2.3.9</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>FT_EXPORT(<sp/>FT_Error<sp/>)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>FT_Get_CID_From_Glyph_Index(<sp/><ref refid="struct_f_t___face_rec__" kindref="compound">FT_Face</ref><sp/><sp/><sp/>face,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/><sp/>glyph_index,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>FT_UInt<sp/><sp/>*cid<sp/>);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">FT_END_HEADER</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>__FTCID_H__<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/include/freetype/ftcid.h"/>
+  </compounddef>
+</doxygen>

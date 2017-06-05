@@ -1,0 +1,356 @@
+.TH "Annot" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Annot
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBAnnot3D\fP, \fBAnnotLink\fP, \fBAnnotMarkup\fP, \fBAnnotMovie\fP, \fBAnnotPopup\fP, \fBAnnotRichMedia\fP, \fBAnnotScreen\fP, and \fBAnnotWidget\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnnotFlag\fP { \fBflagUnknown\fP = 0x0000, \fBflagInvisible\fP = 0x0001, \fBflagHidden\fP = 0x0002, \fBflagPrint\fP = 0x0004, \fBflagNoZoom\fP = 0x0008, \fBflagNoRotate\fP = 0x0010, \fBflagNoView\fP = 0x0020, \fBflagReadOnly\fP = 0x0040, \fBflagLocked\fP = 0x0080, \fBflagToggleNoView\fP = 0x0100, \fBflagLockedContents\fP = 0x0200 }"
+.br
+.ti -1c
+.RI "enum \fBAnnotSubtype\fP { \fBtypeUnknown\fP, \fBtypeText\fP, \fBtypeLink\fP, \fBtypeFreeText\fP, \fBtypeLine\fP, \fBtypeSquare\fP, \fBtypeCircle\fP, \fBtypePolygon\fP, \fBtypePolyLine\fP, \fBtypeHighlight\fP, \fBtypeUnderline\fP, \fBtypeSquiggly\fP, \fBtypeStrikeOut\fP, \fBtypeStamp\fP, \fBtypeCaret\fP, \fBtypeInk\fP, \fBtypePopup\fP, \fBtypeFileAttachment\fP, \fBtypeSound\fP, \fBtypeMovie\fP, \fBtypeWidget\fP, \fBtypeScreen\fP, \fBtypePrinterMark\fP, \fBtypeTrapNet\fP, \fBtypeWatermark\fP, \fBtype3D\fP, \fBtypeRichMedia\fP }"
+.br
+.ti -1c
+.RI "enum \fBAdditionalActionsType\fP { \fBactionCursorEntering\fP, \fBactionCursorLeaving\fP, \fBactionMousePressed\fP, \fBactionMouseReleased\fP, \fBactionFocusIn\fP, \fBactionFocusOut\fP, \fBactionPageOpening\fP, \fBactionPageClosing\fP, \fBactionPageVisible\fP, \fBactionPageInvisible\fP }"
+.br
+.ti -1c
+.RI "enum \fBFormAdditionalActionsType\fP { \fBactionFieldModified\fP, \fBactionFormatField\fP, \fBactionValidateField\fP, \fBactionCalculateField\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnot\fP (\fBPDFDoc\fP *docA, \fBPDFRectangle\fP *rectA)"
+.br
+.ti -1c
+.RI "\fBAnnot\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict)"
+.br
+.ti -1c
+.RI "\fBAnnot\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP ()"
+.br
+.ti -1c
+.RI "void \fBincRefCnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBdecRefCnt\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBGfx\fP *gfx, GBool printing)"
+.br
+.ti -1c
+.RI "virtual \fBObject\fP * \fBgetAppearanceResDict\fP (\fBObject\fP *dest)"
+.br
+.ti -1c
+.RI "GBool \fBmatch\fP (\fBRef\fP *refA)"
+.br
+.ti -1c
+.RI "double \fBgetXMin\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetYMin\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetXMax\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetYMax\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetFontSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetRect\fP (\fBPDFRectangle\fP *rect)"
+.br
+.ti -1c
+.RI "void \fBsetRect\fP (double x1, double y1, double x2, double y2)"
+.br
+.ti -1c
+.RI "virtual void \fBsetContents\fP (\fBGooString\fP *new_content)"
+.br
+.ti -1c
+.RI "void \fBsetName\fP (\fBGooString\fP *new_name)"
+.br
+.ti -1c
+.RI "void \fBsetModified\fP (\fBGooString\fP *new_date)"
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (Guint new_flags)"
+.br
+.ti -1c
+.RI "void \fBsetBorder\fP (\fBAnnotBorder\fP *new_border)"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (\fBAnnotColor\fP *new_color)"
+.br
+.ti -1c
+.RI "void \fBsetAppearanceState\fP (const char *state)"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBgetDoc\fP () const"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBgetXRef\fP () const"
+.br
+.ti -1c
+.RI "GBool \fBgetHasRef\fP () const"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBgetRef\fP () const"
+.br
+.ti -1c
+.RI "AnnotSubtype \fBgetType\fP () const"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBgetRect\fP () const"
+.br
+.ti -1c
+.RI "void \fBgetRect\fP (double *x1, double *y1, double *x2, double *y2) const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetContents\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetPageNum\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetModified\fP () const"
+.br
+.ti -1c
+.RI "Guint \fBgetFlags\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotAppearance\fP * \fBgetAppearStreams\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetAppearState\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotBorder\fP * \fBgetBorder\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotColor\fP * \fBgetColor\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetTreeKey\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetId\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBinRect\fP (double x, double y) const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBremoveReferencedObjects\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetColor\fP (\fBAnnotColor\fP *\fBcolor\fP, GBool fill)"
+.br
+.ti -1c
+.RI "void \fBsetLineStyleForBorder\fP (\fBAnnotBorder\fP *border)"
+.br
+.ti -1c
+.RI "void \fBdrawCircle\fP (double cx, double cy, double r, GBool fill)"
+.br
+.ti -1c
+.RI "void \fBdrawCircleTopLeft\fP (double cx, double cy, double r)"
+.br
+.ti -1c
+.RI "void \fBdrawCircleBottomRight\fP (double cx, double cy, double r)"
+.br
+.ti -1c
+.RI "void \fBlayoutText\fP (\fBGooString\fP *text, \fBGooString\fP *outBuf, int *i, \fBGfxFont\fP *\fBfont\fP, double *width, double widthLimit, int *charCount, GBool noReencode)"
+.br
+.ti -1c
+.RI "void \fBwriteString\fP (\fBGooString\fP *str, \fBGooString\fP *appearBuf)"
+.br
+.ti -1c
+.RI "void \fBcreateForm\fP (double *bbox, GBool transparencyGroup, \fBObject\fP *resDict, \fBObject\fP *aStream)"
+.br
+.ti -1c
+.RI "void \fBcreateResourcesDict\fP (const char *formName, \fBObject\fP *formStream, const char *stateName, double opacity, const char *blendMode, \fBObject\fP *resDict)"
+.br
+.ti -1c
+.RI "GBool \fBisVisible\fP (GBool printing)"
+.br
+.ti -1c
+.RI "int \fBgetRotation\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdate\fP (const char *key, \fBObject\fP *value)"
+.br
+.ti -1c
+.RI "void \fBinvalidateAppearance\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBrefCnt\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBannotObj\fP"
+.br
+.ti -1c
+.RI "AnnotSubtype \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBPDFRectangle\fP * \fBrect\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBcontents\fP"
+.br
+.ti -1c
+.RI "int \fBpage\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBname\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBmodified\fP"
+.br
+.ti -1c
+.RI "Guint \fBflags\fP"
+.br
+.ti -1c
+.RI "\fBAnnotAppearance\fP * \fBappearStreams\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBappearance\fP"
+.br
+.ti -1c
+.RI "\fBAnnotAppearanceBBox\fP * \fBappearBBox\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBappearState\fP"
+.br
+.ti -1c
+.RI "int \fBtreeKey\fP"
+.br
+.ti -1c
+.RI "\fBObject\fP \fBoc\fP"
+.br
+.ti -1c
+.RI "\fBPDFDoc\fP * \fBdoc\fP"
+.br
+.ti -1c
+.RI "\fBXRef\fP * \fBxref\fP"
+.br
+.ti -1c
+.RI "\fBRef\fP \fBref\fP"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBappearBuf\fP"
+.br
+.ti -1c
+.RI "\fBAnnotBorder\fP * \fBborder\fP"
+.br
+.ti -1c
+.RI "\fBAnnotColor\fP * \fBcolor\fP"
+.br
+.ti -1c
+.RI "double \fBfontSize\fP"
+.br
+.ti -1c
+.RI "GBool \fBok\fP"
+.br
+.ti -1c
+.RI "bool \fBhasRef\fP"
+.br
+.ti -1c
+.RI "GooMutex \fBmutex\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnots\fP"
+.br
+.ti -1c
+.RI "class \fBPage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 486 of file Annot\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBAnnot::AdditionalActionsType\fP"
+Describes the additional actions of a screen or widget annotation\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIactionCursorEntering \fP\fP
+Performed when the cursor enters the annotation's active area\&. 
+.TP
+\fB\fIactionCursorLeaving \fP\fP
+Performed when the cursor exists the annotation's active area\&. 
+.TP
+\fB\fIactionMousePressed \fP\fP
+Performed when the mouse button is pressed inside the annotation's active area\&. 
+.TP
+\fB\fIactionMouseReleased \fP\fP
+Performed when the mouse button is released inside the annotation's active area\&. 
+.TP
+\fB\fIactionFocusIn \fP\fP
+Performed when the annotation receives the input focus\&. 
+.TP
+\fB\fIactionFocusOut \fP\fP
+Performed when the annotation loses the input focus\&. 
+.TP
+\fB\fIactionPageOpening \fP\fP
+Performed when the page containing the annotation is opened\&. 
+.TP
+\fB\fIactionPageClosing \fP\fP
+Performed when the page containing the annotation is closed\&. 
+.TP
+\fB\fIactionPageVisible \fP\fP
+Performed when the page containing the annotation becomes visible\&. 
+.TP
+\fB\fIactionPageInvisible \fP\fP
+Performed when the page containing the annotation becomes invisible\&. 
+.PP
+Definition at line 537 of file Annot\&.h\&.
+.SS "enum \fBAnnot::FormAdditionalActionsType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIactionFieldModified \fP\fP
+Performed when the when the user modifies the field\&. 
+.TP
+\fB\fIactionFormatField \fP\fP
+Performed before the field is formatted to display its value\&. 
+.TP
+\fB\fIactionValidateField \fP\fP
+Performed when the field value changes\&. 
+.TP
+\fB\fIactionCalculateField \fP\fP
+Performed when the field needs to be recalculated\&. 
+.PP
+Definition at line 550 of file Annot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,104 @@
+.TH "Ms::LineSegment" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::LineSegment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <line\&.h>\fP
+.PP
+Inherits \fBMs::SpannerSegment\fP\&.
+.PP
+Inherited by \fBMs::GlissandoSegment\fP, \fBMs::LyricsLineSegment\fP, \fBMs::TextLineBaseSegment\fP, and \fBMs::TrillSegment\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLineSegment\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBLineSegment\fP (const \fBLineSegment\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const =0"
+.br
+.ti -1c
+.RI "\fBSLine\fP * \fBline\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal, qreal) override"
+.br
+.ti -1c
+.RI "virtual void \fBlocalSpatiumChanged\fP (qreal, qreal) override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual QLineF \fBdragAnchor\fP () const override"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetGrip\fP (Grip, const QPointF &p) override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgetGrip\fP (Grip) const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgripAnchor\fP (Grip) const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEditDrag\fP (\fBEditData\fP &) override"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSLine\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Virtual base class for segmented lines segments (\fBOttavaSegment\fP, \fBHairpinSegment\fP, \fBTrillSegment\fP\&.\&.\&.)
+.PP
+This class describes one segment of an segmented line object\&. \fBLine\fP objects can span multiple staves\&. For every staff a segment is created\&. 
+.PP
+Definition at line 35 of file line\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

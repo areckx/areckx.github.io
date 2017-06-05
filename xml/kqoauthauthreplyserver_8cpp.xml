@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="kqoauthauthreplyserver_8cpp" kind="file" language="C++">
+    <compoundname>kqoauthauthreplyserver.cpp</compoundname>
+    <includes local="no">QTcpSocket</includes>
+    <includes local="no">QStringList</includes>
+    <includes local="no">QUrl</includes>
+    <includes refid="kqoauthauthreplyserver_8h" local="yes">kqoauthauthreplyserver.h</includes>
+    <includes refid="kqoauthauthreplyserver__p_8h" local="yes">kqoauthauthreplyserver_p.h</includes>
+    <incdepgraph>
+      <node id="81815">
+        <label>kqoauthauthreplyserver.h</label>
+        <link refid="kqoauthauthreplyserver_8h_source"/>
+        <childnode refid="81816" relation="include">
+        </childnode>
+        <childnode refid="81817" relation="include">
+        </childnode>
+      </node>
+      <node id="81814">
+        <label>QUrl</label>
+      </node>
+      <node id="81811">
+        <label>thirdparty/kQOAuth/kqoauthauthreplyserver.cpp</label>
+        <link refid="kqoauthauthreplyserver_8cpp"/>
+        <childnode refid="81812" relation="include">
+        </childnode>
+        <childnode refid="81813" relation="include">
+        </childnode>
+        <childnode refid="81814" relation="include">
+        </childnode>
+        <childnode refid="81815" relation="include">
+        </childnode>
+        <childnode refid="81819" relation="include">
+        </childnode>
+      </node>
+      <node id="81818">
+        <label>QtCore/qglobal.h</label>
+      </node>
+      <node id="81817">
+        <label>kqoauthglobals.h</label>
+        <link refid="kqoauthglobals_8h_source"/>
+        <childnode refid="81818" relation="include">
+        </childnode>
+      </node>
+      <node id="81821">
+        <label>QString</label>
+      </node>
+      <node id="81819">
+        <label>kqoauthauthreplyserver_p.h</label>
+        <link refid="kqoauthauthreplyserver__p_8h_source"/>
+        <childnode refid="81815" relation="include">
+        </childnode>
+        <childnode refid="81820" relation="include">
+        </childnode>
+        <childnode refid="81821" relation="include">
+        </childnode>
+      </node>
+      <node id="81812">
+        <label>QTcpSocket</label>
+      </node>
+      <node id="81816">
+        <label>QTcpServer</label>
+      </node>
+      <node id="81813">
+        <label>QStringList</label>
+      </node>
+      <node id="81820">
+        <label>QMultiMap</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="20"><highlight class="preprocessor">#include<sp/>&lt;QTcpSocket&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QUrl&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>0x050000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QUrlQuery&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kqoauthauthreplyserver.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;kqoauthauthreplyserver_p.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_k_q_o_auth_auth_reply_server_private_1a638a7c5556c25e16955294f8aaa77c1b" refkind="member"><highlight class="normal"><ref refid="class_k_q_o_auth_auth_reply_server_private_1a638a7c5556c25e16955294f8aaa77c1b" kindref="member">KQOAuthAuthReplyServerPrivate::KQOAuthAuthReplyServerPrivate</ref>(<ref refid="class_k_q_o_auth_auth_reply_server" kindref="compound">KQOAuthAuthReplyServer</ref><sp/>*parent):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>q_ptr(parent)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">KQOAuthAuthReplyServerPrivate::~KQOAuthAuthReplyServerPrivate()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KQOAuthAuthReplyServerPrivate::onIncomingConnection()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_Q(<ref refid="class_k_q_o_auth_auth_reply_server" kindref="compound">KQOAuthAuthReplyServer</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>socket<sp/>=<sp/>q-&gt;nextPendingConnection();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(socket,<sp/>SIGNAL(readyRead()),</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(onBytesReady()),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>KQOAuthAuthReplyServerPrivate::onBytesReady()<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_Q(<ref refid="class_k_q_o_auth_auth_reply_server" kindref="compound">KQOAuthAuthReplyServer</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/>reply;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="namespacecontent" kindref="compound">content</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>content.append(</highlight><highlight class="stringliteral">&quot;&lt;HTML&gt;&lt;/HTML&gt;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>reply.append(</highlight><highlight class="stringliteral">&quot;HTTP/1.0<sp/>200<sp/>OK<sp/>\r\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>reply.append(</highlight><highlight class="stringliteral">&quot;Content-Type:<sp/>text/html;<sp/>charset=\&quot;utf-8\&quot;\r\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>reply.append(QString(</highlight><highlight class="stringliteral">&quot;Content-Length:<sp/>%1\r\n&quot;</highlight><highlight class="normal">).arg(content.size()));</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>reply.append(</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>reply.append(content);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>socket-&gt;write(reply);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/>data<sp/>=<sp/>socket-&gt;readAll();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>QMultiMap&lt;QString,<sp/>QString&gt;<sp/>queryParams<sp/>=<sp/>parseQueryParams(&amp;data);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>socket-&gt;disconnectFromHost();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>q-&gt;close();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/>q-&gt;verificationReceived(queryParams);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal">QMultiMap&lt;QString,<sp/>QString&gt;<sp/>KQOAuthAuthReplyServerPrivate::parseQueryParams(QByteArray<sp/>*data)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>splitGetLine<sp/>=<sp/>QString(*data).split(</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal">).first();<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>the<sp/>first<sp/>line<sp/>with<sp/>query<sp/>params.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>splitGetLine.remove(</highlight><highlight class="stringliteral">&quot;GET<sp/>&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clean<sp/>the<sp/>line<sp/>from<sp/>GET</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>splitGetLine.remove(</highlight><highlight class="stringliteral">&quot;HTTP/1.1&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>From<sp/>HTTP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>splitGetLine.remove(</highlight><highlight class="stringliteral">&quot;\r\n&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>And<sp/>from<sp/>rest.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>splitGetLine.prepend(</highlight><highlight class="stringliteral">&quot;http://localhost&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Now,<sp/>make<sp/>it<sp/>a<sp/>URL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>QUrl<sp/>getTokenUrl(splitGetLine);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&lt;<sp/>0x050000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<sp/>QPair&lt;QString,<sp/>QString&gt;<sp/>&gt;<sp/>tokens<sp/>=<sp/>getTokenUrl.queryItems();<sp/><sp/></highlight><highlight class="comment">//<sp/>Ask<sp/>QUrl<sp/>to<sp/>do<sp/>our<sp/>work.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;<sp/>QPair&lt;QString,<sp/>QString&gt;<sp/>&gt;<sp/>tokens<sp/>=<sp/>QUrlQuery(getTokenUrl.query()).queryItems();<sp/><sp/></highlight><highlight class="comment">//<sp/>Ask<sp/>QUrl<sp/>to<sp/>do<sp/>our<sp/>work.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>QMultiMap&lt;QString,<sp/>QString&gt;<sp/>queryParams;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>QPair&lt;QString,<sp/>QString&gt;<sp/>tokenPair;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal"><sp/>(tokenPair,<sp/>tokens)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>queryParams.insert(tokenPair.first.trimmed(),<sp/>tokenPair.second.trimmed());</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>queryParams;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">KQOAuthAuthReplyServer::KQOAuthAuthReplyServer(QObject<sp/>*parent)<sp/>:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>QTcpServer(parent),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>d_ptr(<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_k_q_o_auth_auth_reply_server_private_1a638a7c5556c25e16955294f8aaa77c1b" kindref="member">KQOAuthAuthReplyServerPrivate</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">)<sp/>)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_D(<ref refid="class_k_q_o_auth_auth_reply_server" kindref="compound">KQOAuthAuthReplyServer</ref>);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SIGNAL(newConnection()),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d,<sp/>SLOT(onIncomingConnection()));</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">KQOAuthAuthReplyServer::~KQOAuthAuthReplyServer()</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>d_ptr;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/kQOAuth/kqoauthauthreplyserver.cpp"/>
+  </compounddef>
+</doxygen>

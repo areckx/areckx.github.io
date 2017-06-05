@@ -1,0 +1,173 @@
+.TH "Ms::Box" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Box \- virtual base class for frames 'boxes'  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <box\&.h>\fP
+.PP
+Inherits \fBMs::MeasureBase\fP\&.
+.PP
+Inherited by \fBMs::HBox\fP, and \fBMs::VBox\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBox\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBedit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml, int, bool, bool) const override"
+.br
+.ti -1c
+.RI "virtual void \fBwriteProperties\fP (\fBXmlWriter\fP &) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBreadProperties\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *e) override"
+.br
+.RI "Add new \fBElement\fP \fIel\fP to \fBBox\fP\&. "
+.ti -1c
+.RI "\fBSpatium\fP \fBboxWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBoxWidth\fP (\fBSpatium\fP val)"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fBboxHeight\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBoxHeight\fP (\fBSpatium\fP val)"
+.br
+.ti -1c
+.RI "qreal \fBleftMargin\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBrightMargin\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBtopMargin\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBbottomMargin\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLeftMargin\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetRightMargin\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetTopMargin\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetBottomMargin\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBtopGap\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTopGap\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBbottomGap\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBottomGap\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBcopyValues\fP (\fBBox\fP *origin)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id) override"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID id) const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+virtual base class for frames 'boxes' 
+.PP
+Definition at line 33 of file box\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Box::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 566 of file box\&.cpp\&.
+.SS "\fBElement\fP * Ms::Box::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Reimplemented in \fBMs::TBox\fP\&.
+.PP
+Definition at line 601 of file box\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

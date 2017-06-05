@@ -1,0 +1,1897 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_seq" kind="class" language="C++" prot="public">
+    <compoundname>Ms::Seq</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <basecompoundref refid="class_ms_1_1_sequencer" prot="public" virt="non-virtual">Ms::Sequencer</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_seq_1ac492a805defa53e54fcd6d9b373adb12" prot="private" static="no" mutable="yes">
+        <type>QMutex</type>
+        <definition>QMutex Ms::Seq::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="107" column="1" bodyfile="mscore/seq.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aadd5dd64cd48ab8b9bef31f7837ade9c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_master_score" kindref="compound">MasterScore</ref> *</type>
+        <definition>MasterScore* Ms::Seq::cs</definition>
+        <argsstring></argsstring>
+        <name>cs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="109" column="1" bodyfile="mscore/seq.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aaeed7015e469d090a60cf9da360a4d2c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_score_view" kindref="compound">ScoreView</ref> *</type>
+        <definition>ScoreView* Ms::Seq::cv</definition>
+        <argsstring></argsstring>
+        <name>cv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="110" column="1" bodyfile="mscore/seq.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1ac42e292f0f160390d7559337f53bc477" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Seq::running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="111" column="1" bodyfile="mscore/seq.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a680edb9a1ecd57b666fcc86e5060f77f" prot="private" static="no" mutable="no">
+        <type>Transport</type>
+        <definition>Transport Ms::Seq::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="112" column="1" bodyfile="mscore/seq.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aa1d1525b89bd4b55bce8756ea8e4a442" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Seq::inCountIn</definition>
+        <argsstring></argsstring>
+        <name>inCountIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="113" column="1" bodyfile="mscore/seq.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a190fc0a3712cbde035f0393f88ae3b9d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Seq::useJackTransportSavedFlag</definition>
+        <argsstring></argsstring>
+        <name>useJackTransportSavedFlag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="119" column="1" bodyfile="mscore/seq.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a58e229c3fa303dfff951b97f73a97b41" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Seq::maxMidiOutPort</definition>
+        <argsstring></argsstring>
+        <name>maxMidiOutPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="120" column="1" bodyfile="mscore/seq.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a4846498da25f42420915aac9af1e7c12" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction Ms::Seq::prevTimeSig</definition>
+        <argsstring></argsstring>
+        <name>prevTimeSig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="121" column="1" bodyfile="mscore/seq.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1af21ca0aa355a86cf54a377b6ab5a655e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Ms::Seq::prevTempo</definition>
+        <argsstring></argsstring>
+        <name>prevTempo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="122" column="1" bodyfile="mscore/seq.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a4aead28094b51b8346f327e42ab12fdc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Seq::oggInit</definition>
+        <argsstring></argsstring>
+        <name>oggInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="124" column="1" bodyfile="mscore/seq.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a6c586e623cf8f1f349f4980add8ab57e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Seq::playlistChanged</definition>
+        <argsstring></argsstring>
+        <name>playlistChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="125" column="1" bodyfile="mscore/seq.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a7fb554f72c5bb965d1c25c60a0670643" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_seq_msg_fifo" kindref="compound">SeqMsgFifo</ref></type>
+        <definition>SeqMsgFifo Ms::Seq::toSeq</definition>
+        <argsstring></argsstring>
+        <name>toSeq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="127" column="1" bodyfile="mscore/seq.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1acb4dc7ce45e4bd5aa95cb638985fae44" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_seq_msg_fifo" kindref="compound">SeqMsgFifo</ref></type>
+        <definition>SeqMsgFifo Ms::Seq::fromSeq</definition>
+        <argsstring></argsstring>
+        <name>fromSeq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="128" column="1" bodyfile="mscore/seq.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a65a7e51ecdda8dd68bf1968be2434889" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_driver" kindref="compound">Driver</ref> *</type>
+        <definition>Driver* Ms::Seq::_driver</definition>
+        <argsstring></argsstring>
+        <name>_driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="129" column="1" bodyfile="mscore/seq.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a10ec4e5aa1156ff57a73f07cbbb17696" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_master_synthesizer" kindref="compound">MasterSynthesizer</ref> *</type>
+        <definition>MasterSynthesizer* Ms::Seq::_synti</definition>
+        <argsstring></argsstring>
+        <name>_synti</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="130" column="1" bodyfile="mscore/seq.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1ac7d0bf292171b9d91de7508f4371daf2" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Ms::Seq::meterValue[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>meterValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="132" column="1" bodyfile="mscore/seq.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a56c490cc2bf054be224662ae868e51a6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Ms::Seq::meterPeakValue[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>meterPeakValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="133" column="1" bodyfile="mscore/seq.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1abfba92017f1ef58b4d5c141b0f5aa174" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Seq::peakTimer[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>peakTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="134" column="1" bodyfile="mscore/seq.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aaf1d655ec7b1aa1de03a7cf1d4c7699c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_event_map" kindref="compound">EventMap</ref></type>
+        <definition>EventMap Ms::Seq::events</definition>
+        <argsstring></argsstring>
+        <name>events</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="136" column="1" bodyfile="mscore/seq.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a2f1d141c4790d779e3987b55c0e31dd0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_event_map" kindref="compound">EventMap</ref></type>
+        <definition>EventMap Ms::Seq::countInEvents</definition>
+        <argsstring></argsstring>
+        <name>countInEvents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="137" column="1" bodyfile="mscore/seq.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1afa41a80c7f952856c19b80418773751c" prot="private" static="no" mutable="no">
+        <type>QQueue&lt; <ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref> &gt;</type>
+        <definition>QQueue&lt;NPlayEvent&gt; Ms::Seq::_liveEventQueue</definition>
+        <argsstring></argsstring>
+        <name>_liveEventQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="138" column="1" bodyfile="mscore/seq.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a0ff3f548c98121875a61abd5e15353d3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Seq::playFrame</definition>
+        <argsstring></argsstring>
+        <name>playFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="140" column="1" bodyfile="mscore/seq.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a96efa8b1507b1bbf033401baf75e06e9" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Seq::countInPlayFrame</definition>
+        <argsstring></argsstring>
+        <name>countInPlayFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="141" column="1" bodyfile="mscore/seq.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a8b512e4561231e8c8990137fd5bf84a1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Seq::endUTick</definition>
+        <argsstring></argsstring>
+        <name>endUTick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="142" column="1" bodyfile="mscore/seq.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1ad5dcaae858e0c9bcecf36845e6536455" prot="private" static="no" mutable="no">
+        <type>EventMap::const_iterator</type>
+        <definition>EventMap::const_iterator Ms::Seq::playPos</definition>
+        <argsstring></argsstring>
+        <name>playPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="144" column="1" bodyfile="mscore/seq.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a717e97446b91bd7ea0bb858638288daf" prot="private" static="no" mutable="no">
+        <type>EventMap::const_iterator</type>
+        <definition>EventMap::const_iterator Ms::Seq::countInPlayPos</definition>
+        <argsstring></argsstring>
+        <name>countInPlayPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="145" column="1" bodyfile="mscore/seq.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a53aa0aa1a22408002f456df78837b649" prot="private" static="no" mutable="no">
+        <type>EventMap::const_iterator</type>
+        <definition>EventMap::const_iterator Ms::Seq::guiPos</definition>
+        <argsstring></argsstring>
+        <name>guiPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="146" column="1" bodyfile="mscore/seq.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1ad51fd87a4eeef93262cd6b9cef969b30" prot="private" static="no" mutable="no">
+        <type>QList&lt; const <ref refid="class_ms_1_1_note" kindref="compound">Note</ref> * &gt;</type>
+        <definition>QList&lt;const Note*&gt; Ms::Seq::markedNotes</definition>
+        <argsstring></argsstring>
+        <name>markedNotes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="148" column="1" bodyfile="mscore/seq.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a47aecbe04a96991907f81b4ed78ed562" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint Ms::Seq::tackRemain</definition>
+        <argsstring></argsstring>
+        <name>tackRemain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="150" column="1" bodyfile="mscore/seq.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a9a358022ba5e6634e60b9f81e1b5818b" prot="private" static="no" mutable="no">
+        <type>uint</type>
+        <definition>uint Ms::Seq::tickRemain</definition>
+        <argsstring></argsstring>
+        <name>tickRemain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="151" column="1" bodyfile="mscore/seq.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aed538425bdc26984ff1b1d3f7bd3b4ba" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Ms::Seq::tackVolume</definition>
+        <argsstring></argsstring>
+        <name>tackVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="152" column="1" bodyfile="mscore/seq.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a92f8f32c8722eac57c847307535e6c16" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Ms::Seq::tickVolume</definition>
+        <argsstring></argsstring>
+        <name>tickVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="153" column="1" bodyfile="mscore/seq.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1aec698ad27291359e8910ed7973533a0c" prot="private" static="no" mutable="no">
+        <type>qreal</type>
+        <definition>qreal Ms::Seq::metronomeVolume</definition>
+        <argsstring></argsstring>
+        <name>metronomeVolume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="154" column="1" bodyfile="mscore/seq.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a297d4688dc609d49b379feadde96c68a" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Seq::initialMillisecondTimestampWithLatency</definition>
+        <argsstring></argsstring>
+        <name>initialMillisecondTimestampWithLatency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="156" column="1" bodyfile="mscore/seq.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1abb575740655762eb789bb8a6ad6af2c5" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* Ms::Seq::heartBeatTimer</definition>
+        <argsstring></argsstring>
+        <name>heartBeatTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="158" column="1" bodyfile="mscore/seq.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_seq_1a6d7b7e9ab56871a39cbc49d43aa0a913" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* Ms::Seq::noteTimer</definition>
+        <argsstring></argsstring>
+        <name>noteTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="159" column="1" bodyfile="mscore/seq.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_seq_1ad80cafaad73267ae02270573c71e4c93" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::collectMeasureEvents</definition>
+        <argsstring>(Measure *, int staffIdx)</argsstring>
+        <name>collectMeasureEvents</name>
+        <param>
+          <type><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> *</type>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>staffIdx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="161" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a2c8af843a7dc5ac5057e1378f0da19bf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setPos</definition>
+        <argsstring>(int)</argsstring>
+        <name>setPos</name>
+        <param>
+          <type>int</type>
+          <defname>utick</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="163" column="1" bodyfile="mscore/seq.cpp" bodystart="1043" bodyend="1061"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a3eb9ce1966434a6c23148df542aead9d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::playEvent</definition>
+        <argsstring>(const NPlayEvent &amp;, unsigned framePos)</argsstring>
+        <name>playEvent</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref> &amp;</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>framePos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="164" column="1" bodyfile="mscore/seq.cpp" bodystart="508" bodyend="526"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1aa303697d94981c94b4f3133a94daf1b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::guiToSeq</definition>
+        <argsstring>(const SeqMsg &amp;msg)</argsstring>
+        <name>guiToSeq</name>
+        <param>
+          <type>const <ref refid="struct_ms_1_1_seq_msg" kindref="compound">SeqMsg</ref> &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="165" column="1" bodyfile="mscore/seq.cpp" bodystart="1334" bodyend="1339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a85664d4f3fa1146bed214dec4269e04f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::metronome</definition>
+        <argsstring>(unsigned n, float *l, bool force)</argsstring>
+        <name>metronome</name>
+        <param>
+          <type>unsigned</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>l</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="166" column="1" bodyfile="mscore/seq.cpp" bodystart="592" bodyend="622"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ae5eccb44efc34dafeafc3122dd8218c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::seekCommon</definition>
+        <argsstring>(int utick)</argsstring>
+        <name>seekCommon</name>
+        <param>
+          <type>int</type>
+          <declname>utick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="167" column="1" bodyfile="mscore/seq.cpp" bodystart="1070" bodyend="1086"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a0d6fc9bafe8e98adcb68da75781af176" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::unmarkNotes</definition>
+        <argsstring>()</argsstring>
+        <name>unmarkNotes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="168" column="1" bodyfile="mscore/seq.cpp" bodystart="410" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a26767cab898175b394bf9d3181b0c900" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::updateSynthesizerState</definition>
+        <argsstring>(int tick1, int tick2)</argsstring>
+        <name>updateSynthesizerState</name>
+        <param>
+          <type>int</type>
+          <declname>tick1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tick2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="169" column="1" bodyfile="mscore/seq.cpp" bodystart="1532" bodyend="1546"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1aab9bd4f6ee4f4904fb4577506e8ee1ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::addCountInClicks</definition>
+        <argsstring>()</argsstring>
+        <name>addCountInClicks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="170" column="1" bodyfile="mscore/seq.cpp" bodystart="628" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a6dedcd1d372f5ff401ce3b4f50888194" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QQueue&lt; <ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref> &gt; *</type>
+        <definition>QQueue&lt;NPlayEvent&gt;* Ms::Seq::liveEventQueue</definition>
+        <argsstring>()</argsstring>
+        <name>liveEventQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="172" column="1" bodyfile="mscore/seq.h" bodystart="172" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a2875d6b1eda04a8c9af9448e610bd51e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::seqMessage</definition>
+        <argsstring>(int msg, int arg=0)</argsstring>
+        <name>seqMessage</name>
+        <param>
+          <type>int</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>arg</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="175" column="1" bodyfile="mscore/seq.cpp" bodystart="446" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a3dcfa121160eac1702a22e5ab1481154" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::heartBeatTimeout</definition>
+        <argsstring>()</argsstring>
+        <name>heartBeatTimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="176" column="1" bodyfile="mscore/seq.cpp" bodystart="1435" bodyend="1523"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a17f4a2dccd2cc3b544903702312b15cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::midiInputReady</definition>
+        <argsstring>()</argsstring>
+        <name>midiInputReady</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="177" column="1" bodyfile="mscore/seq.cpp" bodystart="1354" bodyend="1358"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1ae1818b59aa8767d257b00a33f2052cb7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setPlaylistChanged</definition>
+        <argsstring>()</argsstring>
+        <name>setPlaylistChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="178" column="1" bodyfile="mscore/seq.h" bodystart="178" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a2498f293eba7b6389509fb6c53c012ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::handleTimeSigTempoChanged</definition>
+        <argsstring>()</argsstring>
+        <name>handleTimeSigTempoChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="179" column="1" bodyfile="mscore/seq.cpp" bodystart="1619" bodyend="1622"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a1d0d04333fb7a1d13d74c9fb078231a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setRelTempo</definition>
+        <argsstring>(double)</argsstring>
+        <name>setRelTempo</name>
+        <param>
+          <type>double</type>
+          <defname>relTempo</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="182" column="1" bodyfile="mscore/seq.cpp" bodystart="1032" bodyend="1035"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a152f4db32b5ef3c4653f550df4ff345d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::seek</definition>
+        <argsstring>(int utick)</argsstring>
+        <name>seek</name>
+        <param>
+          <type>int</type>
+          <declname>utick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="183" column="1" bodyfile="mscore/seq.cpp" bodystart="1094" bodyend="1112"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a0a3c3df88a97b171eb633499ca6981d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::seekRT</definition>
+        <argsstring>(int utick)</argsstring>
+        <name>seekRT</name>
+        <param>
+          <type>int</type>
+          <declname>utick</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="184" column="1" bodyfile="mscore/seq.cpp" bodystart="1119" bodyend="1127"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1acdc1745b60c3e179d23cd9126ed970ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::stopNotes</definition>
+        <argsstring>(int channel=-1, bool realTime=false)</argsstring>
+        <name>stopNotes</name>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+          <defval>-1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>realTime</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="185" column="1" bodyfile="mscore/seq.cpp" bodystart="1187" bodyend="1212"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a6854cb112a74798107f995485b0e49d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="186" column="1" bodyfile="mscore/seq.cpp" bodystart="298" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1a9498740067f058300cd380daccd0ea27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="187" column="1" bodyfile="mscore/seq.cpp" bodystart="342" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1acb2f6cd11fb8fb160aec904769169b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setPos</definition>
+        <argsstring>(POS, unsigned)</argsstring>
+        <name>setPos</name>
+        <param>
+          <type>POS</type>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <defname>tick</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="188" column="1" bodyfile="mscore/seq.cpp" bodystart="1599" bodyend="1602"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_ms_1_1_seq_1ad94f8b2956f53a9376d0dd83fff65bd2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setMetronomeGain</definition>
+        <argsstring>(float val)</argsstring>
+        <name>setMetronomeGain</name>
+        <param>
+          <type>float</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="189" column="1" bodyfile="mscore/seq.h" bodystart="189" bodyend="189"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_ms_1_1_seq_1a6879529276176f883630b1057d734e61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::started</definition>
+        <argsstring>()</argsstring>
+        <name>started</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="192" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="265" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_ms_1_1_seq_1ab47621af7a427346346d3fd12d1f3eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::stopped</definition>
+        <argsstring>()</argsstring>
+        <name>stopped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="193" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="271" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_ms_1_1_seq_1a87897c5b6f7be3b67fdfb427b0fbe73f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Seq::toGui</definition>
+        <argsstring>(int, int arg=0)</argsstring>
+        <name>toGui</name>
+        <param>
+          <type>int</type>
+          <defname>_t1</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>arg</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="194" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="277" bodyend="283"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_ms_1_1_seq_1a897be22679d058933fa637618bfca62a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::heartBeat</definition>
+        <argsstring>(int, int, int)</argsstring>
+        <name>heartBeat</name>
+        <param>
+          <type>int</type>
+          <defname>_t1</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>_t2</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>_t3</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="195" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="286" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_ms_1_1_seq_1aaaee0c8b6ba097728bb159ae57b66361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::tempoChanged</definition>
+        <argsstring>()</argsstring>
+        <name>tempoChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="196" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="293" bodyend="296"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_ms_1_1_seq_1a75aa495af6010ed1ce276487b4f1868e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::timeSigChanged</definition>
+        <argsstring>()</argsstring>
+        <name>timeSigChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="197" column="1" bodyfile="build.release/mscore/mscore_autogen/EWIEGA46WW/moc_seq.cpp" bodystart="299" bodyend="302"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_seq_1a5518501d631f4688ccf4918ae5d3ad26" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Seq::Seq</definition>
+        <argsstring>()</argsstring>
+        <name>Seq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="200" column="1" bodyfile="mscore/seq.cpp" bodystart="142" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a1cfe1ce20b944b36f3a2a0ac5837ee4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Seq::~Seq</definition>
+        <argsstring>()</argsstring>
+        <name>~Seq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="201" column="1" bodyfile="mscore/seq.cpp" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a3e2066fafa6413eaaf0843a12ff96e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::canStart</definition>
+        <argsstring>()</argsstring>
+        <name>canStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="202" column="1" bodyfile="mscore/seq.cpp" bodystart="284" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a11d3d3b11d186fb3ae276474f150897d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::rewindStart</definition>
+        <argsstring>()</argsstring>
+        <name>rewindStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="203" column="1" bodyfile="mscore/seq.cpp" bodystart="264" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1acae7e066eafa08c09c4263bac4f57ef1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::loopStart</definition>
+        <argsstring>()</argsstring>
+        <name>loopStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="204" column="1" bodyfile="mscore/seq.cpp" bodystart="273" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a4b3b14bd323f8413cb1c1f2f4f6d0d09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::seekEnd</definition>
+        <argsstring>()</argsstring>
+        <name>seekEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="205" column="1" bodyfile="mscore/seq.cpp" bodystart="1325" bodyend="1328"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a315f95b5bb5a6c097bc5b5a0149c0d7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::nextMeasure</definition>
+        <argsstring>()</argsstring>
+        <name>nextMeasure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="206" column="1" bodyfile="mscore/seq.cpp" bodystart="1239" bodyend="1247"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1acea389762f5cabced8927c32e546b5fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::nextChord</definition>
+        <argsstring>()</argsstring>
+        <name>nextChord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="207" column="1" bodyfile="mscore/seq.cpp" bodystart="1253" bodyend="1262"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a3ebaae2d12ff06f05cdf3030821263f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::prevMeasure</definition>
+        <argsstring>()</argsstring>
+        <name>prevMeasure</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="208" column="1" bodyfile="mscore/seq.cpp" bodystart="1268" bodyend="1280"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a147efd38b3accd861bdfd396d744da2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::prevChord</definition>
+        <argsstring>()</argsstring>
+        <name>prevChord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="209" column="1" bodyfile="mscore/seq.cpp" bodystart="1286" bodyend="1319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a0b9995def38b383859469ceecdb0937a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::collectEvents</definition>
+        <argsstring>()</argsstring>
+        <name>collectEvents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="211" column="1" bodyfile="mscore/seq.cpp" bodystart="996" bodyend="1016"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1aeb846dd8637cb7fe9177bc1714c4374f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::guiStop</definition>
+        <argsstring>()</argsstring>
+        <name>guiStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="212" column="1" bodyfile="mscore/seq.cpp" bodystart="426" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a864dc32124ff7a2b23312a97626b9398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::stopWait</definition>
+        <argsstring>()</argsstring>
+        <name>stopWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="213" column="1" bodyfile="mscore/seq.cpp" bodystart="368" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a401a657e18c1980b6376bc93369dda4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setLoopIn</definition>
+        <argsstring>()</argsstring>
+        <name>setLoopIn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="214" column="1" bodyfile="mscore/seq.cpp" bodystart="1561" bodyend="1575"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a574a866690e74c34b6d53d4013739a82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setLoopOut</definition>
+        <argsstring>()</argsstring>
+        <name>setLoopOut</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="215" column="1" bodyfile="mscore/seq.cpp" bodystart="1581" bodyend="1597"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a5126ff03f5a380a55ca7fd33df3b6ab6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setLoopSelection</definition>
+        <argsstring>()</argsstring>
+        <name>setLoopSelection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="216" column="1" bodyfile="mscore/seq.cpp" bodystart="1608" bodyend="1612"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1aba318ca3ad72f1ba0b8ec8df8231d6d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::init</definition>
+        <argsstring>(bool hotPlug=false)</argsstring>
+        <name>init</name>
+        <param>
+          <type>bool</type>
+          <declname>hotPlug</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="218" column="1" bodyfile="mscore/seq.cpp" bodystart="234" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ae9a63dc41b897859eb55808138678370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::exit</definition>
+        <argsstring>()</argsstring>
+        <name>exit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="219" column="1" bodyfile="mscore/seq.cpp" bodystart="249" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1adba136fcf260a720d121b1d4f926e238" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::isRunning</definition>
+        <argsstring>() const</argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="220" column="1" bodyfile="mscore/seq.h" bodystart="220" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1abb1e3673970733b8564170ccee3c3b6e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::isPlaying</definition>
+        <argsstring>() const</argsstring>
+        <name>isPlaying</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="221" column="1" bodyfile="mscore/seq.h" bodystart="221" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a3a858dfc93cf13fb97c0eeebc6f6a5af" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::isStopped</definition>
+        <argsstring>() const</argsstring>
+        <name>isStopped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="222" column="1" bodyfile="mscore/seq.h" bodystart="222" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a7e5f3d000df65db974be71186d290f7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::processMessages</definition>
+        <argsstring>()</argsstring>
+        <name>processMessages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="224" column="1" bodyfile="mscore/seq.cpp" bodystart="551" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a1e6c16c9e7d6d26a42e779db7c647d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::process</definition>
+        <argsstring>(unsigned framesPerPeriod, float *buffer)</argsstring>
+        <name>process</name>
+        <param>
+          <type>unsigned</type>
+          <declname>framesPerPeriod</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="225" column="1" bodyfile="mscore/seq.cpp" bodystart="669" bodyend="942"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ab1fe99bb2cd5e26a1b63c02756cec9b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Seq::getEndUTick</definition>
+        <argsstring>() const</argsstring>
+        <name>getEndUTick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="226" column="1" bodyfile="mscore/seq.h" bodystart="226" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1adce7430cfb20b0b22bc9c280104dc8d2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Seq::isRealtime</definition>
+        <argsstring>() const</argsstring>
+        <name>isRealtime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="227" column="1" bodyfile="mscore/seq.h" bodystart="227" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a0cb0b1d5848b5f0095e3d2d41a0c784c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::sendMessage</definition>
+        <argsstring>(SeqMsg &amp;) const</argsstring>
+        <name>sendMessage</name>
+        <param>
+          <type><ref refid="struct_ms_1_1_seq_msg" kindref="compound">SeqMsg</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="228" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1aac12cccab65c2a24ecc8aa45dadc884b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setController</definition>
+        <argsstring>(int, int, int)</argsstring>
+        <name>setController</name>
+        <param>
+          <type>int</type>
+          <defname>channel</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>ctrl</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>data</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="230" column="1" bodyfile="mscore/seq.cpp" bodystart="1218" bodyend="1222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a5660afd1bde5fca7cf8bea5bcbebb0e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::sendEvent</definition>
+        <argsstring>(const NPlayEvent &amp;)</argsstring>
+        <name>sendEvent</name>
+        <reimplements refid="class_ms_1_1_sequencer_1a71b73a5f71693e7265c469e9090dcdce">sendEvent</reimplements>
+        <param>
+          <type>const <ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref> &amp;</type>
+          <defname>ev</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="231" column="1" bodyfile="mscore/seq.cpp" bodystart="1230" bodyend="1233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a9da7e451ab7f8130e632ba0078ff9d27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setScoreView</definition>
+        <argsstring>(ScoreView *)</argsstring>
+        <name>setScoreView</name>
+        <param>
+          <type><ref refid="class_ms_1_1_score_view" kindref="compound">ScoreView</ref> *</type>
+          <defname>v</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="232" column="1" bodyfile="mscore/seq.cpp" bodystart="203" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1af200da8c97f01fa6c4a55eb47ceafcee" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_master_score" kindref="compound">MasterScore</ref> *</type>
+        <definition>MasterScore* Ms::Seq::score</definition>
+        <argsstring>() const</argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="233" column="1" bodyfile="mscore/seq.h" bodystart="233" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ad44d8179d9efc98e32db4877e9804a7c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_score_view" kindref="compound">ScoreView</ref> *</type>
+        <definition>ScoreView* Ms::Seq::viewer</definition>
+        <argsstring>() const</argsstring>
+        <name>viewer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="234" column="1" bodyfile="mscore/seq.h" bodystart="234" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a3f2482dbb8f6ab581497b5dcba94d7f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::initInstruments</definition>
+        <argsstring>(bool realTime=false)</argsstring>
+        <name>initInstruments</name>
+        <param>
+          <type>bool</type>
+          <declname>realTime</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="235" column="1" bodyfile="mscore/seq.cpp" bodystart="948" bodyend="990"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a43ee715f32a6d80b1680ec20c0e63803" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_driver" kindref="compound">Driver</ref> *</type>
+        <definition>Driver* Ms::Seq::driver</definition>
+        <argsstring>()</argsstring>
+        <name>driver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="237" column="1" bodyfile="mscore/seq.h" bodystart="237" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a6069fee2476e50add211b8b4d4036c4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setDriver</definition>
+        <argsstring>(Driver *d)</argsstring>
+        <name>setDriver</name>
+        <param>
+          <type><ref refid="class_ms_1_1_driver" kindref="compound">Driver</ref> *</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="238" column="1" bodyfile="mscore/seq.h" bodystart="238" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a96a2f656ae9c724357268d915a461eef" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_master_synthesizer" kindref="compound">MasterSynthesizer</ref> *</type>
+        <definition>MasterSynthesizer* Ms::Seq::synti</definition>
+        <argsstring>() const</argsstring>
+        <name>synti</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="239" column="1" bodyfile="mscore/seq.h" bodystart="239" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ab60e0ad3a554040ce7bb11b44b55a8c4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setMasterSynthesizer</definition>
+        <argsstring>(MasterSynthesizer *ms)</argsstring>
+        <name>setMasterSynthesizer</name>
+        <param>
+          <type><ref refid="class_ms_1_1_master_synthesizer" kindref="compound">MasterSynthesizer</ref> *</type>
+          <declname>ms</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="240" column="1" bodyfile="mscore/seq.h" bodystart="240" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1afd8a6262a62248949f5e460880bb74b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Seq::getCurTick</definition>
+        <argsstring>()</argsstring>
+        <name>getCurTick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="242" column="1" bodyfile="mscore/seq.cpp" bodystart="1022" bodyend="1025"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1abc2256ab7f5af87bfddfab656e5c4638" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Ms::Seq::curTempo</definition>
+        <argsstring>() const</argsstring>
+        <name>curTempo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="243" column="1" bodyfile="mscore/seq.cpp" bodystart="1552" bodyend="1555"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a55a5f4c557cb99c1f5495721a1cc0c38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::putEvent</definition>
+        <argsstring>(const NPlayEvent &amp;, unsigned framePos=0)</argsstring>
+        <name>putEvent</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref> &amp;</type>
+          <defname>event</defname>
+        </param>
+        <param>
+          <type>unsigned</type>
+          <declname>framePos</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="245" column="1" bodyfile="mscore/seq.cpp" bodystart="1411" bodyend="1428"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a05abf505ed22849d72650734f48aaac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::startNoteTimer</definition>
+        <argsstring>(int duration)</argsstring>
+        <name>startNoteTimer</name>
+        <param>
+          <type>int</type>
+          <declname>duration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="246" column="1" bodyfile="mscore/seq.cpp" bodystart="1164" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a6bfab5006b6bb7f4a92eca23b132a858" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::startNote</definition>
+        <argsstring>(int channel, int, int, double nt) override</argsstring>
+        <name>startNote</name>
+        <reimplements refid="class_ms_1_1_sequencer_1ad1ab7579b6bf45c3a7bbdeff6a54a757">startNote</reimplements>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>pitch</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>velo</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="247" column="1" bodyfile="mscore/seq.cpp" bodystart="1133" bodyend="1140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a63a693b5eaf86708feacb3224562d98d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::startNote</definition>
+        <argsstring>(int channel, int, int, int, double nt) override</argsstring>
+        <name>startNote</name>
+        <reimplements refid="class_ms_1_1_sequencer_1a6de39d4cd2a3e24a72313fd3ae50f4af">startNote</reimplements>
+        <param>
+          <type>int</type>
+          <declname>channel</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>pitch</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>velo</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>duration</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>nt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="248" column="1" bodyfile="mscore/seq.cpp" bodystart="1142" bodyend="1147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a2c672a68273237eb7e211334e785b5d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::playMetronomeBeat</definition>
+        <argsstring>(BeatType type) override</argsstring>
+        <name>playMetronomeBeat</name>
+        <reimplements refid="class_ms_1_1_sequencer_1ae4374485fc1c8acbb52424cc547dd19f">playMetronomeBeat</reimplements>
+        <param>
+          <type>BeatType</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="249" column="1" bodyfile="mscore/seq.cpp" bodystart="1153" bodyend="1158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a192fd01bd6583956e278ded475bf749e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::eventToGui</definition>
+        <argsstring>(NPlayEvent)</argsstring>
+        <name>eventToGui</name>
+        <param>
+          <type><ref refid="class_ms_1_1_n_play_event" kindref="compound">NPlayEvent</ref></type>
+          <defname>e</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="251" column="1" bodyfile="mscore/seq.cpp" bodystart="1345" bodyend="1348"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1acc4bb1c295d817ca705fc4086717aeb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::stopNoteTimer</definition>
+        <argsstring>()</argsstring>
+        <name>stopNoteTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="252" column="1" bodyfile="mscore/seq.cpp" bodystart="1175" bodyend="1181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ad5940c5c17d515c62f7d6bc3563ed821" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::recomputeMaxMidiOutPort</definition>
+        <argsstring>()</argsstring>
+        <name>recomputeMaxMidiOutPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="253" column="1" bodyfile="mscore/seq.cpp" bodystart="534" bodyend="544"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a9d204b6a5041b1d9ed57b39447c29aeb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float Ms::Seq::metronomeGain</definition>
+        <argsstring>() const</argsstring>
+        <name>metronomeGain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="254" column="1" bodyfile="mscore/seq.h" bodystart="254" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1a7837b3bb685ed780d352523bbff3bdba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Seq::setInitialMillisecondTimestampWithLatency</definition>
+        <argsstring>()</argsstring>
+        <name>setInitialMillisecondTimestampWithLatency</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="256" column="1" bodyfile="mscore/seq.cpp" bodystart="1631" bodyend="1637"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_seq_1ac3a7e036c992f70ca6ac66ec5a8c09f7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Seq::getCurrentMillisecondTimestampWithLatency</definition>
+        <argsstring>(unsigned framePos) const</argsstring>
+        <name>getCurrentMillisecondTimestampWithLatency</name>
+        <param>
+          <type>unsigned</type>
+          <declname>framePos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/seq.h" line="257" column="1" bodyfile="mscore/seq.cpp" bodystart="1646" bodyend="1656"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14759">
+        <label>Ms::Sequencer</label>
+        <link refid="class_ms_1_1_sequencer"/>
+      </node>
+      <node id="14758">
+        <label>QObject</label>
+      </node>
+      <node id="14757">
+        <label>Ms::Seq</label>
+        <link refid="class_ms_1_1_seq"/>
+        <childnode refid="14758" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14759" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="14762">
+        <label>Ms::Sequencer</label>
+        <link refid="class_ms_1_1_sequencer"/>
+      </node>
+      <node id="14761">
+        <label>QObject</label>
+      </node>
+      <node id="14760">
+        <label>Ms::Seq</label>
+        <link refid="class_ms_1_1_seq"/>
+        <childnode refid="14761" relation="public-inheritance">
+        </childnode>
+        <childnode refid="14762" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/seq.h" line="104" column="1" bodyfile="mscore/seq.h" bodystart="104" bodyend="258"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_seq_1a65a7e51ecdda8dd68bf1968be2434889" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>_driver</name></member>
+      <member refid="class_ms_1_1_seq_1afa41a80c7f952856c19b80418773751c" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>_liveEventQueue</name></member>
+      <member refid="class_ms_1_1_seq_1a10ec4e5aa1156ff57a73f07cbbb17696" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>_synti</name></member>
+      <member refid="class_ms_1_1_seq_1aab9bd4f6ee4f4904fb4577506e8ee1ae" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>addCountInClicks</name></member>
+      <member refid="class_ms_1_1_seq_1a3e2066fafa6413eaaf0843a12ff96e2a" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>canStart</name></member>
+      <member refid="class_ms_1_1_seq_1a0b9995def38b383859469ceecdb0937a" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>collectEvents</name></member>
+      <member refid="class_ms_1_1_seq_1ad80cafaad73267ae02270573c71e4c93" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>collectMeasureEvents</name></member>
+      <member refid="class_ms_1_1_seq_1a2f1d141c4790d779e3987b55c0e31dd0" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>countInEvents</name></member>
+      <member refid="class_ms_1_1_seq_1a96efa8b1507b1bbf033401baf75e06e9" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>countInPlayFrame</name></member>
+      <member refid="class_ms_1_1_seq_1a717e97446b91bd7ea0bb858638288daf" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>countInPlayPos</name></member>
+      <member refid="class_ms_1_1_seq_1aadd5dd64cd48ab8b9bef31f7837ade9c" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>cs</name></member>
+      <member refid="class_ms_1_1_seq_1abc2256ab7f5af87bfddfab656e5c4638" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>curTempo</name></member>
+      <member refid="class_ms_1_1_seq_1aaeed7015e469d090a60cf9da360a4d2c" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>cv</name></member>
+      <member refid="class_ms_1_1_seq_1a43ee715f32a6d80b1680ec20c0e63803" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>driver</name></member>
+      <member refid="class_ms_1_1_seq_1a8b512e4561231e8c8990137fd5bf84a1" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>endUTick</name></member>
+      <member refid="class_ms_1_1_seq_1aaf1d655ec7b1aa1de03a7cf1d4c7699c" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>events</name></member>
+      <member refid="class_ms_1_1_seq_1a192fd01bd6583956e278ded475bf749e" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>eventToGui</name></member>
+      <member refid="class_ms_1_1_seq_1ae9a63dc41b897859eb55808138678370" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>exit</name></member>
+      <member refid="class_ms_1_1_seq_1acb4dc7ce45e4bd5aa95cb638985fae44" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>fromSeq</name></member>
+      <member refid="class_ms_1_1_seq_1ac3a7e036c992f70ca6ac66ec5a8c09f7" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>getCurrentMillisecondTimestampWithLatency</name></member>
+      <member refid="class_ms_1_1_seq_1afd8a6262a62248949f5e460880bb74b5" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>getCurTick</name></member>
+      <member refid="class_ms_1_1_seq_1ab1fe99bb2cd5e26a1b63c02756cec9b8" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>getEndUTick</name></member>
+      <member refid="class_ms_1_1_seq_1a53aa0aa1a22408002f456df78837b649" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>guiPos</name></member>
+      <member refid="class_ms_1_1_seq_1aeb846dd8637cb7fe9177bc1714c4374f" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>guiStop</name></member>
+      <member refid="class_ms_1_1_seq_1aa303697d94981c94b4f3133a94daf1b0" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>guiToSeq</name></member>
+      <member refid="class_ms_1_1_seq_1a2498f293eba7b6389509fb6c53c012ed" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>handleTimeSigTempoChanged</name></member>
+      <member refid="class_ms_1_1_seq_1a897be22679d058933fa637618bfca62a" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>heartBeat</name></member>
+      <member refid="class_ms_1_1_seq_1a3dcfa121160eac1702a22e5ab1481154" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>heartBeatTimeout</name></member>
+      <member refid="class_ms_1_1_seq_1abb575740655762eb789bb8a6ad6af2c5" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>heartBeatTimer</name></member>
+      <member refid="class_ms_1_1_seq_1aa1d1525b89bd4b55bce8756ea8e4a442" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>inCountIn</name></member>
+      <member refid="class_ms_1_1_seq_1aba318ca3ad72f1ba0b8ec8df8231d6d7" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>init</name></member>
+      <member refid="class_ms_1_1_seq_1a297d4688dc609d49b379feadde96c68a" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>initialMillisecondTimestampWithLatency</name></member>
+      <member refid="class_ms_1_1_seq_1a3f2482dbb8f6ab581497b5dcba94d7f3" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>initInstruments</name></member>
+      <member refid="class_ms_1_1_seq_1abb1e3673970733b8564170ccee3c3b6e" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>isPlaying</name></member>
+      <member refid="class_ms_1_1_seq_1adce7430cfb20b0b22bc9c280104dc8d2" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>isRealtime</name></member>
+      <member refid="class_ms_1_1_seq_1adba136fcf260a720d121b1d4f926e238" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>isRunning</name></member>
+      <member refid="class_ms_1_1_seq_1a3a858dfc93cf13fb97c0eeebc6f6a5af" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>isStopped</name></member>
+      <member refid="class_ms_1_1_seq_1a6dedcd1d372f5ff401ce3b4f50888194" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>liveEventQueue</name></member>
+      <member refid="class_ms_1_1_seq_1acae7e066eafa08c09c4263bac4f57ef1" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>loopStart</name></member>
+      <member refid="class_ms_1_1_seq_1ad51fd87a4eeef93262cd6b9cef969b30" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>markedNotes</name></member>
+      <member refid="class_ms_1_1_seq_1a58e229c3fa303dfff951b97f73a97b41" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>maxMidiOutPort</name></member>
+      <member refid="class_ms_1_1_seq_1a56c490cc2bf054be224662ae868e51a6" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>meterPeakValue</name></member>
+      <member refid="class_ms_1_1_seq_1ac7d0bf292171b9d91de7508f4371daf2" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>meterValue</name></member>
+      <member refid="class_ms_1_1_seq_1a85664d4f3fa1146bed214dec4269e04f" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>metronome</name></member>
+      <member refid="class_ms_1_1_seq_1a9d204b6a5041b1d9ed57b39447c29aeb" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>metronomeGain</name></member>
+      <member refid="class_ms_1_1_seq_1aec698ad27291359e8910ed7973533a0c" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>metronomeVolume</name></member>
+      <member refid="class_ms_1_1_seq_1a17f4a2dccd2cc3b544903702312b15cc" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>midiInputReady</name></member>
+      <member refid="class_ms_1_1_seq_1ac492a805defa53e54fcd6d9b373adb12" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>mutex</name></member>
+      <member refid="class_ms_1_1_seq_1acea389762f5cabced8927c32e546b5fb" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>nextChord</name></member>
+      <member refid="class_ms_1_1_seq_1a315f95b5bb5a6c097bc5b5a0149c0d7f" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>nextMeasure</name></member>
+      <member refid="class_ms_1_1_seq_1a6d7b7e9ab56871a39cbc49d43aa0a913" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>noteTimer</name></member>
+      <member refid="class_ms_1_1_seq_1a4aead28094b51b8346f327e42ab12fdc" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>oggInit</name></member>
+      <member refid="class_ms_1_1_seq_1abfba92017f1ef58b4d5c141b0f5aa174" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>peakTimer</name></member>
+      <member refid="class_ms_1_1_seq_1a3eb9ce1966434a6c23148df542aead9d" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>playEvent</name></member>
+      <member refid="class_ms_1_1_seq_1a0ff3f548c98121875a61abd5e15353d3" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>playFrame</name></member>
+      <member refid="class_ms_1_1_seq_1a6c586e623cf8f1f349f4980add8ab57e" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>playlistChanged</name></member>
+      <member refid="class_ms_1_1_seq_1a2c672a68273237eb7e211334e785b5d4" prot="public" virt="virtual"><scope>Ms::Seq</scope><name>playMetronomeBeat</name></member>
+      <member refid="class_ms_1_1_seq_1ad5dcaae858e0c9bcecf36845e6536455" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>playPos</name></member>
+      <member refid="class_ms_1_1_seq_1a147efd38b3accd861bdfd396d744da2d" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>prevChord</name></member>
+      <member refid="class_ms_1_1_seq_1a3ebaae2d12ff06f05cdf3030821263f7" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>prevMeasure</name></member>
+      <member refid="class_ms_1_1_seq_1af21ca0aa355a86cf54a377b6ab5a655e" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>prevTempo</name></member>
+      <member refid="class_ms_1_1_seq_1a4846498da25f42420915aac9af1e7c12" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>prevTimeSig</name></member>
+      <member refid="class_ms_1_1_seq_1a1e6c16c9e7d6d26a42e779db7c647d07" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>process</name></member>
+      <member refid="class_ms_1_1_seq_1a7e5f3d000df65db974be71186d290f7b" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>processMessages</name></member>
+      <member refid="class_ms_1_1_seq_1a55a5f4c557cb99c1f5495721a1cc0c38" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>putEvent</name></member>
+      <member refid="class_ms_1_1_seq_1ad5940c5c17d515c62f7d6bc3563ed821" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>recomputeMaxMidiOutPort</name></member>
+      <member refid="class_ms_1_1_seq_1a11d3d3b11d186fb3ae276474f150897d" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>rewindStart</name></member>
+      <member refid="class_ms_1_1_seq_1ac42e292f0f160390d7559337f53bc477" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>running</name></member>
+      <member refid="class_ms_1_1_seq_1af200da8c97f01fa6c4a55eb47ceafcee" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>score</name></member>
+      <member refid="class_ms_1_1_seq_1a152f4db32b5ef3c4653f550df4ff345d" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>seek</name></member>
+      <member refid="class_ms_1_1_seq_1ae5eccb44efc34dafeafc3122dd8218c5" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>seekCommon</name></member>
+      <member refid="class_ms_1_1_seq_1a4b3b14bd323f8413cb1c1f2f4f6d0d09" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>seekEnd</name></member>
+      <member refid="class_ms_1_1_seq_1a0a3c3df88a97b171eb633499ca6981d7" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>seekRT</name></member>
+      <member refid="class_ms_1_1_seq_1a5660afd1bde5fca7cf8bea5bcbebb0e4" prot="public" virt="virtual"><scope>Ms::Seq</scope><name>sendEvent</name></member>
+      <member refid="class_ms_1_1_seq_1a0cb0b1d5848b5f0095e3d2d41a0c784c" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>sendMessage</name></member>
+      <member refid="class_ms_1_1_seq_1a5518501d631f4688ccf4918ae5d3ad26" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>Seq</name></member>
+      <member refid="class_ms_1_1_seq_1a2875d6b1eda04a8c9af9448e610bd51e" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>seqMessage</name></member>
+      <member refid="class_ms_1_1_sequencer_1acc95f894683535ece617b6d199a6a15f" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>Sequencer</name></member>
+      <member refid="class_ms_1_1_seq_1aac12cccab65c2a24ecc8aa45dadc884b" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setController</name></member>
+      <member refid="class_ms_1_1_seq_1a6069fee2476e50add211b8b4d4036c4b" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setDriver</name></member>
+      <member refid="class_ms_1_1_seq_1a7837b3bb685ed780d352523bbff3bdba" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setInitialMillisecondTimestampWithLatency</name></member>
+      <member refid="class_ms_1_1_seq_1a401a657e18c1980b6376bc93369dda4a" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setLoopIn</name></member>
+      <member refid="class_ms_1_1_seq_1a574a866690e74c34b6d53d4013739a82" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setLoopOut</name></member>
+      <member refid="class_ms_1_1_seq_1a5126ff03f5a380a55ca7fd33df3b6ab6" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setLoopSelection</name></member>
+      <member refid="class_ms_1_1_seq_1ab60e0ad3a554040ce7bb11b44b55a8c4" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setMasterSynthesizer</name></member>
+      <member refid="class_ms_1_1_seq_1ad94f8b2956f53a9376d0dd83fff65bd2" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setMetronomeGain</name></member>
+      <member refid="class_ms_1_1_seq_1ae1818b59aa8767d257b00a33f2052cb7" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>setPlaylistChanged</name></member>
+      <member refid="class_ms_1_1_seq_1a2c8af843a7dc5ac5057e1378f0da19bf" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>setPos</name></member>
+      <member refid="class_ms_1_1_seq_1acb2f6cd11fb8fb160aec904769169b58" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setPos</name></member>
+      <member refid="class_ms_1_1_seq_1a1d0d04333fb7a1d13d74c9fb078231a3" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setRelTempo</name></member>
+      <member refid="class_ms_1_1_seq_1a9da7e451ab7f8130e632ba0078ff9d27" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>setScoreView</name></member>
+      <member refid="class_ms_1_1_seq_1a6854cb112a74798107f995485b0e49d5" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>start</name></member>
+      <member refid="class_ms_1_1_seq_1a6879529276176f883630b1057d734e61" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>started</name></member>
+      <member refid="class_ms_1_1_seq_1a6bfab5006b6bb7f4a92eca23b132a858" prot="public" virt="virtual"><scope>Ms::Seq</scope><name>startNote</name></member>
+      <member refid="class_ms_1_1_seq_1a63a693b5eaf86708feacb3224562d98d" prot="public" virt="virtual"><scope>Ms::Seq</scope><name>startNote</name></member>
+      <member refid="class_ms_1_1_seq_1a05abf505ed22849d72650734f48aaac9" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>startNoteTimer</name></member>
+      <member refid="class_ms_1_1_seq_1a680edb9a1ecd57b666fcc86e5060f77f" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>state</name></member>
+      <member refid="class_ms_1_1_seq_1a9498740067f058300cd380daccd0ea27" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>stop</name></member>
+      <member refid="class_ms_1_1_seq_1acdc1745b60c3e179d23cd9126ed970ef" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>stopNotes</name></member>
+      <member refid="class_ms_1_1_seq_1acc4bb1c295d817ca705fc4086717aeb7" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>stopNoteTimer</name></member>
+      <member refid="class_ms_1_1_seq_1ab47621af7a427346346d3fd12d1f3eb4" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>stopped</name></member>
+      <member refid="class_ms_1_1_seq_1a864dc32124ff7a2b23312a97626b9398" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>stopWait</name></member>
+      <member refid="class_ms_1_1_seq_1a96a2f656ae9c724357268d915a461eef" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>synti</name></member>
+      <member refid="class_ms_1_1_seq_1a47aecbe04a96991907f81b4ed78ed562" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>tackRemain</name></member>
+      <member refid="class_ms_1_1_seq_1aed538425bdc26984ff1b1d3f7bd3b4ba" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>tackVolume</name></member>
+      <member refid="class_ms_1_1_seq_1aaaee0c8b6ba097728bb159ae57b66361" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>tempoChanged</name></member>
+      <member refid="class_ms_1_1_seq_1a9a358022ba5e6634e60b9f81e1b5818b" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>tickRemain</name></member>
+      <member refid="class_ms_1_1_seq_1a92f8f32c8722eac57c847307535e6c16" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>tickVolume</name></member>
+      <member refid="class_ms_1_1_seq_1a75aa495af6010ed1ce276487b4f1868e" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>timeSigChanged</name></member>
+      <member refid="class_ms_1_1_seq_1a87897c5b6f7be3b67fdfb427b0fbe73f" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>toGui</name></member>
+      <member refid="class_ms_1_1_seq_1a7fb554f72c5bb965d1c25c60a0670643" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>toSeq</name></member>
+      <member refid="class_ms_1_1_seq_1a0d6fc9bafe8e98adcb68da75781af176" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>unmarkNotes</name></member>
+      <member refid="class_ms_1_1_seq_1a26767cab898175b394bf9d3181b0c900" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>updateSynthesizerState</name></member>
+      <member refid="class_ms_1_1_seq_1a190fc0a3712cbde035f0393f88ae3b9d" prot="private" virt="non-virtual"><scope>Ms::Seq</scope><name>useJackTransportSavedFlag</name></member>
+      <member refid="class_ms_1_1_seq_1ad44d8179d9efc98e32db4877e9804a7c" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>viewer</name></member>
+      <member refid="class_ms_1_1_seq_1a1cfe1ce20b944b36f3a2a0ac5837ee4b" prot="public" virt="non-virtual"><scope>Ms::Seq</scope><name>~Seq</name></member>
+      <member refid="class_ms_1_1_sequencer_1abc45cc050aad54b79cf78248859c659c" prot="public" virt="virtual"><scope>Ms::Seq</scope><name>~Sequencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

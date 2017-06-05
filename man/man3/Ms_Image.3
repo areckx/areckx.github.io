@@ -1,0 +1,158 @@
+.TH "Ms::Image" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QImage, and \fBMs::BSymbol\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBImage\fP (const \fBImage\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBImage\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "bool \fBload\fP (const QString &s)"
+.br
+.ti -1c
+.RI "bool \fBloadFromData\fP (const QString &, const QByteArray &)"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (const QSizeF &s)"
+.br
+.ti -1c
+.RI "QSizeF \fBsize\fP () const"
+.br
+.ti -1c
+.RI "bool \fBlockAspectRatio\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLockAspectRatio\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBautoScale\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAutoScale\fP (bool v)"
+.br
+.ti -1c
+.RI "\fBImageStoreItem\fP * \fBstoreItem\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsizeIsSpatium\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSizeIsSpatium\fP (bool val)"
+.br
+.ti -1c
+.RI "QVariant \fBgetProperty\fP (P_ID) const"
+.br
+.ti -1c
+.RI "bool \fBsetProperty\fP (P_ID propertyId, const QVariant &)"
+.br
+.ti -1c
+.RI "QVariant \fBpropertyDefault\fP (P_ID id) const"
+.br
+.ti -1c
+.RI "QSizeF \fBimageSize\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetImageType\fP (ImageType)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBstartDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &ed) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBgripAnchor\fP (Grip) const override"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBImageStoreItem\fP * \fB_storeItem\fP"
+.br
+.ti -1c
+.RI "QString \fB_storePath\fP"
+.br
+.ti -1c
+.RI "QString \fB_linkPath\fP"
+.br
+.ti -1c
+.RI "bool \fB_linkIsValid\fP"
+.br
+.ti -1c
+.RI "QPixmap \fBbuffer\fP"
+.br
+.RI "cached rendering "
+.ti -1c
+.RI "QSizeF \fB_size\fP"
+.br
+.ti -1c
+.RI "bool \fB_lockAspectRatio\fP"
+.br
+.ti -1c
+.RI "bool \fB_autoScale\fP"
+.br
+.RI "fill parent frame "
+.ti -1c
+.RI "bool \fB_sizeIsSpatium\fP"
+.br
+.ti -1c
+.RI "bool \fB_dirty\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 28 of file image\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

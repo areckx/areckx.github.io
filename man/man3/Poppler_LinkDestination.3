@@ -1,0 +1,187 @@
+.TH "Poppler::LinkDestination" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkDestination \- A destination\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBKind\fP { \fBdestXYZ\fP = 1, \fBdestFit\fP = 2, \fBdestFitH\fP = 3, \fBdestFitV\fP = 4, \fBdestFitR\fP = 5, \fBdestFitB\fP = 6, \fBdestFitBH\fP = 7, \fBdestFitBV\fP = 8 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkDestination\fP (const \fBLinkDestination\fP &other)"
+.br
+.ti -1c
+.RI "\fB~LinkDestination\fP ()"
+.br
+.ti -1c
+.RI "\fBKind\fP \fBkind\fP () const"
+.br
+.ti -1c
+.RI "int \fBpageNumber\fP () const"
+.br
+.ti -1c
+.RI "double \fBleft\fP () const"
+.br
+.ti -1c
+.RI "double \fBbottom\fP () const"
+.br
+.ti -1c
+.RI "double \fBright\fP () const"
+.br
+.ti -1c
+.RI "double \fBtop\fP () const"
+.br
+.ti -1c
+.RI "double \fBzoom\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisChangeLeft\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisChangeTop\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisChangeZoom\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtoString\fP () const"
+.br
+.ti -1c
+.RI "QString \fBdestinationName\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkDestination\fP & \fBoperator=\fP (const \fBLinkDestination\fP &other)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A destination\&. 
+
+The \fBLinkDestination\fP class represent a 'destination' (in terms of visual viewport to be displayed) for \fBGoTo\fP links, and items in the table of contents (TOC) of a document\&.
+.PP
+Coordinates are in 0\&.\&.1 range 
+.PP
+Definition at line 61 of file poppler\-link\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::LinkDestination::Kind\fP"
+The possible kind of 'viewport destination'\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIdestXYZ \fP\fP
+The new viewport is specified in terms of:
+.IP "\(bu" 2
+possibile new left coordinate (see \fBisChangeLeft()\fP )
+.IP "\(bu" 2
+possibile new top coordinate (see \fBisChangeTop()\fP )
+.IP "\(bu" 2
+possibile new zoom level (see \fBisChangeZoom()\fP ) 
+.PP
+
+.PP
+Definition at line 67 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::LinkDestination::LinkDestination (const \fBLinkDestination\fP & other)"
+Copy constructor\&. 
+.PP
+Definition at line 248 of file poppler\-link\&.cc\&.
+.SS "Poppler::LinkDestination::~LinkDestination ()"
+Destructor\&. 
+.PP
+Definition at line 334 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QString Poppler::LinkDestination::destinationName () const"
+Return the name of this destination\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 403 of file poppler\-link\&.cc\&.
+.SS "bool Poppler::LinkDestination::isChangeLeft () const"
+Whether the left of the viewport on the target page should be changed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBleft()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 373 of file poppler\-link\&.cc\&.
+.SS "bool Poppler::LinkDestination::isChangeTop () const"
+Whether the top of the viewport on the target page should be changed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBtop()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 378 of file poppler\-link\&.cc\&.
+.SS "bool Poppler::LinkDestination::isChangeZoom () const"
+Whether the zoom level should be changed\&.
+.PP
+\fBSee also:\fP
+.RS 4
+zoom() 
+.RE
+.PP
+
+.PP
+Definition at line 383 of file poppler\-link\&.cc\&.
+.SS "\fBLinkDestination::Kind\fP Poppler::LinkDestination::kind () const"
+The kind of destination\&. 
+.PP
+Definition at line 338 of file poppler\-link\&.cc\&.
+.SS "double Poppler::LinkDestination::left () const"
+The new left for the viewport of the target page, in case it is specified to be changed (see \fBisChangeLeft()\fP ) 
+.PP
+Definition at line 348 of file poppler\-link\&.cc\&.
+.SS "\fBLinkDestination\fP & Poppler::LinkDestination::operator= (const \fBLinkDestination\fP & other)"
+Assignment operator\&. 
+.PP
+Definition at line 408 of file poppler\-link\&.cc\&.
+.SS "int Poppler::LinkDestination::pageNumber () const"
+Which page is the target of this destination\&.
+.PP
+\fBNote:\fP
+.RS 4
+this number is 1-based, so for a 5 pages document the valid page numbers go from 1 to 5 (both included)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 343 of file poppler\-link\&.cc\&.
+.SS "double Poppler::LinkDestination::top () const"
+The new top for the viewport of the target page, in case it is specified to be changed (see \fBisChangeTop()\fP ) 
+.PP
+Definition at line 363 of file poppler\-link\&.cc\&.
+.SS "QString Poppler::LinkDestination::toString () const"
+Return a string repesentation of this destination\&. 
+.PP
+Definition at line 388 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

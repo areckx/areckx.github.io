@@ -1,0 +1,113 @@
+\hypertarget{score_8h}{}\section{libmscore/score.h File Reference}
+\label{score_8h}\index{libmscore/score.\+h@{libmscore/score.\+h}}
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}input.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}select.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}synthesizerstate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mscoreview.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spannermap.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}layoutbreak.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}property.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ms_1_1_measure_base_list}{Ms\+::\+Measure\+Base\+List}
+\item 
+struct \hyperlink{struct_ms_1_1_midi_mapping}{Ms\+::\+Midi\+Mapping}
+\item 
+struct \hyperlink{struct_ms_1_1_midi_input_event}{Ms\+::\+Midi\+Input\+Event}
+\item 
+struct \hyperlink{struct_ms_1_1_position}{Ms\+::\+Position}
+\item 
+struct \hyperlink{struct_ms_1_1_layer}{Ms\+::\+Layer}
+\item 
+class \hyperlink{class_ms_1_1_cmd_state}{Ms\+::\+Cmd\+State}
+\item 
+class \hyperlink{class_ms_1_1_update_state}{Ms\+::\+Update\+State}
+\item 
+class \hyperlink{class_ms_1_1_movements}{Ms\+::\+Movements}
+\item 
+class \hyperlink{class_ms_1_1_score}{Ms\+::\+Score}
+\item 
+class \hyperlink{class_ms_1_1_master_score}{Ms\+::\+Master\+Score}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_ms}{Ms}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_ac9cc585124cee1b040130fc25af56dac}\label{namespace_ms_ac9cc585124cee1b040130fc25af56dac}} 
+typedef Q\+Flags$<$ Layout\+Flag $>$ {\bfseries Ms\+::\+Layout\+Flags}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_aa15d8b46ea58d6bb59b084d6d7bcff7d}\label{namespace_ms_aa15d8b46ea58d6bb59b084d6d7bcff7d}} 
+enum {\bfseries P\+OS} \+: char \{ {\bfseries C\+U\+R\+R\+E\+NT}, 
+{\bfseries L\+E\+FT}, 
+{\bfseries R\+I\+G\+HT}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_a698a5875115e45678413e5c10c267364}\label{namespace_ms_a698a5875115e45678413e5c10c267364}} 
+enum {\bfseries Pad} \+: char \{ \newline
+{\bfseries N\+O\+T\+E00}, 
+{\bfseries N\+O\+T\+E0}, 
+{\bfseries N\+O\+T\+E1}, 
+{\bfseries N\+O\+T\+E2}, 
+\newline
+{\bfseries N\+O\+T\+E4}, 
+{\bfseries N\+O\+T\+E8}, 
+{\bfseries N\+O\+T\+E16}, 
+{\bfseries N\+O\+T\+E32}, 
+\newline
+{\bfseries N\+O\+T\+E64}, 
+{\bfseries N\+O\+T\+E128}, 
+{\bfseries R\+E\+ST}, 
+{\bfseries D\+OT}, 
+\newline
+{\bfseries D\+O\+T\+D\+OT}, 
+{\bfseries D\+O\+T3}, 
+{\bfseries D\+O\+T4}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_a9b1fb02f916c554309371c6513550a1b}\label{namespace_ms_a9b1fb02f916c554309371c6513550a1b}} 
+enum {\bfseries Layout\+Mode} \+: char \{ {\bfseries P\+A\+GE}, 
+{\bfseries F\+L\+O\+AT}, 
+{\bfseries L\+I\+NE}, 
+{\bfseries S\+Y\+S\+T\+EM}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_ae95dea350de4a3014dbcbcfe9a6a75dc}\label{namespace_ms_ae95dea350de4a3014dbcbcfe9a6a75dc}} 
+enum {\bfseries Layout\+Flag} \+: char \{ {\bfseries N\+O\+\_\+\+F\+L\+A\+GS} = 0, 
+{\bfseries F\+I\+X\+\_\+\+P\+I\+T\+C\+H\+\_\+\+V\+E\+LO} = 1, 
+{\bfseries P\+L\+A\+Y\+\_\+\+E\+V\+E\+N\+TS} = 2
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_a2feae65fc65cd80432bdb886d484d22d}\label{namespace_ms_a2feae65fc65cd80432bdb886d484d22d}} 
+enum {\bfseries Play\+Mode} \+: char \{ {\bfseries S\+Y\+N\+T\+H\+E\+S\+I\+Z\+ER}, 
+{\bfseries A\+U\+D\+IO}
+ \}
+\item 
+\mbox{\Hypertarget{namespace_ms_a989afd8df761a943d5518ac5b31d4b18}\label{namespace_ms_a989afd8df761a943d5518ac5b31d4b18}} 
+enum {\bfseries Update\+Mode} \{ {\bfseries Do\+Nothing}, 
+{\bfseries Update}, 
+{\bfseries Update\+All}, 
+{\bfseries Layout}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_ms_a6e842beb2374e2eaf442ab3ff476bbd3}\label{namespace_ms_a6e842beb2374e2eaf442ab3ff476bbd3}} 
+void {\bfseries Ms\+::fix\+Ticks} ()
+\item 
+\mbox{\Hypertarget{namespace_ms_a99f39b9648695fcd9f294cf1f7f7d1d2}\label{namespace_ms_a99f39b9648695fcd9f294cf1f7f7d1d2}} 
+{\bfseries Ms\+::\+Q\+\_\+\+D\+E\+C\+L\+A\+R\+E\+\_\+\+O\+P\+E\+R\+A\+T\+O\+R\+S\+\_\+\+F\+O\+R\+\_\+\+F\+L\+A\+GS} (Layout\+Flags)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of Score class. 

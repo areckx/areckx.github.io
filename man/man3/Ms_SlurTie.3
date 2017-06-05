@@ -1,0 +1,120 @@
+.TH "Ms::SlurTie" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::SlurTie
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Spanner\fP\&.
+.PP
+Inherited by \fBMs::Slur\fP, and \fBMs::Tie\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSlurTie\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBSlurTie\fP (const \fBSlurTie\fP &)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "bool \fBup\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBslurDirection\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSlurDirection\fP (\fBDirection\fP d)"
+.br
+.ti -1c
+.RI "void \fBundoSetSlurDirection\fP (\fBDirection\fP d)"
+.br
+.ti -1c
+.RI "virtual void \fBlayout2\fP (const QPointF, int, struct \fBUP\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBcontains\fP (const QPointF &) const"
+.br
+.ti -1c
+.RI "void \fBwriteProperties\fP (\fBXmlWriter\fP &xml) const"
+.br
+.ti -1c
+.RI "bool \fBreadProperties\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "int \fBlineType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineType\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBundoSetLineType\fP (int)"
+.br
+.ti -1c
+.RI "virtual void \fBslurPos\fP (\fBSlurPos\fP *)=0"
+.br
+.ti -1c
+.RI "virtual \fBSlurTieSegment\fP * \fBnewSlurTieSegment\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBfirstNoteRestSegmentX\fP (\fBSystem\fP *system)"
+.br
+.ti -1c
+.RI "void \fBfixupSegments\fP (unsigned nsegs)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fB_up\fP"
+.br
+.ti -1c
+.RI "QQueue< \fBSpannerSegment\fP * > \fBdelSegments\fP"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fB_slurDirection\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBlineType\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 92 of file slurtie\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

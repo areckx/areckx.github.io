@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="fttrace_8h" kind="file" language="C++">
+    <compoundname>fttrace.h</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>fttrace.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/>Tracing<sp/>handling<sp/>(specification<sp/>only).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Copyright<sp/>2002-2015<sp/>by<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>David<sp/>Turner,<sp/>Robert<sp/>Wilhelm,<sp/>and<sp/>Werner<sp/>Lemberg.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>FreeType<sp/>project,<sp/>and<sp/>may<sp/>only<sp/>be<sp/>used,<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>modified,<sp/>and<sp/>distributed<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>FreeType<sp/>project<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>license,<sp/>LICENSE.TXT.<sp/><sp/>By<sp/>continuing<sp/>to<sp/>use,<sp/>modify,<sp/>or<sp/>distribute<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>this<sp/>file<sp/>you<sp/>indicate<sp/>that<sp/>you<sp/>have<sp/>read<sp/>the<sp/>license<sp/>and<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>understand<sp/>and<sp/>accept<sp/>it<sp/>fully.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/***************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>definitions<sp/>of<sp/>trace<sp/>levels<sp/>for<sp/>FreeType<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>the<sp/>first<sp/>level<sp/>must<sp/>always<sp/>be<sp/>`trace_any&apos;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">FT_TRACE_DEF(<sp/>any<sp/>)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>base<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">FT_TRACE_DEF(<sp/>calc<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>calculations<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftcalc.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">FT_TRACE_DEF(<sp/>memory<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>memory<sp/>manager<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftobjs.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">FT_TRACE_DEF(<sp/>stream<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>stream<sp/>manager<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftstream.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">FT_TRACE_DEF(<sp/>io<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>i/o<sp/>interface<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftsystem.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">FT_TRACE_DEF(<sp/>list<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>list<sp/>management<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftlist.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">FT_TRACE_DEF(<sp/>init<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>initialization<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftinit.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">FT_TRACE_DEF(<sp/>objs<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>base<sp/>objects<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftobjs.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">FT_TRACE_DEF(<sp/>outline<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>outline<sp/>management<sp/><sp/><sp/><sp/><sp/><sp/>(ftoutln.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">FT_TRACE_DEF(<sp/>glyph<sp/>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>glyph<sp/>management<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftglyph.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">FT_TRACE_DEF(<sp/>gloader<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>glyph<sp/>loader<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftgloadr.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">FT_TRACE_DEF(<sp/>raster<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>monochrome<sp/>rasterizer<sp/><sp/><sp/>(ftraster.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">FT_TRACE_DEF(<sp/>smooth<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>anti-aliasing<sp/>raster<sp/><sp/><sp/><sp/>(ftgrays.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">FT_TRACE_DEF(<sp/>mm<sp/>)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>MM<sp/>interface<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftmm.c)<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">FT_TRACE_DEF(<sp/>raccess<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>resource<sp/>fork<sp/>accessor<sp/><sp/>(ftrfork.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">FT_TRACE_DEF(<sp/>synth<sp/>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>bold/slant<sp/>synthesizer<sp/><sp/>(ftsynth.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">FT_TRACE_DEF(<sp/>bitmap<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>bitmap<sp/>checksum<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftobjs.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Cache<sp/>sub-system<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">FT_TRACE_DEF(<sp/>cache<sp/>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>cache<sp/>sub-system<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ftcache.c,<sp/>etc.)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>SFNT<sp/>driver<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">FT_TRACE_DEF(<sp/>sfdriver<sp/>)<sp/><sp/></highlight><highlight class="comment">/*<sp/>SFNT<sp/>font<sp/>driver<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(sfdriver.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">FT_TRACE_DEF(<sp/>sfobjs<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>SFNT<sp/>object<sp/>handler<sp/><sp/><sp/><sp/><sp/>(sfobjs.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">FT_TRACE_DEF(<sp/>ttcmap<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>charmap<sp/>handler<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ttcmap.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">FT_TRACE_DEF(<sp/>ttkern<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>kerning<sp/>handler<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ttkern.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">FT_TRACE_DEF(<sp/>ttload<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>basic<sp/>TrueType<sp/>tables<sp/><sp/><sp/>(ttload.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal">FT_TRACE_DEF(<sp/>ttmtx<sp/>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>metrics-related<sp/>tables<sp/><sp/>(ttmtx.c)<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">FT_TRACE_DEF(<sp/>ttpost<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>PS<sp/>table<sp/>processing<sp/><sp/><sp/><sp/><sp/>(ttpost.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">FT_TRACE_DEF(<sp/>ttsbit<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueType<sp/>sbit<sp/>handling<sp/><sp/>(ttsbit.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">FT_TRACE_DEF(<sp/>ttbdf<sp/>)<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueType<sp/>embedded<sp/>BDF<sp/><sp/><sp/>(ttbdf.c)<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueType<sp/>driver<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">FT_TRACE_DEF(<sp/>ttdriver<sp/>)<sp/><sp/></highlight><highlight class="comment">/*<sp/>TT<sp/>font<sp/>driver<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ttdriver.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">FT_TRACE_DEF(<sp/>ttgload<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TT<sp/>glyph<sp/>loader<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(ttgload.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">FT_TRACE_DEF(<sp/>ttinterp<sp/>)<sp/><sp/></highlight><highlight class="comment">/*<sp/>bytecode<sp/>interpreter<sp/><sp/><sp/><sp/>(ttinterp.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">FT_TRACE_DEF(<sp/>ttobjs<sp/>)<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TT<sp/>objects<sp/>manager<sp/><sp/><sp/><sp/><sp/><sp/>(ttobjs.c)<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">FT_TRACE_DEF(<sp/>ttpload<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TT<sp/>data/program<sp/>loader<sp/><sp/>(ttpload.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">FT_TRACE_DEF(<sp/>ttgxvar<sp/>)<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueType<sp/>GX<sp/>var<sp/>handler<sp/>(ttgxvar.c)<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Type<sp/>1<sp/>driver<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">FT_TRACE_DEF(<sp/>t1afm<sp/>)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">FT_TRACE_DEF(<sp/>t1driver<sp/>)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">FT_TRACE_DEF(<sp/>t1gload<sp/>)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">FT_TRACE_DEF(<sp/>t1hint<sp/>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">FT_TRACE_DEF(<sp/>t1load<sp/>)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">FT_TRACE_DEF(<sp/>t1objs<sp/>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">FT_TRACE_DEF(<sp/>t1parse<sp/>)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>PostScript<sp/>helper<sp/>module<sp/>`psaux&apos;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">FT_TRACE_DEF(<sp/>t1decode<sp/>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">FT_TRACE_DEF(<sp/>psobjs<sp/>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">FT_TRACE_DEF(<sp/>psconv<sp/>)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>PostScript<sp/>hinting<sp/>module<sp/>`pshinter&apos;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">FT_TRACE_DEF(<sp/>pshrec<sp/>)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">FT_TRACE_DEF(<sp/>pshalgo1<sp/>)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">FT_TRACE_DEF(<sp/>pshalgo2<sp/>)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Type<sp/>2<sp/>driver<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">FT_TRACE_DEF(<sp/>cffdriver<sp/>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">FT_TRACE_DEF(<sp/>cffgload<sp/>)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">FT_TRACE_DEF(<sp/>cffload<sp/>)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">FT_TRACE_DEF(<sp/>cffobjs<sp/>)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">FT_TRACE_DEF(<sp/>cffparse<sp/>)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">FT_TRACE_DEF(<sp/>cf2blues<sp/>)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">FT_TRACE_DEF(<sp/>cf2hints<sp/>)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">FT_TRACE_DEF(<sp/>cf2interp<sp/>)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Type<sp/>42<sp/>driver<sp/>component<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">FT_TRACE_DEF(<sp/>t42<sp/>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>CID<sp/>driver<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">FT_TRACE_DEF(<sp/>cidafm<sp/>)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">FT_TRACE_DEF(<sp/>ciddriver<sp/>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">FT_TRACE_DEF(<sp/>cidgload<sp/>)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">FT_TRACE_DEF(<sp/>cidload<sp/>)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">FT_TRACE_DEF(<sp/>cidobjs<sp/>)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">FT_TRACE_DEF(<sp/>cidparse<sp/>)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Windows<sp/>font<sp/>component<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">FT_TRACE_DEF(<sp/>winfnt<sp/>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>PCF<sp/>font<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">FT_TRACE_DEF(<sp/>pcfdriver<sp/>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">FT_TRACE_DEF(<sp/>pcfread<sp/>)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>BDF<sp/>font<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal">FT_TRACE_DEF(<sp/>bdfdriver<sp/>)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">FT_TRACE_DEF(<sp/>bdflib<sp/>)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>PFR<sp/>font<sp/>component<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">FT_TRACE_DEF(<sp/>pfr<sp/>)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>OpenType<sp/>validation<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">FT_TRACE_DEF(<sp/>otvmodule<sp/>)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">FT_TRACE_DEF(<sp/>otvcommon<sp/>)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">FT_TRACE_DEF(<sp/>otvbase<sp/>)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">FT_TRACE_DEF(<sp/>otvgdef<sp/>)</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">FT_TRACE_DEF(<sp/>otvgpos<sp/>)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">FT_TRACE_DEF(<sp/>otvgsub<sp/>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">FT_TRACE_DEF(<sp/>otvjstf<sp/>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">FT_TRACE_DEF(<sp/>otvmath<sp/>)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>TrueTypeGX/AAT<sp/>validation<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvmodule<sp/>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvcommon<sp/>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvfeat<sp/>)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvmort<sp/>)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvmorx<sp/>)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvbsln<sp/>)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvjust<sp/>)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvkern<sp/>)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvopbd<sp/>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvtrak<sp/>)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvprop<sp/>)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">FT_TRACE_DEF(<sp/>gxvlcar<sp/>)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>autofit<sp/>components<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">FT_TRACE_DEF(<sp/>afmodule<sp/>)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">FT_TRACE_DEF(<sp/>afhints<sp/>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">FT_TRACE_DEF(<sp/>afcjk<sp/>)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">FT_TRACE_DEF(<sp/>aflatin<sp/>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">FT_TRACE_DEF(<sp/>aflatin2<sp/>)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">FT_TRACE_DEF(<sp/>afwarp<sp/>)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">FT_TRACE_DEF(<sp/>afharfbuzz<sp/>)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">FT_TRACE_DEF(<sp/>afglobal<sp/>)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>END<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/freetype/include/freetype/internal/fttrace.h"/>
+  </compounddef>
+</doxygen>

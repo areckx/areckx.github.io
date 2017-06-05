@@ -1,0 +1,134 @@
+.TH "Ms::FiguredBass" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::FiguredBass \- A complete figured bass indication\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <figuredbass\&.h>\fP
+.PP
+Inherits \fBMs::Text\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFiguredBass\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBFiguredBass\fP (const \fBFiguredBass\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBFiguredBass\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *painter) const override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetSelected\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual void \fBsetVisible\fP (bool f) override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "void \fBwriteMusicXML\fP (\fBXmlWriter\fP &xml, bool isOriginalFigure, int crEndTick, int fbEndTick, bool writeDuration, int divisions) const"
+.br
+.ti -1c
+.RI "qreal \fBlineLength\fP (int idx) const"
+.br
+.ti -1c
+.RI "qreal \fBprintedLineLength\fP () const"
+.br
+.ti -1c
+.RI "bool \fBonNote\fP () const"
+.br
+.ti -1c
+.RI "int \fBnumOfItems\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetOnNote\fP (bool val)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTicks\fP (int val)"
+.br
+.ti -1c
+.RI "qreal \fBadditionalContLineX\fP (qreal pagePosY) const"
+.br
+.ti -1c
+.RI "\fBFiguredBass\fP * \fBnextFiguredBass\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "void \fBappendItem\fP (\fBFiguredBassItem\fP *item)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBFiguredBass\fP * \fBaddFiguredBassToSegment\fP (\fBSegment\fP *seg, int track, int extTicks, bool *pNew)"
+.br
+.ti -1c
+.RI "static bool \fBreadConfigFile\fP (const QString &fileName)"
+.br
+.ti -1c
+.RI "static QList< QString > \fBfontNames\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBfontData\fP (int nIdx, QString *pFamily, QString *pDisplayName, qreal *pSize, qreal *pLineHeight)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBonNote\fP"
+.br
+.ti -1c
+.RI "int \fBticks\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A complete figured bass indication\&. 
+.PP
+Definition at line 248 of file figuredbass\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

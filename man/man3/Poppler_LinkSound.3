@@ -1,0 +1,106 @@
+.TH "Poppler::LinkSound" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkSound
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkSound\fP (const QRectF &\fBlinkArea\fP, double \fBvolume\fP, bool sync, bool \fBrepeat\fP, bool \fBmix\fP, \fBSoundObject\fP *\fBsound\fP)"
+.br
+.ti -1c
+.RI "virtual \fB~LinkSound\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.ti -1c
+.RI "double \fBvolume\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsynchronous\fP () const"
+.br
+.ti -1c
+.RI "bool \fBrepeat\fP () const"
+.br
+.ti -1c
+.RI "bool \fBmix\fP () const"
+.br
+.ti -1c
+.RI "\fBSoundObject\fP * \fBsound\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBSound\fP: a sound to be played\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 402 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LinkSound::~LinkSound ()\fC [virtual]\fP"
+Destructor\&. 
+.PP
+Definition at line 567 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLink::LinkType\fP LinkSound::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 571 of file poppler\-link\&.cc\&.
+.SS "bool LinkSound::mix () const"
+Whether the playback of this sound can be mixed with playbacks with other sounds of the same document\&.
+.PP
+\fBNote:\fP
+.RS 4
+When false, any other playback must be stopped before playing the sound\&. 
+.RE
+.PP
+
+.PP
+Definition at line 594 of file poppler\-link\&.cc\&.
+.SS "bool LinkSound::repeat () const"
+Whether the sound should be played continuously (that is, started again when it ends) 
+.PP
+Definition at line 588 of file poppler\-link\&.cc\&.
+.SS "\fBSoundObject\fP * LinkSound::sound () const"
+The sound object to be played 
+.PP
+Definition at line 600 of file poppler\-link\&.cc\&.
+.SS "bool LinkSound::synchronous () const"
+Whether the playback of the sound should be synchronous (thus blocking, waiting for the end of the sound playback)\&. 
+.PP
+Definition at line 582 of file poppler\-link\&.cc\&.
+.SS "double LinkSound::volume () const"
+The volume to be used when playing the sound\&.
+.PP
+The volume is in the range [ -1, 1 ], where:
+.IP "\(bu" 2
+a negative number: no volume (mute)
+.IP "\(bu" 2
+1: full volume 
+.PP
+
+.PP
+Definition at line 576 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,181 @@
+.TH "Ms::Rest" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Rest \- This class implements a rest\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rest\&.h>\fP
+.PP
+Inherits \fBMs::ChordRest\fP\&.
+.PP
+Inherited by \fBMs::RepeatMeasure\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRest\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBRest\fP (\fBScore\fP *, const \fBTDuration\fP &)"
+.br
+.ti -1c
+.RI "\fBRest\fP (const \fBRest\fP &, bool link=false)"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "\fBRest\fP & \fBoperator=\fP (const \fBRest\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBRest\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBlinkedClone\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBmeasure\fP () const override"
+.br
+.ti -1c
+.RI "virtual qreal \fBmag\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "bool \fBisGap\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetGap\fP (bool v)"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "void \fBsetMMWidth\fP (qreal val)"
+.br
+.ti -1c
+.RI "qreal \fBmmWidth\fP () const"
+.br
+.ti -1c
+.RI "SymId \fBgetSymbol\fP (TDuration::DurationType type, int line, int lines, int *yoffset)"
+.br
+.ti -1c
+.RI "int \fBgetDotline\fP () const"
+.br
+.ti -1c
+.RI "SymId \fBsym\fP () const"
+.br
+.ti -1c
+.RI "bool \fBaccent\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAccent\fP (bool flag)"
+.br
+.ti -1c
+.RI "int \fBcomputeLineOffset\fP (int lines)"
+.br
+.ti -1c
+.RI "virtual int \fBupLine\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBdownLine\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBstemPos\fP () const"
+.br
+.ti -1c
+.RI "virtual qreal \fBstemPosX\fP () const"
+.br
+.ti -1c
+.RI "virtual QPointF \fBstemPosBeam\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &v) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBscreenReaderInfo\fP () const override"
+.br
+.ti -1c
+.RI "\fBShape\fP \fBshape\fP () const override"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBgetDotline\fP (TDuration::DurationType durationType)"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisFullMeasure\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class implements a rest\&. 
+.PP
+Definition at line 29 of file rest\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Rest::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 181 of file rest\&.cpp\&.
+.SS "\fBElement\fP * Ms::Rest::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::ChordRest\fP\&.
+.PP
+Definition at line 224 of file rest\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

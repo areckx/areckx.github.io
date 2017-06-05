@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_bww_1_1_ms_sc_writer" kind="class" language="C++" prot="public">
+    <compoundname>Bww::MsScWriter</compoundname>
+    <basecompoundref refid="class_bww_1_1_writer" prot="public" virt="non-virtual">Bww::Writer</basecompoundref>
+    <innerclass refid="struct_bww_1_1_ms_sc_writer_1_1_step_alter_oct" prot="private">Bww::MsScWriter::StepAlterOct</innerclass>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a6702ee0b5e587107a65726732283cc8e" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int Bww::MsScWriter::WHOLE_DUR</definition>
+        <argsstring></argsstring>
+        <name>WHOLE_DUR</name>
+        <initializer>= 64</initializer>
+        <briefdescription>
+<para>Whole note duration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="147" column="1" bodyfile="mscore/importbww.cpp" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1ac5c0359f4ebe867a2d755762cab912c1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_score" kindref="compound">Ms::Score</ref> *</type>
+        <definition>Ms::Score* Bww::MsScWriter::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+<para>The score. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="155" column="1" bodyfile="mscore/importbww.cpp" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a24ffa6e5052e66b0d0f5f896ca7a3d5e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bww::MsScWriter::beats</definition>
+        <argsstring></argsstring>
+        <name>beats</name>
+        <briefdescription>
+<para>Number of beats. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="156" column="1" bodyfile="mscore/importbww.cpp" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1aa4bb943cf38a92c4efd23af2a736b126" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Bww::MsScWriter::beat</definition>
+        <argsstring></argsstring>
+        <name>beat</name>
+        <briefdescription>
+<para>Beat type. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="157" column="1" bodyfile="mscore/importbww.cpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a5ad966d6bb3cb2845431a5748743941d" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, StepAlterOct &gt;</type>
+        <definition>QMap&lt;QString, StepAlterOct&gt; Bww::MsScWriter::stepAlterOctMap</definition>
+        <argsstring></argsstring>
+        <name>stepAlterOctMap</name>
+        <briefdescription>
+<para>Map bww pitch to step/alter/oct. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="158" column="1" bodyfile="mscore/importbww.cpp" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a62ce7837fb2586c65ba5674c88b17527" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, QString &gt;</type>
+        <definition>QMap&lt;QString, QString&gt; Bww::MsScWriter::typeMap</definition>
+        <argsstring></argsstring>
+        <name>typeMap</name>
+        <briefdescription>
+<para>Map bww note types to MusicXML. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="159" column="1" bodyfile="mscore/importbww.cpp" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a74dd45b9af91b745f62fa2f3156c2bf2" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Bww::MsScWriter::measureNumber</definition>
+        <argsstring></argsstring>
+        <name>measureNumber</name>
+        <briefdescription>
+<para>Current measure number. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="160" column="1" bodyfile="mscore/importbww.cpp" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1af40254206805ac6278c396a07cfc6a31" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Bww::MsScWriter::tick</definition>
+        <argsstring></argsstring>
+        <name>tick</name>
+        <briefdescription>
+<para>Current tick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="161" column="1" bodyfile="mscore/importbww.cpp" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a02d10eb9c0b7c152b5928052cd229a8d" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_measure" kindref="compound">Ms::Measure</ref> *</type>
+        <definition>Ms::Measure* Bww::MsScWriter::currentMeasure</definition>
+        <argsstring></argsstring>
+        <name>currentMeasure</name>
+        <briefdescription>
+<para>Current measure. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="162" column="1" bodyfile="mscore/importbww.cpp" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a9dffc95d7de691cbc83919aba74a8824" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_tuplet" kindref="compound">Ms::Tuplet</ref> *</type>
+        <definition>Ms::Tuplet* Bww::MsScWriter::tuplet</definition>
+        <argsstring></argsstring>
+        <name>tuplet</name>
+        <briefdescription>
+<para>Current tuplet. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="163" column="1" bodyfile="mscore/importbww.cpp" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a3919b6e32cc583b56e06979e0129ecf4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_volta" kindref="compound">Ms::Volta</ref> *</type>
+        <definition>Ms::Volta* Bww::MsScWriter::lastVolta</definition>
+        <argsstring></argsstring>
+        <name>lastVolta</name>
+        <briefdescription>
+<para>Current volta. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="164" column="1" bodyfile="mscore/importbww.cpp" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1a06fe21fddb154fe9882182cce9ed1b23" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Bww::MsScWriter::tempo</definition>
+        <argsstring></argsstring>
+        <name>tempo</name>
+        <briefdescription>
+<para>Tempo (0 = not specified) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="165" column="1" bodyfile="mscore/importbww.cpp" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1ae4ef93c7c485ca429903955a27cbb618" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Bww::MsScWriter::ending</definition>
+        <argsstring></argsstring>
+        <name>ending</name>
+        <briefdescription>
+<para>Current ending. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="166" column="1" bodyfile="mscore/importbww.cpp" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_bww_1_1_ms_sc_writer_1abe3567c69a91487fe550d8d146dc646f" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="class_ms_1_1_chord" kindref="compound">Ms::Chord</ref> * &gt;</type>
+        <definition>QList&lt;Ms::Chord*&gt; Bww::MsScWriter::currentGraceNotes</definition>
+        <argsstring></argsstring>
+        <name>currentGraceNotes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="167" column="1" bodyfile="mscore/importbww.cpp" bodystart="167" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1aebc249aecf32347d49866fdc06edaa6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Bww::MsScWriter::MsScWriter</definition>
+        <argsstring>()</argsstring>
+        <name>MsScWriter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_bww_1_1_ms_sc_writer" kindref="compound">MsScWriter</ref> constructor. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="131" column="1" bodyfile="mscore/importbww.cpp" bodystart="174" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1a95b57a18e804232fd724ce054dfd9d9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::beginMeasure</definition>
+        <argsstring>(const Bww::MeasureBeginFlags mbf)</argsstring>
+        <name>beginMeasure</name>
+        <reimplements refid="class_bww_1_1_writer_1a2f2af7af43c06d26494b7daf22da7f6f">beginMeasure</reimplements>
+        <param>
+          <type>const <ref refid="struct_bww_1_1_measure_begin_flags" kindref="compound">Bww::MeasureBeginFlags</ref></type>
+          <declname>mbf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Begin a new measure. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="132" column="1" bodyfile="mscore/importbww.cpp" bodystart="209" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1aaac2c3a7754b9e4932aed4b67b0c6e95" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::endMeasure</definition>
+        <argsstring>(const Bww::MeasureEndFlags mef)</argsstring>
+        <name>endMeasure</name>
+        <reimplements refid="class_bww_1_1_writer_1a74857356866276109e1b6f44df5c43e4">endMeasure</reimplements>
+        <param>
+          <type>const <ref refid="struct_bww_1_1_measure_end_flags" kindref="compound">Bww::MeasureEndFlags</ref></type>
+          <declname>mef</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End the current measure. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="133" column="1" bodyfile="mscore/importbww.cpp" bodystart="276" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1aa10c1014a6f22fd95ded294691b7517c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::header</definition>
+        <argsstring>(const QString title, const QString type, const QString composer, const QString footer, const unsigned int temp)</argsstring>
+        <name>header</name>
+        <reimplements refid="class_bww_1_1_writer_1a15d22cd5077435cf769d03c79652fffe">header</reimplements>
+        <param>
+          <type>const QString</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>composer</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>footer</declname>
+        </param>
+        <param>
+          <type>const unsigned int</type>
+          <declname>temp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write the header. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="134" column="1" bodyfile="mscore/importbww.cpp" bodystart="410" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1a14b90e89cf41fd7590a5ec89411a699f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::note</definition>
+        <argsstring>(const QString pitch, const QVector&lt; Bww::BeamType &gt; beamList, const QString type, const int dots, bool tieStart=false, bool tieStop=false, StartStop triplet=ST_NONE, bool grace=false)</argsstring>
+        <name>note</name>
+        <reimplements refid="class_bww_1_1_writer_1a1aeecae72bec20c8946f25683da39e7e">note</reimplements>
+        <param>
+          <type>const QString</type>
+          <declname>pitch</declname>
+        </param>
+        <param>
+          <type>const QVector&lt; Bww::BeamType &gt;</type>
+          <declname>beamList</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>dots</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tieStart</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tieStop</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>StartStop</type>
+          <declname>triplet</declname>
+          <defval>ST_NONE</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>grace</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write a single note. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="137" column="1" bodyfile="mscore/importbww.cpp" bodystart="321" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1a022542fa7a888d53067abea6d4ad5518" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::setScore</definition>
+        <argsstring>(Ms::Score *s)</argsstring>
+        <name>setScore</name>
+        <param>
+          <type><ref refid="class_ms_1_1_score" kindref="compound">Ms::Score</ref> *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="142" column="1" bodyfile="mscore/importbww.cpp" bodystart="142" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1aa451ddaec741b6174bf43b0b11adf4de" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::tsig</definition>
+        <argsstring>(const int beats, const int beat)</argsstring>
+        <name>tsig</name>
+        <reimplements refid="class_bww_1_1_writer_1a3bf4eef6a8ecca5e9a61d389704bfc44">tsig</reimplements>
+        <param>
+          <type>const int</type>
+          <declname>beats</declname>
+          <defname>bts</defname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>beat</declname>
+          <defname>bt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Store beats and beat type for later use. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="143" column="1" bodyfile="mscore/importbww.cpp" bodystart="457" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1a8dcafaba05ea6dd04f11878e58f53bba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::trailer</definition>
+        <argsstring>()</argsstring>
+        <name>trailer</name>
+        <reimplements refid="class_bww_1_1_writer_1abc0884ddeed241b2b771270ca59a64af">trailer</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Write the trailer. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="144" column="1" bodyfile="mscore/importbww.cpp" bodystart="472" bodyend="478"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bww_1_1_ms_sc_writer_1a53282b4aeeb60d6b2d1bc324ad88b788" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Bww::MsScWriter::doTriplet</definition>
+        <argsstring>(Ms::Chord *cr, StartStop triplet=ST_NONE)</argsstring>
+        <name>doTriplet</name>
+        <param>
+          <type><ref refid="class_ms_1_1_chord" kindref="compound">Ms::Chord</ref> *</type>
+          <declname>cr</declname>
+        </param>
+        <param>
+          <type>StartStop</type>
+          <declname>triplet</declname>
+          <defval>ST_NONE</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Handle the triplet. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importbww.cpp" line="146" column="1" bodyfile="mscore/importbww.cpp" bodystart="484" bodyend="519"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The writer that imports into MuseScore. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="10645">
+        <label>Bww::MsScWriter</label>
+        <link refid="class_bww_1_1_ms_sc_writer"/>
+        <childnode refid="10646" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10646">
+        <label>Bww::Writer</label>
+        <link refid="class_bww_1_1_writer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10647">
+        <label>Bww::MsScWriter</label>
+        <link refid="class_bww_1_1_ms_sc_writer"/>
+        <childnode refid="10648" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10648">
+        <label>Bww::Writer</label>
+        <link refid="class_bww_1_1_writer"/>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/importbww.cpp" line="129" column="1" bodyfile="mscore/importbww.cpp" bodystart="128" bodyend="168"/>
+    <listofallmembers>
+      <member refid="class_bww_1_1_ms_sc_writer_1aa4bb943cf38a92c4efd23af2a736b126" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>beat</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a24ffa6e5052e66b0d0f5f896ca7a3d5e" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>beats</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a95b57a18e804232fd724ce054dfd9d9d" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>beginMeasure</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1abe3567c69a91487fe550d8d146dc646f" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>currentGraceNotes</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a02d10eb9c0b7c152b5928052cd229a8d" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>currentMeasure</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a53282b4aeeb60d6b2d1bc324ad88b788" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>doTriplet</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1ae4ef93c7c485ca429903955a27cbb618" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>ending</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1aaac2c3a7754b9e4932aed4b67b0c6e95" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>endMeasure</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1aa10c1014a6f22fd95ded294691b7517c" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>header</name></member>
+      <member refid="class_bww_1_1_writer_1af8a76e821a2e66823c0fb8b39821897f" prot="public" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>instrumentName</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a3919b6e32cc583b56e06979e0129ecf4" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>lastVolta</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a74dd45b9af91b745f62fa2f3156c2bf2" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>measureNumber</name></member>
+      <member refid="class_bww_1_1_writer_1a64dc0f60dda5dbf53dbe2e23b5f48944" prot="public" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>midiProgram</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1aebc249aecf32347d49866fdc06edaa6e" prot="public" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>MsScWriter</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a14b90e89cf41fd7590a5ec89411a699f" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>note</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1ac5c0359f4ebe867a2d755762cab912c1" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>score</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a022542fa7a888d53067abea6d4ad5518" prot="public" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>setScore</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a5ad966d6bb3cb2845431a5748743941d" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>stepAlterOctMap</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a06fe21fddb154fe9882182cce9ed1b23" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>tempo</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1af40254206805ac6278c396a07cfc6a31" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>tick</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a8dcafaba05ea6dd04f11878e58f53bba" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>trailer</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1aa451ddaec741b6174bf43b0b11adf4de" prot="public" virt="virtual"><scope>Bww::MsScWriter</scope><name>tsig</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a9dffc95d7de691cbc83919aba74a8824" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>tuplet</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a62ce7837fb2586c65ba5674c88b17527" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>typeMap</name></member>
+      <member refid="class_bww_1_1_ms_sc_writer_1a6702ee0b5e587107a65726732283cc8e" prot="private" virt="non-virtual"><scope>Bww::MsScWriter</scope><name>WHOLE_DUR</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

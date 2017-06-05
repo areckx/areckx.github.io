@@ -1,0 +1,492 @@
+.TH "Ms::Measure" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Measure \- one measure in a system  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <measure\&.h>\fP
+.PP
+Inherits \fBMs::MeasureBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMeasure\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP (const \fBMeasure\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBMeasure\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s) override"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBcloneMeasure\fP (\fBScore\fP *, \fBTieMap\fP *)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &, int idx)"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &d)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &, int, bool writeSystemElements, bool forceTimeSig) const"
+.br
+.ti -1c
+.RI "void \fBwriteBox\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "void \fBreadBox\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "void \fBcheckMeasure\fP (int idx)"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.RI "Add new \fBElement\fP \fIel\fP to \fBMeasure\fP\&. "
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.RI "Remove \fBElement\fP \fIel\fP from \fBMeasure\fP\&. "
+.ti -1c
+.RI "virtual void \fBchange\fP (\fBElement\fP *o, \fBElement\fP *n) override"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal oldValue, qreal newValue) override"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasVoices\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "void \fBsetHasVoices\fP (int staffIdx, bool v)"
+.br
+.ti -1c
+.RI "\fBStaffLines\fP * \fBstaffLines\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "\fBSpacer\fP * \fBvspacerDown\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "\fBSpacer\fP * \fBvspacerUp\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "void \fBsetStaffVisible\fP (int staffIdx, bool visible)"
+.br
+.ti -1c
+.RI "void \fBsetStaffSlashStyle\fP (int staffIdx, bool slashStyle)"
+.br
+.ti -1c
+.RI "bool \fBcorrupted\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "void \fBsetCorrupted\fP (int staffIdx, bool val)"
+.br
+.ti -1c
+.RI "void \fBsetNoText\fP (int staffIdx, \fBText\fP *)"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBnoText\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "\fBShape\fP \fBstaffShape\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "\fBShape\fP & \fBstaffShape\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "void \fBcreateStaves\fP (int)"
+.br
+.ti -1c
+.RI "MeasureNumberMode \fBmeasureNumberMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMeasureNumberMode\fP (MeasureNumberMode v)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBtimesig\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTimesig\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBlen\fP () const"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBstretchedLen\fP (\fBStaff\fP *) const"
+.br
+.ti -1c
+.RI "void \fBsetLen\fP (const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "virtual int \fBticks\fP () const override"
+.br
+.ti -1c
+.RI "bool \fBisIrregular\fP () const"
+.br
+.ti -1c
+.RI "int \fBsize\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Segment\fP * \fBfirst\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfirst\fP (SegmentType t) const"
+.br
+.ti -1c
+.RI "\fBMs::Segment\fP * \fBlast\fP () const"
+.br
+.ti -1c
+.RI "\fBSegmentList\fP & \fBsegments\fP ()"
+.br
+.ti -1c
+.RI "const \fBSegmentList\fP & \fBsegments\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBuserStretch\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserStretch\fP (qreal v)"
+.br
+.ti -1c
+.RI "void \fBstretchMeasure\fP (qreal stretch)"
+.br
+.ti -1c
+.RI "void \fBlayout2\fP ()"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBfindChord\fP (int tick, int track)"
+.br
+.RI "Search for chord at position \fItick\fP in \fItrack\fP\&. "
+.ti -1c
+.RI "\fBChordRest\fP * \fBfindChordRest\fP (int tick, int track)"
+.br
+.RI "Search for chord or rest at position \fItick\fP at \fIstaff\fP in \fIvoice\fP\&. "
+.ti -1c
+.RI "int \fBsnap\fP (int tick, const QPointF p) const"
+.br
+.ti -1c
+.RI "int \fBsnapNote\fP (int tick, const QPointF p, int staff) const"
+.br
+.ti -1c
+.RI "void \fBinsertStaff\fP (\fBStaff\fP *, int staff)"
+.br
+.ti -1c
+.RI "void \fBinsertMStaff\fP (\fBMStaff\fP *staff, int idx)"
+.br
+.ti -1c
+.RI "void \fBremoveMStaff\fP (\fBMStaff\fP *staff, int idx)"
+.br
+.ti -1c
+.RI "virtual void \fBmoveTicks\fP (int diff)"
+.br
+.ti -1c
+.RI "void \fBcmdRemoveStaves\fP (int s, int e)"
+.br
+.ti -1c
+.RI "void \fBcmdAddStaves\fP (int s, int e, bool createRest)"
+.br
+.ti -1c
+.RI "void \fBremoveStaves\fP (int s, int e)"
+.br
+.ti -1c
+.RI "void \fBinsertStaves\fP (int s, int e)"
+.br
+.ti -1c
+.RI "qreal \fBtick2pos\fP (int) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segment\fP (int tick, SegmentType st=SegmentType::ChordRest)"
+.br
+.ti -1c
+.RI "void \fBsortStaves\fP (QList< int > &dst)"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "int \fBrepeatCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRepeatCount\fP (int val)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBundoGetSegment\fP (SegmentType st, int tick)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBgetSegment\fP (SegmentType st, int tick)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfindSegment\fP (SegmentType st, int tick) const"
+.br
+.RI "Search for a segment of type \fIst\fP at position \fIt\fP\&. "
+.ti -1c
+.RI "\fBSegment\fP * \fBundoGetSegmentR\fP (SegmentType st, int rtick)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBgetSegmentR\fP (SegmentType st, int rtick)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfindSegmentR\fP (SegmentType st, int rtick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBundoGetSegment\fP (SegmentType st, const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBgetSegment\fP (SegmentType st, const \fBFraction\fP &f)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfindFirst\fP (SegmentType st, int rtick) const"
+.br
+.ti -1c
+.RI "qreal \fBcreateEndBarLines\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBbarLinesSetSpan\fP (\fBSegment\fP *)"
+.br
+.ti -1c
+.RI "void \fBsetEndBarLineType\fP (BarLineType val, int track, bool visible=true, QColor \fBcolor\fP=QColor())"
+.br
+.ti -1c
+.RI "\fBRepeatMeasure\fP * \fBcmdInsertRepeatMeasure\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "void \fBcreateVoice\fP (int track)"
+.br
+.ti -1c
+.RI "void \fBadjustToLen\fP (\fBFraction\fP, bool appendRestsIfNecessary=true)"
+.br
+.ti -1c
+.RI "AccidentalVal \fBfindAccidental\fP (\fBNote\fP *) const"
+.br
+.RI "return current accidental value at note position "
+.ti -1c
+.RI "AccidentalVal \fBfindAccidental\fP (\fBSegment\fP *s, int staffIdx, int line, bool &error) const"
+.br
+.ti -1c
+.RI "void \fBexchangeVoice\fP (int voice1, int voice2, int staffIdx)"
+.br
+.ti -1c
+.RI "void \fBcheckMultiVoices\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "bool \fBhasVoice\fP (int track) const"
+.br
+.ti -1c
+.RI "bool \fBisMeasureRest\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "bool \fBisFullMeasureRest\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisRepeatMeasure\fP (\fBStaff\fP *staff) const"
+.br
+.ti -1c
+.RI "bool \fBvisible\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "bool \fBslashStyle\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "bool \fBisFinalMeasureOfSection\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisAnacrusis\fP () const"
+.br
+.ti -1c
+.RI "bool \fBbreakMultiMeasureRest\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBreakMultiMeasureRest\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisOnlyRests\fP (int track) const"
+.br
+.ti -1c
+.RI "bool \fBisOnlyDeletedRests\fP (int track) const"
+.br
+.ti -1c
+.RI "int \fBplaybackCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlaybackCount\fP (int val)"
+.br
+.ti -1c
+.RI "QRectF \fBstaffabbox\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "bool \fBhasMMRest\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisMMRest\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmmRest\fP () const"
+.br
+.ti -1c
+.RI "const \fBMeasure\fP * \fBmmRest1\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMMRest\fP (\fBMeasure\fP *m)"
+.br
+.ti -1c
+.RI "int \fBmmRestCount\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMMRestCount\fP (int n)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmmRestFirst\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmmRestLast\fP () const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBnextElementStaff\fP (int staff)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBprevElementStaff\fP (int staff)"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "void \fBaddSystemHeader\fP (bool firstSystem)"
+.br
+.ti -1c
+.RI "void \fBaddSystemTrailer\fP (\fBMeasure\fP *nm)"
+.br
+.ti -1c
+.RI "void \fBremoveSystemHeader\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveSystemTrailer\fP ()"
+.br
+.ti -1c
+.RI "const \fBBarLine\fP * \fBendBarLine\fP () const"
+.br
+.ti -1c
+.RI "BarLineType \fBendBarLineType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBendBarLineVisible\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBtriggerLayout\fP () const override"
+.br
+.ti -1c
+.RI "qreal \fBbasicStretch\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBbasicWidth\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBcomputeMinWidth\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckHeader\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckTrailer\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStretchedWidth\fP (qreal)"
+.br
+.ti -1c
+.RI "void \fBlayoutStaffLines\fP ()"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBMs::Segment\fP \fBfirstSegment\fP"
+.br
+.ti -1c
+.RI "\fBMs::Segment\fP \fBlastSegment\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+one measure in a system 
+.PP
+Definition at line 65 of file measure\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Measure::acceptDrop (\fBEditData\fP & data) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if an \fBElement\fP of type \fItype\fP can be dropped on a \fBMeasure\fP 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 1218 of file measure\&.cpp\&.
+.SS "void Ms::Measure::addSystemHeader (bool isFirstSystem)"
+Add elements to make this measure suitable as the first measure of a system\&. 
+.PP
+Definition at line 3415 of file measure\&.cpp\&.
+.SS "void Ms::Measure::checkMultiVoices (int staffIdx)"
+Check for more than on voice in this measure and staff and set MStaff->hasVoices 
+.PP
+Definition at line 2430 of file measure\&.cpp\&.
+.SS "\fBElement\fP * Ms::Measure::drop (\fBEditData\fP & data)\fC [override]\fP, \fC [virtual]\fP"
+Drop element\&. Handle a dropped element at position \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 1289 of file measure\&.cpp\&.
+.SS "AccidentalVal Ms::Measure::findAccidental (\fBSegment\fP * s, int staffIdx, int line, bool & error) const"
+Compute accidental state at segment/staffIdx for relative staff line\&. 
+.PP
+Definition at line 390 of file measure\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Measure::getSegment (SegmentType st, int t)"
+Get a segment of type \fIst\fP at tick position \fIt\fP\&. If the segment does not exist, it is created\&. 
+.PP
+Definition at line 698 of file measure\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Measure::getSegmentR (SegmentType st, int t)"
+Get a segment of type \fIst\fP at relative tick position \fIt\fP\&. If the segment does not exist, it is created\&. 
+.PP
+Definition at line 754 of file measure\&.cpp\&.
+.SS "bool Ms::Measure::isMeasureRest (int staffIdx) const"
+Check if the measure is filled by a full-measure rest or full of rests on this staff\&. If staff is -1, then check for all staves\&. 
+.PP
+Definition at line 2487 of file measure\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

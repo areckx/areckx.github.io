@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_base_stream" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>BaseStream</compoundname>
+    <basecompoundref refid="class_stream" prot="public" virt="non-virtual">Stream</basecompoundref>
+    <derivedcompoundref refid="class_cached_file_stream" prot="public" virt="non-virtual">CachedFileStream</derivedcompoundref>
+    <derivedcompoundref refid="class_embed_stream" prot="public" virt="non-virtual">EmbedStream</derivedcompoundref>
+    <derivedcompoundref refid="class_file_stream" prot="public" virt="non-virtual">FileStream</derivedcompoundref>
+    <derivedcompoundref refid="class_mem_stream" prot="public" virt="non-virtual">MemStream</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_base_stream_1a27990e96583f15766a493c2c1bf0edee" prot="protected" static="no" mutable="no">
+        <type>Goffset</type>
+        <definition>Goffset BaseStream::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="327" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="327" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_base_stream_1a5581b68734d93b915ffc6e763f003fff" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_object" kindref="compound">Object</ref></type>
+        <definition>Object BaseStream::dict</definition>
+        <argsstring></argsstring>
+        <name>dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="328" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_base_stream_1a6cf361381d246846eac44d649a630b09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BaseStream::BaseStream</definition>
+        <argsstring>(Object *dictA, Goffset lengthA)</argsstring>
+        <name>BaseStream</name>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>dictA</declname>
+        </param>
+        <param>
+          <type>Goffset</type>
+          <declname>lengthA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="308" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="419" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1ab6f7299ce32fe8d47000b91a584e4a18" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BaseStream::~BaseStream</definition>
+        <argsstring>()</argsstring>
+        <name>~BaseStream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="309" column="1" bodyfile="thirdparty/poppler/poppler/Stream.cc" bodystart="424" bodyend="426"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a1e486654d0bc40e4e2834e8498213cd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_base_stream" kindref="compound">BaseStream</ref> *</type>
+        <definition>virtual BaseStream* BaseStream::copy</definition>
+        <argsstring>()=0</argsstring>
+        <name>copy</name>
+        <reimplementedby refid="class_file_stream_1ab8cbc3c12fba2ec2ba276590d027edec">copy</reimplementedby>
+        <reimplementedby refid="class_cached_file_stream_1a0fffd56be3d68902ef1fd3da29972ba4">copy</reimplementedby>
+        <reimplementedby refid="class_mem_stream_1a554674a98452d1da5b6c7e6cc8d110a6">copy</reimplementedby>
+        <reimplementedby refid="class_embed_stream_1aeffc51f2d93a1c34e88bfc3a77dc9ee7">copy</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="310" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a38fd4aa8d528d2132380401dd3ff4c2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+        <definition>virtual Stream* BaseStream::makeSubStream</definition>
+        <argsstring>(Goffset start, GBool limited, Goffset length, Object *dict)=0</argsstring>
+        <name>makeSubStream</name>
+        <reimplementedby refid="class_file_stream_1a268a264b908d8944c092ffb9718726dc">makeSubStream</reimplementedby>
+        <reimplementedby refid="class_cached_file_stream_1a765f3d6486063cba4f0986ad972b11c2">makeSubStream</reimplementedby>
+        <reimplementedby refid="class_mem_stream_1a2768a8bff9d410e8f97e4ed2a99a4702">makeSubStream</reimplementedby>
+        <reimplementedby refid="class_embed_stream_1a6165cfe55a7d4c1e8a57ff18ef4bd179">makeSubStream</reimplementedby>
+        <param>
+          <type>Goffset</type>
+          <declname>start</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>limited</declname>
+        </param>
+        <param>
+          <type>Goffset</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object" kindref="compound">Object</ref> *</type>
+          <declname>dict</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="311" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1acd433a2780d814a3bc1947e2bf75dd5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void BaseStream::setPos</definition>
+        <argsstring>(Goffset pos, int dir=0)=0</argsstring>
+        <name>setPos</name>
+        <reimplements refid="class_stream_1ae1cda8489c45df123e90e826f5543ac7">setPos</reimplements>
+        <reimplementedby refid="class_file_stream_1a5391ebf82d4dd843b6d3f6806146bef9">setPos</reimplementedby>
+        <reimplementedby refid="class_cached_file_stream_1a102fe2ebea00543ee314b76b6ab4ecc8">setPos</reimplementedby>
+        <reimplementedby refid="class_mem_stream_1ae9ed4d85362c2b835d25d549b68603b9">setPos</reimplementedby>
+        <reimplementedby refid="class_embed_stream_1aa0b406a949ac059547ba93600184e287">setPos</reimplementedby>
+        <param>
+          <type>Goffset</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dir</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="313" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a8d4b5d32270889010e6dcba2e0791e8c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool BaseStream::isBinary</definition>
+        <argsstring>(GBool last=gTrue)</argsstring>
+        <name>isBinary</name>
+        <reimplements refid="class_stream_1abd17c5f2b0f33b5c50272a00b380ffaf">isBinary</reimplements>
+        <param>
+          <type>GBool</type>
+          <declname>last</declname>
+          <defval>gTrue</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="314" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="314" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a10ee62b35abb0236d33e97e46f531906" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_base_stream" kindref="compound">BaseStream</ref> *</type>
+        <definition>virtual BaseStream* BaseStream::getBaseStream</definition>
+        <argsstring>()</argsstring>
+        <name>getBaseStream</name>
+        <reimplements refid="class_stream_1a5efa11392387347dbbe508cbd726ca44">getBaseStream</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="315" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="315" bodyend="315"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a7e7da81db581bacdc9d078a8a6d1aeb2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+        <definition>virtual Stream* BaseStream::getUndecodedStream</definition>
+        <argsstring>()</argsstring>
+        <name>getUndecodedStream</name>
+        <reimplements refid="class_stream_1a59d596c6e5f1732f49afef156e783e4a">getUndecodedStream</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="316" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="316" bodyend="316"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1ad6812d4617c0b8dc274a94a42cb440f0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_dict" kindref="compound">Dict</ref> *</type>
+        <definition>virtual Dict* BaseStream::getDict</definition>
+        <argsstring>()</argsstring>
+        <name>getDict</name>
+        <reimplements refid="class_stream_1a32e1cfe6129529d5de400b4b64e0d74d">getDict</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="317" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="317" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a436486387c8fda3bf0f65d71c05897cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>virtual GooString* BaseStream::getFileName</definition>
+        <argsstring>()</argsstring>
+        <name>getFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="318" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="318" bodyend="318"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a023ee51fad60dc59e54bd38014be756a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Goffset</type>
+        <definition>virtual Goffset BaseStream::getLength</definition>
+        <argsstring>()</argsstring>
+        <name>getLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="319" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="319" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a6a7c150f42971ff329656fc98e68b69e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Goffset</type>
+        <definition>virtual Goffset BaseStream::getStart</definition>
+        <argsstring>()=0</argsstring>
+        <name>getStart</name>
+        <reimplementedby refid="class_file_stream_1ac401ba3eb1bb31bc81a3a757c2480287">getStart</reimplementedby>
+        <reimplementedby refid="class_cached_file_stream_1a10fd12f084cfaf5d7511eac4804cc2fb">getStart</reimplementedby>
+        <reimplementedby refid="class_mem_stream_1aa65556633b47f57722c14c026197cd13">getStart</reimplementedby>
+        <reimplementedby refid="class_embed_stream_1a99a7fff7d2958007a6fd481d6cae3663">getStart</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="322" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_base_stream_1a72298a03e84007d4381fd14dc7726262" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void BaseStream::moveStart</definition>
+        <argsstring>(Goffset delta)=0</argsstring>
+        <name>moveStart</name>
+        <reimplementedby refid="class_file_stream_1a67fac8d9b3aad3f3b3a393802ace759b">moveStart</reimplementedby>
+        <reimplementedby refid="class_cached_file_stream_1a028546af4ab42ed2bdb0f39977eaf288">moveStart</reimplementedby>
+        <reimplementedby refid="class_mem_stream_1a3e7906e7485272b520cb2e429a711257">moveStart</reimplementedby>
+        <reimplementedby refid="class_embed_stream_1a76eccef76276225edcb724f5cc5246af">moveStart</reimplementedby>
+        <param>
+          <type>Goffset</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/Stream.h" line="323" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1577">
+        <label>BaseStream</label>
+        <link refid="class_base_stream"/>
+        <childnode refid="1578" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1581">
+        <label>FileStream</label>
+        <link refid="class_file_stream"/>
+        <childnode refid="1577" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1580">
+        <label>EmbedStream</label>
+        <link refid="class_embed_stream"/>
+        <childnode refid="1577" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1579">
+        <label>CachedFileStream</label>
+        <link refid="class_cached_file_stream"/>
+        <childnode refid="1577" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1582">
+        <label>MemStream</label>
+        <link refid="class_mem_stream"/>
+        <childnode refid="1577" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1578">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1583">
+        <label>BaseStream</label>
+        <link refid="class_base_stream"/>
+        <childnode refid="1584" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1585" relation="usage">
+          <edgelabel>dict</edgelabel>
+        </childnode>
+      </node>
+      <node id="1588">
+        <label>Array</label>
+        <link refid="class_array"/>
+      </node>
+      <node id="1586">
+        <label>GooString</label>
+        <link refid="class_goo_string"/>
+      </node>
+      <node id="1587">
+        <label>Dict</label>
+        <link refid="class_dict"/>
+      </node>
+      <node id="1585">
+        <label>Object</label>
+        <link refid="class_object"/>
+        <childnode refid="1586" relation="usage">
+          <edgelabel>string</edgelabel>
+        </childnode>
+        <childnode refid="1587" relation="usage">
+          <edgelabel>dict</edgelabel>
+        </childnode>
+        <childnode refid="1588" relation="usage">
+          <edgelabel>array</edgelabel>
+        </childnode>
+        <childnode refid="1589" relation="usage">
+          <edgelabel>ref</edgelabel>
+        </childnode>
+        <childnode refid="1584" relation="usage">
+          <edgelabel>stream</edgelabel>
+        </childnode>
+      </node>
+      <node id="1589">
+        <label>Ref</label>
+        <link refid="struct_ref"/>
+      </node>
+      <node id="1584">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/poppler/poppler/Stream.h" line="305" column="1" bodyfile="thirdparty/poppler/poppler/Stream.h" bodystart="305" bodyend="329"/>
+    <listofallmembers>
+      <member refid="class_stream_1ac931adcb668da604632428101cdef2b1" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>addFilters</name></member>
+      <member refid="class_base_stream_1a6cf361381d246846eac44d649a630b09" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>BaseStream</name></member>
+      <member refid="class_stream_1af5c69562d890aa81c8c8e24280bfa9e0" prot="public" virt="virtual"><scope>BaseStream</scope><name>close</name></member>
+      <member refid="class_base_stream_1a1e486654d0bc40e4e2834e8498213cd6" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>copy</name></member>
+      <member refid="class_stream_1aa3656cdd123c716adbd9526523439091" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>decRef</name></member>
+      <member refid="class_base_stream_1a5581b68734d93b915ffc6e763f003fff" prot="protected" virt="non-virtual"><scope>BaseStream</scope><name>dict</name></member>
+      <member refid="class_stream_1ace312cf6e38c9420c3af18c707ecc38b" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>doGetChars</name></member>
+      <member refid="class_stream_1a3ca4d7a5de26df523732a8a999afbfc3" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>fillGooString</name></member>
+      <member refid="class_base_stream_1a10ee62b35abb0236d33e97e46f531906" prot="public" virt="virtual"><scope>BaseStream</scope><name>getBaseStream</name></member>
+      <member refid="class_stream_1ad8a0c56244d3d2077c56a8222ee39250" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>getChar</name></member>
+      <member refid="class_base_stream_1ad6812d4617c0b8dc274a94a42cb440f0" prot="public" virt="virtual"><scope>BaseStream</scope><name>getDict</name></member>
+      <member refid="class_base_stream_1a436486387c8fda3bf0f65d71c05897cb" prot="public" virt="virtual"><scope>BaseStream</scope><name>getFileName</name></member>
+      <member refid="class_stream_1a49852d813248278832bb626d5e7768bf" prot="public" virt="virtual"><scope>BaseStream</scope><name>getImageParams</name></member>
+      <member refid="class_stream_1a84aecd570b480015e251c89a2afcfce5" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>getKind</name></member>
+      <member refid="class_base_stream_1a023ee51fad60dc59e54bd38014be756a" prot="public" virt="virtual"><scope>BaseStream</scope><name>getLength</name></member>
+      <member refid="class_stream_1ac8cb7b669cda35db3b351630beb3bcda" prot="public" virt="virtual"><scope>BaseStream</scope><name>getLine</name></member>
+      <member refid="class_stream_1abb26dd02b9795d118d408298760d9719" prot="public" virt="virtual"><scope>BaseStream</scope><name>getNextStream</name></member>
+      <member refid="class_stream_1a4bc7ca8d98ab1734a3f7bd3cc586a4f5" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>getPos</name></member>
+      <member refid="class_stream_1a260a07ca4a0a1f4853881a1a5bb27576" prot="public" virt="virtual"><scope>BaseStream</scope><name>getPSFilter</name></member>
+      <member refid="class_stream_1a97b7674e633860ecbb09cc8cf15a1ffa" prot="public" virt="virtual"><scope>BaseStream</scope><name>getRawChar</name></member>
+      <member refid="class_stream_1a1362b13c09539aafc21077a26f20b341" prot="public" virt="virtual"><scope>BaseStream</scope><name>getRawChars</name></member>
+      <member refid="class_base_stream_1a6a7c150f42971ff329656fc98e68b69e" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>getStart</name></member>
+      <member refid="class_base_stream_1a7e7da81db581bacdc9d078a8a6d1aeb2" prot="public" virt="virtual"><scope>BaseStream</scope><name>getUndecodedStream</name></member>
+      <member refid="class_stream_1ae9d841faa73a7030f72cbe4f894e9d39" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>getUnfilteredChar</name></member>
+      <member refid="class_stream_1a72ded73f74dbc96b4961c3e1675431ff" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>incRef</name></member>
+      <member refid="class_base_stream_1a8d4b5d32270889010e6dcba2e0791e8c" prot="public" virt="virtual"><scope>BaseStream</scope><name>isBinary</name></member>
+      <member refid="class_stream_1aa543edd0c6926c7f5272341198a61352" prot="public" virt="virtual"><scope>BaseStream</scope><name>isEncoder</name></member>
+      <member refid="class_base_stream_1a27990e96583f15766a493c2c1bf0edee" prot="protected" virt="non-virtual"><scope>BaseStream</scope><name>length</name></member>
+      <member refid="class_stream_1a7b5b42a77e3bb0cf12cb5c9e723dceac" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>lookChar</name></member>
+      <member refid="class_base_stream_1a38fd4aa8d528d2132380401dd3ff4c2e" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>makeSubStream</name></member>
+      <member refid="class_base_stream_1a72298a03e84007d4381fd14dc7726262" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>moveStart</name></member>
+      <member refid="class_stream_1a8246d1b555eba25b9f95815386b5489b" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>reset</name></member>
+      <member refid="class_base_stream_1acd433a2780d814a3bc1947e2bf75dd5e" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>setPos</name></member>
+      <member refid="class_stream_1a8c3f05bd00361ec92627fa41f330a39b" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>Stream</name></member>
+      <member refid="class_stream_1a0868030abb4d42d49bddf6b9170802b0" prot="public" virt="non-virtual"><scope>BaseStream</scope><name>toUnsignedChars</name></member>
+      <member refid="class_stream_1a6c2939945dd2a9b633d3105bc24aa544" prot="public" virt="pure-virtual"><scope>BaseStream</scope><name>unfilteredReset</name></member>
+      <member refid="class_base_stream_1ab6f7299ce32fe8d47000b91a584e4a18" prot="public" virt="virtual"><scope>BaseStream</scope><name>~BaseStream</name></member>
+      <member refid="class_stream_1a6dc4517a9e6a87abb662fcd14c2ea969" prot="public" virt="virtual"><scope>BaseStream</scope><name>~Stream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

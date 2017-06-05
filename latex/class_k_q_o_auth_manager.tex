@@ -1,0 +1,228 @@
+\hypertarget{class_k_q_o_auth_manager}{}\section{K\+Q\+O\+Auth\+Manager Class Reference}
+\label{class_k_q_o_auth_manager}\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+Inheritance diagram for K\+Q\+O\+Auth\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_k_q_o_auth_manager}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_afdc8962f67eb38149455a14c0a5efb8c}\label{class_k_q_o_auth_manager_afdc8962f67eb38149455a14c0a5efb8c}} 
+enum {\bfseries K\+Q\+O\+Auth\+Error} \{ \newline
+{\bfseries No\+Error}, 
+{\bfseries Network\+Error}, 
+{\bfseries Request\+Endpoint\+Error}, 
+{\bfseries Request\+Validation\+Error}, 
+\newline
+{\bfseries Request\+Unauthorized}, 
+{\bfseries Content\+Operation\+Not\+Permitted\+Error}, 
+{\bfseries Content\+Not\+Found}, 
+{\bfseries Request\+Error}, 
+\newline
+{\bfseries Manager\+Error}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a637a90374031a674248dd2c38b56c5db}\label{class_k_q_o_auth_manager_a637a90374031a674248dd2c38b56c5db}} 
+void {\bfseries request\+Ready} (Q\+Byte\+Array network\+Reply)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a7f14d3dee2310d76f8a129eb37b1214f}\label{class_k_q_o_auth_manager_a7f14d3dee2310d76f8a129eb37b1214f}} 
+void {\bfseries authorized\+Request\+Ready} (Q\+Byte\+Array network\+Reply, int id)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a8f95a236a939a075690d32fd1be2b8cf}\label{class_k_q_o_auth_manager_a8f95a236a939a075690d32fd1be2b8cf}} 
+void {\bfseries authorization\+Page\+Requested} (Q\+Url page\+Url)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a848468c8c53717c76f4b553620669cba}\label{class_k_q_o_auth_manager_a848468c8c53717c76f4b553620669cba}} 
+void {\bfseries received\+Token} (Q\+String oauth\+\_\+token, Q\+String oauth\+\_\+token\+\_\+secret)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_acddf279ebc3585afbed2ed8fdf3f008d}\label{class_k_q_o_auth_manager_acddf279ebc3585afbed2ed8fdf3f008d}} 
+void {\bfseries temporary\+Token\+Received} (Q\+String oauth\+\_\+token, Q\+String oauth\+\_\+token\+\_\+secret)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a31b318f4f7ec3b73785082e68be8f979}\label{class_k_q_o_auth_manager_a31b318f4f7ec3b73785082e68be8f979}} 
+void {\bfseries authorization\+Received} (Q\+String oauth\+\_\+token, Q\+String oauth\+\_\+verifier)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_aebc8f8f6e6cb10efc7189c2273191d39}\label{class_k_q_o_auth_manager_aebc8f8f6e6cb10efc7189c2273191d39}} 
+void {\bfseries access\+Token\+Received} (Q\+String oauth\+\_\+token, Q\+String oauth\+\_\+token\+\_\+secret)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a77a72a935a30489842981b6ea21b9f5d}\label{class_k_q_o_auth_manager_a77a72a935a30489842981b6ea21b9f5d}} 
+void {\bfseries authorized\+Request\+Done} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a947992e36987a0d1a5c1f958f575b067}\label{class_k_q_o_auth_manager_a947992e36987a0d1a5c1f958f575b067}} 
+{\bfseries K\+Q\+O\+Auth\+Manager} (Q\+Object $\ast$parent=0)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_acbef5c40d8ef15099270323b25c86ec6}\label{class_k_q_o_auth_manager_acbef5c40d8ef15099270323b25c86ec6}} 
+K\+Q\+O\+Auth\+Error {\bfseries last\+Error} ()
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a7ed4ddfccc440383f72215cff7cb37ef}{execute\+Request} (\hyperlink{class_k_q_o_auth_request}{K\+Q\+O\+Auth\+Request} $\ast$request)
+\item 
+\mbox{\Hypertarget{class_k_q_o_auth_manager_aa6e5a3664329ba0e52d8447f0cd911f0}\label{class_k_q_o_auth_manager_aa6e5a3664329ba0e52d8447f0cd911f0}} 
+void {\bfseries execute\+Authorized\+Request} (\hyperlink{class_k_q_o_auth_request}{K\+Q\+O\+Auth\+Request} $\ast$request, int id)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization} (bool set)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a6da0168889f374d2b2d8e3a2ac0efe7d}{set\+Handle\+Authorization\+Page\+Opening} (bool set)
+\item 
+bool \hyperlink{class_k_q_o_auth_manager_a559976e71f9e27e0a34ce8aeacd8387a}{has\+Temporary\+Token} ()
+\item 
+bool \hyperlink{class_k_q_o_auth_manager_a2286fa49c7d21a46361cdac897efb726}{is\+Verified} ()
+\item 
+bool \hyperlink{class_k_q_o_auth_manager_ad16edf00de0367e95f0b04b9de97ba32}{is\+Authorized} ()
+\item 
+void \hyperlink{class_k_q_o_auth_manager_ab33a5aead44d35476d13152f4a35700b}{get\+User\+Authorization} (Q\+Url authorization\+Endpoint)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a657d5a05c680ed6c53199e9de59f2e1c}{get\+User\+Access\+Tokens} (Q\+Url access\+Token\+Endpoint)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a9bcf83ccbd9fbbc352b7a228d80713ef}{verify\+Token} (const Q\+String \&token, const Q\+String \&verifier)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_ab605e437fb159d0a20e2e92601d679fe}{send\+Authorized\+Request} (Q\+Url request\+Endpoint, const K\+Q\+O\+Auth\+Parameters \&request\+Parameters)
+\item 
+void \hyperlink{class_k_q_o_auth_manager_a4cc730a5e030d461c889cd844b6b9e40}{set\+Network\+Manager} (Q\+Network\+Access\+Manager $\ast$manager)
+\item 
+Q\+Network\+Access\+Manager $\ast$ \hyperlink{class_k_q_o_auth_manager_a0e798ce8a270552a490369d6afd35e2d}{network\+Manager} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file kqoauthmanager.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a7ed4ddfccc440383f72215cff7cb37ef}\label{class_k_q_o_auth_manager_a7ed4ddfccc440383f72215cff7cb37ef}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!execute\+Request@{execute\+Request}}
+\index{execute\+Request@{execute\+Request}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{execute\+Request()}{executeRequest()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::execute\+Request (\begin{DoxyParamCaption}\item[{\hyperlink{class_k_q_o_auth_request}{K\+Q\+O\+Auth\+Request} $\ast$}]{request }\end{DoxyParamCaption})}
+
+The manager executes the given request. It takes the H\+T\+TP parameters from the request and uses Q\+Network\+Access\+Manager to submit the H\+T\+TP request to the net. When the request is done it will emit signal request\+Ready(\+Q\+Byte\+Array network\+Reply). N\+O\+TE\+: At the moment there is no timeout for the request. 
+
+Definition at line 158 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a657d5a05c680ed6c53199e9de59f2e1c}\label{class_k_q_o_auth_manager_a657d5a05c680ed6c53199e9de59f2e1c}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!get\+User\+Access\+Tokens@{get\+User\+Access\+Tokens}}
+\index{get\+User\+Access\+Tokens@{get\+User\+Access\+Tokens}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{get\+User\+Access\+Tokens()}{getUserAccessTokens()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::get\+User\+Access\+Tokens (\begin{DoxyParamCaption}\item[{Q\+Url}]{access\+Token\+Endpoint }\end{DoxyParamCaption})}
+
+This is a convenience A\+PI for retrieving the access token in exchange for the temporary token and the verifier. This call will create a \hyperlink{class_k_q_o_auth_request}{K\+Q\+O\+Auth\+Request} and use the previously stored temporary token and verifier to exchange for the access token, which will be used to access the protected resources. Note that in order to use this method, \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} must be in control of the user authorization process. Set \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} to true and retrieve user authorization with void get\+User\+Authorization. 
+
+Definition at line 474 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_ab33a5aead44d35476d13152f4a35700b}\label{class_k_q_o_auth_manager_ab33a5aead44d35476d13152f4a35700b}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!get\+User\+Authorization@{get\+User\+Authorization}}
+\index{get\+User\+Authorization@{get\+User\+Authorization}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{get\+User\+Authorization()}{getUserAuthorization()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::get\+User\+Authorization (\begin{DoxyParamCaption}\item[{Q\+Url}]{authorization\+Endpoint }\end{DoxyParamCaption})}
+
+This is a convenience A\+PI for authorizing the user. The call will open the user\textquotesingle{}s default browser, setup a local H\+T\+TP server and parse the reply from the service after the user has authorized us to access protected resources. If the user authorizes us to access protected resources, the verifier token is stored in \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} for further use. In order to use this method, you must set \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} to true. 
+
+Definition at line 437 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a559976e71f9e27e0a34ce8aeacd8387a}\label{class_k_q_o_auth_manager_a559976e71f9e27e0a34ce8aeacd8387a}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!has\+Temporary\+Token@{has\+Temporary\+Token}}
+\index{has\+Temporary\+Token@{has\+Temporary\+Token}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{has\+Temporary\+Token()}{hasTemporaryToken()}}
+{\footnotesize\ttfamily bool K\+Q\+O\+Auth\+Manager\+::has\+Temporary\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if the \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} has retrieved the oauth\+\_\+token value. Otherwise return false. 
+
+Definition at line 383 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_ad16edf00de0367e95f0b04b9de97ba32}\label{class_k_q_o_auth_manager_ad16edf00de0367e95f0b04b9de97ba32}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!is\+Authorized@{is\+Authorized}}
+\index{is\+Authorized@{is\+Authorized}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{is\+Authorized()}{isAuthorized()}}
+{\footnotesize\ttfamily bool K\+Q\+O\+Auth\+Manager\+::is\+Authorized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} has the access token and hence can access the protected resources. Otherwise returns false. N\+O\+TE\+: In order for \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} to know if we have access to protected resource \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} must be in control of the user authorization process and requesting the acess token. Hence, this returns true if \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} is set to true and the user is authorized with \hyperlink{class_k_q_o_auth_manager_ab33a5aead44d35476d13152f4a35700b}{get\+User\+Authorization()} and the access token must be retrieved with get\+User\+Access\+Tokens. 
+
+Definition at line 395 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a2286fa49c7d21a46361cdac897efb726}\label{class_k_q_o_auth_manager_a2286fa49c7d21a46361cdac897efb726}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!is\+Verified@{is\+Verified}}
+\index{is\+Verified@{is\+Verified}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{is\+Verified()}{isVerified()}}
+{\footnotesize\ttfamily bool K\+Q\+O\+Auth\+Manager\+::is\+Verified (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns true if the user has authorized us to use the protected resources. Otherwise returns false. N\+O\+TE\+: In order for \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} to know if the user has authorized us to use the protected resources, \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} must be in control of the user authorization process. Hence, this returns true if \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} is set to true and the user is authorized with \hyperlink{class_k_q_o_auth_manager_ab33a5aead44d35476d13152f4a35700b}{get\+User\+Authorization()}. 
+
+Definition at line 389 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a0e798ce8a270552a490369d6afd35e2d}\label{class_k_q_o_auth_manager_a0e798ce8a270552a490369d6afd35e2d}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!network\+Manager@{network\+Manager}}
+\index{network\+Manager@{network\+Manager}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{network\+Manager()}{networkManager()}}
+{\footnotesize\ttfamily Q\+Network\+Access\+Manager $\ast$ K\+Q\+O\+Auth\+Manager\+::network\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the given Q\+Network\+Access\+Manager. Returns N\+U\+LL if none is given. 
+
+Definition at line 423 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_ab605e437fb159d0a20e2e92601d679fe}\label{class_k_q_o_auth_manager_ab605e437fb159d0a20e2e92601d679fe}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!send\+Authorized\+Request@{send\+Authorized\+Request}}
+\index{send\+Authorized\+Request@{send\+Authorized\+Request}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{send\+Authorized\+Request()}{sendAuthorizedRequest()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::send\+Authorized\+Request (\begin{DoxyParamCaption}\item[{Q\+Url}]{request\+Endpoint,  }\item[{const K\+Q\+O\+Auth\+Parameters \&}]{request\+Parameters }\end{DoxyParamCaption})}
+
+Sends a request to the protected resources. Parameters for the request are service specific and are given to the \textquotesingle{}request\+Parameters\textquotesingle{} as parameters. Note that in order to use this method, \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} must be in control of the user authorization process. Set \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} to true and retrieve user authorization with void get\+User\+Authorization. 
+
+Definition at line 510 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a6da0168889f374d2b2d8e3a2ac0efe7d}\label{class_k_q_o_auth_manager_a6da0168889f374d2b2d8e3a2ac0efe7d}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!set\+Handle\+Authorization\+Page\+Opening@{set\+Handle\+Authorization\+Page\+Opening}}
+\index{set\+Handle\+Authorization\+Page\+Opening@{set\+Handle\+Authorization\+Page\+Opening}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{set\+Handle\+Authorization\+Page\+Opening()}{setHandleAuthorizationPageOpening()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::set\+Handle\+Authorization\+Page\+Opening (\begin{DoxyParamCaption}\item[{bool}]{set }\end{DoxyParamCaption})}
+
+Indicates whether the \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} should launch the browser with the user authorization page itself.
+
+If set to true (the default), the \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} uses Q\+Desktop\+Services\+::open\+Url() for opening the browser. Otherwise it emits the authorization\+Page\+Requested() signal which must then be handled by the calling code. 
+
+Definition at line 377 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}\label{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!set\+Handle\+User\+Authorization@{set\+Handle\+User\+Authorization}}
+\index{set\+Handle\+User\+Authorization@{set\+Handle\+User\+Authorization}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{set\+Handle\+User\+Authorization()}{setHandleUserAuthorization()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::set\+Handle\+User\+Authorization (\begin{DoxyParamCaption}\item[{bool}]{set }\end{DoxyParamCaption})}
+
+Indicates to the user that \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} should handle user authorization by opening the user\textquotesingle{}s default browser and parsing the reply from the service. By setting the parameter to true, \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} will store intermediate results of the O\+Auth 1.\+0 process in its own opaque request. This information is used in the user authorization process and also when calling \hyperlink{class_k_q_o_auth_manager_ab605e437fb159d0a20e2e92601d679fe}{send\+Authorized\+Request()}. N\+O\+TE\+: You need to set this to true if you want to use \hyperlink{class_k_q_o_auth_manager_a657d5a05c680ed6c53199e9de59f2e1c}{get\+User\+Access\+Tokens()} or \hyperlink{class_k_q_o_auth_manager_ab605e437fb159d0a20e2e92601d679fe}{send\+Authorized\+Request()}. 
+
+Definition at line 371 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a4cc730a5e030d461c889cd844b6b9e40}\label{class_k_q_o_auth_manager_a4cc730a5e030d461c889cd844b6b9e40}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!set\+Network\+Manager@{set\+Network\+Manager}}
+\index{set\+Network\+Manager@{set\+Network\+Manager}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{set\+Network\+Manager()}{setNetworkManager()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::set\+Network\+Manager (\begin{DoxyParamCaption}\item[{Q\+Network\+Access\+Manager $\ast$}]{manager }\end{DoxyParamCaption})}
+
+Sets a custom Q\+Network\+Access\+Manager to handle network requests. This method can be useful if the application is using some proxy settings for example. The application is responsible for deleting this manager. \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} will not delete any previously given manager. If the manager is N\+U\+LL, the manager will not be set and the K\+Q\+O\+Auth\+Manager\+::\+Error. If no manager is given, \hyperlink{class_k_q_o_auth_manager}{K\+Q\+O\+Auth\+Manager} will use the default one it will create by itself. 
+
+Definition at line 407 of file kqoauthmanager.\+cpp.
+
+\mbox{\Hypertarget{class_k_q_o_auth_manager_a9bcf83ccbd9fbbc352b7a228d80713ef}\label{class_k_q_o_auth_manager_a9bcf83ccbd9fbbc352b7a228d80713ef}} 
+\index{K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}!verify\+Token@{verify\+Token}}
+\index{verify\+Token@{verify\+Token}!K\+Q\+O\+Auth\+Manager@{K\+Q\+O\+Auth\+Manager}}
+\subsubsection{\texorpdfstring{verify\+Token()}{verifyToken()}}
+{\footnotesize\ttfamily void K\+Q\+O\+Auth\+Manager\+::verify\+Token (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{token,  }\item[{const Q\+String \&}]{verifier }\end{DoxyParamCaption})}
+
+This is a conveience A\+PI for setting the token verifier. If \hyperlink{class_k_q_o_auth_manager_a55409df469317596b81ab50823eb6a97}{set\+Handle\+User\+Authorization()} is set to false you need to call this function before calling \hyperlink{class_k_q_o_auth_manager_a657d5a05c680ed6c53199e9de59f2e1c}{get\+User\+Access\+Tokens()} 
+
+Definition at line 503 of file kqoauthmanager.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/k\+Q\+O\+Auth/kqoauthmanager.\+h\item 
+build.\+release/thirdparty/k\+Q\+O\+Auth/kqoauth\+\_\+autogen/\+E\+W\+I\+E\+G\+A46\+W\+W/moc\+\_\+kqoauthmanager.\+cpp\item 
+thirdparty/k\+Q\+O\+Auth/kqoauthmanager.\+cpp\end{DoxyCompactItemize}

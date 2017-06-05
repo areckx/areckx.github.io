@@ -1,0 +1,312 @@
+.TH "libmscore/undo.h" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libmscore/undo.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'spatium\&.h'\fP
+.br
+\fC#include 'mscore\&.h'\fP
+.br
+\fC#include 'sig\&.h'\fP
+.br
+\fC#include 'tempo\&.h'\fP
+.br
+\fC#include 'input\&.h'\fP
+.br
+\fC#include 'style\&.h'\fP
+.br
+\fC#include 'key\&.h'\fP
+.br
+\fC#include 'select\&.h'\fP
+.br
+\fC#include 'instrument\&.h'\fP
+.br
+\fC#include 'synthesizer/midipatch\&.h'\fP
+.br
+\fC#include 'pitchvalue\&.h'\fP
+.br
+\fC#include 'timesig\&.h'\fP
+.br
+\fC#include 'noteevent\&.h'\fP
+.br
+\fC#include 'synthesizerstate\&.h'\fP
+.br
+\fC#include 'dynamic\&.h'\fP
+.br
+\fC#include 'staff\&.h'\fP
+.br
+\fC#include 'stafftype\&.h'\fP
+.br
+\fC#include 'cleflist\&.h'\fP
+.br
+\fC#include 'note\&.h'\fP
+.br
+\fC#include 'drumset\&.h'\fP
+.br
+\fC#include 'rest\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMs::UndoCommand\fP"
+.br
+.ti -1c
+.RI "class \fBMs::UndoStack\fP"
+.br
+.ti -1c
+.RI "class \fBMs::SaveState\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertPart\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemovePart\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertMStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveMStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertStaves\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveStaves\fP"
+.br
+.ti -1c
+.RI "class \fBMs::SortStaves\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangePitch\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeFretting\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeKeySig\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeMeasureLen\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeElement\fP"
+.br
+.ti -1c
+.RI "class \fBMs::TransposeHarmony\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ExchangeVoice\fP"
+.br
+.ti -1c
+.RI "class \fBMs::CloneVoice\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeInstrumentShort\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeInstrumentLong\fP"
+.br
+.ti -1c
+.RI "class \fBMs::MoveElement\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeBracketType\fP"
+.br
+.ti -1c
+.RI "class \fBMs::AddElement\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveElement\fP"
+.br
+.ti -1c
+.RI "class \fBMs::EditText\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangePatch\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStaffType\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangePart\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStyle\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStyleVal\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeChordStaffMove\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeVelocity\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeMStaffProperties\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertRemoveMeasures\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveMeasures\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertMeasures\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeImage\fP"
+.br
+.ti -1c
+.RI "class \fBMs::AddExcerpt\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveExcerpt\fP"
+.br
+.ti -1c
+.RI "class \fBMs::SwapExcerpt\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeExcerptTitle\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeBend\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeTremoloBar\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeNoteEvents\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeInstrument\fP"
+.br
+.ti -1c
+.RI "class \fBMs::SwapCR\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeClefType\fP"
+.br
+.ti -1c
+.RI "class \fBMs::MoveStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStaffUserDist\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeProperty\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeMetaText\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeEventList\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeSynthesizerState\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveBracket\fP"
+.br
+.ti -1c
+.RI "class \fBMs::AddBracket\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeSpannerElements\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeParent\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeMMRest\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertTime\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeNoteEvent\fP"
+.br
+.ti -1c
+.RI "class \fBMs::LinkUnlink\fP"
+.br
+.ti -1c
+.RI "class \fBMs::Unlink\fP"
+.br
+.ti -1c
+.RI "class \fBMs::Link\fP"
+.br
+.ti -1c
+.RI "class \fBMs::LinkStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::UnlinkStaff\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeStartEndSpanner\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeMetaTags\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeDrumset\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeGap\fP"
+.br
+.ti -1c
+.RI "class \fBMs::ChangeText\fP"
+.br
+.ti -1c
+.RI "class \fBMs::InsertText\fP"
+.br
+.ti -1c
+.RI "class \fBMs::RemoveText\fP"
+.br
+.ti -1c
+.RI "class \fBMs::SplitText\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBMs\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBUNDO_NAME\fP(a)   virtual const char* name() const override { return a; }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBMs::updateNoteLines\fP (Segment *segment, int track)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition of undo-releated classes and structs\&. 
+.PP
+Definition in file \fBundo\&.h\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

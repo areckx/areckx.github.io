@@ -1,0 +1,127 @@
+.TH "Poppler::SoundObject" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::SoundObject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBSoundType\fP { \fBExternal\fP, \fBEmbedded\fP }"
+.br
+.ti -1c
+.RI "enum \fBSoundEncoding\fP { \fBRaw\fP, \fBSigned\fP, \fBmuLaw\fP, \fBALaw\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSoundType\fP \fBsoundType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBurl\fP () const"
+.br
+.ti -1c
+.RI "QByteArray \fBdata\fP () const"
+.br
+.ti -1c
+.RI "double \fBsamplingRate\fP () const"
+.br
+.ti -1c
+.RI "int \fBchannels\fP () const"
+.br
+.ti -1c
+.RI "int \fBbitsPerSample\fP () const"
+.br
+.ti -1c
+.RI "\fBSoundEncoding\fP \fBsoundEncoding\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Container class for a sound file in a PDF document\&.
+.PP
+A sound can be either External (in that case should be loaded the file whose url is represented by \fBurl()\fP ), or Embedded, and the player has to play the data contained in \fBdata()\fP\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 1688 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::SoundObject::SoundEncoding\fP"
+The encoding format used for the sound 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIRaw \fP\fP
+Raw encoding, with unspecified or unsigned values in the range [ 0, 2^B - 1 ]\&. 
+.TP
+\fB\fISigned \fP\fP
+Twos-complement values\&. 
+.TP
+\fB\fImuLaw \fP\fP
+mu-law-encoded samples 
+.TP
+\fB\fIALaw \fP\fP
+A-law-encoded samples\&. 
+.PP
+Definition at line 1701 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::SoundObject::SoundType\fP"
+The type of sound 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIExternal \fP\fP
+The real sound file is external\&. 
+.TP
+\fB\fIEmbedded \fP\fP
+The sound is contained in the data\&. 
+.PP
+Definition at line 1693 of file poppler\-qt5\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int Poppler::SoundObject::bitsPerSample () const"
+The number of bits per sample value per channel 
+.PP
+Definition at line 111 of file poppler\-sound\&.cc\&.
+.SS "int Poppler::SoundObject::channels () const"
+The number of sound channels to use to play the sound 
+.PP
+Definition at line 106 of file poppler\-sound\&.cc\&.
+.SS "QByteArray Poppler::SoundObject::data () const"
+The data of the sound, in case of \fBSoundObject::Embedded\fP 
+.PP
+Definition at line 82 of file poppler\-sound\&.cc\&.
+.SS "double Poppler::SoundObject::samplingRate () const"
+The sampling rate of the sound 
+.PP
+Definition at line 101 of file poppler\-sound\&.cc\&.
+.SS "\fBSoundObject::SoundEncoding\fP Poppler::SoundObject::soundEncoding () const"
+The encoding used for the sound 
+.PP
+Definition at line 116 of file poppler\-sound\&.cc\&.
+.SS "\fBSoundObject::SoundType\fP Poppler::SoundObject::soundType () const"
+Is the sound embedded (\fBSoundObject::Embedded\fP) or external (\fBSoundObject::External\fP)? 
+.PP
+Definition at line 68 of file poppler\-sound\&.cc\&.
+.SS "QString Poppler::SoundObject::url () const"
+The URL of the sound file to be played, in case of \fBSoundObject::External\fP 
+.PP
+Definition at line 73 of file poppler\-sound\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

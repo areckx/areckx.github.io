@@ -1,0 +1,433 @@
+.TH "XmlStreamReaderPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+XmlStreamReaderPrivate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBXmlStreamReader_Table\fP, and \fBXmlStreamPrivateTagStack\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBAttribute\fP"
+.br
+.ti -1c
+.RI "struct \fBDtdAttribute\fP"
+.br
+.ti -1c
+.RI "struct \fBEntity\fP"
+.br
+.ti -1c
+.RI "struct \fBEntityDeclaration\fP"
+.br
+.ti -1c
+.RI "struct \fBNotationDeclaration\fP"
+.br
+.ti -1c
+.RI "struct \fBValue\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlStreamReaderPrivate\fP (\fBXmlStreamReader\fP *q)"
+.br
+.ti -1c
+.RI "void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "bool \fBreferenceEntity\fP (\fBEntity\fP &entity)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const QString &)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (const char *)"
+.br
+.ti -1c
+.RI "QStringRef \fBnamespaceForPrefix\fP (const QStringRef &prefix)"
+.br
+.ti -1c
+.RI "void \fBresolveTag\fP ()"
+.br
+.ti -1c
+.RI "void \fBresolvePublicNamespaces\fP ()"
+.br
+.ti -1c
+.RI "void \fBresolveDtd\fP ()"
+.br
+.ti -1c
+.RI "uint \fBresolveCharRef\fP (int symbolIndex)"
+.br
+.ti -1c
+.RI "bool \fBcheckStartDocument\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartDocument\fP ()"
+.br
+.ti -1c
+.RI "void \fBparseError\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckPublicLiteral\fP (const QStringRef &publicId)"
+.br
+.ti -1c
+.RI "void \fBresume\fP (int rule)"
+.br
+.ti -1c
+.RI "bool \fBentitiesMustBeDeclared\fP () const"
+.br
+.ti -1c
+.RI "void \fBreallocateStack\fP ()"
+.br
+.ti -1c
+.RI "\fBValue\fP & \fBsym\fP (int index) const"
+.br
+.ti -1c
+.RI "void \fBclearTextBuffer\fP ()"
+.br
+.ti -1c
+.RI "QStringRef \fBsymString\fP (int index)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymName\fP (int index)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymString\fP (int index, int offset)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymPrefix\fP (int index)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymString\fP (const \fBValue\fP &symbol)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymName\fP (const \fBValue\fP &symbol)"
+.br
+.ti -1c
+.RI "QStringRef \fBsymPrefix\fP (const \fBValue\fP &symbol)"
+.br
+.ti -1c
+.RI "void \fBclearSym\fP ()"
+.br
+.ti -1c
+.RI "uint \fBfilterCarriageReturn\fP ()"
+.br
+.ti -1c
+.RI "uint \fBgetChar\fP ()"
+.br
+.ti -1c
+.RI "uint \fBpeekChar\fP ()"
+.br
+.ti -1c
+.RI "void \fBputChar\fP (uint c)"
+.br
+.ti -1c
+.RI "void \fBputChar\fP (QChar c)"
+.br
+.ti -1c
+.RI "void \fBputString\fP (const QString &s, int from=0)"
+.br
+.ti -1c
+.RI "void \fBputStringLiteral\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBputReplacement\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBputReplacementInAttributeValue\fP (const QString &s)"
+.br
+.ti -1c
+.RI "ushort \fBgetChar_helper\fP ()"
+.br
+.ti -1c
+.RI "bool \fBscanUntil\fP (const char *str, short tokenToInject=\-1)"
+.br
+.ti -1c
+.RI "bool \fBscanString\fP (const char *str, short tokenToInject, bool requireSpace=true)"
+.br
+.ti -1c
+.RI "void \fBinjectToken\fP (ushort tokenToInject)"
+.br
+.ti -1c
+.RI "QString \fBresolveUndeclaredEntity\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBparseEntity\fP (const QString &value)"
+.br
+.ti -1c
+.RI "bool \fBscanAfterLangleBang\fP ()"
+.br
+.ti -1c
+.RI "bool \fBscanPublicOrSystem\fP ()"
+.br
+.ti -1c
+.RI "bool \fBscanNData\fP ()"
+.br
+.ti -1c
+.RI "bool \fBscanAfterDefaultDecl\fP ()"
+.br
+.ti -1c
+.RI "bool \fBscanAttType\fP ()"
+.br
+.ti -1c
+.RI "int \fBfastScanLiteralContent\fP ()"
+.br
+.ti -1c
+.RI "int \fBfastScanSpace\fP ()"
+.br
+.ti -1c
+.RI "int \fBfastScanContentCharList\fP ()"
+.br
+.ti -1c
+.RI "int \fBfastScanName\fP (int *prefix=0)"
+.br
+.ti -1c
+.RI "int \fBfastScanNMTOKEN\fP ()"
+.br
+.ti -1c
+.RI "bool \fBparse\fP ()"
+.br
+.ti -1c
+.RI "void \fBconsumeRule\fP (int)"
+.br
+.ti -1c
+.RI "void \fBraiseError\fP (\fBXmlStreamReader::Error\fP error, const QString &message=QString())"
+.br
+.ti -1c
+.RI "void \fBraiseWellFormedError\fP (const QString &message)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QByteArray \fBrawReadBuffer\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBdataBuffer\fP"
+.br
+.ti -1c
+.RI "uchar \fBfirstByte\fP"
+.br
+.ti -1c
+.RI "qint64 \fBnbytesread\fP"
+.br
+.ti -1c
+.RI "QString \fBreadBuffer\fP"
+.br
+.ti -1c
+.RI "int \fBreadBufferPos\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< uint > \fBputStack\fP"
+.br
+.ti -1c
+.RI "QHash< QString, \fBEntity\fP > \fBentityHash\fP"
+.br
+.ti -1c
+.RI "QHash< QString, \fBEntity\fP > \fBparameterEntityHash\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< \fBEntity\fP * > \fBentityReferenceStack\fP"
+.br
+.ti -1c
+.RI "QIODevice * \fBdevice\fP"
+.br
+.ti -1c
+.RI "bool \fBdeleteDevice\fP"
+.br
+.ti -1c
+.RI "QTextCodec * \fBcodec\fP"
+.br
+.ti -1c
+.RI "QTextDecoder * \fBdecoder\fP"
+.br
+.ti -1c
+.RI "bool \fBatEnd\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader::TokenType\fP \fBtype\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamReader::Error\fP \fBerror\fP"
+.br
+.ti -1c
+.RI "QString \fBerrorString\fP"
+.br
+.ti -1c
+.RI "QString \fBunresolvedEntity\fP"
+.br
+.ti -1c
+.RI "qint64 \fBlineNumber\fP"
+.br
+.ti -1c
+.RI "qint64 \fBlastLineStart\fP"
+.br
+.ti -1c
+.RI "qint64 \fBcharacterOffset\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamAttributes\fP \fBattributes\fP"
+.br
+.ti -1c
+.RI "bool \fBscanDtd\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBlastAttributeValue\fP"
+.br
+.ti -1c
+.RI "bool \fBlastAttributeIsCData\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< \fBDtdAttribute\fP > \fBdtdAttributes\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< \fBNotationDeclaration\fP > \fBnotationDeclarations\fP"
+.br
+.ti -1c
+.RI "XmlStreamNotationDeclarations \fBpublicNotationDeclarations\fP"
+.br
+.ti -1c
+.RI "XmlStreamNamespaceDeclarations \fBpublicNamespaceDeclarations\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< \fBEntityDeclaration\fP > \fBentityDeclarations\fP"
+.br
+.ti -1c
+.RI "XmlStreamEntityDeclarations \fBpublicEntityDeclarations\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBtext\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBprefix\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBnamespaceUri\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBqualifiedName\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBname\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBprocessingInstructionTarget\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBprocessingInstructionData\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdName\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdPublicId\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBdtdSystemId\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBdocumentVersion\fP"
+.br
+.ti -1c
+.RI "QStringRef \fBdocumentEncoding\fP"
+.br
+.ti -1c
+.RI "uint \fBisEmptyElement\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBisWhitespace\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBisCDATA\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBstandalone\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBhasCheckedStartDocument\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBnormalizeLiterals\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBhasSeenTag\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBinParseEntity\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBreferenceToUnparsedEntityDetected\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBreferenceToParameterEntityDetected\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBhasExternalDtdSubset\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBlockEncoding\fP: 1"
+.br
+.ti -1c
+.RI "uint \fBnamespaceProcessing\fP: 1"
+.br
+.ti -1c
+.RI "int \fBresumeReduction\fP"
+.br
+.ti -1c
+.RI "int \fBtos\fP"
+.br
+.ti -1c
+.RI "int \fBstack_size\fP"
+.br
+.ti -1c
+.RI "\fBValue\fP * \fBsym_stack\fP"
+.br
+.ti -1c
+.RI "int * \fBstate_stack\fP"
+.br
+.ti -1c
+.RI "QString \fBtextBuffer\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamSimpleStack\fP< \fBAttribute\fP > \fBattributeStack\fP"
+.br
+.ti -1c
+.RI "short \fBtoken\fP"
+.br
+.ti -1c
+.RI "ushort \fBtoken_char\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamReaderPrivate\fP * \fBentityParser\fP"
+.br
+.ti -1c
+.RI "\fBXmlStreamEntityResolver\fP * \fBentityResolver\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 742 of file xmlstream_p\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBXmlStreamReader::TokenType\fP XmlStreamReaderPrivate::type"
+
+.PP
+\fBSee also:\fP
+.RS 4
+setType() 
+.RE
+.PP
+
+.PP
+Definition at line 796 of file xmlstream_p\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

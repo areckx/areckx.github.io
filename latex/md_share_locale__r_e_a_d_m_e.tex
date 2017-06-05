@@ -1,0 +1,33 @@
+Read more about how Muse\+Score works together with Transifex for handling translations\+: \href{http://musescore.org/node/22982}{\tt http\+://musescore.\+org/node/22982}
+
+\section*{How to add a new language }
+
+You need the name of the language and the two letter code
+
+\subsection*{On Transifex }
+
+
+\begin{DoxyItemize}
+\item Add the language \href{https://www.transifex.com/organization/musescore/team/1397/}{\tt https\+://www.\+transifex.\+com/organization/musescore/team/1397/} or request it \href{https://www.transifex.com/projects/p/musescore/}{\tt https\+://www.\+transifex.\+com/projects/p/musescore/}
+\end{DoxyItemize}
+
+\subsection*{In Muse\+Score source }
+
+
+\begin{DoxyItemize}
+\item Add the language in share/locale/languages.\+xml
+\item Add the language mscore\+\_\+\+X\+X.\+qm in share/locale/\+C\+Make\+Lists.\+txt
+\item Add the language instruments\+\_\+\+X\+X.\+qm in share/locale/\+C\+Make\+Lists.\+txt
+\item Add the language mscore\+\_\+\+X\+X.\+ts to build/gen-\/qt-\/projectfile.\+bat and build/gen-\/instruments-\/projectfile
+\item Add the language instruments\+\_\+\+X\+X.\+ts to build/gen-\/instruments-\/projectfile.\+bat and build/gen-\/qt-\/projectfile
+\item Add the share/locale/mscore\+\_\+\+X\+X.\+ts file, tx pull can help (`tx pull -\/t language\+\_\+code)
+\item Add the share/locale/instruments\+\_\+\+X\+X.\+ts file, see above
+\end{DoxyItemize}
+
+\subsection*{On the update translation server }
+
+
+\begin{DoxyItemize}
+\item Modify languages.\+json
+\item rm share/locale/details.\+json 
+\end{DoxyItemize}

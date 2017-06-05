@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="readbinaryplist_8h" kind="file" language="C++">
+    <compoundname>readbinaryplist.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="finddefault_8c" local="yes">thirdparty/portmidi/pm_mac/finddefault.c</includedby>
+    <includedby refid="readbinaryplist_8c" local="yes">thirdparty/portmidi/pm_mac/readbinaryplist.c</includedby>
+    <incdepgraph>
+      <node id="92989">
+        <label>stdint.h</label>
+      </node>
+      <node id="92988">
+        <label>thirdparty/portmidi/pm_mac/readbinaryplist.h</label>
+        <link refid="readbinaryplist_8h"/>
+        <childnode refid="92989" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="92992">
+        <label>thirdparty/portmidi/pm_mac/readbinaryplist.c</label>
+        <link refid="readbinaryplist_8c_source"/>
+      </node>
+      <node id="92990">
+        <label>thirdparty/portmidi/pm_mac/readbinaryplist.h</label>
+        <link refid="readbinaryplist_8h"/>
+        <childnode refid="92991" relation="include">
+        </childnode>
+        <childnode refid="92992" relation="include">
+        </childnode>
+      </node>
+      <node id="92991">
+        <label>thirdparty/portmidi/pm_mac/finddefault.c</label>
+        <link refid="finddefault_8c_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structpldata__struct" prot="public">pldata_struct</innerclass>
+    <innerclass refid="structarray__struct" prot="public">array_struct</innerclass>
+    <innerclass refid="structdict__struct" prot="public">dict_struct</innerclass>
+    <innerclass refid="structvalue__struct" prot="public">value_struct</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="readbinaryplist_8h_1aa93f0eb578d23995850d61f7d61c55c1" prot="public" static="no">
+        <name>FALSE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="8" column="25" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="readbinaryplist_8h_1a61504903c4144f98e49063d95c67dc60" prot="public" static="no">
+        <name>MAX_KEY_SIZE</name>
+        <initializer>256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="11" column="9" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13d" prot="public" static="no">
+        <name>@141</name>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da3e2ebd7526932ab5afbcf8551b0b0232" prot="public">
+          <name>kTAG_SIMPLE</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da01d77afbeb1e2b908860fa57c3af617b" prot="public">
+          <name>kTAG_INT</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da8e69aa96a2aa68c0d4f271c8f95952d1" prot="public">
+          <name>kTAG_REAL</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da17982df1110730910f1da989446838d8" prot="public">
+          <name>kTAG_DATE</name>
+          <initializer>= 0x30</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da78dab38da81ab02075b1007acf8df49c" prot="public">
+          <name>kTAG_DATA</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da57f2f1368875c893536da664a3b55c6f" prot="public">
+          <name>kTAG_ASCIISTRING</name>
+          <initializer>= 0x50</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13dac1b1b60f42fc81ec615c47505955780b" prot="public">
+          <name>kTAG_UNICODESTRING</name>
+          <initializer>= 0x60</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da4111e512b227ac450e3ad0edb320b5d9" prot="public">
+          <name>kTAG_UID</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da2c2c8e7d49583b91afb8b38388376e5e" prot="public">
+          <name>kTAG_ARRAY</name>
+          <initializer>= 0xA0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da8de7d3e89c70c9a2c8666aa0c406df4e" prot="public">
+          <name>kTAG_DICTIONARY</name>
+          <initializer>= 0xD0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13daebda145a2a0179ba49ab09a3b1d0d0e9" prot="public">
+          <name>kVALUE_NULL</name>
+          <initializer>= 0x00</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13dafea4ffc2b15b2af40155591656d0318b" prot="public">
+          <name>kVALUE_FALSE</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13dab4638e5a7ac0c9dea9be28c5ac9b6f4a" prot="public">
+          <name>kVALUE_TRUE</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da02e49db0092dd0f384243805d6a71b55" prot="public">
+          <name>kVALUE_FILLER</name>
+          <initializer>= 0x0F</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="readbinaryplist_8h_1a1812ab31015cef0a41c6d4f3ae07f13da53027c42fdccd57e73d87203c4811d04" prot="public">
+          <name>kVALUE_FULLDATETAG</name>
+          <initializer>= 0x33</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="16" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.h" bodystart="15" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a489e0b4cabb9351c759256ed283a270b" prot="public" static="no">
+        <type>struct <ref refid="structpldata__struct" kindref="compound">pldata_struct</ref></type>
+        <definition>typedef struct pldata_struct  pldata_node</definition>
+        <argsstring></argsstring>
+        <name>pldata_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a97710d8098e0a0a309a1d3910a57f395" prot="public" static="no">
+        <type>struct <ref refid="structpldata__struct" kindref="compound">pldata_struct</ref> *</type>
+        <definition>typedef struct pldata_struct * pldata_ptr</definition>
+        <argsstring></argsstring>
+        <name>pldata_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="42" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a20185b6cb582fca2ec7758c0ba80b16d" prot="public" static="no">
+        <type>struct <ref refid="structarray__struct" kindref="compound">array_struct</ref></type>
+        <definition>typedef struct array_struct  array_node</definition>
+        <argsstring></argsstring>
+        <name>array_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a187622938f42d9de7e516522aed83739" prot="public" static="no">
+        <type>struct <ref refid="structarray__struct" kindref="compound">array_struct</ref> *</type>
+        <definition>typedef struct array_struct * array_ptr</definition>
+        <argsstring></argsstring>
+        <name>array_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a826d5858056742600b8a954b342f6e05" prot="public" static="no">
+        <type>struct <ref refid="structdict__struct" kindref="compound">dict_struct</ref></type>
+        <definition>typedef struct dict_struct  dict_node</definition>
+        <argsstring></argsstring>
+        <name>dict_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1ad1010ef9a6a148b494f2413984d47139" prot="public" static="no">
+        <type>struct <ref refid="structdict__struct" kindref="compound">dict_struct</ref> *</type>
+        <definition>typedef struct dict_struct * dict_ptr</definition>
+        <argsstring></argsstring>
+        <name>dict_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a46f0b88f710750ddfb0fc8d4dca8c51e" prot="public" static="no">
+        <type>struct <ref refid="structvalue__struct" kindref="compound">value_struct</ref></type>
+        <definition>typedef struct value_struct  value_node</definition>
+        <argsstring></argsstring>
+        <name>value_node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="readbinaryplist_8h_1a21b1bc18d01f9cead32cfa83bb0c9501" prot="public" static="no">
+        <type>struct <ref refid="structvalue__struct" kindref="compound">value_struct</ref> *</type>
+        <definition>typedef struct value_struct * value_ptr</definition>
+        <argsstring></argsstring>
+        <name>value_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="71" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="readbinaryplist_8h_1aec38f443859d4e0adee3f11a25ad0e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+        <definition>value_ptr bplist_read_file</definition>
+        <argsstring>(char *filename)</argsstring>
+        <name>bplist_read_file</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="74" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="318" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a0c8f45d47a6fc01d2234d4b4f5c38647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+        <definition>value_ptr bplist_read_user_pref</definition>
+        <argsstring>(char *filename)</argsstring>
+        <name>bplist_read_user_pref</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="75" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="386" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a5bb4f87ea294c6a75759ff806c997164" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+        <definition>value_ptr bplist_read_system_pref</definition>
+        <argsstring>(char *filename)</argsstring>
+        <name>bplist_read_system_pref</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="76" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="381" bodyend="383"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1aed3531fede3edc5b984b195fe4cea6ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bplist_free_data</definition>
+        <argsstring>()</argsstring>
+        <name>bplist_free_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="77" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="140" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a2369ceec4d1c269818b572726aa9e101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* value_get_asciistring</definition>
+        <argsstring>(value_ptr v)</argsstring>
+        <name>value_get_asciistring</name>
+        <param>
+          <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="81" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="965" bodyend="969"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a6bcd94997d444d72618ef5954e4e7253" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+        <definition>value_ptr value_dict_lookup_using_string</definition>
+        <argsstring>(value_ptr v, char *key)</argsstring>
+        <name>value_dict_lookup_using_string</name>
+        <param>
+          <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="82" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="972" bodyend="986"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a7e864a16ab7c98b962a88a968bc5ce72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+        <definition>value_ptr value_dict_lookup_using_path</definition>
+        <argsstring>(value_ptr v, char *path)</argsstring>
+        <name>value_dict_lookup_using_path</name>
+        <param>
+          <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+          <declname>v</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="83" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="988" bodyend="1011"/>
+      </memberdef>
+      <memberdef kind="function" id="readbinaryplist_8h_1a13c17a7f23b738ea0c2a07b1b251c00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void plist_print</definition>
+        <argsstring>(value_ptr v)</argsstring>
+        <name>plist_print</name>
+        <param>
+          <type><ref refid="structvalue__struct" kindref="compound">value_ptr</ref></type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h" line="87" column="1" bodyfile="thirdparty/portmidi/pm_mac/readbinaryplist.c" bodystart="1016" bodyend="1083"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>readbinaryplist.h<sp/>--<sp/>header<sp/>to<sp/>read<sp/>preference<sp/>files</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"></highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/><sp/><sp/>Roger<sp/>B.<sp/>Dannenberg,<sp/>Jun<sp/>2008</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TRUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>TRUE<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>FALSE<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_KEY_SIZE<sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Object<sp/>tags<sp/>(high<sp/>nybble)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_SIMPLE<sp/>=<sp/>0x00,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Null,<sp/>true,<sp/>false,<sp/>filler,<sp/>or<sp/>invalid</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_INT<sp/>=<sp/>0x10,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_REAL<sp/>=<sp/>0x20,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_DATE<sp/>=<sp/>0x30,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_DATA<sp/>=<sp/>0x40,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_ASCIISTRING<sp/>=<sp/>0x50,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_UNICODESTRING<sp/>=<sp/>0x60,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_UID<sp/>=<sp/>0x80,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_ARRAY<sp/>=<sp/>0xA0,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>kTAG_DICTIONARY<sp/>=<sp/>0xD0,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;simple&quot;<sp/>object<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>kVALUE_NULL<sp/>=<sp/>0x00,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>kVALUE_FALSE<sp/>=<sp/>0x08,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>kVALUE_TRUE<sp/>=<sp/>0x09,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>kVALUE_FILLER<sp/>=<sp/>0x0F,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>kVALUE_FULLDATETAG<sp/>=<sp/>0x33<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Dates<sp/>are<sp/>tagged<sp/>with<sp/>a<sp/>whole<sp/>byte.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="structpldata__struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structpldata__struct" kindref="compound">pldata_struct</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*data;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}<sp/><ref refid="structpldata__struct" kindref="compound">pldata_node</ref>,<sp/>*<ref refid="structpldata__struct" kindref="compound">pldata_ptr</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="structarray__struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structarray__struct" kindref="compound">array_struct</ref><sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvalue__struct" kindref="compound">value_struct</ref><sp/>**array;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>uint64_t<sp/>length;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/><ref refid="structarray__struct" kindref="compound">array_node</ref>,<sp/>*<ref refid="structarray__struct" kindref="compound">array_ptr</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/>a<sp/>dict_node<sp/>is<sp/>a<sp/>list<sp/>of<sp/>&lt;key,<sp/>value&gt;<sp/>pairs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structdict__struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdict__struct" kindref="compound">dict_struct</ref><sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvalue__struct" kindref="compound">value_struct</ref><sp/>*key;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvalue__struct" kindref="compound">value_struct</ref><sp/>*value;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdict__struct" kindref="compound">dict_struct</ref><sp/>*next;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}<sp/><ref refid="structdict__struct" kindref="compound">dict_node</ref>,<sp/>*<ref refid="structdict__struct" kindref="compound">dict_ptr</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/>an<sp/>value_node<sp/>is<sp/>a<sp/>value<sp/>with<sp/>a<sp/>tag<sp/>telling<sp/>the<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="structvalue__struct" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structvalue__struct" kindref="compound">value_struct</ref><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tag;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>int64_t<sp/>integer;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint64_t<sp/>uinteger;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>real;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*string;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pldata_ptr<sp/>data;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>array_ptr<sp/>array;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdict__struct" kindref="compound">dict_struct</ref><sp/>*dict;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}<sp/><ref refid="structvalue__struct" kindref="compound">value_node</ref>,<sp/>*<ref refid="structvalue__struct" kindref="compound">value_ptr</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">value_ptr<sp/>bplist_read_file(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">value_ptr<sp/>bplist_read_user_pref(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">value_ptr<sp/>bplist_read_system_pref(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>bplist_free_data();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/***************<sp/>functions<sp/>for<sp/>accessing<sp/>values<sp/>****************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*value_get_asciistring(value_ptr<sp/>v);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">value_ptr<sp/>value_dict_lookup_using_string(value_ptr<sp/>v,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*key);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">value_ptr<sp/>value_dict_lookup_using_path(value_ptr<sp/>v,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*path);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment">/***************<sp/>functions<sp/>for<sp/>debugging<sp/>***************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>plist_print(value_ptr<sp/>v);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="thirdparty/portmidi/pm_mac/readbinaryplist.h"/>
+  </compounddef>
+</doxygen>

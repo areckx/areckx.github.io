@@ -1,0 +1,105 @@
+.TH "Poppler::FormFieldButton" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::FormFieldButton
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-form\&.h>\fP
+.PP
+Inherits \fBPoppler::FormField\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBButtonType\fP { \fBPush\fP, \fBCheckBox\fP, \fBRadio\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBFormType\fP \fBtype\fP () const"
+.br
+.ti -1c
+.RI "\fBButtonType\fP \fBbuttonType\fP () const"
+.br
+.ti -1c
+.RI "QString \fBcaption\fP () const"
+.br
+.ti -1c
+.RI "bool \fBstate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetState\fP (bool \fBstate\fP)"
+.br
+.ti -1c
+.RI "QList< int > \fBsiblings\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A form field that represents a 'button'\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file poppler\-form\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::FormFieldButton::ButtonType\fP"
+The types of button field\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIPush \fP\fP
+A simple push button\&. 
+.TP
+\fB\fICheckBox \fP\fP
+A check box\&. 
+.TP
+\fB\fIRadio \fP\fP
+A radio button\&. 
+.PP
+Definition at line 132 of file poppler\-form\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBFormFieldButton::ButtonType\fP FormFieldButton::buttonType () const"
+The particular type of the button field\&. 
+.PP
+Definition at line 168 of file poppler\-form\&.cc\&.
+.SS "QString FormFieldButton::caption () const"
+The caption to be used for the button\&. 
+.PP
+Definition at line 186 of file poppler\-form\&.cc\&.
+.SS "void FormFieldButton::setState (bool state)"
+Sets the state of the button to the new \fCstate\fP \&. 
+.PP
+Definition at line 220 of file poppler\-form\&.cc\&.
+.SS "QList< int > FormFieldButton::siblings () const"
+The list with the IDs of siblings (ie, buttons belonging to the same group as the current one\&.
+.PP
+Valid only for \fBRadio\fP buttons, an empty list otherwise\&. 
+.PP
+Definition at line 226 of file poppler\-form\&.cc\&.
+.SS "bool FormFieldButton::state () const"
+The state of the button\&. 
+.PP
+Definition at line 214 of file poppler\-form\&.cc\&.
+.SS "\fBFormFieldButton::FormType\fP FormFieldButton::type () const\fC [virtual]\fP"
+The type of the field\&. 
+.PP
+Implements \fBPoppler::FormField\fP\&.
+.PP
+Definition at line 163 of file poppler\-form\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

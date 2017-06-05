@@ -1,0 +1,15 @@
+The shell script \char`\"{}gen\char`\"{} creates a subdirectory {\ttfamily html} with the H\+T\+ML file {\ttfamily vtest.\+html} for visual compare including all needed image files. Travis generates this too and then uploads to \href{http://vtest.musescore.org/index.html}{\tt http\+://vtest.\+musescore.\+org/index.\+html}
+
+\subsection*{Requirements }
+
+In order to generate the diff between the reference file and the generated one, {\itshape Image Magick} needs to be installed and \char`\"{}compare\char`\"{} should be in the {\ttfamily P\+A\+TH}.
+
+\subsection*{Add a new test }
+
+
+\begin{DoxyItemize}
+\item clone a mscz test file into {\ttfamily xxx.\+mscz}
+\item create the test by editing the {\ttfamily xxx.\+mscz} file
+\item create reference P\+NG {\ttfamily xxx-\/ref.\+png}\+: mscore xxx.\+mscz -\/o -\/r 130 xxx-\/ref.\+png
+\item add the file to {\ttfamily gen} and {\ttfamily gen.\+bat} 
+\end{DoxyItemize}

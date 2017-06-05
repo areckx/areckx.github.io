@@ -1,0 +1,143 @@
+.TH "Ms::Shortcut" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Shortcut
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBShortcut\fP (Ms::MsWidget assignedWidget, int state, const char *key, const char *d=0, const char *txt=0, const char *h=0, Icons i=Icons::Invalid_ICON, Qt::ShortcutContext cont=Qt::WindowShortcut, ShortcutFlags f=ShortcutFlags::NONE)"
+.br
+.ti -1c
+.RI "QAction * \fBaction\fP () const"
+.br
+.ti -1c
+.RI "const QByteArray & \fBkey\fP () const"
+.br
+.ti -1c
+.RI "QString \fBdescr\fP () const"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "QString \fBhelp\fP () const"
+.br
+.ti -1c
+.RI "MsWidget \fBassignedWidget\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "remove shortcuts "
+.ti -1c
+.RI "void \fBaddShortcut\fP (const QKeySequence &)"
+.br
+.RI "reset to buildin "
+.ti -1c
+.RI "int \fBstate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetState\fP (int v)"
+.br
+.ti -1c
+.RI "bool \fBneedsScore\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisCmd\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisCheckable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisChecked\fP () const"
+.br
+.ti -1c
+.RI "Icons \fBicon\fP () const"
+.br
+.ti -1c
+.RI "const QList< QKeySequence > & \fBkeys\fP () const"
+.br
+.ti -1c
+.RI "QKeySequence::StandardKey \fBstandardKey\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStandardKey\fP (QKeySequence::StandardKey k)"
+.br
+.ti -1c
+.RI "void \fBsetKeys\fP (const QList< QKeySequence > &ks)"
+.br
+.ti -1c
+.RI "bool \fBcompareKeys\fP (const \fBShortcut\fP &) const"
+.br
+.ti -1c
+.RI "QString \fBkeysToString\fP () const"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBMs::XmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBMs::XmlReader\fP &)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBgetMenuShortcutString\fP (const QMenu *menu)"
+.br
+.ti -1c
+.RI "static void \fBinit\fP ()"
+.br
+.ti -1c
+.RI "static void \fBretranslate\fP ()"
+.br
+.ti -1c
+.RI "static void \fBload\fP ()"
+.br
+.ti -1c
+.RI "static void \fBsave\fP ()"
+.br
+.ti -1c
+.RI "static void \fBresetToDefault\fP ()"
+.br
+.ti -1c
+.RI "static \fBShortcut\fP * \fBgetShortcut\fP (const char *key)"
+.br
+.ti -1c
+.RI "static const QHash< QByteArray, \fBShortcut\fP * > & \fBshortcuts\fP ()"
+.br
+.ti -1c
+.RI "static QActionGroup * \fBgetActionGroupForWidget\fP (MsWidget w)"
+.br
+.ti -1c
+.RI "static QActionGroup * \fBgetActionGroupForWidget\fP (MsWidget w, Qt::ShortcutContext newShortcutContext)"
+.br
+.ti -1c
+.RI "static QString \fBkeySeqToString\fP (const QKeySequence &keySeq, QKeySequence::SequenceFormat fmt)"
+.br
+.ti -1c
+.RI "static QKeySequence \fBkeySeqFromString\fP (const QString &str, QKeySequence::SequenceFormat fmt)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBdirty\fP = false"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 100 of file shortcut\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

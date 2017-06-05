@@ -1,0 +1,67 @@
+.TH "QOscServer" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QOscServer \- Server-object for incoming OSC-Datagrams\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <qoscserver\&.h>\fP
+.PP
+Inherits \fBQOscBase\fP\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBdata\fP (QString path, QVariant data)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQOscServer\fP (quint16 port, QObject *p)"
+.br
+.ti -1c
+.RI "\fBQOscServer\fP (QHostAddress address, quint16 port, QObject *p)"
+.br
+.ti -1c
+.RI "\fB~QOscServer\fP ()"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBsetSocket\fP (QUdpSocket *)"
+.br
+.RI "Don't allow changing the socket\&. "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPathObject\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Server-object for incoming OSC-Datagrams\&. 
+
+Unless you have own objects/code to handle the paths of the incoming packages, you might want to take a look at the \fBPathObject\fP to get the OSC-messages translated into Qt signals\&. 
+.PP
+Definition at line 35 of file qoscserver\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QOscServer::QOscServer (quint16 port, QObject * p)"
+Creates an OSC-server that listens on all interfaces on the specified port for incoming datagrams\&. 
+.PP
+Definition at line 21 of file qoscserver\&.cpp\&.
+.SS "QOscServer::QOscServer (QHostAddress address, quint16 port, QObject * p)"
+Creates an OSC-server that listens on the specified address and port for incoming datagrams\&. 
+.PP
+Definition at line 29 of file qoscserver\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

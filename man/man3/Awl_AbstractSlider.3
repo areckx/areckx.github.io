@@ -1,0 +1,272 @@
+.TH "Awl::AbstractSlider" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Awl::AbstractSlider
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <aslider\&.h>\fP
+.PP
+Inherits QWidget\&.
+.PP
+Inherited by \fBAwl::Knob\fP, and \fBAwl::Slider\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetValue\fP (double v)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBvalueChanged\fP (double, int)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractSlider\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "virtual void \fBsetCenter\fP (bool val)"
+.br
+.ti -1c
+.RI "virtual void \fBsetScaleWidth\fP (int)"
+.br
+.RI "
+.PP
+ "
+.ti -1c
+.RI "virtual void \fBsetScaleColor\fP (const QColor &)"
+.br
+.ti -1c
+.RI "virtual void \fBsetScaleValueColor\fP (const QColor &)"
+.br
+.ti -1c
+.RI "bool \fBcenter\fP () const"
+.br
+.RI "return the center flag "
+.ti -1c
+.RI "int \fBscaleWidth\fP () const"
+.br
+.RI "return the scale line width "
+.ti -1c
+.RI "QColor \fBscaleColor\fP () const"
+.br
+.RI "return current scale color "
+.ti -1c
+.RI "QColor \fBscaleValueColor\fP () const"
+.br
+.RI "return color of active scale part "
+.ti -1c
+.RI "virtual void \fBsetInvertedAppearance\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBinvertedAppearance\fP () const"
+.br
+.ti -1c
+.RI "int \fBid\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int i)"
+.br
+.ti -1c
+.RI "virtual double \fBvalue\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBuserValue\fP () const"
+.br
+.ti -1c
+.RI "double \fBminValue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMinValue\fP (double v)"
+.br
+.ti -1c
+.RI "void \fBsetMinLogValue\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBmaxValue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMaxValue\fP (double v)"
+.br
+.ti -1c
+.RI "void \fBsetMaxLogValue\fP (double v)"
+.br
+.ti -1c
+.RI "void \fBsetRange\fP (double a, double b)"
+.br
+.ti -1c
+.RI "void \fBsetLogRange\fP (double a, double b)"
+.br
+.ti -1c
+.RI "bool \fBlog\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLog\fP (bool v)"
+.br
+.ti -1c
+.RI "double \fBlineStep\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineStep\fP (double v)"
+.br
+.ti -1c
+.RI "double \fBpageStep\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPageStep\fP (double f)"
+.br
+.ti -1c
+.RI "double \fBdclickValue1\fP () const"
+.br
+.ti -1c
+.RI "double \fBdclickValue2\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDclickValue1\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetDclickValue2\fP (double val)"
+.br
+.ti -1c
+.RI "void \fBsetEnabled\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetUseActualValue\fP (bool v)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBwheelEvent\fP (QWheelEvent *)"
+.br
+.RI "for user value "
+.ti -1c
+.RI "virtual void \fBkeyPressEvent\fP (QKeyEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBmouseDoubleClickEvent\fP (QMouseEvent *)"
+.br
+.ti -1c
+.RI "virtual void \fBvalueChange\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_id\fP"
+.br
+.ti -1c
+.RI "double \fB_value\fP"
+.br
+.ti -1c
+.RI "double \fB_minValue\fP"
+.br
+.ti -1c
+.RI "double \fB_maxValue\fP"
+.br
+.ti -1c
+.RI "double \fB_lineStep\fP"
+.br
+.ti -1c
+.RI "double \fB_pageStep\fP"
+.br
+.ti -1c
+.RI "double \fB_dclickValue1\fP"
+.br
+.ti -1c
+.RI "double \fB_dclickValue2\fP"
+.br
+.ti -1c
+.RI "bool \fB_center\fP"
+.br
+.ti -1c
+.RI "bool \fB_invert\fP"
+.br
+.ti -1c
+.RI "int \fB_scaleWidth\fP"
+.br
+.ti -1c
+.RI "QColor \fB_scaleColor\fP"
+.br
+.RI "scale line width "
+.ti -1c
+.RI "QColor \fB_scaleValueColor\fP"
+.br
+.ti -1c
+.RI "bool \fB_log\fP"
+.br
+.ti -1c
+.RI "bool \fB_useActualValue\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "double \fBvalue\fP"
+.br
+.ti -1c
+.RI "bool \fBcenter\fP"
+.br
+.ti -1c
+.RI "bool \fBinvertedAppearance\fP"
+.br
+.ti -1c
+.RI "int \fBscaleWidth\fP"
+.br
+.ti -1c
+.RI "QColor \fBscaleColor\fP"
+.br
+.ti -1c
+.RI "QColor \fBscaleValueColor\fP"
+.br
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "double \fBminValue\fP"
+.br
+.ti -1c
+.RI "double \fBmaxValue\fP"
+.br
+.ti -1c
+.RI "double \fBlineStep\fP"
+.br
+.ti -1c
+.RI "double \fBpageStep\fP"
+.br
+.ti -1c
+.RI "bool \fBlog\fP"
+.br
+.ti -1c
+.RI "double \fBdclickValue1\fP"
+.br
+.ti -1c
+.RI "double \fBdclickValue2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The AwlAbstractSlider class provides an double value within a range The class is designed as a common super class for widgets like AwlKnob and AwlSlider 
+.PP
+Definition at line 40 of file aslider\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Awl::AbstractSlider::setCenter (bool val)\fC [virtual]\fP"
+If the center flag is set, a notch is drawn to show the center position\&. 
+.PP
+Definition at line 63 of file aslider\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

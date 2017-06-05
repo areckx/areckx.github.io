@@ -1,0 +1,98 @@
+.TH "SplashFont" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SplashFont
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashFont\fP (\fBSplashFontFile\fP *fontFileA, SplashCoord *matA, SplashCoord *textMatA, GBool aaA)"
+.br
+.ti -1c
+.RI "void \fBinitCache\fP ()"
+.br
+.ti -1c
+.RI "\fBSplashFontFile\fP * \fBgetFontFile\fP ()"
+.br
+.ti -1c
+.RI "GBool \fBmatches\fP (\fBSplashFontFile\fP *fontFileA, SplashCoord *matA, SplashCoord *textMatA)"
+.br
+.ti -1c
+.RI "virtual GBool \fBgetGlyph\fP (int c, int xFrac, int yFrac, \fBSplashGlyphBitmap\fP *bitmap, int x0, int y0, \fBSplashClip\fP *clip, SplashClipResult *clipRes)"
+.br
+.ti -1c
+.RI "virtual GBool \fBmakeGlyph\fP (int c, int xFrac, int yFrac, \fBSplashGlyphBitmap\fP *bitmap, int x0, int y0, \fBSplashClip\fP *clip, SplashClipResult *clipRes)=0"
+.br
+.ti -1c
+.RI "virtual \fBSplashPath\fP * \fBgetGlyphPath\fP (int c)=0"
+.br
+.ti -1c
+.RI "virtual double \fBgetGlyphAdvance\fP (int c)"
+.br
+.ti -1c
+.RI "SplashCoord * \fBgetMatrix\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetBBox\fP (int *xMinA, int *yMinA, int *xMaxA, int *yMaxA)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashFontFile\fP * \fBfontFile\fP"
+.br
+.ti -1c
+.RI "SplashCoord \fBmat\fP [4]"
+.br
+.ti -1c
+.RI "SplashCoord \fBtextMat\fP [4]"
+.br
+.ti -1c
+.RI "GBool \fBaa\fP"
+.br
+.ti -1c
+.RI "int \fBxMin\fP"
+.br
+.ti -1c
+.RI "int \fByMin\fP"
+.br
+.ti -1c
+.RI "int \fBxMax\fP"
+.br
+.ti -1c
+.RI "int \fByMax\fP"
+.br
+.ti -1c
+.RI "Guchar * \fBcache\fP"
+.br
+.ti -1c
+.RI "\fBSplashFontCacheTag\fP * \fBcacheTags\fP"
+.br
+.ti -1c
+.RI "int \fBglyphW\fP"
+.br
+.ti -1c
+.RI "int \fBglyphH\fP"
+.br
+.ti -1c
+.RI "int \fBglyphSize\fP"
+.br
+.ti -1c
+.RI "int \fBcacheSets\fP"
+.br
+.ti -1c
+.RI "int \fBcacheAssoc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 50 of file SplashFont\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

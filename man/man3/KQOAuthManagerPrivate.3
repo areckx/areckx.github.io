@@ -1,0 +1,142 @@
+.TH "KQOAuthManagerPrivate" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+KQOAuthManagerPrivate
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <kqoauthmanager_p\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBKQOAuthManagerPrivate\fP (\fBKQOAuthManager\fP *parent)"
+.br
+.ti -1c
+.RI "QList< QPair< QString, QString > > \fBcreateQueryParams\fP (const KQOAuthParameters &requestParams)"
+.br
+.ti -1c
+.RI "QMultiMap< QString, QString > \fBcreateTokensFromResponse\fP (QByteArray reply)"
+.br
+.ti -1c
+.RI "bool \fBsetSuccessfulRequestToken\fP (const QMultiMap< QString, QString > &request)"
+.br
+.ti -1c
+.RI "bool \fBsetSuccessfulAuthorized\fP (const QMultiMap< QString, QString > &request)"
+.br
+.ti -1c
+.RI "void \fBemitTokens\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsetupCallbackServer\fP ()"
+.br
+.ti -1c
+.RI "\fBQ_DECLARE_PUBLIC\fP (\fBKQOAuthManager\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "KQOAuthManager::KQOAuthError \fBerror\fP"
+.br
+.ti -1c
+.RI "\fBKQOAuthRequest\fP * \fBr\fP"
+.br
+.ti -1c
+.RI "\fBKQOAuthRequest\fP * \fBopaqueRequest\fP"
+.br
+.ti -1c
+.RI "\fBKQOAuthManager\fP *const \fBq_ptr\fP"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestType \fBcurrentRequestType\fP"
+.br
+.ti -1c
+.RI "QString \fBrequestToken\fP"
+.br
+.ti -1c
+.RI "QString \fBrequestTokenSecret\fP"
+.br
+.ti -1c
+.RI "QString \fBconsumerKey\fP"
+.br
+.ti -1c
+.RI "QString \fBconsumerKeySecret\fP"
+.br
+.ti -1c
+.RI "QString \fBrequestVerifier\fP"
+.br
+.ti -1c
+.RI "KQOAuthRequest::RequestSignatureMethod \fBsignatureMethod\fP"
+.br
+.ti -1c
+.RI "\fBKQOAuthAuthReplyServer\fP * \fBcallbackServer\fP"
+.br
+.ti -1c
+.RI "bool \fBhasTemporaryToken\fP"
+.br
+.ti -1c
+.RI "bool \fBisVerified\fP"
+.br
+.ti -1c
+.RI "bool \fBisAuthorized\fP"
+.br
+.ti -1c
+.RI "bool \fBautoAuth\fP"
+.br
+.ti -1c
+.RI "bool \fBhandleAuthPageOpening\fP"
+.br
+.ti -1c
+.RI "QNetworkAccessManager * \fBnetworkManager\fP"
+.br
+.ti -1c
+.RI "bool \fBmanagerUserSet\fP"
+.br
+.ti -1c
+.RI "QMap< QNetworkReply *, int > \fBrequestIds\fP"
+.br
+.ti -1c
+.RI "QMap< \fBKQOAuthRequest\fP *, QNetworkReply * > \fBrequestMap\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+KQOAuth - An OAuth authentication library for Qt\&.
+.PP
+Author: Johan Paul (johan.paul@gmail.com) http://www.johanpaul.com
+.PP
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2\&.1 of the License, or (at your option) any later version\&.
+.PP
+KQOAuth is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU Lesser General Public License for more details\&.
+.PP
+You should have received a copy of the GNU Lesser General Public License along with KQOAuth\&. If not, see http://www.gnu.org/licenses/\&. 
+.PP
+Definition at line 26 of file kqoauthmanager_p\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "KQOAuthManagerPrivate::KQOAuthManagerPrivate (\fBKQOAuthManager\fP * parent)"
+KQOAuth - An OAuth authentication library for Qt\&.
+.PP
+Author: Johan Paul (johan.paul@gmail.com) http://www.johanpaul.com
+.PP
+This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2\&.1 of the License, or (at your option) any later version\&.
+.PP
+KQOAuth is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE\&. See the GNU Lesser General Public License for more details\&.
+.PP
+You should have received a copy of the GNU Lesser General Public License along with KQOAuth\&. If not, see http://www.gnu.org/licenses/\&. 
+.PP
+Definition at line 33 of file kqoauthmanager\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "KQOAuthRequest::RequestType KQOAuthManagerPrivate::currentRequestType"
+The items below are needed in order to store the state of the manager and by that be able to do convenience operations for the user\&. 
+.PP
+Definition at line 48 of file kqoauthmanager_p\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

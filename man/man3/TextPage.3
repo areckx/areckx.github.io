@@ -1,0 +1,122 @@
+.TH "TextPage" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TextPage
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextPage\fP (GBool rawOrderA)"
+.br
+.ti -1c
+.RI "void \fBincRefCnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBdecRefCnt\fP ()"
+.br
+.ti -1c
+.RI "void \fBstartPage\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBendPage\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateFont\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBbeginWord\fP (\fBGfxState\fP *state)"
+.br
+.ti -1c
+.RI "void \fBaddChar\fP (\fBGfxState\fP *state, double x, double y, double dx, double dy, CharCode c, int nBytes, Unicode *u, int uLen)"
+.br
+.ti -1c
+.RI "void \fBincCharCount\fP (int nChars)"
+.br
+.ti -1c
+.RI "void \fBendWord\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddWord\fP (\fBTextWord\fP *word)"
+.br
+.ti -1c
+.RI "void \fBaddUnderline\fP (double x0, double y0, double x1, double y1)"
+.br
+.ti -1c
+.RI "void \fBaddLink\fP (int xMin, int yMin, int xMax, int yMax, \fBAnnotLink\fP *link)"
+.br
+.ti -1c
+.RI "void \fBcoalesce\fP (GBool physLayout, double fixedPitch, GBool doHTML)"
+.br
+.ti -1c
+.RI "GBool \fBfindText\fP (Unicode *s, int len, GBool startAtTop, GBool stopAtBottom, GBool startAtLast, GBool stopAtLast, GBool caseSensitive, GBool backward, GBool wholeWord, double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetText\fP (double xMin, double yMin, double xMax, double yMax)"
+.br
+.ti -1c
+.RI "void \fBvisitSelection\fP (\fBTextSelectionVisitor\fP *visitor, \fBPDFRectangle\fP *selection, SelectionStyle style)"
+.br
+.ti -1c
+.RI "void \fBdrawSelection\fP (\fBOutputDev\fP *out, double scale, int rotation, \fBPDFRectangle\fP *selection, SelectionStyle style, \fBGfxColor\fP *glyph_color, \fBGfxColor\fP *box_color)"
+.br
+.ti -1c
+.RI "\fBGooList\fP * \fBgetSelectionRegion\fP (\fBPDFRectangle\fP *selection, SelectionStyle style, double scale)"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetSelectionText\fP (\fBPDFRectangle\fP *selection, SelectionStyle style)"
+.br
+.ti -1c
+.RI "\fBGooList\fP ** \fBgetSelectionWords\fP (\fBPDFRectangle\fP *selection, SelectionStyle style, int *nLines)"
+.br
+.ti -1c
+.RI "GBool \fBfindCharRange\fP (int pos, int length, double *xMin, double *yMin, double *xMax, double *yMax)"
+.br
+.ti -1c
+.RI "void \fBdump\fP (void *outputStream, TextOutputFunc outputFunc, GBool physLayout)"
+.br
+.ti -1c
+.RI "\fBTextFlow\fP * \fBgetFlows\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMergeCombining\fP (GBool merge)"
+.br
+.ti -1c
+.RI "\fBTextWordList\fP * \fBmakeWordList\fP (GBool physLayout)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBTextLine\fP"
+.br
+.ti -1c
+.RI "class \fBTextLineFrag\fP"
+.br
+.ti -1c
+.RI "class \fBTextBlock\fP"
+.br
+.ti -1c
+.RI "class \fBTextFlow\fP"
+.br
+.ti -1c
+.RI "class \fBTextWordList\fP"
+.br
+.ti -1c
+.RI "class \fBTextSelectionPainter\fP"
+.br
+.ti -1c
+.RI "class \fBTextSelectionDumper\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 528 of file TextOutputDev\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

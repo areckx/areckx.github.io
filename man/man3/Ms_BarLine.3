@@ -1,0 +1,224 @@
+.TH "Ms::BarLine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::BarLine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBarLine\fP (\fBScore\fP *s=0)"
+.br
+.ti -1c
+.RI "\fBBarLine\fP (const \fBBarLine\fP &)"
+.br
+.ti -1c
+.RI "\fBBarLine\fP & \fBoperator=\fP (const \fBBarLine\fP &)=delete"
+.br
+.ti -1c
+.RI "virtual \fBBarLine\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const override"
+.br
+.RI "position in canvas coordinates "
+.ti -1c
+.RI "virtual void \fBlayout\fP () override"
+.br
+.ti -1c
+.RI "void \fBlayout2\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true) override"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsegment\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSpanStaff\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetSpanFrom\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetSpanTo\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBspanStaff\fP () const"
+.br
+.ti -1c
+.RI "int \fBspanFrom\fP () const"
+.br
+.ti -1c
+.RI "int \fBspanTo\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &ed) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.ti -1c
+.RI "\fBElementList\fP * \fBel\fP ()"
+.br
+.ti -1c
+.RI "const \fBElementList\fP * \fBel\fP () const"
+.br
+.ti -1c
+.RI "QString \fBbarLineTypeName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBarLineType\fP (const QString &s)"
+.br
+.ti -1c
+.RI "void \fBsetBarLineType\fP (BarLineType i)"
+.br
+.ti -1c
+.RI "BarLineType \fBbarLineType\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBsubtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBsubtypeName\fP () const override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBnextElement\fP () override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBprevElement\fP () override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleInfo\fP () const override"
+.br
+.ti -1c
+.RI "virtual QString \fBaccessibleExtraInfo\fP () const override"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QString \fBuserTypeName\fP (BarLineType)"
+.br
+.ti -1c
+.RI "static const \fBBarLineTableItem\fP * \fBbarLineTableItem\fP (unsigned)"
+.br
+.ti -1c
+.RI "static QString \fBbarLineTypeName\fP (BarLineType t)"
+.br
+.ti -1c
+.RI "static BarLineType \fBbarLineType\fP (const QString &)"
+.br
+.ti -1c
+.RI "static void \fBlayoutWidth\fP (\fBScore\fP *, BarLineType, qreal mag, qreal *lx, qreal *rx)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::vector< \fBBarLineTableItem\fP > \fBbarLineTable\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 57 of file barline\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::BarLine::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 519 of file barline\&.cpp\&.
+.SS "\fBElement\fP * Ms::BarLine::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 536 of file barline\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const std::vector< \fBBarLineTableItem\fP > Ms::BarLine::barLineTable\fC [static]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+{
+      { BarLineType::NORMAL,           QT_TRANSLATE_NOOP("Palette", "Normal barline"),   "normal" },
+      { BarLineType::DOUBLE,           QT_TRANSLATE_NOOP("Palette", "Double barline"),   "double" },
+      { BarLineType::START_REPEAT,     QT_TRANSLATE_NOOP("Palette", "Start repeat"),     "start-repeat" },
+      { BarLineType::END_REPEAT,       QT_TRANSLATE_NOOP("Palette", "End repeat"),       "end-repeat" },
+      { BarLineType::BROKEN,           QT_TRANSLATE_NOOP("Palette", "Dashed barline"),   "dashed" },
+      { BarLineType::END,              QT_TRANSLATE_NOOP("Palette", "Final barline"),    "end" },
+
+      { BarLineType::DOTTED,           QT_TRANSLATE_NOOP("Palette", "Dotted barline"),   "dotted" },
+      }
+.fi
+.PP
+Definition at line 141 of file barline\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

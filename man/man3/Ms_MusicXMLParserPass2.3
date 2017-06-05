@@ -1,0 +1,331 @@
+.TH "Ms::MusicXMLParserPass2" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MusicXMLParserPass2
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMusicXMLParserPass2\fP (\fBScore\fP *score, \fBMusicXMLParserPass1\fP &pass1)"
+.br
+.ti -1c
+.RI "void \fBinitPartState\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "Score::FileError \fBparse\fP (QIODevice *device)"
+.br
+.ti -1c
+.RI "Score::FileError \fBparse\fP ()"
+.br
+.ti -1c
+.RI "void \fBscorePartwise\fP ()"
+.br
+.ti -1c
+.RI "void \fBpartList\fP ()"
+.br
+.ti -1c
+.RI "void \fBscorePart\fP ()"
+.br
+.ti -1c
+.RI "void \fBpart\fP ()"
+.br
+.ti -1c
+.RI "void \fBmeasChordNote\fP ()"
+.br
+.ti -1c
+.RI "void \fBmeasChordFlush\fP ()"
+.br
+.ti -1c
+.RI "void \fBmeasure\fP (const QString &partId, const \fBFraction\fP \fBtime\fP)"
+.br
+.ti -1c
+.RI "void \fBattributes\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const int tick)"
+.br
+.ti -1c
+.RI "void \fBmeasureStyle\fP (\fBMeasure\fP *\fBmeasure\fP)"
+.br
+.ti -1c
+.RI "void \fBprint\fP (\fBMeasure\fP *\fBmeasure\fP)"
+.br
+.ti -1c
+.RI "void \fBbarline\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP)"
+.br
+.ti -1c
+.RI "void \fBkey\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const int tick)"
+.br
+.ti -1c
+.RI "void \fBclef\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const int tick)"
+.br
+.ti -1c
+.RI "void \fBtime\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const int tick)"
+.br
+.ti -1c
+.RI "void \fBdivisions\fP ()"
+.br
+.ti -1c
+.RI "void \fBtranspose\fP (const QString &partId)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBnote\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const \fBFraction\fP sTime, const \fBFraction\fP prevTime, \fBFraction\fP &dura, QString &currentVoice, GraceChordList &gcl, int &gac, \fBBeam\fP *&\fBbeam\fP, FiguredBassList &fbl, int &alt)"
+.br
+.ti -1c
+.RI "void \fBnotePrintSpacingNo\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "\fBFiguredBassItem\fP * \fBfigure\fP (const int idx, const bool paren)"
+.br
+.ti -1c
+.RI "\fBFiguredBass\fP * \fBfiguredBass\fP ()"
+.br
+.ti -1c
+.RI "\fBFretDiagram\fP * \fBframe\fP ()"
+.br
+.ti -1c
+.RI "void \fBharmony\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const \fBFraction\fP sTime)"
+.br
+.ti -1c
+.RI "\fBAccidental\fP * \fBaccidental\fP ()"
+.br
+.ti -1c
+.RI "void \fBbeam\fP (Beam::Mode &beamMode)"
+.br
+.ti -1c
+.RI "void \fBduration\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBforward\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBbackup\fP (\fBFraction\fP &dura)"
+.br
+.ti -1c
+.RI "void \fBtimeModification\fP (\fBFraction\fP &timeMod, \fBTDuration\fP &normalType)"
+.br
+.ti -1c
+.RI "void \fBpitch\fP (int &step, int &alter, int &oct, AccidentalType &accid)"
+.br
+.ti -1c
+.RI "void \fBrest\fP (int &step, int &octave)"
+.br
+.ti -1c
+.RI "void \fBlyric\fP (QMap< int, \fBLyrics\fP *> &numbrdLyrics, QMap< int, \fBLyrics\fP *> &defyLyrics, QList< \fBLyrics\fP *> &unNumbrdLyrics, QSet< \fBLyrics\fP *> &extLyrics)"
+.br
+.ti -1c
+.RI "void \fBnotations\fP (\fBNote\fP *\fBnote\fP, \fBChordRest\fP *cr, const int tick, \fBMusicXmlTupletDesc\fP &tupletDesc, bool &lastGraceAFter)"
+.br
+.ti -1c
+.RI "void \fBstem\fP (\fBDirection\fP &sd, bool &nost)"
+.br
+.ti -1c
+.RI "void \fBfermata\fP (\fBChordRest\fP *cr)"
+.br
+.ti -1c
+.RI "void \fBtuplet\fP (\fBMusicXmlTupletDesc\fP &tupletDesc)"
+.br
+.ti -1c
+.RI "void \fBdoEnding\fP (const QString &partId, \fBMeasure\fP *\fBmeasure\fP, const QString &number, const QString &type, const QString &text)"
+.br
+.ti -1c
+.RI "QString \fBgetParseStatus\fP () const"
+.br
+.ti -1c
+.RI "void \fBlogDebugTrace\fP (const QString &info)"
+.br
+.ti -1c
+.RI "void \fBlogDebugInfo\fP (const QString &info)"
+.br
+.ti -1c
+.RI "void \fBlogError\fP (const QString &error)"
+.br
+.ti -1c
+.RI "void \fBskipLogCurrElem\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddSpanner\fP (const \fBMusicXmlSpannerDesc\fP &desc)"
+.br
+.ti -1c
+.RI "\fBSLine\fP * \fBgetSpanner\fP (const \fBMusicXmlSpannerDesc\fP &desc)"
+.br
+.ti -1c
+.RI "void \fBclearSpanner\fP (const \fBMusicXmlSpannerDesc\fP &desc)"
+.br
+.ti -1c
+.RI "void \fBsetMultiMeasureRestCount\fP (int count)"
+.br
+.ti -1c
+.RI "int \fBgetAndDecMultiMeasureRestCount\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 101 of file importmxmlpass2\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBAccidental\fP * Ms::MusicXMLParserPass2::accidental ()"
+Parse the /score-partwise/part/measure/note/accidental node\&. Return the result as an \fBAccidental\fP\&. 
+.PP
+Definition at line 5074 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::attributes (const QString & partId, \fBMeasure\fP * measure, const int tick)"
+Parse the /score-partwise/part/measure/attributes node\&. 
+.PP
+Definition at line 2206 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::backup (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/backup node\&. 
+.PP
+Definition at line 5164 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::barline (const QString & partId, \fBMeasure\fP * measure)"
+Parse the /score-partwise/part/measure/barline node\&. 
+.PP
+Definition at line 3127 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::beam (Beam::Mode & beamMode)"
+Parse the /score-partwise/part/measure/note/beam node\&. Sets beamMode in case of begin, continue or end beam number 1\&. 
+.PP
+Definition at line 5107 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::clef (const QString & partId, \fBMeasure\fP * measure, const int tick)"
+Parse the /score-partwise/part/measure/attributes/clef node\&. 
+.PP
+Definition at line 3509 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::divisions ()"
+Parse the /score-partwise/part/measure/attributes/divisions node\&. 
+.PP
+Definition at line 3789 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::duration (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/duration node\&. 
+.PP
+Definition at line 4669 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::fermata (\fBChordRest\fP * cr)"
+Parse the /score-partwise/part/measure/note/notations/fermata node\&. \fBNote\fP: MusicXML common\&.mod: 'An empty fermata element represents a normal fermata\&.' 
+.PP
+Definition at line 5939 of file importmxmlpass2\&.cpp\&.
+.SS "\fBFiguredBassItem\fP * Ms::MusicXMLParserPass2::figure (const int idx, const bool paren)"
+Parse the /score-partwise/part/measure/harmony/figured-bass/figure node\&. Return the result as a \fBFiguredBassItem\fP\&. 
+.PP
+Definition at line 4695 of file importmxmlpass2\&.cpp\&.
+.SS "\fBFiguredBass\fP * Ms::MusicXMLParserPass2::figuredBass ()"
+Parse the /score-partwise/part/measure/harmony/figured-bass node\&. TODO check description: Set the \fBFiguredBass\fP state based on the MusicXML <figured-bass> node de\&. \fBNote\fP that onNote and ticks must be set by the MusicXML importer, as the required context is not present in the items DOM tree\&. Exception: if a <duration> element is present, tick can be set\&. Return the result as a \fBFiguredBass\fP if valid, non-empty figure(s) are found\&. Return 0 in case of error\&. 
+.PP
+Definition at line 4767 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::forward (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note/forward node\&. 
+.PP
+Definition at line 5140 of file importmxmlpass2\&.cpp\&.
+.SS "\fBFretDiagram\fP * Ms::MusicXMLParserPass2::frame ()"
+Parse the /score-partwise/part/measure/harmony/frame node\&. Return the result as a \fBFretDiagram\fP\&. 
+.PP
+Definition at line 4819 of file importmxmlpass2\&.cpp\&.
+.SS "int Ms::MusicXMLParserPass2::getAndDecMultiMeasureRestCount ()"
+Return current multi-measure rest counter\&. Decrement counter if possible (not beyond -1)\&. 
+.PP
+Definition at line 1504 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::harmony (const QString & partId, \fBMeasure\fP * measure, const \fBFraction\fP sTime)"
+Parse the /score-partwise/part/measure/harmony node\&. 
+.PP
+Definition at line 4877 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::initPartState (const QString & partId)"
+Initialize members as required for reading the MusicXML part element\&. TODO: factor out part reading into a separate class TODO: preferably use automatically initialized variables \fBNote\fP that Qt automatically initializes new elements in QVector (tuplets)\&. 
+.PP
+Definition at line 1437 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::key (const QString & partId, \fBMeasure\fP * measure, const int tick)"
+Parse the /score-partwise/part/measure/attributes/key node\&. 
+.PP
+Definition at line 3428 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::logDebugInfo (const QString & info)"
+Log debug \fIinfo\fP (non-fatal events relevant for debugging)\&. 
+.PP
+Definition at line 1520 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::logError (const QString & error)"
+Log \fIerror\fP (possibly non-fatal but to be reported to the user anyway)\&. 
+.PP
+Definition at line 1534 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::lyric (QMap< int, \fBLyrics\fP *> & numbrdLyrics, QMap< int, \fBLyrics\fP *> & defyLyrics, QList< \fBLyrics\fP *> & unNumbrdLyrics, QSet< \fBLyrics\fP *> & extLyrics)"
+Parse the /score-partwise/part/measure/note/lyric node\&. 
+.PP
+Definition at line 5299 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::measure (const QString & partId, const \fBFraction\fP time)"
+Parse the /score-partwise/part/measure node\&. 
+.PP
+Definition at line 2037 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::measureStyle (\fBMeasure\fP * measure)"
+Parse the /score-partwise/part/measure/measure-style node\&. Initializes the 'in multi-measure rest' state 
+.PP
+Definition at line 2237 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::notations (\fBNote\fP * note, \fBChordRest\fP * cr, const int tick, \fBMusicXmlTupletDesc\fP & tupletDesc, bool & lastGraceAFter)"
+Parse the /score-partwise/part/measure/note/notations node\&. \fBNote\fP that some notations attach to notes only in \fBMuseScore\fP, which means trying to attach them to a rest will crash, as in that case note is 0\&. 
+.PP
+Definition at line 5403 of file importmxmlpass2\&.cpp\&.
+.SS "\fBNote\fP * Ms::MusicXMLParserPass2::note (const QString & partId, \fBMeasure\fP * measure, const \fBFraction\fP sTime, const \fBFraction\fP prevSTime, \fBFraction\fP & dura, QString & currentVoice, GraceChordList & gcl, int & gac, \fBBeam\fP *& currBeam, FiguredBassList & fbl, int & alt)"
+Parse the /score-partwise/part/measure/note node\&. 
+.PP
+Definition at line 4082 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::notePrintSpacingNo (\fBFraction\fP & dura)"
+Parse the /score-partwise/part/measure/note node for a note with print-spacing='no'\&. These are handled like a forward: only moving the time forward\&. 
+.PP
+Definition at line 4612 of file importmxmlpass2\&.cpp\&.
+.SS "Score::FileError Ms::MusicXMLParserPass2::parse (QIODevice * device)"
+Parse MusicXML in \fIdevice\fP and extract pass 2 data\&. 
+.PP
+Definition at line 1610 of file importmxmlpass2\&.cpp\&.
+.SS "Score::FileError Ms::MusicXMLParserPass2::parse ()"
+Start the parsing process, after verifying the top-level node is score-partwise 
+.PP
+Definition at line 1627 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::part ()"
+Parse the /score-partwise/part node\&. 
+.PP
+Definition at line 1728 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::partList ()"
+Parse the /score-partwise/part-list node\&. 
+.PP
+Definition at line 1685 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::pitch (int & step, int & alter, int & oct, AccidentalType & accid)"
+Parse the /score-partwise/part/measure/note/pitch node\&. 
+.PP
+Definition at line 5228 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::print (\fBMeasure\fP * measure)"
+Parse the /score-partwise/part/measure/print node\&. 
+.PP
+Definition at line 2266 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::rest (int & step, int & octave)"
+Parse the /score-partwise/part/measure/note/rest node\&. 
+.PP
+Definition at line 5284 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::scorePartwise ()"
+Parse the MusicXML top-level (XPath /score-partwise) node\&. 
+.PP
+Definition at line 1658 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::setMultiMeasureRestCount (int count)"
+Set the multi-measure rest counter\&. 
+.PP
+Definition at line 1490 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::skipLogCurrElem ()"
+Skip the current element, log debug as info\&. 
+.PP
+Definition at line 1596 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::stem (\fBDirection\fP & sd, bool & nost)"
+Parse the /score-partwise/part/measure/note/stem node\&. 
+.PP
+Definition at line 5908 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::time (const QString & partId, \fBMeasure\fP * measure, const int tick)"
+Parse the /score-partwise/part/measure/attributes/time node\&. 
+.PP
+Definition at line 3694 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::timeModification (\fBFraction\fP & timeMod, \fBTDuration\fP & normalType)"
+Parse the /score-partwise/part/measure/note/time-modification node\&. 
+.PP
+Definition at line 5184 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::transpose (const QString & partId)"
+Parse the /score-partwise/part/measure/attributes/transpose node\&. 
+.PP
+Definition at line 3750 of file importmxmlpass2\&.cpp\&.
+.SS "void Ms::MusicXMLParserPass2::tuplet (\fBMusicXmlTupletDesc\fP & tupletDesc)"
+Parse the /score-partwise/part/measure/note/notations/tuplet node\&. 
+.PP
+Definition at line 5964 of file importmxmlpass2\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,90 @@
+.TH "Ms::Channel" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Channel
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBA\fP : char { \fBHBANK\fP, \fBLBANK\fP, \fBPROGRAM\fP, \fBVOLUME\fP, \fBPAN\fP, \fBCHORUS\fP, \fBREVERB\fP, \fBINIT_COUNT\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &, \fBPart\fP *part) const"
+.br
+.ti -1c
+.RI "void \fBread\fP (\fBXmlReader\fP &, \fBPart\fP *part)"
+.br
+.ti -1c
+.RI "void \fBupdateInitList\fP () const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBChannel\fP &c)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.ti -1c
+.RI "QString \fBdescr\fP"
+.br
+.ti -1c
+.RI "int \fBchannel\fP { 0 }"
+.br
+.ti -1c
+.RI "std::vector< \fBMidiCoreEvent\fP > \fBinit\fP"
+.br
+.ti -1c
+.RI "QString \fBsynti\fP"
+.br
+.ti -1c
+.RI "int \fBprogram\fP"
+.br
+.ti -1c
+.RI "int \fBbank\fP"
+.br
+.ti -1c
+.RI "char \fBvolume\fP"
+.br
+.ti -1c
+.RI "char \fBpan\fP"
+.br
+.ti -1c
+.RI "char \fBchorus\fP"
+.br
+.ti -1c
+.RI "char \fBreverb\fP"
+.br
+.ti -1c
+.RI "bool \fBmute\fP"
+.br
+.ti -1c
+.RI "bool \fBsolo\fP"
+.br
+.ti -1c
+.RI "bool \fBsoloMute\fP"
+.br
+.ti -1c
+.RI "QList< \fBNamedEventList\fP > \fBmidiActions\fP"
+.br
+.ti -1c
+.RI "QList< \fBMidiArticulation\fP > \fBarticulation\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 94 of file instrument\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

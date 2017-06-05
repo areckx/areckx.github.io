@@ -1,0 +1,347 @@
+\hypertarget{class_ms_1_1_chord_rest}{}\section{Ms\+:\+:Chord\+Rest Class Reference}
+\label{class_ms_1_1_chord_rest}\index{Ms\+::\+Chord\+Rest@{Ms\+::\+Chord\+Rest}}
+
+
+Virtual base class. Chords and rests can be part of a beam.  
+
+
+
+
+{\ttfamily \#include $<$chordrest.\+h$>$}
+
+Inheritance diagram for Ms\+:\+:Chord\+Rest\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_ms_1_1_chord_rest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a3863fe71f65aef569d2da067f79c27d0}\label{class_ms_1_1_chord_rest_a3863fe71f65aef569d2da067f79c27d0}} 
+{\bfseries Chord\+Rest} (\hyperlink{class_ms_1_1_score}{Score} $\ast$)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ae85a7ffd272fa445d18a455891bf9e9b}\label{class_ms_1_1_chord_rest_ae85a7ffd272fa445d18a455891bf9e9b}} 
+{\bfseries Chord\+Rest} (const \hyperlink{class_ms_1_1_chord_rest}{Chord\+Rest} \&, bool link=false)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a5967877ddcbffe6483a2e50cfb9b9a0f}\label{class_ms_1_1_chord_rest_a5967877ddcbffe6483a2e50cfb9b9a0f}} 
+\hyperlink{class_ms_1_1_chord_rest}{Chord\+Rest} \& {\bfseries operator=} (const \hyperlink{class_ms_1_1_chord_rest}{Chord\+Rest} \&)=delete
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a47a641f4c229f43d67ed5154fdebc05c}\label{class_ms_1_1_chord_rest_a47a641f4c229f43d67ed5154fdebc05c}} 
+virtual Element\+Type {\bfseries type} () const =0
+\item 
+virtual \hyperlink{class_ms_1_1_element}{Element} $\ast$ \hyperlink{class_ms_1_1_chord_rest_a1277a12746bf12af5cbf79d95ada6a21}{drop} (\hyperlink{class_ms_1_1_edit_data}{Edit\+Data} \&) override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af7d952577507bd43a7c5368805af6491}\label{class_ms_1_1_chord_rest_af7d952577507bd43a7c5368805af6491}} 
+virtual void {\bfseries undo\+Unlink} () override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a94a3a697e4767c1e0ed46c205a81ac24}\label{class_ms_1_1_chord_rest_a94a3a697e4767c1e0ed46c205a81ac24}} 
+virtual \hyperlink{class_ms_1_1_segment}{Segment} $\ast$ {\bfseries segment} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aaa704d32c5e4253d54d722276f507e2d}\label{class_ms_1_1_chord_rest_aaa704d32c5e4253d54d722276f507e2d}} 
+virtual \hyperlink{class_ms_1_1_measure}{Measure} $\ast$ {\bfseries measure} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa16f7cda08b815e078d628c491f6709a}\label{class_ms_1_1_chord_rest_aa16f7cda08b815e078d628c491f6709a}} 
+virtual void {\bfseries write\+Properties} (\hyperlink{class_ms_1_1_xml_writer}{Xml\+Writer} \&xml) const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa8d9ee5c08abea6855480d2f208a0c80}\label{class_ms_1_1_chord_rest_aa8d9ee5c08abea6855480d2f208a0c80}} 
+virtual bool {\bfseries read\+Properties} (\hyperlink{class_ms_1_1_xml_reader}{Xml\+Reader} \&)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a8136bb4d1225d3dc2607a37aa4908b76}\label{class_ms_1_1_chord_rest_a8136bb4d1225d3dc2607a37aa4908b76}} 
+virtual void {\bfseries scan\+Elements} (void $\ast$data, void($\ast$func)(void $\ast$, \hyperlink{class_ms_1_1_element}{Element} $\ast$), bool all=true)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aabe820028e32de9fe986327e1171d280}\label{class_ms_1_1_chord_rest_aabe820028e32de9fe986327e1171d280}} 
+void {\bfseries set\+Beam\+Mode} (Beam\+::\+Mode m)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a5131545de9bbbd2283e7ba3b1a9336db}\label{class_ms_1_1_chord_rest_a5131545de9bbbd2283e7ba3b1a9336db}} 
+void {\bfseries undo\+Set\+Beam\+Mode} (Beam\+::\+Mode m)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a9103d7e3ecf91f604d7bfd8a529ef09d}\label{class_ms_1_1_chord_rest_a9103d7e3ecf91f604d7bfd8a529ef09d}} 
+Beam\+::\+Mode {\bfseries beam\+Mode} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a45806d334456a727534f339e2650ac25}\label{class_ms_1_1_chord_rest_a45806d334456a727534f339e2650ac25}} 
+void {\bfseries set\+Beam} (\hyperlink{class_ms_1_1_beam}{Beam} $\ast$b)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a75babda8fd88cfe0b18e11aa516c2fd5}\label{class_ms_1_1_chord_rest_a75babda8fd88cfe0b18e11aa516c2fd5}} 
+virtual \hyperlink{class_ms_1_1_beam}{Beam} $\ast$ {\bfseries beam} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a2f39b6dcebfe8d621c3ac82cbce6a159}\label{class_ms_1_1_chord_rest_a2f39b6dcebfe8d621c3ac82cbce6a159}} 
+int {\bfseries beams} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a6b732ed12dcb42e11692520fc040ad49}\label{class_ms_1_1_chord_rest_a6b732ed12dcb42e11692520fc040ad49}} 
+virtual qreal {\bfseries up\+Pos} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_abe43602b2fd35f8301a6845f10320fef}\label{class_ms_1_1_chord_rest_abe43602b2fd35f8301a6845f10320fef}} 
+virtual qreal {\bfseries down\+Pos} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a86d13e1709b4f93563ec09d49184a2ce}\label{class_ms_1_1_chord_rest_a86d13e1709b4f93563ec09d49184a2ce}} 
+virtual qreal {\bfseries centerX} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a73bf68dd25f2c3fefc6a9451c2387e07}\label{class_ms_1_1_chord_rest_a73bf68dd25f2c3fefc6a9451c2387e07}} 
+int {\bfseries line} (bool up) const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af8d6f832ec77d99584221063031d36ba}\label{class_ms_1_1_chord_rest_af8d6f832ec77d99584221063031d36ba}} 
+int {\bfseries line} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad19c4c59276f6aac1889585592cc0149}\label{class_ms_1_1_chord_rest_ad19c4c59276f6aac1889585592cc0149}} 
+virtual int {\bfseries up\+Line} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a221603e8d1bd4b3517dd7d8b408ed011}\label{class_ms_1_1_chord_rest_a221603e8d1bd4b3517dd7d8b408ed011}} 
+virtual int {\bfseries down\+Line} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a86b66562a8b7225c6c8a7243a2ae8ef9}\label{class_ms_1_1_chord_rest_a86b66562a8b7225c6c8a7243a2ae8ef9}} 
+virtual Q\+PointF {\bfseries stem\+Pos} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a6af4973e0eae32449f75804e2f257035}\label{class_ms_1_1_chord_rest_a6af4973e0eae32449f75804e2f257035}} 
+virtual qreal {\bfseries stem\+PosX} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad6204985ab89a3f9b25e264baf96a0b0}\label{class_ms_1_1_chord_rest_ad6204985ab89a3f9b25e264baf96a0b0}} 
+virtual Q\+PointF {\bfseries stem\+Pos\+Beam} () const =0
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ae9e872e395ceb99e383a6ef53ceb9848}\label{class_ms_1_1_chord_rest_ae9e872e395ceb99e383a6ef53ceb9848}} 
+bool {\bfseries up} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a2b72483f57a0227ee6708fe1d2a3606e}\label{class_ms_1_1_chord_rest_a2b72483f57a0227ee6708fe1d2a3606e}} 
+void {\bfseries set\+Up} (bool val)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a17acdd2856c1613ab763c8d402f1eeeb}\label{class_ms_1_1_chord_rest_a17acdd2856c1613ab763c8d402f1eeeb}} 
+Q\+Vector$<$ \hyperlink{class_ms_1_1_articulation}{Articulation} $\ast$ $>$ \& {\bfseries articulations} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1e84bb0c5cbb2359c684030b1508741d}\label{class_ms_1_1_chord_rest_a1e84bb0c5cbb2359c684030b1508741d}} 
+const Q\+Vector$<$ \hyperlink{class_ms_1_1_articulation}{Articulation} $\ast$ $>$ \& {\bfseries articulations} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aeaf0bdf0b56de93a593f9a70e5e2cd49}\label{class_ms_1_1_chord_rest_aeaf0bdf0b56de93a593f9a70e5e2cd49}} 
+\hyperlink{class_ms_1_1_articulation}{Articulation} $\ast$ {\bfseries has\+Articulation} (const \hyperlink{class_ms_1_1_articulation}{Articulation} $\ast$)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a260e9896d5323993e2ba87c40f60d5ce}\label{class_ms_1_1_chord_rest_a260e9896d5323993e2ba87c40f60d5ce}} 
+bool {\bfseries small} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a2c1a9c099f5bd7aa4889202975aa8b02}\label{class_ms_1_1_chord_rest_a2c1a9c099f5bd7aa4889202975aa8b02}} 
+void {\bfseries set\+Small} (bool val)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_adbc83de8c01b1afd07b9d2805a7cd6f5}\label{class_ms_1_1_chord_rest_adbc83de8c01b1afd07b9d2805a7cd6f5}} 
+void {\bfseries undo\+Set\+Small} (bool val)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a11c815063edf5abc1bff515e11b03a2b}\label{class_ms_1_1_chord_rest_a11c815063edf5abc1bff515e11b03a2b}} 
+int {\bfseries staff\+Move} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a9129693fc48621402f0ea332bb589e21}\label{class_ms_1_1_chord_rest_a9129693fc48621402f0ea332bb589e21}} 
+void {\bfseries set\+Staff\+Move} (int val)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a7b344ea7b12893001b693d782d19a081}\label{class_ms_1_1_chord_rest_a7b344ea7b12893001b693d782d19a081}} 
+virtual int {\bfseries v\+Staff\+Idx} () const override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_acb577f9dd2eaa0306bf647004ed09a2e}\label{class_ms_1_1_chord_rest_acb577f9dd2eaa0306bf647004ed09a2e}} 
+void {\bfseries layout\+Articulations} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a4c0205b5940976cc9f7cb9eb543fbc08}\label{class_ms_1_1_chord_rest_a4c0205b5940976cc9f7cb9eb543fbc08}} 
+const \hyperlink{class_ms_1_1_t_duration}{T\+Duration} {\bfseries duration\+Type} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a6802d9faa8168c8425b8dcb3d11d2edb}\label{class_ms_1_1_chord_rest_a6802d9faa8168c8425b8dcb3d11d2edb}} 
+const \hyperlink{class_ms_1_1_t_duration}{T\+Duration} {\bfseries actual\+Duration\+Type} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_adc6b9aa10c0b149eea492432ceeb3ce3}\label{class_ms_1_1_chord_rest_adc6b9aa10c0b149eea492432ceeb3ce3}} 
+void {\bfseries set\+Duration\+Type} (T\+Duration\+::\+Duration\+Type t)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a24a3f9e86372a2a3285bbcc4da63e741}\label{class_ms_1_1_chord_rest_a24a3f9e86372a2a3285bbcc4da63e741}} 
+void {\bfseries set\+Duration\+Type} (const Q\+String \&s)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a0ca27e9601ab0b09bc923c8b804c15a2}\label{class_ms_1_1_chord_rest_a0ca27e9601ab0b09bc923c8b804c15a2}} 
+void {\bfseries set\+Duration\+Type} (int ticks)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a557b205722fc2931c9113f5afa6f5f48}\label{class_ms_1_1_chord_rest_a557b205722fc2931c9113f5afa6f5f48}} 
+void {\bfseries set\+Duration\+Type} (\hyperlink{class_ms_1_1_t_duration}{T\+Duration} v)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a3b39d7d2e1b2c2f11ea0d3522af684af}\label{class_ms_1_1_chord_rest_a3b39d7d2e1b2c2f11ea0d3522af684af}} 
+void {\bfseries set\+Dots} (int n)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1ebb74b05f781c56e63bbc5ff221d7f3}\label{class_ms_1_1_chord_rest_a1ebb74b05f781c56e63bbc5ff221d7f3}} 
+int {\bfseries dots} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a3f2d1ebbf74d49882a656ae4ba4b4389}\label{class_ms_1_1_chord_rest_a3f2d1ebbf74d49882a656ae4ba4b4389}} 
+int {\bfseries actual\+Dots} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a8a30824fcca6fcc981d06763b16a22de}\label{class_ms_1_1_chord_rest_a8a30824fcca6fcc981d06763b16a22de}} 
+int {\bfseries duration\+Type\+Ticks} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1fdcdb771fb576c5ba9bd21cc2ad5e6c}\label{class_ms_1_1_chord_rest_a1fdcdb771fb576c5ba9bd21cc2ad5e6c}} 
+Q\+String {\bfseries duration\+User\+Name} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ac50a2989556e5cd55b71ca4c98067492}\label{class_ms_1_1_chord_rest_ac50a2989556e5cd55b71ca4c98067492}} 
+virtual void {\bfseries set\+Track} (int val) override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad0aede93707644473a04a23666e6a2f1}\label{class_ms_1_1_chord_rest_ad0aede93707644473a04a23666e6a2f1}} 
+const std\+::vector$<$ \hyperlink{class_ms_1_1_lyrics}{Lyrics} $\ast$ $>$ \& {\bfseries lyrics} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a57fbf117cc5117ddfaf48189e30e96e8}\label{class_ms_1_1_chord_rest_a57fbf117cc5117ddfaf48189e30e96e8}} 
+std\+::vector$<$ \hyperlink{class_ms_1_1_lyrics}{Lyrics} $\ast$ $>$ \& {\bfseries lyrics} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1ad2b961f13371e44f17cec7041b6507}\label{class_ms_1_1_chord_rest_a1ad2b961f13371e44f17cec7041b6507}} 
+\hyperlink{class_ms_1_1_lyrics}{Lyrics} $\ast$ {\bfseries lyrics} (int verse, Placement) const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a81732a1c7499677523fa2d2b0b254902}\label{class_ms_1_1_chord_rest_a81732a1c7499677523fa2d2b0b254902}} 
+int {\bfseries last\+Verse} (Placement) const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa0fb23cee73659c126a07ebdbfbf7684}\label{class_ms_1_1_chord_rest_aa0fb23cee73659c126a07ebdbfbf7684}} 
+void {\bfseries flip\+Lyrics} (\hyperlink{class_ms_1_1_lyrics}{Lyrics} $\ast$)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a5ea14351e92562c2439ac0a357c38f93}\label{class_ms_1_1_chord_rest_a5ea14351e92562c2439ac0a357c38f93}} 
+virtual void {\bfseries add} (\hyperlink{class_ms_1_1_element}{Element} $\ast$)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a488cf820c912a7eb8fd1d4f80cb74e7a}\label{class_ms_1_1_chord_rest_a488cf820c912a7eb8fd1d4f80cb74e7a}} 
+virtual void {\bfseries remove} (\hyperlink{class_ms_1_1_element}{Element} $\ast$)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a8f87ff99331819e91eea762687ef8950}\label{class_ms_1_1_chord_rest_a8f87ff99331819e91eea762687ef8950}} 
+void {\bfseries remove\+Delete\+Beam} (bool beamed)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af6cfd36f9d571c4d7bbc93f474483ded}\label{class_ms_1_1_chord_rest_af6cfd36f9d571c4d7bbc93f474483ded}} 
+\hyperlink{class_ms_1_1_element_list}{Element\+List} \& {\bfseries el} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a87bf56f4bd5c2e90611fcd134dabac25}\label{class_ms_1_1_chord_rest_a87bf56f4bd5c2e90611fcd134dabac25}} 
+const \hyperlink{class_ms_1_1_element_list}{Element\+List} \& {\bfseries el} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a34e17dca66c25cbd046523dc0c1c7978}\label{class_ms_1_1_chord_rest_a34e17dca66c25cbd046523dc0c1c7978}} 
+Cross\+Measure {\bfseries cross\+Measure} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_acc7b8669972325c93c8bc7c819a94b28}\label{class_ms_1_1_chord_rest_acc7b8669972325c93c8bc7c819a94b28}} 
+void {\bfseries set\+Cross\+Measure} (Cross\+Measure val)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa6c9d9508154db853b7f66ec4551dfcc}\label{class_ms_1_1_chord_rest_aa6c9d9508154db853b7f66ec4551dfcc}} 
+virtual void {\bfseries cross\+Measure\+Setup} (bool)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1564e474208b08b6bdb6cb0ffce38b08}\label{class_ms_1_1_chord_rest_a1564e474208b08b6bdb6cb0ffce38b08}} 
+\hyperlink{class_ms_1_1_t_duration}{T\+Duration} {\bfseries cross\+Measure\+Duration\+Type} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad1a47117e08b36e435b627bde7861886}\label{class_ms_1_1_chord_rest_ad1a47117e08b36e435b627bde7861886}} 
+void {\bfseries set\+Cross\+Measure\+Duration\+Type} (\hyperlink{class_ms_1_1_t_duration}{T\+Duration} v)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a86c1ce829a75bdc6d2beb440e690c627}\label{class_ms_1_1_chord_rest_a86c1ce829a75bdc6d2beb440e690c627}} 
+virtual Q\+Variant {\bfseries get\+Property} (P\+\_\+\+ID property\+Id) const override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_afce79be97f19d887ec4e584586478e52}\label{class_ms_1_1_chord_rest_afce79be97f19d887ec4e584586478e52}} 
+virtual bool {\bfseries set\+Property} (P\+\_\+\+ID property\+Id, const Q\+Variant \&) override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a3925ae7ee2719e07d64e0d1b37352878}\label{class_ms_1_1_chord_rest_a3925ae7ee2719e07d64e0d1b37352878}} 
+virtual Q\+Variant {\bfseries property\+Default} (P\+\_\+\+ID) const override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a80221eef18fa6549f2605eb6a08fa0f3}\label{class_ms_1_1_chord_rest_a80221eef18fa6549f2605eb6a08fa0f3}} 
+bool {\bfseries is\+Grace} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aef64b1d3c29d7fcb81061bf5bece921a}\label{class_ms_1_1_chord_rest_aef64b1d3c29d7fcb81061bf5bece921a}} 
+bool {\bfseries is\+Grace\+Before} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa6f61c1efe6d552049ee902f28632243}\label{class_ms_1_1_chord_rest_aa6f61c1efe6d552049ee902f28632243}} 
+bool {\bfseries is\+Grace\+After} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af9702ef559317fbc9faa01532f6e3c1e}\label{class_ms_1_1_chord_rest_af9702ef559317fbc9faa01532f6e3c1e}} 
+void {\bfseries write\+Beam} (\hyperlink{class_ms_1_1_xml_writer}{Xml\+Writer} \&xml)
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aa914cc2a56a9fa3790e69a91aff4771f}\label{class_ms_1_1_chord_rest_aa914cc2a56a9fa3790e69a91aff4771f}} 
+\hyperlink{class_ms_1_1_segment}{Segment} $\ast$ {\bfseries next\+Segment\+After\+CR} (Segment\+Type types) const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_abf9774dbe43a1012f09ede1b8352edd2}\label{class_ms_1_1_chord_rest_abf9774dbe43a1012f09ede1b8352edd2}} 
+virtual void {\bfseries set\+Score} (\hyperlink{class_ms_1_1_score}{Score} $\ast$s) override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a52f094713df92026a78c26f5a1bb894d}\label{class_ms_1_1_chord_rest_a52f094713df92026a78c26f5a1bb894d}} 
+virtual \hyperlink{class_ms_1_1_element}{Element} $\ast$ {\bfseries next\+Element} () override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a5b5b7e93b97367c5c59da86349dcee82}\label{class_ms_1_1_chord_rest_a5b5b7e93b97367c5c59da86349dcee82}} 
+virtual \hyperlink{class_ms_1_1_element}{Element} $\ast$ {\bfseries prev\+Element} () override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ab13ef528a7691f666a38dbc85ed84fb3}\label{class_ms_1_1_chord_rest_ab13ef528a7691f666a38dbc85ed84fb3}} 
+virtual Q\+String {\bfseries accessible\+Extra\+Info} () const override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a9263c16f6d004ee4fce1ae6633fd022d}\label{class_ms_1_1_chord_rest_a9263c16f6d004ee4fce1ae6633fd022d}} 
+virtual \hyperlink{class_ms_1_1_shape}{Shape} {\bfseries shape} () const override
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af689585792f7920c671901274faae074}\label{class_ms_1_1_chord_rest_af689585792f7920c671901274faae074}} 
+virtual void {\bfseries layout\+Stem1} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad10e9b865b4832ba6615e33efca72853}\label{class_ms_1_1_chord_rest_ad10e9b865b4832ba6615e33efca72853}} 
+virtual void {\bfseries compute\+Up} ()
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ab43521662c782083c9befbf1149aa1ae}\label{class_ms_1_1_chord_rest_ab43521662c782083c9befbf1149aa1ae}} 
+bool {\bfseries is\+Full\+Measure\+Rest} () const
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a6fc9cb237164df7cecb329f33d1a81c4}\label{class_ms_1_1_chord_rest_a6fc9cb237164df7cecb329f33d1a81c4}} 
+virtual void {\bfseries remove\+Markings} (bool keep\+Tremolo=false)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a0f030fbf7070e04a433b25ceaaa632b7}\label{class_ms_1_1_chord_rest_a0f030fbf7070e04a433b25ceaaa632b7}} 
+Q\+Vector$<$ \hyperlink{class_ms_1_1_articulation}{Articulation} $\ast$ $>$ {\bfseries \+\_\+articulations}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_af7114fc7e905b5e6ff68d12632ad55ce}\label{class_ms_1_1_chord_rest_af7114fc7e905b5e6ff68d12632ad55ce}} 
+std\+::vector$<$ \hyperlink{class_ms_1_1_lyrics}{Lyrics} $\ast$ $>$ {\bfseries \+\_\+lyrics}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ac3f0e7cb31d700abc5e1d261e0aab7b1}\label{class_ms_1_1_chord_rest_ac3f0e7cb31d700abc5e1d261e0aab7b1}} 
+\hyperlink{class_ms_1_1_tab_duration_symbol}{Tab\+Duration\+Symbol} $\ast$ {\bfseries \+\_\+tab\+Dur}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ac3715cb6c5477152068cfedb5ce12124}\label{class_ms_1_1_chord_rest_ac3715cb6c5477152068cfedb5ce12124}} 
+\hyperlink{class_ms_1_1_beam}{Beam} $\ast$ {\bfseries \+\_\+beam}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ada1f9e9879ce56d0a211b5fba705cf68}\label{class_ms_1_1_chord_rest_ada1f9e9879ce56d0a211b5fba705cf68}} 
+Beam\+::\+Mode {\bfseries \+\_\+beam\+Mode}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ae13b24ceed9d3561f107f7e3ea72de44}\label{class_ms_1_1_chord_rest_ae13b24ceed9d3561f107f7e3ea72de44}} 
+bool {\bfseries \+\_\+up}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ad069f6a28a4eaca5f5ba223d072fd72f}\label{class_ms_1_1_chord_rest_ad069f6a28a4eaca5f5ba223d072fd72f}} 
+bool {\bfseries \+\_\+small}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a31164d5f203926c37f06a5ae8832793d}\label{class_ms_1_1_chord_rest_a31164d5f203926c37f06a5ae8832793d}} 
+Cross\+Measure \hyperlink{class_ms_1_1_chord_rest_a31164d5f203926c37f06a5ae8832793d}{\+\_\+cross\+Measure}
+\begin{DoxyCompactList}\small\item\em 0\+: no cross-\/measure modification; 1\+: 1st note of a mod.; -\/1\+: 2nd note \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_aba0cce6921c0cca20dbd41197e4e58d9}\label{class_ms_1_1_chord_rest_aba0cce6921c0cca20dbd41197e4e58d9}} 
+\hyperlink{class_ms_1_1_t_duration}{T\+Duration} \hyperlink{class_ms_1_1_chord_rest_aba0cce6921c0cca20dbd41197e4e58d9}{\+\_\+cross\+Measure\+T\+Dur}
+\begin{DoxyCompactList}\small\item\em the total Duration type of the combined notes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_ae65b665587b3a1978734f353a2e4be5a}\label{class_ms_1_1_chord_rest_ae65b665587b3a1978734f353a2e4be5a}} 
+Ms\+::\+Beam\+::\+Mode {\bfseries beam\+Mode}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a7adc9e28cdc15ab6318456149b213035}\label{class_ms_1_1_chord_rest_a7adc9e28cdc15ab6318456149b213035}} 
+int {\bfseries duration\+Type}
+\item 
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a157ff03e758baf92b4ccfc42cc4824ca}\label{class_ms_1_1_chord_rest_a157ff03e758baf92b4ccfc42cc4824ca}} 
+bool {\bfseries small}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Virtual base class. Chords and rests can be part of a beam. 
+
+Definition at line 51 of file chordrest.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ms_1_1_chord_rest_a1277a12746bf12af5cbf79d95ada6a21}\label{class_ms_1_1_chord_rest_a1277a12746bf12af5cbf79d95ada6a21}} 
+\index{Ms\+::\+Chord\+Rest@{Ms\+::\+Chord\+Rest}!drop@{drop}}
+\index{drop@{drop}!Ms\+::\+Chord\+Rest@{Ms\+::\+Chord\+Rest}}
+\subsubsection{\texorpdfstring{drop()}{drop()}}
+{\footnotesize\ttfamily \hyperlink{class_ms_1_1_element}{Element} $\ast$ Ms\+::\+Chord\+Rest\+::drop (\begin{DoxyParamCaption}\item[{\hyperlink{class_ms_1_1_edit_data}{Edit\+Data} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Handle a dropped element at canvas relative {\itshape pos} of given element {\itshape type} and {\itshape subtype}. Returns dropped element if any. The ownership of element in Drop\+Data is transfered to the called element (if not used, element has to be deleted). The returned element will be selected if not in note edit mode.
+
+Reimplemented by elements that accept drops. 
+
+Reimplemented from \hyperlink{class_ms_1_1_element_a0ca69a9fb48e7b9fb481aacaf3860032}{Ms\+::\+Element}.
+
+
+
+Reimplemented in \hyperlink{class_ms_1_1_chord_ac91b212e92e0840f3ffd4f4751af8a39}{Ms\+::\+Chord}, and \hyperlink{class_ms_1_1_rest_a4dec6c49aaf416289c5e2f78a2074c64}{Ms\+::\+Rest}.
+
+
+
+Definition at line 684 of file chordrest.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+libmscore/chordrest.\+h\item 
+libmscore/chordrest.\+cpp\end{DoxyCompactItemize}

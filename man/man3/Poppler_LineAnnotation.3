@@ -1,0 +1,159 @@
+.TH "Poppler::LineAnnotation" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LineAnnotation \- Polygon/polyline annotation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-annotation\&.h>\fP
+.PP
+Inherits \fBPoppler::Annotation\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLineType\fP { \fBStraightLine\fP, \fBPolyline\fP }"
+.br
+.ti -1c
+.RI "enum \fBTermStyle\fP { \fBSquare\fP, \fBCircle\fP, \fBDiamond\fP, \fBOpenArrow\fP, \fBClosedArrow\fP, \fBNone\fP, \fBButt\fP, \fBROpenArrow\fP, \fBRClosedArrow\fP, \fBSlash\fP }"
+.br
+.ti -1c
+.RI "enum \fBLineIntent\fP { \fBUnknown\fP, \fBArrow\fP, \fBDimension\fP, \fBPolygonCloud\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLineAnnotation\fP (\fBLineType\fP type)"
+.br
+.ti -1c
+.RI "virtual \fBSubType\fP \fBsubType\fP () const"
+.br
+.ti -1c
+.RI "\fBLineType\fP \fBlineType\fP () const"
+.br
+.ti -1c
+.RI "QLinkedList< QPointF > \fBlinePoints\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLinePoints\fP (const QLinkedList< QPointF > &points)"
+.br
+.ti -1c
+.RI "TermStyle \fBlineStartStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineStartStyle\fP (TermStyle \fBstyle\fP)"
+.br
+.ti -1c
+.RI "TermStyle \fBlineEndStyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineEndStyle\fP (TermStyle \fBstyle\fP)"
+.br
+.ti -1c
+.RI "bool \fBisLineClosed\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineClosed\fP (bool closed)"
+.br
+.ti -1c
+.RI "QColor \fBlineInnerColor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineInnerColor\fP (const QColor &\fBcolor\fP)"
+.br
+.ti -1c
+.RI "double \fBlineLeadingForwardPoint\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineLeadingForwardPoint\fP (double point)"
+.br
+.ti -1c
+.RI "double \fBlineLeadingBackPoint\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineLeadingBackPoint\fP (double point)"
+.br
+.ti -1c
+.RI "bool \fBlineShowCaption\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineShowCaption\fP (bool show)"
+.br
+.ti -1c
+.RI "LineIntent \fBlineIntent\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLineIntent\fP (LineIntent intent)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBAnnotationUtils\fP"
+.br
+.ti -1c
+.RI "class \fBAnnotationPrivate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Polygon/polyline annotation\&. 
+
+This annotation represents a polygon (or polyline) to be drawn on a page\&. 
+.PP
+Definition at line 514 of file poppler\-annotation\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::LineAnnotation::LineType\fP"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 522 of file poppler\-annotation\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::LineAnnotation::LineAnnotation (\fBLineAnnotation::LineType\fP type)"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 2347 of file poppler\-annotation\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLineAnnotation::LineType\fP Poppler::LineAnnotation::lineType () const"
+
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 2462 of file poppler\-annotation\&.cc\&.
+.SS "\fBAnnotation::SubType\fP Poppler::LineAnnotation::subType () const\fC [virtual]\fP"
+The type of the annotation\&. 
+.PP
+Implements \fBPoppler::Annotation\fP\&.
+.PP
+Definition at line 2457 of file poppler\-annotation\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

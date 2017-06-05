@@ -1,0 +1,116 @@
+.TH "md_mtest__r_e_a_d_m_e" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_mtest__r_e_a_d_m_eBuilding & running the tests 
+ \- To build all tests:
+.PP
+Linux OSX Windows  make debug
+.br
+sudo make installdebug
+.br
+cd build\&.debug/mtest
+.br
+make make -f Makefile\&.osx debug
+.br
+make -f Makefile\&.osx installdebug
+.br
+cd build\&.debug/mtest
+.br
+make -f Makefile\&.osx mingw32-make -f Makefile\&.mingw debug
+.br
+mingw32-make -f Makefile\&.mingw installdebug
+.br
+cd build\&.debug
+.br
+mingw32-make -f Makefile\&.mingw To run all tests: 
+.PP
+.nf
+ctest
+
+.fi
+.PP
+.PP
+To run only one test (for debugging purposes): 
+.PP
+.nf
+cd libmscore/join/
+./tst_join
+
+.fi
+.PP
+.PP
+To see how the CI environment is doing it check \fC\&.travis\&.yml\fP and \fCbuild/run_tests\&.sh\fP
+.PP
+\fBNote: You need to have \fCdiff\fP in your path\&. For Windows, get a copy of \fCdiffutils for Windows\fP\&.\fP
+.PP
+.SH "Test case conventions "
+.PP
+.PP
+Tests are grouped in directories by feature (like libmscore or mxl)\&. In these directories, each subdirectory represents a test suite for a particular sub feature\&.
+.PP
+The name of a test suite directory should be descriptive\&. The CPP file for the tests should use the same name as the directory, for example \fCtst_foo\&.cpp\fP in directory \fCfoo\fP\&. It's good practice to include a README file in a test suite directory\&.
+.PP
+Test suite CPP files contain one slot per test case\&. Each file should be called foo-XX with XX being an incrementing count\&. If a test case uses a file and a ref file, they should be called \fCfoo-XX\fP and \fCfoo-XX-ref\fP, with the extension \&.mscx\&. A test case should not reuse a file from another test case\&.
+.PP
+To create reference or original files, MuseScore can be run with the \fC-t\fP command line argument and it will save all the files in the session in test mode\&. Such files do not contain platform or version information and do contain extra data for tracing (for example, they contains pixel level position for beams)\&.
+.PP
+.SH "How to write a test case "
+.PP
+.PP
+.SS "Import test "
+.PP
+.IP "\(bu" 2
+Open a short file containing an individual case in one of the formats supported by MuseScore
+.IP "\(bu" 2
+Save in MuseScore format
+.IP "\(bu" 2
+Compare with reference file
+.PP
+.PP
+At first the test will fail because there is no reference file\&. Open the file created by the test case in MuseScore and try to edit it to be sure it's valid\&. If the file is valid, save it (without version number) as a reference file\&.
+.PP
+.SS "\fBObject\fP read write "
+.PP
+Create a test case for all elements and all properties in each element\&. See \fClibmscore/note\fP
+.PP
+.IP "\(bu" 2
+Create an object
+.IP "\(bu" 2
+Set a property
+.IP "\(bu" 2
+Write and read the object
+.IP "\(bu" 2
+Check if the property has the right value
+.PP
+.PP
+.SS "Action tests "
+.PP
+See \fClibmscore/join\fP or \fClibmscore/split\fP for example
+.PP
+.IP "\(bu" 2
+Read a score file
+.IP "\(bu" 2
+Apply an action
+.IP "\(bu" 2
+Write the file
+.IP "\(bu" 2
+Compare with a reference
+.IP "\(bu" 2
+(Undo the action)
+.IP "\(bu" 2
+(Compare with original file)
+.PP
+.PP
+.SS "Compatibility tests "
+.PP
+Most of them are in \fCmtest/libmscore/compat\fP
+.PP
+.IP "\(bu" 2
+Read a score file from an older version of MuseScore
+.IP "\(bu" 2
+Write the file
+.IP "\(bu" 2
+Compare with a reference file 
+.PP
+

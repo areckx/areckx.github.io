@@ -1,0 +1,1666 @@
+.TH "Ms::Score" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Score
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject, and \fBMs::ScoreElement\fP\&.
+.PP
+Inherited by \fBMs::MasterScore\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFileError\fP : char { \fBFILE_NO_ERROR\fP, \fBFILE_ERROR\fP, \fBFILE_NOT_FOUND\fP, \fBFILE_OPEN_ERROR\fP, \fBFILE_BAD_FORMAT\fP, \fBFILE_UNKNOWN_TYPE\fP, \fBFILE_NO_ROOTFILE\fP, \fBFILE_TOO_OLD\fP, \fBFILE_TOO_NEW\fP, \fBFILE_CORRUPTED\fP, \fBFILE_USER_ABORT\fP, \fBFILE_IGNORE_ERROR\fP }"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBposChanged\fP (POS, unsigned)"
+.br
+.ti -1c
+.RI "void \fBplaylistChanged\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScore\fP (\fBMasterScore\fP *)"
+.br
+.ti -1c
+.RI "\fBScore\fP (\fBMasterScore\fP *, const \fBMStyle\fP &)"
+.br
+.ti -1c
+.RI "virtual bool \fBisMaster\fP () const"
+.br
+.ti -1c
+.RI "virtual QList< \fBExcerpt\fP * > & \fBexcerpts\fP ()"
+.br
+.ti -1c
+.RI "virtual const QList< \fBExcerpt\fP * > & \fBexcerpts\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "void \fBrebuildBspTree\fP ()"
+.br
+.ti -1c
+.RI "bool \fBnoStaves\fP () const"
+.br
+.ti -1c
+.RI "void \fBinsertPart\fP (\fBPart\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBremovePart\fP (\fBPart\fP *)"
+.br
+.ti -1c
+.RI "void \fBinsertStaff\fP (\fBStaff\fP *, int)"
+.br
+.ti -1c
+.RI "void \fBcmdRemoveStaff\fP (int \fBstaffIdx\fP)"
+.br
+.ti -1c
+.RI "void \fBremoveStaff\fP (\fBStaff\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddMeasure\fP (\fBMeasureBase\fP *, \fBMeasureBase\fP *)"
+.br
+.ti -1c
+.RI "void \fBreadStaff\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "bool \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "\fBExcerpt\fP * \fBexcerpt\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetExcerpt\fP (\fBExcerpt\fP *e)"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBcollectSystem\fP (\fBLayoutContext\fP &)"
+.br
+.ti -1c
+.RI "void \fBgetNextMeasure\fP (\fBLayoutContext\fP &)"
+.br
+.ti -1c
+.RI "void \fBcmdRemovePart\fP (\fBPart\fP *)"
+.br
+.ti -1c
+.RI "void \fBcmdAddTie\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdAddOttava\fP (OttavaType)"
+.br
+.ti -1c
+.RI "void \fBcmdAddStretch\fP (qreal)"
+.br
+.ti -1c
+.RI "void \fBcmdResetNoteAndRestGroupings\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdDoubleDuration\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdHalfDuration\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdIncDurationDotted\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdDecDurationDotted\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddRemoveBreaks\fP (int \fBinterval\fP, bool lock)"
+.br
+.ti -1c
+.RI "bool \fBtranspose\fP (\fBNote\fP *n, \fBInterval\fP, bool useSharpsFlats)"
+.br
+.ti -1c
+.RI "void \fBtransposeKeys\fP (int staffStart, int staffEnd, int tickStart, int tickEnd, const \fBInterval\fP &, bool useInstrument=false, bool flip=false)"
+.br
+.ti -1c
+.RI "bool \fBtranspose\fP (TransposeMode mode, TransposeDirection, Key transposeKey, int \fBtransposeInterval\fP, bool trKeys, bool transposeChordNames, bool useDoubleSharpsFlats)"
+.br
+.ti -1c
+.RI "bool \fBappendScore\fP (\fBScore\fP *, bool addPageBreak=false, bool addSectionBreak=true)"
+.br
+.ti -1c
+.RI "void \fBwrite\fP (\fBXmlWriter\fP &, bool onlySelection)"
+.br
+.ti -1c
+.RI "void \fBwriteMovement\fP (\fBXmlWriter\fP &, bool onlySelection)"
+.br
+.ti -1c
+.RI "QList< \fBStaff\fP * > & \fBstaves\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBStaff\fP * > & \fBstaves\fP () const"
+.br
+.ti -1c
+.RI "int \fBnstaves\fP () const"
+.br
+.ti -1c
+.RI "int \fBntracks\fP () const"
+.br
+.ti -1c
+.RI "int \fBstaffIdx\fP (const \fBPart\fP *) const"
+.br
+.RI "Return index for the first staff of \fIpart\fP\&. "
+.ti -1c
+.RI "\fBStaff\fP * \fBstaff\fP (int n) const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBpos2measure\fP (const QPointF &, int *\fBstaffIdx\fP, int *pitch, \fBSegment\fP **, QPointF *offset) const"
+.br
+.ti -1c
+.RI "void \fBdragPosition\fP (const QPointF &, int *\fBstaffIdx\fP, \fBSegment\fP **) const"
+.br
+.ti -1c
+.RI "void \fBundoAddElement\fP (\fBElement\fP *element)"
+.br
+.ti -1c
+.RI "void \fBundoAddCR\fP (\fBChordRest\fP *element, \fBMeasure\fP *, int tick)"
+.br
+.ti -1c
+.RI "void \fBundoRemoveElement\fP (\fBElement\fP *element)"
+.br
+.ti -1c
+.RI "void \fBundoChangeElement\fP (\fBElement\fP *oldElement, \fBElement\fP *newElement)"
+.br
+.ti -1c
+.RI "void \fBundoChangePitch\fP (\fBNote\fP *note, int pitch, int tpc1, int tpc2)"
+.br
+.ti -1c
+.RI "void \fBundoChangeFretting\fP (\fBNote\fP *note, int pitch, int string, int fret, int tpc1, int tpc2)"
+.br
+.ti -1c
+.RI "void \fBspellNotelist\fP (std::vector< \fBNote\fP *> &notes)"
+.br
+.ti -1c
+.RI "void \fBundoChangeTpc\fP (\fBNote\fP *note, int tpc)"
+.br
+.ti -1c
+.RI "void \fBundoChangeChordRestLen\fP (\fBChordRest\fP *cr, const \fBTDuration\fP &)"
+.br
+.ti -1c
+.RI "void \fBundoTransposeHarmony\fP (\fBHarmony\fP *, int, int)"
+.br
+.ti -1c
+.RI "void \fBundoExchangeVoice\fP (\fBMeasure\fP *measure, int val1, int val2, int staff1, int staff2)"
+.br
+.ti -1c
+.RI "void \fBundoRemovePart\fP (\fBPart\fP *part, int idx)"
+.br
+.ti -1c
+.RI "void \fBundoInsertPart\fP (\fBPart\fP *part, int idx)"
+.br
+.ti -1c
+.RI "void \fBundoRemoveStaff\fP (\fBStaff\fP *staff)"
+.br
+.ti -1c
+.RI "void \fBundoInsertStaff\fP (\fBStaff\fP *staff, int idx, bool createRests=true)"
+.br
+.ti -1c
+.RI "void \fBundoChangeInvisible\fP (\fBElement\fP *, bool)"
+.br
+.ti -1c
+.RI "void \fBundoChangeTuning\fP (\fBNote\fP *, qreal)"
+.br
+.ti -1c
+.RI "void \fBundoChangeUserMirror\fP (\fBNote\fP *, MScore::DirectionH)"
+.br
+.ti -1c
+.RI "void \fBundoChangeKeySig\fP (\fBStaff\fP *ostaff, int tick, \fBKeySigEvent\fP)"
+.br
+.ti -1c
+.RI "void \fBundoChangeClef\fP (\fBStaff\fP *ostaff, \fBSegment\fP *, ClefType st)"
+.br
+.ti -1c
+.RI "void \fBundoChangeProperty\fP (\fBScoreElement\fP *, P_ID, const QVariant &, PropertyFlags ps=PropertyFlags::NOSTYLE)"
+.br
+.ti -1c
+.RI "void \fBundoPropertyChanged\fP (\fBElement\fP *, P_ID, const QVariant &v)"
+.br
+.ti -1c
+.RI "void \fBundoPropertyChanged\fP (\fBScoreElement\fP *, P_ID, const QVariant &v)"
+.br
+.ti -1c
+.RI "virtual \fBUndoStack\fP * \fBundoStack\fP () const"
+.br
+.ti -1c
+.RI "void \fBundo\fP (\fBUndoCommand\fP *, \fBEditData\fP *=0) const"
+.br
+.ti -1c
+.RI "void \fBundoRemoveMeasures\fP (\fBMeasure\fP *, \fBMeasure\fP *)"
+.br
+.ti -1c
+.RI "void \fBundoAddBracket\fP (\fBStaff\fP *staff, int level, BracketType type, int span)"
+.br
+.ti -1c
+.RI "void \fBundoRemoveBracket\fP (\fBBracket\fP *)"
+.br
+.ti -1c
+.RI "void \fBundoInsertTime\fP (int tick, int len)"
+.br
+.ti -1c
+.RI "void \fBundoChangeBarLine\fP (\fBMeasure\fP *, BarLineType, SegmentType type)"
+.br
+.ti -1c
+.RI "void \fBundoChangeStyleVal\fP (StyleIdx idx, const QVariant &v)"
+.br
+.ti -1c
+.RI "void \fBsetGraceNote\fP (\fBChord\fP *, int pitch, NoteType type, int len)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBsetNoteRest\fP (\fBSegment\fP *, int track, \fBNoteVal\fP nval, \fBFraction\fP, \fBDirection\fP stemDirection=Direction::AUTO)"
+.br
+.ti -1c
+.RI "void \fBchangeCRlen\fP (\fBChordRest\fP *cr, const \fBTDuration\fP &)"
+.br
+.ti -1c
+.RI "void \fBchangeCRlen\fP (\fBChordRest\fP *cr, const \fBFraction\fP &, bool fillWithRest=true)"
+.br
+.ti -1c
+.RI "void \fBcreateCRSequence\fP (\fBFraction\fP f, \fBChordRest\fP *cr, int tick)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBmakeGap\fP (\fBSegment\fP *, int track, const \fBFraction\fP &, \fBTuplet\fP *, bool keepChord=false)"
+.br
+.ti -1c
+.RI "bool \fBmakeGap1\fP (int baseTick, int \fBstaffIdx\fP, \fBFraction\fP len, int voiceOffset[VOICES])"
+.br
+.ti -1c
+.RI "bool \fBmakeGapVoice\fP (\fBSegment\fP *seg, int track, \fBFraction\fP len, int tick)"
+.br
+.ti -1c
+.RI "\fBRest\fP * \fBaddRest\fP (int tick, int track, \fBTDuration\fP, \fBTuplet\fP *)"
+.br
+.ti -1c
+.RI "\fBRest\fP * \fBaddRest\fP (\fBSegment\fP *seg, int track, \fBTDuration\fP d, \fBTuplet\fP *)"
+.br
+.ti -1c
+.RI "\fBChord\fP * \fBaddChord\fP (int tick, \fBTDuration\fP d, \fBChord\fP *oc, bool genTie, \fBTuplet\fP *tuplet)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBaddClone\fP (\fBChordRest\fP *cr, int tick, const \fBTDuration\fP &d)"
+.br
+.ti -1c
+.RI "\fBRest\fP * \fBsetRest\fP (int tick, int track, \fBFraction\fP, bool useDots, \fBTuplet\fP *tuplet, bool useFullMeasureRest=true)"
+.br
+.ti -1c
+.RI "void \fBupDown\fP (bool up, UpDownMode)"
+.br
+.RI "Increment/decrement pitch of note by one or by an octave\&. "
+.ti -1c
+.RI "\fBChordRest\fP * \fBsearchNote\fP (int tick, int track) const"
+.br
+.ti -1c
+.RI "void \fBaddArticulation\fP (SymId)"
+.br
+.ti -1c
+.RI "bool \fBaddArticulation\fP (\fBElement\fP *, \fBArticulation\fP *atr)"
+.br
+.ti -1c
+.RI "void \fBchangeAccidental\fP (AccidentalType)"
+.br
+.ti -1c
+.RI "void \fBchangeAccidental\fP (\fBNote\fP *oNote, Ms::AccidentalType)"
+.br
+.ti -1c
+.RI "void \fBaddElement\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveElement\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBaddPitch\fP (\fBNoteVal\fP &, bool addFlag)"
+.br
+.ti -1c
+.RI "void \fBaddPitch\fP (int pitch, bool addFlag, bool insert)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBaddTiedMidiPitch\fP (int pitch, bool addFlag, \fBChord\fP *prevChord)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBaddMidiPitch\fP (int pitch, bool addFlag)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBaddNote\fP (\fBChord\fP *, \fBNoteVal\fP &noteVal)"
+.br
+.ti -1c
+.RI "\fBNoteVal\fP \fBnoteValForPosition\fP (\fBPosition\fP pos, bool &error)"
+.br
+.ti -1c
+.RI "void \fBdeleteItem\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBdeleteMeasures\fP (\fBMeasureBase\fP *firstMeasure, \fBMeasureBase\fP *lastMeasure)"
+.br
+.ti -1c
+.RI "void \fBcmdDeleteSelection\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdFullMeasureRest\fP ()"
+.br
+.ti -1c
+.RI "void \fBputNote\fP (const QPointF &, bool replace, bool insert)"
+.br
+.ti -1c
+.RI "void \fBputNote\fP (const \fBPosition\fP &, bool replace)"
+.br
+.ti -1c
+.RI "void \fBinsertChord\fP (const \fBPosition\fP &)"
+.br
+.ti -1c
+.RI "void \fBlocalInsertChord\fP (const \fBPosition\fP &)"
+.br
+.ti -1c
+.RI "void \fBglobalInsertChord\fP (const \fBPosition\fP &)"
+.br
+.ti -1c
+.RI "void \fBcloneVoice\fP (int strack, int dtrack, \fBSegment\fP *sf, int lTick, bool link=true, bool spanner=true)"
+.br
+.ti -1c
+.RI "void \fBrepitchNote\fP (const \fBPosition\fP &pos, bool replace)"
+.br
+.ti -1c
+.RI "void \fBregroupNotesAndRests\fP (int startTick, int endTick, int track)"
+.br
+.ti -1c
+.RI "void \fBtimeDelete\fP (\fBMeasure\fP *, \fBSegment\fP *, const \fBFraction\fP &)"
+.br
+.ti -1c
+.RI "void \fBstartCmd\fP ()"
+.br
+.ti -1c
+.RI "void \fBendCmd\fP (bool rollback=false)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBundoRedo\fP (bool undo, \fBEditData\fP &)"
+.br
+.ti -1c
+.RI "void \fBcmdRemoveTimeSig\fP (\fBTimeSig\fP *)"
+.br
+.ti -1c
+.RI "void \fBcmdAddTimeSig\fP (\fBMeasure\fP *, int \fBstaffIdx\fP, \fBTimeSig\fP *, bool local)"
+.br
+.ti -1c
+.RI "virtual void \fBsetUpdateAll\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetLayoutAll\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetLayout\fP (int)"
+.br
+.ti -1c
+.RI "virtual \fBCmdState\fP & \fBcmdState\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBaddLayoutFlags\fP (LayoutFlags)"
+.br
+.ti -1c
+.RI "virtual void \fBsetInstrumentsChanged\fP (bool)"
+.br
+.ti -1c
+.RI "void \fBaddRefresh\fP (const QRectF &)"
+.br
+.ti -1c
+.RI "bool \fBplayNote\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayNote\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBplayChord\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayChord\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBselectionChanged\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSelectionChanged\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBdeleteLater\fP (\fBScoreElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBdeletePostponed\fP ()"
+.br
+.ti -1c
+.RI "void \fBchangeVoice\fP (int)"
+.br
+.ti -1c
+.RI "void \fBcolorItem\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "QList< \fBPart\fP * > & \fBparts\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBPart\fP * > & \fBparts\fP () const"
+.br
+.ti -1c
+.RI "void \fBappendPart\fP (\fBPart\fP *p)"
+.br
+.ti -1c
+.RI "void \fBupdateStaffIndex\fP ()"
+.br
+.ti -1c
+.RI "void \fBsortStaves\fP (QList< int > &dst)"
+.br
+.ti -1c
+.RI "bool \fBshowInvisible\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowUnprintable\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowFrames\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowPageborders\fP () const"
+.br
+.ti -1c
+.RI "bool \fBmarkIrregularMeasures\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowInstrumentNames\fP () const"
+.br
+.ti -1c
+.RI "bool \fBshowVBox\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetShowInvisible\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetShowUnprintable\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetShowFrames\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetShowPageborders\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetMarkIrregularMeasures\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetShowInstrumentNames\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetShowVBox\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBsaveFile\fP (QFileInfo &info)"
+.br
+.ti -1c
+.RI "bool \fBsaveFile\fP (QIODevice *f, bool msczFormat, bool onlySelection=false)"
+.br
+.ti -1c
+.RI "bool \fBsaveCompressedFile\fP (QFileInfo &, bool onlySelection)"
+.br
+.ti -1c
+.RI "bool \fBsaveCompressedFile\fP (QIODevice *, QFileInfo &, bool onlySelection, bool createThumbnail=true)"
+.br
+.ti -1c
+.RI "bool \fBexportFile\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP (QPainter *printer, int page)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBgetSelectedChordRest\fP () const"
+.br
+.ti -1c
+.RI "QSet< \fBChordRest\fP * > \fBgetSelectedChordRests\fP () const"
+.br
+.ti -1c
+.RI "void \fBgetSelectedChordRest2\fP (\fBChordRest\fP **cr1, \fBChordRest\fP **cr2) const"
+.br
+.ti -1c
+.RI "void \fBselect\fP (\fBElement\fP *obj, SelectType=SelectType::SINGLE, int staff=0)"
+.br
+.ti -1c
+.RI "void \fBselectSimilar\fP (\fBElement\fP *e, bool sameStaff)"
+.br
+.ti -1c
+.RI "void \fBselectSimilarInRange\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "void \fBdeselect\fP (\fBElement\fP *obj)"
+.br
+.ti -1c
+.RI "void \fBdeselectAll\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateSelection\fP ()"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBgetSelectedElement\fP () const"
+.br
+.ti -1c
+.RI "const \fBSelection\fP & \fBselection\fP () const"
+.br
+.ti -1c
+.RI "\fBSelection\fP & \fBselection\fP ()"
+.br
+.ti -1c
+.RI "\fBSelectionFilter\fP & \fBselectionFilter\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSelection\fP (const \fBSelection\fP &s)"
+.br
+.ti -1c
+.RI "int \fBpos\fP ()"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBtick2measure\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBtick2measureMM\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBtick2measureBase\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segment\fP (int tick, bool first, SegmentType st, bool useMMrest=false) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segment\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segment\fP (int tick, bool first) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segmentMM\fP (int tick, bool first, SegmentType st) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segmentMM\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segmentMM\fP (int tick, bool first) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2segmentEnd\fP (int track, int tick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2leftSegment\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBtick2rightSegment\fP (int tick) const"
+.br
+.ti -1c
+.RI "void \fBfixTicks\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmd\fP (const QAction *, \fBEditData\fP &)"
+.br
+.ti -1c
+.RI "int \fBfileDivision\fP (int t) const"
+.br
+.ti -1c
+.RI "void \fBsetFileDivision\fP (int t)"
+.br
+.ti -1c
+.RI "QString \fBimportedFilePath\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetImportedFilePath\fP (const QString &filePath)"
+.br
+.ti -1c
+.RI "bool \fBdirty\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCreated\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBcreated\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsavedCapture\fP () const"
+.br
+.ti -1c
+.RI "bool \fBsaved\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSaved\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetSavedCapture\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBprinting\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPrinting\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetAutosaveDirty\fP (bool v)"
+.br
+.ti -1c
+.RI "bool \fBautosaveDirty\fP () const"
+.br
+.ti -1c
+.RI "bool \fBplaylistDirty\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPlaylistDirty\fP ()"
+.br
+.ti -1c
+.RI "void \fBspell\fP ()"
+.br
+.ti -1c
+.RI "void \fBspell\fP (int startStaff, int endStaff, \fBSegment\fP *startSegment, \fBSegment\fP *endSegment)"
+.br
+.ti -1c
+.RI "void \fBspell\fP (\fBNote\fP *)"
+.br
+.ti -1c
+.RI "int \fBnextSeg\fP (int tick, int track)"
+.br
+.ti -1c
+.RI "virtual \fBMStyle\fP & \fBstyle\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBMStyle\fP & \fBstyle\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStyle\fP (const \fBMStyle\fP &s)"
+.br
+.ti -1c
+.RI "bool \fBloadStyle\fP (const QString &)"
+.br
+.ti -1c
+.RI "bool \fBsaveStyle\fP (const QString &)"
+.br
+.ti -1c
+.RI "QVariant \fBstyleV\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fBstyleS\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "qreal \fBstyleP\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "QString \fBstyleSt\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "bool \fBstyleB\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "qreal \fBstyleD\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "int \fBstyleI\fP (StyleIdx idx) const"
+.br
+.ti -1c
+.RI "qreal \fBspatium\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSpatium\fP (qreal v)"
+.br
+.ti -1c
+.RI "bool \fBgenCourtesyTimesig\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgenCourtesyClef\fP () const"
+.br
+.ti -1c
+.RI "int \fBplayPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayPos\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBloopInTick\fP () const"
+.br
+.ti -1c
+.RI "int \fBloopOutTick\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLoopInTick\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBsetLoopOutTick\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBpos\fP (POS pos) const"
+.br
+.ti -1c
+.RI "void \fBsetPos\fP (POS pos, int tick)"
+.br
+.ti -1c
+.RI "bool \fBnoteEntryMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoteEntryMode\fP (bool val)"
+.br
+.ti -1c
+.RI "NoteEntryMethod \fBnoteEntryMethod\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoteEntryMethod\fP (NoteEntryMethod m)"
+.br
+.ti -1c
+.RI "bool \fBusingNoteEntryMethod\fP (NoteEntryMethod m)"
+.br
+.ti -1c
+.RI "int \fBinputPos\fP () const"
+.br
+.ti -1c
+.RI "int \fBinputTrack\fP () const"
+.br
+.ti -1c
+.RI "const \fBInputState\fP & \fBinputState\fP () const"
+.br
+.ti -1c
+.RI "\fBInputState\fP & \fBinputState\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetInputState\fP (const \fBInputState\fP &st)"
+.br
+.ti -1c
+.RI "void \fBsetInputTrack\fP (int t)"
+.br
+.ti -1c
+.RI "void \fBspatiumChanged\fP (qreal oldValue, qreal newValue)"
+.br
+.ti -1c
+.RI "void \fBstyleChanged\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPaste\fP (const QMimeData *ms, \fBMuseScoreView\fP *view)"
+.br
+.ti -1c
+.RI "bool \fBpasteStaff\fP (\fBXmlReader\fP &, \fBSegment\fP *dst, int \fBstaffIdx\fP)"
+.br
+.ti -1c
+.RI "void \fBpasteSymbols\fP (\fBXmlReader\fP &e, \fBChordRest\fP *dst)"
+.br
+.ti -1c
+.RI "void \fBrenderMidi\fP (\fBEventMap\fP *events)"
+.br
+.ti -1c
+.RI "void \fBrenderStaff\fP (\fBEventMap\fP *events, \fBStaff\fP *)"
+.br
+.ti -1c
+.RI "void \fBrenderSpanners\fP (\fBEventMap\fP *events, int \fBstaffIdx\fP)"
+.br
+.ti -1c
+.RI "void \fBrenderMetronome\fP (\fBEventMap\fP *events, \fBMeasure\fP *m, int tickOffset)"
+.br
+.ti -1c
+.RI "BeatType \fBtick2beatType\fP (int tick)"
+.br
+.ti -1c
+.RI "int \fBmscVersion\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMscVersion\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBaddLyrics\fP (int tick, int \fBstaffIdx\fP, const QString &)"
+.br
+.ti -1c
+.RI "void \fBupdateSwing\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreatePlayEvents\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdConcertPitchChanged\fP (bool, bool)"
+.br
+.ti -1c
+.RI "virtual \fBTempoMap\fP * \fBtempomap\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBTimeSigMap\fP * \fBsigmap\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTempo\fP (\fBSegment\fP *, qreal)"
+.br
+.ti -1c
+.RI "void \fBsetTempo\fP (int tick, qreal bps)"
+.br
+.ti -1c
+.RI "void \fBremoveTempo\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBsetPause\fP (int tick, qreal seconds)"
+.br
+.ti -1c
+.RI "qreal \fBtempo\fP (int tick) const"
+.br
+.ti -1c
+.RI "bool \fBdefaultsRead\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDefaultsRead\fP (bool b)"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBgetText\fP (SubStyle subtype)"
+.br
+.ti -1c
+.RI "void \fBlassoSelect\fP (const QRectF &)"
+.br
+.ti -1c
+.RI "void \fBlassoSelectEnd\fP ()"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBsearchPage\fP (const QPointF &) const"
+.br
+.ti -1c
+.RI "QList< \fBSystem\fP * > \fBsearchSystem\fP (const QPointF &p) const"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBsearchMeasure\fP (const QPointF &p) const"
+.br
+.ti -1c
+.RI "bool \fBgetPosition\fP (\fBPosition\fP *pos, const QPointF &, int voice) const"
+.br
+.ti -1c
+.RI "void \fBcmdDeleteTuplet\fP (\fBTuplet\fP *, bool replaceWithRest)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBgetCreateMeasure\fP (int tick)"
+.br
+.ti -1c
+.RI "void \fBadjustBracketsDel\fP (int sidx, int eidx)"
+.br
+.ti -1c
+.RI "void \fBadjustBracketsIns\fP (int sidx, int eidx)"
+.br
+.ti -1c
+.RI "void \fBadjustKeySigs\fP (int sidx, int eidx, \fBKeyList\fP km)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBsearchLabel\fP (const QString &s)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBsearchLabelWithinSectionFirst\fP (const QString &s, \fBMeasure\fP *sectionStartMeasure, \fBMeasure\fP *sectionEndMeasure)"
+.br
+.ti -1c
+.RI "virtual \fBRepeatList\fP * \fBrepeatList\fP () const"
+.br
+.ti -1c
+.RI "qreal \fButick2utime\fP (int tick) const"
+.br
+.ti -1c
+.RI "int \fButime2utick\fP (qreal utime) const"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBupdateRepeatList\fP (bool expandRepeats)"
+.br
+.ti -1c
+.RI "void \fBnextInputPos\fP (\fBChordRest\fP *cr, bool)"
+.br
+.ti -1c
+.RI "void \fBcmdMirrorNoteHead\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBloWidth\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBloHeight\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBnpages\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBpageIdx\fP (\fBPage\fP *page) const"
+.br
+.ti -1c
+.RI "virtual const QList< \fBPage\fP * > & \fBpages\fP () const"
+.br
+.ti -1c
+.RI "virtual QList< \fBPage\fP * > & \fBpages\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBSystem\fP * > & \fBsystems\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBSystem\fP * > & \fBsystems\fP ()"
+.br
+.ti -1c
+.RI "\fBMeasureBaseList\fP * \fBmeasures\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckHasMeasures\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBfirst\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBfirstMM\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBlast\fP () const"
+.br
+.ti -1c
+.RI "Q_INVOKABLE \fBMs::Measure\fP * \fBfirstMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBfirstMeasureMM\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBlastMeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP * \fBlastMeasureMM\fP () const"
+.br
+.ti -1c
+.RI "\fBMeasureBase\fP * \fBmeasure\fP (int idx) const"
+.br
+.ti -1c
+.RI "int \fBendTick\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfirstSegment\fP (SegmentType s) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBfirstSegmentMM\fP (SegmentType s) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBlastSegment\fP () const"
+.br
+.ti -1c
+.RI "void \fBconnectTies\fP (bool silent=false)"
+.br
+.RI "Rebuild tie connections\&. "
+.ti -1c
+.RI "qreal \fBpoint\fP (const \fBSpatium\fP sp) const"
+.br
+.ti -1c
+.RI "void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "void \fBscanElementsInRange\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "QByteArray \fBbuildCanonical\fP (int track)"
+.br
+.ti -1c
+.RI "int \fBfileDivision\fP () const"
+.br
+.RI "division of current loading *\&.msc file "
+.ti -1c
+.RI "void \fBsplitStaff\fP (int \fBstaffIdx\fP, int splitPoint)"
+.br
+.ti -1c
+.RI "QString \fBtmpName\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTmpName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "bool \fBprocessMidiInput\fP ()"
+.br
+.ti -1c
+.RI "\fBLyrics\fP * \fBaddLyrics\fP ()"
+.br
+.ti -1c
+.RI "\fBFiguredBass\fP * \fBaddFiguredBass\fP ()"
+.br
+.ti -1c
+.RI "void \fBexpandVoice\fP (\fBSegment\fP *s, int track)"
+.br
+.ti -1c
+.RI "void \fBexpandVoice\fP ()"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBselectMove\fP (const QString &cmd)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBmove\fP (const QString &cmd)"
+.br
+.ti -1c
+.RI "void \fBcmdEnterRest\fP (const \fBTDuration\fP &d)"
+.br
+.ti -1c
+.RI "void \fBcmdAddInterval\fP (int, const std::vector< \fBNote\fP *> &)"
+.br
+.ti -1c
+.RI "void \fBcmdCreateTuplet\fP (\fBChordRest\fP *, \fBTuplet\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveAudio\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoLayout\fP ()"
+.br
+.ti -1c
+.RI "void \fBdoLayoutRange\fP (int, int)"
+.br
+.ti -1c
+.RI "void \fBlayoutLinear\fP (\fBLayoutContext\fP &lc)"
+.br
+.ti -1c
+.RI "void \fBlayoutSystemsUndoRedo\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayoutPagesUndoRedo\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayoutChords1\fP (\fBSegment\fP *segment, int \fBstaffIdx\fP)"
+.br
+.ti -1c
+.RI "qreal \fBlayoutChords2\fP (std::vector< \fBNote\fP *> &notes, bool up)"
+.br
+.ti -1c
+.RI "void \fBlayoutChords3\fP (std::vector< \fBNote\fP *> &, \fBStaff\fP *, \fBSegment\fP *)"
+.br
+.ti -1c
+.RI "\fBSynthesizerState\fP & \fBsynthesizerState\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSynthesizerState\fP (const \fBSynthesizerState\fP &s)"
+.br
+.ti -1c
+.RI "void \fBupdateHairpin\fP (\fBHairpin\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveHairpin\fP (\fBHairpin\fP *)"
+.br
+.ti -1c
+.RI "\fBVolta\fP * \fBsearchVolta\fP (int tick) const"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBmasterScore\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMasterScore\fP (\fBMasterScore\fP *s)"
+.br
+.ti -1c
+.RI "void \fBcreateRevision\fP ()"
+.br
+.ti -1c
+.RI "void \fBwriteSegments\fP (\fBXmlWriter\fP &xml, int strack, int etrack, \fBSegment\fP *first, \fBSegment\fP *last, bool, bool, bool, bool)"
+.br
+.ti -1c
+.RI "const QMap< QString, QString > & \fBmetaTags\fP () const"
+.br
+.ti -1c
+.RI "QMap< QString, QString > & \fBmetaTags\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMetaTags\fP (const QMap< QString, QString > &t)"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBmetaTag\fP (const QString &tag) const"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBsetMetaTag\fP (const QString &tag, const QString &val)"
+.br
+.ti -1c
+.RI "void \fBcmdSplitMeasure\fP (\fBChordRest\fP *)"
+.br
+.ti -1c
+.RI "void \fBsplitMeasure\fP (\fBSegment\fP *)"
+.br
+.ti -1c
+.RI "void \fBcmdJoinMeasure\fP (\fBMeasure\fP *, \fBMeasure\fP *)"
+.br
+.ti -1c
+.RI "int \fBpageNumberOffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPageNumberOffset\fP (int v)"
+.br
+.ti -1c
+.RI "QString \fBmscoreVersion\fP () const"
+.br
+.ti -1c
+.RI "int \fBmscoreRevision\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetMscoreVersion\fP (const QString &val)"
+.br
+.ti -1c
+.RI "void \fBsetMscoreRevision\fP (int val)"
+.br
+.ti -1c
+.RI "uint \fBcurrentLayerMask\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetCurrentLayer\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBcurrentLayer\fP () const"
+.br
+.ti -1c
+.RI "QString * \fBlayerTags\fP ()"
+.br
+.ti -1c
+.RI "QString * \fBlayerTagComments\fP ()"
+.br
+.ti -1c
+.RI "QList< \fBLayer\fP > & \fBlayer\fP ()"
+.br
+.ti -1c
+.RI "const QList< \fBLayer\fP > & \fBlayer\fP () const"
+.br
+.ti -1c
+.RI "bool \fBtagIsValid\fP (uint tag) const"
+.br
+.ti -1c
+.RI "void \fBaddViewer\fP (\fBMuseScoreView\fP *v)"
+.br
+.ti -1c
+.RI "void \fBremoveViewer\fP (\fBMuseScoreView\fP *v)"
+.br
+.ti -1c
+.RI "const QList< \fBMuseScoreView\fP * > & \fBgetViewer\fP () const"
+.br
+.ti -1c
+.RI "LayoutMode \fBlayoutMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLayoutMode\fP (LayoutMode lm)"
+.br
+.ti -1c
+.RI "bool \fBfloatMode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBpageMode\fP () const"
+.br
+.ti -1c
+.RI "bool \fBlineMode\fP () const"
+.br
+.ti -1c
+.RI "\fBTuplet\fP * \fBsearchTuplet\fP (\fBXmlReader\fP &e, int id)"
+.br
+.ti -1c
+.RI "void \fBcmdSelectAll\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdSelectSection\fP ()"
+.br
+.ti -1c
+.RI "void \fBrespace\fP (std::vector< \fBChordRest\fP *> *elements)"
+.br
+.ti -1c
+.RI "void \fBtransposeSemitone\fP (int semitone)"
+.br
+.ti -1c
+.RI "void \fBinsertMeasure\fP (ElementType type, \fBMeasureBase\fP *, bool createEmptyMeasures=false)"
+.br
+.ti -1c
+.RI "\fBAudio\fP * \fBaudio\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAudio\fP (\fBAudio\fP *a)"
+.br
+.ti -1c
+.RI "PlayMode \fBplayMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlayMode\fP (PlayMode v)"
+.br
+.ti -1c
+.RI "int \fBlinkId\fP ()"
+.br
+.ti -1c
+.RI "void \fBlinkId\fP (int)"
+.br
+.ti -1c
+.RI "int \fBgetLinkId\fP () const"
+.br
+.ti -1c
+.RI "QList< \fBScore\fP * > \fBscoreList\fP ()"
+.br
+.ti -1c
+.RI "bool \fBswitchLayer\fP (const QString &s)"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBappendPart\fP (const QString &)"
+.br
+.ti -1c
+.RI "Q_INVOKABLE void \fBappendMeasures\fP (int)"
+.br
+.ti -1c
+.RI "const std::multimap< int, \fBSpanner\fP * > & \fBspanner\fP () const"
+.br
+.ti -1c
+.RI "\fBSpannerMap\fP & \fBspannerMap\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisSpannerStartEnd\fP (int tick, int track) const"
+.br
+.ti -1c
+.RI "void \fBremoveSpanner\fP (\fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddSpanner\fP (\fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "void \fBcmdAddSpanner\fP (\fBSpanner\fP *spanner, const QPointF &pos)"
+.br
+.ti -1c
+.RI "void \fBcmdAddSpanner\fP (\fBSpanner\fP *spanner, int \fBstaffIdx\fP, \fBSegment\fP *startSegment, \fBSegment\fP *endSegment)"
+.br
+.ti -1c
+.RI "void \fBcheckSpanner\fP (int startTick, int lastTick)"
+.br
+.ti -1c
+.RI "const std::set< \fBSpanner\fP * > \fBunmanagedSpanners\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddUnmanagedSpanner\fP (\fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "void \fBremoveUnmanagedSpanner\fP (\fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "\fBHairpin\fP * \fBaddHairpin\fP (HairpinType, int tickStart, int tickEnd, int track)"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBfindCR\fP (int tick, int track) const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBfindCRinStaff\fP (int tick, int \fBstaffIdx\fP) const"
+.br
+.ti -1c
+.RI "void \fBlayoutSpanner\fP ()"
+.br
+.ti -1c
+.RI "void \fBinsertTime\fP (int tickPos, int tickLen)"
+.br
+.ti -1c
+.RI "\fBScoreFont\fP * \fBscoreFont\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetScoreFont\fP (\fBScoreFont\fP *f)"
+.br
+.ti -1c
+.RI "qreal \fBnoteHeadWidth\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoteHeadWidth\fP (qreal n)"
+.br
+.ti -1c
+.RI "QList< int > \fBuniqueStaves\fP () const"
+.br
+.ti -1c
+.RI "void \fBtranspositionChanged\fP (\fBPart\fP *, \fBInterval\fP, int tickStart=0, int tickEnd=\-1)"
+.br
+.ti -1c
+.RI "void \fBmoveUp\fP (\fBChordRest\fP *)"
+.br
+.ti -1c
+.RI "void \fBmoveDown\fP (\fBChordRest\fP *)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBupAlt\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBupAltCtrl\fP (\fBNote\fP *) const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBdownAlt\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "\fBNote\fP * \fBdownAltCtrl\fP (\fBNote\fP *) const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBfirstElement\fP ()"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBlastElement\fP ()"
+.br
+.ti -1c
+.RI "int \fBnmeasures\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasLyrics\fP ()"
+.br
+.ti -1c
+.RI "bool \fBhasHarmonies\fP ()"
+.br
+.ti -1c
+.RI "int \fBlyricCount\fP ()"
+.br
+.ti -1c
+.RI "int \fBharmonyCount\fP ()"
+.br
+.ti -1c
+.RI "Q_INVOKABLE QString \fBextractLyrics\fP ()"
+.br
+.ti -1c
+.RI "int \fBkeysig\fP ()"
+.br
+.ti -1c
+.RI "int \fBduration\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdInsertClef\fP (\fBClef\fP *clef, \fBChordRest\fP *cr)"
+.br
+.ti -1c
+.RI "void \fBcmdExplode\fP ()"
+.br
+.RI "explodes contents of top selected staff into subsequent staves "
+.ti -1c
+.RI "void \fBcmdImplode\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdSlashFill\fP ()"
+.br
+.RI "fills selected region with slashes "
+.ti -1c
+.RI "void \fBcmdSlashRhythm\fP ()"
+.br
+.RI "converts rhythms in selected region to slashes "
+.ti -1c
+.RI "void \fBcmdResequenceRehearsalMarks\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdExchangeVoice\fP (int, int)"
+.br
+.ti -1c
+.RI "void \fBcmdRemoveEmptyTrailingMeasures\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetAccessibleInfo\fP (QString s)"
+.br
+.ti -1c
+.RI "QString \fBaccessibleInfo\fP () const"
+.br
+.ti -1c
+.RI "QImage \fBcreateThumbnail\fP ()"
+.br
+.ti -1c
+.RI "QString \fBcreateRehearsalMarkText\fP (\fBRehearsalMark\fP *current) const"
+.br
+.ti -1c
+.RI "QString \fBnextRehearsalMarkText\fP (\fBRehearsalMark\fP *previous, \fBRehearsalMark\fP *current) const"
+.br
+.ti -1c
+.RI "bool \fBsanityCheck\fP (const QString &name=QString())"
+.br
+.ti -1c
+.RI "bool \fBcheckKeys\fP ()"
+.br
+.RI "check that key map is in sync with actual keys "
+.ti -1c
+.RI "bool \fBcheckClefs\fP ()"
+.br
+.RI "check that clef map is in sync with actual clefs "
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual QQueue< \fBMidiInputEvent\fP > * \fBmidiInputQueue\fP ()"
+.br
+.ti -1c
+.RI "virtual std::list< \fBMidiInputEvent\fP > * \fBactiveMidiPitches\fP ()"
+.br
+.ti -1c
+.RI "virtual QString \fBtitle\fP () const"
+.br
+.ti -1c
+.RI "void \fBcmdTimeDelete\fP ()"
+.br
+.ti -1c
+.RI "void \fBlocalTimeDelete\fP ()"
+.br
+.ti -1c
+.RI "void \fBglobalTimeDelete\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisTopScore\fP () const"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBheaderText\fP () const"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBfooterText\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHeaderText\fP (\fBText\fP *t)"
+.br
+.ti -1c
+.RI "void \fBsetFooterText\fP (\fBText\fP *t)"
+.br
+.ti -1c
+.RI "void \fBcmdAddPitch\fP (int note, bool addFlag, bool insert)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcollectMatch\fP (void *data, \fBElement\fP *e)"
+.br
+.ti -1c
+.RI "static void \fBcollectNoteMatch\fP (void *data, \fBElement\fP *e)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcreatePlayEvents\fP (\fBChord\fP *)"
+.br
+.ti -1c
+.RI "void \fBcreateGraceNotesPlayEvents\fP (int tick, \fBChord\fP *chord, int &ontime, int &trailtime)"
+.br
+.ti -1c
+.RI "void \fBcmdPitchUp\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPitchDown\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPitchUpOctave\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPitchDownOctave\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPadNoteIncreaseTAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdPadNoteDecreaseTAB\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdToggleMmrest\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdToggleHideEmpty\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdSetVisible\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdUnsetVisible\fP ()"
+.br
+.ti -1c
+.RI "void \fBcmdToggleLayoutBreak\fP (LayoutBreak::Type)"
+.br
+.ti -1c
+.RI "virtual \fBMovements\fP * \fBmovements\fP ()"
+.br
+.ti -1c
+.RI "virtual const \fBMovements\fP * \fBmovements\fP () const"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_fileDivision\fP"
+.br
+.RI "division of current loading *\&.msc file "
+.ti -1c
+.RI "LayoutMode \fB_layoutMode\fP { LayoutMode::PAGE }"
+.br
+.ti -1c
+.RI "\fBSynthesizerState\fP \fB_synthesizerState\fP"
+.br
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "int \fBduration\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBfirstMeasureMM\fP"
+.br
+.ti -1c
+.RI "int \fBharmonyCount\fP"
+.br
+.ti -1c
+.RI "bool \fBhasHarmonies\fP"
+.br
+.ti -1c
+.RI "bool \fBhasLyrics\fP"
+.br
+.ti -1c
+.RI "int \fBkeysig\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBlastMeasure\fP"
+.br
+.ti -1c
+.RI "\fBMs::Measure\fP \fBlastMeasureMM\fP"
+.br
+.ti -1c
+.RI "\fBMs::Segment\fP \fBlastSegment\fP"
+.br
+.ti -1c
+.RI "int \fBlyricCount\fP"
+.br
+.ti -1c
+.RI "int \fBnmeasures\fP"
+.br
+.ti -1c
+.RI "int \fBnpages\fP"
+.br
+.ti -1c
+.RI "int \fBnstaves\fP"
+.br
+.ti -1c
+.RI "int \fBntracks\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBChangeSynthesizerState\fP"
+.br
+.ti -1c
+.RI "class \fBChord\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 344 of file score\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::Score::addArticulation (SymId attr)"
+Add attribute \fIattr\fP to all selected notes/rests\&.
+.PP
+Called from padToggle() to add note prefix/accent\&. 
+.PP
+Definition at line 1488 of file cmd\&.cpp\&.
+.SS "void Ms::Score::addElement (\fBElement\fP * element)"
+Add \fIelement\fP to its parent\&.
+.PP
+Several elements (clef, keysig, timesig) need special handling, as they may cause changes throughout the score\&. 
+.PP
+Definition at line 1247 of file score\&.cpp\&.
+.SS "void Ms::Score::changeAccidental (AccidentalType idx)"
+Change accidental to subtype \fIidx\fP for all selected notes\&. 
+.PP
+Definition at line 1516 of file cmd\&.cpp\&.
+.SS "void Ms::Score::changeAccidental (\fBNote\fP * note, Ms::AccidentalType accidental)"
+Change accidental to subtype  for note \fInote\fP\&. 
+.PP
+Definition at line 1582 of file cmd\&.cpp\&.
+.SS "void Ms::Score::cmdImplode ()"
+implodes contents of selected staves into top staff for single staff, merge voices 
+.PP
+Definition at line 2532 of file cmd\&.cpp\&.
+.SS "void Ms::Score::cmdResequenceRehearsalMarks ()"
+resequences rehearsal marks within a range selection or, if nothing is selected, the entire score 
+.PP
+Definition at line 2823 of file cmd\&.cpp\&.
+.SS "void Ms::Score::endCmd (bool rollback = \fCfalse\fP)"
+End a GUI command by (if \fIundo\fP) ending a user-visble undo and (always) updating the redraw area\&. 
+.PP
+Definition at line 167 of file cmd\&.cpp\&.
+.SS "void Ms::Score::fixTicks ()"
+This is needed after
+.IP "\(bu" 2
+inserting or removing a measure
+.IP "\(bu" 2
+changing the sigmap
+.IP "\(bu" 2
+after inserting/deleting time (changes the sigmap) 
+.PP
+
+.PP
+Definition at line 363 of file score\&.cpp\&.
+.SS "void Ms::Score::removeElement (\fBElement\fP * element)"
+Remove \fIelement\fP from its parent\&. Several elements (clef, keysig, timesig) need special handling, as they may cause changes throughout the score\&. 
+.PP
+Definition at line 1375 of file score\&.cpp\&.
+.SS "bool Ms::Score::sanityCheck (const QString & name = \fCQString()\fP)"
+Check that voice 1 is complete Check that voices > 1 contains less than measure duration 
+.PP
+Definition at line 171 of file check\&.cpp\&.
+.SS "void Ms::Score::setGraceNote (\fBChord\fP * ch, int pitch, NoteType type, int len)"
+Create a grace note in front of a normal note\&. 
+.PD 0
+
+.IP "\(bu" 2
+ch is the chord of the normal note 
+.IP "\(bu" 2
+pitch is the pitch of the grace note 
+.IP "\(bu" 2
+is the grace note type  is the visual duration of the grace note (1/16 or 1/32) 
+.PP
+
+.PP
+Definition at line 510 of file cmd\&.cpp\&.
+.SS "void Ms::Score::startCmd ()"
+Start a GUI command by clearing the redraw area and starting a user-visble undo\&. 
+.PP
+Definition at line 127 of file cmd\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Score::tick2leftSegment (int tick) const"
+return the segment at this tick position if any or the first segment \fIbefore\fP this tick position 
+.PP
+Definition at line 201 of file utils\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Score::tick2rightSegment (int tick) const"
+return the segment at this tick position if any or the first segment \fIafter\fP this tick position 
+.PP
+Definition at line 226 of file utils\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Score::tick2segmentEnd (int track, int tick) const"
+Find a segment containing a note or rest in \fItrack\fP ending at \fItick\fP Return the segment or null 
+.PP
+Definition at line 167 of file utils\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

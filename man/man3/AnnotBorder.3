@@ -1,0 +1,85 @@
+.TH "AnnotBorder" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnnotBorder
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBAnnotBorderArray\fP, and \fBAnnotBorderBS\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnnotBorderType\fP { \fBtypeArray\fP, \fBtypeBS\fP }"
+.br
+.ti -1c
+.RI "enum \fBAnnotBorderStyle\fP { \fBborderSolid\fP, \fBborderDashed\fP, \fBborderBeveled\fP, \fBborderInset\fP, \fBborderUnderlined\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetWidth\fP (double new_width)"
+.br
+.ti -1c
+.RI "virtual AnnotBorderType \fBgetType\fP () const =0"
+.br
+.ti -1c
+.RI "virtual double \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "virtual int \fBgetDashLength\fP () const"
+.br
+.ti -1c
+.RI "virtual double * \fBgetDash\fP () const"
+.br
+.ti -1c
+.RI "virtual AnnotBorderStyle \fBgetStyle\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBwriteToObject\fP (\fBXRef\fP *xref, \fBObject\fP *obj1) const =0"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "GBool \fBparseDashArray\fP (\fBObject\fP *dashObj)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "AnnotBorderType \fBtype\fP"
+.br
+.ti -1c
+.RI "double \fBwidth\fP"
+.br
+.ti -1c
+.RI "int \fBdashLength\fP"
+.br
+.ti -1c
+.RI "double * \fBdash\fP"
+.br
+.ti -1c
+.RI "AnnotBorderStyle \fBstyle\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const int \fBDASH_LIMIT\fP = 10"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 217 of file Annot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

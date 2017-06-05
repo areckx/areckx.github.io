@@ -1,0 +1,364 @@
+.TH "Ms::Segment" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Segment
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSegment\fP (\fBMeasure\fP *m=0)"
+.br
+.ti -1c
+.RI "\fBSegment\fP (\fBMeasure\fP *, SegmentType, int tick)"
+.br
+.ti -1c
+.RI "\fBSegment\fP (const \fBSegment\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBSegment\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnextEnabled\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNext\fP (\fBSegment\fP *e)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprevEnabled\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPrev\fP (\fBSegment\fP *e)"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext1\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext1enabled\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext1MM\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext1\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnext1MM\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev1\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev1MM\fP () const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev1\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBprev1MM\fP (SegmentType) const"
+.br
+.ti -1c
+.RI "\fBSegment\fP * \fBnextCR\fP (int track=\-1, bool sameStaff=false) const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBnextChordRest\fP (int track, bool backwards=false) const"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBelement\fP (int track) const"
+.br
+.ti -1c
+.RI "Q_INVOKABLE \fBMs::Element\fP * \fBelementAt\fP (int track) const"
+.br
+.ti -1c
+.RI "const std::vector< \fBElement\fP * > & \fBelist\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBElement\fP * > & \fBelist\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveElement\fP (int track)"
+.br
+.ti -1c
+.RI "void \fBsetElement\fP (int track, \fBElement\fP *el)"
+.br
+.ti -1c
+.RI "virtual void \fBscanElements\fP (void *data, void(*func)(void *, \fBElement\fP *), bool all=true)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBmeasure\fP () const"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBx\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetX\fP (qreal v)"
+.br
+.ti -1c
+.RI "void \fBinsertStaff\fP (int staff)"
+.br
+.ti -1c
+.RI "void \fBremoveStaff\fP (int staff)"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBswapElements\fP (int i1, int i2)"
+.br
+.ti -1c
+.RI "void \fBsortStaves\fP (QList< int > &dst)"
+.br
+.ti -1c
+.RI "const char * \fBsubTypeName\fP () const"
+.br
+.ti -1c
+.RI "SegmentType \fBsegmentType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSegmentType\fP (SegmentType t)"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "bool \fBwritten\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetWritten\fP (bool val) const"
+.br
+.ti -1c
+.RI "void \fBfixStaffIdx\fP ()"
+.br
+.ti -1c
+.RI "qreal \fBstretch\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetStretch\fP (qreal v)"
+.br
+.ti -1c
+.RI "void \fBsetTick\fP (int t)"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBrtick\fP () const override"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBfpos\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRtick\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBticks\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTicks\fP (int val)"
+.br
+.ti -1c
+.RI "bool \fBsplitsTuplet\fP () const"
+.br
+.ti -1c
+.RI "const std::vector< \fBElement\fP * > & \fBannotations\fP () const"
+.br
+.ti -1c
+.RI "void \fBclearAnnotations\fP ()"
+.br
+.ti -1c
+.RI "void \fBremoveAnnotation\fP (\fBElement\fP *e)"
+.br
+.ti -1c
+.RI "bool \fBfindAnnotationOrElement\fP (ElementType type, int minTrack, int maxTrack)"
+.br
+.RI "return true if an annotation of type type or and element is found in the track range "
+.ti -1c
+.RI "qreal \fBdotPosX\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "void \fBsetDotPosX\fP (int staffIdx, qreal val)"
+.br
+.ti -1c
+.RI "\fBSpatium\fP \fBextraLeadingSpace\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetExtraLeadingSpace\fP (\fBSpatium\fP v)"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &) const"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &)"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBSegment\fP &) const"
+.br
+.RI "return true if segment is before s in list "
+.ti -1c
+.RI "bool \fBoperator>\fP (const \fBSegment\fP &) const"
+.br
+.RI "return true if segment is after s in list "
+.ti -1c
+.RI "virtual QString \fBaccessibleExtraInfo\fP () const override"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBfirstInNextSegments\fP (int activeStaff)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBlastInPrevSegments\fP (int activeStaff)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBfirstElement\fP (int staff)"
+.br
+.ti -1c
+.RI "\fBElement\fP * \fBlastElement\fP (int staff)"
+.br
+.ti -1c
+.RI "std::vector< \fBShape\fP > \fBshapes\fP ()"
+.br
+.ti -1c
+.RI "const std::vector< \fBShape\fP > & \fBshapes\fP () const"
+.br
+.ti -1c
+.RI "const \fBShape\fP & \fBstaffShape\fP (int staffIdx) const"
+.br
+.ti -1c
+.RI "\fBShape\fP & \fBstaffShape\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "void \fBcreateShapes\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateShape\fP (int staffIdx)"
+.br
+.ti -1c
+.RI "qreal \fBminRight\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBminLeft\fP (const \fBShape\fP &) const"
+.br
+.ti -1c
+.RI "qreal \fBminLeft\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBminHorizontalDistance\fP (\fBSegment\fP *, bool isSystemGap) const"
+.br
+.ti -1c
+.RI "\fBChordRest\fP * \fBcr\fP (int track) const"
+.br
+.ti -1c
+.RI "bool \fBisType\fP (const SegmentType t) const"
+.br
+.ti -1c
+.RI "bool \fBisBeginBarLineType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisClefType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisHeaderClefType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisKeySigType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisAmbitusType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisTimeSigType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStartRepeatBarLineType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisBarLineType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisBreathType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisChordRestType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEndBarLineType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisKeySigAnnounceType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisTimeSigAnnounceType\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBsubTypeName\fP (SegmentType)"
+.br
+.ti -1c
+.RI "static SegmentType \fBsegmentType\fP (ElementType type)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBElement\fP * \fBgetElement\fP (int staff)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 84 of file segment\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSegment\fP * Ms::Segment::next1 () const"
+return next \fI\fBSegment\fP\fP, dont stop searching at end of \fI\fBMeasure\fP\fP 
+.PP
+Definition at line 214 of file segment\&.cpp\&.
+.SS "\fBSegment\fP * Ms::Segment::prev1 () const"
+return previous \fI\fBSegment\fP\fP, dont stop searching at \fI\fBMeasure\fP\fP begin 
+.PP
+Definition at line 298 of file segment\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

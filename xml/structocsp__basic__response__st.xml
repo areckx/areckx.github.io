@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structocsp__basic__response__st" kind="struct" language="C++" prot="public">
+    <compoundname>ocsp_basic_response_st</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structocsp__basic__response__st_1a09c6bafbf175745b5919a3e15055354c" prot="public" static="no" mutable="no">
+        <type><ref refid="structocsp__response__data__st" kindref="compound">OCSP_RESPDATA</ref> *</type>
+        <definition>OCSP_RESPDATA* ocsp_basic_response_st::tbsResponseData</definition>
+        <argsstring></argsstring>
+        <name>tbsResponseData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="305" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structocsp__basic__response__st_1aaf4560b99757f89823b63d97c5e5487b" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_x509__algor__st" kindref="compound">X509_ALGOR</ref> *</type>
+        <definition>X509_ALGOR* ocsp_basic_response_st::signatureAlgorithm</definition>
+        <argsstring></argsstring>
+        <name>signatureAlgorithm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="306" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structocsp__basic__response__st_1afce61e2065685eaea0d539e366fe3cee" prot="public" static="no" mutable="no">
+        <type><ref refid="structasn1__string__st" kindref="compound">ASN1_BIT_STRING</ref> *</type>
+        <definition>ASN1_BIT_STRING* ocsp_basic_response_st::signature</definition>
+        <argsstring></argsstring>
+        <name>signature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="307" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structocsp__basic__response__st_1aedc45c00d3c3a3b4a971235ff5ab3545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ocsp_basic_response_st::STACK_OF</definition>
+        <argsstring>(X509) *certs</argsstring>
+        <name>STACK_OF</name>
+        <param>
+          <type><ref refid="structx509__st" kindref="compound">X509</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/openssl/include/openssl/ocsp.h" line="308" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="11255">
+        <label>X509_name_st</label>
+        <link refid="struct_x509__name__st"/>
+        <childnode refid="11256" relation="usage">
+          <edgelabel>bytes</edgelabel>
+        </childnode>
+      </node>
+      <node id="11253">
+        <label>ocsp_response_data_st</label>
+        <link refid="structocsp__response__data__st"/>
+        <childnode refid="11252" relation="usage">
+          <edgelabel>producedAt</edgelabel>
+          <edgelabel>version</edgelabel>
+        </childnode>
+        <childnode refid="11254" relation="usage">
+          <edgelabel>responderId</edgelabel>
+        </childnode>
+      </node>
+      <node id="11259">
+        <label>asn1_type_st</label>
+        <link refid="structasn1__type__st"/>
+        <childnode refid="11252" relation="usage">
+          <edgelabel>bit_string</edgelabel>
+          <edgelabel>utctime</edgelabel>
+          <edgelabel>ia5string</edgelabel>
+          <edgelabel>bmpstring</edgelabel>
+          <edgelabel>universalstring</edgelabel>
+          <edgelabel>sequence</edgelabel>
+          <edgelabel>set</edgelabel>
+          <edgelabel>generalstring</edgelabel>
+          <edgelabel>utf8string</edgelabel>
+          <edgelabel>enumerated</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+        <childnode refid="11258" relation="usage">
+          <edgelabel>object</edgelabel>
+        </childnode>
+      </node>
+      <node id="11256">
+        <label>buf_mem_st</label>
+        <link refid="structbuf__mem__st"/>
+      </node>
+      <node id="11254">
+        <label>ocsp_responder_id_st</label>
+        <link refid="structocsp__responder__id__st"/>
+        <childnode refid="11252" relation="usage">
+          <edgelabel>byKey</edgelabel>
+        </childnode>
+        <childnode refid="11255" relation="usage">
+          <edgelabel>byName</edgelabel>
+        </childnode>
+      </node>
+      <node id="11257">
+        <label>X509_algor_st</label>
+        <link refid="struct_x509__algor__st"/>
+        <childnode refid="11258" relation="usage">
+          <edgelabel>algorithm</edgelabel>
+        </childnode>
+        <childnode refid="11259" relation="usage">
+          <edgelabel>parameter</edgelabel>
+        </childnode>
+      </node>
+      <node id="11251">
+        <label>ocsp_basic_response_st</label>
+        <link refid="structocsp__basic__response__st"/>
+        <childnode refid="11252" relation="usage">
+          <edgelabel>signature</edgelabel>
+        </childnode>
+        <childnode refid="11253" relation="usage">
+          <edgelabel>tbsResponseData</edgelabel>
+        </childnode>
+        <childnode refid="11257" relation="usage">
+          <edgelabel>signatureAlgorithm</edgelabel>
+        </childnode>
+      </node>
+      <node id="11252">
+        <label>asn1_string_st</label>
+        <link refid="structasn1__string__st"/>
+      </node>
+      <node id="11258">
+        <label>asn1_object_st</label>
+        <link refid="structasn1__object__st"/>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/openssl/include/openssl/ocsp.h" line="304" column="1" bodyfile="thirdparty/openssl/include/openssl/ocsp.h" bodystart="303" bodyend="309"/>
+    <listofallmembers>
+      <member refid="structocsp__basic__response__st_1afce61e2065685eaea0d539e366fe3cee" prot="public" virt="non-virtual"><scope>ocsp_basic_response_st</scope><name>signature</name></member>
+      <member refid="structocsp__basic__response__st_1aaf4560b99757f89823b63d97c5e5487b" prot="public" virt="non-virtual"><scope>ocsp_basic_response_st</scope><name>signatureAlgorithm</name></member>
+      <member refid="structocsp__basic__response__st_1aedc45c00d3c3a3b4a971235ff5ab3545" prot="public" virt="non-virtual"><scope>ocsp_basic_response_st</scope><name>STACK_OF</name></member>
+      <member refid="structocsp__basic__response__st_1a09c6bafbf175745b5919a3e15055354c" prot="public" virt="non-virtual"><scope>ocsp_basic_response_st</scope><name>tbsResponseData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

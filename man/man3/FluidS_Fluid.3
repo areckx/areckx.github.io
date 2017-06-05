@@ -1,0 +1,229 @@
+.TH "FluidS::Fluid" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FluidS::Fluid
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Synthesizer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBinit\fP (float sampleRate)"
+.br
+.ti -1c
+.RI "virtual const char * \fBname\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBplay\fP (const \fBPlayEvent\fP &)"
+.br
+.ti -1c
+.RI "virtual const QList< \fBMidiPatch\fP * > & \fBgetPatchInfo\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBSynthesizerGroup\fP \fBstate\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBsetState\fP (const \fBSynthesizerGroup\fP &)"
+.br
+.ti -1c
+.RI "virtual void \fBallSoundsOff\fP (int)"
+.br
+.ti -1c
+.RI "virtual void \fBallNotesOff\fP (int)"
+.br
+.ti -1c
+.RI "\fBPreset\fP * \fBget_preset\fP (unsigned int sfontnum, unsigned int banknum, unsigned int prognum)"
+.br
+.ti -1c
+.RI "\fBPreset\fP * \fBfind_preset\fP (unsigned int banknum, unsigned int prognum)"
+.br
+.ti -1c
+.RI "void \fBmodulate_voices\fP (int chan, bool is_cc, int ctrl)"
+.br
+.ti -1c
+.RI "void \fBmodulate_voices_all\fP (int chan)"
+.br
+.ti -1c
+.RI "void \fBdamp_voices\fP (int chan)"
+.br
+.ti -1c
+.RI "int \fBkill_voice\fP (\fBVoice\fP *voice)"
+.br
+.ti -1c
+.RI "void \fBprint_voice\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate_presets\fP ()"
+.br
+.ti -1c
+.RI "int \fBget_cc\fP (int chan, int num) const"
+.br
+.ti -1c
+.RI "void \fBsystem_reset\fP ()"
+.br
+.ti -1c
+.RI "void \fBprogram_change\fP (int chan, int prognum)"
+.br
+.ti -1c
+.RI "void \fBset_gen2\fP (int chan, int param, float value, int absolute, int normalized)"
+.br
+.ti -1c
+.RI "float \fBget_gen\fP (int chan, int param)"
+.br
+.ti -1c
+.RI "void \fBset_gen\fP (int chan, int param, float value)"
+.br
+.ti -1c
+.RI "void \fBset_interp_method\fP (int chan, int interp_method)"
+.br
+.ti -1c
+.RI "\fBPreset\fP * \fBget_channel_preset\fP (int chan) const"
+.br
+.ti -1c
+.RI "virtual bool \fBloadSoundFonts\fP (const QStringList &s)"
+.br
+.ti -1c
+.RI "virtual bool \fBaddSoundFont\fP (const QString &s)"
+.br
+.ti -1c
+.RI "virtual bool \fBremoveSoundFont\fP (const QString &s)"
+.br
+.ti -1c
+.RI "virtual QStringList \fBsoundFonts\fP () const"
+.br
+.ti -1c
+.RI "void \fBstart_voice\fP (\fBVoice\fP *voice)"
+.br
+.ti -1c
+.RI "\fBVoice\fP * \fBalloc_voice\fP (unsigned id, \fBSample\fP *sample, int chan, int key, int vel, double vt)"
+.br
+.ti -1c
+.RI "void \fBfree_voice_by_kill\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBprocess\fP (unsigned len, float *out, float *effect1, float *effect2)"
+.br
+.ti -1c
+.RI "bool \fBprogram_select\fP (int chan, unsigned sfont_id, unsigned bank_num, unsigned preset_num)"
+.br
+.ti -1c
+.RI "void \fBget_program\fP (int chan, unsigned *sfont_id, unsigned *bank_num, unsigned *preset_num)"
+.br
+.ti -1c
+.RI "void \fBget_pitch_wheel_sens\fP (int chan, int *pval)"
+.br
+.ti -1c
+.RI "void \fBpitch_wheel_sens\fP (int chan, int val)"
+.br
+.ti -1c
+.RI "void \fBget_pitch_bend\fP (int chan, int *ppitch_bend)"
+.br
+.ti -1c
+.RI "void \fBfreeVoice\fP (\fBVoice\fP *v)"
+.br
+.ti -1c
+.RI "double \fBgetPitch\fP (int k) const"
+.br
+.ti -1c
+.RI "float \fBct2hz_real\fP (float cents)"
+.br
+.ti -1c
+.RI "float \fBact2hz\fP (float c)"
+.br
+.ti -1c
+.RI "float \fBct2hz\fP (float cents)"
+.br
+.ti -1c
+.RI "virtual double \fBmasterTuning\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetMasterTuning\fP (double f)"
+.br
+.ti -1c
+.RI "QString \fBerror\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBSynthesizerGui\fP * \fBgui\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static QFileInfoList \fBsfFiles\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSFont\fP * \fBget_sfont_by_name\fP (const QString &name)"
+.br
+.ti -1c
+.RI "\fBSFont\fP * \fBget_sfont_by_id\fP (int id)"
+.br
+.ti -1c
+.RI "\fBSFont\fP * \fBget_sfont\fP (int idx) const"
+.br
+.ti -1c
+.RI "bool \fBsfunload\fP (int id)"
+.br
+.ti -1c
+.RI "int \fBsfload\fP (const QString &filename)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fB_state\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBsfont_id\fP"
+.br
+.ti -1c
+.RI "QList< \fBChannel\fP * > \fBchannel\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBnoteid\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBVoice\fP"
+.br
+.ti -1c
+.RI "class \fBPreset\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 297 of file fluid\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void FluidS::Fluid::set_gen2 (int chan, int param, float value, int absolute, int normalized)"
+Change the value of a generator\&. This function allows to control all synthesis parameters in real-time\&. The changes are additive, i\&.e\&. they add up to the existing parameter value\&. This function is similar to sending an NRPN message to the synthesizer\&. The function accepts a float as the value of the parameter\&. The parameter numbers and ranges are described in the SoundFont 2\&.01 specification, paragraph 8\&.1\&.3, page 48\&. See also 'fluid_gen_type'\&.
+.PP
+Using the fluid_synth_set_gen2() function, it is possible to set the absolute value of a generator\&. This is an extension to the SoundFont standard\&. If 'absolute' is non-zero, the value of the generator specified in the SoundFont is completely ignored and the generator is fixed to the value passed as argument\&. To undo this behavior, you must call fluid_synth_set_gen2 again, with 'absolute' set to 0 (and possibly 'value' set to zero)\&.
+.PP
+If 'normalized' is non-zero, the value is supposed to be normalized between 0 and 1\&. Before applying the value, it will be scaled and shifted to the range defined in the SoundFont specifications\&. 
+.PP
+Definition at line 813 of file fluid\&.cpp\&.
+.SS "void FluidS::Fluid::start_voice (\fBVoice\fP * voice)"
+Kill all voices on a given channel, which belong into excl_class\&. This function is called by a SoundFont's preset in response to a noteon event\&. If one noteon event results in several voice processes (stereo samples), ignore_ID must name the voice ID of the first generated voice (so that it is not stopped)\&. The first voice uses ignore_ID=-1, which will terminate all voices on a channel belonging into the exclusive class excl_class\&.
+.PP
+Definition at line 510 of file fluid\&.cpp\&.
+.SS "void FluidS::Fluid::update_presets ()"
+This function assures that every MIDI channels has a valid preset (NULL is okay)\&. This function is called after a SoundFont is unloaded or reloaded\&. 
+.PP
+Definition at line 386 of file fluid\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

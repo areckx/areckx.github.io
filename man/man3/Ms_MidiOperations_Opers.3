@@ -1,0 +1,126 @@
+.TH "Ms::MidiOperations::Opers" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::MidiOperations::Opers
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBTrackOp\fP< int > \fBchannel\fP = \fBTrackOp\fP<int>(int())"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< std::string > \fBstaffName\fP = \fBTrackOp\fP<std::string>(std::string())"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< QString > \fBmidiInstrName\fP = \fBTrackOp\fP<QString>(QString())"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< std::vector< const \fBInstrumentTemplate\fP * > > \fBmsInstrList\fP"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBisDrumTrack\fP = \fBTrackOp\fP<bool>(false)"
+.br
+.ti -1c
+.RI "\fBOp\fP< bool > \fBisHumanPerformance\fP = \fBOp\fP<bool>(false)"
+.br
+.ti -1c
+.RI "\fBOp\fP< bool > \fBsearchPickupMeasure\fP = \fBOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBOp\fP< bool > \fBmeasureCount2xLess\fP = \fBOp\fP<bool>(false)"
+.br
+.ti -1c
+.RI "\fBOp\fP< bool > \fBshowTempoText\fP = \fBOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBOp\fP< bool > \fBshowChordNames\fP = \fBOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBOp\fP< TimeSigNumerator > \fBtimeSigNumerator\fP = \fBOp\fP<TimeSigNumerator>(TimeSigNumerator::_4)"
+.br
+.ti -1c
+.RI "\fBOp\fP< TimeSigDenominator > \fBtimeSigDenominator\fP = \fBOp\fP<TimeSigDenominator>(TimeSigDenominator::_4)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< int > \fBtrackIndexAfterReorder\fP = \fBTrackOp\fP<int>(0)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBdoImport\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< QuantValue > \fBquantValue\fP = \fBTrackOp\fP<QuantValue>(Quantize::defaultQuantValueFromPreferences())"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearchTuplets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch2plets\fP = \fBTrackOp\fP<bool>(false)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch3plets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch4plets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch5plets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch7plets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsearch9plets\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBuseDots\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBsimplifyDurations\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBshowStaccato\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBdoStaffSplit\fP = \fBTrackOp\fP<bool>(false)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< VoiceCount > \fBmaxVoiceCount\fP = \fBTrackOp\fP<VoiceCount>(VoiceCount::V_4)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBchangeClef\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< Swing > \fBswing\fP = \fBTrackOp\fP<Swing>(Swing::NONE)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< bool > \fBremoveDrumRests\fP = \fBTrackOp\fP<bool>(true)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< int > \fBlyricTrackIndex\fP = \fBTrackOp\fP<int>(\-1)"
+.br
+.ti -1c
+.RI "\fBTrackOp\fP< int > \fBmsInstrIndex\fP = \fBTrackOp\fP<int>(\-1)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 129 of file importmidi_operations\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBTrackOp\fP<std::vector<const \fBInstrumentTemplate\fP *> > Ms::MidiOperations::Opers::msInstrList"
+\fBInitial value:\fP
+.PP
+.nf
+= TrackOp<std::vector<const InstrumentTemplate *> >(
+                                              std::vector<const InstrumentTemplate *>())
+.fi
+.PP
+Definition at line 136 of file importmidi_operations\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

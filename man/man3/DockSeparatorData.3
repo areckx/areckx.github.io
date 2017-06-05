@@ -1,0 +1,113 @@
+.TH "DockSeparatorData" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DockSeparatorData \- dock widget splitters hover effect  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dockseparatordata\&.h>\fP
+.PP
+Inherits \fBAnimationData\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDockSeparatorData\fP (QObject *parent, QWidget *target, int duration)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~DockSeparatorData\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "virtual void \fBupdateRect\fP (const QRect &, const Qt::Orientation &, bool hovered)"
+.br
+.ti -1c
+.RI "virtual bool \fBisAnimated\fP (QRect r, const Qt::Orientation &orientation) const"
+.br
+.RI "returns true if current splitter is animated "
+.ti -1c
+.RI "qreal \fBopacity\fP (const Qt::Orientation &orientation) const"
+.br
+.RI "opacity for given orientation "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int duration)"
+.br
+.RI "duration "
+.in -1c
+.PP
+.RI "\fBhorizontal splitter data\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBAnimation::Pointer\fP \fBhorizontalAnimation\fP (void) const"
+.br
+.ti -1c
+.RI "const QRect & \fBhorizontalRect\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetHorizontalRect\fP (const QRect &r)"
+.br
+.ti -1c
+.RI "qreal \fBhorizontalOpacity\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetHorizontalOpacity\fP (qreal value)"
+.br
+.in -1c
+.in -1c
+.PP
+.RI "\fBvertical splitter data\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "\fBAnimation::Pointer\fP \fBverticalAnimation\fP (void) const"
+.br
+.ti -1c
+.RI "const QRect & \fBverticalRect\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetVerticalRect\fP (const QRect &r)"
+.br
+.ti -1c
+.RI "qreal \fBverticalOpacity\fP (void) const"
+.br
+.ti -1c
+.RI "void \fBsetVerticalOpacity\fP (qreal value)"
+.br
+.in -1c
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBverticalOpacity\fP"
+.br
+.RI "declare opacity property "
+.ti -1c
+.RI "qreal \fBhorizontalOpacity\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+dock widget splitters hover effect 
+.PP
+Definition at line 34 of file dockseparatordata\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DockSeparatorData::updateRect (const QRect & r, const Qt::Orientation & orientation, bool hovered)\fC [virtual]\fP"
+returns true if hover has Changed and starts timer accordingly 
+.PP
+Definition at line 51 of file dockseparatordata\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

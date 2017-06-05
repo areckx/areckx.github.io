@@ -1,0 +1,29 @@
+.TH "md_omr__r_e_a_d_m_e" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_omr__r_e_a_d_m_eREADME 
+ \- #Updates on Optical Music Recognition
+.PP
+.SS "Graphical \fBModel\fP for System Identification"
+.PP
+.IP "1." 4
+We can simply use vertical line detection to find bar lines\&. But the detection performance is unreliable due to noise such as note stems or lines in text\&. The other problem of solely relying on line detection is that we can hardly interpret the structure of systems based on what has been detected\&. The solution to this problem is using a graphical model to represent the system structure and encode useful distance or non-overlapping constraints, with which we can determine the grouping of staves into systems and the location of barlines in each system at the same time (simultaneously estimate both)\&.
+.IP "2." 4
+Suppose we have n staves (n-1 gaps), then there'll be 2^(n-1) ways of grouping systems if taking each gap as a binary switch connecting or not connecting the adjacent staves\&. In each system (staff group), barline positions will be commonly shared (a very strong and useful constriant!)\&. We can use a nested dynamic programming to solve this problem\&. The optimal hypothesis (how the staves are grouped together) until the k-th stave yielding the max score h(k) = max(h(i) + system(i+1, \&.\&.\&., k)), based on previous optimal hypotheses h(i), i= 1,2,\&.\&.\&.,k-1\&. In each hypothesized system(i,\&.\&.\&.,j) from i-th to j-th staves, we recognize shared barlines from left to right by finding the best scoring configuration b_opt = max(b(k1) + b(k2) + \&.\&.\&. + b(kn)) supposing each horizontal location corresponds to a bar or just background, where b(\&.) is the scoring function for barline in that column\&. We can also incorporate negative constraints (clef, key sigs, time sigs, or note stem) into this bar line recognition process\&.
+.PP
+.PP
+.SS "Demo"
+.PP
+\fCScreenshots of some results\fP
+.PP
+.SS "Todo"
+.PP
+.IP "\(bu" 2
+Add robust note detector to impose negative constraints for bar line identification\&. (see \fChere\fP)
+.IP "\(bu" 2
+Fix staff detection for vector graphs
+.IP "\(bu" 2
+Optimize OMR performance and add clef/key recognitions 
+.PP
+

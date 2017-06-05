@@ -1,0 +1,425 @@
+.TH "Ms::GuitarPro" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::GuitarPro
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMs::GuitarPro1\fP, \fBMs::GuitarPro4\fP, \fBMs::GuitarPro5\fP, and \fBMs::GuitarPro6\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBGuitarProError\fP : char { \fBGP_NO_ERROR\fP, \fBGP_UNKNOWN_FORMAT\fP, \fBGP_EOF\fP, \fBGP_BAD_NUMBER_OF_STRINGS\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitGuitarProDrumset\fP ()"
+.br
+.ti -1c
+.RI "\fBGuitarPro\fP (\fBScore\fP *, int v)"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (QFile *)=0"
+.br
+.ti -1c
+.RI "QString \fBerror\fP (GuitarProError n) const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QString \fBtitle\fP"
+.br
+.ti -1c
+.RI "QString \fBsubtitle\fP"
+.br
+.ti -1c
+.RI "QString \fBartist\fP"
+.br
+.ti -1c
+.RI "QString \fBalbum\fP"
+.br
+.ti -1c
+.RI "QString \fBcomposer\fP"
+.br
+.ti -1c
+.RI "QString \fBtranscriber\fP"
+.br
+.ti -1c
+.RI "QString \fBinstructions\fP"
+.br
+.ti -1c
+.RI "QStringList \fBcomments\fP"
+.br
+.ti -1c
+.RI "\fBGpTrack\fP \fBchannelDefaults\fP [GP_MAX_TRACK_NUMBER *2]"
+.br
+.ti -1c
+.RI "int \fBstaves\fP"
+.br
+.ti -1c
+.RI "int \fBmeasures\fP"
+.br
+.ti -1c
+.RI "QList< \fBGpBar\fP > \fBbars\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBskip\fP (qint64 len)"
+.br
+.ti -1c
+.RI "void \fBread\fP (void *p, qint64 len)"
+.br
+.ti -1c
+.RI "int \fBreadUChar\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadChar\fP ()"
+.br
+.ti -1c
+.RI "QString \fBreadPascalString\fP (int)"
+.br
+.ti -1c
+.RI "QString \fBreadWordPascalString\fP ()"
+.br
+.ti -1c
+.RI "QString \fBreadBytePascalString\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadInt\fP ()"
+.br
+.ti -1c
+.RI "QString \fBreadDelphiString\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadVolta\fP (\fBGPVolta\fP *, \fBMeasure\fP *)"
+.br
+.ti -1c
+.RI "virtual void \fBreadBend\fP (\fBNote\fP *)"
+.br
+.ti -1c
+.RI "virtual bool \fBreadMixChange\fP (\fBMeasure\fP *measure)"
+.br
+.ti -1c
+.RI "virtual int \fBreadBeatEffects\fP (int track, \fBSegment\fP *)=0"
+.br
+.ti -1c
+.RI "void \fBreadLyrics\fP ()"
+.br
+.ti -1c
+.RI "void \fBreadChannels\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetTuplet\fP (\fBTuplet\fP *tuplet, int tuple)"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBlen2fraction\fP (int len)"
+.br
+.ti -1c
+.RI "void \fBaddDynamic\fP (\fBNote\fP *, int d)"
+.br
+.ti -1c
+.RI "void \fBsetTempo\fP (int n, \fBMeasure\fP *measure)"
+.br
+.ti -1c
+.RI "void \fBcreateMeasures\fP ()"
+.br
+.ti -1c
+.RI "void \fBapplyBeatEffects\fP (\fBChord\fP *, int beatEffects)"
+.br
+.ti -1c
+.RI "void \fBreadTremoloBar\fP (int track, \fBSegment\fP *)"
+.br
+.ti -1c
+.RI "void \fBreadChord\fP (\fBSegment\fP *seg, int track, int numStrings, QString name, bool gpHeader)"
+.br
+.ti -1c
+.RI "void \fBrestsForEmptyBeats\fP (\fBSegment\fP *seg, \fBMeasure\fP *measure, \fBChordRest\fP *cr, \fBFraction\fP &l, int track, int tick)"
+.br
+.ti -1c
+.RI "void \fBcreateSlur\fP (bool hasSlur, int staffIdx, \fBChordRest\fP *cr)"
+.br
+.ti -1c
+.RI "void \fBcreateOttava\fP (bool hasOttava, int track, \fBChordRest\fP *cr, QString value)"
+.br
+.ti -1c
+.RI "void \fBcreateSlide\fP (int slide, \fBChordRest\fP *cr, int staffIdx)"
+.br
+.ti -1c
+.RI "void \fBcreateCrecDim\fP (int staffIdx, int track, int tick, bool crec)"
+.br
+.ti -1c
+.RI "\fBText\fP * \fBaddTextToNote\fP (QString, Align, \fBNote\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddPalmMute\fP (\fBNote\fP *note)"
+.br
+.ti -1c
+.RI "void \fBaddLetRing\fP (\fBNote\fP *note)"
+.br
+.ti -1c
+.RI "void \fBaddTap\fP (\fBNote\fP *note)"
+.br
+.ti -1c
+.RI "void \fBaddSlap\fP (\fBNote\fP *note)"
+.br
+.ti -1c
+.RI "void \fBaddPop\fP (\fBNote\fP *note)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBversion\fP"
+.br
+.ti -1c
+.RI "int \fBkey\fP"
+.br
+.ti -1c
+.RI "QMap< int, QList< \fBGPFermata\fP > * > \fBfermatas\fP"
+.br
+.ti -1c
+.RI "std::vector< \fBOttava\fP * > \fBottava\fP"
+.br
+.ti -1c
+.RI "\fBHairpin\fP ** \fBhairpins\fP"
+.br
+.ti -1c
+.RI "\fBScore\fP * \fBscore\fP"
+.br
+.ti -1c
+.RI "QFile * \fBf\fP"
+.br
+.ti -1c
+.RI "int \fBcurPos\fP"
+.br
+.ti -1c
+.RI "int \fBpreviousTempo\fP"
+.br
+.ti -1c
+.RI "int \fBpreviousDynamic\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBottavaFound\fP"
+.br
+.ti -1c
+.RI "std::vector< QString > \fBottavaValue\fP"
+.br
+.ti -1c
+.RI "int \fBtempo\fP"
+.br
+.ti -1c
+.RI "QMap< int, int > \fBslides\fP"
+.br
+.ti -1c
+.RI "\fBGPLyrics\fP \fBgpLyrics\fP"
+.br
+.ti -1c
+.RI "int \fBslide\fP"
+.br
+.ti -1c
+.RI "int \fBvoltaSequence\fP"
+.br
+.ti -1c
+.RI "QTextCodec * \fB_codec\fP"
+.br
+.ti -1c
+.RI "\fBSlur\fP ** \fBslurs\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const uchar \fBEFFECT_BEND\fP = 0x1"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_STACATTO\fP = 0x1"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_HAMMER\fP = 0x2"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_PALM_MUTE\fP = 0x2"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_TREMOLO\fP = 0x4"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_LET_RING\fP = 0x8"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_SLIDE_OLD\fP = 0x4"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_SLIDE\fP = 0x8"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_GRACE\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_ARTIFICIAL_HARMONIC\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_TRILL\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBEFFECT_GHOST\fP = 0x01"
+.br
+.ti -1c
+.RI "static const uchar \fBARPEGGIO_UP\fP = 0xa"
+.br
+.ti -1c
+.RI "static const uchar \fBARPEGGIO_DOWN\fP = 0x2"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_GHOST\fP = 0x04"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_DEAD\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_DYNAMIC\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_FRET\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_FINGERING\fP = 0x80"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_MARCATO\fP = 0x02"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_SFORZATO\fP = 0x40"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_SLUR\fP = 0x8"
+.br
+.ti -1c
+.RI "static const uchar \fBNOTE_APPOGIATURA\fP = 0x02"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_FADE\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_EFFECT\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_TREMOLO\fP = 0x04"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_ARPEGGIO\fP = 0x40"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_STROKE_DIR\fP = 0x02"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_DOTTED\fP = 0x01"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_PAUSE\fP = 0x40"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_TUPLET\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_LYRICS\fP = 0x4"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_EFFECTS\fP = 0x8"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_MIX_CHANGE\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBBEAT_CHORD\fP = 0x2"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_TIMESIG_NUMERATOR\fP = 0x1"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_TIMESIG_DENOMINATOR\fP = 0x2"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_REPEAT_START\fP = 0x4"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_REPEAT_END\fP = 0x8"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_MARKER\fP = 0x20"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_VOLTA\fP = 0x10"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_KEYSIG\fP = 0x40"
+.br
+.ti -1c
+.RI "static const uchar \fBSCORE_DOUBLE_BAR\fP = 0x80"
+.br
+.ti -1c
+.RI "static const int \fBSHIFT_SLIDE\fP = 1"
+.br
+.ti -1c
+.RI "static const int \fBLEGATO_SLIDE\fP = 2"
+.br
+.ti -1c
+.RI "static const int \fBSLIDE_OUT_DOWN\fP = 4"
+.br
+.ti -1c
+.RI "static const int \fBSLIDE_OUT_UP\fP = 8"
+.br
+.ti -1c
+.RI "static const int \fBSLIDE_IN_ABOVE\fP = 16"
+.br
+.ti -1c
+.RI "static const int \fBSLIDE_IN_BELOW\fP = 32"
+.br
+.ti -1c
+.RI "static const int \fBMAX_PITCH\fP = 127"
+.br
+.ti -1c
+.RI "static const char * \fBerrmsg\fP []"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 108 of file importgtp\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ms::GuitarPro::createSlide (int slide, \fBChordRest\fP * cr, int staffIdx)\fC [protected]\fP"
+TODO we should not just take the top note here but the /correct/ note need to check whether GP supports multi-note gliss\&. I think it can in modern versions 
+.PP
+Definition at line 548 of file importgtp\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "const char * Ms::GuitarPro::errmsg\fC [static]\fP, \fC [protected]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= {
+      "no error",
+      "unknown file format",
+      "unexpected end of file",
+      "bad number of strings",
+      }
+.fi
+.PP
+Definition at line 173 of file importgtp\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

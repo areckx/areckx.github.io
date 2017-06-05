@@ -1,0 +1,1285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_capella" kind="class" language="C++" prot="public">
+    <compoundname>Ms::Capella</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6" prot="public" static="no">
+        <name>Error</name>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6a955836e6b965e7f076db0258ce2dca45" prot="public">
+          <name>CAP_NO_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6ad4fc8f264acfd4d65939f8e7f24a5358" prot="public">
+          <name>BAD_SIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6ab3a7c5e89d17331d8e2c31cd812ab98f" prot="public">
+          <name>CAP_EOF</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6a7c614a722f5b4c68ce5d3813e75d3526" prot="public">
+          <name>BAD_VOICE_SIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6a16acfbf6792d898ecb6a3a81e7fdb854" prot="public">
+          <name>BAD_STAFF_SIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6ad991488a5d94c6b983df180eed3474ac" prot="public">
+          <name>BAD_SYSTEM_SIG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="684" column="1" bodyfile="mscore/capella.h" bodystart="684" bodyend="686"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_capella_1af5ae0b261ffd36f8e921ddb8a81c22ac" prot="private" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char * Ms::Capella::errmsg</definition>
+        <argsstring>[]</argsstring>
+        <name>errmsg</name>
+        <initializer>= {
+      &quot;no error&quot;,
+      &quot;bad file signature, no <ref refid="class_ms_1_1_capella" kindref="compound">Capella</ref> file or not from <ref refid="namespace_ms_1a9c672c5c75133bc06bb59bef7bed8b03" kindref="member">version</ref> 2000 (3.0) or later?&quot;,
+      &quot;unexpected end of file&quot;,
+      &quot;bad voice signature&quot;,
+      &quot;bad staff signature&quot;,
+      &quot;bad system signature&quot;,
+      }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="632" column="1" bodyfile="mscore/capella.h" bodystart="632" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a6fee2cdcb88d5207c18331da30cc2f54" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Capella::curPos</definition>
+        <argsstring></argsstring>
+        <name>curPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="633" column="1" bodyfile="mscore/capella.h" bodystart="633" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a2909b47273f2adba7dd17cd83bedda39" prot="private" static="no" mutable="no">
+        <type>QFile *</type>
+        <definition>QFile* Ms::Capella::f</definition>
+        <argsstring></argsstring>
+        <name>f</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="635" column="1" bodyfile="mscore/capella.h" bodystart="635" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a7b15823832f97dfa45171d85945cd67d" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Ms::Capella::author</definition>
+        <argsstring></argsstring>
+        <name>author</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="636" column="1" bodyfile="mscore/capella.h" bodystart="636" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1aeaf9a6a31770201283473ec79ead68e4" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Ms::Capella::keywords</definition>
+        <argsstring></argsstring>
+        <name>keywords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="637" column="1" bodyfile="mscore/capella.h" bodystart="637" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a91a28fa7c2b71f675243fcc23c6d8db7" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* Ms::Capella::comment</definition>
+        <argsstring></argsstring>
+        <name>comment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="638" column="1" bodyfile="mscore/capella.h" bodystart="638" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a115f4c293fb32dfa6ba03c0e4d18926b" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::beamRelMin0</definition>
+        <argsstring></argsstring>
+        <name>beamRelMin0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="640" column="1" bodyfile="mscore/capella.h" bodystart="640" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1aeb45adb733d13d93d3f26ca6b9bbd4cd" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::beamRelMin1</definition>
+        <argsstring></argsstring>
+        <name>beamRelMin1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="641" column="1" bodyfile="mscore/capella.h" bodystart="641" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a172ec629cfe139747ba62a02c9e1bcae" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::beamRelMax0</definition>
+        <argsstring></argsstring>
+        <name>beamRelMax0</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="642" column="1" bodyfile="mscore/capella.h" bodystart="642" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ad75e45022ccf1e3c8c4b3cad61dfe839" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::beamRelMax1</definition>
+        <argsstring></argsstring>
+        <name>beamRelMax1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="643" column="1" bodyfile="mscore/capella.h" bodystart="643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a122d4d9a8d323618eead1226cdba2bdf" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::nRel</definition>
+        <argsstring></argsstring>
+        <name>nRel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="644" column="1" bodyfile="mscore/capella.h" bodystart="644" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a588c9f319406a1766cb7cc9f4c1dd432" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::nAbs</definition>
+        <argsstring></argsstring>
+        <name>nAbs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="645" column="1" bodyfile="mscore/capella.h" bodystart="645" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1abe5fbc9cafc4570e8b16d6d4fa7ee0a2" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::bUseRealSize</definition>
+        <argsstring></argsstring>
+        <name>bUseRealSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="646" column="1" bodyfile="mscore/capella.h" bodystart="646" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a46c26a65aba54b7956a317d2d9877df5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::bAllowCompression</definition>
+        <argsstring></argsstring>
+        <name>bAllowCompression</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="647" column="1" bodyfile="mscore/capella.h" bodystart="647" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ac8d6d32e722c4d4b24a9c44c462caa84" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::bPrintLandscape</definition>
+        <argsstring></argsstring>
+        <name>bPrintLandscape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="648" column="1" bodyfile="mscore/capella.h" bodystart="648" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ab9d8c78f1d9aa8b3b7f40bdfe4b73ee6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::bShowBarCount</definition>
+        <argsstring></argsstring>
+        <name>bShowBarCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="650" column="1" bodyfile="mscore/capella.h" bodystart="650" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1addc6bfe1f5715c5362ab109a00b5fde5" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::barNumberFrame</definition>
+        <argsstring></argsstring>
+        <name>barNumberFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="651" column="1" bodyfile="mscore/capella.h" bodystart="651" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ac898d0e2e387a20f2ac846c9d6ee68ee" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::nBarDistX</definition>
+        <argsstring></argsstring>
+        <name>nBarDistX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="652" column="1" bodyfile="mscore/capella.h" bodystart="652" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a8fc26790639340a7468bbd0106ac06cc" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::nBarDistY</definition>
+        <argsstring></argsstring>
+        <name>nBarDistY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="653" column="1" bodyfile="mscore/capella.h" bodystart="653" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a7384042272c2c3ae494271bdc3762da0" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::nFirstPage</definition>
+        <argsstring></argsstring>
+        <name>nFirstPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="656" column="1" bodyfile="mscore/capella.h" bodystart="656" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a6368f4b0d0d3bda2e6cce833cb163a24" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::leftPageMargins</definition>
+        <argsstring></argsstring>
+        <name>leftPageMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="658" column="1" bodyfile="mscore/capella.h" bodystart="658" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a0ec13e036ba98a722f3882635617f73e" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::topPageMargins</definition>
+        <argsstring></argsstring>
+        <name>topPageMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="659" column="1" bodyfile="mscore/capella.h" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a7937dc08535b2404bf85c5e32fdcc8e3" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::rightPageMargins</definition>
+        <argsstring></argsstring>
+        <name>rightPageMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="660" column="1" bodyfile="mscore/capella.h" bodystart="660" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1af2df2430b779d5e152687772de2cfe38" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::btmPageMargins</definition>
+        <argsstring></argsstring>
+        <name>btmPageMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="661" column="1" bodyfile="mscore/capella.h" bodystart="661" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a438b46a21842fe49e6d324a055ae3480" prot="private" static="no" mutable="no">
+        <type>QList&lt; QFont &gt;</type>
+        <definition>QList&lt;QFont&gt; Ms::Capella::fonts</definition>
+        <argsstring></argsstring>
+        <name>fonts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="663" column="1" bodyfile="mscore/capella.h" bodystart="663" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ae471ac772d74472bebe5d99b37336652" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_ms_1_1_cap_staff_layout" kindref="compound">CapStaffLayout</ref> * &gt;</type>
+        <definition>QList&lt;CapStaffLayout*&gt; Ms::Capella::_staffLayouts</definition>
+        <argsstring></argsstring>
+        <name>_staffLayouts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="664" column="1" bodyfile="mscore/capella.h" bodystart="664" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ad2860a85ea4b4d5b2f24824ac93e2642" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Capella::interDist</definition>
+        <argsstring></argsstring>
+        <name>interDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="666" column="1" bodyfile="mscore/capella.h" bodystart="666" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ada883057e021b584ec4f96859ae0924f" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::txtAlign</definition>
+        <argsstring></argsstring>
+        <name>txtAlign</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="667" column="1" bodyfile="mscore/capella.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a797c09635442cff23c933bdf1bad35e7" prot="private" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::adjustVert</definition>
+        <argsstring></argsstring>
+        <name>adjustVert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="668" column="1" bodyfile="mscore/capella.h" bodystart="668" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1aed043f9b786ec2f0d010fa8467f26471" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::redundantKeys</definition>
+        <argsstring></argsstring>
+        <name>redundantKeys</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="669" column="1" bodyfile="mscore/capella.h" bodystart="669" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a0993155f9826b43ff30b655ec58de3e0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::modernDoubleNote</definition>
+        <argsstring></argsstring>
+        <name>modernDoubleNote</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="670" column="1" bodyfile="mscore/capella.h" bodystart="670" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a47a7f370a2aeb06b82d49873cb6d0f2c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Ms::Capella::bSystemSeparators</definition>
+        <argsstring></argsstring>
+        <name>bSystemSeparators</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="671" column="1" bodyfile="mscore/capella.h" bodystart="671" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a7f20628365115a4f73f92a9f58d8b8db" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Capella::nUnnamed</definition>
+        <argsstring></argsstring>
+        <name>nUnnamed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="672" column="1" bodyfile="mscore/capella.h" bodystart="672" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ae93e7c559c7f20b6ff697aca1484d495" prot="private" static="no" mutable="no">
+        <type>QFont</type>
+        <definition>QFont Ms::Capella::namesFont</definition>
+        <argsstring></argsstring>
+        <name>namesFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="673" column="1" bodyfile="mscore/capella.h" bodystart="673" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_capella_1af4fff8a4466ccd2ea04a63f979e26dd2" prot="public" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_ms_1_1_cap_system" kindref="compound">CapSystem</ref> * &gt;</type>
+        <definition>QList&lt;CapSystem*&gt; Ms::Capella::systems</definition>
+        <argsstring></argsstring>
+        <name>systems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="709" column="1" bodyfile="mscore/capella.h" bodystart="709" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1ae529678239670df041fac3d413cd474c" prot="public" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_ms_1_1_cap_bracket" kindref="compound">CapBracket</ref> &gt;</type>
+        <definition>QList&lt;CapBracket&gt; Ms::Capella::brackets</definition>
+        <argsstring></argsstring>
+        <name>brackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="710" column="1" bodyfile="mscore/capella.h" bodystart="710" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a15a12143c2f1962fbac02fc02bbfb3dc" prot="public" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_chord_obj" kindref="compound">ChordObj</ref> *</type>
+        <definition>ChordObj* Ms::Capella::backgroundChord</definition>
+        <argsstring></argsstring>
+        <name>backgroundChord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="711" column="1" bodyfile="mscore/capella.h" bodystart="711" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a18cce662dd29a2f0ad508eb8346760a0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Ms::Capella::smallLineDist</definition>
+        <argsstring></argsstring>
+        <name>smallLineDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="715" column="1" bodyfile="mscore/capella.h" bodystart="715" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a30e6d22d1211aab6d7fb0404d7b52577" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Ms::Capella::normalLineDist</definition>
+        <argsstring></argsstring>
+        <name>normalLineDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="716" column="1" bodyfile="mscore/capella.h" bodystart="716" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_capella_1a8c4e2c2c6bf06b89afbc9e4bf60b3de4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::Capella::topDist</definition>
+        <argsstring></argsstring>
+        <name>topDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="717" column="1" bodyfile="mscore/capella.h" bodystart="717" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_capella_1a4c5855753a04668bb9624443197b73f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readVoice</definition>
+        <argsstring>(CapStaff *, int)</argsstring>
+        <name>readVoice</name>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_staff" kindref="compound">CapStaff</ref> *</type>
+          <defname>cs</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="675" column="1" bodyfile="mscore/capella.cpp" bodystart="2411" bodyend="2486"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a0e93ba969e164824dbbda586501ebfc8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readStaff</definition>
+        <argsstring>(CapSystem *)</argsstring>
+        <name>readStaff</name>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_system" kindref="compound">CapSystem</ref> *</type>
+          <defname>system</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="676" column="1" bodyfile="mscore/capella.cpp" bodystart="2492" bodyend="2522"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a79a9859151456b1eeb9fc4ba691b1252" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readSystem</definition>
+        <argsstring>()</argsstring>
+        <name>readSystem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="677" column="1" bodyfile="mscore/capella.cpp" bodystart="2528" bodyend="2552"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a01cf19d8129293a0e01e379d15ccbeb6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readCapxVoice</definition>
+        <argsstring>(XmlReader &amp;e, CapStaff *, int)</argsstring>
+        <name>readCapxVoice</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_staff" kindref="compound">CapStaff</ref> *</type>
+          <defname>cs</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="720" column="1" bodyfile="mscore/capxml.cpp" bodystart="687" bodyend="743"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a1e0f9dac5a83f4f2fcae94fef09e6b4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readCapxStaff</definition>
+        <argsstring>(XmlReader &amp;e, CapSystem *, int)</argsstring>
+        <name>readCapxStaff</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_system" kindref="compound">CapSystem</ref> *</type>
+          <defname>system</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>iStave</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="721" column="1" bodyfile="mscore/capxml.cpp" bodystart="749" bodyend="784"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a64f4d208e997c651f3bfc2ce10ad0794" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readCapxSystem</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>readCapxSystem</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="722" column="1" bodyfile="mscore/capxml.cpp" bodystart="790" bodyend="828"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a6d379eeda217e9e953f6c10364e3e6b9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::capxSystems</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>capxSystems</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="723" column="1" bodyfile="mscore/capxml.cpp" bodystart="834" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a2d9f5bf3efee131f2e62cc4b88ab9004" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readCapxStaveLayout</definition>
+        <argsstring>(XmlReader &amp;e, CapStaffLayout *, int)</argsstring>
+        <name>readCapxStaveLayout</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_staff_layout" kindref="compound">CapStaffLayout</ref> *</type>
+          <defname>sl</defname>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="724" column="1" bodyfile="mscore/capxml.cpp" bodystart="874" bodyend="959"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a246b7a7fd5ffb4f753a26d5802346449" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::capxLayoutStaves</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>capxLayoutStaves</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="725" column="1" bodyfile="mscore/capxml.cpp" bodystart="1010" bodyend="1023"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1aa5a51482b5202d6014dfed3e1cba80d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::capxLayout</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>capxLayout</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="726" column="1" bodyfile="mscore/capxml.cpp" bodystart="1030" bodyend="1068"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a7554f34a2de4fcf15918034c5611e03d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::initCapxLayout</definition>
+        <argsstring>()</argsstring>
+        <name>initCapxLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="727" column="1" bodyfile="mscore/capxml.cpp" bodystart="1074" bodyend="1099"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_ms_1_1_capella_1a9e665d644975a89ce1dd05896ea906ac" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readStaveLayout</definition>
+        <argsstring>(CapStaffLayout *, int)</argsstring>
+        <name>readStaveLayout</name>
+        <param>
+          <type><ref refid="struct_ms_1_1_cap_staff_layout" kindref="compound">CapStaffLayout</ref> *</type>
+          <defname>sl</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <defname>idx</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="680" column="1" bodyfile="mscore/capella.cpp" bodystart="2158" bodyend="2226"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a6292ced475c69733be294f85cde57266" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readLayout</definition>
+        <argsstring>()</argsstring>
+        <name>readLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="681" column="1" bodyfile="mscore/capella.cpp" bodystart="2232" bodyend="2277"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_capella_1a57f25057cae299b296ec31d09f8f64b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Capella::Capella</definition>
+        <argsstring>()</argsstring>
+        <name>Capella</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="688" column="1" bodyfile="mscore/capella.cpp" bodystart="1361" bodyend="1366"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a508794854bd9843a61d7d0ffcaadf165" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::Capella::~Capella</definition>
+        <argsstring>()</argsstring>
+        <name>~Capella</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="689" column="1" bodyfile="mscore/capella.cpp" bodystart="1368" bodyend="1373"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a3e1b4dd4863f1d0c0e1d25185396ceb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::read</definition>
+        <argsstring>(QFile *)</argsstring>
+        <name>read</name>
+        <param>
+          <type>QFile *</type>
+          <defname>fp</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="690" column="1" bodyfile="mscore/capella.cpp" bodystart="2602" bodyend="2674"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a9f143011804fd2a8652ba085c09db911" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::Capella::error</definition>
+        <argsstring>(Error n) const</argsstring>
+        <name>error</name>
+        <param>
+          <type>Error</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="691" column="1" bodyfile="mscore/capella.h" bodystart="691" bodyend="691"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a64568d7b84913749314ed6e3f6b71f8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char Ms::Capella::readByte</definition>
+        <argsstring>()</argsstring>
+        <name>readByte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="693" column="1" bodyfile="mscore/capella.cpp" bodystart="1945" bodyend="1950"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a2116ee0fee64380ba170bfeb3862e069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char Ms::Capella::readChar</definition>
+        <argsstring>()</argsstring>
+        <name>readChar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="694" column="1" bodyfile="mscore/capella.cpp" bodystart="1956" bodyend="1961"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1aa9274f87d3c9c3bac8caedb1cffe474f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor Ms::Capella::readColor</definition>
+        <argsstring>()</argsstring>
+        <name>readColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="695" column="1" bodyfile="mscore/capella.cpp" bodystart="2072" bodyend="2106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1adcb3705e38638e0830a6b2beec22f6ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Capella::readInt</definition>
+        <argsstring>()</argsstring>
+        <name>readInt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="696" column="1" bodyfile="mscore/capella.cpp" bodystart="2022" bodyend="2038"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a51e1cf2490389f429c1c7e7aed03d074" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Capella::readLong</definition>
+        <argsstring>()</argsstring>
+        <name>readLong</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="697" column="1" bodyfile="mscore/capella.cpp" bodystart="1989" bodyend="1994"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a35343fca2fdbc7d19d2719381ad47984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short</type>
+        <definition>short Ms::Capella::readWord</definition>
+        <argsstring>()</argsstring>
+        <name>readWord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="698" column="1" bodyfile="mscore/capella.cpp" bodystart="1967" bodyend="1972"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1ab8ad28e44cf0a8fc62bc181fc155e6eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::Capella::readDWord</definition>
+        <argsstring>()</argsstring>
+        <name>readDWord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="699" column="1" bodyfile="mscore/capella.cpp" bodystart="1978" bodyend="1983"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a26ee71252d75b6fcccdd915115d538e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned</type>
+        <definition>unsigned Ms::Capella::readUnsigned</definition>
+        <argsstring>()</argsstring>
+        <name>readUnsigned</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="700" column="1" bodyfile="mscore/capella.cpp" bodystart="2000" bodyend="2016"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a6afc0a455c8664cfa2ff3e4d4277fa8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * Ms::Capella::readString</definition>
+        <argsstring>()</argsstring>
+        <name>readString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="701" column="1" bodyfile="mscore/capella.cpp" bodystart="2045" bodyend="2052"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a8b53d644db851137d368bd88b9529435" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::Capella::readQString</definition>
+        <argsstring>()</argsstring>
+        <name>readQString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="702" column="1" bodyfile="mscore/capella.cpp" bodystart="2059" bodyend="2066"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a52426c45c6c51a4905b439f228ed0151" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readExtra</definition>
+        <argsstring>()</argsstring>
+        <name>readExtra</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="703" column="1" bodyfile="mscore/capella.cpp" bodystart="2283" bodyend="2291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a2b49bc3e3e1e96497c1aaecbbcd9872e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_ms_1_1_basic_draw_obj" kindref="compound">BasicDrawObj</ref> * &gt;</type>
+        <definition>QList&lt; BasicDrawObj * &gt; Ms::Capella::readDrawObjectArray</definition>
+        <argsstring>()</argsstring>
+        <name>readDrawObjectArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="704" column="1" bodyfile="mscore/capella.cpp" bodystart="1616" bodyend="1729"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a4b07c03709a971b5d4e5e1bd67fc3c5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::Capella::read</definition>
+        <argsstring>(void *p, qint64 len)</argsstring>
+        <name>read</name>
+        <param>
+          <type>void *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>qint64</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="705" column="1" bodyfile="mscore/capella.cpp" bodystart="1930" bodyend="1939"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a81c0760495e07b1f69805268f4aedd66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QFont</type>
+        <definition>QFont Ms::Capella::readFont</definition>
+        <argsstring>()</argsstring>
+        <name>readFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="706" column="1" bodyfile="mscore/capella.cpp" bodystart="2112" bodyend="2152"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a86a3f57e56dfc9441b51a5041d1190e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF Ms::Capella::readPoint</definition>
+        <argsstring>()</argsstring>
+        <name>readPoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="707" column="1" bodyfile="mscore/capella.cpp" bodystart="2591" bodyend="2596"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a7568abd0a77b75e3d3beed6b7606747e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="struct_ms_1_1_cap_staff_layout" kindref="compound">CapStaffLayout</ref> *</type>
+        <definition>CapStaffLayout* Ms::Capella::staffLayout</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>staffLayout</name>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="712" column="1" bodyfile="mscore/capella.h" bodystart="712" bodyend="712"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a3b85514243452b56a736a3b357079aba" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const QList&lt; <ref refid="struct_ms_1_1_cap_staff_layout" kindref="compound">CapStaffLayout</ref> * &gt; &amp;</type>
+        <definition>const QList&lt;CapStaffLayout*&gt;&amp; Ms::Capella::staffLayouts</definition>
+        <argsstring>() const</argsstring>
+        <name>staffLayouts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="713" column="1" bodyfile="mscore/capella.h" bodystart="713" bodyend="713"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1af49d9100d295b6d4b5504ec69286b1ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::Capella::readCapx</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>readCapx</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="729" column="1" bodyfile="mscore/capxml.cpp" bodystart="1105" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_capella_1a7abfbcdea391c279a4c9689c7bdd37b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_ms_1_1_basic_draw_obj" kindref="compound">BasicDrawObj</ref> * &gt;</type>
+        <definition>QList&lt; BasicDrawObj * &gt; Ms::Capella::readCapxDrawObjectArray</definition>
+        <argsstring>(XmlReader &amp;e)</argsstring>
+        <name>readCapxDrawObjectArray</name>
+        <param>
+          <type><ref refid="class_ms_1_1_xml_reader" kindref="compound">XmlReader</ref> &amp;</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/capella.h" line="730" column="1" bodyfile="mscore/capxml.cpp" bodystart="580" bodyend="681"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2147">
+        <label>Ms::BasicDurationalObj</label>
+        <link refid="class_ms_1_1_basic_durational_obj"/>
+        <childnode refid="2148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2146">
+        <label>Ms::ChordObj</label>
+        <link refid="class_ms_1_1_chord_obj"/>
+        <childnode refid="2147" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2148">
+        <label>Ms::CapellaObj</label>
+        <link refid="class_ms_1_1_capella_obj"/>
+        <childnode refid="2145" relation="usage">
+          <edgelabel>cap</edgelabel>
+        </childnode>
+      </node>
+      <node id="2149">
+        <label>Ms::NoteObj</label>
+        <link refid="class_ms_1_1_note_obj"/>
+      </node>
+      <node id="2145">
+        <label>Ms::Capella</label>
+        <link refid="class_ms_1_1_capella"/>
+        <childnode refid="2146" relation="usage">
+          <edgelabel>backgroundChord</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="mscore/capella.h" line="631" column="1" bodyfile="mscore/capella.h" bodystart="631" bodyend="731"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_capella_1ae471ac772d74472bebe5d99b37336652" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>_staffLayouts</name></member>
+      <member refid="class_ms_1_1_capella_1a797c09635442cff23c933bdf1bad35e7" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>adjustVert</name></member>
+      <member refid="class_ms_1_1_capella_1a7b15823832f97dfa45171d85945cd67d" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>author</name></member>
+      <member refid="class_ms_1_1_capella_1a15a12143c2f1962fbac02fc02bbfb3dc" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>backgroundChord</name></member>
+      <member refid="class_ms_1_1_capella_1a46c26a65aba54b7956a317d2d9877df5" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>bAllowCompression</name></member>
+      <member refid="class_ms_1_1_capella_1addc6bfe1f5715c5362ab109a00b5fde5" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>barNumberFrame</name></member>
+      <member refid="class_ms_1_1_capella_1a172ec629cfe139747ba62a02c9e1bcae" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>beamRelMax0</name></member>
+      <member refid="class_ms_1_1_capella_1ad75e45022ccf1e3c8c4b3cad61dfe839" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>beamRelMax1</name></member>
+      <member refid="class_ms_1_1_capella_1a115f4c293fb32dfa6ba03c0e4d18926b" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>beamRelMin0</name></member>
+      <member refid="class_ms_1_1_capella_1aeb45adb733d13d93d3f26ca6b9bbd4cd" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>beamRelMin1</name></member>
+      <member refid="class_ms_1_1_capella_1ac8d6d32e722c4d4b24a9c44c462caa84" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>bPrintLandscape</name></member>
+      <member refid="class_ms_1_1_capella_1ae529678239670df041fac3d413cd474c" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>brackets</name></member>
+      <member refid="class_ms_1_1_capella_1ab9d8c78f1d9aa8b3b7f40bdfe4b73ee6" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>bShowBarCount</name></member>
+      <member refid="class_ms_1_1_capella_1a47a7f370a2aeb06b82d49873cb6d0f2c" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>bSystemSeparators</name></member>
+      <member refid="class_ms_1_1_capella_1af2df2430b779d5e152687772de2cfe38" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>btmPageMargins</name></member>
+      <member refid="class_ms_1_1_capella_1abe5fbc9cafc4570e8b16d6d4fa7ee0a2" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>bUseRealSize</name></member>
+      <member refid="class_ms_1_1_capella_1a57f25057cae299b296ec31d09f8f64b4" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>Capella</name></member>
+      <member refid="class_ms_1_1_capella_1aa5a51482b5202d6014dfed3e1cba80d5" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>capxLayout</name></member>
+      <member refid="class_ms_1_1_capella_1a246b7a7fd5ffb4f753a26d5802346449" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>capxLayoutStaves</name></member>
+      <member refid="class_ms_1_1_capella_1a6d379eeda217e9e953f6c10364e3e6b9" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>capxSystems</name></member>
+      <member refid="class_ms_1_1_capella_1a91a28fa7c2b71f675243fcc23c6d8db7" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>comment</name></member>
+      <member refid="class_ms_1_1_capella_1a6fee2cdcb88d5207c18331da30cc2f54" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>curPos</name></member>
+      <member refid="class_ms_1_1_capella_1af5ae0b261ffd36f8e921ddb8a81c22ac" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>errmsg</name></member>
+      <member refid="class_ms_1_1_capella_1aa7b29fa3edf0b7e343d0f145e17631f6" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>Error</name></member>
+      <member refid="class_ms_1_1_capella_1a9f143011804fd2a8652ba085c09db911" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>error</name></member>
+      <member refid="class_ms_1_1_capella_1a2909b47273f2adba7dd17cd83bedda39" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>f</name></member>
+      <member refid="class_ms_1_1_capella_1a438b46a21842fe49e6d324a055ae3480" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>fonts</name></member>
+      <member refid="class_ms_1_1_capella_1a7554f34a2de4fcf15918034c5611e03d" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>initCapxLayout</name></member>
+      <member refid="class_ms_1_1_capella_1ad2860a85ea4b4d5b2f24824ac93e2642" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>interDist</name></member>
+      <member refid="class_ms_1_1_capella_1aeaf9a6a31770201283473ec79ead68e4" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>keywords</name></member>
+      <member refid="class_ms_1_1_capella_1a6368f4b0d0d3bda2e6cce833cb163a24" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>leftPageMargins</name></member>
+      <member refid="class_ms_1_1_capella_1a0993155f9826b43ff30b655ec58de3e0" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>modernDoubleNote</name></member>
+      <member refid="class_ms_1_1_capella_1a588c9f319406a1766cb7cc9f4c1dd432" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nAbs</name></member>
+      <member refid="class_ms_1_1_capella_1ae93e7c559c7f20b6ff697aca1484d495" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>namesFont</name></member>
+      <member refid="class_ms_1_1_capella_1ac898d0e2e387a20f2ac846c9d6ee68ee" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nBarDistX</name></member>
+      <member refid="class_ms_1_1_capella_1a8fc26790639340a7468bbd0106ac06cc" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nBarDistY</name></member>
+      <member refid="class_ms_1_1_capella_1a7384042272c2c3ae494271bdc3762da0" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nFirstPage</name></member>
+      <member refid="class_ms_1_1_capella_1a30e6d22d1211aab6d7fb0404d7b52577" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>normalLineDist</name></member>
+      <member refid="class_ms_1_1_capella_1a122d4d9a8d323618eead1226cdba2bdf" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nRel</name></member>
+      <member refid="class_ms_1_1_capella_1a7f20628365115a4f73f92a9f58d8b8db" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>nUnnamed</name></member>
+      <member refid="class_ms_1_1_capella_1a3e1b4dd4863f1d0c0e1d25185396ceb4" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>read</name></member>
+      <member refid="class_ms_1_1_capella_1a4b07c03709a971b5d4e5e1bd67fc3c5e" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>read</name></member>
+      <member refid="class_ms_1_1_capella_1a64568d7b84913749314ed6e3f6b71f8e" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readByte</name></member>
+      <member refid="class_ms_1_1_capella_1af49d9100d295b6d4b5504ec69286b1ee" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapx</name></member>
+      <member refid="class_ms_1_1_capella_1a7abfbcdea391c279a4c9689c7bdd37b4" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapxDrawObjectArray</name></member>
+      <member refid="class_ms_1_1_capella_1a1e0f9dac5a83f4f2fcae94fef09e6b4b" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapxStaff</name></member>
+      <member refid="class_ms_1_1_capella_1a2d9f5bf3efee131f2e62cc4b88ab9004" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapxStaveLayout</name></member>
+      <member refid="class_ms_1_1_capella_1a64f4d208e997c651f3bfc2ce10ad0794" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapxSystem</name></member>
+      <member refid="class_ms_1_1_capella_1a01cf19d8129293a0e01e379d15ccbeb6" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readCapxVoice</name></member>
+      <member refid="class_ms_1_1_capella_1a2116ee0fee64380ba170bfeb3862e069" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readChar</name></member>
+      <member refid="class_ms_1_1_capella_1aa9274f87d3c9c3bac8caedb1cffe474f" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readColor</name></member>
+      <member refid="class_ms_1_1_capella_1a2b49bc3e3e1e96497c1aaecbbcd9872e" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readDrawObjectArray</name></member>
+      <member refid="class_ms_1_1_capella_1ab8ad28e44cf0a8fc62bc181fc155e6eb" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readDWord</name></member>
+      <member refid="class_ms_1_1_capella_1a52426c45c6c51a4905b439f228ed0151" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readExtra</name></member>
+      <member refid="class_ms_1_1_capella_1a81c0760495e07b1f69805268f4aedd66" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readFont</name></member>
+      <member refid="class_ms_1_1_capella_1adcb3705e38638e0830a6b2beec22f6ea" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readInt</name></member>
+      <member refid="class_ms_1_1_capella_1a6292ced475c69733be294f85cde57266" prot="protected" virt="non-virtual"><scope>Ms::Capella</scope><name>readLayout</name></member>
+      <member refid="class_ms_1_1_capella_1a51e1cf2490389f429c1c7e7aed03d074" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readLong</name></member>
+      <member refid="class_ms_1_1_capella_1a86a3f57e56dfc9441b51a5041d1190e1" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readPoint</name></member>
+      <member refid="class_ms_1_1_capella_1a8b53d644db851137d368bd88b9529435" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readQString</name></member>
+      <member refid="class_ms_1_1_capella_1a0e93ba969e164824dbbda586501ebfc8" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readStaff</name></member>
+      <member refid="class_ms_1_1_capella_1a9e665d644975a89ce1dd05896ea906ac" prot="protected" virt="non-virtual"><scope>Ms::Capella</scope><name>readStaveLayout</name></member>
+      <member refid="class_ms_1_1_capella_1a6afc0a455c8664cfa2ff3e4d4277fa8b" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readString</name></member>
+      <member refid="class_ms_1_1_capella_1a79a9859151456b1eeb9fc4ba691b1252" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readSystem</name></member>
+      <member refid="class_ms_1_1_capella_1a26ee71252d75b6fcccdd915115d538e6" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readUnsigned</name></member>
+      <member refid="class_ms_1_1_capella_1a4c5855753a04668bb9624443197b73f2" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>readVoice</name></member>
+      <member refid="class_ms_1_1_capella_1a35343fca2fdbc7d19d2719381ad47984" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>readWord</name></member>
+      <member refid="class_ms_1_1_capella_1aed043f9b786ec2f0d010fa8467f26471" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>redundantKeys</name></member>
+      <member refid="class_ms_1_1_capella_1a7937dc08535b2404bf85c5e32fdcc8e3" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>rightPageMargins</name></member>
+      <member refid="class_ms_1_1_capella_1a18cce662dd29a2f0ad508eb8346760a0" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>smallLineDist</name></member>
+      <member refid="class_ms_1_1_capella_1a7568abd0a77b75e3d3beed6b7606747e" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>staffLayout</name></member>
+      <member refid="class_ms_1_1_capella_1a3b85514243452b56a736a3b357079aba" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>staffLayouts</name></member>
+      <member refid="class_ms_1_1_capella_1af4fff8a4466ccd2ea04a63f979e26dd2" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>systems</name></member>
+      <member refid="class_ms_1_1_capella_1a8c4e2c2c6bf06b89afbc9e4bf60b3de4" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>topDist</name></member>
+      <member refid="class_ms_1_1_capella_1a0ec13e036ba98a722f3882635617f73e" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>topPageMargins</name></member>
+      <member refid="class_ms_1_1_capella_1ada883057e021b584ec4f96859ae0924f" prot="private" virt="non-virtual"><scope>Ms::Capella</scope><name>txtAlign</name></member>
+      <member refid="class_ms_1_1_capella_1a508794854bd9843a61d7d0ffcaadf165" prot="public" virt="non-virtual"><scope>Ms::Capella</scope><name>~Capella</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

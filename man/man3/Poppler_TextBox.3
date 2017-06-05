@@ -1,0 +1,100 @@
+.TH "Poppler::TextBox" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::TextBox
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTextBox\fP (const QString &\fBtext\fP, const QRectF &bBox)"
+.br
+.ti -1c
+.RI "\fB~TextBox\fP ()"
+.br
+.ti -1c
+.RI "QString \fBtext\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBboundingBox\fP () const"
+.br
+.ti -1c
+.RI "\fBTextBox\fP * \fBnextWord\fP () const"
+.br
+.ti -1c
+.RI "QRectF \fBcharBoundingBox\fP (int i) const"
+.br
+.ti -1c
+.RI "bool \fBhasSpaceAfter\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPage\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Describes the physical location of text on a document page
+.PP
+This very simple class describes the physical location of text on the page\&. It consists of
+.IP "\(bu" 2
+a QString that contains the text
+.IP "\(bu" 2
+a QRectF that gives a box that describes where on the page the text is found\&. 
+.PP
+
+.PP
+Definition at line 102 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::TextBox::TextBox (const QString & text, const QRectF & bBox)"
+The default constructor sets the \fCtext\fP and the rectangle that contains the text\&. Coordinates for the \fCbBox\fP are in points = 1/72 of an inch\&. 
+.PP
+Definition at line 26 of file poppler\-textbox\&.cc\&.
+.SS "Poppler::TextBox::~TextBox ()"
+Destructor\&. 
+.PP
+Definition at line 33 of file poppler\-textbox\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QRectF Poppler::TextBox::boundingBox () const"
+Returns the position of the text, in point, i\&.e\&., 1/72 of an inch
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file poppler\-textbox\&.cc\&.
+.SS "QRectF Poppler::TextBox::charBoundingBox (int i) const"
+Returns the bounding box of the \fCi\fP -th characted of the word\&. 
+.PP
+Definition at line 53 of file poppler\-textbox\&.cc\&.
+.SS "bool Poppler::TextBox::hasSpaceAfter () const"
+Returns whether there is a space character after this text box 
+.PP
+Definition at line 58 of file poppler\-textbox\&.cc\&.
+.SS "\fBTextBox\fP * Poppler::TextBox::nextWord () const"
+Returns the pointer to the next text box, if there is one\&.
+.PP
+Otherwise, it returns a null pointer\&. 
+.PP
+Definition at line 48 of file poppler\-textbox\&.cc\&.
+.SS "QString Poppler::TextBox::text () const"
+Returns the text of this text box 
+.PP
+Definition at line 38 of file poppler\-textbox\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

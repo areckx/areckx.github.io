@@ -1,0 +1,377 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_flate_encoder" kind="class" language="C++" prot="public">
+    <compoundname>FlateEncoder</compoundname>
+    <basecompoundref refid="class_filter_stream" prot="public" virt="non-virtual">FilterStream</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_flate_encoder_1a44b496a8d646065dc79c63ea40c25e98" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int FlateEncoder::inBufSize</definition>
+        <argsstring></argsstring>
+        <name>inBufSize</name>
+        <initializer>= 16384</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="60" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1a1831ee37e97630e7519c72f61c1ba9e0" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int FlateEncoder::outBufSize</definition>
+        <argsstring></argsstring>
+        <name>outBufSize</name>
+        <initializer>= inBufSize</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="61" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_flate_encoder_1aefa08276faec1fea9bfe19cc55271b0b" prot="private" static="no" mutable="no">
+        <type>Guchar</type>
+        <definition>Guchar FlateEncoder::inBuf[inBufSize]</definition>
+        <argsstring>[inBufSize]</argsstring>
+        <name>inBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="62" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1a0d53bb869f56386f70570fb1ae199aba" prot="private" static="no" mutable="no">
+        <type>Guchar</type>
+        <definition>Guchar FlateEncoder::outBuf[outBufSize]</definition>
+        <argsstring>[outBufSize]</argsstring>
+        <name>outBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="63" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1acdda523fe5f7e308f16dd74bac77f03e" prot="private" static="no" mutable="no">
+        <type>Guchar *</type>
+        <definition>Guchar* FlateEncoder::outBufPtr</definition>
+        <argsstring></argsstring>
+        <name>outBufPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="64" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1af11e7f541581afd5484765874b7bd284" prot="private" static="no" mutable="no">
+        <type>Guchar *</type>
+        <definition>Guchar* FlateEncoder::outBufEnd</definition>
+        <argsstring></argsstring>
+        <name>outBufEnd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="65" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1ac4559b0712bbc60eac209461786a342a" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool FlateEncoder::inBufEof</definition>
+        <argsstring></argsstring>
+        <name>inBufEof</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="66" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1a2e2d46a3584c3b43d71bfa86f0971e42" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool FlateEncoder::outBufEof</definition>
+        <argsstring></argsstring>
+        <name>outBufEof</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="67" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_flate_encoder_1a97e373b2305290a846ea2336a1210895" prot="private" static="no" mutable="no">
+        <type><ref refid="structz__stream__s" kindref="compound">z_stream</ref></type>
+        <definition>z_stream FlateEncoder::zlib_stream</definition>
+        <argsstring></argsstring>
+        <name>zlib_stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="68" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_flate_encoder_1ad1606e447db44f9efde0b3a18367b238" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FlateEncoder::FlateEncoder</definition>
+        <argsstring>(Stream *strA)</argsstring>
+        <name>FlateEncoder</name>
+        <param>
+          <type><ref refid="class_stream" kindref="compound">Stream</ref> *</type>
+          <declname>strA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="46" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.cc" bodystart="23" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a27fa7783f16044e52f1bbc6ad36cc62a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>FlateEncoder::~FlateEncoder</definition>
+        <argsstring>()</argsstring>
+        <name>~FlateEncoder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="47" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.cc" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a0c8dd42c22fed20a0d583a3ed3ca64ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>StreamKind</type>
+        <definition>virtual StreamKind FlateEncoder::getKind</definition>
+        <argsstring>()</argsstring>
+        <name>getKind</name>
+        <reimplements refid="class_stream_1a84aecd570b480015e251c89a2afcfce5">getKind</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="48" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a0286d66c61d1bea32a2f690026b3ff17" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void FlateEncoder::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <reimplements refid="class_stream_1a8246d1b555eba25b9f95815386b5489b">reset</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="49" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.cc" bodystart="53" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a02de0655f195d65fd40d237a803b74b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FlateEncoder::getChar</definition>
+        <argsstring>()</argsstring>
+        <name>getChar</name>
+        <reimplements refid="class_stream_1ad8a0c56244d3d2077c56a8222ee39250">getChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="50" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="50" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1ab5ed628219610040e635704d1c88ec7f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int FlateEncoder::lookChar</definition>
+        <argsstring>()</argsstring>
+        <name>lookChar</name>
+        <reimplements refid="class_stream_1a7b5b42a77e3bb0cf12cb5c9e723dceac">lookChar</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="52" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="52" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1ada400cfecd9623212178ee8388b5b8fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_goo_string" kindref="compound">GooString</ref> *</type>
+        <definition>virtual GooString* FlateEncoder::getPSFilter</definition>
+        <argsstring>(int psLevel, const char *indent)</argsstring>
+        <name>getPSFilter</name>
+        <reimplements refid="class_stream_1a260a07ca4a0a1f4853881a1a5bb27576">getPSFilter</reimplements>
+        <param>
+          <type>int</type>
+          <declname>psLevel</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>indent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="54" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a4519137ac22029cafa5a8a6d951cd04c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool FlateEncoder::isBinary</definition>
+        <argsstring>(GBool last=gTrue)</argsstring>
+        <name>isBinary</name>
+        <reimplements refid="class_stream_1abd17c5f2b0f33b5c50272a00b380ffaf">isBinary</reimplements>
+        <param>
+          <type>GBool</type>
+          <declname>last</declname>
+          <defval>gTrue</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="55" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="55" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flate_encoder_1a05c48da306e4dbed153a9e36aadca05d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>GBool</type>
+        <definition>virtual GBool FlateEncoder::isEncoder</definition>
+        <argsstring>()</argsstring>
+        <name>isEncoder</name>
+        <reimplements refid="class_stream_1aa543edd0c6926c7f5272341198a61352">isEncoder</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="56" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_flate_encoder_1a3f0f582fbb184158fe234595ecd1bfd5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GBool</type>
+        <definition>GBool FlateEncoder::fillBuf</definition>
+        <argsstring>()</argsstring>
+        <name>fillBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="70" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.cc" bodystart="74" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4880">
+        <label>FlateEncoder</label>
+        <link refid="class_flate_encoder"/>
+        <childnode refid="4881" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4881">
+        <label>FilterStream</label>
+        <link refid="class_filter_stream"/>
+        <childnode refid="4882" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4882">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4883">
+        <label>FlateEncoder</label>
+        <link refid="class_flate_encoder"/>
+        <childnode refid="4884" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4884">
+        <label>FilterStream</label>
+        <link refid="class_filter_stream"/>
+        <childnode refid="4885" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4885" relation="usage">
+          <edgelabel>str</edgelabel>
+        </childnode>
+      </node>
+      <node id="4885">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+      </node>
+    </collaborationgraph>
+    <location file="thirdparty/poppler/poppler/FlateEncoder.h" line="43" column="1" bodyfile="thirdparty/poppler/poppler/FlateEncoder.h" bodystart="43" bodyend="71"/>
+    <listofallmembers>
+      <member refid="class_stream_1ac931adcb668da604632428101cdef2b1" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>addFilters</name></member>
+      <member refid="class_filter_stream_1a6f21f95a918cc1cc4ee1bde2c6880bbe" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>close</name></member>
+      <member refid="class_stream_1aa3656cdd123c716adbd9526523439091" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>decRef</name></member>
+      <member refid="class_stream_1ace312cf6e38c9420c3af18c707ecc38b" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>doGetChars</name></member>
+      <member refid="class_flate_encoder_1a3f0f582fbb184158fe234595ecd1bfd5" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>fillBuf</name></member>
+      <member refid="class_stream_1a3ca4d7a5de26df523732a8a999afbfc3" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>fillGooString</name></member>
+      <member refid="class_filter_stream_1a46b5c4157e6e19f0512d3be29999e0ca" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>FilterStream</name></member>
+      <member refid="class_flate_encoder_1ad1606e447db44f9efde0b3a18367b238" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>FlateEncoder</name></member>
+      <member refid="class_filter_stream_1ac00f3d76345df9ac2cff4e63bfe1a61d" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getBaseStream</name></member>
+      <member refid="class_flate_encoder_1a02de0655f195d65fd40d237a803b74b8" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getChar</name></member>
+      <member refid="class_filter_stream_1ae095d36efcebce6f1b16f403013f4f4b" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getDict</name></member>
+      <member refid="class_stream_1a49852d813248278832bb626d5e7768bf" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getImageParams</name></member>
+      <member refid="class_flate_encoder_1a0c8dd42c22fed20a0d583a3ed3ca64ea" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getKind</name></member>
+      <member refid="class_stream_1ac8cb7b669cda35db3b351630beb3bcda" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getLine</name></member>
+      <member refid="class_filter_stream_1a3ac0c47f4191e0ccf74fe4fb4a1b08d1" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getNextStream</name></member>
+      <member refid="class_filter_stream_1ac0c36832172f3917e7414b6858a68166" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getPos</name></member>
+      <member refid="class_flate_encoder_1ada400cfecd9623212178ee8388b5b8fb" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getPSFilter</name></member>
+      <member refid="class_stream_1a97b7674e633860ecbb09cc8cf15a1ffa" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getRawChar</name></member>
+      <member refid="class_stream_1a1362b13c09539aafc21077a26f20b341" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getRawChars</name></member>
+      <member refid="class_filter_stream_1a6c3355b0174699fac6bc01f59baba51a" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getUndecodedStream</name></member>
+      <member refid="class_filter_stream_1a56c7c67d2f21ceefdb363cf91ce64cc9" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>getUnfilteredChar</name></member>
+      <member refid="class_flate_encoder_1aefa08276faec1fea9bfe19cc55271b0b" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>inBuf</name></member>
+      <member refid="class_flate_encoder_1ac4559b0712bbc60eac209461786a342a" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>inBufEof</name></member>
+      <member refid="class_flate_encoder_1a44b496a8d646065dc79c63ea40c25e98" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>inBufSize</name></member>
+      <member refid="class_stream_1a72ded73f74dbc96b4961c3e1675431ff" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>incRef</name></member>
+      <member refid="class_flate_encoder_1a4519137ac22029cafa5a8a6d951cd04c" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>isBinary</name></member>
+      <member refid="class_flate_encoder_1a05c48da306e4dbed153a9e36aadca05d" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>isEncoder</name></member>
+      <member refid="class_flate_encoder_1ab5ed628219610040e635704d1c88ec7f" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>lookChar</name></member>
+      <member refid="class_flate_encoder_1a0d53bb869f56386f70570fb1ae199aba" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>outBuf</name></member>
+      <member refid="class_flate_encoder_1af11e7f541581afd5484765874b7bd284" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>outBufEnd</name></member>
+      <member refid="class_flate_encoder_1a2e2d46a3584c3b43d71bfa86f0971e42" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>outBufEof</name></member>
+      <member refid="class_flate_encoder_1acdda523fe5f7e308f16dd74bac77f03e" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>outBufPtr</name></member>
+      <member refid="class_flate_encoder_1a1831ee37e97630e7519c72f61c1ba9e0" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>outBufSize</name></member>
+      <member refid="class_flate_encoder_1a0286d66c61d1bea32a2f690026b3ff17" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>reset</name></member>
+      <member refid="class_filter_stream_1a4bf99e6fc0c574085fcec70e66ca9519" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>setPos</name></member>
+      <member refid="class_filter_stream_1a78e4b67915c45892909aa26ffb9f3435" prot="protected" virt="non-virtual"><scope>FlateEncoder</scope><name>str</name></member>
+      <member refid="class_stream_1a8c3f05bd00361ec92627fa41f330a39b" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>Stream</name></member>
+      <member refid="class_stream_1a0868030abb4d42d49bddf6b9170802b0" prot="public" virt="non-virtual"><scope>FlateEncoder</scope><name>toUnsignedChars</name></member>
+      <member refid="class_filter_stream_1a628962756a7611adb89c6c9e5144f066" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>unfilteredReset</name></member>
+      <member refid="class_flate_encoder_1a97e373b2305290a846ea2336a1210895" prot="private" virt="non-virtual"><scope>FlateEncoder</scope><name>zlib_stream</name></member>
+      <member refid="class_filter_stream_1aad1c8c31c9af8dced89ce9e82aaeb295" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>~FilterStream</name></member>
+      <member refid="class_flate_encoder_1a27fa7783f16044e52f1bbc6ad36cc62a" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>~FlateEncoder</name></member>
+      <member refid="class_stream_1a6dc4517a9e6a87abb662fcd14c2ea969" prot="public" virt="virtual"><scope>FlateEncoder</scope><name>~Stream</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

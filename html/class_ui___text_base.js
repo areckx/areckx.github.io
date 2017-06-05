@@ -1,0 +1,26 @@
+var class_ui___text_base =
+[
+    [ "retranslateUi", "class_ui___text_base.html#ae4a121da614ff4d2bd1ea7893b6b290f", null ],
+    [ "setupUi", "class_ui___text_base.html#a389e2e3f5bbaed7911aad836683691a1", null ],
+    [ "gridLayout", "class_ui___text_base.html#a53e9305858b44966812fcc818cd54dce", null ],
+    [ "gridLayout_2", "class_ui___text_base.html#a29f60291f836ba33ab4097f7648309cf", null ],
+    [ "groupBox", "class_ui___text_base.html#a2d9792f5b3c091ac8f76c05ef35d1f67", null ],
+    [ "hboxLayout", "class_ui___text_base.html#a172db2bad73c06bce0c372159feaef7b", null ],
+    [ "label", "class_ui___text_base.html#aa119255ff947cdb328a02f2b8ff5d167", null ],
+    [ "label_2", "class_ui___text_base.html#a8e1a44c73a1e51cb0f96f7d54fb773b8", null ],
+    [ "label_3", "class_ui___text_base.html#adc6023209b59746b914492c1701bfab0", null ],
+    [ "label_4", "class_ui___text_base.html#af05b5f12c03b07c2c438636696a11c1e", null ],
+    [ "label_5", "class_ui___text_base.html#add66f221b5c04484d3d00e245271d025", null ],
+    [ "label_6", "class_ui___text_base.html#a86811d8d07fbc27db2fef1194bbef44d", null ],
+    [ "label_7", "class_ui___text_base.html#a77b1d26b369646cf87d84fa028297ab0", null ],
+    [ "layoutToParentWidth", "class_ui___text_base.html#a1d960087fa24d2a9ba34b0ac00f41efd", null ],
+    [ "offsetType", "class_ui___text_base.html#a8d002de176e9ecdc69ea614db70f6a9e", null ],
+    [ "rxoffset", "class_ui___text_base.html#a5214ff0753a5a924d3699a0e30bd41ec", null ],
+    [ "ryoffset", "class_ui___text_base.html#aef12295b6c23b7e890e1ee6e07b8d12e", null ],
+    [ "spacerItem", "class_ui___text_base.html#a1a9c27f4594ec13610ce4835267a091b", null ],
+    [ "subStyle", "class_ui___text_base.html#aaa2d3e74bf9415e1ac0ef33e9cfbc8b5", null ],
+    [ "text", "class_ui___text_base.html#af0665ae1d47efd6ccfe5e78c566e1fc3", null ],
+    [ "vboxLayout", "class_ui___text_base.html#a9ac7910270d1a3a1a62e198ff8300733", null ],
+    [ "xoffset", "class_ui___text_base.html#a01c06ab32b33e18c1235b7330f1aaab2", null ],
+    [ "yoffset", "class_ui___text_base.html#a4c4824afbca3ee2a4c6915dd0b768cbc", null ]
+];

@@ -1,0 +1,166 @@
+.TH "Agent" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Agent
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Agent\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAgent\fP (const \fBAgentParameters\fP &params, double ibi)"
+.br
+.ti -1c
+.RI "\fBAgent\fP * \fBclone\fP () const"
+.br
+.ti -1c
+.RI "void \fBaccept\fP (const \fBEvent\fP &e, double err, int beats)"
+.br
+.ti -1c
+.RI "bool \fBconsiderAsBeat\fP (const \fBEvent\fP &e, \fBAgentList\fP &a)"
+.br
+.ti -1c
+.RI "void \fBfillBeats\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillBeats\fP (double start)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBidNumber\fP"
+.br
+.ti -1c
+.RI "double \fBphaseScore\fP"
+.br
+.ti -1c
+.RI "int \fBbeatCount\fP"
+.br
+.ti -1c
+.RI "double \fBbeatInterval\fP"
+.br
+.ti -1c
+.RI "double \fBinitialBeatInterval\fP"
+.br
+.ti -1c
+.RI "double \fBbeatTime\fP"
+.br
+.ti -1c
+.RI "double \fBmaxChange\fP"
+.br
+.ti -1c
+.RI "EventList \fBevents\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBAgent\fP is the central class for beat tracking\&. Each \fBAgent\fP object has a tempo hypothesis, a history of tracked beats, and a score evaluating the continuity, regularity and salience of its beat track\&. 
+.PP
+Definition at line 69 of file Agent\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Agent::Agent (const \fBAgentParameters\fP & params, double ibi)"
+Constructor: the work is performed by init() 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIibi\fP The beat period (inter-beat interval) of the \fBAgent\fP's tempo hypothesis\&. 
+.RE
+.PP
+
+.PP
+Definition at line 35 of file Agent\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Agent::accept (const \fBEvent\fP & e, double err, int beats)"
+Accept a new \fBEvent\fP as a beat time, and update the state of the \fBAgent\fP accordingly\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP The \fBEvent\fP which is accepted as being on the beat\&. 
+.br
+\fIerr\fP The difference between the predicted and actual beat times\&. 
+.br
+\fIbeats\fP The number of beats since the last beat that matched an \fBEvent\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file Agent\&.cpp\&.
+.SS "bool Agent::considerAsBeat (const \fBEvent\fP & e, \fBAgentList\fP & a)"
+The given \fBEvent\fP is tested for a possible beat time\&. The following situations can occur: 1) The \fBAgent\fP has no beats yet; the \fBEvent\fP is accepted as the first beat\&. 2) The \fBEvent\fP is beyond expiryTime seconds after the \fBAgent\fP's last 'confirming' beat; the \fBAgent\fP is terminated\&. 3) The \fBEvent\fP is within the innerMargin of the beat prediction; it is accepted as a beat\&. 4) The \fBEvent\fP is within the postMargin's of the beat prediction; it is accepted as a beat by this \fBAgent\fP, and a new \fBAgent\fP is created which doesn't accept it as a beat\&. 5) The \fBEvent\fP is ignored because it is outside the windows around the \fBAgent\fP's predicted beat time\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIe\fP The \fBEvent\fP to be tested 
+.br
+\fIa\fP The list of all agents, which is updated if a new agent is created\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Indicate whether the given \fBEvent\fP was accepted as a beat by this \fBAgent\fP\&. 
+.RE
+.PP
+
+.PP
+Definition at line 72 of file Agent\&.cpp\&.
+.SS "void Agent::fillBeats ()\fC [inline]\fP"
+Interpolates missing beats in the \fBAgent\fP's beat track, starting from the beginning of the piece\&. 
+.PP
+Definition at line 144 of file Agent\&.h\&.
+.SS "void Agent::fillBeats (double start)"
+Interpolates missing beats in the \fBAgent\fP's beat track\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP Ignore beats earlier than this start time 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file Agent\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int Agent::beatCount"
+The number of beats found by this \fBAgent\fP, including interpolated beats\&. 
+.PP
+Definition at line 84 of file Agent\&.h\&.
+.SS "double Agent::beatInterval"
+The current tempo hypothesis of the \fBAgent\fP, expressed as the beat period in seconds\&. 
+.PP
+Definition at line 89 of file Agent\&.h\&.
+.SS "double Agent::beatTime"
+The time of the most recent beat accepted by this \fBAgent\fP\&. 
+.PP
+Definition at line 97 of file Agent\&.h\&.
+.SS "EventList Agent::events"
+The list of Events (onsets) accepted by this \fBAgent\fP as beats, plus interpolated beats\&. 
+.PP
+Definition at line 106 of file Agent\&.h\&.
+.SS "int Agent::idNumber"
+The \fBAgent\fP's unique identity number\&. 
+.PP
+Definition at line 73 of file Agent\&.h\&.
+.SS "double Agent::initialBeatInterval"
+The initial tempo hypothesis of the \fBAgent\fP, expressed as the beat period in seconds\&. 
+.PP
+Definition at line 94 of file Agent\&.h\&.
+.SS "double Agent::maxChange"
+The maximum allowed deviation from the initial tempo, expressed as a fraction of the initial beat period\&. 
+.PP
+Definition at line 102 of file Agent\&.h\&.
+.SS "double Agent::phaseScore"
+Sum of salience values of the Events which have been interpreted as beats by this \fBAgent\fP, weighted by their nearness to the predicted beat times\&. 
+.PP
+Definition at line 79 of file Agent\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

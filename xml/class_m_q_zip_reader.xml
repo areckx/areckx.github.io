@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_m_q_zip_reader" kind="class" language="C++" prot="public">
+    <compoundname>MQZipReader</compoundname>
+    <innerclass refid="struct_m_q_zip_reader_1_1_file_info" prot="public">MQZipReader::FileInfo</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850" prot="public" static="no">
+        <name>Status</name>
+        <enumvalue id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850afc2dd97e21f6286c92138e1c58d761c4" prot="public">
+          <name>NoError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a7b4781df56f37d4cee4e8fe04b9bdfe5" prot="public">
+          <name>FileReadError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a876c95c5f12a5d1437fb6b7b726c15bf" prot="public">
+          <name>FileOpenError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a33b2dc3e4e28451dc288005e75ca8538" prot="public">
+          <name>FilePermissionsError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a669d8bc5d1d054ad93b5ca7745425a0e" prot="public">
+          <name>FileError</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="104" column="1" bodyfile="thirdparty/qzip/qzipreader_p.h" bodystart="104" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_m_q_zip_reader_1ae9df9821ab0d297840591b670b7d38c6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_m_q_zip_reader_private" kindref="compound">MQZipReaderPrivate</ref> *</type>
+        <definition>MQZipReaderPrivate* MQZipReader::d</definition>
+        <argsstring></argsstring>
+        <name>d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="117" column="1" bodyfile="thirdparty/qzip/qzipreader_p.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_m_q_zip_reader_1a3b7f7b85a1674386dc4a7b7240f4e2dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MQZipReader::MQZipReader</definition>
+        <argsstring>(const QString &amp;fileName, QIODevice::OpenMode mode=QIODevice::ReadOnly)</argsstring>
+        <name>MQZipReader</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+          <defname>archive</defname>
+        </param>
+        <param>
+          <type>QIODevice::OpenMode</type>
+          <declname>mode</declname>
+          <defval>QIODevice::ReadOnly</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new zip archive that operates on the <emphasis>fileName</emphasis>. The file will be opened with the <emphasis>mode</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="69" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="736" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1ab8f57ca2da4654b4696b0fa7635d2cff" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MQZipReader::MQZipReader</definition>
+        <argsstring>(QIODevice *device)</argsstring>
+        <name>MQZipReader</name>
+        <param>
+          <type>QIODevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new zip archive that operates on the archive found in <emphasis>device</emphasis>. You have to open the device previous to calling the constructor and only a device that is readable will be scanned for zip filecontent. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="71" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="764" bodyend="768"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1ac669746daffc30103dab493e990ca141" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MQZipReader::~MQZipReader</definition>
+        <argsstring>()</argsstring>
+        <name>~MQZipReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Desctructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="72" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="773" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1aff10cccb86592a1d9c228195996fdd11" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QIODevice *</type>
+        <definition>QIODevice * MQZipReader::device</definition>
+        <argsstring>() const</argsstring>
+        <name>device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns device used for reading zip archive. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="74" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="782" bodyend="785"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a54bd229faa64c78ec36475da770831d6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MQZipReader::isReadable</definition>
+        <argsstring>() const</argsstring>
+        <name>isReadable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the user can read the file; otherwise returns false. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="76" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="790" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1aa5e59037b1d83324f7f5d55d9289079a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MQZipReader::exists</definition>
+        <argsstring>() const</argsstring>
+        <name>exists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if the file exists; otherwise returns false. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="77" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="798" bodyend="804"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a73e39077044aed4642ee02252cc08970" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_m_q_zip_reader_1_1_file_info" kindref="compound">FileInfo</ref> &gt;</type>
+        <definition>QList&lt; MQZipReader::FileInfo &gt; MQZipReader::fileInfoList</definition>
+        <argsstring>() const</argsstring>
+        <name>fileInfoList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the list of files the archive contains. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="97" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="809" bodyend="820"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a31a932689f554f36f097b96387788e94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MQZipReader::count</definition>
+        <argsstring>() const</argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the number of items in the zip archive. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="98" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="825" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a93ce1fd5d0d56e582b882a1335d43449" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_m_q_zip_reader_1_1_file_info" kindref="compound">FileInfo</ref></type>
+        <definition>MQZipReader::FileInfo MQZipReader::entryInfoAt</definition>
+        <argsstring>(int index) const</argsstring>
+        <name>entryInfoAt</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a <ref refid="struct_m_q_zip_reader_1_1_file_info" kindref="compound">FileInfo</ref> of an entry in the zipfile. The <emphasis>index</emphasis> is the index into the directory listing of the zipfile. Returns an invalid <ref refid="struct_m_q_zip_reader_1_1_file_info" kindref="compound">FileInfo</ref> if <emphasis>index</emphasis> is out of boundaries.</para><para><simplesect kind="see"><para><ref refid="class_m_q_zip_reader_1a73e39077044aed4642ee02252cc08970" kindref="member">fileInfoList()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="100" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="838" bodyend="845"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a6f6a36b121208a4fae0f17c9c4f3fd93" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray MQZipReader::fileData</definition>
+        <argsstring>(const QString &amp;fileName) const</argsstring>
+        <name>fileData</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Fetch the file contents from the zip archive and return the uncompressed bytes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="101" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="850" bodyend="915"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1abe62477c78fb2964a80d502821608962" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MQZipReader::extractAll</definition>
+        <argsstring>(const QString &amp;destinationDir) const</argsstring>
+        <name>extractAll</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>destinationDir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Extracts the full contents of the zip file into <emphasis>destinationDir</emphasis> on the local filesystem. In case writing or linking a file fails, the extraction will be aborted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="102" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="922" bodyend="970"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a0d69600eed44ee33e5b8e8cc90238452" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Status</type>
+        <definition>MQZipReader::Status MQZipReader::status</definition>
+        <argsstring>() const</argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a status code indicating the first error that was met by <ref refid="class_q_zip_reader" kindref="compound">QZipReader</ref>, or QZipReader::NoError if no error occurred. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="112" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="988" bodyend="991"/>
+      </memberdef>
+      <memberdef kind="function" id="class_m_q_zip_reader_1a4f83f0feb67643ef0f119669184a4edd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MQZipReader::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Close the zip file. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/qzip/qzipreader_p.h" line="114" column="1" bodyfile="thirdparty/qzip/qzip.cpp" bodystart="996" bodyend="999"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="thirdparty/qzip/qzipreader_p.h" line="67" column="1" bodyfile="thirdparty/qzip/qzipreader_p.h" bodystart="66" bodyend="119"/>
+    <listofallmembers>
+      <member refid="class_m_q_zip_reader_1a4f83f0feb67643ef0f119669184a4edd" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>close</name></member>
+      <member refid="class_m_q_zip_reader_1a31a932689f554f36f097b96387788e94" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>count</name></member>
+      <member refid="class_m_q_zip_reader_1ae9df9821ab0d297840591b670b7d38c6" prot="private" virt="non-virtual"><scope>MQZipReader</scope><name>d</name></member>
+      <member refid="class_m_q_zip_reader_1aff10cccb86592a1d9c228195996fdd11" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>device</name></member>
+      <member refid="class_m_q_zip_reader_1a93ce1fd5d0d56e582b882a1335d43449" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>entryInfoAt</name></member>
+      <member refid="class_m_q_zip_reader_1aa5e59037b1d83324f7f5d55d9289079a" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>exists</name></member>
+      <member refid="class_m_q_zip_reader_1abe62477c78fb2964a80d502821608962" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>extractAll</name></member>
+      <member refid="class_m_q_zip_reader_1a6f6a36b121208a4fae0f17c9c4f3fd93" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>fileData</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a669d8bc5d1d054ad93b5ca7745425a0e" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>FileError</name></member>
+      <member refid="class_m_q_zip_reader_1a73e39077044aed4642ee02252cc08970" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>fileInfoList</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a876c95c5f12a5d1437fb6b7b726c15bf" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>FileOpenError</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a33b2dc3e4e28451dc288005e75ca8538" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>FilePermissionsError</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850a7b4781df56f37d4cee4e8fe04b9bdfe5" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>FileReadError</name></member>
+      <member refid="class_m_q_zip_reader_1a54bd229faa64c78ec36475da770831d6" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>isReadable</name></member>
+      <member refid="class_m_q_zip_reader_1a3b7f7b85a1674386dc4a7b7240f4e2dc" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>MQZipReader</name></member>
+      <member refid="class_m_q_zip_reader_1ab8f57ca2da4654b4696b0fa7635d2cff" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>MQZipReader</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850afc2dd97e21f6286c92138e1c58d761c4" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>NoError</name></member>
+      <member refid="class_m_q_zip_reader_1a60fbc02d0096c9a7de57fc28011a6850" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>Status</name></member>
+      <member refid="class_m_q_zip_reader_1a0d69600eed44ee33e5b8e8cc90238452" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>status</name></member>
+      <member refid="class_m_q_zip_reader_1ac669746daffc30103dab493e990ca141" prot="public" virt="non-virtual"><scope>MQZipReader</scope><name>~MQZipReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

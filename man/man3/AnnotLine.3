@@ -1,0 +1,171 @@
+.TH "AnnotLine" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AnnotLine
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBAnnotMarkup\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBAnnotLineIntent\fP { \fBintentLineArrow\fP, \fBintentLineDimension\fP }"
+.br
+.ti -1c
+.RI "enum \fBAnnotLineCaptionPos\fP { \fBcaptionPosInline\fP, \fBcaptionPosTop\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnotLine\fP (\fBPDFDoc\fP *docA, \fBPDFRectangle\fP *rect)"
+.br
+.ti -1c
+.RI "\fBAnnotLine\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict, \fBObject\fP *obj)"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (\fBGfx\fP *gfx, GBool printing)"
+.br
+.ti -1c
+.RI "virtual \fBObject\fP * \fBgetAppearanceResDict\fP (\fBObject\fP *dest)"
+.br
+.ti -1c
+.RI "virtual void \fBsetContents\fP (\fBGooString\fP *new_content)"
+.br
+.ti -1c
+.RI "void \fBsetVertices\fP (double x1, double y1, double x2, double y2)"
+.br
+.ti -1c
+.RI "void \fBsetStartEndStyle\fP (AnnotLineEndingStyle start, AnnotLineEndingStyle end)"
+.br
+.ti -1c
+.RI "void \fBsetInteriorColor\fP (\fBAnnotColor\fP *new_color)"
+.br
+.ti -1c
+.RI "void \fBsetLeaderLineLength\fP (double len)"
+.br
+.ti -1c
+.RI "void \fBsetLeaderLineExtension\fP (double len)"
+.br
+.ti -1c
+.RI "void \fBsetCaption\fP (bool new_cap)"
+.br
+.ti -1c
+.RI "void \fBsetIntent\fP (AnnotLineIntent new_intent)"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBgetStartStyle\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBgetEndStyle\fP () const"
+.br
+.ti -1c
+.RI "\fBAnnotColor\fP * \fBgetInteriorColor\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetLeaderLineLength\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetLeaderLineExtension\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetCaption\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineIntent \fBgetIntent\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetLeaderLineOffset\fP () const"
+.br
+.ti -1c
+.RI "AnnotLineCaptionPos \fBgetCaptionPos\fP () const"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBgetMeasure\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetCaptionTextHorizontal\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetCaptionTextVertical\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetX1\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetY1\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetX2\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetY2\fP () const"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBinitialize\fP (\fBPDFDoc\fP *docA, \fBDict\fP *dict)"
+.br
+.ti -1c
+.RI "void \fBgenerateLineAppearance\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBAnnotCoord\fP * \fBcoord1\fP"
+.br
+.ti -1c
+.RI "\fBAnnotCoord\fP * \fBcoord2\fP"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBstartStyle\fP"
+.br
+.ti -1c
+.RI "AnnotLineEndingStyle \fBendStyle\fP"
+.br
+.ti -1c
+.RI "\fBAnnotColor\fP * \fBinteriorColor\fP"
+.br
+.ti -1c
+.RI "double \fBleaderLineLength\fP"
+.br
+.ti -1c
+.RI "double \fBleaderLineExtension\fP"
+.br
+.ti -1c
+.RI "bool \fBcaption\fP"
+.br
+.ti -1c
+.RI "AnnotLineIntent \fBintent\fP"
+.br
+.ti -1c
+.RI "double \fBleaderLineOffset\fP"
+.br
+.ti -1c
+.RI "AnnotLineCaptionPos \fBcaptionPos\fP"
+.br
+.ti -1c
+.RI "\fBDict\fP * \fBmeasure\fP"
+.br
+.ti -1c
+.RI "double \fBcaptionTextHorizontal\fP"
+.br
+.ti -1c
+.RI "double \fBcaptionTextVertical\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 972 of file Annot\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

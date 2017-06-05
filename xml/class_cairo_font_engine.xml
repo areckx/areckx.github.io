@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_cairo_font_engine" kind="class" language="C++" prot="public">
+    <compoundname>CairoFontEngine</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_cairo_font_engine_1ab6de0acd2299ec6bce4393b426672eb0" prot="private" static="no" mutable="no">
+        <type><ref refid="class_cairo_font" kindref="compound">CairoFont</ref> *</type>
+        <definition>CairoFont* CairoFontEngine::fontCache[cairoFontCacheSize]</definition>
+        <argsstring>[cairoFontCacheSize]</argsstring>
+        <name>fontCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="121" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_font_engine_1ac542a48185f80825b52eccd687b4db0f" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_f_t___library_rec__" kindref="compound">FT_Library</ref></type>
+        <definition>FT_Library CairoFontEngine::lib</definition>
+        <argsstring></argsstring>
+        <name>lib</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="122" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_font_engine_1ab85cf49e801b5229994b11301f2aba07" prot="private" static="no" mutable="no">
+        <type>GBool</type>
+        <definition>GBool CairoFontEngine::useCIDs</definition>
+        <argsstring></argsstring>
+        <name>useCIDs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="123" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_cairo_font_engine_1afae52ee3534a7ab391f1b2ec0a6f24b7" prot="private" static="no" mutable="no">
+        <type>GooMutex</type>
+        <definition>GooMutex CairoFontEngine::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="125" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_cairo_font_engine_1a9a403e9f007a9fa3d7330f9ce5636424" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CairoFontEngine::CairoFontEngine</definition>
+        <argsstring>(FT_Library libA)</argsstring>
+        <name>CairoFontEngine</name>
+        <param>
+          <type><ref refid="struct_f_t___library_rec__" kindref="compound">FT_Library</ref></type>
+          <declname>libA</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="115" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.cc" bodystart="802" bodyend="818"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_font_engine_1a8937079a9d96009cf3fe4a0cf09a21ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CairoFontEngine::~CairoFontEngine</definition>
+        <argsstring>()</argsstring>
+        <name>~CairoFontEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="116" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.cc" bodystart="820" bodyend="830"/>
+      </memberdef>
+      <memberdef kind="function" id="class_cairo_font_engine_1ab00d5a9fdb7080c99325195f9889f21f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_cairo_font" kindref="compound">CairoFont</ref> *</type>
+        <definition>CairoFont * CairoFontEngine::getFont</definition>
+        <argsstring>(GfxFont *gfxFont, PDFDoc *doc, GBool printing, XRef *xref)</argsstring>
+        <name>getFont</name>
+        <param>
+          <type><ref refid="class_gfx_font" kindref="compound">GfxFont</ref> *</type>
+          <declname>gfxFont</declname>
+        </param>
+        <param>
+          <type><ref refid="class_p_d_f_doc" kindref="compound">PDFDoc</ref> *</type>
+          <declname>doc</declname>
+        </param>
+        <param>
+          <type>GBool</type>
+          <declname>printing</declname>
+        </param>
+        <param>
+          <type><ref refid="class_x_ref" kindref="compound">XRef</ref> *</type>
+          <declname>xref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="118" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.cc" bodystart="833" bodyend="868"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="thirdparty/poppler/poppler/CairoFontEngine.h" line="111" column="1" bodyfile="thirdparty/poppler/poppler/CairoFontEngine.h" bodystart="111" bodyend="127"/>
+    <listofallmembers>
+      <member refid="class_cairo_font_engine_1a9a403e9f007a9fa3d7330f9ce5636424" prot="public" virt="non-virtual"><scope>CairoFontEngine</scope><name>CairoFontEngine</name></member>
+      <member refid="class_cairo_font_engine_1ab6de0acd2299ec6bce4393b426672eb0" prot="private" virt="non-virtual"><scope>CairoFontEngine</scope><name>fontCache</name></member>
+      <member refid="class_cairo_font_engine_1ab00d5a9fdb7080c99325195f9889f21f" prot="public" virt="non-virtual"><scope>CairoFontEngine</scope><name>getFont</name></member>
+      <member refid="class_cairo_font_engine_1ac542a48185f80825b52eccd687b4db0f" prot="private" virt="non-virtual"><scope>CairoFontEngine</scope><name>lib</name></member>
+      <member refid="class_cairo_font_engine_1afae52ee3534a7ab391f1b2ec0a6f24b7" prot="private" virt="non-virtual"><scope>CairoFontEngine</scope><name>mutex</name></member>
+      <member refid="class_cairo_font_engine_1ab85cf49e801b5229994b11301f2aba07" prot="private" virt="non-virtual"><scope>CairoFontEngine</scope><name>useCIDs</name></member>
+      <member refid="class_cairo_font_engine_1a8937079a9d96009cf3fe4a0cf09a21ee" prot="public" virt="non-virtual"><scope>CairoFontEngine</scope><name>~CairoFontEngine</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

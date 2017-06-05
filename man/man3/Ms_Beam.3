@@ -1,0 +1,229 @@
+.TH "Ms::Beam" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Beam
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBMs::Element\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMode\fP : signed char { \fBAUTO\fP, \fBBEGIN\fP, \fBMID\fP, \fBEND\fP, \fBNONE\fP, \fBBEGIN32\fP, \fBBEGIN64\fP, \fBINVALID\fP = -1 }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBeam\fP (\fBScore\fP *=0)"
+.br
+.ti -1c
+.RI "\fBBeam\fP (const \fBBeam\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBBeam\fP * \fBclone\fP () const override"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const override"
+.br
+.ti -1c
+.RI "virtual QPointF \fBpagePos\fP () const override"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "virtual QPointF \fBcanvasPos\fP () const override"
+.br
+.RI "position in page coordinates "
+.ti -1c
+.RI "virtual bool \fBisEditable\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBstartEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBendEdit\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBeditDrag\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBupdateGrips\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual int \fBtick\fP () const override"
+.br
+.ti -1c
+.RI "virtual int \fBrtick\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBwrite\fP (\fBXmlWriter\fP &xml) const override"
+.br
+.ti -1c
+.RI "virtual void \fBread\fP (\fBXmlReader\fP &) override"
+.br
+.ti -1c
+.RI "virtual void \fBspatiumChanged\fP (qreal, qreal) override"
+.br
+.ti -1c
+.RI "virtual void \fBreset\fP () override"
+.br
+.ti -1c
+.RI "\fBSystem\fP * \fBsystem\fP () const"
+.br
+.ti -1c
+.RI "void \fBlayout1\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayoutGraceNotes\fP ()"
+.br
+.ti -1c
+.RI "void \fBlayout\fP ()"
+.br
+.ti -1c
+.RI "const QVector< \fBChordRest\fP * > & \fBelements\fP ()"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBadd\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBremove\fP (\fBElement\fP *) override"
+.br
+.ti -1c
+.RI "virtual void \fBmove\fP (const QPointF &) override"
+.br
+.ti -1c
+.RI "virtual void \fBdraw\fP (QPainter *) const override"
+.br
+.ti -1c
+.RI "bool \fBup\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUp\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int i) const"
+.br
+.ti -1c
+.RI "int \fBid\fP () const"
+.br
+.ti -1c
+.RI "bool \fBnoSlope\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetNoSlope\fP (bool val)"
+.br
+.ti -1c
+.RI "void \fBsetBeamDirection\fP (\fBDirection\fP d)"
+.br
+.ti -1c
+.RI "\fBDirection\fP \fBbeamDirection\fP () const"
+.br
+.ti -1c
+.RI "virtual bool \fBacceptDrop\fP (\fBEditData\fP &) const override"
+.br
+.ti -1c
+.RI "virtual \fBElement\fP * \fBdrop\fP (\fBEditData\fP &) override"
+.br
+.ti -1c
+.RI "qreal \fBgrowLeft\fP () const"
+.br
+.ti -1c
+.RI "qreal \fBgrowRight\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetGrowLeft\fP (qreal val)"
+.br
+.ti -1c
+.RI "void \fBsetGrowRight\fP (qreal val)"
+.br
+.ti -1c
+.RI "bool \fBdistribute\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDistribute\fP (bool val)"
+.br
+.ti -1c
+.RI "bool \fBuserModified\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetUserModified\fP (bool val)"
+.br
+.ti -1c
+.RI "QPointF \fBbeamPos\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetBeamPos\fP (const QPointF &bp)"
+.br
+.ti -1c
+.RI "qreal \fBbeamDist\fP () const"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID propertyId) const override"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID propertyId, const QVariant &) override"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID id) const override"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id) override"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const override"
+.br
+.ti -1c
+.RI "virtual void \fBstyleChanged\fP () override"
+.br
+.ti -1c
+.RI "bool \fBisGrace\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcross\fP () const"
+.br
+.ti -1c
+.RI "virtual \fBShape\fP \fBshape\fP () const override"
+.br
+.ti -1c
+.RI "virtual void \fBtriggerLayout\fP () const override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file beam\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Ms::Beam::acceptDrop (\fBEditData\fP &) const\fC [override]\fP, \fC [virtual]\fP"
+Return true if this element accepts a drop at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&.
+.PP
+Reimplemented by elements that accept drops\&. Used to change cursor shape while dragging to indicate drop targets\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 2242 of file beam\&.cpp\&.
+.SS "\fBElement\fP * Ms::Beam::drop (\fBEditData\fP &)\fC [override]\fP, \fC [virtual]\fP"
+Handle a dropped element at canvas relative \fIpos\fP of given element \fItype\fP and \fIsubtype\fP\&. Returns dropped element if any\&. The ownership of element in DropData is transfered to the called element (if not used, element has to be deleted)\&. The returned element will be selected if not in note edit mode\&.
+.PP
+Reimplemented by elements that accept drops\&. 
+.PP
+Reimplemented from \fBMs::Element\fP\&.
+.PP
+Definition at line 2253 of file beam\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

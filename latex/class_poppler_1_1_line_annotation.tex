@@ -1,0 +1,196 @@
+\hypertarget{class_poppler_1_1_line_annotation}{}\section{Poppler\+:\+:Line\+Annotation Class Reference}
+\label{class_poppler_1_1_line_annotation}\index{Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}}
+
+
+Polygon/polyline annotation.  
+
+
+
+
+{\ttfamily \#include $<$poppler-\/annotation.\+h$>$}
+
+Inheritance diagram for Poppler\+:\+:Line\+Annotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_poppler_1_1_line_annotation}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Line\+Type} \{ {\bfseries Straight\+Line}, 
+{\bfseries Polyline}
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a5c74898cd8b04233e8810d0731d1efd1}\label{class_poppler_1_1_line_annotation_a5c74898cd8b04233e8810d0731d1efd1}} 
+enum {\bfseries Term\+Style} \{ \newline
+{\bfseries Square}, 
+{\bfseries Circle}, 
+{\bfseries Diamond}, 
+{\bfseries Open\+Arrow}, 
+\newline
+{\bfseries Closed\+Arrow}, 
+{\bfseries None}, 
+{\bfseries Butt}, 
+{\bfseries R\+Open\+Arrow}, 
+\newline
+{\bfseries R\+Closed\+Arrow}, 
+{\bfseries Slash}
+ \}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a486bdaa3cd2d62f996f00eff9dbe19f1}\label{class_poppler_1_1_line_annotation_a486bdaa3cd2d62f996f00eff9dbe19f1}} 
+enum {\bfseries Line\+Intent} \{ {\bfseries Unknown}, 
+{\bfseries Arrow}, 
+{\bfseries Dimension}, 
+{\bfseries Polygon\+Cloud}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_poppler_1_1_line_annotation_a4d620567cdda702ef2d53099daf3660e}{Line\+Annotation} (\hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Line\+Type} type)
+\item 
+virtual \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Sub\+Type} \hyperlink{class_poppler_1_1_line_annotation_aa6afc935d75cfdac20653814b0fe40f0}{sub\+Type} () const
+\item 
+\hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Line\+Type} \hyperlink{class_poppler_1_1_line_annotation_af942cddff4c5cbaca75e5ef2fc323408}{line\+Type} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_ac2a257c25e57c822666ef4f0e3153b69}\label{class_poppler_1_1_line_annotation_ac2a257c25e57c822666ef4f0e3153b69}} 
+Q\+Linked\+List$<$ Q\+PointF $>$ {\bfseries line\+Points} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a538ceffa8d5c411af6866a8dd065a515}\label{class_poppler_1_1_line_annotation_a538ceffa8d5c411af6866a8dd065a515}} 
+void {\bfseries set\+Line\+Points} (const Q\+Linked\+List$<$ Q\+PointF $>$ \&points)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a494e200c7c99275d791fba411ddfa5b7}\label{class_poppler_1_1_line_annotation_a494e200c7c99275d791fba411ddfa5b7}} 
+Term\+Style {\bfseries line\+Start\+Style} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a17b92e338c62509eee826f6239e58f0e}\label{class_poppler_1_1_line_annotation_a17b92e338c62509eee826f6239e58f0e}} 
+void {\bfseries set\+Line\+Start\+Style} (Term\+Style \hyperlink{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}{style})
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_af50cfc8bdc39fc42288ea94b70040858}\label{class_poppler_1_1_line_annotation_af50cfc8bdc39fc42288ea94b70040858}} 
+Term\+Style {\bfseries line\+End\+Style} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a9d4135cb9b40afbfee37062f77b2a932}\label{class_poppler_1_1_line_annotation_a9d4135cb9b40afbfee37062f77b2a932}} 
+void {\bfseries set\+Line\+End\+Style} (Term\+Style \hyperlink{class_poppler_1_1_annotation_a4857ee8533e1430f5776507f465040a8}{style})
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a8846bb30e9a65dfdb7df6f129449e4de}\label{class_poppler_1_1_line_annotation_a8846bb30e9a65dfdb7df6f129449e4de}} 
+bool {\bfseries is\+Line\+Closed} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_af39a0e43800358f15589fa2d735ef695}\label{class_poppler_1_1_line_annotation_af39a0e43800358f15589fa2d735ef695}} 
+void {\bfseries set\+Line\+Closed} (bool closed)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_ad67edf81b52426a2efa2977b16c1ef82}\label{class_poppler_1_1_line_annotation_ad67edf81b52426a2efa2977b16c1ef82}} 
+Q\+Color {\bfseries line\+Inner\+Color} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_adfbe428057251d29bc8090b4f0ffbedf}\label{class_poppler_1_1_line_annotation_adfbe428057251d29bc8090b4f0ffbedf}} 
+void {\bfseries set\+Line\+Inner\+Color} (const Q\+Color \&\hyperlink{structcolor}{color})
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a54f1dcd7f0fd9d834fd406b3855005b5}\label{class_poppler_1_1_line_annotation_a54f1dcd7f0fd9d834fd406b3855005b5}} 
+double {\bfseries line\+Leading\+Forward\+Point} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_aa03c14f339bf86226d147da314c4f06c}\label{class_poppler_1_1_line_annotation_aa03c14f339bf86226d147da314c4f06c}} 
+void {\bfseries set\+Line\+Leading\+Forward\+Point} (double point)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a36f08119e1191e620523b79e14d745ce}\label{class_poppler_1_1_line_annotation_a36f08119e1191e620523b79e14d745ce}} 
+double {\bfseries line\+Leading\+Back\+Point} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_ad2e4aa5fb3311417936e6e5004a01c69}\label{class_poppler_1_1_line_annotation_ad2e4aa5fb3311417936e6e5004a01c69}} 
+void {\bfseries set\+Line\+Leading\+Back\+Point} (double point)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a600e4affdbf410a45e1666a34aa3d50e}\label{class_poppler_1_1_line_annotation_a600e4affdbf410a45e1666a34aa3d50e}} 
+bool {\bfseries line\+Show\+Caption} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a4859ac01696026a5ce014a6a8694a7eb}\label{class_poppler_1_1_line_annotation_a4859ac01696026a5ce014a6a8694a7eb}} 
+void {\bfseries set\+Line\+Show\+Caption} (bool show)
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a16f909ee25462bf9cc02fa59606b5191}\label{class_poppler_1_1_line_annotation_a16f909ee25462bf9cc02fa59606b5191}} 
+Line\+Intent {\bfseries line\+Intent} () const
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a8ff2bd6a88a14dface994d42d3aefb56}\label{class_poppler_1_1_line_annotation_a8ff2bd6a88a14dface994d42d3aefb56}} 
+void {\bfseries set\+Line\+Intent} (Line\+Intent intent)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a13daac1cbc1823e18498579fc26b344f}\label{class_poppler_1_1_line_annotation_a13daac1cbc1823e18498579fc26b344f}} 
+class {\bfseries Annotation\+Utils}
+\item 
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_add0bc3e32e560f9e9eb3025587c1ad54}\label{class_poppler_1_1_line_annotation_add0bc3e32e560f9e9eb3025587c1ad54}} 
+class {\bfseries Annotation\+Private}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Polygon/polyline annotation. 
+
+This annotation represents a polygon (or polyline) to be drawn on a page. 
+
+Definition at line 514 of file poppler-\/annotation.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}\label{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}} 
+\index{Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}!Line\+Type@{Line\+Type}}
+\index{Line\+Type@{Line\+Type}!Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}}
+\subsubsection{\texorpdfstring{Line\+Type}{LineType}}
+{\footnotesize\ttfamily enum \hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Poppler\+::\+Line\+Annotation\+::\+Line\+Type}}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 522 of file poppler-\/annotation.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_a4d620567cdda702ef2d53099daf3660e}\label{class_poppler_1_1_line_annotation_a4d620567cdda702ef2d53099daf3660e}} 
+\index{Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}!Line\+Annotation@{Line\+Annotation}}
+\index{Line\+Annotation@{Line\+Annotation}!Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}}
+\subsubsection{\texorpdfstring{Line\+Annotation()}{LineAnnotation()}}
+{\footnotesize\ttfamily Poppler\+::\+Line\+Annotation\+::\+Line\+Annotation (\begin{DoxyParamCaption}\item[{\hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Line\+Annotation\+::\+Line\+Type}}]{type }\end{DoxyParamCaption})}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 2347 of file poppler-\/annotation.\+cc.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_af942cddff4c5cbaca75e5ef2fc323408}\label{class_poppler_1_1_line_annotation_af942cddff4c5cbaca75e5ef2fc323408}} 
+\index{Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}!line\+Type@{line\+Type}}
+\index{line\+Type@{line\+Type}!Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}}
+\subsubsection{\texorpdfstring{line\+Type()}{lineType()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_line_annotation_a0bcd4ea8f032803eb08e0411f78e0304}{Line\+Annotation\+::\+Line\+Type} Poppler\+::\+Line\+Annotation\+::line\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxySince}{Since}
+0.\+20 
+\end{DoxySince}
+
+
+Definition at line 2462 of file poppler-\/annotation.\+cc.
+
+\mbox{\Hypertarget{class_poppler_1_1_line_annotation_aa6afc935d75cfdac20653814b0fe40f0}\label{class_poppler_1_1_line_annotation_aa6afc935d75cfdac20653814b0fe40f0}} 
+\index{Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}!sub\+Type@{sub\+Type}}
+\index{sub\+Type@{sub\+Type}!Poppler\+::\+Line\+Annotation@{Poppler\+::\+Line\+Annotation}}
+\subsubsection{\texorpdfstring{sub\+Type()}{subType()}}
+{\footnotesize\ttfamily \hyperlink{class_poppler_1_1_annotation_a2d592999c330949d64679cfa9e81113f}{Annotation\+::\+Sub\+Type} Poppler\+::\+Line\+Annotation\+::sub\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The type of the annotation. 
+
+Implements \hyperlink{class_poppler_1_1_annotation_aef7fa1532193b41fbeba6e577579d984}{Poppler\+::\+Annotation}.
+
+
+
+Definition at line 2457 of file poppler-\/annotation.\+cc.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+h\item 
+thirdparty/poppler/qt5/poppler-\/annotation.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+.TH "QtLP_Private::QtLP_Private::QtLockedFile" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+QtLP_Private::QtLP_Private::QtLockedFile
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QFile\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLockMode\fP { \fBNoLock\fP = 0, \fBReadLock\fP, \fBWriteLock\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBQtLockedFile\fP ()"
+.br
+.ti -1c
+.RI "\fBQtLockedFile\fP (const QString &name)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (OpenMode mode)"
+.br
+.ti -1c
+.RI "bool \fBlock\fP (LockMode mode, bool block=true)"
+.br
+.ti -1c
+.RI "bool \fBunlock\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisLocked\fP () const"
+.br
+.ti -1c
+.RI "LockMode \fBlockMode\fP () const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 68 of file qtlocalpeer\&.cpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "QtLockedFile::QtLockedFile ()"
+Constructs an unlocked \fI\fBQtLockedFile\fP\fP object\&. This constructor behaves in the same way as \fIQFile::QFile()\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::QFile() 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file qtlocalpeer\&.cpp\&.
+.SS "QtLockedFile::QtLockedFile (const QString & name)"
+Constructs an unlocked \fBQtLockedFile\fP object with file \fIname\fP\&. This constructor behaves in the same way as \fIQFile::QFile\fP(const QString&)\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::QFile() 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file qtlocalpeer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool QtLockedFile::isLocked (void) const"
+Returns \fItrue\fP if this object has a in read or write lock; otherwise returns \fIfalse\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlockMode()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file qtlocalpeer\&.cpp\&.
+.SS "QtLockedFile::LockMode QtLockedFile::lockMode () const"
+Returns the type of lock currently held by this object, or \fIQtLockedFile::NoLock\fP\&.
+.PP
+\fBSee also:\fP
+.RS 4
+\fBisLocked()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file qtlocalpeer\&.cpp\&.
+.SS "bool QtLockedFile::open (OpenMode mode)"
+Opens the file in OpenMode \fImode\fP\&.
+.PP
+This is identical to QFile::open(), with the one exception that the Truncate mode flag is disallowed\&. Truncation would conflict with the advisory file locking, since the file would be modified before the write lock is obtained\&. If truncation is required, use resize(0) after obtaining the write lock\&.
+.PP
+Returns true if successful; otherwise false\&.
+.PP
+\fBSee also:\fP
+.RS 4
+QFile::open(), QFile::resize() 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file qtlocalpeer\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

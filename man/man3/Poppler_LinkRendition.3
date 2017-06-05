@@ -1,0 +1,156 @@
+.TH "Poppler::LinkRendition" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::LinkRendition
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-link\&.h>\fP
+.PP
+Inherits \fBPoppler::Link\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBRenditionAction\fP { \fBNoRendition\fP, \fBPlayRendition\fP, \fBStopRendition\fP, \fBPauseRendition\fP, \fBResumeRendition\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkRendition\fP (const QRectF &\fBlinkArea\fP, ::\fBMediaRendition\fP *\fBrendition\fP, int operation, const QString &\fBscript\fP, const \fBRef\fP &annotationReference)"
+.br
+.ti -1c
+.RI "virtual \fB~LinkRendition\fP ()"
+.br
+.ti -1c
+.RI "\fBLinkType\fP \fBlinkType\fP () const"
+.br
+.ti -1c
+.RI "\fBMediaRendition\fP * \fBrendition\fP () const"
+.br
+.ti -1c
+.RI "\fBRenditionAction\fP \fBaction\fP () const"
+.br
+.ti -1c
+.RI "QString \fBscript\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisReferencedAnnotation\fP (const \fBScreenAnnotation\fP *annotation) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Rendition: Rendition link\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.20 
+.RE
+.PP
+
+.PP
+Definition at line 455 of file poppler\-link\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::LinkRendition::RenditionAction\fP"
+Describes the possible rendition actions\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 463 of file poppler\-link\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LinkRendition::LinkRendition (const QRectF & linkArea, ::\fBMediaRendition\fP * rendition, int operation, const QString & script, const \fBRef\fP & annotationReference)"
+Create a new rendition link\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinkArea\fP the active area of the link 
+.br
+\fIrendition\fP the media rendition object\&. Ownership is taken 
+.br
+\fIoperation\fP the numeric operation (action) (
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBLinkRendition::RenditionOperation\fP) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIscript\fP the java script code 
+.br
+\fIannotationReference\fP the object reference of the screen annotation associated with this rendition action 
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 607 of file poppler\-link\&.cc\&.
+.SS "LinkRendition::~LinkRendition ()\fC [virtual]\fP"
+Destructor\&. 
+.PP
+Definition at line 612 of file poppler\-link\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBLinkRendition::RenditionAction\fP LinkRendition::action () const"
+Returns the action that should be executed if a rendition object is provided\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 627 of file poppler\-link\&.cc\&.
+.SS "bool LinkRendition::isReferencedAnnotation (const \fBScreenAnnotation\fP * annotation) const"
+Returns whether the given \fCannotation\fP is the referenced screen annotation for this rendition \fClink\fP\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 639 of file poppler\-link\&.cc\&.
+.SS "\fBLink::LinkType\fP LinkRendition::linkType () const\fC [virtual]\fP"
+The type of this link\&. 
+.PP
+Reimplemented from \fBPoppler::Link\fP\&.
+.PP
+Definition at line 616 of file poppler\-link\&.cc\&.
+.SS "\fBMediaRendition\fP * LinkRendition::rendition () const"
+Returns the media rendition object if the redition provides one, \fC0\fP otherwise 
+.PP
+Definition at line 621 of file poppler\-link\&.cc\&.
+.SS "QString LinkRendition::script () const"
+The JS code that shall be executed or an empty string\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 633 of file poppler\-link\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

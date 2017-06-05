@@ -1,0 +1,167 @@
+.TH "libmscore/rendermidi.cpp" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libmscore/rendermidi.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <set>\fP
+.br
+\fC#include 'score\&.h'\fP
+.br
+\fC#include 'volta\&.h'\fP
+.br
+\fC#include 'note\&.h'\fP
+.br
+\fC#include 'glissando\&.h'\fP
+.br
+\fC#include 'instrument\&.h'\fP
+.br
+\fC#include 'part\&.h'\fP
+.br
+\fC#include 'chord\&.h'\fP
+.br
+\fC#include 'trill\&.h'\fP
+.br
+\fC#include 'style\&.h'\fP
+.br
+\fC#include 'slur\&.h'\fP
+.br
+\fC#include 'tie\&.h'\fP
+.br
+\fC#include 'stafftext\&.h'\fP
+.br
+\fC#include 'repeat\&.h'\fP
+.br
+\fC#include 'articulation\&.h'\fP
+.br
+\fC#include 'arpeggio\&.h'\fP
+.br
+\fC#include 'durationtype\&.h'\fP
+.br
+\fC#include 'measure\&.h'\fP
+.br
+\fC#include 'tempo\&.h'\fP
+.br
+\fC#include 'repeatlist\&.h'\fP
+.br
+\fC#include 'velo\&.h'\fP
+.br
+\fC#include 'dynamic\&.h'\fP
+.br
+\fC#include 'navigate\&.h'\fP
+.br
+\fC#include 'pedal\&.h'\fP
+.br
+\fC#include 'staff\&.h'\fP
+.br
+\fC#include 'hairpin\&.h'\fP
+.br
+\fC#include 'bend\&.h'\fP
+.br
+\fC#include 'tremolo\&.h'\fP
+.br
+\fC#include 'noteevent\&.h'\fP
+.br
+\fC#include 'synthesizer/event\&.h'\fP
+.br
+\fC#include 'segment\&.h'\fP
+.br
+\fC#include 'undo\&.h'\fP
+.br
+\fC#include 'utils\&.h'\fP
+.br
+\fC#include 'sym\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMs::OrnamentExcursion\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBMs\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBMs::graceNotesMerged\fP (Chord *chord)"
+.br
+.ti -1c
+.RI "void \fBMs::renderTremolo\fP (Chord *chord, QList< NoteEventList > &ell)"
+.br
+.ti -1c
+.RI "void \fBMs::renderArpeggio\fP (Chord *chord, QList< NoteEventList > &ell)"
+.br
+.ti -1c
+.RI "int \fBMs::convertLine\fP (int lineL2, ClefType clefL, ClefType clefR)"
+.br
+.ti -1c
+.RI "int \fBMs::convertLine\fP (int lineL2, Note *noteL, Note *noteR)"
+.br
+.ti -1c
+.RI "int \fBMs::articulationExcursion\fP (Note *noteL, Note *noteR, int deltastep)"
+.br
+.ti -1c
+.RI "int \fBMs::totalTiedNoteTicks\fP (Note *note)"
+.br
+.ti -1c
+.RI "bool \fBMs::renderNoteArticulation\fP (NoteEventList *events, Note *note, bool chromatic, int requestedTicksPerNote, const vector< int > &prefix, const vector< int > &body, bool repeatp, bool sustainp, const vector< int > &suffix, int fastestFreq=16, int slowestFreq=8)"
+.br
+.ti -1c
+.RI "bool \fBMs::renderNoteArticulation\fP (NoteEventList *events, Note *note, bool chromatic, SymId articulationType, MScore::OrnamentStyle ornamentStyle)"
+.br
+.ti -1c
+.RI "bool \fBMs::renderNoteArticulation\fP (NoteEventList *events, Note *note, bool chromatic, Trill::Type trillType, MScore::OrnamentStyle ornamentStyle)"
+.br
+.ti -1c
+.RI "bool \fBMs::noteHasGlissando\fP (Note *note)"
+.br
+.ti -1c
+.RI "void \fBMs::renderGlissando\fP (NoteEventList *events, Note *notestart)"
+.br
+.ti -1c
+.RI "Trill * \fBMs::findFirstTrill\fP (Chord *chord)"
+.br
+.ti -1c
+.RI "void \fBMs::renderChordArticulation\fP (Chord *chord, QList< NoteEventList > &ell, int &gateTime)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "set< MScore::OrnamentStyle > \fBMs::baroque\fP = {MScore::OrnamentStyle::BAROQUE}"
+.br
+.ti -1c
+.RI "set< MScore::OrnamentStyle > \fBMs::defstyle\fP = {MScore::OrnamentStyle::DEFAULT}"
+.br
+.ti -1c
+.RI "set< MScore::OrnamentStyle > \fBMs::any\fP"
+.br
+.ti -1c
+.RI "int \fBMs::_16th\fP = MScore::division / 4"
+.br
+.ti -1c
+.RI "int \fBMs::_32nd\fP = _16th / 2"
+.br
+.ti -1c
+.RI "vector< OrnamentExcursion > \fBMs::excursions\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+render score into event list 
+.PP
+Definition in file \fBrendermidi\&.cpp\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

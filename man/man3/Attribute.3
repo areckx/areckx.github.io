@@ -1,0 +1,88 @@
+.TH "Attribute" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Attribute
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBType\fP { \fBUnknown\fP = 0, \fBUserProperty\fP, \fBPlacement\fP, \fBWritingMode\fP, \fBBackgroundColor\fP, \fBBorderColor\fP, \fBBorderStyle\fP, \fBBorderThickness\fP, \fBColor\fP, \fBPadding\fP, \fBSpaceBefore\fP, \fBSpaceAfter\fP, \fBStartIndent\fP, \fBEndIndent\fP, \fBTextIndent\fP, \fBTextAlign\fP, \fBBBox\fP, \fBWidth\fP, \fBHeight\fP, \fBBlockAlign\fP, \fBInlineAlign\fP, \fBTBorderStyle\fP, \fBTPadding\fP, \fBBaselineShift\fP, \fBLineHeight\fP, \fBTextDecorationColor\fP, \fBTextDecorationThickness\fP, \fBTextDecorationType\fP, \fBRubyAlign\fP, \fBRubyPosition\fP, \fBGlyphOrientationVertical\fP, \fBColumnCount\fP, \fBColumnGap\fP, \fBColumnWidths\fP, \fBListNumbering\fP, \fBRole\fP, \fBchecked\fP, \fBDesc\fP, \fBRowSpan\fP, \fBColSpan\fP, \fBHeaders\fP, \fBScope\fP, \fBSummary\fP }"
+.br
+.ti -1c
+.RI "enum \fBOwner\fP { \fBUnknownOwner\fP = 0, \fBUserProperties\fP, \fBLayout\fP, \fBList\fP, \fBPrintField\fP, \fBTable\fP, \fBXML_1_00\fP, \fBHTML_3_20\fP, \fBHTML_4_01\fP, \fBOEB_1_00\fP, \fBRTF_1_05\fP, \fBCSS_1_00\fP, \fBCSS_2_00\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAttribute\fP (Type type, \fBObject\fP *value)"
+.br
+.ti -1c
+.RI "\fBAttribute\fP (const char *name, int nameLen, \fBObject\fP *value)"
+.br
+.ti -1c
+.RI "GBool \fBisOk\fP () const"
+.br
+.ti -1c
+.RI "Type \fBgetType\fP () const"
+.br
+.ti -1c
+.RI "Owner \fBgetOwner\fP () const"
+.br
+.ti -1c
+.RI "const char * \fBgetTypeName\fP () const"
+.br
+.ti -1c
+.RI "const char * \fBgetOwnerName\fP () const"
+.br
+.ti -1c
+.RI "\fBObject\fP * \fBgetValue\fP () const"
+.br
+.ti -1c
+.RI "\fBGooString\fP * \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "Guint \fBgetRevision\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRevision\fP (Guint revisionA)"
+.br
+.ti -1c
+.RI "GBool \fBisHidden\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetHidden\fP (GBool hiddenA)"
+.br
+.ti -1c
+.RI "const char * \fBgetFormattedValue\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetFormattedValue\fP (const char *formattedA)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBObject\fP * \fBgetDefaultValue\fP (Type type)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBStructElement\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 33 of file StructElement\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,91 @@
+.TH "MenuEngineV2" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MenuEngineV2 \- stores menu hovered action and timeLine  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <menuengine\&.h>\fP
+.PP
+Inherits \fBMenuBaseEngine\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMenuEngineV2\fP (QObject *parent)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~MenuEngineV2\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "\fBMenuEngineV2\fP (QObject *parent, \fBMenuBaseEngine\fP *other)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual bool \fBregisterWidget\fP (QWidget *)"
+.br
+.RI "register menu "
+.ti -1c
+.RI "virtual bool \fBisAnimated\fP (const QObject *, WidgetIndex)"
+.br
+.RI "return timeLine associated to action at given position, if any "
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (const QObject *object, WidgetIndex index)"
+.br
+.RI "animation opacity "
+.ti -1c
+.RI "virtual QRect \fBcurrentRect\fP (const QObject *object, WidgetIndex index)"
+.br
+.RI "return 'hover' rect position when widget is animated "
+.ti -1c
+.RI "virtual QRect \fBanimatedRect\fP (const QObject *)"
+.br
+.RI "return 'hover' rect position when widget is animated "
+.ti -1c
+.RI "virtual bool \fBisTimerActive\fP (const QObject *)"
+.br
+.RI "timer associated to the data "
+.ti -1c
+.RI "virtual void \fBsetEnabled\fP (bool value)"
+.br
+.RI "enability "
+.ti -1c
+.RI "virtual void \fBsetDuration\fP (int value)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual int \fBfollowMouseDuration\fP (void) const"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual void \fBsetFollowMouseDuration\fP (int \fBduration\fP)"
+.br
+.RI "duration "
+.ti -1c
+.RI "virtual \fBWidgetList\fP \fBregisteredWidgets\fP (void) const"
+.br
+.RI "return list of registered widgets "
+.in -1c
+.SS "Protected Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual bool \fBunregisterWidget\fP (QObject *object)"
+.br
+.RI "remove widget from map "
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+stores menu hovered action and timeLine 
+.PP
+Definition at line 155 of file menuengine\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

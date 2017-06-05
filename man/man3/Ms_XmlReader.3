@@ -1,0 +1,196 @@
+.TH "Ms::XmlReader" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::XmlReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QXmlStreamReader\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBXmlReader\fP (\fBScore\fP *s, QFile *f)"
+.br
+.ti -1c
+.RI "\fBXmlReader\fP (\fBScore\fP *s, const QByteArray &d, const QString &st=QString())"
+.br
+.ti -1c
+.RI "\fBXmlReader\fP (\fBScore\fP *s, QIODevice *d, const QString &st=QString())"
+.br
+.ti -1c
+.RI "\fBXmlReader\fP (\fBScore\fP *s, const QString &d, const QString &st=QString())"
+.br
+.ti -1c
+.RI "void \fBunknown\fP ()"
+.br
+.ti -1c
+.RI "QString \fBattribute\fP (const char *s) const"
+.br
+.ti -1c
+.RI "QString \fBattribute\fP (const char *s, const QString &) const"
+.br
+.ti -1c
+.RI "int \fBintAttribute\fP (const char *s) const"
+.br
+.ti -1c
+.RI "int \fBintAttribute\fP (const char *s, int _default) const"
+.br
+.ti -1c
+.RI "double \fBdoubleAttribute\fP (const char *s) const"
+.br
+.ti -1c
+.RI "double \fBdoubleAttribute\fP (const char *s, double _default) const"
+.br
+.ti -1c
+.RI "bool \fBhasAttribute\fP (const char *s) const"
+.br
+.ti -1c
+.RI "int \fBreadInt\fP ()"
+.br
+.ti -1c
+.RI "int \fBreadInt\fP (bool *ok)"
+.br
+.ti -1c
+.RI "int \fBreadIntHex\fP ()"
+.br
+.ti -1c
+.RI "double \fBreadDouble\fP ()"
+.br
+.ti -1c
+.RI "double \fBreadDouble\fP (double min, double max)"
+.br
+.ti -1c
+.RI "bool \fBreadBool\fP ()"
+.br
+.ti -1c
+.RI "QPointF \fBreadPoint\fP ()"
+.br
+.ti -1c
+.RI "QSizeF \fBreadSize\fP ()"
+.br
+.ti -1c
+.RI "QRectF \fBreadRect\fP ()"
+.br
+.ti -1c
+.RI "QColor \fBreadColor\fP ()"
+.br
+.ti -1c
+.RI "\fBFraction\fP \fBreadFraction\fP ()"
+.br
+.ti -1c
+.RI "QString \fBreadXml\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDocName\fP (const QString &s)"
+.br
+.ti -1c
+.RI "QString \fBgetDocName\fP () const"
+.br
+.ti -1c
+.RI "int \fBtick\fP () const"
+.br
+.ti -1c
+.RI "void \fBinitTick\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBincTick\fP (int val)"
+.br
+.ti -1c
+.RI "void \fBsetTickOffset\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBtrack\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrackOffset\fP (int val)"
+.br
+.ti -1c
+.RI "int \fBtrackOffset\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrack\fP (int val)"
+.br
+.ti -1c
+.RI "bool \fBpasteMode\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPasteMode\fP (bool v)"
+.br
+.ti -1c
+.RI "void \fBaddBeam\fP (\fBBeam\fP *s)"
+.br
+.ti -1c
+.RI "\fBBeam\fP * \fBfindBeam\fP (int id) const"
+.br
+.ti -1c
+.RI "void \fBaddTuplet\fP (\fBTuplet\fP *s)"
+.br
+.ti -1c
+.RI "\fBTuplet\fP * \fBfindTuplet\fP (int id) const"
+.br
+.ti -1c
+.RI "QHash< int, \fBTuplet\fP * > & \fBtuplets\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLastMeasure\fP (\fBMeasure\fP *m)"
+.br
+.ti -1c
+.RI "\fBMeasure\fP * \fBlastMeasure\fP () const"
+.br
+.ti -1c
+.RI "void \fBremoveSpanner\fP (const \fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddSpanner\fP (int id, \fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "\fBSpanner\fP * \fBfindSpanner\fP (int id)"
+.br
+.ti -1c
+.RI "int \fBspannerId\fP (const \fBSpanner\fP *)"
+.br
+.ti -1c
+.RI "void \fBaddSpannerValues\fP (const \fBSpannerValues\fP &sv)"
+.br
+.ti -1c
+.RI "const \fBSpannerValues\fP * \fBspannerValues\fP (int id) const"
+.br
+.ti -1c
+.RI "QList< \fBStaffType\fP > & \fBstaffType\fP ()"
+.br
+.ti -1c
+.RI "\fBInterval\fP \fBtranspose\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTransposeChromatic\fP (int v)"
+.br
+.ti -1c
+.RI "void \fBsetTransposeDiatonic\fP (int v)"
+.br
+.ti -1c
+.RI "QMap< int, \fBLinkedElements\fP * > & \fBlinkIds\fP ()"
+.br
+.ti -1c
+.RI "QMultiMap< int, int > & \fBtracks\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckTuplets\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBhasAccidental\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 45 of file xml\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

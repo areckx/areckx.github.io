@@ -1,0 +1,174 @@
+\hypertarget{class_xml_stream_attributes}{}\section{Xml\+Stream\+Attributes Class Reference}
+\label{class_xml_stream_attributes}\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+
+
+The \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} class represents a vector of \hyperlink{class_xml_stream_attribute}{Xml\+Stream\+Attribute}.  
+
+
+Inheritance diagram for Xml\+Stream\+Attributes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_xml_stream_attributes}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}{value} (const Q\+String \&namespace\+Uri, const Q\+String \&name) const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_attributes_a6b298362365a1199b9287dbbcbcf39c0}{value} (const Q\+String \&namespace\+Uri, Q\+Latin1\+String name) const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_attributes_ac782842988173fa01be24dd38c7c4605}{value} (Q\+Latin1\+String namespace\+Uri, Q\+Latin1\+String name) const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_attributes_adeb02e3a2e49bbf7a32066fe6780016b}{value} (const Q\+String \&qualified\+Name) const
+\item 
+Q\+String\+Ref \hyperlink{class_xml_stream_attributes_ac783484006b66fe5c4af1c0f6aba1976}{value} (Q\+Latin1\+String qualified\+Name) const
+\item 
+void \hyperlink{class_xml_stream_attributes_a51a667e3daddcea19ec85d51f0da6d6b}{append} (const Q\+String \&namespace\+Uri, const Q\+String \&name, const Q\+String \&\hyperlink{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}{value})
+\item 
+void \hyperlink{class_xml_stream_attributes_a062ae122b7c39f5993cfcf0cd30a4942}{append} (const Q\+String \&qualified\+Name, const Q\+String \&\hyperlink{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}{value})
+\item 
+bool \hyperlink{class_xml_stream_attributes_a19c0aee6f2a399a8b830441260d46b84}{has\+Attribute} (const Q\+String \&qualified\+Name) const
+\item 
+bool \hyperlink{class_xml_stream_attributes_a78238cc4e8a5e44594cb78d048e18500}{has\+Attribute} (Q\+Latin1\+String qualified\+Name) const
+\item 
+bool \hyperlink{class_xml_stream_attributes_a86109339929f05fa1b8755f482fd19d9}{has\+Attribute} (const Q\+String \&namespace\+Uri, const Q\+String \&name) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} class represents a vector of \hyperlink{class_xml_stream_attribute}{Xml\+Stream\+Attribute}. 
+
+Qt\+Core \begin{DoxySince}{Since}
+4.\+3  Attributes are returned by a \hyperlink{class_xml_stream_reader}{Xml\+Stream\+Reader} in \{\hyperlink{class_xml_stream_reader_aaa89a6baad93837857847a3ec5d7710a}{Xml\+Stream\+Reader\+::attributes()}\} \{attributes()\} when the reader reports a  \{Xml\+Stream\+Reader\+::\+Start\+Element\}\{start element\}. The class can also be used with a \hyperlink{class_xml_stream_writer}{Xml\+Stream\+Writer} as an argument to  \{\hyperlink{class_xml_stream_writer_a401845495b28fcc27a7f491ac402ea47}{Xml\+Stream\+Writer\+::write\+Attributes()}\}\{write\+Attributes()\}.
+\end{DoxySince}
+The convenience function \hyperlink{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}{value()} loops over the vector and returns an attribute value for a given namespace\+Uri and an attribute\textquotesingle{}s name.
+
+New attributes can be added with \hyperlink{class_xml_stream_attributes_a51a667e3daddcea19ec85d51f0da6d6b}{append()}. 
+
+Definition at line 104 of file xmlstream.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_xml_stream_attributes_a51a667e3daddcea19ec85d51f0da6d6b}\label{class_xml_stream_attributes_a51a667e3daddcea19ec85d51f0da6d6b}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!append@{append}}
+\index{append@{append}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Xml\+Stream\+Attributes\+::append (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{namespace\+Uri,  }\item[{const Q\+String \&}]{name,  }\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+Appends a new attribute with {\itshape name} in the namespace described with {\itshape namespace\+Uri}, and value {\itshape value}. The {\itshape namespace\+Uri} can be empty. 
+
+Definition at line 2755 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_a062ae122b7c39f5993cfcf0cd30a4942}\label{class_xml_stream_attributes_a062ae122b7c39f5993cfcf0cd30a4942}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!append@{append}}
+\index{append@{append}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Xml\+Stream\+Attributes\+::append (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{qualified\+Name,  }\item[{const Q\+String \&}]{value }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Appends a new attribute with qualified name {\itshape qualified\+Name} and value {\itshape value}. 
+
+Definition at line 2764 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_a19c0aee6f2a399a8b830441260d46b84}\label{class_xml_stream_attributes_a19c0aee6f2a399a8b830441260d46b84}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!has\+Attribute@{has\+Attribute}}
+\index{has\+Attribute@{has\+Attribute}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{has\+Attribute()}{hasAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Attributes\+::has\+Attribute (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{qualified\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxySince}{Since}
+4.\+5
+\end{DoxySince}
+Returns {\ttfamily true} if this \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} has an attribute whose qualified name is {\itshape qualified\+Name}; otherwise returns {\ttfamily false}.
+
+Note that this is not namespace aware. For instance, if this \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} contains an attribute whose lexical name is \char`\"{}xlink\+:href\char`\"{} this doesn\textquotesingle{}t tell that an attribute named {\ttfamily href} in the X\+Link namespace is present, since the {\ttfamily xlink} prefix can be bound to any namespace. Use the overload that takes a namespace U\+RI and a local name as parameter, for namespace aware code. 
+
+Definition at line 116 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_a78238cc4e8a5e44594cb78d048e18500}\label{class_xml_stream_attributes_a78238cc4e8a5e44594cb78d048e18500}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!has\+Attribute@{has\+Attribute}}
+\index{has\+Attribute@{has\+Attribute}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{has\+Attribute()}{hasAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Attributes\+::has\+Attribute (\begin{DoxyParamCaption}\item[{Q\+Latin1\+String}]{qualified\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \begin{DoxySince}{Since}
+4.\+5 
+\end{DoxySince}
+
+
+Definition at line 121 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_a86109339929f05fa1b8755f482fd19d9}\label{class_xml_stream_attributes_a86109339929f05fa1b8755f482fd19d9}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!has\+Attribute@{has\+Attribute}}
+\index{has\+Attribute@{has\+Attribute}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{has\+Attribute()}{hasAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Xml\+Stream\+Attributes\+::has\+Attribute (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{namespace\+Uri,  }\item[{const Q\+String \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. \begin{DoxySince}{Since}
+4.\+5
+\end{DoxySince}
+Returns {\ttfamily true} if this \hyperlink{class_xml_stream_attributes}{Xml\+Stream\+Attributes} has an attribute whose namespace U\+RI and name correspond to {\itshape namespace\+Uri} and {\itshape name}; otherwise returns {\ttfamily false}. 
+
+Definition at line 126 of file xmlstream.\+h.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}\label{class_xml_stream_attributes_ac13c28528742b32ef4c4684f8c39941b}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!value@{value}}
+\index{value@{value}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Attributes\+::value (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{namespace\+Uri,  }\item[{const Q\+String \&}]{name }\end{DoxyParamCaption}) const}
+
+Returns the value of the attribute {\itshape name} in the namespace described with {\itshape namespace\+Uri}, or an empty string reference if the attribute is not defined. The {\itshape namespace\+Uri} can be empty. 
+
+Definition at line 2667 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_a6b298362365a1199b9287dbbcbcf39c0}\label{class_xml_stream_attributes_a6b298362365a1199b9287dbbcbcf39c0}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!value@{value}}
+\index{value@{value}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Attributes\+::value (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{namespace\+Uri,  }\item[{Q\+Latin1\+String}]{name }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Returns the value of the attribute {\itshape name} in the namespace described with {\itshape namespace\+Uri}, or an empty string reference if the attribute is not defined. The {\itshape namespace\+Uri} can be empty. 
+
+Definition at line 2682 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_ac782842988173fa01be24dd38c7c4605}\label{class_xml_stream_attributes_ac782842988173fa01be24dd38c7c4605}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!value@{value}}
+\index{value@{value}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Attributes\+::value (\begin{DoxyParamCaption}\item[{Q\+Latin1\+String}]{namespace\+Uri,  }\item[{Q\+Latin1\+String}]{name }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Returns the value of the attribute {\itshape name} in the namespace described with {\itshape namespace\+Uri}, or an empty string reference if the attribute is not defined. The {\itshape namespace\+Uri} can be empty. 
+
+Definition at line 2697 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_adeb02e3a2e49bbf7a32066fe6780016b}\label{class_xml_stream_attributes_adeb02e3a2e49bbf7a32066fe6780016b}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!value@{value}}
+\index{value@{value}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Attributes\+::value (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{qualified\+Name }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns the value of the attribute with qualified name {\itshape qualified\+Name} , or an empty string reference if the attribute is not defined. A qualified name is the raw name of an attribute in the X\+ML data. It consists of the namespace prefix, followed by colon, followed by the attribute\textquotesingle{}s local name. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn\textquotesingle{}t use qualified names, but a resolved namespace\+Uri and the attribute\textquotesingle{}s local name. 
+
+Definition at line 2719 of file xmlstream.\+cpp.
+
+\mbox{\Hypertarget{class_xml_stream_attributes_ac783484006b66fe5c4af1c0f6aba1976}\label{class_xml_stream_attributes_ac783484006b66fe5c4af1c0f6aba1976}} 
+\index{Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}!value@{value}}
+\index{value@{value}!Xml\+Stream\+Attributes@{Xml\+Stream\+Attributes}}
+\subsubsection{\texorpdfstring{value()}{value()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Q\+String\+Ref Xml\+Stream\+Attributes\+::value (\begin{DoxyParamCaption}\item[{Q\+Latin1\+String}]{qualified\+Name }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Returns the value of the attribute with qualified name {\itshape qualified\+Name} , or an empty string reference if the attribute is not defined. A qualified name is the raw name of an attribute in the X\+ML data. It consists of the namespace prefix, followed by colon, followed by the attribute\textquotesingle{}s local name. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn\textquotesingle{}t use qualified names, but a resolved namespace\+Uri and the attribute\textquotesingle{}s local name. 
+
+Definition at line 2741 of file xmlstream.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+thirdparty/xmlstream/xmlstream.\+h\item 
+thirdparty/xmlstream/xmlstream.\+cpp\end{DoxyCompactItemize}

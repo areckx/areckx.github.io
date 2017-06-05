@@ -1,0 +1,79 @@
+.TH "Ms::Effect" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::Effect
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits QObject\&.
+.PP
+Inherited by \fBMs::Compressor\fP, \fBMs::NoEffect\fP, and \fBMs::ZitaReverb\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetValue\fP (const QString &name, double value)"
+.br
+.ti -1c
+.RI "virtual void \fBsetValue\fP (int idx, double value)"
+.br
+.ti -1c
+.RI "virtual void \fBsetNValue\fP (int idx, double value)=0"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBprocess\fP (int frames, float *, float *)=0"
+.br
+.ti -1c
+.RI "virtual const char * \fBname\fP () const =0"
+.br
+.ti -1c
+.RI "virtual void \fBinit\fP (float)"
+.br
+.ti -1c
+.RI "virtual const std::vector< \fBParDescr\fP > & \fBparDescr\fP () const =0"
+.br
+.ti -1c
+.RI "Q_INVOKABLE qreal \fBvalue\fP (const QString &name) const"
+.br
+.ti -1c
+.RI "virtual double \fBvalue\fP (int idx) const"
+.br
+.ti -1c
+.RI "virtual double \fBnvalue\fP (int) const"
+.br
+.ti -1c
+.RI "virtual const \fBParDescr\fP * \fBparameter\fP (int idx) const"
+.br
+.ti -1c
+.RI "virtual const \fBParDescr\fP * \fBparameter\fP (const QString &) const"
+.br
+.ti -1c
+.RI "virtual \fBSynthesizerGroup\fP \fBstate\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetState\fP (const \fBSynthesizerGroup\fP &)"
+.br
+.ti -1c
+.RI "virtual \fBEffectGui\fP * \fBgui\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBEffectGui\fP * \fB_gui\fP { nullptr }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file effect\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

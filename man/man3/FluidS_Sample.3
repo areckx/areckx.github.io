@@ -1,0 +1,89 @@
+.TH "FluidS::Sample" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FluidS::Sample
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSample\fP (\fBSFont\fP *)"
+.br
+.ti -1c
+.RI "bool \fBinRom\fP () const"
+.br
+.ti -1c
+.RI "void \fBoptimize\fP ()"
+.br
+.ti -1c
+.RI "void \fBload\fP ()"
+.br
+.ti -1c
+.RI "bool \fBvalid\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetValid\fP (bool v)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSFont\fP * \fBsf\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBstart\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBend\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBloopstart\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBloopend\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBsamplerate\fP"
+.br
+.ti -1c
+.RI "int \fBorigpitch\fP"
+.br
+.ti -1c
+.RI "int \fBpitchadj\fP"
+.br
+.ti -1c
+.RI "int \fBsampletype\fP"
+.br
+.ti -1c
+.RI "short * \fBdata\fP"
+.br
+.ti -1c
+.RI "bool \fBamplitude_that_reaches_noise_floor_is_valid\fP"
+.br
+.ti -1c
+.RI "double \fBamplitude_that_reaches_noise_floor\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 129 of file sfont\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Sample::optimize ()"
+If the peak volume during the loop is known, then the voice can be released earlier during the release phase\&. Otherwise, the voice will operate (inaudibly), until the envelope is at the nominal turnoff point\&. In many cases the loop volume is many dB below the maximum volume\&. For example, the loop volume for a typical acoustic piano is 20 dB below max\&. Taking that into account in the turn-off algorithm we can save 20 dB / 100 dB => 1/5 of the total release time\&. So it's a good idea to call fluid_voice_optimize_sample on each sample once\&. 
+.PP
+Definition at line 1727 of file voice\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "bool FluidS::Sample::amplitude_that_reaches_noise_floor_is_valid"
+The amplitude, that will lower the level of the sample's loop to the noise floor\&. Needed for note turnoff optimization, will be filled out automatically 
+.PP
+Definition at line 150 of file sfont\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

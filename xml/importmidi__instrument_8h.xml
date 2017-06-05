@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="importmidi__instrument_8h" kind="file" language="C++">
+    <compoundname>importmidi_instrument.h</compoundname>
+    <includes refid="midifile_8h" local="yes">midi/midifile.h</includes>
+    <includedby refid="importmidi_8cpp" local="yes">mscore/importmidi/importmidi.cpp</includedby>
+    <includedby refid="importmidi__instrument_8cpp" local="yes">mscore/importmidi/importmidi_instrument.cpp</includedby>
+    <incdepgraph>
+      <node id="53218">
+        <label>mscore/importmidi/importmidi_instrument.h</label>
+        <link refid="importmidi__instrument_8h"/>
+        <childnode refid="53219" relation="include">
+        </childnode>
+      </node>
+      <node id="53224">
+        <label>map</label>
+      </node>
+      <node id="53221">
+        <label>fraction.h</label>
+        <link refid="fraction_8h_source"/>
+        <childnode refid="53222" relation="include">
+        </childnode>
+      </node>
+      <node id="53219">
+        <label>midi/midifile.h</label>
+        <link refid="midifile_8h_source"/>
+        <childnode refid="53220" relation="include">
+        </childnode>
+        <childnode refid="53223" relation="include">
+        </childnode>
+      </node>
+      <node id="53222">
+        <label>config.h</label>
+      </node>
+      <node id="53223">
+        <label>synthesizer/event.h</label>
+        <link refid="synthesizer_2event_8h_source"/>
+        <childnode refid="53224" relation="include">
+        </childnode>
+      </node>
+      <node id="53220">
+        <label>libmscore/sig.h</label>
+        <link refid="sig_8h_source"/>
+        <childnode refid="53221" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="53226">
+        <label>mscore/importmidi/importmidi.cpp</label>
+        <link refid="importmidi_8cpp_source"/>
+      </node>
+      <node id="53225">
+        <label>mscore/importmidi/importmidi_instrument.h</label>
+        <link refid="importmidi__instrument_8h"/>
+        <childnode refid="53226" relation="include">
+        </childnode>
+        <childnode refid="53227" relation="include">
+        </childnode>
+      </node>
+      <node id="53227">
+        <label>mscore/importmidi/importmidi_instrument.cpp</label>
+        <link refid="importmidi__instrument_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_ms">Ms</innernamespace>
+    <innernamespace refid="namespace_ms_1_1_midi_instr">Ms::MidiInstr</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>IMPORTMIDI_INSTRUMENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMPORTMIDI_INSTRUMENT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;midi/midifile.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QString;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ms" kindref="compound">Ms</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Score;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MTrack;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">MidiInstr<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">QString<sp/>instrumentName(MidiType<sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>program,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDrumTrack);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">QString<sp/>msInstrName(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>trackIndex);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">QString<sp/>concatenateWithComma(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;left,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;right);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isGrandStaff(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MTrack<sp/>&amp;t1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>MTrack<sp/>&amp;t2);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setGrandStaffProgram(QList&lt;MTrack&gt;<sp/>&amp;tracks);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>findInstrumentsForAllTracks(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;MTrack&gt;<sp/>&amp;tracks);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>createInstruments(Score<sp/>*score,<sp/>QList&lt;MTrack&gt;<sp/>&amp;tracks);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>MidiInstr</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>IMPORTMIDI_INSTRUMENT_H</highlight></codeline>
+    </programlisting>
+    <location file="mscore/importmidi/importmidi_instrument.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,146 @@
+.TH "Ms::ScoreElement" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Ms::ScoreElement
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMs::BracketItem\fP, \fBMs::Element\fP, \fBMs::Part\fP, \fBMs::Score\fP\fC [private]\fP, and \fBMs::Staff\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScoreElement\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "\fBScoreElement\fP (const \fBScoreElement\fP &se)"
+.br
+.ti -1c
+.RI "\fBScore\fP * \fBscore\fP () const"
+.br
+.ti -1c
+.RI "\fBMasterScore\fP * \fBmasterScore\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBsetScore\fP (\fBScore\fP *s)"
+.br
+.ti -1c
+.RI "const char * \fBname\fP () const"
+.br
+.ti -1c
+.RI "virtual QString \fBuserName\fP () const"
+.br
+.ti -1c
+.RI "virtual ElementType \fBtype\fP () const =0"
+.br
+.ti -1c
+.RI "virtual QVariant \fBgetProperty\fP (P_ID) const =0"
+.br
+.ti -1c
+.RI "virtual bool \fBsetProperty\fP (P_ID, const QVariant &)=0"
+.br
+.ti -1c
+.RI "virtual QVariant \fBpropertyDefault\fP (P_ID) const"
+.br
+.ti -1c
+.RI "virtual void \fBresetProperty\fP (P_ID id)"
+.br
+.ti -1c
+.RI "virtual PropertyFlags \fBpropertyFlags\fP (P_ID) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetPropertyFlags\fP (P_ID, PropertyFlags)"
+.br
+.ti -1c
+.RI "virtual StyleIdx \fBgetPropertyStyle\fP (P_ID) const"
+.br
+.ti -1c
+.RI "void \fBundoChangeProperty\fP (P_ID id, const QVariant &, PropertyFlags ps)"
+.br
+.ti -1c
+.RI "void \fBundoChangeProperty\fP (P_ID id, const QVariant &)"
+.br
+.ti -1c
+.RI "void \fBundoResetProperty\fP (P_ID id)"
+.br
+.ti -1c
+.RI "void \fBundoPushProperty\fP (P_ID)"
+.br
+.ti -1c
+.RI "void \fBwriteProperty\fP (\fBXmlWriter\fP &xml, P_ID id) const"
+.br
+.ti -1c
+.RI "QList< \fBScoreElement\fP * > \fBlinkList\fP () const"
+.br
+.ti -1c
+.RI "void \fBlinkTo\fP (\fBScoreElement\fP *)"
+.br
+.ti -1c
+.RI "void \fBunlink\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBundoUnlink\fP ()"
+.br
+.ti -1c
+.RI "int \fBlid\fP () const"
+.br
+.ti -1c
+.RI "const \fBLinkedElements\fP * \fBlinks\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLinks\fP (\fBLinkedElements\fP *le)"
+.br
+.ti -1c
+.RI "bool \fBisChordRest\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisDurationElement\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSlurTieSegment\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisStaffText\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSLine\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSLineSegment\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisBox\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisMeasureBase\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisText\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static ElementType \fBname2type\fP (const QStringRef &)"
+.br
+.ti -1c
+.RI "static const char * \fBname\fP (ElementType)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBLinkedElements\fP * \fB_links\fP { 0 }"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 260 of file scoreElement\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

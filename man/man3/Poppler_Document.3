@@ -1,0 +1,1080 @@
+.TH "Poppler::Document" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Poppler::Document \- PDF document\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <poppler\-qt5\&.h>\fP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBPageMode\fP { \fBUseNone\fP, \fBUseOutlines\fP, \fBUseThumbs\fP, \fBFullScreen\fP, \fBUseOC\fP, \fBUseAttach\fP }"
+.br
+.ti -1c
+.RI "enum \fBPageLayout\fP { \fBNoLayout\fP, \fBSinglePage\fP, \fBOneColumn\fP, \fBTwoColumnLeft\fP, \fBTwoColumnRight\fP, \fBTwoPageLeft\fP, \fBTwoPageRight\fP }"
+.br
+.ti -1c
+.RI "enum \fBRenderBackend\fP { \fBSplashBackend\fP, \fBArthurBackend\fP }"
+.br
+.ti -1c
+.RI "enum \fBRenderHint\fP { \fBAntialiasing\fP = 0x00000001, \fBTextAntialiasing\fP = 0x00000002, \fBTextHinting\fP = 0x00000004, \fBTextSlightHinting\fP = 0x00000008, \fBOverprintPreview\fP = 0x00000010, \fBThinLineSolid\fP = 0x00000020, \fBThinLineShape\fP = 0x00000040, \fBIgnorePaperColor\fP = 0x00000080 }"
+.br
+.ti -1c
+.RI "enum \fBFormType\fP { \fBNoForm\fP, \fBAcroForm\fP, \fBXfaForm\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetColorDisplayProfile\fP (void *outputProfileA)"
+.br
+.ti -1c
+.RI "void \fBsetColorDisplayProfileName\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void * \fBcolorRgbProfile\fP () const"
+.br
+.ti -1c
+.RI "void * \fBcolorDisplayProfile\fP () const"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBpage\fP (int index) const"
+.br
+.ti -1c
+.RI "\fBPage\fP * \fBpage\fP (const QString &label) const"
+.br
+.ti -1c
+.RI "int \fBnumPages\fP () const"
+.br
+.ti -1c
+.RI "\fBPageMode\fP \fBpageMode\fP () const"
+.br
+.ti -1c
+.RI "\fBPageLayout\fP \fBpageLayout\fP () const"
+.br
+.ti -1c
+.RI "Qt::LayoutDirection \fBtextDirection\fP () const"
+.br
+.ti -1c
+.RI "bool \fBunlock\fP (const QByteArray &ownerPassword, const QByteArray &userPassword)"
+.br
+.ti -1c
+.RI "bool \fBisLocked\fP () const"
+.br
+.ti -1c
+.RI "QDateTime \fBdate\fP (const QString &data) const"
+.br
+.ti -1c
+.RI "QString \fBinfo\fP (const QString &data) const"
+.br
+.ti -1c
+.RI "QStringList \fBinfoKeys\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisEncrypted\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisLinearized\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToPrint\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToPrintHighRes\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToChange\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToCopy\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToAddNotes\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToFillForm\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToCreateFormFields\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToExtractForAccessibility\fP () const"
+.br
+.ti -1c
+.RI "bool \fBokToAssemble\fP () const"
+.br
+.ti -1c
+.RI "void \fBgetPdfVersion\fP (int *major, int *minor) const"
+.br
+.ti -1c
+.RI "QList< \fBFontInfo\fP > \fBfonts\fP () const"
+.br
+.ti -1c
+.RI "\fBFontIterator\fP * \fBnewFontIterator\fP (int startPage=0) const"
+.br
+.ti -1c
+.RI "QByteArray \fBfontData\fP (const \fBFontInfo\fP &\fBfont\fP) const"
+.br
+.ti -1c
+.RI "QList< \fBEmbeddedFile\fP * > \fBembeddedFiles\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasEmbeddedFiles\fP () const"
+.br
+.ti -1c
+.RI "QDomDocument * \fBtoc\fP () const"
+.br
+.ti -1c
+.RI "\fBLinkDestination\fP * \fBlinkDestination\fP (const QString &name)"
+.br
+.ti -1c
+.RI "void \fBsetPaperColor\fP (const QColor &\fBcolor\fP)"
+.br
+.ti -1c
+.RI "QColor \fBpaperColor\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRenderBackend\fP (\fBRenderBackend\fP backend)"
+.br
+.ti -1c
+.RI "\fBRenderBackend\fP \fBrenderBackend\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetRenderHint\fP (\fBRenderHint\fP hint, bool on=true)"
+.br
+.ti -1c
+.RI "RenderHints \fBrenderHints\fP () const"
+.br
+.ti -1c
+.RI "\fBPSConverter\fP * \fBpsConverter\fP () const"
+.br
+.ti -1c
+.RI "\fBPDFConverter\fP * \fBpdfConverter\fP () const"
+.br
+.ti -1c
+.RI "QString \fBmetadata\fP () const"
+.br
+.ti -1c
+.RI "bool \fBhasOptionalContent\fP () const"
+.br
+.ti -1c
+.RI "\fBOptContentModel\fP * \fBoptionalContentModel\fP ()"
+.br
+.ti -1c
+.RI "QStringList \fBscripts\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetPdfId\fP (QByteArray *permanentId, QByteArray *updateId) const"
+.br
+.ti -1c
+.RI "\fBFormType\fP \fBformType\fP () const"
+.br
+.ti -1c
+.RI "\fB~Document\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBDocument\fP * \fBload\fP (const QString &filePath, const QByteArray &ownerPassword=QByteArray(), const QByteArray &userPassword=QByteArray())"
+.br
+.ti -1c
+.RI "static \fBDocument\fP * \fBloadFromData\fP (const QByteArray &fileContents, const QByteArray &ownerPassword=QByteArray(), const QByteArray &userPassword=QByteArray())"
+.br
+.ti -1c
+.RI "static QSet< \fBRenderBackend\fP > \fBavailableRenderBackends\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPage\fP"
+.br
+.ti -1c
+.RI "class \fBDocumentData\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+PDF document\&. 
+
+The \fBDocument\fP class represents a PDF document: its pages, and all the global properties, metadata, etc\&.
+.SH "Ownership of the returned objects"
+.PP
+All the functions that returns class pointers create new object, and the responsability of those is given to the callee\&.
+.PP
+The only exception is \fBPage::transition()\fP\&.
+.SH "Loading"
+.PP
+To get a \fBDocument\fP, you have to load it via the \fBload()\fP & \fBloadFromData()\fP functions\&.
+.PP
+In all the functions that have passwords as arguments, they \fBmust\fP be Latin1 encoded\&. If you have a password that is a UTF-8 string, you need to use QString::toLatin1() (or similar) to convert the password first\&. If you have a UTF-8 character array, consider converting it to a QString first (QString::fromUtf8(), or similar) before converting to Latin1 encoding\&.
+.SH "Rendering"
+.PP
+To render pages of a document, you have different \fBDocument\fP functions to set various options\&.
+.SS "Backends"
+Poppler offers a different backends for rendering the pages\&. Currently there are two backends (see \fBRenderBackend\fP), but only the \fBSplash\fP engine works well and has been tested\&.
+.PP
+The available rendering backends can be discovered via \fBavailableRenderBackends()\fP\&. The current rendering backend can be changed using \fBsetRenderBackend()\fP\&. Please note that setting a backend not listed in the available ones will always result in null QImage's\&.
+.SH "Color management support"
+.PP
+Poppler, if compiled with this support, provides functions to handle color profiles\&.
+.PP
+To know whether the Poppler version you are using has support for color management, you can query \fBPoppler::isCmsAvailable()\fP\&. In case it is not avilable, all the color management-related functions will either do nothing or return null\&. 
+.PP
+Definition at line 842 of file poppler\-qt5\&.h\&.
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBPoppler::Document::FormType\fP"
+\fBForm\fP types
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINoForm \fP\fP
+\fBDocument\fP doesn't contain forms\&. 
+.TP
+\fB\fIAcroForm \fP\fP
+AcroForm\&. 
+.TP
+\fB\fIXfaForm \fP\fP
+Adobe XML Forms Architecture (XFA), currently unsupported\&. 
+.PP
+Definition at line 904 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Document::PageLayout\fP"
+The page layout 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINoLayout \fP\fP
+Layout not specified\&. 
+.TP
+\fB\fISinglePage \fP\fP
+Display a single page\&. 
+.TP
+\fB\fIOneColumn \fP\fP
+Display a single column of pages\&. 
+.TP
+\fB\fITwoColumnLeft \fP\fP
+Display the pages in two columns, with odd-numbered pages on the left\&. 
+.TP
+\fB\fITwoColumnRight \fP\fP
+Display the pages in two columns, with odd-numbered pages on the right\&. 
+.TP
+\fB\fITwoPageLeft \fP\fP
+Display the pages two at a time, with odd-numbered pages on the left\&. 
+.TP
+\fB\fITwoPageRight \fP\fP
+Display the pages two at a time, with odd-numbered pages on the right\&. 
+.PP
+Definition at line 862 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Document::PageMode\fP"
+The page mode 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIUseNone \fP\fP
+No mode - neither document outline nor thumbnail images are visible\&. 
+.TP
+\fB\fIUseOutlines \fP\fP
+\fBDocument\fP outline visible\&. 
+.TP
+\fB\fIUseThumbs \fP\fP
+Thumbnail images visible\&. 
+.TP
+\fB\fIFullScreen \fP\fP
+Fullscreen mode (no menubar, windows controls etc) 
+.TP
+\fB\fIUseOC \fP\fP
+Optional content group panel visible\&. 
+.TP
+\fB\fIUseAttach \fP\fP
+Attachments panel visible\&. 
+.PP
+Definition at line 850 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Document::RenderBackend\fP"
+The render backends available
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISplashBackend \fP\fP
+\fBSplash\fP backend\&. 
+.TP
+\fB\fIArthurBackend \fP\fP
+Arthur (Qt) backend\&. 
+.PP
+Definition at line 877 of file poppler\-qt5\&.h\&.
+.SS "enum \fBPoppler::Document::RenderHint\fP"
+The render hints available
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIAntialiasing \fP\fP
+Antialiasing for graphics\&. 
+.TP
+\fB\fITextAntialiasing \fP\fP
+Antialiasing for text\&. 
+.TP
+\fB\fITextHinting \fP\fP
+Hinting for text\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12\&.1 
+.RE
+.PP
+
+.TP
+\fB\fITextSlightHinting \fP\fP
+Lighter hinting for text when combined with TextHinting\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.18 
+.RE
+.PP
+
+.TP
+\fB\fIOverprintPreview \fP\fP
+Overprint preview\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.TP
+\fB\fIThinLineSolid \fP\fP
+Enhance thin lines solid\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.24 
+.RE
+.PP
+
+.TP
+\fB\fIThinLineShape \fP\fP
+Enhance thin lines shape\&. Wins over ThinLineSolid\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.24 
+.RE
+.PP
+
+.TP
+\fB\fIIgnorePaperColor \fP\fP
+Do not compose with the paper color\&. 
+.PP
+\fBSince:\fP
+.RS 4
+0\&.35 
+.RE
+.PP
+
+.PP
+Definition at line 887 of file poppler\-qt5\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Poppler::Document::~Document ()"
+Destructor\&. 
+.PP
+Definition at line 106 of file poppler\-document\&.cc\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "QSet< \fBDocument::RenderBackend\fP > Poppler::Document::availableRenderBackends ()\fC [static]\fP"
+The available rendering backends\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 524 of file poppler\-document\&.cc\&.
+.SS "void * Poppler::Document::colorDisplayProfile () const"
+Return the current display profile\&.
+.PP
+\fBReturns:\fP
+.RS 4
+a \fCcmsHPROFILE\fP of the LCMS library\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 496 of file poppler\-document\&.cc\&.
+.SS "void * Poppler::Document::colorRgbProfile () const"
+Return the current RGB profile\&.
+.PP
+\fBReturns:\fP
+.RS 4
+a \fCcmsHPROFILE\fP of the LCMS library\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 487 of file poppler\-document\&.cc\&.
+.SS "QDateTime Poppler::Document::date (const QString & data) const"
+The date associated with the document
+.PP
+You would use this method with something like: 
+.PP
+.nf
+QDateTime created = m_doc->date("CreationDate");
+QDateTime modified = m_doc->date("ModDate");
+
+.fi
+.PP
+.PP
+The available dates are:
+.IP "\(bu" 2
+CreationDate: the date of creation of the document
+.IP "\(bu" 2
+ModDate: the date of the last change in the document
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the type of date that is required 
+.RE
+.PP
+
+.PP
+Definition at line 327 of file poppler\-document\&.cc\&.
+.SS "QList< \fBEmbeddedFile\fP * > Poppler::Document::embeddedFiles () const"
+The documents embedded within the PDF document\&.
+.PP
+\fBNote:\fP
+.RS 4
+there are two types of embedded document - this call only accesses documents that are embedded at the document level\&. 
+.RE
+.PP
+
+.PP
+Definition at line 230 of file poppler\-document\&.cc\&.
+.SS "QByteArray Poppler::Document::fontData (const \fBFontInfo\fP & font) const"
+The font data if the font is an embedded one\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 240 of file poppler\-document\&.cc\&.
+.SS "QList< \fBFontInfo\fP > Poppler::Document::fonts () const"
+The fonts within the PDF document\&.
+.PP
+This is a shorthand for getting all the fonts at once\&.
+.PP
+\fBNote:\fP
+.RS 4
+this can take a very long time to run with a large document\&. You may wish to use a \fBFontIterator\fP if you have more than say 20 pages
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBnewFontIterator()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file poppler\-document\&.cc\&.
+.SS "\fBDocument::FormType\fP Poppler::Document::formType () const"
+Returns the type of forms contained in the document
+.PP
+\fBSince:\fP
+.RS 4
+0\&.22 
+.RE
+.PP
+
+.PP
+Definition at line 621 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::getPdfId (QByteArray * permanentId, QByteArray * updateId) const"
+The PDF identifiers\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpermanentId\fP an optional pointer to a variable where store the permanent ID of the document 
+.br
+\fIupdateId\fP an optional pointer to a variable where store the update ID of the document
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+whether the document has the IDs
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.16 
+.RE
+.PP
+
+.PP
+Definition at line 605 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::getPdfVersion (int * major, int * minor) const"
+The version of the PDF specification that the document conforms to
+.PP
+\fBParameters:\fP
+.RS 4
+\fImajor\fP an optional pointer to a variable where store the 'major' number of the version 
+.br
+\fIminor\fP an optional pointer to a variable where store the 'minor' number of the version
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 412 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::hasEmbeddedFiles () const"
+Whether there are any documents embedded in this PDF document\&. 
+.PP
+Definition at line 431 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::hasOptionalContent () const"
+Test whether this document has 'optional content'\&.
+.PP
+Optional content is used to optionally turn on (display) and turn off (not display) some elements of the document\&. The most common use of this is for layers in design applications, but it can be used for a range of things, such as not including some content in printing, and displaying content in the appropriate language\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 577 of file poppler\-document\&.cc\&.
+.SS "QString Poppler::Document::info (const QString & data) const"
+Get specified information associated with the document
+.PP
+You would use this method with something like: 
+.PP
+.nf
+QString title = m_doc->info("Title");
+QString subject = m_doc->info("Subject");
+
+.fi
+.PP
+.PP
+In addition to \fCTitle\fP and \fCSubject\fP, other information that may be available include \fCAuthor\fP, \fCKeywords\fP, \fCCreator\fP and \fCProducer\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP the information that is required
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBinfoKeys()\fP to get a list of the available keys 
+.RE
+.PP
+
+.PP
+Definition at line 268 of file poppler\-document\&.cc\&.
+.SS "QStringList Poppler::Document::infoKeys () const"
+Obtain a list of the available string information keys\&. 
+.PP
+Definition at line 300 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::isEncrypted () const"
+Test if the document is encrypted 
+.PP
+Definition at line 357 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::isLinearized () const"
+Test if the document is linearised
+.PP
+In some cases, this is called 'fast web view', since it is mostly an optimisation for viewing over the Web\&. 
+.PP
+Definition at line 362 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::isLocked (void) const"
+Determine if the document is locked 
+.PP
+Definition at line 122 of file poppler\-document\&.cc\&.
+.SS "\fBLinkDestination\fP * Poppler::Document::linkDestination (const QString & name)"
+Tries to resolve the named destination \fCname\fP\&.
+.PP
+\fBNote:\fP
+.RS 4
+this operation starts a search through the whole document
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+a new \fBLinkDestination\fP object if the named destination was actually found, or NULL otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 453 of file poppler\-document\&.cc\&.
+.SS "\fBDocument\fP * Poppler::Document::load (const QString & filePath, const QByteArray & ownerPassword = \fCQByteArray()\fP, const QByteArray & userPassword = \fCQByteArray()\fP)\fC [static]\fP"
+Load the document from a file on disk
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfilePath\fP the name (and path, if required) of the file to load 
+.br
+\fIownerPassword\fP the Latin1-encoded owner password to use in loading the file 
+.br
+\fIuserPassword\fP the Latin1-encoded user ('open') password to use in loading the file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the loaded document, or NULL on error
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The caller owns the pointer to \fBDocument\fP, and this should be deleted when no longer required\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The returning document may be locked if a password is required to open the file, and one is not provided (as the userPassword)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file poppler\-document\&.cc\&.
+.SS "\fBDocument\fP * Poppler::Document::loadFromData (const QByteArray & fileContents, const QByteArray & ownerPassword = \fCQByteArray()\fP, const QByteArray & userPassword = \fCQByteArray()\fP)\fC [static]\fP"
+Load the document from memory
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileContents\fP the file contents\&. They are copied so there is no need to keep the byte array around for the full life time of the document\&. 
+.br
+\fIownerPassword\fP the Latin1-encoded owner password to use in loading the file 
+.br
+\fIuserPassword\fP the Latin1-encoded user ('open') password to use in loading the file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the loaded document, or NULL on error
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+The caller owns the pointer to \fBDocument\fP, and this should be deleted when no longer required\&.
+.RE
+.PP
+\fBWarning:\fP
+.RS 4
+The returning document may be locked if a password is required to open the file, and one is not provided (as the userPassword)\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file poppler\-document\&.cc\&.
+.SS "QString Poppler::Document::metadata () const"
+Gets the metadata stream contents
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 564 of file poppler\-document\&.cc\&.
+.SS "\fBFontIterator\fP * Poppler::Document::newFontIterator (int startPage = \fC0\fP) const"
+Creates a new \fBFontIterator\fP object for font scanning\&.
+.PP
+The new iterator can be used for reading the font information of the document, reading page by page\&.
+.PP
+The caller is responsible for the returned object, ie it should freed it when no more useful\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstartPage\fP the initial page from which start reading fonts
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBfonts()\fP
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 235 of file poppler\-document\&.cc\&.
+.SS "int Poppler::Document::numPages () const"
+The number of pages in the document 
+.PP
+Definition at line 214 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToAddNotes () const"
+Test if the permissions on the document allow annotations to be added or modified, and interactive form fields (including signature fields) to be completed\&. 
+.PP
+Definition at line 387 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToAssemble () const"
+Test if the permissions on the document allow it to be 'assembled' - insertion, rotation and deletion of pages; or creation of bookmarks and thumbnail images\&.
+.PP
+\fBNote:\fP
+.RS 4
+this can be true even if \fBokToChange()\fP is false 
+.RE
+.PP
+
+.PP
+Definition at line 407 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToChange () const"
+Test if the permissions on the document allow it to be changed\&.
+.PP
+\fBNote:\fP
+.RS 4
+depending on the type of change, it may be more appropriate to check other properties as well\&. 
+.RE
+.PP
+
+.PP
+Definition at line 377 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToCopy () const"
+Test if the permissions on the document allow the contents to be copied / extracted 
+.PP
+Definition at line 382 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToCreateFormFields () const"
+Test if the permissions on the document allow interactive form fields (including signature fields) to be set, created and modified 
+.PP
+Definition at line 397 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToExtractForAccessibility () const"
+Test if the permissions on the document allow content extraction (text and perhaps other content) for accessibility usage (eg for a screen reader) 
+.PP
+Definition at line 402 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToFillForm () const"
+Test if the permissions on the document allow interactive form fields (including signature fields) to be completed\&.
+.PP
+\fBNote:\fP
+.RS 4
+this can be true even if \fBokToAddNotes()\fP is false - this means that only form completion is permitted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 392 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToPrint () const"
+Test if the permissions on the document allow it to be printed 
+.PP
+Definition at line 367 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::okToPrintHighRes () const"
+Test if the permissions on the document allow it to be printed at high resolution 
+.PP
+Definition at line 372 of file poppler\-document\&.cc\&.
+.SS "\fBOptContentModel\fP * Poppler::Document::optionalContentModel ()"
+Itemviews model for optional content\&.
+.PP
+The model is owned by the document\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 582 of file poppler\-document\&.cc\&.
+.SS "\fBPage\fP * Poppler::Document::page (int index) const"
+Get a specified \fBPage\fP
+.PP
+Note that this follows the PDF standard of being zero based - if you want the first page, then you need an index of zero\&.
+.PP
+The caller gets the ownership of the returned object\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP the page number index 
+.RE
+.PP
+
+.PP
+Definition at line 111 of file poppler\-document\&.cc\&.
+.SS "\fBPage\fP * Poppler::Document::page (const QString & label) const"
+This is an overloaded member function, provided for convenience\&. It differs from the above function only in what argument(s) it accepts\&.
+.PP
+The intent is that you can pass in a label like \fC'ix'\fP and get the page with that label (which might be in the table of contents), or pass in \fC'1'\fP and get the page that the user expects (which might not be the first page, if there is a title page and a table of contents)\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlabel\fP the page label 
+.RE
+.PP
+
+.PP
+Definition at line 420 of file poppler\-document\&.cc\&.
+.SS "\fBDocument::PageLayout\fP Poppler::Document::pageLayout () const"
+The layout that pages should be shown in when the document is first opened\&. This basically describes how pages are shown relative to each other\&. 
+.PP
+Definition at line 177 of file poppler\-document\&.cc\&.
+.SS "\fBDocument::PageMode\fP Poppler::Document::pageMode () const"
+The type of mode that should be used by the application when the document is opened\&. Note that while this is called page mode, it is really viewer application mode\&. 
+.PP
+Definition at line 157 of file poppler\-document\&.cc\&.
+.SS "QColor Poppler::Document::paperColor () const"
+The paper color
+.PP
+The default color is white\&. 
+.PP
+Definition at line 505 of file poppler\-document\&.cc\&.
+.SS "\fBPDFConverter\fP * Poppler::Document::pdfConverter () const"
+Gets a new PDF converter for this document\&.
+.PP
+The caller gets the ownership of the returned converter\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.8 
+.RE
+.PP
+
+.PP
+Definition at line 559 of file poppler\-document\&.cc\&.
+.SS "\fBPSConverter\fP * Poppler::Document::psConverter () const"
+Gets a new PS converter for this document\&.
+.PP
+The caller gets the ownership of the returned converter\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 554 of file poppler\-document\&.cc\&.
+.SS "\fBDocument::RenderBackend\fP Poppler::Document::renderBackend () const"
+The currently set render backend
+.PP
+The default backend is \fBSplashBackend\fP
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 519 of file poppler\-document\&.cc\&.
+.SS "Document::RenderHints Poppler::Document::renderHints () const"
+The currently set render hints\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 549 of file poppler\-document\&.cc\&.
+.SS "QStringList Poppler::Document::scripts () const"
+Document-level JavaScript scripts\&.
+.PP
+Returns the list of document level JavaScript scripts to be always executed before any other script\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.10 
+.RE
+.PP
+
+.PP
+Definition at line 590 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::setColorDisplayProfile (void * outputProfileA)"
+Set a color display profile for the current document\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutputProfileA\fP is a \fCcmsHPROFILE\fP of the LCMS library\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 467 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::setColorDisplayProfileName (const QString & name)"
+Set a color display profile for the current document\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP is the name of the display profile to set\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.12 
+.RE
+.PP
+
+.PP
+Definition at line 476 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::setPaperColor (const QColor & color)"
+Sets the paper color
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcolor\fP the new paper color 
+.RE
+.PP
+
+.PP
+Definition at line 462 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::setRenderBackend (\fBDocument::RenderBackend\fP backend)"
+Sets the backend used to render the pages\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbackend\fP the new rendering backend
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 510 of file poppler\-document\&.cc\&.
+.SS "void Poppler::Document::setRenderHint (\fBDocument::RenderHint\fP hint, bool on = \fCtrue\fP)"
+Sets the render \fChint\fP \&.
+.PP
+\fBNote:\fP
+.RS 4
+some hints may not be supported by some rendering backends\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIon\fP whether the flag should be added or removed\&.
+.RE
+.PP
+\fBSince:\fP
+.RS 4
+0\&.6 
+.RE
+.PP
+
+.PP
+Definition at line 534 of file poppler\-document\&.cc\&.
+.SS "Qt::LayoutDirection Poppler::Document::textDirection () const"
+The predominant reading order for text as supplied by the document's viewer preferences\&.
+.PP
+\fBSince:\fP
+.RS 4
+0\&.26 
+.RE
+.PP
+
+.PP
+Definition at line 199 of file poppler\-document\&.cc\&.
+.SS "QDomDocument * Poppler::Document::toc () const"
+Gets the table of contents (TOC) of the \fBDocument\fP\&.
+.PP
+The caller is responsable for the returned object\&.
+.PP
+In the tree the tag name is the 'screen' name of the entry\&. A tag can have attributes\&. Here follows the list of tag attributes with meaning:
+.IP "\(bu" 2
+Destination: A string description of the referred destination
+.IP "\(bu" 2
+DestinationName: A 'named reference' to the viewport
+.IP "\(bu" 2
+ExternalFileName: A link to a external filename
+.IP "\(bu" 2
+Open: A bool value that tells whether the subbranch of the item is open or not
+.PP
+.PP
+Resolving the final destination for each item can be done in the following way:
+.IP "\(bu" 2
+first, checking for 'Destination': if not empty, then a \fBLinkDestination\fP can be constructed straight with it
+.IP "\(bu" 2
+as second step, if the 'DestinationName' is not empty, then the destination can be resolved using \fBlinkDestination()\fP
+.PP
+.PP
+Note also that if 'ExternalFileName' is not emtpy, then the destination refers to that document (and not to the current one)\&.
+.PP
+\fBReturns:\fP
+.RS 4
+the TOC, or NULL if the \fBDocument\fP does not have one 
+.RE
+.PP
+
+.PP
+Definition at line 436 of file poppler\-document\&.cc\&.
+.SS "bool Poppler::Document::unlock (const QByteArray & ownerPassword, const QByteArray & userPassword)"
+Provide the passwords required to unlock the document
+.PP
+\fBParameters:\fP
+.RS 4
+\fIownerPassword\fP the Latin1-encoded owner password to use in loading the file 
+.br
+\fIuserPassword\fP the Latin1-encoded user ('open') password to use in loading the file 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file poppler\-document\&.cc\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

@@ -1,0 +1,106 @@
+.TH "SplashBitmap" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SplashBitmap
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBConversionMode\fP { \fBconversionOpaque\fP, \fBconversionAlpha\fP, \fBconversionAlphaPremultiplied\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSplashBitmap\fP (int widthA, int heightA, int rowPad, SplashColorMode modeA, GBool alphaA, GBool topDown=gTrue, \fBGooList\fP *separationList=NULL)"
+.br
+.ti -1c
+.RI "int \fBgetWidth\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetHeight\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRowSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetAlphaRowSize\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetRowPad\fP ()"
+.br
+.ti -1c
+.RI "SplashColorMode \fBgetMode\fP ()"
+.br
+.ti -1c
+.RI "SplashColorPtr \fBgetDataPtr\fP ()"
+.br
+.ti -1c
+.RI "Guchar * \fBgetAlphaPtr\fP ()"
+.br
+.ti -1c
+.RI "\fBGooList\fP * \fBgetSeparationList\fP ()"
+.br
+.ti -1c
+.RI "SplashError \fBwritePNMFile\fP (char *fileName)"
+.br
+.ti -1c
+.RI "SplashError \fBwritePNMFile\fP (FILE *f)"
+.br
+.ti -1c
+.RI "SplashError \fBwriteAlphaPGMFile\fP (char *fileName)"
+.br
+.ti -1c
+.RI "SplashError \fBwriteImgFile\fP (SplashImageFileFormat format, char *fileName, int hDPI, int vDPI, const char *compressionString='')"
+.br
+.ti -1c
+.RI "SplashError \fBwriteImgFile\fP (SplashImageFileFormat format, FILE *f, int hDPI, int vDPI, const char *compressionString='')"
+.br
+.ti -1c
+.RI "SplashError \fBwriteImgFile\fP (\fBImgWriter\fP *writer, FILE *f, int hDPI, int vDPI)"
+.br
+.ti -1c
+.RI "GBool \fBconvertToXBGR\fP (ConversionMode conversionMode=conversionOpaque)"
+.br
+.ti -1c
+.RI "void \fBgetPixel\fP (int x, int y, SplashColorPtr pixel)"
+.br
+.ti -1c
+.RI "void \fBgetRGBLine\fP (int y, SplashColorPtr line)"
+.br
+.ti -1c
+.RI "void \fBgetXBGRLine\fP (int y, SplashColorPtr line, ConversionMode conversionMode=conversionOpaque)"
+.br
+.ti -1c
+.RI "Guchar \fBgetAlpha\fP (int x, int y)"
+.br
+.ti -1c
+.RI "SplashColorPtr \fBtakeData\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSplashBitmap\fP * \fBcopy\fP (\fBSplashBitmap\fP *src)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSplash\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 47 of file SplashBitmap\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

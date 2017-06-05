@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="noteline_8cpp" kind="file" language="C++">
+    <compoundname>noteline.cpp</compoundname>
+    <includes refid="noteline_8h" local="yes">noteline.h</includes>
+    <includes refid="textline_8h" local="yes">textline.h</includes>
+    <incdepgraph>
+      <node id="31392">
+        <label>shape.h</label>
+        <link refid="shape_8h_source"/>
+      </node>
+      <node id="31395">
+        <label>chordlist.h</label>
+        <link refid="chordlist_8h_source"/>
+      </node>
+      <node id="31385">
+        <label>line.h</label>
+        <link refid="line_8h_source"/>
+        <childnode refid="31386" relation="include">
+        </childnode>
+        <childnode refid="31393" relation="include">
+        </childnode>
+      </node>
+      <node id="31384">
+        <label>textlinebase.h</label>
+        <link refid="textlinebase_8h_source"/>
+        <childnode refid="31385" relation="include">
+        </childnode>
+        <childnode refid="31394" relation="include">
+        </childnode>
+        <childnode refid="31396" relation="include">
+        </childnode>
+      </node>
+      <node id="31383">
+        <label>noteline.h</label>
+        <link refid="noteline_8h_source"/>
+        <childnode refid="31384" relation="include">
+        </childnode>
+      </node>
+      <node id="31386">
+        <label>spanner.h</label>
+        <link refid="spanner_8h_source"/>
+        <childnode refid="31387" relation="include">
+        </childnode>
+      </node>
+      <node id="31388">
+        <label>spatium.h</label>
+        <link refid="spatium_8h_source"/>
+      </node>
+      <node id="31396">
+        <label>property.h</label>
+        <link refid="property_8h_source"/>
+      </node>
+      <node id="31389">
+        <label>fraction.h</label>
+        <link refid="fraction_8h_source"/>
+        <childnode refid="31390" relation="include">
+        </childnode>
+      </node>
+      <node id="31394">
+        <label>style.h</label>
+        <link refid="style_8h_source"/>
+        <childnode refid="31395" relation="include">
+        </childnode>
+      </node>
+      <node id="31387">
+        <label>element.h</label>
+        <link refid="element_8h_source"/>
+        <childnode refid="31388" relation="include">
+        </childnode>
+        <childnode refid="31389" relation="include">
+        </childnode>
+        <childnode refid="31391" relation="include">
+        </childnode>
+        <childnode refid="31392" relation="include">
+        </childnode>
+      </node>
+      <node id="31397">
+        <label>textline.h</label>
+        <link refid="textline_8h_source"/>
+        <childnode refid="31384" relation="include">
+        </childnode>
+      </node>
+      <node id="31393">
+        <label>mscore.h</label>
+        <link refid="mscore_8h_source"/>
+        <childnode refid="31390" relation="include">
+        </childnode>
+        <childnode refid="31394" relation="include">
+        </childnode>
+      </node>
+      <node id="31382">
+        <label>libmscore/noteline.cpp</label>
+        <link refid="noteline_8cpp"/>
+        <childnode refid="31383" relation="include">
+        </childnode>
+        <childnode refid="31397" relation="include">
+        </childnode>
+      </node>
+      <node id="31390">
+        <label>config.h</label>
+      </node>
+      <node id="31391">
+        <label>scoreElement.h</label>
+        <link refid="score_element_8h_source"/>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_ms">Ms</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>MuseScore</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Music<sp/>Composition<sp/>&amp;<sp/>Notation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Copyright<sp/>(C)<sp/>2002-2011<sp/>Werner<sp/>Schweer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software;<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>version<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>as<sp/>published<sp/>by<sp/>the<sp/>Free<sp/>Software<sp/>Foundation<sp/>and<sp/>appearing<sp/>in</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>the<sp/>file<sp/>LICENCE.GPL</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//=============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;noteline.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;textline.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_ms" kindref="compound">Ms</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">NoteLine::NoteLine(Score*<sp/>s)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/>:<sp/>TextLineBase(s)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal">NoteLine::NoteLine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>NoteLine&amp;<sp/>nl)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/>:<sp/>TextLineBase(nl)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>createLineSegment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//---------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">LineSegment*<sp/>NoteLine::createLineSegment()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>TextLineSegment*<sp/>seg<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>TextLineSegment(score());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>seg;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>Ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="libmscore/noteline.cpp"/>
+  </compounddef>
+</doxygen>

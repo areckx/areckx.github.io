@@ -1,0 +1,134 @@
+.TH "OVE::Articulation" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OVE::Articulation
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBOVE::OffsetElement\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBXmlType\fP : char { \fBArticulation\fP, \fBTechnical\fP, \fBArpeggiate\fP, \fBOrnament\fP, \fBFermata\fP, \fBDirection\fP, \fBUnknown\fP }"
+.br
+.ti -1c
+.RI "enum \fBVelocityType\fP : char { \fBOffset\fP, \fBSetValue\fP, \fBPercentage\fP }"
+.br
+.ti -1c
+.RI "enum \fBTrillInterval\fP : char { \fBDiatonic\fP = 0, \fBChromatic\fP, \fBWhole\fP }"
+.br
+.ti -1c
+.RI "enum \fBAccelerateType\fP : char { \fBNone\fP = 0, \fBSlow\fP, \fBNormal\fP, \fBFast\fP }"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetArtType\fP (int type)"
+.br
+.ti -1c
+.RI "ArticulationType \fBgetArtType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetPlacementAbove\fP (bool above)"
+.br
+.ti -1c
+.RI "bool \fBgetPlacementAbove\fP () const"
+.br
+.ti -1c
+.RI "bool \fBwillAffectNotes\fP () const"
+.br
+.ti -1c
+.RI "XmlType \fBgetXmlType\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetChangeSoundEffect\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetSoundEffect\fP (int soundFrom, int soundTo)"
+.br
+.ti -1c
+.RI "QPair< int, int > \fBgetSoundEffect\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetChangeLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetLengthPercentage\fP (int percentage)"
+.br
+.ti -1c
+.RI "int \fBgetLengthPercentage\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetChangeVelocity\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVelocityType\fP (VelocityType type)"
+.br
+.ti -1c
+.RI "VelocityType \fBgetVelocityType\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetVelocityValue\fP (int value)"
+.br
+.ti -1c
+.RI "int \fBgetVelocityValue\fP () const"
+.br
+.ti -1c
+.RI "bool \fBgetChangeExtraLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetExtraLength\fP (int length)"
+.br
+.ti -1c
+.RI "int \fBgetExtraLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrillInterval\fP (int \fBinterval\fP)"
+.br
+.ti -1c
+.RI "TrillInterval \fBgetTrillInterval\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAuxiliaryFirst\fP (bool first)"
+.br
+.ti -1c
+.RI "bool \fBgetAuxiliaryFirst\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrillRate\fP (NoteType rate)"
+.br
+.ti -1c
+.RI "NoteType \fBgetTrillRate\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetTrillNoteLength\fP (int length)"
+.br
+.ti -1c
+.RI "int \fBgetTrillNoteLength\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetAccelerateType\fP (int type)"
+.br
+.ti -1c
+.RI "AccelerateType \fBgetAccelerateType\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBisTrill\fP (ArticulationType type)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 1157 of file ove\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

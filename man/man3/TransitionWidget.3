@@ -1,0 +1,176 @@
+.TH "TransitionWidget" 3 "Mon Jun 5 2017" "MuseScore-2.2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TransitionWidget \- temporary widget used to perform smooth transition between one widget state and another  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <transitionwidget\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef QPointer< \fBTransitionWidget\fP > \fBPointer\fP"
+.br
+.RI "shortcut to painter "
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBfinished\fP (void)"
+.br
+.RI "emmitted when animation is finished/aborder "
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTransitionWidget\fP (QWidget *parent, int \fBduration\fP)"
+.br
+.RI "constructor "
+.ti -1c
+.RI "virtual \fB~TransitionWidget\fP (void)"
+.br
+.RI "destructor "
+.ti -1c
+.RI "void \fBsetDuration\fP (int \fBduration\fP)"
+.br
+.RI "duration "
+.ti -1c
+.RI "int \fBduration\fP (void) const"
+.br
+.RI "duration "
+.ti -1c
+.RI "QPixmap \fBgrab\fP (QWidget *=0, QRect=QRect())"
+.br
+.RI "grap pixmap "
+.ti -1c
+.RI "virtual bool \fBisAnimated\fP (void) const"
+.br
+.RI "true if animated "
+.ti -1c
+.RI "virtual void \fBendAnimation\fP (void)"
+.br
+.RI "end animation "
+.ti -1c
+.RI "virtual void \fBanimate\fP (void)"
+.br
+.RI "animate transition "
+.in -1c
+.PP
+.RI "\fBopacity\fP"
+.br
+
+.in +1c
+.in +1c
+.ti -1c
+.RI "virtual qreal \fBopacity\fP (void) const"
+.br
+.ti -1c
+.RI "virtual void \fBsetOpacity\fP (qreal value)"
+.br
+.ti -1c
+.RI "void \fBresetStartPixmap\fP (void)"
+.br
+.RI "start "
+.ti -1c
+.RI "void \fBsetStartPixmap\fP (QPixmap pixmap)"
+.br
+.RI "start "
+.ti -1c
+.RI "const QPixmap & \fBstartPixmap\fP (void) const"
+.br
+.RI "start "
+.ti -1c
+.RI "void \fBresetEndPixmap\fP (void)"
+.br
+.RI "end "
+.ti -1c
+.RI "void \fBsetEndPixmap\fP (QPixmap pixmap)"
+.br
+.RI "end "
+.ti -1c
+.RI "const QPixmap & \fBendPixmap\fP (void) const"
+.br
+.RI "start "
+.ti -1c
+.RI "const QPixmap & \fBcurrentPixmap\fP (void) const"
+.br
+.RI "current "
+.in -1c
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBpaintEnabled\fP (void)"
+.br
+.RI "true if paint is enabled "
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBpaintEvent\fP (QPaintEvent *)"
+.br
+.RI "paint event "
+.ti -1c
+.RI "virtual void \fBgrabBackground\fP (QPixmap &, QWidget *, QRect &) const"
+.br
+.RI "grab widget background "
+.ti -1c
+.RI "virtual void \fBgrabWidget\fP (QPixmap &, QWidget *, QRect &) const"
+.br
+.RI "grab widget "
+.ti -1c
+.RI "virtual void \fBfade\fP (const QPixmap &source, QPixmap &target, qreal \fBopacity\fP, const QRect &) const"
+.br
+.RI "fade pixmap "
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "qreal \fBopacity\fP"
+.br
+.RI "declare opacity property "
+.in -1c
+.SS "flags"
+
+.in +1c
+.ti -1c
+.RI "enum \fBFlag\fP { \fBNone\fP = 0, \fBGrabFromWindow\fP = 1 << 0, \fBTransparent\fP = 1 << 1, \fBPaintOnWidget\fP = 1 << 2 }"
+.br
+.ti -1c
+.RI "void \fBsetFlags\fP (Flags value)"
+.br
+.ti -1c
+.RI "void \fBsetFlag\fP (Flag flag, bool value=true)"
+.br
+.ti -1c
+.RI "bool \fBtestFlag\fP (Flag flag) const"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+temporary widget used to perform smooth transition between one widget state and another 
+.PP
+Definition at line 32 of file transitionwidget\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void TransitionWidget::grabBackground (QPixmap & pixmap, QWidget * widget, QRect & rect) const\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+grab widget background Background is not rendered properly using QWidget::render\&. Use home-made grabber instead\&. This is directly inspired from bespin\&. Copyright (C) 2007 Thomas Luebking thomas.luebking@web.de 
+.PP
+Definition at line 180 of file transitionwidget\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MuseScore-2\&.2 from the source code\&.

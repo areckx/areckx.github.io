@@ -1,0 +1,1208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_ms_1_1_music_x_m_l_parser_pass1" kind="class" language="C++" prot="public">
+    <compoundname>Ms::MusicXMLParserPass1</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1af2a60eebf99439a6cf732d4ad0e12577" prot="private" static="no" mutable="no">
+        <type>QXmlStreamReader</type>
+        <definition>QXmlStreamReader Ms::MusicXMLParserPass1::_e</definition>
+        <argsstring></argsstring>
+        <name>_e</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="122" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1af56d0e4639d32bc3f0c64cacae5be66d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Ms::MusicXMLParserPass1::_divs</definition>
+        <argsstring></argsstring>
+        <name>_divs</name>
+        <briefdescription>
+<para>Current MusicXML divisions value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="123" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1aa0ff366c234d4bb4856b9a9cb4d9dc1a" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, <ref refid="class_ms_1_1_music_xml_part" kindref="compound">MusicXmlPart</ref> &gt;</type>
+        <definition>QMap&lt;QString, MusicXmlPart&gt; Ms::MusicXMLParserPass1::_parts</definition>
+        <argsstring></argsstring>
+        <name>_parts</name>
+        <briefdescription>
+<para>Parts data, mapped on part id. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="124" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a0ab388b61275406959da4744cd3c22b3" prot="private" static="no" mutable="no">
+        <type>QVector&lt; <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &gt;</type>
+        <definition>QVector&lt;Fraction&gt; Ms::MusicXMLParserPass1::_measureLength</definition>
+        <argsstring></argsstring>
+        <name>_measureLength</name>
+        <briefdescription>
+<para>Length of each measure. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="125" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a36c54882c9488a0e88dc277def5eccac" prot="private" static="no" mutable="no">
+        <type>QVector&lt; <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &gt;</type>
+        <definition>QVector&lt;Fraction&gt; Ms::MusicXMLParserPass1::_measureStart</definition>
+        <argsstring></argsstring>
+        <name>_measureStart</name>
+        <briefdescription>
+<para>Start time of each measure. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="126" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a40a9008c0c51ad71c90f8e384e88f866" prot="private" static="no" mutable="no">
+        <type>PartMap</type>
+        <definition>PartMap Ms::MusicXMLParserPass1::_partMap</definition>
+        <argsstring></argsstring>
+        <name>_partMap</name>
+        <briefdescription>
+<para>TODO merge into <ref refid="class_ms_1_1_music_xml_part" kindref="compound">MusicXmlPart</ref> ?? </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="127" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1afd2f52ef3f6220ebf64a8ce880bae56f" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, <ref refid="namespace_ms_1a568bb2597ab1d23e4660f255997223c2" kindref="member">MusicXMLDrumset</ref> &gt;</type>
+        <definition>QMap&lt;QString, MusicXMLDrumset&gt; Ms::MusicXMLParserPass1::_drumsets</definition>
+        <argsstring></argsstring>
+        <name>_drumsets</name>
+        <briefdescription>
+<para><ref refid="class_ms_1_1_drumset" kindref="compound">Drumset</ref> for each part, mapped on part id. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="128" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a109ec59d45eed10a4e95dede8d8370e0" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::MusicXMLParserPass1::_parseStatus</definition>
+        <argsstring></argsstring>
+        <name>_parseStatus</name>
+        <briefdescription>
+<para>Parse status (typicallay a short error message) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="129" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a3df7ca97b65c3ea253e16e51db2b6e6a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+        <definition>Score* Ms::MusicXMLParserPass1::_score</definition>
+        <argsstring></argsstring>
+        <name>_score</name>
+        <briefdescription>
+<para><ref refid="class_ms_1_1_muse_score" kindref="compound">MuseScore</ref> score. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="130" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a7afb6034f9e4c8149d03e447d2d53036" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction Ms::MusicXMLParserPass1::_timeSigDura</definition>
+        <argsstring></argsstring>
+        <name>_timeSigDura</name>
+        <briefdescription>
+<para><ref refid="class_ms_1_1_measure" kindref="compound">Measure</ref> duration according to last timesig read. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="133" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1afb3504f38d5ccc240134eef356b77b26" prot="private" static="no" mutable="no">
+        <type>QMap&lt; int, <ref refid="struct_ms_1_1_mxml_octave_shift_desc" kindref="compound">MxmlOctaveShiftDesc</ref> &gt;</type>
+        <definition>QMap&lt;int, MxmlOctaveShiftDesc&gt; Ms::MusicXMLParserPass1::_octaveShifts</definition>
+        <argsstring></argsstring>
+        <name>_octaveShifts</name>
+        <briefdescription>
+<para>Pending octave-shifts. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="134" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1a1ec4ee8fbbaf5c8aa6b7bab3b77fa036" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction Ms::MusicXMLParserPass1::_firstInstrSTime</definition>
+        <argsstring></argsstring>
+        <name>_firstInstrSTime</name>
+        <briefdescription>
+<para>First instrument start time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="135" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ms_1_1_music_x_m_l_parser_pass1_1ac6069537a12db54cddf92fe30fd3c85e" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Ms::MusicXMLParserPass1::_firstInstrId</definition>
+        <argsstring></argsstring>
+        <name>_firstInstrId</name>
+        <briefdescription>
+<para>First instrument id. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="136" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ac3c07acad6c6c7bd70562c4a78126288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Ms::MusicXMLParserPass1::MusicXMLParserPass1</definition>
+        <argsstring>(Score *score)</argsstring>
+        <name>MusicXMLParserPass1</name>
+        <param>
+          <type><ref refid="class_ms_1_1_score" kindref="compound">Score</ref> *</type>
+          <declname>score</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="65" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="249" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a8cad35ac46557855c87e3e497f323d14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::initPartState</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>initPartState</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize members as required for reading the MusicXML part element. TODO: factor out part reading into a separate class TODO: preferably use automatically initialized variables <ref refid="class_ms_1_1_note" kindref="compound">Note</ref> that Qt automatically initializes new elements in QVector (tuplets). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="66" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="266" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1abed4dea5b7f1b7f2d44a782e7f2abfe5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Score::FileError</type>
+        <definition>Score::FileError Ms::MusicXMLParserPass1::parse</definition>
+        <argsstring>(QIODevice *device)</argsstring>
+        <name>parse</name>
+        <param>
+          <type>QIODevice *</type>
+          <declname>device</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse MusicXML in <emphasis>device</emphasis> and extract pass 1 data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="67" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="851" bodyend="865"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1aff543e2b13503dc8646f50f269372211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Score::FileError</type>
+        <definition>Score::FileError Ms::MusicXMLParserPass1::parse</definition>
+        <argsstring>()</argsstring>
+        <name>parse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Start the parsing process, after verifying the top-level node is score-partwise </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="68" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="875" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a4bb6592ded44648255e7181efc672cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::scorePartwise</definition>
+        <argsstring>()</argsstring>
+        <name>scorePartwise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the MusicXML top-level (XPath /score-partwise) node. </para>        </detaileddescription>
+        <inbodydescription>
+<para>&lt; <ref refid="class_ms_1_1_page" kindref="compound">Page</ref> width read from defaults</para><para>&lt; <ref refid="class_ms_1_1_page" kindref="compound">Page</ref> height read from defaults </para>        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="69" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="926" bodyend="1021"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a94600ed5a1a21049dc28fb143a398ffd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::identification</definition>
+        <argsstring>()</argsstring>
+        <name>identification</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/identification node: read the metadata. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="70" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1032" bodyend="1061"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a20ea5b9e1776760bdbba0d5ccc2777fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::credit</definition>
+        <argsstring>(CreditWordsList &amp;credits)</argsstring>
+        <name>credit</name>
+        <param>
+          <type>CreditWordsList &amp;</type>
+          <declname>credits</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/credit node: read the credits for later handling by doCredits(). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="71" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1228" bodyend="1275"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ad429594859ba9b9c6e26c534227944f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::defaults</definition>
+        <argsstring>(int &amp;pageWidth, int &amp;pageHeight)</argsstring>
+        <name>defaults</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>pageWidth</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>pageHeight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/defaults node: read the general score layout settings. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="72" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1367" bodyend="1455"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ace07d590acdb0a0f933225af36b775a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::pageLayout</definition>
+        <argsstring>(PageFormat &amp;pf, const qreal conversion, int &amp;pageWidth, int &amp;pageHeight)</argsstring>
+        <name>pageLayout</name>
+        <param>
+          <type><ref refid="class_ms_1_1_page_format" kindref="compound">PageFormat</ref> &amp;</type>
+          <declname>pf</declname>
+        </param>
+        <param>
+          <type>const qreal</type>
+          <declname>conversion</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>pageWidth</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>pageHeight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/defaults/page-layout node: read the page layout. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="73" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1466" bodyend="1527"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a1abbf626a79e74b39c84b530765f6a5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::partList</definition>
+        <argsstring>(MusicXmlPartGroupList &amp;partGroupList)</argsstring>
+        <name>partList</name>
+        <param>
+          <type>MusicXmlPartGroupList &amp;</type>
+          <declname>partGroupList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part-list: create the parts and for each part set id and name. Also handle the part-groups. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="74" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1539" bodyend="1557"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a5a2df24d7b9d1d37082d3cb3db296f89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::partGroup</definition>
+        <argsstring>(const int scoreParts, MusicXmlPartGroupList &amp;partGroupList, MusicXmlPartGroupMap &amp;partGroups)</argsstring>
+        <name>partGroup</name>
+        <param>
+          <type>const int</type>
+          <declname>scoreParts</declname>
+        </param>
+        <param>
+          <type>MusicXmlPartGroupList &amp;</type>
+          <declname>partGroupList</declname>
+        </param>
+        <param>
+          <type>MusicXmlPartGroupMap &amp;</type>
+          <declname>partGroups</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part-list/part-group node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="75" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1662" bodyend="1692"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ae3c3601c23c0d57e2aa568ca88c06aec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::scorePart</definition>
+        <argsstring>()</argsstring>
+        <name>scorePart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part-list/score-part node: create the part and sets id and name. <ref refid="class_ms_1_1_note" kindref="compound">Note</ref> that a part is created even if no part-name is present which is invalid MusicXML but is (sometimes ?) generated by NWC2MusicXML. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="76" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1745" bodyend="1818"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a463938c0965929d3e138ef1ee23f6196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::scoreInstrument</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>scoreInstrument</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part-list/score-part/score-instrument node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="77" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1828" bodyend="1880"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a62c10a3dbdfa48e117da30d553edcbcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::midiInstrument</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>midiInstrument</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part-list/score-part/midi-instrument node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="78" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1890" bodyend="1953"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a50e05b33caec82874456b7ea0c6a8eeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::part</definition>
+        <argsstring>()</argsstring>
+        <name>part</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part node: read the parts data to determine measure timing and octave shifts. Assign voices and staves. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="79" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="1965" bodyend="2010"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a06fb8196bef4664168ea4f3f3815c4c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::measure</definition>
+        <argsstring>(const QString &amp;partId, const Fraction time, Fraction &amp;mdur, VoiceOverlapDetector &amp;vod)</argsstring>
+        <name>measure</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>mdur</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_voice_overlap_detector" kindref="compound">VoiceOverlapDetector</ref> &amp;</type>
+          <declname>vod</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure node: read the measures data as required to determine measure timing, octave shifts and assign voices and staves. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="80" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2046" bodyend="2147"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a39d323cd2ce91f10d41b1b5938bd3fab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::attributes</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>attributes</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="81" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2157" bodyend="2176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1aaca33f48b413fe218783791896099fa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::clef</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>clef</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes/clef node. Set the staff type based on clef type TODO: check if staff type setting could be simplified </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="82" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2188" bodyend="2228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1abb54ab145dbe05ccc4ef4a04ca0d94bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::time</definition>
+        <argsstring>()</argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes/time node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="83" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2293" bodyend="2319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a9f1903385cb6f43c9aab41891125ed17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::divisions</definition>
+        <argsstring>()</argsstring>
+        <name>divisions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes/divisions node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="84" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2329" bodyend="2336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ae6bb7941967664f45789078847af96c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::staffDetails</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>staffDetails</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes/staff-details node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="85" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2360" bodyend="2415"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1aad4c7fa1b28dbc496956380e11dfe20a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::staffTuning</definition>
+        <argsstring>(StringData *t)</argsstring>
+        <name>staffTuning</name>
+        <param>
+          <type><ref refid="class_ms_1_1_string_data" kindref="compound">StringData</ref> *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/attributes/staff-details/staff-tuning node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="86" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2453" bodyend="2495"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1aa8bbcc91b95c528dde2fa09e873393cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::staves</definition>
+        <argsstring>(const QString &amp;partId)</argsstring>
+        <name>staves</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set number of staves for part <emphasis>partId</emphasis> to the max value of the current value and the value in the &lt;staves&gt; element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="87" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2506" bodyend="2521"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a5a81de5bea8927e52140306a2fba53b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::direction</definition>
+        <argsstring>(const QString &amp;partId, const Fraction cTime)</argsstring>
+        <name>direction</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>cTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/direction node to be able to handle octave-shifts, as these must be interpreted in musical order instead of in MusicXML file order. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="88" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2533" bodyend="2596"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a67b9401bb4719c4ee6b760f31e2282e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::directionType</definition>
+        <argsstring>(const Fraction cTime, QList&lt; MxmlOctaveShiftDesc &gt; &amp;starts, QList&lt; MxmlOctaveShiftDesc &gt; &amp;stops)</argsstring>
+        <name>directionType</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>cTime</declname>
+        </param>
+        <param>
+          <type>QList&lt; <ref refid="struct_ms_1_1_mxml_octave_shift_desc" kindref="compound">MxmlOctaveShiftDesc</ref> &gt; &amp;</type>
+          <declname>starts</declname>
+        </param>
+        <param>
+          <type>QList&lt; <ref refid="struct_ms_1_1_mxml_octave_shift_desc" kindref="compound">MxmlOctaveShiftDesc</ref> &gt; &amp;</type>
+          <declname>stops</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/direction/direction-type node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="89" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2606" bodyend="2647"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ac8dd5ac5d66d6520d67788636e3a0b0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::handleOctaveShift</definition>
+        <argsstring>(const Fraction cTime, const QString &amp;type, short size, MxmlOctaveShiftDesc &amp;desc)</argsstring>
+        <name>handleOctaveShift</name>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>cTime</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>short</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_ms_1_1_mxml_octave_shift_desc" kindref="compound">MxmlOctaveShiftDesc</ref> &amp;</type>
+          <declname>desc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="90" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2653" bodyend="2685"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ad4313551e5931ebeaf8abd78502ece9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::note</definition>
+        <argsstring>(const QString &amp;partId, const Fraction cTime, Fraction &amp;dura, VoiceOverlapDetector &amp;vod)</argsstring>
+        <name>note</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>partId</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>cTime</declname>
+          <defname>sTime</defname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>dura</declname>
+        </param>
+        <param>
+          <type><ref refid="class_ms_1_1_voice_overlap_detector" kindref="compound">VoiceOverlapDetector</ref> &amp;</type>
+          <declname>vod</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="91" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2713" bodyend="2885"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a49918520d96cdff24a634c35cae34331" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::notePrintSpacingNo</definition>
+        <argsstring>(Fraction &amp;dura)</argsstring>
+        <name>notePrintSpacingNo</name>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>dura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note node for a note with print-spacing=&quot;no&quot;. These are handled like a forward: only moving the time forward. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="92" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2896" bodyend="2926"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ad2ecac228c9a223bf03c8d373a6be26c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::duration</definition>
+        <argsstring>(Fraction &amp;dura)</argsstring>
+        <name>duration</name>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>dura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note/duration node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="93" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2936" bodyend="2952"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a293da30da73224784aaf1e4228eea390" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::forward</definition>
+        <argsstring>(Fraction &amp;dura)</argsstring>
+        <name>forward</name>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>dura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note/forward node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="94" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2962" bodyend="2977"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a551f4d1ca22cbccdab8fe8dce077512d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::backup</definition>
+        <argsstring>(Fraction &amp;dura)</argsstring>
+        <name>backup</name>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>dura</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note/backup node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="95" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2987" bodyend="2998"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ac9feadbc3a95595e36c5ed1287beb665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::timeModification</definition>
+        <argsstring>(Fraction &amp;timeMod)</argsstring>
+        <name>timeModification</name>
+        <param>
+          <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &amp;</type>
+          <declname>timeMod</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note/time-modification node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="96" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="3008" bodyend="3036"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ad7150c9fab9c112eed3e0e9ecde6602b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::pitch</definition>
+        <argsstring>(int &amp;step, float &amp;alter, int &amp;oct)</argsstring>
+        <name>pitch</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>step</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>alter</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>oct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1acc3a6e719aed4b0d3f1cd4fc75b418bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::rest</definition>
+        <argsstring>()</argsstring>
+        <name>rest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parse the /score-partwise/part/measure/note/rest node. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="98" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="3046" bodyend="3054"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a182a288f42f6a1e202a4a8c83452c09c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Ms::MusicXMLParserPass1::getParseStatus</definition>
+        <argsstring>() const</argsstring>
+        <name>getParseStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="99" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="99" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1adeeb5d31ceb27d6a85d6ff843ca11512" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::logDebugTrace</definition>
+        <argsstring>(const QString &amp;info)</argsstring>
+        <name>logDebugTrace</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log debug (function) trace. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="100" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="506" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a0a350619dbe0953dc37376f2ce630c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::logDebugInfo</definition>
+        <argsstring>(const QString &amp;info)</argsstring>
+        <name>logDebugInfo</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log debug <emphasis>info</emphasis> (non-fatal events relevant for debugging). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="101" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="519" bodyend="523"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a204f3b7acd0364a787806b53ae5ea663" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::logError</definition>
+        <argsstring>(const QString &amp;error)</argsstring>
+        <name>logError</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Log <emphasis>error</emphasis> (possibly non-fatal but to be reported to the user anyway). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="102" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="533" bodyend="539"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a82c648499fd4e880204c669a7ee3cc20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::skipLogCurrElem</definition>
+        <argsstring>()</argsstring>
+        <name>skipLogCurrElem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Skip the current element, log debug as info. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="103" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="550" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a2b8f3b411b5c0562b7c45c8f87bacf84" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::MusicXMLParserPass1::determineMeasureLength</definition>
+        <argsstring>(QVector&lt; Fraction &gt; &amp;ml) const</argsstring>
+        <name>determineMeasureLength</name>
+        <param>
+          <type>QVector&lt; <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref> &gt; &amp;</type>
+          <declname>ml</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine the length in ticks of each measure in all parts. Return false on error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="104" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="283" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1ad7245a1bc923e434054c8300e793056c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>VoiceList</type>
+        <definition>VoiceList Ms::MusicXMLParserPass1::getVoiceList</definition>
+        <argsstring>(const QString id) const</argsstring>
+        <name>getVoiceList</name>
+        <param>
+          <type>const QString</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the VoiceList for part <emphasis>id</emphasis>. Return an empty VoiceList on error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="105" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="319" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a818455585a8cfd20fea4c6a2131a33b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::MusicXMLParserPass1::determineStaffMoveVoice</definition>
+        <argsstring>(const QString &amp;id, const int mxStaff, const QString &amp;mxVoice, int &amp;msMove, int &amp;msTrack, int &amp;msVoice) const</argsstring>
+        <name>determineStaffMoveVoice</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>mxStaff</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>mxVoice</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>msMove</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>msTrack</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>msVoice</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For part <emphasis>id</emphasis>, determine <ref refid="class_ms_1_1_muse_score" kindref="compound">MuseScore</ref> (ms) staffmove, track and voice from MusicXML (mx) staff and voice MusicXML staff is 0 for the first staff, 1 for the second. <ref refid="class_ms_1_1_note" kindref="compound">Note</ref>: track is the first track of the ms staff in the score, add ms voice for elements in a voice Return true if OK, false on error TODO: finalize </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="106" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="378" bodyend="435"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1abc6e2042bc02ff42b643730142f87202" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::MusicXMLParserPass1::trackForPart</definition>
+        <argsstring>(const QString &amp;id) const</argsstring>
+        <name>trackForPart</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the (score relative) track number for the first staff of part <emphasis>id</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="108" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="458" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a9570429eb776356d3f39df8201a98860" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Ms::MusicXMLParserPass1::hasPart</definition>
+        <argsstring>(const QString &amp;id) const</argsstring>
+        <name>hasPart</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if part <emphasis>id</emphasis> is found. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="109" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="445" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1aa0cf2c789fc58bfa0a493b1e08560c8f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_part" kindref="compound">Part</ref> *</type>
+        <definition>Part* Ms::MusicXMLParserPass1::getPart</definition>
+        <argsstring>(const QString &amp;id) const</argsstring>
+        <name>getPart</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="110" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a713f6335e2ada47a462fe0bd8cb5e606" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespace_ms_1a568bb2597ab1d23e4660f255997223c2" kindref="member">MusicXMLDrumset</ref></type>
+        <definition>MusicXMLDrumset Ms::MusicXMLParserPass1::getDrumset</definition>
+        <argsstring>(const QString &amp;id) const</argsstring>
+        <name>getDrumset</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="111" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a81d212ada3f56a8fecae2df6738caa5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::setDrumsetDefault</definition>
+        <argsstring>(const QString &amp;id, const QString &amp;instrId, const NoteHead::Group hg, const int line, const Direction sd)</argsstring>
+        <name>setDrumsetDefault</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>instrId</declname>
+        </param>
+        <param>
+          <type>const NoteHead::Group</type>
+          <declname>hg</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_direction" kindref="compound">Direction</ref></type>
+          <declname>sd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set default notehead, line and stem direction for instrument <emphasis>instrId</emphasis> in part <emphasis>id</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="112" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="351" bodyend="363"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1acd7c9663585dd1f7c57df0536ecad9ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_music_xml_instr_list" kindref="compound">MusicXmlInstrList</ref></type>
+        <definition>MusicXmlInstrList Ms::MusicXMLParserPass1::getInstrList</definition>
+        <argsstring>(const QString id) const</argsstring>
+        <name>getInstrList</name>
+        <param>
+          <type>const QString</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the <ref refid="class_ms_1_1_music_xml_instr_list" kindref="compound">MusicXmlInstrList</ref> for part <emphasis>id</emphasis>. Return an empty <ref refid="class_ms_1_1_music_xml_instr_list" kindref="compound">MusicXmlInstrList</ref> on error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="113" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="335" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a0ec85fbb9c22925052c57bd5e93b6ce9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+        <definition>Fraction Ms::MusicXMLParserPass1::getMeasureStart</definition>
+        <argsstring>(const int i) const</argsstring>
+        <name>getMeasureStart</name>
+        <param>
+          <type>const int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the measure start time for measure <emphasis>i</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="114" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="474" bodyend="480"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a0c2e8987c30de0d646eef05e6ea7b7ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Ms::MusicXMLParserPass1::octaveShift</definition>
+        <argsstring>(const QString &amp;id, const int staff, const Fraction f) const</argsstring>
+        <name>octaveShift</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>staff</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Return the octave shift for part <emphasis>id</emphasis> in <emphasis>staff</emphasis> at <emphasis>f</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="115" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="490" bodyend="496"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ms_1_1_music_x_m_l_parser_pass1_1a290aca71630d98ad06e87dc0211933e7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Ms::MusicXMLParserPass1::setFirstInstr</definition>
+        <argsstring>(const QString &amp;id, const Fraction stime)</argsstring>
+        <name>setFirstInstr</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_ms_1_1_fraction" kindref="compound">Fraction</ref></type>
+          <declname>stime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="mscore/importmxmlpass1.h" line="119" column="1" bodyfile="mscore/importmxmlpass1.cpp" bodystart="2691" bodyend="2703"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="mscore/importmxmlpass1.h" line="63" column="1" bodyfile="mscore/importmxmlpass1.h" bodystart="63" bodyend="137"/>
+    <listofallmembers>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1af56d0e4639d32bc3f0c64cacae5be66d" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_divs</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1afd2f52ef3f6220ebf64a8ce880bae56f" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_drumsets</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1af2a60eebf99439a6cf732d4ad0e12577" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_e</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ac6069537a12db54cddf92fe30fd3c85e" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_firstInstrId</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a1ec4ee8fbbaf5c8aa6b7bab3b77fa036" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_firstInstrSTime</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a0ab388b61275406959da4744cd3c22b3" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_measureLength</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a36c54882c9488a0e88dc277def5eccac" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_measureStart</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1afb3504f38d5ccc240134eef356b77b26" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_octaveShifts</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a109ec59d45eed10a4e95dede8d8370e0" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_parseStatus</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a40a9008c0c51ad71c90f8e384e88f866" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_partMap</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aa0ff366c234d4bb4856b9a9cb4d9dc1a" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_parts</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a3df7ca97b65c3ea253e16e51db2b6e6a" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_score</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a7afb6034f9e4c8149d03e447d2d53036" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>_timeSigDura</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a39d323cd2ce91f10d41b1b5938bd3fab" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>attributes</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a551f4d1ca22cbccdab8fe8dce077512d" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>backup</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aaca33f48b413fe218783791896099fa8" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>clef</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a20ea5b9e1776760bdbba0d5ccc2777fa" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>credit</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ad429594859ba9b9c6e26c534227944f5" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>defaults</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a2b8f3b411b5c0562b7c45c8f87bacf84" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>determineMeasureLength</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a818455585a8cfd20fea4c6a2131a33b0" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>determineStaffMoveVoice</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a5a81de5bea8927e52140306a2fba53b0" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>direction</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a67b9401bb4719c4ee6b760f31e2282e8" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>directionType</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a9f1903385cb6f43c9aab41891125ed17" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>divisions</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ad2ecac228c9a223bf03c8d373a6be26c" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>duration</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a293da30da73224784aaf1e4228eea390" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>forward</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a713f6335e2ada47a462fe0bd8cb5e606" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getDrumset</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1acd7c9663585dd1f7c57df0536ecad9ac" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getInstrList</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a0ec85fbb9c22925052c57bd5e93b6ce9" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getMeasureStart</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a182a288f42f6a1e202a4a8c83452c09c" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getParseStatus</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aa0cf2c789fc58bfa0a493b1e08560c8f" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getPart</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ad7245a1bc923e434054c8300e793056c" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>getVoiceList</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ac8dd5ac5d66d6520d67788636e3a0b0b" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>handleOctaveShift</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a9570429eb776356d3f39df8201a98860" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>hasPart</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a94600ed5a1a21049dc28fb143a398ffd" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>identification</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a8cad35ac46557855c87e3e497f323d14" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>initPartState</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a0a350619dbe0953dc37376f2ce630c8f" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>logDebugInfo</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1adeeb5d31ceb27d6a85d6ff843ca11512" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>logDebugTrace</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a204f3b7acd0364a787806b53ae5ea663" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>logError</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a06fb8196bef4664168ea4f3f3815c4c4" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>measure</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a62c10a3dbdfa48e117da30d553edcbcb" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>midiInstrument</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ac3c07acad6c6c7bd70562c4a78126288" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>MusicXMLParserPass1</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ad4313551e5931ebeaf8abd78502ece9d" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>note</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a49918520d96cdff24a634c35cae34331" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>notePrintSpacingNo</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a0c2e8987c30de0d646eef05e6ea7b7ec" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>octaveShift</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ace07d590acdb0a0f933225af36b775a2" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>pageLayout</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1abed4dea5b7f1b7f2d44a782e7f2abfe5" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>parse</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aff543e2b13503dc8646f50f269372211" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>parse</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a50e05b33caec82874456b7ea0c6a8eeb" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>part</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a5a2df24d7b9d1d37082d3cb3db296f89" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>partGroup</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a1abbf626a79e74b39c84b530765f6a5f" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>partList</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ad7150c9fab9c112eed3e0e9ecde6602b" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>pitch</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1acc3a6e719aed4b0d3f1cd4fc75b418bf" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>rest</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a463938c0965929d3e138ef1ee23f6196" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>scoreInstrument</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ae3c3601c23c0d57e2aa568ca88c06aec" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>scorePart</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a4bb6592ded44648255e7181efc672cfb" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>scorePartwise</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a81d212ada3f56a8fecae2df6738caa5f" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>setDrumsetDefault</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a290aca71630d98ad06e87dc0211933e7" prot="private" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>setFirstInstr</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1a82c648499fd4e880204c669a7ee3cc20" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>skipLogCurrElem</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ae6bb7941967664f45789078847af96c4" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>staffDetails</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aad4c7fa1b28dbc496956380e11dfe20a" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>staffTuning</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1aa8bbcc91b95c528dde2fa09e873393cc" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>staves</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1abb54ab145dbe05ccc4ef4a04ca0d94bd" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>time</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1ac9feadbc3a95595e36c5ed1287beb665" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>timeModification</name></member>
+      <member refid="class_ms_1_1_music_x_m_l_parser_pass1_1abc6e2042bc02ff42b643730142f87202" prot="public" virt="non-virtual"><scope>Ms::MusicXMLParserPass1</scope><name>trackForPart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
